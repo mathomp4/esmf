@@ -5,7 +5,7 @@ graph: false
 coloured_edges: true
 graph_maxdepth: 4
 graph_maxnodes: 32
-include: ../build_config/Darwin.gfortran.default/
+include: ../build_config/Linux.gfortran.default/
          ../src/Infrastructure/Array/include/
          ../src/Infrastructure/ArrayBundle/include/
          ../src/Infrastructure/ArraySpec/include/
@@ -58,9 +58,9 @@ project: ESMF
 project_github: https://github.com/esmf-org/esmf
 project_website: https://github.com/esmf-org/esmf
 summary: The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.
-author: Matt Thompson
-author_description: Certified Nerd
-github: https://github.com/mathomp4
+author: ESMF Developers
+author_description: The developers of ESMF
+github: https://github.com/esmf-org
 email: matthew.thompson@nasa.gov
 print_creation_date: true
 sort: type-alpha
