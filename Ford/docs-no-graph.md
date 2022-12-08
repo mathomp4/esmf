@@ -47,12 +47,6 @@ exclude: ESMF_VMGetMPICommunicatorF08Ex.F90
          ESMF_InfoCDef.F90
          user_model1.F90
 macro: USE_MPI=1
-       BUILD_WITH_PFLOGGER=1
-       BUILD_WITH_EXTDATA2G=1
-       USE_FLAP=1
-       H5_HAVE_PARALLEL=1
-       TWO_SIDED_COMM=1
-       MAPL_MODE=1
 fixed_length_limit: false
 source: true
 display: public
@@ -60,7 +54,7 @@ display: public
          protected
 extra_mods: iso_fortran_env:https://gcc.gnu.org/onlinedocs/gfortran/ISO_005fFORTRAN_005fENV.html
             iso_c_binding:https://gcc.gnu.org/onlinedocs/gfortran/ISO_005fC_005fBINDING.html#ISO_005fC_005fBINDING
-project: MAPL
+project: ESMF
 project_github: https://github.com/esmf-org/esmf
 project_website: https://github.com/esmf-org/esmf
 summary:The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.
