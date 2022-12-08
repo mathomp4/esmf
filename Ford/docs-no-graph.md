@@ -45,6 +45,7 @@ exclude_dir: ../Ford
 exclude: ESMF_VMGetMPICommunicatorF08Ex.F90
          ESMF_InfoCDefGeneric.F90
          ESMF_InfoCDef.F90
+         user_model1.F90
 macro: USE_MPI=1
        BUILD_WITH_PFLOGGER=1
        BUILD_WITH_EXTDATA2G=1
