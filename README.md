@@ -51,8 +51,7 @@ Pre-built binaries for ESMF and ESMPy are available through a number of channels
 Several add-on packages are included with ESMF under [`./src/addon`](https://github.com/esmf-org/esmf/tree/master/src/addon):  
 
  * [ESMPy](src/addon/esmpy) - Python interface to ESMF.
- * [ESMX](src/addon/ESMX) - A layer providing the Earth System Model eXecutable.
-   The ESMX layer is built on top of ESMF and NUOPC.
+ * [ESMX](src/addon/ESMX) - A layer providing the Earth System Model eXecutable. The ESMX layer is built on top of ESMF and NUOPC.
  * [NUOPC](src/addon/NUOPC) - Interoperability layer developed under the National Unified Operational Prediction Capability (NUOPC) program.
 
 See each addon package for a specific README file.
