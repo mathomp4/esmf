@@ -62,7 +62,7 @@ extra_mods: iso_fortran_env:https://gcc.gnu.org/onlinedocs/gfortran/ISO_005fFORT
 project: MAPL
 project_github: https://github.com/esmf-org/esmf
 project_website: https://github.com/esmf-org/esmf
-summary: ESMF is ESMF
+summary:The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.
 author: Matt Thompson
 author_description: Certified Nerd
 github: https://github.com/mathomp4
