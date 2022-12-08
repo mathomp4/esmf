@@ -26,6 +26,7 @@ To build ESMF from source:
 ## Pre-built ESMF
  
 Pre-built binaries for ESMF and ESMPy are available through a number of channels:
+
  * [Docker Hub](https://hub.docker.com/): Under [ESMF Organization](https://hub.docker.com/u/esmf). To install locally, run:
    ```
    docker run -it --rm esmf/esmf-build-release:latest
@@ -48,6 +49,7 @@ Pre-built binaries for ESMF and ESMPy are available through a number of channels
 ## Add-On Packages
 
 Several add-on packages are included with ESMF under [`./src/addon`](https://github.com/esmf-org/esmf/tree/master/src/addon):  
+
  * [ESMPy](src/addon/esmpy) - Python interface to ESMF.
  * [ESMX](src/addon/ESMX) - A layer providing the Earth System Model eXecutable.
    The ESMX layer is built on top of ESMF and NUOPC.
@@ -58,13 +60,17 @@ See each addon package for a specific README file.
 ## More Help
 
 Information about the ESMF project can be found at the ESMF web site:
+
  * https://www.earthsystemmodeling.org/
 
 Software documentation for the last release:
+
  * http://earthsystemmodeling.org/doc/
 
 Software documentation for all releases:
+
  * http://earthsystemmodeling.org/static/releases.html
  
- Support:
+Support:
+ 
  * http://earthsystemmodeling.org/support/
