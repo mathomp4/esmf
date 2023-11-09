@@ -2,7 +2,7 @@
 !==============================================================================
 ! Earth System Modeling Framework
 !
-! Copyright 2002-2022, University Corporation for Atmospheric Research, 
+! Copyright (c) 2002-2023, University Corporation for Atmospheric Research, 
 ! Massachusetts Institute of Technology, Geophysical Fluid Dynamics 
 ! Laboratory, University of Michigan, National Centers for Environmental 
 ! Prediction, Los Alamos National Laboratory, Argonne National Laboratory, 
@@ -2047,6 +2047,14 @@ end module config_subrs
       write(failMsg, *) "Did not return ESMF_SUCCESS"
       write(name, *) "Config Create Test"
       cf = ESMF_ConfigCreate(rc=rc)
+      call ESMF_Test((rc.eq.ESMF_SUCCESS), name, failMsg, result, ESMF_SRCLINE)
+
+      !------------------------------------------------------------------------
+      !NEX_UTest
+      ! Test Config Print
+      write(failMsg, *) "Did not return ESMF_SUCCESS"
+      write(name, *) "Config Print Test"
+      call ESMF_ConfigPrint(cf, rc=rc)
       call ESMF_Test((rc.eq.ESMF_SUCCESS), name, failMsg, result, ESMF_SRCLINE)
 
       !------------------------------------------------------------------------

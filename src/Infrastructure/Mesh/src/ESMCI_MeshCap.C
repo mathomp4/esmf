@@ -1,7 +1,7 @@
 // $Id$
 //
 // Earth System Modeling Framework
-// Copyright 2002-2022, University Corporation for Atmospheric Research,
+// Copyright (c) 2002-2023, University Corporation for Atmospheric Research,
 // Massachusetts Institute of Technology, Geophysical Fluid Dynamics
 // Laboratory, University of Michigan, National Centers for Environmental
 // Prediction, Los Alamos National Laboratory, Argonne National Laboratory,
@@ -1441,7 +1441,8 @@ MeshCap *MeshCap::GridToMeshCell(const Grid &grid_,
 
 // This method converts a Mesh to a PointList
 void MeshCap::MeshCap_to_PointList(ESMC_MeshLoc_Flag meshLoc,
-                                   ESMCI::InterArray<int> *maskValuesArg, 
+                                   ESMCI::InterArray<int> *maskValuesArg,
+                                   bool addOrigCoords, 
                                    PointList **out_pl,
                                    int *rc) {
 #undef ESMC_METHOD
@@ -1452,7 +1453,7 @@ void MeshCap::MeshCap_to_PointList(ESMC_MeshLoc_Flag meshLoc,
   
   if (is_esmf_mesh) {
     *out_pl=mesh->MeshToPointList(meshLoc,
-                                  maskValuesArg, &localrc);
+                                  maskValuesArg, addOrigCoords, &localrc);
     if (ESMC_LogDefault.MsgFoundError(localrc, ESMCI_ERR_PASSTHRU,
                                       ESMC_CONTEXT, rc)) return;
 
@@ -1566,6 +1567,7 @@ void MeshCap::regrid_create(
     int *regridMethod,
     int *map_type,
     int *norm_type,
+    int *_vectorRegrid, 
     int *regridPoleType, int *regridPoleNPnts,
     int *extrapMethod,
     int *extrapNumSrcPnts,
@@ -1657,6 +1659,7 @@ void MeshCap::regrid_create(
                         regridMethod,
                         map_type,
                         norm_type,
+                        _vectorRegrid,
                         regridPoleType, regridPoleNPnts,
                         extrapMethod,
                         extrapNumSrcPnts,
@@ -1763,7 +1766,7 @@ void MeshCap::meshcreatenodedistgrid(int *rc) {
         "This functionality requires ESMF to be built with the MOAB library enabled" , ESMC_CONTEXT, rc)) return;
 #endif
     }
-dg->validate(); //TODO: remove this validate() once all is working!!!
+
     // Set member 
     this->node_distgrid = dg;
     this->node_distgrid_set = true;
@@ -1771,6 +1774,9 @@ dg->validate(); //TODO: remove this validate() once all is working!!!
   } else {
       ESMC_LogDefault.Write("Node DistGrid has already been set", ESMC_LOGMSG_WARN);
   }
+
+  // Set to success
+  if (rc != NULL) *rc=ESMF_SUCCESS;
 }
 
 
@@ -1801,7 +1807,7 @@ void MeshCap::meshcreateelemdistgrid(int *rc) {
         "This functionality requires ESMF to be built with the MOAB library enabled" , ESMC_CONTEXT, rc)) return;
 #endif
     }
-dg->validate(); //TODO: remove this validate() once all is working!!!
+
     // Set member variables
     this->elem_distgrid = dg;
     this->elem_distgrid_set = true;
@@ -1809,6 +1815,9 @@ dg->validate(); //TODO: remove this validate() once all is working!!!
   } else {
     ESMC_LogDefault.Write("Elem DistGrid has already been set", ESMC_LOGMSG_WARN);
   }
+
+  // Set to success
+  if (rc != NULL) *rc=ESMF_SUCCESS;
 }
 
 DistGrid *MeshCap::meshgetnodedistgrid() {

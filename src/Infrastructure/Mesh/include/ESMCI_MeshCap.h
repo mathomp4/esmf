@@ -1,6 +1,6 @@
 // $Id$
 // Earth System Modeling Framework
-// Copyright 2002-2022, University Corporation for Atmospheric Research,
+// Copyright (c) 2002-2023, University Corporation for Atmospheric Research,
 // Massachusetts Institute of Technology, Geophysical Fluid Dynamics
 // Laboratory, University of Michigan, National Centers for Environmental
 // Prediction, Los Alamos National Laboratory, Argonne National Laboratory,
@@ -92,8 +92,9 @@ namespace ESMCI {
     void fit_on_vm(VM **vm, int *rc);
 
     void MeshCap_to_PointList(ESMC_MeshLoc_Flag meshLoc,
-                              ESMCI::InterArray<int> *maskValuesArg, PointList **out_pl,
-                              int *rc);
+                              ESMCI::InterArray<int> *maskValuesArg,
+                              bool addOrigCoords, 
+                              PointList **out_pl, int *rc);
 
     static MeshCap *create_from_ptr(void *_mesh, int *rc);
 
@@ -275,6 +276,7 @@ namespace ESMCI {
       int *regridMethod,
       int *map_type,
       int *norm_type,
+      int *_vectorRegrid, 
       int *regridPoleType, int *regridPoleNPnts,
       int *extrapMethod,
       int *extrapNumSrcPnts,

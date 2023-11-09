@@ -1,7 +1,7 @@
 ! $Id$
 !
 ! Earth System Modeling Framework
-! Copyright 2002-2022, University Corporation for Atmospheric Research,
+! Copyright (c) 2002-2023, University Corporation for Atmospheric Research,
 ! Massachusetts Institute of Technology, Geophysical Fluid Dynamics
 ! Laboratory, University of Michigan, National Centers for Environmental
 ! Prediction, Los Alamos National Laboratory, Argonne National Laboratory,
@@ -1968,7 +1968,7 @@ type(ESMF_KeywordEnforcer), optional:: keywordEnforcer ! must use keywords below
 ! !IROUTINE:  ESMF_ClockEQ - Compare two Clocks for equality
 !
 ! !INTERFACE:
-      function ESMF_ClockEQ(clock1, clock2)
+      impure elemental function ESMF_ClockEQ(clock1, clock2)
 !
 ! !RETURN VALUE:
       logical :: ESMF_ClockEQ
@@ -2018,7 +2018,7 @@ type(ESMF_KeywordEnforcer), optional:: keywordEnforcer ! must use keywords below
 ! !IROUTINE:  ESMF_ClockNE - Compare two Clocks for inequality
 !
 ! !INTERFACE:
-      function ESMF_ClockNE(clock1, clock2)
+      impure elemental function ESMF_ClockNE(clock1, clock2)
 !
 ! !RETURN VALUE:
       logical :: ESMF_ClockNE

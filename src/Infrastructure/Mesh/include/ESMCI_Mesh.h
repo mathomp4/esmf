@@ -1,6 +1,6 @@
 // $Id$
 // Earth System Modeling Framework
-// Copyright 2002-2022, University Corporation for Atmospheric Research,
+// Copyright (c) 2002-2023, University Corporation for Atmospheric Research,
 // Massachusetts Institute of Technology, Geophysical Fluid Dynamics
 // Laboratory, University of Michigan, National Centers for Environmental
 // Prediction, Los Alamos National Laboratory, Argonne National Laboratory,
@@ -126,8 +126,9 @@ void change_comm(MPI_Comm new_comm);
  */
 void resolve_cspec_delete_owners(UInt obj_type);
 
- ESMCI::PointList *MeshToPointList(ESMC_MeshLoc_Flag meshLoc, ESMCI::InterArray<int> *maskValuesArg, int *rc);
+ESMCI::PointList *MeshToPointList(ESMC_MeshLoc_Flag meshLoc, ESMCI::InterArray<int> *maskValuesArg, bool add_orig_coords, int *rc);
 
+  
   public:
 // STUFF FOR SPLIT MESH
 // TODO: MOVE TO MESHCXX AND CALL THAT FROM F90

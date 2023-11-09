@@ -1,7 +1,7 @@
 ! $Id$
 !
 ! Earth System Modeling Framework
-! Copyright 2002-2022, University Corporation for Atmospheric Research, 
+! Copyright (c) 2002-2023, University Corporation for Atmospheric Research, 
 ! Massachusetts Institute of Technology, Geophysical Fluid Dynamics 
 ! Laboratory, University of Michigan, National Centers for Environmental 
 ! Prediction, Los Alamos National Laboratory, Argonne National Laboratory, 
@@ -367,7 +367,7 @@ contains
 ! !IROUTINE:  ESMF_LocStreamEQ - Compare two LocStreams for equality
 !
 ! !INTERFACE:
-  function ESMF_LocStreamEQ(locstream1, locstream2)
+  impure elemental function ESMF_LocStreamEQ(locstream1, locstream2)
 ! 
 ! !RETURN VALUE:
     logical :: ESMF_LocStreamEQ
@@ -418,7 +418,7 @@ contains
 ! !IROUTINE:  ESMF_LocStreamNE - Compare two LocStreams for non-equality
 !
 ! !INTERFACE:
-  function ESMF_LocStreamNE(locstream1, locstream2)
+  impure elemental function ESMF_LocStreamNE(locstream1, locstream2)
 ! 
 ! !RETURN VALUE:
     logical :: ESMF_LocStreamNE
