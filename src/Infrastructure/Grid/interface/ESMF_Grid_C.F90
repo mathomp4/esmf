@@ -1,7 +1,7 @@
 !  $Id$
 !
 ! Earth System Modeling Framework
-! Copyright (c) 2002-2023, University Corporation for Atmospheric Research, 
+! Copyright (c) 2002-2025, University Corporation for Atmospheric Research, 
 ! Massachusetts Institute of Technology, Geophysical Fluid Dynamics 
 ! Laboratory, University of Michigan, National Centers for Environmental 
 ! Prediction, Los Alamos National Laboratory, Argonne National Laboratory, 
@@ -246,13 +246,13 @@
     type(ESMF_FileFormat_Flag), optional   :: fileTypeFlag
     integer, optional                      :: regDecomp(2)
     type(ESMF_Decomp_Flag), optional       :: decompflag(2)
-    logical, optional                      :: isSphere
+    type(ESMF_Logical), optional           :: isSphere
     integer                                :: len1
     type(ESMF_PoleKind_Flag), optional     :: polekindflag(1:len1)
-    logical, optional                      :: addCornerStagger
-    logical, optional                      :: addUserArea
+    type(ESMF_Logical), optional           :: addCornerStagger
+    type(ESMF_Logical), optional           :: addUserArea
     type(ESMF_Index_Flag), optional        :: indexflag
-    logical, optional                      :: addMask
+    type(ESMF_Logical), optional           :: addMask
     character(len=*), optional             :: varname
     character(len=*), optional             :: coordNames(2)
     integer, intent(out), optional         :: rc

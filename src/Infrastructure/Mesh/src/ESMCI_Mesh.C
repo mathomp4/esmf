@@ -1,7 +1,7 @@
 // $Id$
 //
 // Earth System Modeling Framework
-// Copyright (c) 2002-2023, University Corporation for Atmospheric Research,
+// Copyright (c) 2002-2025, University Corporation for Atmospheric Research,
 // Massachusetts Institute of Technology, Geophysical Fluid Dynamics
 // Laboratory, University of Michigan, National Centers for Environmental
 // Prediction, Los Alamos National Laboratory, Argonne National Laboratory,
@@ -40,8 +40,8 @@ static const char *const version = "$Id$";
 extern "C" {
   void FTN_X(f_esmf_meshcreatefromfile)(ESMCI::Mesh **meshp,
                                         const char *filename, int *fileTypeFlag,
-                                        int *convertToDual, int *ctodpresent,
-                                        int *addUserArea, int *auapresent,
+                                        ESMC_Logical *convertToDual,
+                                        ESMC_Logical *addUserArea,
                                         const char *meshname, int *mnpresent,
                                         int *maskFlag, int *mfpresent,
                                         const char *varname, int *vnpresent,
@@ -95,9 +95,15 @@ Mesh *Mesh::createfromfile(const char *filename, int fileTypeFlag,
     if(rc!=NULL) *rc=ESMC_RC_NOT_IMPL;
 
     // handle the optional arguments
-    int ctodpresent, auapresent, mnpresent, mfpresent, vnpresent;
-    ctodpresent = convertToDual != NULL;
-    auapresent = addUserArea != NULL;
+    int mnpresent, mfpresent, vnpresent;
+    ESMC_Logical ctod_loc = ESMF_FALSE;
+    if (convertToDual != NULL) {
+      ctod_loc = (*convertToDual != 0) ? ESMF_TRUE:ESMF_FALSE;
+    }
+    ESMC_Logical aua_loc = ESMF_FALSE;
+    if (addUserArea != NULL) {
+      aua_loc = (*addUserArea != 0) ? ESMF_TRUE:ESMF_FALSE;
+    }
     mnpresent = strlen(meshname) > 0;
     mfpresent = maskFlag != NULL;
     vnpresent = strlen(varname) > 0;
@@ -107,8 +113,8 @@ Mesh *Mesh::createfromfile(const char *filename, int fileTypeFlag,
 
     FTN_X(f_esmf_meshcreatefromfile)(&mesh,
                                      filename, &fileTypeFlag,
-                                     convertToDual, &ctodpresent,
-                                     addUserArea, &auapresent,
+                                     &ctod_loc,
+                                     &aua_loc,
                                      meshname, &mnpresent,
                                      maskFlag, &mfpresent,
                                      varname, &vnpresent,
@@ -1689,6 +1695,32 @@ void Mesh::RemoveGhost() {
   ESMCI::Par::Init("MESHLOG", false, curr_comm);
 }
 
+
+// Function to communicate fields to ghost locations
+ void Mesh::GhostCommFields(UInt nfields, MEField<> *const *sfields, MEField<> *const *rfields) {
+
+  // Only do on the original comm that this mesh was committed on, so 
+  // leave if that's not set
+  if (orig_comm == MPI_COMM_NULL) return;
+
+   // Error check
+   if (!sghost) Throw()<<"Ghost communicator must be present for ghost communication.";
+   
+   // Save current comm
+   MPI_Comm curr_comm=Par::Comm();
+   
+   // Switch to orig comm
+   ESMCI::Par::Init("MESHLOG", false, orig_comm);
+
+   // Send Fields
+   sghost->SendFields(nfields, sfields, rfields);
+
+   // Switch back to curr comm
+   ESMCI::Par::Init("MESHLOG", false, curr_comm);
+ }
+
+
+ 
 // Convenience function to communicate all fields to ghost locations
  void Mesh::GhostCommAllFields() {
 
@@ -1725,6 +1757,8 @@ void Mesh::RemoveGhost() {
    // Switch back to curr comm
    ESMCI::Par::Init("MESHLOG", false, curr_comm);
  }
+
+
  
 
 void Mesh::build_sym_comm_rel(UInt obj_type) {

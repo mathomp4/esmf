@@ -1,4 +1,4 @@
-name: Build ESMF Docs
+name: ESMF Docs
 
 on:
   workflow_dispatch:
@@ -17,7 +17,7 @@ jobs:
     steps:
     
     - name: Checkout Dockerfiles
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
           repository: esmf-org/esmf-containers
           path: esmf-containers
@@ -26,7 +26,10 @@ jobs:
     - name: Build Docker image  
       run: | 
         cd ${{ github.workspace }}/esmf-containers/build-esmf-docs/esmf
-        docker build . --tag esmf/build-esmf-docs --build-arg ESMF_BRANCH="${{ github.ref_name }}" --no-cache
+        docker build . --tag esmf/build-esmf-docs \
+          --build-arg "ESMF_REPOSITORY=${{github.server_url}}/${{github.repository}}" \
+          --build-arg "ESMF_BRANCH=${{github.ref_name}}" \
+          --no-cache
         
     - name: Extract artifacts
       run: |
@@ -37,19 +40,21 @@ jobs:
         docker rm ${CID}        
             
     - name: Upload artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: esmf-docs
         path: ${{ github.workspace }}/artifacts
        
     - name: Checkout esmf-org.github.io
-      uses: actions/checkout@v3
+      if: github.repository_owner == 'esmf-org'
+      uses: actions/checkout@v4
       with:
           repository: esmf-org/esmf-org.github.io
           path: ${{github.workspace}}/esmf-org.github.io
           ssh-key: ${{secrets.ESMF_WEB_DEPLOY_KEY}}
 
     - name: Copy docs
+      if: github.repository_owner == 'esmf-org'
       run: | 
         cd ${{ github.workspace }}/esmf-org.github.io        
         mkdir -p docs/nightly/${{ github.ref_name }}/dev_guide
@@ -66,6 +71,7 @@ jobs:
         cp -rf ./dev_guide/dev_guide/* ${{ github.workspace }}/esmf-org.github.io/docs/nightly/${{ github.ref_name }}/dev_guide/
         
     - name: Commit and publish docs
+      if: github.repository_owner == 'esmf-org'
       run: | 
         cd ${{ github.workspace }}/esmf-org.github.io
         git config user.name "github-actions[bot]"

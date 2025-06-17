@@ -53,9 +53,66 @@ Use the following example command as a guide to check out a specific development
 
 Once downloaded, development snapshots are built in the same way as releases.
 
-\subsection{System Requirements}
+\subsection{System Specific Information}
+
+\subsubsection{General Requirements}
 \label{sec:systemreq}
 \input{ESMF_systemreq}
+
+\subsubsection{Intel Compiler (Classic and oneAPI)}
+
+ESMF supports the Intel compiler suite via {\tt ESMF\_COMPILER=intel}. Starting in 2020, Intel began promoting their
+new LLVM-based C/C++ and Fortran compiler line under the oneAPI brand. As of 2023, the older compilers are still
+part of the Intel compiler suite and referred to as Intel Compiler Classic. ESMF supports both the classic and oneAPI
+compiler lines. The following paragraphs provide important details that allow users to fine-tune the interaction
+with the Intel compilers.
+
+Under {\tt ESMF\_OS=Linux}, with {\tt ESMF\_COMPILER=intel} and {\tt ESMF\_COMM=mpiuni} set, the C, C++, and
+Fortran compiler front-ends default to the classic options {\tt icc}, {\tt icpc}, and {\tt ifort}, respectively. Any
+of these defaults can be overridden by explicitly setting the {\tt ESMF\_C}, {\tt ESMF\_CXX}, or {\tt ESMF\_F90}
+environment variables to the oneAPI options {\tt icx}, {\tt icpx}, and {\tt ifx}, respectively.
+
+Under {\tt ESMF\_OS=Linux}, with {\tt ESMF\_COMPILER=intel} and {\tt ESMF\_COMM=intelmpi} set, the C, C++, and
+Fortran compiler front-ends default to the MPI compiler wrappers {\tt mpiicc}, {\tt mpicpc}, and {\tt mpiifort},
+respectively. It depends on the IntelMPI installation details whether classic, oneAPI, or a mixture of compilers
+are used underneath the MPI wrappers. The IntelMPI defaults can be overridden by explicitly setting the
+{\tt I\_MPI\_CC}, {\tt I\_MPI\_CXX}, or {\tt I\_MPI\_F90} environment variables. This is an IntelMPI feature.
+
+The recommendation for Cray systems that use the Cray compiler wrappers {\tt cc}, {\tt CC}, and {\tt ftn},
+respectively, is to use {\tt ESMF\_OS=Unicos}. In most cases this setting is detected automatically by the ESMF
+build system, and should {\em not} be overridden.
+
+Under {\tt ESMF\_OS=Unicos}, with {\tt ESMF\_COMPILER=intel}, the C, C++, and Fortran compiler front-ends default to
+{\tt cc}, {\tt CC}, and {\tt ftn}, respectively, regardless of the  {\tt ESMF\_COMM} setting. The appropriate
+classic, oneAPI, or mixed compiler combination is typically determined by the Intel environment module loaded.
+Common module names on Cray systems are {\tt intel-classic}, {\tt intel-oneAPI}, and {\tt intel}, respectively.
+
+{\bf Tip: } Use the ESMF "{\tt make info}" target to query compiler version information. This can be used to determine the
+appropriate settings, and to diagnose issues before kicking off the complete ESMF build procedure.
+
+\subsubsection{MacOS Darwin}
+
+ESMF supports MacOS systems via the {\tt ESMF\_OS=Darwin} setting, which
+typically is auto-detected by the ESMF build system. Various compilers and
+MPI implementations are supported under Darwin using the {\tt ESMF\_COMPILER}
+and {\tt ESMF\_COMM} environment variables. There are some combinations under
+Darwin that require special attention; these combinations are listed below.
+
+On Darwin with {\tt ESMF\_COMPILER=gfortran} and {\tt ESMF\_COMM=mpich},
+using MPICH3 built from source, it is important to specify the
+{\tt --enable-two-level-namespace} configure option when building the MPICH3
+library. By default, i.e. without this option, the produced MPICH compiler
+wrappers include a linker flag ({\tt -flat\_namespace}) that causes issues with
+C++ exception handling under GNU g++. Building and linking ESMF applications
+with MPICH compiler wrappers that specify this linker option leads to
+"mysterious" application aborts during execution.
+
+On Darwin with {\tt ESMF\_COMPILER=intel}, command line arguments cannot be
+accessed from ESMF applications when linked against the shared library version
+({\tt libesmf.dylib}). There is no issue when linked against the static
+version ({\tt libesmf.a}). Setting the environment variable
+{\tt ESMF\_SHARED\_LIB\_BUILD=OFF} when building ESMF can be used as a
+work around for this issue.
 
 \subsection{Third Party Libraries}
 \label{sec:ThirdParty}
@@ -549,6 +606,41 @@ the application.
 
 \end{description}
 
+\subsubsection{NUMA}
+\label{sec:NUMA}
+
+The LibNUMA API for Non Uniform Memory Access
+(\htmladdnormallink{NUMA}{https://halobates.de/numaapi3.pdf})
+can be used to discover the NUMA architecture at run-time.
+
+\begin{description}
+
+\item[ESMF\_NUMA] Possible values: {\tt "ON"}, {\tt "standard"}, {\tt "OFF"} (default).
+
+\begin{description}
+\item[{\tt "ON"}/{\tt "standard"}] The NUMA dependent code inside of ESMF will
+be enabled.
+The {\tt ESMF\_NUMA\_LIBS} environment variable will be set to
+{\tt "-lnuma"}.
+
+\item[{\tt "OFF"} (default)] Disables NUMA dependent code.
+\end{description}
+
+\item[ESMF\_NUMA\_INCLUDE] Typically not needed. (no default).
+
+Specifies the path where the NUMA header files are located.
+
+\item[ESMF\_NUMA\_LIBPATH] Typically not needed. (no default).
+
+Specifies the path where the NUMA library file is located.
+
+\item[ESMF\_NUMA\_LIBS] Typical value: {\tt "-lnuma"}.
+
+Specifies the linker directives needed to link the NUMA library to
+the application.
+
+\end{description}
+
 \subsubsection{NVML}
 \label{sec:NVML}
 
@@ -577,7 +669,7 @@ Specifies the path where the NVML header files are located.
 
 Specifies the path where the NVML library file is located.
 
-\item[ESMF\_NVML\_LIBS] Typical value: {\tt "-lnvidia-ml"} (no default).
+\item[ESMF\_NVML\_LIBS] Typical value: {\tt "-lnvidia-ml"}.
 
 Specifies the linker directives needed to link the NVML library to
 the application.
@@ -623,6 +715,13 @@ default is {\tt O} (capital oh) which builds an optimized version of the
 library. If {\tt ESMF\_BOPT} is {\tt O}, {\tt ESMF\_OPTLEVEL} can also be set
 to a numeric value between 0 and 4 to select a specific optimization level.
 
+\item[ESMF\_C]
+Possible value: {\em executable}
+
+This variable can be used to override the default C compiler and linker
+front-end executables. The executable may be specified with absolute path
+overriding the location determined by default from the user's PATH variable.
+
 \item[ESMF\_COMM]
 Possible value: {\em system-dependent}
 
@@ -633,8 +732,9 @@ implementation.
 For other systems (e.g. Linux or Darwin) where a multitude of MPI
 implementations are available, {\tt ESMF\_COMM} must be set to indicate which
 implementation is used to build the ESMF library. Set {\tt ESMF\_COMM} according
-to your situation to: {\tt mpt, mpich, mpich1, mpich2, mpich3, mvapich2, lam, openmpi}
-or {\tt intelmpi}. {\tt ESMF\_COMM} may also be set to {\tt user} indicating
+to your situation to: {\tt mpt, mpich (version 3 and up), mpich1, mpich2,
+mvapich (all versions), lam, openmpi}, or {\tt intelmpi}.
+{\tt ESMF\_COMM} may also be set to {\tt user} indicating
 that the user will set all the required flags using advanced ESMF environment
 variables.  Some individual MPI builds may create additional libraries that
 need to be linked in, such as the legacy C++ bindings. These may be specified
@@ -867,6 +967,13 @@ Location into which to install the F90 module files during installation. This
 location can be specified as absolute path (starting with "/") or relative to
 {\tt ESMF\_INSTALL\_PREFIX}.
 
+\item[ESMF\_INSTALL\_CMAKEDIR]
+Possible value: {\em relative or absolute path}
+
+Location into which to install the CMake module files during installation. This
+location can be specified as absolute path (starting with "/") or relative to
+{\tt ESMF\_INSTALL\_PREFIX}.
+
 \item[ESMF\_INSTALL\_PREFIX]
 Possible value: {\em relative or absolute path}
 
@@ -953,14 +1060,16 @@ Not normally set by user. Setting this variable to {\tt FALSE} instructs
 ESMF to generating data array interfaces for data types of 2-byte integers.
 
 \item[ESMF\_OPENACC]
-Possible value: {\tt ON}, {\tt OFF} (default)
+Possible value: {\tt ON}, {\tt OFF} (default is system dependent)
 
 Compiles and links the ESMF library with OpenACC compiler flags.
 
 \item[ESMF\_OPENMP]
-Possible value: {\tt ON}, {\tt OFF} (default is system dependent)
+Possible value: {\tt OMP4}, {\tt ON}, {\tt OFF} (default is system dependent)
 
 Compiles and links the ESMF library with OpenMP compiler flags.
+Both {\tt OMP4} and {\tt ON} enable the ESMF OpenMP features. Only with
+{\tt OMP4} will those features assume OpenMP 4.0 and higher.
 
 \item[ESMF\_OPTLEVEL]
 Possible value: {\em numerical value}
@@ -1146,37 +1255,6 @@ to one platform/architecture at a time.  The output from the test cases
 will be stored in a separate directories so the results will be kept
 separate for different architectures or options.
 
-\subsubsection{Intel Compiler Support (Classic and oneAPI)}
-
-ESMF supports the Intel compiler suite via {\tt ESMF\_COMPILER=intel}. Starting in 2020, Intel began promoting their
-new LLVM-based C/C++ and Fortran compiler line under the oneAPI brand. As of 2023, the older compilers are still
-part of the Intel compiler suite and referred to as Intel Compiler Classic. ESMF supports both the classic and oneAPI
-compiler lines. The following paragraphs provide important details that allow users to fine-tune the interaction
-with the Intel compilers.
-
-Under {\tt ESMF\_OS=Linux}, with {\tt ESMF\_COMPILER=intel} and {\tt ESMF\_COMM=mpiuni} set, the C, C++, and
-Fortran compiler front-ends default to the classic options {\tt icc}, {\tt icpc}, and {\tt ifort}, respectively. Any
-of these defaults can be overridden by explicitly setting the {\tt ESMF\_C}, {\tt ESMF\_CXX}, or {\tt ESMF\_F90}
-environment variables to the oneAPI options {\tt icx}, {\tt icpx}, and {\tt ifx}, respectively.
-
-Under {\tt ESMF\_OS=Linux}, with {\tt ESMF\_COMPILER=intel} and {\tt ESMF\_COMM=intelmpi} set, the C, C++, and
-Fortran compiler front-ends default to the MPI compiler wrappers {\tt mpiicc}, {\tt mpicpc}, and {\tt mpiifort},
-respectively. It depends on the IntelMPI installation details whether classic, oneAPI, or a mixture of compilers
-are used underneath the MPI wrappers. The IntelMPI defaults can be overridden by explicitly setting the
-{\tt I\_MPI\_CC}, {\tt I\_MPI\_CXX}, or {\tt I\_MPI\_F90} environment variables. This is an IntelMPI feature.
-
-The recommendation for Cray systems that use the Cray compiler wrappers {\tt cc}, {\tt CC}, and {\tt ftn},
-respectively, is to use {\tt ESMF\_OS=Unicos}. In most cases this setting is detected automatically by the ESMF
-build system, and should {\em not} be overridden.
-
-Under {\tt ESMF\_OS=Unicos}, with {\tt ESMF\_COMPILER=intel}, the C, C++, and Fortran compiler front-ends default to
-{\tt cc}, {\tt CC}, and {\tt ftn}, respectively, regardless of the  {\tt ESMF\_COMM} setting. The appropriate
-classic, oneAPI, or mixed compiler combination is typically determined by the Intel environment module loaded.
-Common module names on Cray systems are {\tt intel-classic}, {\tt intel-oneAPI}, and {\tt intel}, respectively.
-
-{\bf Tip: } Use the ESMF "{\tt make info}" target to query compiler version information. This can be used to determine the
-appropriate settings, and to diagnose issues before kicking off the complete ESMF build procedure.
-
 \subsection{Building the ESMF Library}
 \label{BuildESMF}
 
@@ -1259,6 +1337,7 @@ variables:
 \item {\tt ESMF\_INSTALL\_MODDIR} -- where to install Fortran module files.
 \item {\tt ESMF\_INSTALL\_BINDIR} -- where to install application files.
 \item {\tt ESMF\_INSTALL\_DOCDIR} -- where to install documentation files.
+\item {\tt ESMF\_INSTALL\_CMAKEDIR} -- where to install cmake module files.
 \end{itemize}
 
 Section~\ref{EnvironmentVariables} describes what each of these
