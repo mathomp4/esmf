@@ -1,0 +1,632 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_LogSet &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_LogSet
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.0% of total for procedures.">116 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_LogErr.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_logerr.f90.html'>ESMF_LogErr.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/esmf_logerrmod.html'>ESMF_LogErrMod</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_LogSet</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/esmf_logset.html#src">ESMF_LogSet</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  subroutine ESMF_LogSet(log, keywordEnforcer, flush, logmsgAbort, maxElements, logmsgList, errorMask, trace, highResTimestampFlag, indentCount, noPrefix, rc)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-log~11"></span>
+              type(<a href='../type/esmf_log.html'>ESMF_Log</a>),
+            </td>
+<td>intent(inout),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>log</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-keywordenforcer~976"></span>
+              type(<a href='../type/esmf_keywordenforcer.html'>ESMF_KeywordEnforcer</a>),
+            </td>
+<td></td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>keywordEnforcer</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-flush~3"></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>flush</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-logmsgabort~3"></span>
+              type(<a href='../type/esmf_logmsg_flag.html'>ESMF_LogMsg_Flag</a>),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>logmsgAbort</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-maxelements~3"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>maxElements</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-logmsglist~4"></span>
+              type(<a href='../type/esmf_logmsg_flag.html'>ESMF_LogMsg_Flag</a>),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>logmsgList</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-errormask~2"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>errorMask</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-trace~3"></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>trace</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-highrestimestampflag~4"></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>highResTimestampFlag</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-indentcount~8"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>indentCount</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-noprefix~3"></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>noPrefix</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~2956"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">ESMF_LogSet</span><span class="p">(</span><span class="nb">log</span><span class="p">,</span><span class="w"> </span><span class="n">keywordEnforcer</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="nb">flush</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">logmsgAbort</span><span class="p">,</span><span class="w"> </span><span class="n">maxElements</span><span class="p">,</span><span class="w"> </span><span class="n">logmsgList</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">errorMask</span><span class="p">,</span><span class="w"> </span><span class="n">trace</span><span class="p">,</span><span class="w"> </span><span class="n">highResTimestampFlag</span><span class="p">,</span><span class="w"> </span><span class="n">indentCount</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">noPrefix</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!</span>
+<span class="c">! !ARGUMENTS:</span>
+<span class="c">!</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Log</span><span class="p">),</span><span class="w">         </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="nb">log</span>
+<span class="k">type</span><span class="p">(</span><span class="n">ESMF_KeywordEnforcer</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="kd">::</span><span class="w"> </span><span class="n">keywordEnforcer</span><span class="w"> </span><span class="c">! must use keywords below</span>
+<span class="w">      </span><span class="kt">logical</span><span class="p">,</span><span class="w">                </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="nb">flush</span>
+<span class="nb">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_LogMsg_Flag</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">logmsgAbort</span><span class="p">(:)</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">                </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">maxElements</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_LogMsg_Flag</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">logmsgList</span><span class="p">(:)</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">                </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">errorMask</span><span class="p">(:)</span>
+<span class="w">      </span><span class="kt">logical</span><span class="p">,</span><span class="w">                </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">trace</span>
+<span class="w">      </span><span class="kt">logical</span><span class="p">,</span><span class="w">                </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">highResTimestampFlag</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">                </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">indentCount</span>
+<span class="w">      </span><span class="kt">logical</span><span class="p">,</span><span class="w">                </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">noPrefix</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">                </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w">   </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+
+<span class="c">!</span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">!      This subroutine sets the properties for the Log object.</span>
+<span class="c">!</span>
+<span class="c">!      The arguments are:</span>
+<span class="c">!      \begin{description}</span>
+<span class="c">!</span>
+<span class="c">!      \item [{[log]}]</span>
+<span class="c">!            An optional {\tt ESMF\_Log} object.  The default is to use the</span>
+<span class="c">!            default log that was opened at {\tt ESMF\_Initialize} time.</span>
+<span class="c">!      \item [{[flush]}]</span>
+<span class="c">!            If set to {\tt .true.}, flush log messages immediately, rather</span>
+<span class="c">!            than buffering them.  Default is to flush after {\tt maxElements}</span>
+<span class="c">!            messages.</span>
+<span class="c">!      \item [{[logmsgAbort]}]</span>
+<span class="c">!            Sets the condition on which ESMF aborts.  The array</span>
+<span class="c">!            can contain any combination of {\tt ESMF\_LOGMSG} named constants.  These</span>
+<span class="c">!            named constants are described in section \ref{const:logmsgflag}.</span>
+<span class="c">!            Default is to always continue processing.</span>
+<span class="c">!      \item [{[maxElements]}]</span>
+<span class="c">!            Maximum number of elements in the Log buffer before flushing occurs.</span>
+<span class="c">!            Default is to flush when 10 messages have been accumulated.</span>
+<span class="c">!      \item [{[logmsgList]}]</span>
+<span class="c">!            An array of message types that will be logged.  Log write requests</span>
+<span class="c">!            not matching the list will be ignored.  If an empty array is</span>
+<span class="c">!            provided, no messages will be logged.</span>
+<span class="c">!            See section \ref{const:logmsgflag} for a list of</span>
+<span class="c">!            valid message types.  By default, all non-trace messages will be</span>
+<span class="c">!            logged.</span>
+<span class="c">!      \item [{[errorMask]}]</span>
+<span class="c">!            List of error codes that will {\em not} be logged as errors.</span>
+<span class="c">!            Default is to log all error codes.</span>
+<span class="c">!      \item [{[trace]}]</span>
+<span class="c">!            \begin{sloppypar}</span>
+<span class="c">!            If set to {\tt .true.}, calls such as {\tt ESMF\_LogFoundError()},</span>
+<span class="c">!            {\tt ESMF\_LogFoundAllocError()}, and</span>
+<span class="c">!            {\tt ESMF\_LogFoundDeallocError()}</span>
+<span class="c">!            will be logged in the default log files.  This option is intended</span>
+<span class="c">!            to be used as a tool for debugging and program flow tracing</span>
+<span class="c">!            within the ESMF library. Voluminous output may appear in the log,</span>
+<span class="c">!            with a consequent slowdown in performance.  Therefore, it is</span>
+<span class="c">!            recommended that this option only be enabled before a problematic</span>
+<span class="c">!            call to a ESMF method, and disabled afterwards. Default is to</span>
+<span class="c">!            not trace these calls.</span>
+<span class="c">!           \end{sloppypar}</span>
+<span class="c">!      \item [{[highResTimestampFlag]}]</span>
+<span class="c">!            Sets the extended elapsed timestamp flag.  If set to {\tt .true.}, a timestamp</span>
+<span class="c">!            from {\tt ESMF\_VMWtime} will be included in each log message.  Default is</span>
+<span class="c">!            to not add the additional timestamps.</span>
+<span class="c">!      \item [{[indentCount]}]</span>
+<span class="c">!            Number of leading white spaces.</span>
+<span class="c">!      \item [{[noPrefix]}]</span>
+<span class="c">!            If set to {\tt .false.}, log messages are prefixed with time stamps,</span>
+<span class="c">!            message type and PET number.  If set to {\tt .true.} the messages will be</span>
+<span class="c">!            written without the prefixes.</span>
+<span class="c">!      \item [{[rc]}]</span>
+<span class="c">!            Return code; equals {\tt ESMF\_SUCCESS} if there are no errors.</span>
+<span class="c">!      \end{description}</span>
+<span class="c">!</span>
+<span class="c">!EOP</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="p">,</span><span class="w"> </span><span class="n">status2</span>
+<span class="w">    </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">isDefault</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_LogPrivate</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w">          </span><span class="kd">::</span><span class="w"> </span><span class="nb">alog</span>
+<span class="nb">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_LogEntry</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localbuf</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Logical</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">traceFlag_c</span>
+
+<span class="w">    </span><span class="n">ESMF_INIT_CHECK_SET_SHALLOW</span><span class="p">(</span><span class="n">ESMF_LogGetInit</span><span class="p">,</span><span class="n">ESMF_LogInit</span><span class="p">,</span><span class="nb">log</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">nullify</span><span class="p">(</span><span class="nb">alog</span><span class="p">)</span><span class="w"> </span><span class="c">! ensure that the association status is well defined</span>
+
+<span class="w">    </span><span class="n">isDefault</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="nb">log</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="nb">log</span><span class="p">%</span><span class="n">logTableIndex</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">         </span><span class="nb">alog</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ESMF_LogTable</span><span class="p">(</span><span class="nb">log</span><span class="p">%</span><span class="n">logTableIndex</span><span class="p">)</span>
+<span class="w">      </span><span class="k">endif</span>
+<span class="k">    else</span>
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogDefault</span><span class="p">%</span><span class="n">logTableIndex</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="nb">alog</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ESMF_LogTable</span><span class="p">(</span><span class="n">ESMF_LogDefault</span><span class="p">%</span><span class="n">logTableIndex</span><span class="p">)</span>
+<span class="w">        </span><span class="n">isDefault</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">      </span><span class="k">end if</span>
+<span class="k">    endif</span>
+
+<span class="w">    </span><span class="c">! Initialize return code; assume routine not implemented</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">associated</span><span class="p">(</span><span class="nb">alog</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+
+<span class="k">      </span><span class="n">ESMF_INIT_CHECK_SET_SHALLOW</span><span class="p">(</span><span class="n">ESMF_LogPrivateGetInit</span><span class="p">,</span><span class="n">ESMF_LogPrivateInit</span><span class="p">,</span><span class="nb">alog</span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">alog</span><span class="p">%</span><span class="n">FileIsOpen</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_TRUE</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="p">.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">isDefault</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        write</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_UtilIOStderr</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="s2">&quot;: ESMF_Log not open -- cannot ESMF_LogSet().&quot;</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_UtilIOUnitFlush</span><span class="p">(</span><span class="n">ESMF_UtilIOStderr</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_CANNOT_SET</span>
+<span class="w">        </span><span class="k">return</span>
+<span class="k">      endif</span>
+
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="nb">flush</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="nb">alog</span><span class="p">%</span><span class="n">flushImmediately</span><span class="o">=</span><span class="nb">flush</span>
+<span class="nb">      </span><span class="k">endif</span>
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">logmsgAbort</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="nb">associated</span><span class="w"> </span><span class="p">(</span><span class="nb">alog</span><span class="p">%</span><span class="n">logmsgAbort</span><span class="p">))</span><span class="w"> </span><span class="k">deallocate</span><span class="w"> </span><span class="p">(</span><span class="nb">alog</span><span class="p">%</span><span class="n">logmsgAbort</span><span class="p">)</span>
+<span class="w">        </span><span class="k">allocate</span><span class="w"> </span><span class="p">(</span><span class="nb">alog</span><span class="p">%</span><span class="n">logmsgAbort</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="n">logmsgAbort</span><span class="p">)))</span>
+<span class="w">        </span><span class="nb">alog</span><span class="p">%</span><span class="n">logmsgAbort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">logmsgAbort</span>
+<span class="w">      </span><span class="k">endif</span>
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">maxElements</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="n">maxElements</span><span class="o">&gt;</span><span class="mi">0</span><span class="w"> </span><span class="p">.</span><span class="nb">AND</span><span class="p">.</span><span class="w"> </span><span class="nb">alog</span><span class="p">%</span><span class="n">maxElements</span><span class="o">/=</span><span class="n">maxElements</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          allocate</span><span class="p">(</span><span class="n">localbuf</span><span class="p">(</span><span class="n">maxElements</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">status</span><span class="p">)</span>
+
+<span class="w">          </span><span class="c">! if the current number of log entries is greater than the new</span>
+<span class="w">          </span><span class="c">! maxElements, then call flush.  Otherwise copy old contents over.</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">alog</span><span class="p">%</span><span class="n">fIndex</span><span class="p">.</span><span class="n">ge</span><span class="p">.</span><span class="n">maxElements</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            call </span><span class="n">ESMF_LogFlush</span><span class="p">(</span><span class="nb">log</span><span class="p">,</span><span class="n">rc</span><span class="o">=</span><span class="n">status</span><span class="p">)</span>
+<span class="w">          </span><span class="k">else</span>
+<span class="k">            do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="nb">alog</span><span class="p">%</span><span class="n">fIndex</span>
+<span class="w">              </span><span class="k">call </span><span class="n">ESMF_LogEntryCopy</span><span class="p">(</span><span class="nb">alog</span><span class="p">%</span><span class="n">LOG_ENTRY</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">localbuf</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">status</span><span class="p">)</span>
+<span class="w">            </span><span class="k">enddo</span>
+<span class="k">          endif</span>
+<span class="k">          deallocate</span><span class="p">(</span><span class="nb">alog</span><span class="p">%</span><span class="n">LOG_ENTRY</span><span class="p">,</span><span class="nb">stat</span><span class="o">=</span><span class="n">status</span><span class="p">)</span>
+<span class="w">          </span><span class="nb">alog</span><span class="p">%</span><span class="n">LOG_ENTRY</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">localbuf</span>
+<span class="w">          </span><span class="nb">alog</span><span class="p">%</span><span class="n">maxElements</span><span class="o">=</span><span class="n">maxElements</span>
+<span class="w">        </span><span class="k">endif</span>
+<span class="k">      endif</span>
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">errorMask</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="nb">alog</span><span class="p">%</span><span class="n">errorMaskCount</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          deallocate</span><span class="p">(</span><span class="nb">alog</span><span class="p">%</span><span class="n">errorMask</span><span class="p">)</span>
+<span class="w">        </span><span class="k">endif</span>
+<span class="k">        </span><span class="nb">alog</span><span class="p">%</span><span class="n">errorMaskCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">errorMask</span><span class="p">)</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="nb">alog</span><span class="p">%</span><span class="n">errorMask</span><span class="p">(</span><span class="nb">alog</span><span class="p">%</span><span class="n">errorMaskCount</span><span class="p">))</span>
+<span class="w">        </span><span class="nb">alog</span><span class="p">%</span><span class="n">errorMask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">errorMask</span><span class="w">  </span><span class="c">! copy the content of the errorMask argument</span>
+<span class="w">      </span><span class="k">endif</span>
+
+<span class="w">      </span><span class="c">! currently the connection between F90 and C++ side of LogErr is only well</span>
+<span class="w">      </span><span class="c">! defined for the default Log, so only then call the C++ side LogSet().</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isDefault</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="c">!TODO: I am only implementing this to get the errorMask into the C++ side</span>
+<span class="w">        </span><span class="c">!TODO: LogErr needs major help anyway, so someday this may get sorted out</span>
+<span class="w">        </span><span class="c">!TODO: to work for more general cases. *gjt*</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">errorMask</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          call </span><span class="n">c_ESMC_LogSet</span><span class="p">(</span><span class="nb">alog</span><span class="p">%</span><span class="n">errorMask</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="nb">alog</span><span class="p">%</span><span class="n">errorMaskCount</span><span class="p">,</span><span class="n">status2</span><span class="p">)</span>
+<span class="w">        </span><span class="k">endif</span>
+<span class="k">      endif</span>
+
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="w"> </span><span class="p">(</span><span class="n">logmsgList</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="nb">associated</span><span class="w"> </span><span class="p">(</span><span class="nb">alog</span><span class="p">%</span><span class="n">logmsgList</span><span class="p">))</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="k">deallocate</span><span class="w"> </span><span class="p">(</span><span class="nb">alog</span><span class="p">%</span><span class="n">logmsgList</span><span class="p">)</span>
+<span class="w">          </span><span class="k">allocate</span><span class="w"> </span><span class="p">(</span><span class="nb">alog</span><span class="p">%</span><span class="n">logmsgList</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="n">logmsgList</span><span class="p">)))</span>
+<span class="w">          </span><span class="nb">alog</span><span class="p">%</span><span class="n">logmsgList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">logmsgList</span>
+<span class="w">      </span><span class="k">end if</span>
+
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="w"> </span><span class="p">(</span><span class="n">trace</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="nb">alog</span><span class="p">%</span><span class="n">traceFlag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trace</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isDefault</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">          </span><span class="c">!TODO: Should work with user logs as well.  wws...</span>
+<span class="w">          </span><span class="n">traceFlag_c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trace</span>
+<span class="w">          </span><span class="k">call </span><span class="n">c_ESMC_LogSetTrace</span><span class="w"> </span><span class="p">(</span><span class="n">traceFlag_c</span><span class="p">,</span><span class="w"> </span><span class="n">status2</span><span class="p">)</span>
+<span class="w">        </span><span class="k">end if</span>
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="n">trace</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          call </span><span class="n">ESMF_LogWrite</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!&#39;</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_LOGMSG_TRACE</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="o">=</span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w"> </span><span class="nb">log</span><span class="o">=</span><span class="nb">log</span><span class="p">)</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_LogWrite</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;!!!        TRACING IS ENABLED         !!!&#39;</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_LOGMSG_TRACE</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="o">=</span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w"> </span><span class="nb">log</span><span class="o">=</span><span class="nb">log</span><span class="p">)</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_LogWrite</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;!!! MAY CAUSE SLOWDOWN IN PERFORMANCE !!!&#39;</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_LOGMSG_TRACE</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="o">=</span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w"> </span><span class="nb">log</span><span class="o">=</span><span class="nb">log</span><span class="p">)</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_LogWrite</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!&#39;</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_LOGMSG_TRACE</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="o">=</span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w"> </span><span class="nb">log</span><span class="o">=</span><span class="nb">log</span><span class="p">)</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="k">          call </span><span class="n">ESMF_LogWrite</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!&#39;</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_LOGMSG_TRACE</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="o">=</span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w"> </span><span class="nb">log</span><span class="o">=</span><span class="nb">log</span><span class="p">)</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_LogWrite</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;!!!       TRACING is disabled         !!!&#39;</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_LOGMSG_TRACE</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="o">=</span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w"> </span><span class="nb">log</span><span class="o">=</span><span class="nb">log</span><span class="p">)</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_LogWrite</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!&#39;</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_LOGMSG_TRACE</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="o">=</span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w"> </span><span class="nb">log</span><span class="o">=</span><span class="nb">log</span><span class="p">)</span>
+<span class="w">        </span><span class="k">end if</span>
+<span class="k">      end if</span>
+
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="w"> </span><span class="p">(</span><span class="n">highResTimestampFlag</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="nb">alog</span><span class="p">%</span><span class="n">highResTimestampFlag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">highResTimestampFlag</span>
+<span class="w">      </span><span class="k">end if</span>
+
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="w"> </span><span class="p">(</span><span class="n">indentCount</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="nb">alog</span><span class="p">%</span><span class="n">indentCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">indentCount</span>
+<span class="w">      </span><span class="k">end if</span>
+
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="w"> </span><span class="p">(</span><span class="n">noPrefix</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="n">noPrefix</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="p">.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">isDefault</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          </span><span class="nb">alog</span><span class="p">%</span><span class="n">noPrefix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">noPrefix</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="k">          call </span><span class="n">ESMF_LogWrite</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Can not set noPrefix on default Log&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="o">=</span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w"> </span><span class="nb">log</span><span class="o">=</span><span class="nb">log</span><span class="p">)</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_CANNOT_SET</span>
+<span class="w">          </span><span class="k">return</span>
+<span class="k">        end if</span>
+<span class="k">      end if</span>
+
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">rc</span><span class="o">=</span><span class="n">ESMF_SUCCESS</span>
+<span class="w">      </span><span class="k">endif</span>
+<span class="k">    endif</span>
+
+<span class="k">end subroutine </span><span class="n">ESMF_LogSet</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

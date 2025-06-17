@@ -1,0 +1,1204 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_ConfigOverviewEx &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_ConfigOverviewEx      <small>Program</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.2% of total for programs.">221 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_ConfigOverviewEx.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_configoverviewex.f90.html'>ESMF_ConfigOverviewEx.F90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_ConfigOverviewEx</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/esmf_configoverviewex.html#variable-fn1">fn1</a>
+            <a class="list-group-item" href="../program/esmf_configoverviewex.html#variable-fn2">fn2</a>
+            <a class="list-group-item" href="../program/esmf_configoverviewex.html#variable-fn3">fn3</a>
+            <a class="list-group-item" href="../program/esmf_configoverviewex.html#variable-fname~4">fname</a>
+            <a class="list-group-item" href="../program/esmf_configoverviewex.html#variable-input_file">input_file</a>
+            <a class="list-group-item" href="../program/esmf_configoverviewex.html#variable-failmsg~128">failMsg</a>
+            <a class="list-group-item" href="../program/esmf_configoverviewex.html#variable-testname~61">testname</a>
+            <a class="list-group-item" href="../program/esmf_configoverviewex.html#variable-finalrc~62">finalrc</a>
+            <a class="list-group-item" href="../program/esmf_configoverviewex.html#variable-i~383">i</a>
+            <a class="list-group-item" href="../program/esmf_configoverviewex.html#variable-i_n">i_n</a>
+            <a class="list-group-item" href="../program/esmf_configoverviewex.html#variable-j~146">j</a>
+            <a class="list-group-item" href="../program/esmf_configoverviewex.html#variable-rc~2677">rc</a>
+            <a class="list-group-item" href="../program/esmf_configoverviewex.html#variable-result~127">result</a>
+            <a class="list-group-item" href="../program/esmf_configoverviewex.html#variable-param_1">param_1</a>
+            <a class="list-group-item" href="../program/esmf_configoverviewex.html#variable-radius">radius</a>
+            <a class="list-group-item" href="../program/esmf_configoverviewex.html#variable-table">table</a>
+            <a class="list-group-item" href="../program/esmf_configoverviewex.html#variable-cf">cf</a>
+            <a class="list-group-item" href="../program/esmf_configoverviewex.html#variable-hconfig~227">hconfig</a>
+            <a class="list-group-item" href="../program/esmf_configoverviewex.html#variable-vm~485">vm</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../program/esmf_configoverviewex.html#src">ESMF_ConfigOverviewEx</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='../module/esmf.html'>ESMF</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf_testmod.html'>ESMF_TestMod</a></li>
+              </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    
+
+
+    <section>
+    <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fn1"></span>
+              character(len=ESMF_MAXPATHLEN)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fn1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fn2"></span>
+              character(len=ESMF_MAXPATHLEN)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fn2</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fn3"></span>
+              character(len=ESMF_MAXPATHLEN)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fn3</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fname~4"></span>
+              character(len=ESMF_MAXPATHLEN)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fname</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-input_file"></span>
+              character(len=ESMF_MAXPATHLEN)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>input_file</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-failmsg~128"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>failMsg</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-testname~61"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>testname</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-finalrc~62"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>finalrc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i~383"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i_n"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i_n</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-j~146"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>j</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~2677"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-result~127"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>result</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-param_1"></span>
+              real
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>param_1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-radius"></span>
+              real
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>radius</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-table"></span>
+              real
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>table</strong>(7,3)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-cf"></span>
+              type(<a href='../type/esmf_config.html'>ESMF_Config</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>cf</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-hconfig~227"></span>
+              type(<a href='../type/esmf_hconfig.html'>ESMF_HConfig</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>hconfig</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vm~485"></span>
+              type(<a href='../type/esmf_vm.html'>ESMF_VM</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>vm</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+    
+
+    
+
+
+    
+
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">      </span><span class="k">program </span><span class="n">ESMF_ConfigOverviewEx</span>
+
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!ESMF_EXAMPLE        String used by test script to count examples.</span>
+<span class="c">!==============================================================================</span>
+<span class="c">!</span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">!BOE</span>
+<span class="c">! This example/test code performs simple Config/Resource File routines. It does not</span>
+<span class="c">! include attaching a Config to a component. The important thing to remember there</span>
+<span class="c">! is that you can have one Config per component. </span>
+<span class="c">!</span>
+<span class="c">! There are two methodologies for accessing data in a Resource File.  This example will</span>
+<span class="c">! demonstrate both.</span>
+
+<span class="c">! Note the API section contains a complete description of arguments in</span>
+<span class="c">! the methods/functions demonstrated in this example.</span>
+<span class="c">!EOE </span>
+<span class="cp">#include &quot;ESMF.h&quot;</span>
+
+<span class="w">      </span><span class="c">! ESMF Framework module</span>
+<span class="w">      </span><span class="k">use </span><span class="n">ESMF</span>
+<span class="w">      </span><span class="k">use </span><span class="n">ESMF_TestMod</span>
+<span class="w">      </span><span class="k">implicit none</span>
+
+<span class="w">      </span><span class="c">! Local variables</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w">             </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="k">result</span>
+<span class="k">      type</span><span class="p">(</span><span class="n">ESMF_VM</span><span class="p">)</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">vm</span>
+
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">testname</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">failMsg</span>
+
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Variable declarations}</span>
+
+<span class="c">! The following are the variable declarations used as arguments in the following code </span>
+<span class="c">! fragments. They represent the locals names for the variables listed in the Resource </span>
+<span class="c">! File (RF).  Note they do not need to be the same.</span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXPATHLEN</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">fname</span><span class="w"> </span><span class="c">! config file name</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXPATHLEN</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">fn1</span><span class="p">,</span><span class="w"> </span><span class="n">fn2</span><span class="p">,</span><span class="w"> </span><span class="n">fn3</span><span class="p">,</span><span class="w"> </span><span class="n">input_file</span><span class="w"> </span><span class="c">! strings to be read in</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span><span class="w">            </span><span class="c">! error return code (0 is OK)</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">i_n</span><span class="w">           </span><span class="c">! the first constant in the RF</span>
+<span class="w">      </span><span class="kt">real</span><span class="w">          </span><span class="kd">::</span><span class="w"> </span><span class="n">param_1</span><span class="w">       </span><span class="c">! the second constant in the RF</span>
+<span class="w">      </span><span class="kt">real</span><span class="w">          </span><span class="kd">::</span><span class="w"> </span><span class="n">radius</span><span class="w">        </span><span class="c">! radius of the earth</span>
+<span class="w">      </span><span class="kt">real</span><span class="w">          </span><span class="kd">::</span><span class="w"> </span><span class="n">table</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="w">    </span><span class="c">! an array to hold the table in the RF</span>
+
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Config</span><span class="p">)</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">cf</span><span class="w">      </span><span class="c">! the Config itself</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_HConfig</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">hconfig</span><span class="w"> </span><span class="c">! HConfig variable</span>
+<span class="c">!EOC</span>
+
+<span class="c">!--------------------------------------------------------</span>
+<span class="c">! Set up the status messages and initialize the program</span>
+<span class="c">!--------------------------------------------------------</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">finalrc</span>
+<span class="w">      </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="w">                      </span><span class="c">! Establish initial success</span>
+
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Example failure&quot;</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">testname</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Example ESMF_ConfigOverviewEx&quot;</span>
+
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+
+
+<span class="w">  </span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_Initialize</span><span class="p">(</span><span class="n">defaultlogfilename</span><span class="o">=</span><span class="s2">&quot;ConfigOverviewEx.Log&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="n">logkindflag</span><span class="o">=</span><span class="n">ESMF_LOGKIND_MULTI</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w">                 </span><span class="c">! Initialize</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*****&#39;call ESMF_Initialize&#39; failed&quot;</span>
+<span class="w">      </span><span class="k">endif</span>
+<span class="k">  </span>
+<span class="k">      call </span><span class="n">ESMF_VMGetGlobal</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w">               </span><span class="c">! Establish the VM</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*****&#39; call to ESMF_VMGetGlobal&#39; failed&quot;</span>
+<span class="w">      </span><span class="k">endif</span>
+
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!  Begin the Example</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Creation of a Config}</span>
+
+<span class="c">! While there are two methodologies for accessing the data within a Resource File, </span>
+<span class="c">! there is only one way to create the initial Config and load its ASCII text into </span>
+<span class="c">! memory. This is the first step in the process.</span>
+
+<span class="c">! Note that subsequent calls to {\tt ESMF\_ConfigLoadFile} will OVERWRITE the current</span>
+<span class="c">! Config NOT append to it. There is no means of appending to a Config. </span>
+<span class="c">!</span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="n">cf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_ConfigCreate</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w">             </span><span class="c">! Create the empty Config</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*****&#39; call ESMF_ConfigCreate&#39; failed&quot;</span>
+<span class="w">      </span><span class="k">endif</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="n">fname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;myResourceFile.rc&quot;</span><span class="w">                </span><span class="c">! Name the Resource File</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_ConfigLoadFile</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span><span class="w"> </span><span class="n">fname</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="c">! Load the Resource File </span>
+<span class="w">                                                 </span><span class="c">! into the empty Config</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*****&#39; call ESMF_ConfigLoadFile&#39; failed&quot;</span>
+<span class="w">      </span><span class="k">endif</span>
+
+<span class="c">!----------------------------------------------------------------</span>
+<span class="c">! First Method of Retrieval</span>
+<span class="c">!----------------------------------------------------------------</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{How to retrieve a label with a single value}</span>
+<span class="c">! The first method for retrieving information from the </span>
+<span class="c">! Resource File takes advantage of the &lt;label,value&gt; relationship</span>
+<span class="c">! within the file and access the data in a dictionary-like manner. This is the</span>
+<span class="c">! simplest methodology, but it does imply the use of only one value per label</span>
+<span class="c">! in the Resource File.  </span>
+<span class="c">! </span>
+<span class="c">! Remember,</span>
+<span class="c">! that the order in which a particular label/value pair is retrieved</span>
+<span class="c">! is not dependent upon the order which they exist within the Resource File. </span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC </span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_ConfigGetAttribute</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span><span class="w"> </span><span class="n">radius</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;radius_of_the_earth:&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                                 </span><span class="n">default</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*****&#39; call ESMF_ConfigGetAttribute&#39; for radius failed&quot;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="k">        print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;---------------------------------------------------------------&quot;</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Results from using the dictionary-like method of data retrieval&quot;</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;The radius of the earth was retrieved from the Resource File&quot;</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Its value is: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">radius</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;---------------------------------------------------------------&quot;</span>
+<span class="w">    </span><span class="k">endif</span>
+
+<span class="k">    if</span><span class="p">(</span><span class="n">radius</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="mf">6.37E6</span><span class="p">)</span><span class="k">then</span>
+<span class="k">      </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;******** Radius not retrieved correctly&quot;</span>
+<span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="nb">trim</span><span class="w"> </span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span>
+<span class="w">    </span><span class="k">endif</span>
+
+
+<span class="c">!BOE</span>
+<span class="c">! Note that the colon must be included in the label string when using this</span>
+<span class="c">! methodology.  It is also important to provide a default value in case the label</span>
+<span class="c">! does not exist in the file</span>
+<span class="c">!EOE</span>
+
+
+<span class="c">!BOE</span>
+<span class="c">! This methodology works for all types. The following is an example of retrieving a </span>
+<span class="c">! string:</span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC </span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_ConfigGetAttribute</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span><span class="w"> </span><span class="n">input_file</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;input_file_name:&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                                 </span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;./default.nc&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*****&#39; call ESMF_ConfigGetAttribute&#39;  for input_file failed&quot;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="k">        print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Results from using the dictionary-like method of data retrieval of a string&quot;</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;The input file name (a string) was retrieved from the Resource File&quot;</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Its value is: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">trim</span><span class="w"> </span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;---------------------------------------------------------------&quot;</span>
+<span class="w">    </span><span class="k">endif</span>
+
+<span class="k">    if</span><span class="p">(</span><span class="n">input_file</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="s2">&quot;dummy_input.nc&quot;</span><span class="p">)</span><span class="k">then</span>
+<span class="k">       </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">       </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;******* input_file not retrieved correctly&quot;</span>
+<span class="w">       </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="nb">trim</span><span class="w"> </span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span>
+<span class="w">    </span><span class="k">endif</span>
+
+<span class="c">!BOE</span>
+<span class="c">! The same code fragment can be used to demonstrate what happens when the label is not </span>
+<span class="c">! present.  Note that &quot;file\_name&quot; does not exist in the Resource File. The result of </span>
+<span class="c">! its absence is the default value provided in the call.</span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC </span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_ConfigGetAttribute</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span><span class="w"> </span><span class="n">input_file</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;file_name:&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                                 </span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;./default.nc&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*****&#39; call ESMF_ConfigGetAttribute&#39;  for input_file failed&quot;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="k">        print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Results when the label in the call does not exist in the Resource File&quot;</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;The default value is returned.&quot;</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Its value is: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">trim</span><span class="w"> </span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;---------------------------------------------------------------&quot;</span>
+<span class="w">    </span><span class="k">endif</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="n">input_file</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="s2">&quot;./default.nc&quot;</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;****** Demonstration of default value (input_file) not working correctly&quot;</span>
+<span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="nb">trim</span><span class="w"> </span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span>
+<span class="w">    </span><span class="k">endif</span>
+<span class="c">!----------------------------------------------------------------</span>
+<span class="c">! Second Method of Retrieval</span>
+<span class="c">!----------------------------------------------------------------</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{How to retrieve a label with multiple values}</span>
+<span class="c">! When there are multiple, mixed-typed values associated with a label, the </span>
+<span class="c">! values can be retrieved in two steps:  1) Use ESMF\_ConfigFindLabel() </span>
+<span class="c">! to find the label in the Config class; 2) use</span>
+<span class="c">! ESMF\_ConfigGetAttribute() without the optional &#39;label&#39; argument to </span>
+<span class="c">! retrieve the values one at a time, reading from left to right in</span>
+<span class="c">! the record. </span>
+<span class="c">!</span>
+<span class="c">! A second reminder that the order in which a particular label/value pair is </span>
+<span class="c">! retrieved is not dependent upon the order which they exist within the </span>
+<span class="c">! Resource File. The label used in this method allows the user to skip to</span>
+<span class="c">! any point in the file. </span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_ConfigFindLabel</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;constants:&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="c">! Step a) Find the </span>
+<span class="w">                                                         </span><span class="c">! label </span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*****&#39; call ESMF_ConfigFindLabel&#39; failed&quot;</span>
+<span class="w">      </span><span class="k">endif</span><span class="w"> </span>
+
+<span class="c">!BOE</span>
+<span class="c">! Two constants, radius and i\_n, can now be retrieved without having to specify their</span>
+<span class="c">! label or use an array. They are also different types.</span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_ConfigGetAttribute</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span><span class="w"> </span><span class="n">param_1</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="c">! Step b) read in the </span>
+<span class="w">                                                       </span><span class="c">! first constant in </span>
+<span class="w">                                                       </span><span class="c">! the sequence</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_ConfigGetAttribute</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span><span class="w"> </span><span class="n">i_n</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w">     </span><span class="c">! Step c) read in the </span>
+<span class="w">                                                       </span><span class="c">! second constant in </span>
+<span class="w">                                                       </span><span class="c">! the sequence</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*****&#39; call ESMF_ConfigGetAttribute&#39; failed&quot;</span>
+<span class="w">      </span><span class="k">else</span>
+<span class="k">        print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Results from retrieving multiple values:&quot;</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;The first constant was was retrieved from the Resource File&quot;</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Its value is: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">param_1</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;The second constant was was retrieved from the Resource File&quot;</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Its value is: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i_n</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;---------------------------------------------------------------&quot;</span>
+<span class="w">      </span><span class="k">endif</span>
+
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="n">param_1</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="mf">3.1415</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">i_n</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="mi">25</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*****The constants param_1 and i_n did not retrieve correctly from the file&quot;</span>
+<span class="w">      </span><span class="k">endif</span>
+
+<span class="c">!BOE</span>
+<span class="c">! This methodology also works with strings.</span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">       </span><span class="k">call </span><span class="n">ESMF_ConfigFindLabel</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;my_file_names:&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w">                       </span><span class="c">! Step a) find the label</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*****&#39; call ESMF_ConfigFindLabel&#39; failed&quot;</span>
+<span class="w">      </span><span class="k">endif</span>
+
+<span class="c">!BOC</span>
+<span class="w">       </span><span class="k">call </span><span class="n">ESMF_ConfigGetAttribute</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span><span class="w"> </span><span class="n">fn1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w">                    </span><span class="c">! Step b) retrieve the 1st filename</span>
+<span class="w">       </span><span class="k">call </span><span class="n">ESMF_ConfigGetAttribute</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span><span class="w"> </span><span class="n">fn2</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w">                    </span><span class="c">! Step c) retrieve the 2nd filename</span>
+<span class="w">       </span><span class="k">call </span><span class="n">ESMF_ConfigGetAttribute</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span><span class="w"> </span><span class="n">fn3</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w">                    </span><span class="c">! Step d) retrieve the 3rd filename</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*****&#39; call ESMF_ConfigGetAttribute&#39; for multiple file name retrieval failed&quot;</span>
+<span class="w">      </span><span class="k">else</span>
+<span class="k">        print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Results from retrieving multi-value strings:&quot;</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;The first file name was was retrieved from the Resource File&quot;</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Its value is: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">trim</span><span class="w"> </span><span class="p">(</span><span class="n">fn1</span><span class="p">)</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;The second file name was was retrieved from the Resource File&quot;</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Its value is: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">trim</span><span class="w"> </span><span class="p">(</span><span class="n">fn2</span><span class="p">)</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;The third file name was was retrieved from the Resource File&quot;</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Its value is: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">trim</span><span class="w"> </span><span class="p">(</span><span class="n">fn3</span><span class="p">)</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;---------------------------------------------------------------&quot;</span>
+<span class="w">      </span><span class="k">endif</span>
+
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="n">fn1</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="s1">&#39;jan87.dat&#39;</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">fn2</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="s1">&#39;jan88.dat&#39;</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">fn3</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="s1">&#39;jan89.dat&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*****The file names not retrieved correctly using the multi-value method&quot;</span>
+<span class="w">      </span><span class="k">endif</span>
+
+<span class="c">!----------------------------------------------------------------</span>
+<span class="c">! Retrieval of a Table</span>
+<span class="c">!----------------------------------------------------------------</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{How to retrieve a table}</span>
+
+<span class="c">! To access tabular data, the user must use the multi-value method. </span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_ConfigFindLabel</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;my_table_name::&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w">        </span><span class="c">! Step a) Set the label location to the </span>
+<span class="w">                             </span><span class="c">! beginning of the table</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*****&#39; call ESMF_ConfigFindLabel&#39; failed&quot;</span>
+<span class="w">      </span><span class="k">endif</span>
+
+<span class="c">!BOE</span>
+<span class="c">! Subsequently, {\tt call ESMF\_ConfigNextLine()} is used to move the location </span>
+<span class="c">! to the next row of the table. The example table in the Resource File contains</span>
+<span class="c">! 7 rows and 3 columns (7,3).</span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_ConfigNextLine</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="c">! Step b) Increment the rows</span>
+<span class="w">        </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w">                         </span><span class="c">! Step c) Fill in the table </span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_ConfigGetAttribute</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span><span class="w"> </span><span class="n">table</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">enddo</span>
+<span class="k">      enddo</span>
+<span class="c">!EOC</span>
+
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*****&#39; call ESMF_ConfigGetAttribute&#39; for table retrieval failed&quot;</span>
+<span class="w">      </span><span class="k">else</span>
+<span class="k">        print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Results from retrieving a table&quot;</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;The (1,3) table value should be 263.0&quot;</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Its retrieved value is: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">table</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;The (6,1) table value should be 400&quot;</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Its retrieved value is: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">table</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;---------------------------------------------------------------&quot;</span>
+<span class="w">      </span><span class="k">endif</span>
+
+<span class="k">      if</span><span class="p">(</span><span class="n">table</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="mi">26</span><span class="mf">3.0</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">table</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="mi">400</span><span class="p">)</span><span class="k">then</span>
+<span class="k">        </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;***** Tables values are incorrect&quot;</span>
+<span class="w">      </span><span class="k">endif</span>
+
+<span class="c">!----------------------------------------------------------------</span>
+<span class="c">! Destruction of a Config</span>
+<span class="c">!----------------------------------------------------------------</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Destruction of a Config}</span>
+
+<span class="c">! The work with the Config object {\tt cf} is finalized by callling</span>
+<span class="c">! {\tt ESMF\_ConfigDestroy()}.</span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_ConfigDestroy</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="c">! Destroy the Config object</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*****&#39;call ESMF_ConfigDestroy&#39; failed&quot;</span>
+<span class="w">      </span><span class="k">end if</span>
+
+<span class="c">!----------------------------------------------------------------</span>
+<span class="c">! YAML File</span>
+<span class="c">!----------------------------------------------------------------</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Loading a YAML file}</span>
+
+<span class="c">! The Config class supports loading of YAML files. As before, an empty Config</span>
+<span class="c">! object is created with {\tt ESMF\_ConfigCreate()} and then populated via the</span>
+<span class="c">! {\tt ESMF\_ConfigLoadFile()} method.</span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="n">cf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_ConfigCreate</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w">          </span><span class="c">! Create the empty Config object</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*****&#39; call ESMF_ConfigCreate&#39; failed&quot;</span>
+<span class="w">      </span><span class="k">endif</span>
+<span class="c">!BOE</span>
+<span class="c">! Files ending in {\tt .yaml}, {\tt .yml}, or any combination of upper and lower</span>
+<span class="c">! case letters that can be mapped to these two options, are interpreted as YAML</span>
+<span class="c">! files. All other names are interpreted as classic Config {\em RFs} as</span>
+<span class="c">! documented earlier.</span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_ConfigLoadFile</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;myResourceFile.yaml&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! Load the YAML File</span>
+<span class="w">        </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w">                                    </span><span class="c">! into the empty Config object</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*****&#39; call ESMF_ConfigLoadFile&#39; failed&quot;</span>
+<span class="w">      </span><span class="k">endif</span>
+<span class="c">!BOE</span>
+<span class="c">! Here the {\tt myResourceFile.yaml} contains a YAML version of the previously</span>
+<span class="c">! used {\tt myResourceFile.rc} file contents:</span>
+<span class="c">!</span>
+<span class="c">! \begin{verbatim}</span>
+<span class="c">!# YAML representation of the myResourceFile.rc RF</span>
+<span class="c">!</span>
+<span class="c">!# mapping to sequences</span>
+<span class="c">!</span>
+<span class="c">!my_file_names:      [jan87.dat, jan88.dat, jan89.dat]  # all strings</span>
+<span class="c">!constants:          [3.1415, 25]                       # float and integer</span>
+<span class="c">!my_favorite_colors: [green, blue, 022]</span>
+<span class="c">!</span>
+<span class="c">!# mapping to scalars</span>
+<span class="c">!</span>
+<span class="c">!radius_of_the_earth:   6.37E6</span>
+<span class="c">!parameter_1:           89</span>
+<span class="c">!parameter_2:           78.2</span>
+<span class="c">!input_file_name:       dummy_input.nc</span>
+<span class="c">!</span>
+<span class="c">!# represent table as mapping to sequence of sequences</span>
+<span class="c">!</span>
+<span class="c">!my_table_name:</span>
+<span class="c">!- [1000,    3000,    263.0]</span>
+<span class="c">!- [ 925,    3000,    263.0]</span>
+<span class="c">!- [ 850,    3000,    263.0]</span>
+<span class="c">!- [ 700,    3000,    269.0]</span>
+<span class="c">!- [ 500,    3000,    287.0]</span>
+<span class="c">!- [ 400,    3000,    295.8]</span>
+<span class="c">!- [ 300,    3000,    295.8]</span>
+<span class="c">! \end{verbatim}</span>
+<span class="c">!</span>
+<span class="c">! Notice that YAML support is limited to a small subset of the full YAML</span>
+<span class="c">! language specification, allowing access through the classic Config API.</span>
+<span class="c">! Specifically, the top level in the YAML file is expected to be a mapping</span>
+<span class="c">! (dictionary) of scalar keys to any of the following three value options:</span>
+<span class="c">!  \begin{itemize}</span>
+<span class="c">!  \item Scalars</span>
+<span class="c">!  \item List of scalars</span>
+<span class="c">!  \item List of lists of scalars</span>
+<span class="c">!  \end{itemize}</span>
+<span class="c">! All other YAML constructs are silently ignored when loaded through this</span>
+<span class="c">! interface. Constructs successfully ingested become available in the</span>
+<span class="c">! {\tt cf} object, and can be accessed via the regular {\tt ESMF\_Config}</span>
+<span class="c">! methods as outlined in the previous sections.</span>
+<span class="c">!</span>
+<span class="c">! As an example, access the {\tt my\_table\_name} element:</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_ConfigFindLabel</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;my_table_name::&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w">        </span><span class="c">! Step a) Set the label location to the </span>
+<span class="w">                             </span><span class="c">! beginning of the table</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*****&#39; call ESMF_ConfigFindLabel&#39; failed&quot;</span>
+<span class="w">      </span><span class="k">endif</span>
+
+<span class="c">!BOE</span>
+<span class="c">! When done, the resources held by the Config object are released by calling</span>
+<span class="c">! the {\tt ESMF\_ConfigDestroy()} method.</span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_ConfigDestroy</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="c">! Destroy the Config object</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*****&#39;call ESMF_ConfigDestroy&#39; failed&quot;</span>
+<span class="w">      </span><span class="k">end if</span>
+
+<span class="c">!----------------------------------------------------------------</span>
+<span class="c">! YAML HConfig</span>
+<span class="c">!----------------------------------------------------------------</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Creating from HConfig object}</span>
+
+<span class="c">! The Config class supports creating a Config object from a HConfig object.</span>
+<span class="c">! Here the HConfig object is created from the same YAML file as used before.</span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="c">! Create HConfig object</span>
+<span class="w">      </span><span class="n">hconfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_HConfigCreate</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;myResourceFile.yaml&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*****&#39; call ESMF_HConfigCreate&#39; failed&quot;</span>
+<span class="w">      </span><span class="k">endif</span>
+<span class="c">!BOE</span>
+<span class="c">! The {\tt myResourceFile.yaml} contains the following YAML contents:</span>
+<span class="c">!</span>
+<span class="c">! \begin{verbatim}</span>
+<span class="c">!# YAML representation of the myResourceFile.rc RF</span>
+<span class="c">!</span>
+<span class="c">!# mapping to sequences</span>
+<span class="c">!</span>
+<span class="c">!my_file_names:      [jan87.dat, jan88.dat, jan89.dat]  # all strings</span>
+<span class="c">!constants:          [3.1415, 25]                       # float and integer</span>
+<span class="c">!my_favorite_colors: [green, blue, 022]</span>
+<span class="c">!</span>
+<span class="c">!# mapping to scalars</span>
+<span class="c">!</span>
+<span class="c">!radius_of_the_earth:   6.37E6</span>
+<span class="c">!parameter_1:           89</span>
+<span class="c">!parameter_2:           78.2</span>
+<span class="c">!input_file_name:       dummy_input.nc</span>
+<span class="c">!</span>
+<span class="c">!# represent table as mapping to sequence of sequences</span>
+<span class="c">!</span>
+<span class="c">!my_table_name:</span>
+<span class="c">!- [1000,    3000,    263.0]</span>
+<span class="c">!- [ 925,    3000,    263.0]</span>
+<span class="c">!- [ 850,    3000,    263.0]</span>
+<span class="c">!- [ 700,    3000,    269.0]</span>
+<span class="c">!- [ 500,    3000,    287.0]</span>
+<span class="c">!- [ 400,    3000,    295.8]</span>
+<span class="c">!- [ 300,    3000,    295.8]</span>
+<span class="c">! \end{verbatim}</span>
+<span class="c">!</span>
+<span class="c">! A Config object can be created from the HConfig object simply by passing</span>
+<span class="c">! {\tt hconfig} into {\tt ESMF\_CreateConfig()} as argument.</span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="c">! Create Config object from HConfig</span>
+<span class="w">      </span><span class="n">cf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_ConfigCreate</span><span class="p">(</span><span class="n">hconfig</span><span class="o">=</span><span class="n">hconfig</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*****&#39;call ESMF_HConfigCreate&#39; failed&quot;</span>
+<span class="w">      </span><span class="k">end if</span>
+
+<span class="c">!BOE</span>
+<span class="c">! Notice that {\tt cf} uses the specified {\tt hconfig} object via reference.</span>
+<span class="c">! It remains the callers responsibility to destroy the {\tt hconfig} object</span>
+<span class="c">! when finished. Care must be taken to {\em not} destroy until access via</span>
+<span class="c">! {\tt cf} is complete.</span>
+<span class="c">!</span>
+<span class="c">! Here, as an example, access the {\tt my\_table\_name} element:</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_ConfigFindLabel</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;my_table_name::&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w">        </span><span class="c">! Step a) Set the label location to the </span>
+<span class="w">                             </span><span class="c">! beginning of the table</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*****&#39; call ESMF_ConfigFindLabel&#39; failed&quot;</span>
+<span class="w">      </span><span class="k">endif</span>
+<span class="c">!EOE</span>
+
+<span class="c">! When done, the resources held by the Config object are released by calling</span>
+<span class="c">! the {\tt ESMF\_ConfigDestroy()} method.</span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_ConfigDestroy</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="c">! Destroy the Config object</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*****&#39;call ESMF_ConfigDestroy&#39; failed&quot;</span>
+<span class="w">      </span><span class="k">end if</span>
+
+<span class="c">!BOE</span>
+<span class="c">! As discussed above, the {\tt hconfig} object requires its own destroy call</span>
+<span class="c">! for a complete release.</span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_HConfigDestroy</span><span class="p">(</span><span class="n">hconfig</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="c">! Destroy the HConfig object</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;*****&#39;call ESMF_HConfigDestroy&#39; failed&quot;</span>
+<span class="w">      </span><span class="k">end if</span>
+
+
+<span class="c">!----------------------------------------------------------------</span>
+<span class="c">!----------------------------------------------------------------</span>
+
+<span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Final Word&quot;</span>
+<span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s2">&quot;---------------------------------------------------&quot;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">finalrc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;PASS: ESMF_ConfigOverviewEx.F90&quot;</span>
+<span class="w">      </span><span class="k">else</span>
+<span class="k">        print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;FAIL: ESMF_ConfigOverviewEx.F90&quot;</span>
+<span class="w">      </span><span class="k">end if</span>
+<span class="w"> </span>
+<span class="w">      </span><span class="c">! IMPORTANT: ESMF_STest() prints the PASS string and the # of processors in the log</span>
+<span class="w">      </span><span class="c">! file that the scripts grep for.</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_STest</span><span class="p">((</span><span class="n">finalrc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">testname</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">end program </span><span class="n">ESMF_ConfigOverviewEx</span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

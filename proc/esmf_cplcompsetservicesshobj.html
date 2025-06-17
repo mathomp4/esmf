@@ -1,0 +1,467 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_CplCompSetServicesShObj &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_CplCompSetServicesShObj
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.0% of total for procedures.">35 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_CplComp.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_cplcomp.f90.html'>ESMF_CplComp.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/esmf_cplcompmod.html'>ESMF_CplCompMod</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_CplCompSetServicesShObj</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/esmf_cplcompsetservicesshobj.html#src">ESMF_CplCompSetServicesShObj</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>private recursive subroutine ESMF_CplCompSetServicesShObj(cplcomp, userRoutine, keywordEnforcer, sharedObj, userRoutineFound, userRc, rc)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-cplcomp~57"></span>
+              type(<a href='../type/esmf_cplcomp.html'>ESMF_CplComp</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>cplcomp</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-userroutine~18"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>userRoutine</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-keywordenforcer~1072"></span>
+              type(<a href='../type/esmf_keywordenforcer.html'>ESMF_KeywordEnforcer</a>),
+            </td>
+<td></td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>keywordEnforcer</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sharedobj~10"></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>sharedObj</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-userroutinefound~3"></span>
+              logical,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>userRoutineFound</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-userrc~23"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>userRc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~3614"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">  </span><span class="k">recursive subroutine </span><span class="n">ESMF_CplCompSetServicesShObj</span><span class="p">(</span><span class="n">cplcomp</span><span class="p">,</span><span class="w"> </span><span class="n">userRoutine</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">keywordEnforcer</span><span class="p">,</span><span class="w"> </span><span class="n">sharedObj</span><span class="p">,</span><span class="w"> </span><span class="n">userRoutineFound</span><span class="p">,</span><span class="w"> </span><span class="n">userRc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!</span>
+<span class="c">! !ARGUMENTS:</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_CplComp</span><span class="p">),</span><span class="w">  </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">cplcomp</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w">    </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">userRoutine</span>
+<span class="k">type</span><span class="p">(</span><span class="n">ESMF_KeywordEnforcer</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="kd">::</span><span class="w"> </span><span class="n">keywordEnforcer</span><span class="w"> </span><span class="c">! must use keywords below</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w">    </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">sharedObj</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">,</span><span class="w">             </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">userRoutineFound</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">             </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">userRc</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">             </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+<span class="c">!</span>
+<span class="c">! !STATUS:</span>
+<span class="c">! \begin{itemize}</span>
+<span class="c">! \item\apiStatusCompatibleVersion{5.2.0r}</span>
+<span class="c">! \item\apiStatusModifiedSinceVersion{5.2.0r}</span>
+<span class="c">! \begin{description}</span>
+<span class="c">! \item[6.3.0r] Added argument {\tt userRoutineFound}.</span>
+<span class="c">!              The new argument provides a way to test availability without</span>
+<span class="c">!              causing error conditions.</span>
+<span class="c">! \end{description}</span>
+<span class="c">! \end{itemize}</span>
+<span class="c">!</span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">! \label{CplComp:SetServicesShObj}</span>
+<span class="c">! Call into a user provided routine which is responsible for setting</span>
+<span class="c">! Component&#39;s Initialize(), Run(), and Finalize() services. The named</span>
+<span class="c">! {\tt userRoutine} must exist in the executable, or in the shared object</span>
+<span class="c">! specified by {\tt sharedObj}. In the latter case all of the platform</span>
+<span class="c">! specific details about dynamic linking and loading apply.</span>
+<span class="c">!</span>
+<span class="c">! The arguments are:</span>
+<span class="c">! \begin{description}</span>
+<span class="c">! \item[cplcomp]</span>
+<span class="c">!   Coupler Component.</span>
+<span class="c">! \item[userRoutine]</span>
+<span class="c">!   Name of routine to be called, specified as a character string.</span>
+<span class="c">!   The Component writer must supply a subroutine with the exact interface</span>
+<span class="c">!   shown for {\tt userRoutine} below. Arguments must not be declared</span>
+<span class="c">!   as optional, and the types, intent and order must match.</span>
+<span class="c">!   Prior to Fortran-2008, the subroutine must be either a module scope procedure,</span>
+<span class="c">!   or an external procedure that has a matching interface block specified for it.</span>
+<span class="c">!   An internal procedure which is contained within another procedure must not be used.</span>
+<span class="c">!   From Fortran-2008 onwards, an internal procedure contained within either a main program</span>
+<span class="c">!   or a module procedure may be used.  If the internal procedure is contained within a</span>
+<span class="c">!   module procedure, it is subject to initialization requirements.  See: \ref{sec:AppDriverIntProc}</span>
+<span class="c">!</span>
+<span class="c">!   !INTERFACE:</span>
+<span class="c">!     interface</span>
+<span class="c">!       subroutine userRoutine(cplcomp, rc)</span>
+<span class="c">!         type(ESMF_CplComp)   :: cplcomp    ! must not be optional</span>
+<span class="c">!         integer, intent(out) :: rc         ! must not be optional</span>
+<span class="c">!       end subroutine</span>
+<span class="c">!     end interface</span>
+<span class="c">!</span>
+<span class="c">!   !DESCRIPTION:</span>
+<span class="c">!   \begin{sloppypar}</span>
+<span class="c">!   The {\tt userRoutine}, when called by the framework, must make successive</span>
+<span class="c">!   calls to {\tt ESMF\_CplCompSetEntryPoint()} to preset callback routines for</span>
+<span class="c">!   standard Component Initialize(), Run(), and Finalize() methods.</span>
+<span class="c">!   \end{sloppypar}</span>
+<span class="c">! \item[{[sharedObj]}]</span>
+<span class="c">!   Name of shared object that contains {\tt userRoutine}. The asterisk</span>
+<span class="c">!   character {\tt (*)} is supported as a wildcard for the file name suffix.</span>
+<span class="c">!   When present, the asterisk is replaced by &quot;so&quot;, &quot;dylib&quot;, and &quot;dll&quot;, in this</span>
+<span class="c">!   order, and the first successfully loaded object is used to search for</span>
+<span class="c">!   {\tt userRoutine}.</span>
+<span class="c">!   If the {\tt sharedObj} argument is not provided, the executable itself is</span>
+<span class="c">!   searched for {\tt userRoutine}.</span>
+<span class="c">! \item[{[userRoutineFound]}]</span>
+<span class="c">!   Report back whether the specified {\tt userRoutine} was found and executed,</span>
+<span class="c">!   or was not available. If this argument is present, not finding the</span>
+<span class="c">!   {\tt userRoutine} will not result in returning an error in {\tt rc}.</span>
+<span class="c">!   The default is to return an error if the {\tt userRoutine} cannot be found.</span>
+<span class="c">! \item[{[userRc]}]</span>
+<span class="c">!   Return code set by {\tt userRoutine} before returning.</span>
+<span class="c">! \item[{[rc]}]</span>
+<span class="c">!   Return code; equals {\tt ESMF\_SUCCESS} if there are no errors.</span>
+<span class="c">! \end{description}</span>
+<span class="c">!</span>
+<span class="c">!EOP</span>
+<span class="c">!------------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localrc</span><span class="w">                       </span><span class="c">! local error status</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localUserRc</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">emptyString</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Logical</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">userRoutineFoundHelp</span>
+<span class="w">    </span><span class="kt">logical</span><span class="w">             </span><span class="kd">::</span><span class="w"> </span><span class="n">userRoutineFoundHelpHelp</span>
+
+<span class="w">    </span><span class="c">! initialize return code; assume routine not implemented</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+<span class="w">    </span><span class="n">localrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+
+<span class="w">    </span><span class="n">ESMF_INIT_CHECK_DEEP</span><span class="p">(</span><span class="n">ESMF_CplCompGetInit</span><span class="p">,</span><span class="w"> </span><span class="n">cplcomp</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">sharedObj</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      call </span><span class="n">c_ESMC_SetServicesShObj</span><span class="p">(</span><span class="n">cplcomp</span><span class="p">,</span><span class="w"> </span><span class="n">userRoutine</span><span class="p">,</span><span class="w"> </span><span class="n">sharedObj</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">userRoutineFoundHelp</span><span class="p">,</span><span class="w"> </span><span class="n">localUserRc</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="k">      call </span><span class="n">c_ESMC_SetServicesShObj</span><span class="p">(</span><span class="n">cplcomp</span><span class="p">,</span><span class="w"> </span><span class="n">userRoutine</span><span class="p">,</span><span class="w"> </span><span class="n">emptyString</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">userRoutineFoundHelp</span><span class="p">,</span><span class="w"> </span><span class="n">localUserRc</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">endif</span>
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">    </span><span class="c">! translate ESMF_Logical -&gt; logical</span>
+<span class="w">    </span><span class="n">userRoutineFoundHelpHelp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userRoutineFoundHelp</span>
+
+<span class="w">    </span><span class="c">! report back</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">userRoutineFound</span><span class="p">))</span><span class="w"> </span><span class="n">userRoutineFound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userRoutineFoundHelpHelp</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">userRoutineFoundHelpHelp</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">      </span><span class="c">! routine found and executed -&gt; indicate this Component has VM associated</span>
+<span class="w">      </span><span class="n">cplcomp</span><span class="p">%</span><span class="n">compp</span><span class="p">%</span><span class="n">compStatus</span><span class="p">%</span><span class="n">vmIsPresent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">      </span><span class="c">! routine not found</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="nb">present</span><span class="p">(</span><span class="n">userRoutineFound</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="c">! an error condition that needs to be reported back</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;userRoutine was not found&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span>
+<span class="k">      endif</span>
+<span class="k">    endif</span>
+
+<span class="w">    </span><span class="c">! pass back userRc</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">userRc</span><span class="p">))</span><span class="w"> </span><span class="n">userRc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">localUserRc</span>
+
+<span class="w">    </span><span class="c">! return successfully</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="w">  </span><span class="k">end subroutine </span><span class="n">ESMF_CplCompSetServicesShObj</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

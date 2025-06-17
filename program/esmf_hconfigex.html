@@ -1,0 +1,935 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_HConfigEx &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_HConfigEx      <small>Program</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.5% of total for programs.">572 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_HConfigEx.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_hconfigex.f90.html'>ESMF_HConfigEx.F90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_HConfigEx</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-filename~73">filename</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-msgstring~40">msgString</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-keylist">keyList</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-string~62">string</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-stringkey">stringKey</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-tag~9">tag</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-valuesseq">valueSSeq</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-failmsg~211">failMsg</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-testname~100">testname</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-valuei4~4">valueI4</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-valuei4seq">valueI4Seq</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-valuei8~4">valueI8</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-doccount">docCount</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-finalrc~100">finalrc</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-i~564">i</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-rc~3573">rc</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-result~212">result</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-size~219">size</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-asokay~49">asOkay</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-isalias">isAlias</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-isdefined">isDefined</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-isexact">isExact</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-ismap">isMap</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-ismatch">isMatch</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-isnone">isNone</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-isnotalias">isNotAlias</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-isnull~2">isNull</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-isscalar~19">isScalar</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-issequence~19">isSequence</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-valuel~4">valueL</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-valuelseq">valueLSeq</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-valuer4~4">valueR4</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-valuer8~4">valueR8</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-config~29">config</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-hconfig~230">hconfig</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-hconfigtemp~114">hconfigTemp</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-hconfigtemp2">hconfigTemp2</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-hconfigiter~6">hconfigIter</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-hconfigiterbegin~5">hconfigIterBegin</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-hconfigiterend~6">hconfigIterEnd</a>
+            <a class="list-group-item" href="../program/esmf_hconfigex.html#variable-match~11">match</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='../module/esmf.html'>ESMF</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf_testmod.html'>ESMF_TestMod</a></li>
+              </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    
+
+
+    <section>
+    <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-filename~73"></span>
+              character(len=160)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>filename</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-msgstring~40"></span>
+              character(len=160)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>msgString</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-keylist"></span>
+              character(len=5)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>keyList</strong>(3)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-string~62"></span>
+              character(len=:),
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>string</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-stringkey"></span>
+              character(len=:),
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>stringKey</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-tag~9"></span>
+              character(len=:),
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>tag</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-valuesseq"></span>
+              character(len=:),
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>valueSSeq</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-failmsg~211"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>failMsg</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-testname~100"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>testname</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-valuei4~4"></span>
+              integer(kind=ESMF_KIND_I4)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>valueI4</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-valuei4seq"></span>
+              integer(kind=ESMF_KIND_I4),
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>valueI4Seq</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-valuei8~4"></span>
+              integer(kind=ESMF_KIND_I8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>valueI8</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-doccount"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>docCount</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-finalrc~100"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>finalrc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i~564"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~3573"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-result~212"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>result</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-size~219"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>size</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-asokay~49"></span>
+              logical
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>asOkay</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-isalias"></span>
+              logical
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>isAlias</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-isdefined"></span>
+              logical
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>isDefined</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-isexact"></span>
+              logical
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>isExact</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ismap"></span>
+              logical
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>isMap</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ismatch"></span>
+              logical
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>isMatch</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-isnone"></span>
+              logical
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>isNone</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-isnotalias"></span>
+              logical
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>isNotAlias</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-isnull~2"></span>
+              logical
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>isNull</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-isscalar~19"></span>
+              logical
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>isScalar</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-issequence~19"></span>
+              logical
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>isSequence</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-valuel~4"></span>
+              logical
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>valueL</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-valuelseq"></span>
+              logical,
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>valueLSeq</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-valuer4~4"></span>
+              real(kind=ESMF_KIND_R4)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>valueR4</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-valuer8~4"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>valueR8</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-config~29"></span>
+              type(<a href='../type/esmf_config.html'>ESMF_Config</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>config</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-hconfig~230"></span>
+              type(<a href='../type/esmf_hconfig.html'>ESMF_HConfig</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>hconfig</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-hconfigtemp~114"></span>
+              type(<a href='../type/esmf_hconfig.html'>ESMF_HConfig</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>hconfigTemp</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-hconfigtemp2"></span>
+              type(<a href='../type/esmf_hconfig.html'>ESMF_HConfig</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>hconfigTemp2</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-hconfigiter~6"></span>
+              type(<a href='../type/esmf_hconfigiter.html'>ESMF_HConfigIter</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>hconfigIter</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-hconfigiterbegin~5"></span>
+              type(<a href='../type/esmf_hconfigiter.html'>ESMF_HConfigIter</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>hconfigIterBegin</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-hconfigiterend~6"></span>
+              type(<a href='../type/esmf_hconfigiter.html'>ESMF_HConfigIter</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>hconfigIterEnd</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-match~11"></span>
+              type(<a href='../type/esmf_hconfigmatch_flag.html'>ESMF_HConfigMatch_Flag</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>match</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+    
+
+    
+
+
+    
+
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

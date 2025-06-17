@@ -1,0 +1,1925 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_FieldCreateEx &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_FieldCreateEx      <small>Program</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.3% of total for programs.">304 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_FieldCreateEx.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_fieldcreateex.f90.html'>ESMF_FieldCreateEx.F90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_FieldCreateEx</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-failmsg~282">failMsg</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-testname~129">testname</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-elemconn~77">elemConn</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-elemids~82">elemIds</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-elemtypes~80">elemTypes</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-fa_shape~3">fa_shape</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-finalrc~120">finalrc</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-gec~4">gec</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-gridtofieldmap2d">gridToFieldMap2d</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-i~709">i</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-k~143">k</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-localpet~327">localPet</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-nodeids~80">nodeIds</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-nodeowners~79">nodeOwners</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-numelems~61">numElems</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-numnodes~77">numNodes</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-petcount~367">petCount</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-rc~4132">rc</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-result~285">result</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-totallwidth2d">totalLWidth2d</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-totaluwidth2d">totalUWidth2d</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-farray~76">farray</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-farray3d~2">farray3d</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-farrayptr~98">farrayPtr</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-farrayptr2~20">farrayPtr2</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-nodecoords~86">nodeCoords</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-array~194">array</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-arrayspec~151">arrayspec</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-distgrid~230">distgrid</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-field~258">field</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-field1~21">field1</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-grid~278">grid</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-locs~16">locs</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-mesh~123">mesh</a>
+            <a class="list-group-item" href="../program/esmf_fieldcreateex.html#variable-vm~802">vm</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../program/esmf_fieldcreateex.html#src">ESMF_FieldCreateEx</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='../module/esmf.html'>ESMF</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf_testmod.html'>ESMF_TestMod</a></li>
+              </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    <p>%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%
+%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%
+%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%
+%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</p>
+<p>%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%
+%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%
+%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%
+%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%
+%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%
+%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%
+%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%
+%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%
+%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%
+%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%
+%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%
+%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</p>
+<p>%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%
+%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</p>
+<p>%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%
+%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%
+%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%
+%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</p>
+<br>
+
+    <section>
+    <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-failmsg~282"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>failMsg</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-testname~129"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>testname</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-elemconn~77"></span>
+              integer,
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>elemConn</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-elemids~82"></span>
+              integer,
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>elemIds</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-elemtypes~80"></span>
+              integer,
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>elemTypes</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fa_shape~3"></span>
+              integer,
+            </td>
+            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>fa_shape</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-finalrc~120"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>finalrc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-gec~4"></span>
+              integer,
+            </td>
+            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>gec</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-gridtofieldmap2d"></span>
+              integer,
+            </td>
+            <td>
+              dimension(2)
+            </td>
+            <td>::</td>
+            <td><strong>gridToFieldMap2d</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i~709"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-k~143"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>k</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-localpet~327"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>localPet</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nodeids~80"></span>
+              integer,
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>nodeIds</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nodeowners~79"></span>
+              integer,
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>nodeOwners</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-numelems~61"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>numElems</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-numnodes~77"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>numNodes</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-petcount~367"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>petCount</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~4132"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-result~285"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>result</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-totallwidth2d"></span>
+              integer,
+            </td>
+            <td>
+              dimension(2)
+            </td>
+            <td>::</td>
+            <td><strong>totalLWidth2d</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-totaluwidth2d"></span>
+              integer,
+            </td>
+            <td>
+              dimension(2)
+            </td>
+            <td>::</td>
+            <td><strong>totalUWidth2d</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray~76"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              dimension(:,:), allocatable
+            </td>
+            <td>::</td>
+            <td><strong>farray</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray3d~2"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              dimension(:,:,:), allocatable
+            </td>
+            <td>::</td>
+            <td><strong>farray3d</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farrayptr~98"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              dimension(:,:), pointer
+            </td>
+            <td>::</td>
+            <td><strong>farrayPtr</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farrayptr2~20"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              dimension(:,:), pointer
+            </td>
+            <td>::</td>
+            <td><strong>farrayPtr2</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nodecoords~86"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>nodeCoords</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-array~194"></span>
+              type(ESMF_Array)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>array</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-arrayspec~151"></span>
+              type(<a href='../type/esmf_arrayspec.html'>ESMF_ArraySpec</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>arrayspec</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-distgrid~230"></span>
+              type(<a href='../type/esmf_distgrid.html'>ESMF_DistGrid</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>distgrid</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-field~258"></span>
+              type(<a href='../type/esmf_field.html'>ESMF_Field</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>field</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-field1~21"></span>
+              type(<a href='../type/esmf_field.html'>ESMF_Field</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>field1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~278"></span>
+              type(<a href='../type/esmf_grid.html'>ESMF_Grid</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-locs~16"></span>
+              type(<a href='../type/esmf_locstream.html'>ESMF_LocStream</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>locs</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mesh~123"></span>
+              type(<a href='../type/esmf_mesh.html'>ESMF_Mesh</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>mesh</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vm~802"></span>
+              type(<a href='../type/esmf_vm.html'>ESMF_VM</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>vm</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+    
+
+    
+
+
+    
+
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">    </span><span class="k">program </span><span class="n">ESMF_FieldCreateEx</span>
+
+<span class="c">!------------------------------------------------------------------------------</span>
+<span class="c">!ESMF_MULTI_PROC_EXAMPLE        String used by test script to count examples.</span>
+<span class="c">!==============================================================================</span>
+<span class="c">! !PROGRAM: ESMF_FieldCreateEx - Field creation</span>
+<span class="c">!</span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">!</span>
+<span class="c">! This program shows examples of Field initialization and manipulation</span>
+<span class="c">!-----------------------------------------------------------------------------</span>
+<span class="cp">#include &quot;ESMF.h&quot;</span>
+<span class="w">    </span><span class="c">! ESMF Framework module</span>
+<span class="w">    </span><span class="k">use </span><span class="n">ESMF_TestMod</span>
+<span class="w">    </span><span class="k">use </span><span class="n">ESMF</span>
+<span class="w">    </span><span class="k">implicit none</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c">! Local variables</span>
+
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w">     </span><span class="kd">::</span><span class="w"> </span><span class="n">farray</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:),</span><span class="w"> </span><span class="k">pointer</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">farrayPtr</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr2</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:,:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">farray3d</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w">                                </span><span class="kd">::</span><span class="w"> </span><span class="n">gec</span><span class="p">,</span><span class="w"> </span><span class="n">fa_shape</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w">           </span><span class="kd">::</span><span class="w"> </span><span class="n">gridToFieldMap2d</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w">           </span><span class="kd">::</span><span class="w"> </span><span class="n">totalLWidth2d</span><span class="p">,</span><span class="w"> </span><span class="n">totalUWidth2d</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_VM</span><span class="p">)</span><span class="w">                   </span><span class="kd">::</span><span class="w"> </span><span class="n">vm</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Field</span><span class="p">)</span><span class="w">                </span><span class="kd">::</span><span class="w"> </span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">field1</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Grid</span><span class="p">)</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">grid</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_DistGrid</span><span class="p">)</span><span class="w">             </span><span class="kd">::</span><span class="w"> </span><span class="n">distgrid</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_LocStream</span><span class="p">)</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">locs</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Mesh</span><span class="p">)</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">mesh</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Arrayspec</span><span class="p">)</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">arrayspec</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Array</span><span class="p">)</span><span class="w">                </span><span class="kd">::</span><span class="w"> </span><span class="k">array</span>
+<span class="k">    </span><span class="kt">integer</span><span class="w">                         </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">localPet</span><span class="p">,</span><span class="w"> </span><span class="n">petCount</span>
+
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">nodeIds</span><span class="p">(:),</span><span class="n">nodeOwners</span><span class="p">(:)</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">nodeCoords</span><span class="p">(:)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">numNodes</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">numElems</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">elemIds</span><span class="p">(:),</span><span class="n">elemTypes</span><span class="p">(:),</span><span class="n">elemConn</span><span class="p">(:)</span>
+
+<span class="w">    </span><span class="kt">integer</span><span class="w">                         </span><span class="kd">::</span><span class="w"> </span><span class="n">finalrc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="k">result</span>
+
+<span class="k">  </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">testname</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">failMsg</span>
+
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Example failure&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">testname</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Example ESMF_FieldCreateEx&quot;</span>
+
+
+<span class="c">! ------------------------------------------------------------------------------</span>
+<span class="c">! ------------------------------------------------------------------------------</span>
+
+
+<span class="c">!   !Set finalrc to success</span>
+<span class="w">    </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Initialize</span><span class="p">(</span><span class="n">vm</span><span class="o">=</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">defaultlogfilename</span><span class="o">=</span><span class="s2">&quot;FieldCreateEx.Log&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="n">logkindflag</span><span class="o">=</span><span class="n">ESMF_LOGKIND_MULTI</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_TestMinPETs</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">! get global VM</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_VMGetGlobal</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_VMGet</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">localPet</span><span class="o">=</span><span class="n">localPet</span><span class="p">,</span><span class="w"> </span><span class="n">petCount</span><span class="o">=</span><span class="n">petCount</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</span>
+<span class="c">!-------------------------------- Example -----------------------------</span>
+<span class="c">!&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Create a 2D Field with a 2D Grid and a Fortran data array}</span>
+<span class="c">!\label{sec:field:usage:create_2darray}</span>
+<span class="c">!</span>
+<span class="c">!  A user can create an {\tt ESMF\_Field} directly from an {\tt ESMF\_Grid} and an intrinsic </span>
+<span class="c">!  Fortran data array. This interface is overloaded for typekind and rank</span>
+<span class="c">!  of the Fortran data array.  </span>
+<span class="c">!</span>
+<span class="c">!  In the following example, each dimension size of the Fortran array is equal to the </span>
+<span class="c">!  exclusive bounds of its corresponding </span>
+<span class="c">!  Grid dimension queried from the Grid through {\tt ESMF\_GridGet()} public interface.</span>
+<span class="c">!</span>
+<span class="c">!  Formally let fa\_shape(i) be the shape of i-th dimension of user supplied Fortran array,</span>
+<span class="c">!  then rule 1 states:  </span>
+<span class="c">!  \begin{verbatim}</span>
+<span class="c">! </span>
+<span class="c">!  (1) fa_shape(i) = exclusiveCount(i)         </span>
+<span class="c">!                i = 1...GridDimCount</span>
+<span class="c">! </span>
+<span class="c">!  \end{verbatim}</span>
+<span class="c">! </span>
+<span class="c">!  fa\_shape(i) defines the shape of i-th dimension of the Fortran array.</span>
+<span class="c">!  ExclusiveCount are the number of data elements of i-th dimension in the exclusive region queried</span>
+<span class="c">!  from {\tt ESMF\_GridGet} interface. {\em Rule 1 assumes that the Grid and the Fortran intrinsic</span>
+<span class="c">!  array have same number of dimensions; and optional arguments</span>
+<span class="c">!  of FieldCreate from Fortran array are left unspecified using default setup}. These assumptions </span>
+<span class="c">!  are true for most typical uses of FieldCreate from Fortran data array. This is the easiest way</span>
+<span class="c">!  to create a Field from a Grid and a Fortran intrinsic data array.</span>
+<span class="c">!  </span>
+<span class="c">!  Fortran array dimension sizes (called shape in most Fortran language books) are equivalent</span>
+<span class="c">!  to the bounds and counts used in this manual.  The following equation holds: </span>
+<span class="c">!  \begin{verbatim}</span>
+<span class="c">! </span>
+<span class="c">!  fa_shape(i) = shape(i) = counts(i) = upper_bound(i) - lower_bound(i) + 1</span>
+<span class="c">! </span>
+<span class="c">!  \end{verbatim}</span>
+<span class="c">!</span>
+<span class="c">!  These typically mean the same concept unless specifically explained to mean something else.</span>
+<span class="c">!  For example, ESMF uses DimCount very often to mean number of dimensions instead of its meaning</span>
+<span class="c">!  implied in the above equation. We&#39;ll clarify the meaning of a word when ambiguity could occur.</span>
+<span class="c">!  </span>
+<span class="c">!  Rule 1 is most useful for a user working with Field creation from a Grid and a Fortran</span>
+<span class="c">!  data array in most scenarios. It extends to higher dimension count, 3D, 4D, etc...</span>
+<span class="c">!  Typically, as the code example demonstrates, a user first creates a Grid,</span>
+<span class="c">!  then uses {\tt ESMF\_GridGet()}</span>
+<span class="c">!  to retrieve the exclusive counts.  Next the user calculates the shape</span>
+<span class="c">!  of each Fortran array dimension according to rule 1. The Fortran data array is allocated</span>
+<span class="c">!  and initialized based on the computed shape.  A Field can either be created in one shot or</span>
+<span class="c">!  created empty and finished using {\tt ESMF\_FieldEmptyComplete}.</span>
+<span class="c">!</span>
+<span class="c">!  \begin{sloppypar}</span>
+<span class="c">!  There are important details that can be skipped but are good to know for {\tt ESMF\_FieldEmptyComplete}</span>
+<span class="c">!  and {\tt ESMF\_FieldCreate} from a Fortran data array. 1) these methods require {\em each PET contains</span>
+<span class="c">!  exactly one DE}. This implies that a code using FieldCreate from a data array or FieldEmptyComplete must</span>
+<span class="c">!  have the same number of DEs and PETs, formally $n_{DE} = n_{PET}$. Violation of this condition</span>
+<span class="c">!  will cause run time failures. 2) the bounds and counts retrieved from GridGet are DE specific</span>
+<span class="c">!  or equivalently PET specific, which means that {\em the Fortran array shape could be different from one</span>
+<span class="c">!  PET to another}. </span>
+<span class="c">!  \end{sloppypar}</span>
+<span class="c">!  </span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="n">grid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_GridCreateNoPeriDim</span><span class="p">(</span><span class="n">minIndex</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">maxIndex</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">regDecomp</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;atmgrid&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_GridGet</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">localDE</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CENTER</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">exclusiveCount</span><span class="o">=</span><span class="n">gec</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">allocate</span><span class="p">(</span><span class="n">farray</span><span class="p">(</span><span class="n">gec</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">gec</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">farray</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_INDEX_DELOCAL</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Field Create from a Grid and a Fortran data array returned&quot;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_FieldDestroy</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">deallocate</span><span class="p">(</span><span class="n">farray</span><span class="p">)</span>
+
+<span class="c">!&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</span>
+<span class="c">!-------------------------------- Example -----------------------------</span>
+<span class="c">!&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Create a 2D Field with a 2D Grid and a Fortran data pointer}</span>
+<span class="c">!\label{sec:field:usage:create_2dptr}</span>
+<span class="c">!</span>
+<span class="c">! The setup of this example is similar to the previous section except </span>
+<span class="c">! that the Field is created from a data pointer instead of a data array.</span>
+<span class="c">! We highlight the ability to deallocate the internal Fortran data</span>
+<span class="c">! pointer queried from the Field. This gives a user more flexibility with</span>
+<span class="c">! memory management.</span>
+<span class="c">!</span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">allocate</span><span class="p">(</span><span class="n">farrayPtr</span><span class="p">(</span><span class="n">gec</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">gec</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">farrayPtr2</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="c">! deallocate the retrieved Fortran array pointer</span>
+<span class="w">    </span><span class="k">deallocate</span><span class="p">(</span><span class="n">farrayPtr2</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Field Create from a Grid and a Fortran data array returned&quot;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_FieldDestroy</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</span>
+<span class="c">!-------------------------------- Example -----------------------------</span>
+<span class="c">!&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Create a 3D Field with a 2D Grid and a 3D Fortran data array}</span>
+<span class="c">!\label{sec:field:usage:create_2dgrid_3dptr}</span>
+<span class="c">!</span>
+<span class="c">!  This example demonstrates a typical use of {\tt ESMF\_Field} combining</span>
+<span class="c">!  a 2D grid and a 3D Fortran native data array. One immediate problem follows: </span>
+<span class="c">!  how does one define the bounds of the ungridded dimension? This is</span>
+<span class="c">!  solved by the optional arguments {\tt ungriddedLBound} and {\tt ungriddedUBound}</span>
+<span class="c">!  of the {\tt ESMF\_FieldCreate} interface. By definition, {\tt ungriddedLBound}</span>
+<span class="c">!  and {\tt ungriddedUBound}</span>
+<span class="c">!  are both 1 dimensional integer Fortran arrays.</span>
+<span class="c">!</span>
+<span class="c">!  Formally, let fa\_shape(j=1...FieldDimCount-GridDimCount) be the shape of the</span>
+<span class="c">!  ungridded dimensions of a Field relative to the Grid used in Field creation.</span>
+<span class="c">!  The Field dimension count is equal to the number of dimensions of the Fortran array, which</span>
+<span class="c">!  equals the number of dimensions of the resultant Field. GridDimCount is</span>
+<span class="c">!  the number of dimensions of the Grid. </span>
+<span class="c">! </span>
+<span class="c">!  fa\_shape(j) is computed as:</span>
+<span class="c">!  \begin{verbatim}</span>
+<span class="c">! </span>
+<span class="c">!  fa_shape(j) = ungriddedUBound(j) - ungriddedLBound(j) + 1</span>
+<span class="c">! </span>
+<span class="c">!  \end{verbatim}</span>
+<span class="c">!  </span>
+<span class="c">!  fa\_shape is easy to compute when the gridded and ungridded dimensions do not</span>
+<span class="c">!  mix. However, it&#39;s conceivable that at higher dimension count, gridded and ungridded</span>
+<span class="c">!  dimensions can interleave. To aid the computation of ungridded dimension shape</span>
+<span class="c">!  we formally introduce the mapping concept.</span>
+<span class="c">!</span>
+<span class="c">!  Let $map_{A,B}(i=1...n_A) = i_B$, and $i_B \in [\phi, 1...n_B]$. $n_A$ is the number</span>
+<span class="c">!  of elements in set A, $n_B$ is the number of elements in set B. $map_{A,B}(i)$ defines</span>
+<span class="c">!  a mapping from i-th element of set A to $i_B$-th element in set B. $i_B = \phi$ </span>
+<span class="c">!  indicates there does not exist a mapping from i-th element of set A to set B.</span>
+<span class="c">!</span>
+<span class="c">!  Suppose we have a mapping from dimension index of ungriddedLBound (or</span>
+<span class="c">!  ungriddedUBound) to Fortran array dimension index, called ugb2fa. </span>
+<span class="c">!  By definition, $n_A$ equals to the dimension count of</span>
+<span class="c">!  ungriddedLBound (or ungriddedUBound), $n_B$ equals to the dimension count of</span>
+<span class="c">!  the Fortran array. We can now formulate the computation of ungridded</span>
+<span class="c">!  dimension shape as rule 2:</span>
+<span class="c">!  \begin{verbatim}</span>
+<span class="c">! </span>
+<span class="c">!  (2) fa_shape(ugb2fa(j)) = ungriddedUBound(j) - ungriddedLBound(j) + 1 </span>
+<span class="c">!                        j = 1..FortranArrayDimCount - GridDimCount </span>
+<span class="c">!  \end{verbatim}</span>
+<span class="c">!</span>
+<span class="c">!  The mapping can be computed in linear time proportional to the</span>
+<span class="c">!  Fortran array dimension count (or rank) using the following algorithm in pseudocode:</span>
+<span class="c">!  \begin{verbatim}</span>
+<span class="c">!</span>
+<span class="c">!  map_index = 1</span>
+<span class="c">!  do i = 1, farray_rank</span>
+<span class="c">!      if i-th dimension of farray is ungridded</span>
+<span class="c">!          ugb2fa(map_index) = i</span>
+<span class="c">!          map_index = map_index + 1</span>
+<span class="c">!      endif</span>
+<span class="c">!  enddo</span>
+<span class="c">! </span>
+<span class="c">!  \end{verbatim}</span>
+<span class="c">!</span>
+<span class="c">!  Here we use rank and dimension count interchangeably. These 2 terminologies are typically</span>
+<span class="c">!  equivalent. But there are subtle differences</span>
+<span class="c">!  under certain conditions. Rank is the total number of dimensions of a tensor object.</span>
+<span class="c">!  Dimension count allows a finer description of the heterogeneous dimensions in that object.</span>
+<span class="c">!  For example, a Field of rank 5 can have 3 gridded dimensions and 2 ungridded dimensions.</span>
+<span class="c">!  Rank is precisely the summation of dimension count of all types of dimensions. </span>
+<span class="c">! </span>
+<span class="c">!  For example, if a 5D array is used with a 3D Grid, there are 2 ungridded dimensions:</span>
+<span class="c">!  ungriddedLBound=(/1,2/) and ungriddedUBound=(/5,7/).</span>
+<span class="c">!  Suppose the distribution of dimensions looks like (O, X, O, X, O), O means gridded,</span>
+<span class="c">!  X means ungridded. Then the mapping from ungridded bounds to Fortran array is</span>
+<span class="c">!  ugb2fa=(/2, 4/). The shape of 2nd and 4th dimension of Fortran array should equal</span>
+<span class="c">!  (5, 8).</span>
+<span class="c">! </span>
+<span class="c">!  Back to our 3D Field created from a 2D Grid and 3D Fortran array example, suppose the 3rd</span>
+<span class="c">!  Field dimension is ungridded, ungriddedLBound=(/3/), ungriddedUBound=(/9/).</span>
+<span class="c">!  First we use rule 1 to compute shapes of the gridded Fortran array dimension,</span>
+<span class="c">!  then we use rule 2 to compute shapes of the ungridded Fortran array dimension.</span>
+<span class="c">!  In this example, we used the exclusive bounds obtained in the previous</span>
+<span class="c">!  example.</span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="n">fa_shape</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gec</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c">! rule 1</span>
+<span class="w">    </span><span class="n">fa_shape</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gec</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">    </span><span class="n">fa_shape</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="c">! rule 2 9-3+1</span>
+<span class="w">    </span><span class="k">allocate</span><span class="p">(</span><span class="n">farray3d</span><span class="p">(</span><span class="n">fa_shape</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">fa_shape</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">fa_shape</span><span class="p">(</span><span class="mi">3</span><span class="p">)))</span>
+<span class="w">    </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">farray3d</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_INDEX_DELOCAL</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ungriddedLBound</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">ungriddedUBound</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">9</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Field Create from a Grid and a Fortran data array returned&quot;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_FieldDestroy</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">deallocate</span><span class="p">(</span><span class="n">farray3d</span><span class="p">)</span>
+
+<span class="c">!&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</span>
+<span class="c">!-------------------------------- Example -----------------------------</span>
+<span class="c">!&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Create a 3D Field with a 2D Grid and a 3D Fortran data array with gridToFieldMap argument}</span>
+<span class="c">!\label{sec:field:usage:create_2dgrid_3dptr_map}</span>
+<span class="c">!</span>
+<span class="c">!  Building upon the previous example, we will create a 3D Field from</span>
+<span class="c">!  a 2D grid and 3D array but with a slight twist. In this example, we</span>
+<span class="c">!  introduce the gridToFieldMap argument that allows a user to map Grid </span>
+<span class="c">!  dimension index to Field dimension index.</span>
+<span class="c">!</span>
+<span class="c">!  In this example, both dimensions of the Grid are distributed and the</span>
+<span class="c">!  mapping from DistGrid to Grid is (/1,2/). We will introduce rule 3</span>
+<span class="c">!  assuming distgridToGridMap=(/1,2,3...gridDimCount/), and distgridDimCount equals</span>
+<span class="c">!  to gridDimCount. This is a reasonable assumption in typical Field use.</span>
+<span class="c">!</span>
+<span class="c">!  We apply the mapping gridToFieldMap on rule 1 to create rule 3:</span>
+<span class="c">!  \begin{verbatim}</span>
+<span class="c">! </span>
+<span class="c">!  (3) fa_shape(gridToFieldMap(i)) = exclusiveCount(i)        </span>
+<span class="c">!                                i = 1,..GridDimCount.</span>
+<span class="c">! </span>
+<span class="c">!  \end{verbatim}</span>
+<span class="c">!</span>
+<span class="c">!  Back to our example, suppose the 2nd</span>
+<span class="c">!  Field dimension is ungridded, ungriddedLBound=(/3/), ungriddedUBound=(/9/).</span>
+<span class="c">!  gridToFieldMap=(/3,1/), meaning the 1st Grid dimension maps to 3rd Field dimension,</span>
+<span class="c">!  and 2nd Grid dimension maps to 1st Field dimension.</span>
+<span class="c">!</span>
+<span class="c">!  First we use rule 3 to compute shapes of the gridded Fortran array dimension,</span>
+<span class="c">!  then we use rule 2 to compute shapes of the ungridded Fortran array dimension.</span>
+<span class="c">!  In this example, we use the exclusive bounds obtained in the previous</span>
+<span class="c">!  example.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="n">gridToFieldMap2d</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span>
+<span class="w">    </span><span class="n">gridToFieldMap2d</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">        </span><span class="n">fa_shape</span><span class="p">(</span><span class="n">gridToFieldMap2d</span><span class="p">(</span><span class="n">i</span><span class="p">))</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gec</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="w">    </span><span class="k">end do</span>
+<span class="k">    </span><span class="n">fa_shape</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span>
+<span class="w">    </span><span class="k">allocate</span><span class="p">(</span><span class="n">farray3d</span><span class="p">(</span><span class="n">fa_shape</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">fa_shape</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">fa_shape</span><span class="p">(</span><span class="mi">3</span><span class="p">)))</span>
+<span class="w">    </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">farray3d</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_INDEX_DELOCAL</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ungriddedLBound</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">ungriddedUBound</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">9</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">gridToFieldMap</span><span class="o">=</span><span class="n">gridToFieldMap2d</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Field Create from a Grid and a Fortran data array returned&quot;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_FieldDestroy</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">deallocate</span><span class="p">(</span><span class="n">farray3d</span><span class="p">)</span>
+
+<span class="c">!&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</span>
+<span class="c">!-------------------------------- Example -----------------------------</span>
+<span class="c">!&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Create a 3D Field with a 2D Grid and a 3D Fortran data array with halos}</span>
+<span class="c">!\label{sec:field:usage:create_2dgrid_3dptr_map_halo}</span>
+<span class="c">!</span>
+<span class="c">!  This example is similar to example \ref{sec:field:usage:create_2dgrid_3dptr_map}.</span>
+<span class="c">!  In addition, here we will show how</span>
+<span class="c">!  a user can associate different halo widths to a Fortran array to create</span>
+<span class="c">!  a Field through the totalLWidth and totalUWidth optional arguments.</span>
+<span class="c">!  A diagram of the dimension configuration from Grid, halos, and Fortran data array</span>
+<span class="c">!  is shown here.</span>
+<span class="c">!\begin{center}</span>
+<span class="c">!\begin{figure}</span>
+<span class="c">!\scalebox{0.75}{\includegraphics{FieldParameterSetup}}</span>
+<span class="c">!\caption{Field dimension configuration from Grid, halos, and Fortran data array.}</span>
+<span class="c">!\label{fig:fieldparameter}</span>
+<span class="c">!\end{figure}</span>
+<span class="c">!\end{center}</span>
+<span class="c">!  </span>
+<span class="c">!  The {\tt ESMF\_FieldCreate()} interface supports creating a Field from a Grid and a</span>
+<span class="c">!  Fortran array padded with halos on the distributed dimensions of the Fortran</span>
+<span class="c">!  array. Using this technique one can avoid passing non-contiguous Fortran array</span>
+<span class="c">!  slice to FieldCreate. It guarantees the same exclusive region,</span>
+<span class="c">!  and by using halos, it also defines a bigger total region to contain </span>
+<span class="c">!  the entire contiguous memory block of the Fortran array.</span>
+<span class="c">!</span>
+<span class="c">!  The elements of totalLWidth and totalUWidth are applied in the order</span>
+<span class="c">!  distributed dimensions appear in the Fortran array. By definition, </span>
+<span class="c">!  totalLWidth and totalUWidth are 1 dimensional arrays of non-negative </span>
+<span class="c">!  integer values. The size of haloWidth arrays is equal to the number of distributed</span>
+<span class="c">!  dimensions of the Fortran array, which is also equal to the number of</span>
+<span class="c">!  distributed dimensions of the Grid used in the Field creation.</span>
+<span class="c">!</span>
+<span class="c">!  Because the order of totalWidth (representing both totalLWidth and</span>
+<span class="c">!  totalUWidth) element is applied to the order distributed dimensions</span>
+<span class="c">!  appear in the Fortran array dimensions, it&#39;s quite simple to compute</span>
+<span class="c">!  the shape of distributed dimensions of the Fortran array. They are done</span>
+<span class="c">!  in a similar manner when applying ungriddedLBound and ungriddedUBound </span>
+<span class="c">!  to ungridded dimensions of the Fortran array defined by rule 2.</span>
+<span class="c">!</span>
+<span class="c">!  Assume we have the mapping from the dimension index of totalWidth</span>
+<span class="c">!  to the dimension index of Fortran array, called mhw2fa; and we also</span>
+<span class="c">!  have the mapping from dimension index of Fortran array to dimension</span>
+<span class="c">!  index of the Grid, called fa2g. The shape of</span>
+<span class="c">!  distributed dimensions of a Fortran array can be computed by rule 4: </span>
+<span class="c">! </span>
+<span class="c">!  \begin{verbatim}</span>
+<span class="c">!</span>
+<span class="c">!  (4) fa_shape(mhw2fa(k)) = exclusiveCount(fa2g(mhw2fa(k)) + </span>
+<span class="c">!                            totalUWidth(k) + totalLWidth(k)</span>
+<span class="c">!                        k = 1...size(totalWidth) </span>
+<span class="c">!</span>
+<span class="c">!  \end{verbatim}</span>
+<span class="c">!  </span>
+<span class="c">!  This rule may seem confusing but algorithmically the computation</span>
+<span class="c">!  can be done by the following pseudocode:</span>
+<span class="c">!</span>
+<span class="c">!  \begin{verbatim}</span>
+<span class="c">!</span>
+<span class="c">!  fa_index = 1</span>
+<span class="c">!  do i = 1, farray_rank</span>
+<span class="c">!     if i-th dimension of Fortran array is distributed</span>
+<span class="c">!         fa_shape(i) = exclusiveCount(fa2g(i)) + </span>
+<span class="c">!                       totalUWidth(fa_index) + totalLWidth(fa_index)</span>
+<span class="c">!         fa_index = fa_index + 1</span>
+<span class="c">!     endif</span>
+<span class="c">!  enddo</span>
+<span class="c">!</span>
+<span class="c">!  \end{verbatim}</span>
+<span class="c">!</span>
+<span class="c">!  The only complication then is to figure out the mapping from Fortran</span>
+<span class="c">!  array dimension index to Grid dimension index. This process can</span>
+<span class="c">!  be done by computing the reverse mapping from Field to Grid.</span>
+<span class="c">!</span>
+<span class="c">!  Typically, we don&#39;t have to consider these complications if the following</span>
+<span class="c">!  conditions are met: 1) All Grid dimensions are distributed. 2) DistGrid</span>
+<span class="c">!  in the Grid has a dimension index mapping to the Grid in the form of </span>
+<span class="c">!  natural order (/1,2,3,.../). This natural order mapping is the</span>
+<span class="c">!  default mapping between various objects throughout ESMF. 3) Grid to Field</span>
+<span class="c">!  mapping is in the form of natural order, i.e. default mapping. These</span>
+<span class="c">!  seem like a lot of conditions but they are the default case in the interaction</span>
+<span class="c">!  among DistGrid, Grid, and Field. When these conditions are met, which</span>
+<span class="c">!  is typically true, the shape of distributed dimensions of Fortran array</span>
+<span class="c">!  follows rule 5 in a simple form:</span>
+<span class="c">!</span>
+<span class="c">!  \begin{verbatim}</span>
+<span class="c">!</span>
+<span class="c">!  (5) fa_shape(k) = exclusiveCount(k) + </span>
+<span class="c">!                    totalUWidth(k) + totalLWidth(k) </span>
+<span class="c">!                k = 1...size(totalWidth)</span>
+<span class="c">!</span>
+<span class="c">!  \end{verbatim}</span>
+<span class="c">!</span>
+<span class="c">!  Let&#39;s examine an example on how to apply rule 5. Suppose we have a</span>
+<span class="c">!  5D array and a 3D Grid that has its first 3 dimensions mapped to the first</span>
+<span class="c">!  3 dimensions of the Fortran array. totalLWidth=(/1,2,3/), </span>
+<span class="c">!  totalUWidth=(/7,9,10/), then by rule 5, the following pseudo code</span>
+<span class="c">!  can be used to compute the shape of the first 3 dimensions of the Fortran</span>
+<span class="c">!  array. The shape of the remaining two ungridded dimensions can be</span>
+<span class="c">!  computed according to rule 2.</span>
+<span class="c">!</span>
+<span class="c">!  \begin{verbatim}</span>
+<span class="c">!</span>
+<span class="c">!  do k = 1, 3</span>
+<span class="c">!      fa_shape(k) = exclusiveCount(k) + </span>
+<span class="c">!                    totalUWidth(k) + totalLWidth(k)) </span>
+<span class="c">!  enddo</span>
+<span class="c">!</span>
+<span class="c">!  \end{verbatim}</span>
+<span class="c">!</span>
+<span class="c">!  Suppose now gridToFieldMap=(/2,3,4/) instead which says</span>
+<span class="c">!  the first dimension of Grid maps to the 2nd dimension of Field (or </span>
+<span class="c">!  Fortran array) and so on and so forth, we can obtain a more general form </span>
+<span class="c">!  of rule 5 by introducing first\_distdim\_index shift when Grid to Field</span>
+<span class="c">!  map (gridToFieldMap) is in the form of (/a,a+1,a+2.../).</span>
+<span class="c">!</span>
+<span class="c">!  \begin{verbatim}</span>
+<span class="c">!</span>
+<span class="c">!  (6) fa_shape(k+first_distdim_index-1) = exclusiveCount(k) +</span>
+<span class="c">!                                          totalUWidth(k) + totalLWidth(k)</span>
+<span class="c">!                                      k = 1...size(totalWidth)</span>
+<span class="c">!</span>
+<span class="c">!  \end{verbatim}</span>
+<span class="c">!</span>
+<span class="c">!  It&#39;s obvious that first\_distdim\_index=a. If the first dimension of the Fortran</span>
+<span class="c">!  array is distributed, then rule 6 degenerates into rule 5, which is</span>
+<span class="c">!  the typical case.</span>
+<span class="c">!</span>
+<span class="c">!  Back to our example creating a 3D Field from a 2D Grid and a 3D intrinsic</span>
+<span class="c">!  Fortran array, we will use the Grid created from previous example</span>
+<span class="c">!  that satisfies condition 1 and 2. We&#39;ll also use a simple gridToFieldMap</span>
+<span class="c">!  (1,2) which is the default mapping that satisfies condition 3. </span>
+<span class="c">!  First we use rule 5 to compute</span>
+<span class="c">!  the shape of distributed dimensions then we use rule 2 to compute the shape</span>
+<span class="c">!  of the ungridded dimensions.</span>
+<span class="c">!EOE  </span>
+
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="n">gridToFieldMap2d</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="n">gridToFieldMap2d</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">    </span><span class="n">totalLWidth2d</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span>
+<span class="w">    </span><span class="n">totalLWidth2d</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">    </span><span class="n">totalUWidth2d</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span>
+<span class="w">    </span><span class="n">totalUWidth2d</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span>
+<span class="w">    </span><span class="k">do </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">        </span><span class="n">fa_shape</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gec</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">totalLWidth2d</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">totalUWidth2d</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">    </span><span class="k">end do</span>
+<span class="k">    </span><span class="n">fa_shape</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="w">          </span><span class="c">! 9-3+1</span>
+<span class="w">    </span><span class="k">allocate</span><span class="p">(</span><span class="n">farray3d</span><span class="p">(</span><span class="n">fa_shape</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">fa_shape</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">fa_shape</span><span class="p">(</span><span class="mi">3</span><span class="p">)))</span>
+<span class="w">    </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">farray3d</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_INDEX_DELOCAL</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ungriddedLBound</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">ungriddedUBound</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">9</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">totalLWidth</span><span class="o">=</span><span class="n">totalLWidth2d</span><span class="p">,</span><span class="w"> </span><span class="n">totalUWidth</span><span class="o">=</span><span class="n">totalUWidth2d</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">gridToFieldMap</span><span class="o">=</span><span class="n">gridToFieldMap2d</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Field Create from a Grid and a Fortran data array returned&quot;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_FieldDestroy</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">deallocate</span><span class="p">(</span><span class="n">farray3d</span><span class="p">)</span>
+
+<span class="c">!&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</span>
+<span class="c">!-------------------------------- Example -----------------------------</span>
+<span class="c">!&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Create a Field from a LocStream, typekind, and rank}</span>
+<span class="c">!\label{sec:field:usage:create_locs_tkr}</span>
+<span class="c">! </span>
+<span class="c">! In this example, an {\tt ESMF\_Field} is created from an {\tt ESMF\_LocStream} </span>
+<span class="c">! and typekind/rank.</span>
+<span class="c">! The location stream object is uniformly distributed</span>
+<span class="c">! in a 1 dimensional space on 4 DEs. The rank is 1 dimensional. </span>
+<span class="c">! Please refer to LocStream examples section for more information on LocStream creation.</span>
+<span class="c">!</span>
+<span class="c">!EOE  </span>
+<span class="c">!BOC</span>
+
+<span class="w">    </span><span class="n">locs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_LocStreamCreate</span><span class="p">(</span><span class="n">minIndex</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">maxIndex</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">locs</span><span class="p">,</span><span class="w"> </span><span class="n">typekind</span><span class="o">=</span><span class="n">ESMF_TYPEKIND_I4</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Field Create from a LocStream, typekind, and rank returned&quot;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_FieldDestroy</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_LocStreamDestroy</span><span class="p">(</span><span class="n">locs</span><span class="p">,</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</span>
+<span class="c">!-------------------------------- Example -----------------------------</span>
+<span class="c">!&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Create a Field from a LocStream and arrayspec}</span>
+<span class="c">!\label{sec:field:usage:create_locs_arrayspec}</span>
+<span class="c">! </span>
+<span class="c">! In this example, an {\tt ESMF\_Field} is created from an {\tt ESMF\_LocStream} </span>
+<span class="c">! and an {\tt ESMF\_Arrayspec}.</span>
+<span class="c">! The location stream object is uniformly distributed</span>
+<span class="c">! in a 1 dimensional space on 4 DEs. The arrayspec is 1 dimensional. </span>
+<span class="c">! Please refer to LocStream examples section for more information on LocStream creation.</span>
+<span class="c">!</span>
+<span class="c">!EOE  </span>
+<span class="c">!BOC</span>
+
+<span class="w">    </span><span class="n">locs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_LocStreamCreate</span><span class="p">(</span><span class="n">minIndex</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">maxIndex</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_ArraySpecSet</span><span class="p">(</span><span class="n">arrayspec</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_TYPEKIND_I4</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">locs</span><span class="p">,</span><span class="w"> </span><span class="n">arrayspec</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Field Create from a LocStream and an Arrayspec returned&quot;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_FieldDestroy</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_LocStreamDestroy</span><span class="p">(</span><span class="n">locs</span><span class="p">,</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</span>
+<span class="c">!-------------------------------- Example -----------------------------</span>
+<span class="c">!&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Create a Field from a Mesh, typekind, and rank}</span>
+<span class="c">!\label{sec:field:usage:create_mesh_tkr}</span>
+<span class="c">! </span>
+<span class="c">! In this example, an {\tt ESMF\_Field} is created from an {\tt ESMF\_Mesh} </span>
+<span class="c">! and typekind/rank.</span>
+<span class="c">! The mesh object is on a Euclidean surface that is partitioned to a 2x2 rectangular</span>
+<span class="c">! space with 4 elements and 9 nodes. The nodal space is represented by</span>
+<span class="c">! a distgrid with 9 indices. A Field is created on locally owned nodes on each PET.</span>
+<span class="c">! Therefore, the created Field has 9 data points globally.</span>
+<span class="c">! The mesh object can be represented by the picture</span>
+<span class="c">! below. For more information on Mesh creation, please see Section~\ref{sec:mesh:usage:meshCreation}.</span>
+<span class="c">! \begin{verbatim}</span>
+<span class="c">!              Mesh Ids</span>
+<span class="c">!</span>
+<span class="c">!  2.0   7 ------- 8 -------- 9</span>
+<span class="c">!        |         |          |</span>
+<span class="c">!        |    3    |    4     |</span>
+<span class="c">!        |         |          |</span>
+<span class="c">!  1.0   4 ------- 5 -------- 6</span>
+<span class="c">!        |         |          |</span>
+<span class="c">!        |    1    |    2     |</span>
+<span class="c">!        |         |          |</span>
+<span class="c">!  0.0   1 ------- 2 -------- 3</span>
+<span class="c">!</span>
+<span class="c">!       0.0       1.0        2.0 </span>
+<span class="c">!</span>
+<span class="c">!      Node Ids at corners</span>
+<span class="c">!      Element Ids in centers</span>
+<span class="c">! </span>
+<span class="c">!</span>
+<span class="c">!             Mesh Owners</span>
+<span class="c">!</span>
+<span class="c">!  2.0   2 ------- 2 -------- 3</span>
+<span class="c">!        |         |          |</span>
+<span class="c">!        |    2    |    3     |</span>
+<span class="c">!        |         |          |</span>
+<span class="c">!  1.0   0 ------- 0 -------- 1</span>
+<span class="c">!        |         |          |</span>
+<span class="c">!        |    0    |    1     |</span>
+<span class="c">!        |         |          |</span>
+<span class="c">!  0.0   0 ------- 0 -------- 1</span>
+<span class="c">!</span>
+<span class="c">!       0.0       1.0        2.0 </span>
+<span class="c">!</span>
+<span class="c">!      Node Owners at corners</span>
+<span class="c">!      Element Owners in centers</span>
+<span class="c">!\end{verbatim} </span>
+<span class="c">!</span>
+<span class="c">!EOE  </span>
+<span class="w">  </span><span class="c">! Only do this if we have 4 PETs</span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">petCount</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">      </span><span class="c">! Setup mesh data depending on PET</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localPet</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">         </span><span class="c">! Fill in node data</span>
+<span class="w">         </span><span class="n">numNodes</span><span class="o">=</span><span class="mi">4</span>
+
+<span class="w">        </span><span class="c">!! node ids</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">nodeIds</span><span class="p">(</span><span class="n">numNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">nodeIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">!! node Coords</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">nodeCoords</span><span class="p">(</span><span class="n">numNodes</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span>
+<span class="w">        </span><span class="n">nodeCoords</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="o">/</span><span class="p">)</span>
+
+<span class="w">        </span><span class="c">!! node owners</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">nodeOwners</span><span class="p">(</span><span class="n">numNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">nodeOwners</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">/</span><span class="p">)</span><span class="w"> </span><span class="c">! everything on proc 0</span>
+
+<span class="w">        </span><span class="c">! Fill in elem data</span>
+<span class="w">        </span><span class="n">numElems</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="w">        </span><span class="c">!! elem ids</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">elemIds</span><span class="p">(</span><span class="n">numElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">elemIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">!! elem type</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">elemTypes</span><span class="p">(</span><span class="n">numElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">elemTypes</span><span class="o">=</span><span class="n">ESMF_MESHELEMTYPE_QUAD</span>
+
+<span class="w">        </span><span class="c">!! elem conn</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">elemConn</span><span class="p">(</span><span class="n">numElems</span><span class="o">*</span><span class="mi">4</span><span class="p">))</span>
+<span class="w">        </span><span class="n">elemConn</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="p">)</span>
+<span class="w">      </span><span class="k">else if</span><span class="w"> </span><span class="p">(</span><span class="n">localPet</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">         </span><span class="c">! Fill in node data</span>
+<span class="w">         </span><span class="n">numNodes</span><span class="o">=</span><span class="mi">4</span>
+
+<span class="w">        </span><span class="c">!! node ids</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">nodeIds</span><span class="p">(</span><span class="n">numNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">nodeIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">!! node Coords</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">nodeCoords</span><span class="p">(</span><span class="n">numNodes</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span>
+<span class="w">        </span><span class="n">nodeCoords</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="mf">2.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="mf">2.0</span><span class="p">,</span><span class="mf">1.0</span><span class="o">/</span><span class="p">)</span>
+
+<span class="w">        </span><span class="c">!! node owners</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">nodeOwners</span><span class="p">(</span><span class="n">numNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">nodeOwners</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">! Fill in elem data</span>
+<span class="w">        </span><span class="n">numElems</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="w">        </span><span class="c">!! elem ids</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">elemIds</span><span class="p">(</span><span class="n">numElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">elemIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">!! elem type</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">elemTypes</span><span class="p">(</span><span class="n">numElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">elemTypes</span><span class="o">=</span><span class="n">ESMF_MESHELEMTYPE_QUAD</span>
+
+<span class="w">        </span><span class="c">!! elem conn</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">elemConn</span><span class="p">(</span><span class="n">numElems</span><span class="o">*</span><span class="mi">4</span><span class="p">))</span>
+<span class="w">        </span><span class="n">elemConn</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="p">)</span>
+<span class="w">      </span><span class="k">else if</span><span class="w"> </span><span class="p">(</span><span class="n">localPet</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">         </span><span class="c">! Fill in node data</span>
+<span class="w">         </span><span class="n">numNodes</span><span class="o">=</span><span class="mi">4</span>
+
+<span class="w">        </span><span class="c">!! node ids</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">nodeIds</span><span class="p">(</span><span class="n">numNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">nodeIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">!! node Coords</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">nodeCoords</span><span class="p">(</span><span class="n">numNodes</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span>
+<span class="w">        </span><span class="n">nodeCoords</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="o">/</span><span class="p">)</span>
+
+<span class="w">        </span><span class="c">!! node owners</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">nodeOwners</span><span class="p">(</span><span class="n">numNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">nodeOwners</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">! Fill in elem data</span>
+<span class="w">        </span><span class="n">numElems</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="w">        </span><span class="c">!! elem ids</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">elemIds</span><span class="p">(</span><span class="n">numElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">elemIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">!! elem type</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">elemTypes</span><span class="p">(</span><span class="n">numElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">elemTypes</span><span class="o">=</span><span class="n">ESMF_MESHELEMTYPE_QUAD</span>
+
+<span class="w">        </span><span class="c">!! elem conn</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">elemConn</span><span class="p">(</span><span class="n">numElems</span><span class="o">*</span><span class="mi">4</span><span class="p">))</span>
+<span class="w">        </span><span class="n">elemConn</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="p">)</span><span class="w">  </span>
+<span class="w">      </span><span class="k">else</span><span class="w"> </span>
+<span class="w">         </span><span class="c">! Fill in node data</span>
+<span class="w">         </span><span class="n">numNodes</span><span class="o">=</span><span class="mi">4</span>
+
+<span class="w">        </span><span class="c">!! node ids</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">nodeIds</span><span class="p">(</span><span class="n">numNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">nodeIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">!! node Coords</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">nodeCoords</span><span class="p">(</span><span class="n">numNodes</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span>
+<span class="w">        </span><span class="n">nodeCoords</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="mf">2.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="mf">2.0</span><span class="p">,</span><span class="mf">2.0</span><span class="o">/</span><span class="p">)</span>
+
+<span class="w">        </span><span class="c">!! node owners</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">nodeOwners</span><span class="p">(</span><span class="n">numNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">nodeOwners</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">! Fill in elem data</span>
+<span class="w">        </span><span class="n">numElems</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="w">        </span><span class="c">!! elem ids</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">elemIds</span><span class="p">(</span><span class="n">numElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">elemIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">4</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">!! elem type</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">elemTypes</span><span class="p">(</span><span class="n">numElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">elemTypes</span><span class="o">=</span><span class="n">ESMF_MESHELEMTYPE_QUAD</span>
+
+<span class="w">        </span><span class="c">!! elem conn</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">elemConn</span><span class="p">(</span><span class="n">numElems</span><span class="o">*</span><span class="mi">4</span><span class="p">))</span>
+<span class="w">        </span><span class="n">elemConn</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="p">)</span><span class="w">  </span>
+<span class="w">      </span><span class="k">endif</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="c">! Create Mesh structure in 1 step</span>
+<span class="w">      </span><span class="n">mesh</span><span class="o">=</span><span class="n">ESMF_MeshCreate</span><span class="p">(</span><span class="n">parametricDim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">spatialDim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">nodeIds</span><span class="o">=</span><span class="n">nodeIds</span><span class="p">,</span><span class="w"> </span><span class="n">nodeCoords</span><span class="o">=</span><span class="n">nodeCoords</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">nodeOwners</span><span class="o">=</span><span class="n">nodeOwners</span><span class="p">,</span><span class="w"> </span><span class="n">elementIds</span><span class="o">=</span><span class="n">elemIds</span><span class="p">,&amp;</span>
+<span class="w">             </span><span class="n">elementTypes</span><span class="o">=</span><span class="n">elemTypes</span><span class="p">,</span><span class="w"> </span><span class="n">elementConn</span><span class="o">=</span><span class="n">elemConn</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">! Field is created on the 1 dimensional nodal distgrid. On</span>
+<span class="w">      </span><span class="c">! each PET, Field is created on the locally owned nodes.</span>
+<span class="w">      </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span><span class="w"> </span><span class="n">typekind</span><span class="o">=</span><span class="n">ESMF_TYPEKIND_I4</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="c">! deallocate node data</span>
+<span class="w">      </span><span class="k">deallocate</span><span class="p">(</span><span class="n">nodeIds</span><span class="p">)</span>
+<span class="w">      </span><span class="k">deallocate</span><span class="p">(</span><span class="n">nodeCoords</span><span class="p">)</span>
+<span class="w">      </span><span class="k">deallocate</span><span class="p">(</span><span class="n">nodeOwners</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">! deallocate elem data</span>
+<span class="w">      </span><span class="k">deallocate</span><span class="p">(</span><span class="n">elemIds</span><span class="p">)</span>
+<span class="w">      </span><span class="k">deallocate</span><span class="p">(</span><span class="n">elemTypes</span><span class="p">)</span>
+<span class="w">      </span><span class="k">deallocate</span><span class="p">(</span><span class="n">elemConn</span><span class="p">)</span>
+
+<span class="w">     </span><span class="c">! Get rid of Mesh</span>
+<span class="w">     </span><span class="k">call </span><span class="n">ESMF_MeshDestroy</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">! endif for skip for != 4 procs</span>
+<span class="w">    </span><span class="k">endif </span>
+<span class="k">    print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Field Create from a Mesh and typekind/rank returned&quot;</span>
+
+<span class="c">!&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</span>
+<span class="c">!-------------------------------- Example -----------------------------</span>
+<span class="c">!&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Create a Field from a Mesh and arrayspec}</span>
+<span class="c">!\label{sec:field:usage:create_mesh_arrayspec}</span>
+<span class="c">! </span>
+<span class="c">! In this example, an {\tt ESMF\_Field} is created from an {\tt ESMF\_Mesh} </span>
+<span class="c">! and an {\tt ESMF\_Arrayspec}.</span>
+<span class="c">! The mesh object is on a Euclidean surface that is partitioned to a 2x2 rectangular</span>
+<span class="c">! space with 4 elements and 9 nodes. The nodal space is represented by</span>
+<span class="c">! a distgrid with 9 indices. Field is created on locally owned nodes on each PET.</span>
+<span class="c">! Therefore, the created Field has 9 data points globally.</span>
+<span class="c">! The mesh object can be represented by the picture</span>
+<span class="c">! below. For more information on Mesh creation, please see Section~\ref{sec:mesh:usage:meshCreation}.</span>
+<span class="c">!</span>
+<span class="c">!EOE  </span>
+<span class="w">  </span><span class="c">! Only do this if we have 4 PETs</span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">petCount</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">      </span><span class="c">! Setup mesh data depending on PET</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localPet</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">         </span><span class="c">! Fill in node data</span>
+<span class="w">         </span><span class="n">numNodes</span><span class="o">=</span><span class="mi">4</span>
+
+<span class="w">        </span><span class="c">!! node ids</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">nodeIds</span><span class="p">(</span><span class="n">numNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">nodeIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">!! node Coords</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">nodeCoords</span><span class="p">(</span><span class="n">numNodes</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span>
+<span class="w">        </span><span class="n">nodeCoords</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="o">/</span><span class="p">)</span>
+
+<span class="w">        </span><span class="c">!! node owners</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">nodeOwners</span><span class="p">(</span><span class="n">numNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">nodeOwners</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">/</span><span class="p">)</span><span class="w"> </span><span class="c">! everything on proc 0</span>
+
+<span class="w">        </span><span class="c">! Fill in elem data</span>
+<span class="w">        </span><span class="n">numElems</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="w">        </span><span class="c">!! elem ids</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">elemIds</span><span class="p">(</span><span class="n">numElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">elemIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">!! elem type</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">elemTypes</span><span class="p">(</span><span class="n">numElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">elemTypes</span><span class="o">=</span><span class="n">ESMF_MESHELEMTYPE_QUAD</span>
+
+<span class="w">        </span><span class="c">!! elem conn</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">elemConn</span><span class="p">(</span><span class="n">numElems</span><span class="o">*</span><span class="mi">4</span><span class="p">))</span>
+<span class="w">        </span><span class="n">elemConn</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="p">)</span>
+<span class="w">      </span><span class="k">else if</span><span class="w"> </span><span class="p">(</span><span class="n">localPet</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">         </span><span class="c">! Fill in node data</span>
+<span class="w">         </span><span class="n">numNodes</span><span class="o">=</span><span class="mi">4</span>
+
+<span class="w">        </span><span class="c">!! node ids</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">nodeIds</span><span class="p">(</span><span class="n">numNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">nodeIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">!! node Coords</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">nodeCoords</span><span class="p">(</span><span class="n">numNodes</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span>
+<span class="w">        </span><span class="n">nodeCoords</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="mf">2.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="mf">2.0</span><span class="p">,</span><span class="mf">1.0</span><span class="o">/</span><span class="p">)</span>
+
+<span class="w">        </span><span class="c">!! node owners</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">nodeOwners</span><span class="p">(</span><span class="n">numNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">nodeOwners</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">! Fill in elem data</span>
+<span class="w">        </span><span class="n">numElems</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="w">        </span><span class="c">!! elem ids</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">elemIds</span><span class="p">(</span><span class="n">numElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">elemIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">!! elem type</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">elemTypes</span><span class="p">(</span><span class="n">numElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">elemTypes</span><span class="o">=</span><span class="n">ESMF_MESHELEMTYPE_QUAD</span>
+
+<span class="w">        </span><span class="c">!! elem conn</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">elemConn</span><span class="p">(</span><span class="n">numElems</span><span class="o">*</span><span class="mi">4</span><span class="p">))</span>
+<span class="w">        </span><span class="n">elemConn</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="p">)</span>
+<span class="w">      </span><span class="k">else if</span><span class="w"> </span><span class="p">(</span><span class="n">localPet</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">         </span><span class="c">! Fill in node data</span>
+<span class="w">         </span><span class="n">numNodes</span><span class="o">=</span><span class="mi">4</span>
+
+<span class="w">        </span><span class="c">!! node ids</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">nodeIds</span><span class="p">(</span><span class="n">numNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">nodeIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">!! node Coords</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">nodeCoords</span><span class="p">(</span><span class="n">numNodes</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span>
+<span class="w">        </span><span class="n">nodeCoords</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="o">/</span><span class="p">)</span>
+
+<span class="w">        </span><span class="c">!! node owners</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">nodeOwners</span><span class="p">(</span><span class="n">numNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">nodeOwners</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">! Fill in elem data</span>
+<span class="w">        </span><span class="n">numElems</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="w">        </span><span class="c">!! elem ids</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">elemIds</span><span class="p">(</span><span class="n">numElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">elemIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">!! elem type</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">elemTypes</span><span class="p">(</span><span class="n">numElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">elemTypes</span><span class="o">=</span><span class="n">ESMF_MESHELEMTYPE_QUAD</span>
+
+<span class="w">        </span><span class="c">!! elem conn</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">elemConn</span><span class="p">(</span><span class="n">numElems</span><span class="o">*</span><span class="mi">4</span><span class="p">))</span>
+<span class="w">        </span><span class="n">elemConn</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="p">)</span><span class="w">  </span>
+<span class="w">      </span><span class="k">else</span><span class="w"> </span>
+<span class="w">         </span><span class="c">! Fill in node data</span>
+<span class="w">         </span><span class="n">numNodes</span><span class="o">=</span><span class="mi">4</span>
+
+<span class="w">        </span><span class="c">!! node ids</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">nodeIds</span><span class="p">(</span><span class="n">numNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">nodeIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">!! node Coords</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">nodeCoords</span><span class="p">(</span><span class="n">numNodes</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span>
+<span class="w">        </span><span class="n">nodeCoords</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="mf">2.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="mf">2.0</span><span class="p">,</span><span class="mf">2.0</span><span class="o">/</span><span class="p">)</span>
+
+<span class="w">        </span><span class="c">!! node owners</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">nodeOwners</span><span class="p">(</span><span class="n">numNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">nodeOwners</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">! Fill in elem data</span>
+<span class="w">        </span><span class="n">numElems</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="w">        </span><span class="c">!! elem ids</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">elemIds</span><span class="p">(</span><span class="n">numElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">elemIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">4</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">!! elem type</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">elemTypes</span><span class="p">(</span><span class="n">numElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">elemTypes</span><span class="o">=</span><span class="n">ESMF_MESHELEMTYPE_QUAD</span>
+
+<span class="w">        </span><span class="c">!! elem conn</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">elemConn</span><span class="p">(</span><span class="n">numElems</span><span class="o">*</span><span class="mi">4</span><span class="p">))</span>
+<span class="w">        </span><span class="n">elemConn</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="p">)</span><span class="w">  </span>
+<span class="w">      </span><span class="k">endif</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="c">! Create Mesh structure in 1 step</span>
+<span class="w">      </span><span class="n">mesh</span><span class="o">=</span><span class="n">ESMF_MeshCreate</span><span class="p">(</span><span class="n">parametricDim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">spatialDim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">nodeIds</span><span class="o">=</span><span class="n">nodeIds</span><span class="p">,</span><span class="w"> </span><span class="n">nodeCoords</span><span class="o">=</span><span class="n">nodeCoords</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">nodeOwners</span><span class="o">=</span><span class="n">nodeOwners</span><span class="p">,</span><span class="w"> </span><span class="n">elementIds</span><span class="o">=</span><span class="n">elemIds</span><span class="p">,&amp;</span>
+<span class="w">             </span><span class="n">elementTypes</span><span class="o">=</span><span class="n">elemTypes</span><span class="p">,</span><span class="w"> </span><span class="n">elementConn</span><span class="o">=</span><span class="n">elemConn</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_ArraySpecSet</span><span class="p">(</span><span class="n">arrayspec</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_TYPEKIND_I4</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">! Field is created on the 1 dimensional nodal distgrid. On</span>
+<span class="w">      </span><span class="c">! each PET, Field is created on the locally owned nodes.</span>
+<span class="w">      </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span><span class="w"> </span><span class="n">arrayspec</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="c">! deallocate node data</span>
+<span class="w">      </span><span class="k">deallocate</span><span class="p">(</span><span class="n">nodeIds</span><span class="p">)</span>
+<span class="w">      </span><span class="k">deallocate</span><span class="p">(</span><span class="n">nodeCoords</span><span class="p">)</span>
+<span class="w">      </span><span class="k">deallocate</span><span class="p">(</span><span class="n">nodeOwners</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">! deallocate elem data</span>
+<span class="w">      </span><span class="k">deallocate</span><span class="p">(</span><span class="n">elemIds</span><span class="p">)</span>
+<span class="w">      </span><span class="k">deallocate</span><span class="p">(</span><span class="n">elemTypes</span><span class="p">)</span>
+<span class="w">      </span><span class="k">deallocate</span><span class="p">(</span><span class="n">elemConn</span><span class="p">)</span>
+<span class="w">    </span><span class="c">! endif for skip for != 4 procs</span>
+<span class="w">    </span><span class="k">endif </span>
+<span class="k">    print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Field Create from a Mesh and an Arrayspec returned&quot;</span>
+
+<span class="c">!&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</span>
+<span class="c">!-------------------------------- Example -----------------------------</span>
+<span class="c">!&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Create a Field from a Mesh and an Array}</span>
+<span class="c">!\label{sec:field:usage:create_mesh_array}</span>
+<span class="c">! </span>
+<span class="c">! In this example, an {\tt ESMF\_Field} is created from an {\tt ESMF\_Mesh} </span>
+<span class="c">! and an {\tt ESMF\_Array}. The mesh object is created in the previous example and</span>
+<span class="c">! the array object is retrieved from the field created in the previous example too.</span>
+<span class="c">!</span>
+<span class="c">!EOE  </span>
+
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_MeshGet</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span><span class="w"> </span><span class="n">nodalDistgrid</span><span class="o">=</span><span class="n">distgrid</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_ArrayCreate</span><span class="p">(</span><span class="n">distgrid</span><span class="o">=</span><span class="n">distgrid</span><span class="p">,</span><span class="w"> </span><span class="n">arrayspec</span><span class="o">=</span><span class="n">arrayspec</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="c">! query the array from the previous example</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="k">array</span><span class="o">=</span><span class="k">array</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="c">! create a Field from a mesh and an array</span>
+<span class="w">    </span><span class="n">field1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span><span class="w"> </span><span class="k">array</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!EOC</span>
+
+<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Field Create from a Mesh and an Array returned&quot;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_FieldDestroy</span><span class="p">(</span><span class="n">field1</span><span class="p">,</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_FieldDestroy</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_ArrayDestroy</span><span class="p">(</span><span class="k">array</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+
+<span class="c">!&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</span>
+<span class="c">!-------------------------------- Example -----------------------------</span>
+<span class="c">!&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Create a Field from a Mesh and an ArraySpec with optional features}</span>
+<span class="c">!\label{sec:field:usage:createMeshArrayspecOpt}</span>
+<span class="c">!</span>
+<span class="c">! In this example, an {\tt ESMF\_Field} is created from an {\tt ESMF\_Mesh}</span>
+<span class="c">! and an {\tt ESMF\_ArraySpec}. The mesh object is created in the previous example.</span>
+<span class="c">! The Field is also created with optional arguments such as ungridded dimensions</span>
+<span class="c">! and dimension mapping.</span>
+<span class="c">!</span>
+<span class="c">! In this example, the mesh is mapped to the 2nd dimension of the</span>
+<span class="c">! {\tt ESMF\_Field}, with its first dimension being the ungridded dimension with bounds 1,3.</span>
+<span class="c">!</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_ArraySpecSet</span><span class="p">(</span><span class="n">arrayspec</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_TYPEKIND_I4</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span><span class="w"> </span><span class="n">arrayspec</span><span class="o">=</span><span class="n">arrayspec</span><span class="p">,</span><span class="w"> </span><span class="n">gridToFieldMap</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ungriddedLBound</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">ungriddedUBound</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Field Create from a Mesh and an ArraySpec with ungridded dimension returned&quot;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_FieldDestroy</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_MeshDestroy</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">! Destroy objects</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_GridDestroy</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">! IMPORTANT: ESMF_STest() prints the PASS string and the # of processors in the log</span>
+<span class="w">    </span><span class="c">! file that the scripts grep for.</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_STest</span><span class="p">((</span><span class="n">finalrc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">testname</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="w">     </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="p">.</span><span class="n">NE</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">finalrc</span><span class="p">.</span><span class="n">EQ</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;PASS: ESMF_FieldCreateEx.F90&quot;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="k">        print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;FAIL: ESMF_FieldCreateEx.F90&quot;</span>
+<span class="w">    </span><span class="k">end if</span>
+<span class="k">end program </span><span class="n">ESMF_FieldCreateEx</span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,538 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_ReconcileExchgItems &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_ReconcileExchgItems
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.0% of total for procedures.">107 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_StateReconcile.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_statereconcile.f90.html'>ESMF_StateReconcile.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/esmf_statereconcilemod.html'>ESMF_StateReconcileMod</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_ReconcileExchgItems</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/esmf_reconcileexchgitems.html#src">ESMF_ReconcileExchgItems</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>private  subroutine ESMF_ReconcileExchgItems(vm, id_info, recv_items, recv_buffer, rc)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vm~462"></span>
+              type(<a href='../type/esmf_vm.html'>ESMF_VM</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>vm</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-id_info~4"></span>
+              type(<a href='../type/esmf_reconcileidinfo.html'>ESMF_ReconcileIDInfo</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>id_info</strong>(0:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-recv_items"></span>
+              type(<a href='../type/esmf_charptr.html'>ESMF_CharPtr</a>),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>recv_items</strong>(0:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-recv_buffer"></span>
+              character(len=1),
+            </td>
+<td></td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>recv_buffer</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~2549"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">  </span><span class="k">subroutine </span><span class="n">ESMF_ReconcileExchgItems</span><span class="w"> </span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">id_info</span><span class="p">,</span><span class="w"> </span><span class="n">recv_items</span><span class="p">,</span><span class="w"> </span><span class="n">recv_buffer</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!</span>
+<span class="c">! !ARGUMENTS:</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_VM</span><span class="p">),</span><span class="w">              </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">vm</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_ReconcileIDInfo</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">id_info</span><span class="p">(</span><span class="mi">0</span><span class="p">:)</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_CharPtr</span><span class="p">),</span><span class="w">         </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">recv_items</span><span class="p">(</span><span class="mi">0</span><span class="p">:)</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">,</span><span class="w">                  </span><span class="k">pointer</span><span class="w">     </span><span class="kd">::</span><span class="w"> </span><span class="n">recv_buffer</span><span class="p">(:)</span><span class="w"> </span><span class="c">! intent(out)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">                    </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+<span class="c">!</span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">!</span>
+<span class="c">!  Performs alltoallv communications of serialized data from offering PETs</span>
+<span class="c">!  to PETs requesting items.</span>
+<span class="c">!</span>
+<span class="c">!   The arguments are:</span>
+<span class="c">!   \begin{description}</span>
+<span class="c">!   \item[vm]</span>
+<span class="c">!     The current {\tt ESMF\_VM} (virtual machine).</span>
+<span class="c">!   \item[id_info]</span>
+<span class="c">!     Array of arrays of global VMId info.</span>
+<span class="c">!   \item[recv_items]</span>
+<span class="c">!     Array of arrays of serialized item data.</span>
+<span class="c">!   \item[rc]</span>
+<span class="c">!     Return code; equals {\tt ESMF\_SUCCESS} if there are no errors.</span>
+<span class="c">!   \end{description}</span>
+<span class="c">!EOPI</span>
+
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localrc</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">memstat</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localPet</span><span class="p">,</span><span class="w"> </span><span class="n">petCount</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">itemcount</span><span class="p">,</span><span class="w"> </span><span class="n">itemcount_global</span><span class="p">,</span><span class="w"> </span><span class="n">itemcount_local</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">offset_pos</span>
+
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">   </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">counts_recv</span><span class="p">(:),</span><span class="w">  </span><span class="n">counts_send</span><span class="p">(:)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">   </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">offsets_recv</span><span class="p">(:),</span><span class="w"> </span><span class="n">offsets_send</span><span class="p">(:)</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">,</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">buffer_send</span><span class="p">(:)</span>
+
+<span class="w">    </span><span class="kt">character</span><span class="p">,</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cptr_tmp</span><span class="p">(:)</span>
+
+<span class="w">    </span><span class="kt">logical</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">debug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">meminfo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">profile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">logmsg</span>
+
+<span class="w">    </span><span class="c">! -------------------------------------------------------------------------</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">meminfo</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_VMLogMemInfo</span><span class="p">(</span><span class="s2">&quot;entering ESMF_ReconcileExchgItems&quot;</span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">localrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_VMGet</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">localPet</span><span class="o">=</span><span class="n">localPet</span><span class="p">,</span><span class="w"> </span><span class="n">petCount</span><span class="o">=</span><span class="n">petCount</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="n">id_info</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">petCount</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">ESMF_RC_INTNRL_INCONS</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;size (id_info) /= petCount&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    end if</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="n">recv_items</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">petCount</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">ESMF_RC_INTNRL_INCONS</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;size (recv_items) /= petCount&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    end if</span>
+
+<span class="c">!   Set up send counts, offsets, and buffer.</span>
+
+<span class="w">    </span><span class="k">allocate</span><span class="w"> </span><span class="p">(</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">counts_send</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">petCount</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">offsets_send</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">petCount</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="nb">stat</span><span class="o">=</span><span class="n">memstat</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">memstat</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    do</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">petCount</span><span class="o">-</span><span class="mi">1</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">associated</span><span class="w"> </span><span class="p">(</span><span class="n">id_info</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">item_buffer</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">counts_send</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="n">id_info</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">item_buffer</span><span class="p">)</span>
+<span class="w">      </span><span class="k">else</span>
+<span class="k">        </span><span class="n">counts_send</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">      </span><span class="k">end if</span>
+<span class="k">    end do</span>
+
+<span class="k">    </span><span class="n">itemcount_local</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">counts_send</span><span class="p">(</span><span class="n">localPet</span><span class="p">)</span>
+<span class="w">    </span><span class="n">itemcount_global</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">sum</span><span class="w"> </span><span class="p">(</span><span class="n">counts_send</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">allocate</span><span class="w"> </span><span class="p">(</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">buffer_send</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="nb">max</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">itemcount_global</span><span class="o">-</span><span class="mi">1</span><span class="p">)),</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="nb">stat</span><span class="o">=</span><span class="n">memstat</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">memstat</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    </span><span class="n">offset_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="k">do</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">petCount</span><span class="o">-</span><span class="mi">1</span>
+<span class="w">      </span><span class="n">itemcount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">counts_send</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="w">      </span><span class="n">offsets_send</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">offset_pos</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">associated</span><span class="w"> </span><span class="p">(</span><span class="n">id_info</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">item_buffer</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">buffer_send</span><span class="p">(</span><span class="n">offset_pos</span><span class="p">:</span><span class="n">offset_pos</span><span class="o">+</span><span class="n">itemcount</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id_info</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">item_buffer</span>
+<span class="w">      </span><span class="k">end if</span>
+<span class="k">      </span><span class="n">offset_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">offset_pos</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">itemcount</span>
+<span class="w">    </span><span class="k">end do</span>
+
+<span class="c">!   Set up recv counts, offsets, and buffer.  Since there will be a different</span>
+<span class="c">!   buffer size from each remote PET, an AllToAll communication is necessary</span>
+<span class="c">!   for PETs to exchange the buffer sizes they are sending to each other.</span>
+
+<span class="w">    </span><span class="k">allocate</span><span class="w"> </span><span class="p">(</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">counts_recv</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">petCount</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="nb">stat</span><span class="o">=</span><span class="n">memstat</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">memstat</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="n">profile</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      call </span><span class="n">ESMF_TraceRegionEnter</span><span class="p">(</span><span class="s2">&quot;ESMF_VMAllToAll&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    endif</span>
+<span class="k">    call </span><span class="n">ESMF_VMAllToAll</span><span class="w"> </span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">sendData</span><span class="o">=</span><span class="n">counts_send</span><span class="p">,</span><span class="w"> </span><span class="n">sendCount</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">recvData</span><span class="o">=</span><span class="n">counts_recv</span><span class="p">,</span><span class="w"> </span><span class="n">recvCount</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="n">profile</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      call </span><span class="n">ESMF_TraceRegionExit</span><span class="p">(</span><span class="s2">&quot;ESMF_VMAllToAll&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    endif</span>
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="n">debug</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;: PET&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">localPet</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;: serialized buffer sizes&#39;</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="s1">&#39;: counts_send =&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">counts_send</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="s1">&#39;, counts_recv =&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">counts_recv</span>
+<span class="w">    </span><span class="k">end if</span>
+
+<span class="k">    allocate</span><span class="w"> </span><span class="p">(</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">offsets_recv</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">petCount</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">recv_buffer</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="nb">max</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nb">sum</span><span class="w"> </span><span class="p">(</span><span class="n">counts_recv</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)),</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="nb">stat</span><span class="o">=</span><span class="n">memstat</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">memstat</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    </span><span class="n">offset_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="k">do</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">petCount</span><span class="o">-</span><span class="mi">1</span>
+<span class="w">      </span><span class="n">itemcount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">counts_recv</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="w">      </span><span class="n">offsets_recv</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">offset_pos</span>
+<span class="w">      </span><span class="n">offset_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">offset_pos</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">itemcount</span>
+<span class="w">    </span><span class="k">end do</span>
+
+<span class="cp">#if 0</span>
+<span class="w">    </span><span class="k">write</span><span class="p">(</span><span class="n">logmsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">SIZE</span><span class="p">(</span><span class="n">buffer_send</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_LogWrite</span><span class="p">(</span><span class="s2">&quot;SIZE(buffer_send)=&quot;</span><span class="o">//</span><span class="nb">TRIM</span><span class="p">(</span><span class="n">logmsg</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    write</span><span class="p">(</span><span class="n">logmsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">SIZE</span><span class="p">(</span><span class="n">recv_buffer</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_LogWrite</span><span class="p">(</span><span class="s2">&quot;SIZE(recv_buffer)=&quot;</span><span class="o">//</span><span class="nb">TRIM</span><span class="p">(</span><span class="n">logmsg</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="cp">#endif</span>
+
+<span class="w">    </span><span class="c">! AlltoAllV</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">profile</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      call </span><span class="n">ESMF_TraceRegionEnter</span><span class="p">(</span><span class="s2">&quot;ESMF_VMAllToAllV&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    endif</span>
+<span class="k">    call </span><span class="n">ESMF_VMAllToAllV</span><span class="w"> </span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">sendData</span><span class="o">=</span><span class="n">buffer_send</span><span class="p">,</span><span class="w"> </span><span class="n">sendCounts</span><span class="o">=</span><span class="n">counts_send</span><span class="p">,</span><span class="w"> </span><span class="n">sendOffsets</span><span class="o">=</span><span class="n">offsets_send</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">recvData</span><span class="o">=</span><span class="n">recv_buffer</span><span class="p">,</span><span class="w"> </span><span class="n">recvCounts</span><span class="o">=</span><span class="n">counts_recv</span><span class="p">,</span><span class="w"> </span><span class="n">recvOffsets</span><span class="o">=</span><span class="n">offsets_recv</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="n">profile</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      call </span><span class="n">ESMF_TraceRegionExit</span><span class="p">(</span><span class="s2">&quot;ESMF_VMAllToAllV&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    endif</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="n">meminfo</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_VMLogMemInfo</span><span class="p">(</span><span class="s2">&quot;tp ESMF_ReconcileExchgItems: after ESMF_VMAllToAllV&quot;</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">deallocate</span><span class="w"> </span><span class="p">(</span><span class="n">buffer_send</span><span class="p">,</span><span class="w"> </span><span class="n">counts_send</span><span class="p">,</span><span class="w"> </span><span class="n">offsets_send</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="nb">stat</span><span class="o">=</span><span class="n">memstat</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundDeallocError</span><span class="w"> </span><span class="p">(</span><span class="n">memstat</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">    </span><span class="c">! Copy recv buffers into recv_items</span>
+
+<span class="w">    </span><span class="k">do</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">petCount</span><span class="o">-</span><span class="mi">1</span>
+<span class="w">      </span><span class="n">itemcount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">counts_recv</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">itemcount</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">offset_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">offsets_recv</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="cp">#if 1</span>
+<span class="w">      </span><span class="c">! Fortran 2003 version</span>
+<span class="w">        </span><span class="n">recv_items</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">cptr</span><span class="p">(</span><span class="mi">0</span><span class="p">:)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">recv_buffer</span><span class="p">(</span><span class="n">offset_pos</span><span class="p">:</span><span class="n">offset_pos</span><span class="o">+</span><span class="n">itemcount</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="cp">#else</span>
+<span class="w">      </span><span class="c">! Fortran 90/95 version</span>
+<span class="w">        </span><span class="n">cptr_tmp</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">recv_buffer</span><span class="p">(</span><span class="n">offset_pos</span><span class="p">:</span><span class="n">offset_pos</span><span class="o">+</span><span class="n">itemcount</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">      </span><span class="c">! cptr_tmp is 1-based.  Convert to 0-based.</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ptr_assoc_zero</span><span class="w"> </span><span class="p">(</span><span class="n">cptr_tmp</span><span class="p">,</span><span class="w"> </span><span class="n">itemcount</span><span class="p">,</span><span class="w"> </span><span class="n">recv_items</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">cptr</span><span class="p">)</span>
+<span class="c">!       print *, &#39;associated cptr(&#39;, lbound (recv_items(i)%cptr,1), &#39;:&#39;, ubound (recv_items(i)%cptr,1), &#39;)&#39;</span>
+<span class="cp">#endif</span>
+<span class="w">      </span><span class="k">else</span>
+<span class="k">        </span><span class="n">recv_items</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">cptr</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nb">null</span><span class="w"> </span><span class="p">()</span>
+<span class="w">      </span><span class="k">end if</span>
+<span class="k">    end do</span>
+
+<span class="k">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">localrc</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">meminfo</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_VMLogMemInfo</span><span class="p">(</span><span class="s2">&quot;exiting ESMF_ReconcileExchgItems&quot;</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">contains</span>
+
+<span class="k">    subroutine </span><span class="n">ptr_assoc_zero</span><span class="w"> </span><span class="p">(</span><span class="n">cbuffer</span><span class="p">,</span><span class="w"> </span><span class="n">itemcount</span><span class="p">,</span><span class="w"> </span><span class="n">cptr</span><span class="p">)</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">   </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">itemcount</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w"> </span><span class="k">target</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cbuffer</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">itemcount</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">,</span><span class="w"> </span><span class="k">pointer</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="n">cptr</span><span class="p">(:)</span>
+
+<span class="w">      </span><span class="n">cptr</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">cbuffer</span>
+
+<span class="w">    </span><span class="k">end subroutine</span>
+
+<span class="k">  end subroutine </span><span class="n">ESMF_ReconcileExchgItems</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

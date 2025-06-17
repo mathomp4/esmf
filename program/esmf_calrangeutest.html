@@ -1,0 +1,1645 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_CalRangeUTest &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_CalRangeUTest      <small>Program</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.1% of total for programs.">146 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_CalRangeUTest.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_calrangeutest.f90.html'>ESMF_CalRangeUTest.F90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_CalRangeUTest</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/esmf_calrangeutest.html#variable-version~9">version</a>
+            <a class="list-group-item" href="../program/esmf_calrangeutest.html#variable-convert_to_both">CONVERT_TO_BOTH</a>
+            <a class="list-group-item" href="../program/esmf_calrangeutest.html#variable-convert_to_date">CONVERT_TO_DATE</a>
+            <a class="list-group-item" href="../program/esmf_calrangeutest.html#variable-convert_to_time">CONVERT_TO_TIME</a>
+            <a class="list-group-item" href="../program/esmf_calrangeutest.html#variable-dayspermonth">DaysPerMonth</a>
+            <a class="list-group-item" href="../program/esmf_calrangeutest.html#variable-rc~165">rc</a>
+            <a class="list-group-item" href="../program/esmf_calrangeutest.html#variable-result~16">result</a>
+            <a class="list-group-item" href="../program/esmf_calrangeutest.html#variable-juliandaycalendar">julianDayCalendar</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#funcs-0"
+         aria-expanded="false" aria-controls="funcs-0">
+         <h4 class="card-header bg-primary text-white">Functions</h4>
+      </a>
+      <div id="funcs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/esmf_calrangeutest.html#proc-esmf_checktime">ESMF_CheckTime</a>
+            <a class="list-group-item" href="../program/esmf_calrangeutest.html#proc-esmf_isleapyear">ESMF_IsLeapYear</a>
+        </div>
+      </div>
+    </div>
+
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#subs-0"
+         aria-expanded="false" aria-controls="subs-0">
+         <h4 class="card-header bg-primary text-white">Subroutines</h4>
+      </a>
+      <div id="subs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/esmf_calrangeutest.html#proc-esmf_runtestbackwards">ESMF_RunTestBackwards</a>
+            <a class="list-group-item" href="../program/esmf_calrangeutest.html#proc-esmf_runtestforwards">ESMF_RunTestForwards</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../program/esmf_calrangeutest.html#src">ESMF_CalRangeUTest</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='../module/esmf.html'>ESMF</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf_testmod.html'>ESMF_TestMod</a></li>
+              </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    
+
+
+    <section>
+    <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-version~9"></span>
+              character(len=*),
+            </td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>version</strong></td>
+<td> =</td>
+                <td>&#39;$Id$&#39;</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-convert_to_both"></span>
+              integer,
+            </td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>CONVERT_TO_BOTH</strong></td>
+<td> =</td>
+                <td>3</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-convert_to_date"></span>
+              integer,
+            </td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>CONVERT_TO_DATE</strong></td>
+<td> =</td>
+                <td>2</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-convert_to_time"></span>
+              integer,
+            </td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>CONVERT_TO_TIME</strong></td>
+<td> =</td>
+                <td>1</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dayspermonth"></span>
+              integer,
+            </td>
+            <td>
+              dimension(12)
+            </td>
+            <td>::</td>
+            <td><strong>DaysPerMonth</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~165"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-result~16"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>result</strong></td>
+<td> =</td>
+                <td>0</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-juliandaycalendar"></span>
+              type(<a href='../type/esmf_calendar.html'>ESMF_Calendar</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>julianDayCalendar</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+    
+
+    
+ 
+    <section>
+    <h2>Functions</h2>
+      <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-esmf_checktime"></span> <h3> function <a href='../proc/esmf_checktime.html'>ESMF_CheckTime</a>(testType, YYl, MM, DD, Dl, cal, rc)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-testtype~2"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>testType</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-yyl~3"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>YYl</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mm~3"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>MM</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dd~3"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>DD</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dl~3"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Dl</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-cal~3"></span>
+              type(<a href='../type/esmf_calendar.html'>ESMF_Calendar</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>cal</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~166"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+      <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-esmf_isleapyear"></span> <h3> function <a href='../proc/esmf_isleapyear.html'>ESMF_IsLeapYear</a>(YYl, cal)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-yyl~4"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>YYl</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-cal~4"></span>
+              type(<a href='../type/esmf_calendar.html'>ESMF_Calendar</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>cal</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+    </section>
+    <br>
+
+
+    <section>
+    <h2>Subroutines</h2>
+      <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-esmf_runtestbackwards"></span> <h3> subroutine <a href='../proc/esmf_runtestbackwards.html'>ESMF_RunTestBackwards</a>(testType, YYl, MM, DD, Dl, cal)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-testtype"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>testType</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-yyl"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>YYl</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mm"></span>
+              integer,
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>MM</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dd"></span>
+              integer,
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>DD</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dl"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Dl</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-cal"></span>
+              type(<a href='../type/esmf_calendar.html'>ESMF_Calendar</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>cal</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+      <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-esmf_runtestforwards"></span> <h3> subroutine <a href='../proc/esmf_runtestforwards.html'>ESMF_RunTestForwards</a>(YYl, MM, DD, Dl, cal)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-yyl~2"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>YYl</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mm~2"></span>
+              integer,
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>MM</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dd~2"></span>
+              integer,
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>DD</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dl~2"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Dl</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-cal~2"></span>
+              type(<a href='../type/esmf_calendar.html'>ESMF_Calendar</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>cal</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+    </section>    
+    
+
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">      </span><span class="k">program </span><span class="n">ESMF_CalRangeUTest</span>
+
+<span class="c">!------------------------------------------------------------------------------</span>
+<span class="c">!</span>
+
+<span class="cp">#include &quot;ESMF.h&quot;</span>
+
+<span class="c">!==============================================================================</span>
+<span class="c">!BOP</span>
+<span class="c">! !PROGRAM: ESMF_CalRangeUTest - Calendar range Unit tests</span>
+<span class="c">!</span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">!</span>
+<span class="c">! This program tests calendar ranges</span>
+<span class="c">! </span>
+<span class="c">! A good test reference tool is a day &amp; date calculator at</span>
+<span class="c">!   http://www.numerical-recipes.com/julian.html</span>
+<span class="c">!</span>
+<span class="c">!EOP</span>
+<span class="c">!-----------------------------------------------------------------------------</span>
+<span class="c">! !USES:</span>
+<span class="w">      </span><span class="k">use </span><span class="n">ESMF_TestMod</span><span class="w">      </span><span class="c">! test methods</span>
+<span class="w">      </span><span class="k">use </span><span class="n">ESMF</span>
+<span class="w">      </span><span class="k">implicit none</span>
+
+<span class="c">!------------------------------------------------------------------------------</span>
+<span class="c">! The following line turns the CVS identifier string into a printable variable.</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="s1">&#39;$Id$&#39;</span>
+<span class="c">!------------------------------------------------------------------------------</span>
+
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">CONVERT_TO_TIME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">CONVERT_TO_DATE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                            </span><span class="n">CONVERT_TO_BOTH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span>
+
+<span class="w">      </span><span class="c">! instantiate calendars</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Calendar</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">julianDayCalendar</span>
+
+
+<span class="w">      </span><span class="c">! temp variables</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+
+<span class="w">      </span><span class="c">! cumulative result: count failures; no failures equals &quot;all pass&quot;</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="k">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+
+
+
+<span class="w">      </span><span class="c">! days per month array, 12 months per year</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">DaysPerMonth</span>
+
+<span class="cp">#ifdef ESMF_TESTEXHAUSTIVE</span>
+<span class="w">      </span><span class="c">! individual test name</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">name</span>
+
+<span class="w">      </span><span class="c">! individual test failure message</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">failMsg</span>
+
+<span class="w">      </span><span class="c">! temp variables</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ESMF_KIND_I8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">endDl</span><span class="p">,</span><span class="w"> </span><span class="n">rDl</span><span class="p">,</span><span class="w"> </span><span class="n">Dl</span><span class="p">,</span><span class="w"> </span><span class="n">YYl</span><span class="p">,</span><span class="w"> </span><span class="n">rYYl</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">DD</span><span class="p">,</span><span class="w"> </span><span class="n">rDD</span><span class="p">,</span><span class="w"> </span><span class="n">rMM</span><span class="p">,</span><span class="w"> </span><span class="n">MM</span>
+<span class="w">      </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">broken</span><span class="w"> </span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ESMF_KIND_I8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">endYYl</span>
+
+<span class="w">      </span><span class="c">! instantiate time instant</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Time</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="nb">Time</span>
+
+<span class="w">      </span><span class="c">! instantiate calendars</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Calendar</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">julianCalendar</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Calendar</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">modifiedJulianDayCalendar</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Calendar</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">gregorianCalendar</span>
+
+<span class="cp">#endif</span>
+
+<span class="c">!-------------------------------------------------------------------------------</span>
+<span class="c">!     The unit tests are divided into Sanity and Exhaustive. The Sanity tests</span>
+<span class="c">!     are always run.  When the environment variable, EXHAUSTIVE, is set to ON</span>
+<span class="c">!     then the EXHAUSTIVE and sanity tests both run.  If the EXHAUSTIVE</span>
+<span class="c">!     variable is set to OFF, then only the sanity unit tests run.</span>
+<span class="c">!     Special strings (Non-exhaustive and exhaustive) have been added to allow</span>
+<span class="c">!     a script to count the number and types of unit tests.</span>
+<span class="c">!-------------------------------------------------------------------------------</span>
+
+<span class="w">      </span><span class="c">! initialize ESMF framework</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TestStart</span><span class="p">(</span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">! Calendar months table</span>
+<span class="w">      </span><span class="n">DaysPerMonth</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">31</span>
+<span class="w">      </span><span class="n">DaysPerMonth</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">28</span>
+<span class="w">      </span><span class="n">DaysPerMonth</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">31</span>
+<span class="w">      </span><span class="n">DaysPerMonth</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span>
+<span class="w">      </span><span class="n">DaysPerMonth</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">31</span><span class="w"> </span>
+<span class="w">      </span><span class="n">DaysPerMonth</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span>
+<span class="w">      </span><span class="n">DaysPerMonth</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">31</span>
+<span class="w">      </span><span class="n">DaysPerMonth</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">31</span>
+<span class="w">      </span><span class="n">DaysPerMonth</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span>
+<span class="w">      </span><span class="n">DaysPerMonth</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">31</span>
+<span class="w">      </span><span class="n">DaysPerMonth</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span>
+<span class="w">      </span><span class="n">DaysPerMonth</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">31</span>
+
+
+<span class="cp">#ifdef ESMF_TESTEXHAUSTIVE</span>
+
+<span class="w">      </span><span class="c">! Julian Day Calendar</span>
+
+<span class="w">      </span><span class="c">! initialize calendar to be Julian Day kind</span>
+<span class="w">      </span><span class="n">julianDayCalendar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_CalendarCreate</span><span class="p">(</span><span class="n">ESMF_CALKIND_JULIANDAY</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;JulianDay&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">! Modified Julian Day Calendar</span>
+
+<span class="w">      </span><span class="c">! initialize calendar to be Modified Julian Day kind</span>
+<span class="w">      </span><span class="n">modifiedJulianDayCalendar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CalendarCreate</span><span class="p">(</span><span class="n">ESMF_CALKIND_MODJULIANDAY</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;ModifiedJulianDay&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">! Gregorian Calendar</span>
+
+<span class="w">      </span><span class="c">! initialize calendar to be Gregorian kind</span>
+<span class="w">      </span><span class="n">gregorianCalendar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_CalendarCreate</span><span class="p">(</span><span class="n">ESMF_CALKIND_GREGORIAN</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Gregorian&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">! Julian Calendar</span>
+
+<span class="w">      </span><span class="c">! initialize calendar to be Julian kind</span>
+<span class="w">      </span><span class="n">julianCalendar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_CalendarCreate</span><span class="p">(</span><span class="n">ESMF_CALKIND_JULIAN</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Julian&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+
+<span class="w">      </span><span class="c">!-------------------------------------------------------------------------</span>
+<span class="w">      </span><span class="c">! Test range of Gregorian/Fliegel algorithm for continuity and consistency</span>
+<span class="w">      </span><span class="c">!-------------------------------------------------------------------------</span>
+
+<span class="w">      </span><span class="c">!-----------------------------------------------------------------!</span>
+<span class="w">      </span><span class="c">!                Gregorian/Fliegel Low Range Test                 !</span>
+<span class="w">      </span><span class="c">! Start about 500 years above the bottom of the range and move    !</span>
+<span class="w">      </span><span class="c">! backward one day at a time until it breaks.  This ensures that  !</span>
+<span class="w">      </span><span class="c">! the leap year rule is tested at all 3 boundaries: every 4, 100, !</span>
+<span class="w">      </span><span class="c">! and 400 years.  It also tests positive and negative Julian day  !</span>
+<span class="w">      </span><span class="c">! numbers (Julian day zero is 11/24/-4713 Gregorian).  The lowest !</span>
+<span class="w">      </span><span class="c">! valid date is 3/1/-4800 Gregorian, which is Julian Day -32044.  !</span>
+<span class="w">      </span><span class="c">!-----------------------------------------------------------------!</span>
+
+<span class="w">      </span><span class="n">YYl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">4300</span>
+<span class="w">      </span><span class="n">MM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="n">DD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="n">Dl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">150518</span><span class="w"> </span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeSet</span><span class="p">(</span><span class="nb">Time</span><span class="p">,</span><span class="w"> </span><span class="n">yy_i8</span><span class="o">=</span><span class="n">YYl</span><span class="p">,</span><span class="w"> </span><span class="n">mm</span><span class="o">=</span><span class="n">MM</span><span class="p">,</span><span class="w"> </span><span class="n">dd</span><span class="o">=</span><span class="n">DD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                        </span><span class="n">calendar</span><span class="o">=</span><span class="n">gregorianCalendar</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeGet</span><span class="p">(</span><span class="nb">Time</span><span class="p">,</span><span class="w"> </span><span class="n">yy_i8</span><span class="o">=</span><span class="n">rYYl</span><span class="p">,</span><span class="w"> </span><span class="n">mm</span><span class="o">=</span><span class="n">rMM</span><span class="p">,</span><span class="w"> </span><span class="n">dd</span><span class="o">=</span><span class="n">rDD</span><span class="p">,</span><span class="w"> </span><span class="n">d_i8</span><span class="o">=</span><span class="n">rDl</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span>
+<span class="w">      </span><span class="c">!print *, &quot;Low range test&quot;</span>
+<span class="w">      </span><span class="c">!print *, &quot;  Start Time Gregorian = &quot;, rYYl, &quot;/&quot;, rMM, &quot;/&quot;, rDD</span>
+<span class="w">      </span><span class="c">!print *, &quot;  Start Julian Days = &quot;, rDl</span>
+<span class="w">      </span><span class="c">!print *</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_RunTestBackwards</span><span class="p">(</span><span class="n">CONVERT_TO_TIME</span><span class="p">,</span><span class="w"> </span><span class="n">YYl</span><span class="p">,</span><span class="w"> </span><span class="n">MM</span><span class="p">,</span><span class="w"> </span><span class="n">DD</span><span class="p">,</span><span class="w"> </span><span class="n">Dl</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                                 </span><span class="n">gregorianCalendar</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">!EX_UTest</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Low range (convert to time) endpoint not -4800/2/29 or rc=ESMF_SUCCESS&quot;</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Gregorian/Fliegel Low Range (convert to time) Test&quot;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">YYl</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="o">-</span><span class="mi">4800</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">MM</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">2</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">DD</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">29</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">Dl</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="o">-</span><span class="mi">32045</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">rc</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="w">      </span><span class="c">!print *</span>
+
+<span class="w">      </span><span class="c">! Convert-To-Date limit actually goes back 100 years further to 3/1/-4900</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_RunTestBackwards</span><span class="p">(</span><span class="n">CONVERT_TO_DATE</span><span class="p">,</span><span class="w"> </span><span class="n">YYl</span><span class="p">,</span><span class="w"> </span><span class="n">MM</span><span class="p">,</span><span class="w"> </span><span class="n">DD</span><span class="p">,</span><span class="w"> </span><span class="n">Dl</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                                 </span><span class="n">gregorianCalendar</span><span class="p">)</span>
+<span class="w">      </span><span class="c">!EX_UTest</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Low range (convert to date) endpoint not -4900/2/28 or rc=ESMF_SUCCESS&quot;</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Gregorian/Fliegel Low Range (convert to date) Test&quot;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">YYl</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="o">-</span><span class="mi">4900</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">MM</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">2</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">DD</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">28</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">Dl</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="o">-</span><span class="mi">68570</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">rc</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="w">      </span><span class="c">!print *</span>
+
+<span class="w">      </span><span class="c">!------------------------------------------------------------------!</span>
+<span class="w">      </span><span class="c">!                  Gregorian/Fliegel High Range Test               !</span>
+<span class="w">      </span><span class="c">! Test only 200,000 days (~ 500 years) near the high end, since    !</span>
+<span class="w">      </span><span class="c">! it would take a few decades of real wall clock time to step      !</span>
+<span class="w">      </span><span class="c">! through the entire range. (TODO: parallelize?)  This ensures     !</span>
+<span class="w">      </span><span class="c">! that the leap year rule is tested at all 3 boundaries:  every    !</span>
+<span class="w">      </span><span class="c">! 4, 100, and 400 years.  For a signed 64-bit representation, the  !</span>
+<span class="w">      </span><span class="c">! highest valid date is 10/29/292,277,019,914 Gregorian.           !</span>
+<span class="w">      </span><span class="c">!------------------------------------------------------------------!</span>
+
+<span class="w">      </span><span class="c">! set days to highest value representable with signed 64-bits:</span>
+<span class="w">      </span><span class="c">! ((2**63)-1)/86400 = 106,751,991,167,300 days</span>
+<span class="w">      </span><span class="n">Dl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">106751991167300_ESMF_KIND_I8</span>
+
+<span class="w">      </span><span class="c">! start back 200000 days, then come forward until it breaks</span>
+<span class="w">      </span><span class="n">Dl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dl</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">200000</span>
+
+<span class="w">      </span><span class="c">! matching start date is March 30, 292,277,019,367</span>
+<span class="w">      </span><span class="n">YYl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">292277019367_ESMF_KIND_I8</span>
+<span class="w">      </span><span class="n">MM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span>
+<span class="w">      </span><span class="n">DD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeSet</span><span class="p">(</span><span class="nb">Time</span><span class="p">,</span><span class="w"> </span><span class="n">yy_i8</span><span class="o">=</span><span class="n">YYl</span><span class="p">,</span><span class="w"> </span><span class="n">mm</span><span class="o">=</span><span class="n">MM</span><span class="p">,</span><span class="w"> </span><span class="n">dd</span><span class="o">=</span><span class="n">DD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                        </span><span class="n">calendar</span><span class="o">=</span><span class="n">gregorianCalendar</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeGet</span><span class="p">(</span><span class="nb">Time</span><span class="p">,</span><span class="w"> </span><span class="n">yy_i8</span><span class="o">=</span><span class="n">rYYl</span><span class="p">,</span><span class="w"> </span><span class="n">mm</span><span class="o">=</span><span class="n">rMM</span><span class="p">,</span><span class="w"> </span><span class="n">dd</span><span class="o">=</span><span class="n">rDD</span><span class="p">,</span><span class="w"> </span><span class="n">d_i8</span><span class="o">=</span><span class="n">rDl</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="c">!print *, &quot;High range test&quot;</span>
+<span class="w">      </span><span class="c">!print *, &quot;  Start Time Gregorian = &quot;, rYYl, &quot;/&quot;, rMM, &quot;/&quot;, rDD</span>
+<span class="w">      </span><span class="c">!print *, &quot;  Start Julian Days = &quot;, rDl</span>
+<span class="w">      </span><span class="c">!print *</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_RunTestForwards</span><span class="p">(</span><span class="n">YYl</span><span class="p">,</span><span class="w"> </span><span class="n">MM</span><span class="p">,</span><span class="w"> </span><span class="n">DD</span><span class="p">,</span><span class="w"> </span><span class="n">Dl</span><span class="p">,</span><span class="w"> </span><span class="n">gregorianCalendar</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">! test section ended, check expected endpoint year and julian day</span>
+<span class="w">      </span><span class="n">endYYl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">292277019914_ESMF_KIND_I8</span>
+<span class="w">      </span><span class="n">endDl</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">106751991167301_ESMF_KIND_I8</span>
+<span class="w">          </span>
+<span class="w">      </span><span class="c">!EX_UTest</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="s2">&quot;High range not 10/30/292,277,019,914 or rc=ESMF_SUCCESS&quot;</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Gregorian/Fliegel High Range Test&quot;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">YYl</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">endYYl</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">MM</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">10</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">DD</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">30</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">Dl</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">endDl</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">rc</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">!----------------------------------------------------------------------</span>
+<span class="w">      </span><span class="c">! Test range of Julian/Hatcher algorithm for continuity and consistency</span>
+<span class="w">      </span><span class="c">!----------------------------------------------------------------------</span>
+
+<span class="w">      </span><span class="c">!-----------------------------------------------------------------!</span>
+<span class="w">      </span><span class="c">!                   Julian/Hatcher Low Range Test                 !</span>
+<span class="w">      </span><span class="c">! Start at Julian day 36585, 3/1/-4612 (100 years above bottom),  !</span>
+<span class="w">      </span><span class="c">! and move backward one day at a time until it breaks.            !</span>
+<span class="w">      </span><span class="c">! This tests the leap year rule at several 4-year boundaries and  !</span>
+<span class="w">      </span><span class="c">! at one 100-year boundary.  The lowest valid Julian date is      !</span>
+<span class="w">      </span><span class="c">! 3/1/-4712, which is Julian Day 60.                              !</span>
+<span class="w">      </span><span class="c">!-----------------------------------------------------------------!</span>
+
+<span class="w">      </span><span class="n">YYl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">4612</span>
+<span class="w">      </span><span class="n">MM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span>
+<span class="w">      </span><span class="n">DD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="n">Dl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">36585</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeSet</span><span class="p">(</span><span class="nb">Time</span><span class="p">,</span><span class="w"> </span><span class="n">yy_i8</span><span class="o">=</span><span class="n">YYl</span><span class="p">,</span><span class="w"> </span><span class="n">mm</span><span class="o">=</span><span class="n">MM</span><span class="p">,</span><span class="w"> </span><span class="n">dd</span><span class="o">=</span><span class="n">DD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                        </span><span class="n">calendar</span><span class="o">=</span><span class="n">julianCalendar</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeGet</span><span class="p">(</span><span class="nb">Time</span><span class="p">,</span><span class="w"> </span><span class="n">yy_i8</span><span class="o">=</span><span class="n">rYYl</span><span class="p">,</span><span class="w"> </span><span class="n">mm</span><span class="o">=</span><span class="n">rMM</span><span class="p">,</span><span class="w"> </span><span class="n">dd</span><span class="o">=</span><span class="n">rDD</span><span class="p">,</span><span class="w"> </span><span class="n">d_i8</span><span class="o">=</span><span class="n">rDl</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="c">!print *, &quot;Low range test&quot;</span>
+<span class="w">      </span><span class="c">!print *, &quot;  Start Time Julian = &quot;, rYYl, &quot;/&quot;, rMM, &quot;/&quot;, rDD</span>
+<span class="w">      </span><span class="c">!print *, &quot;  Start Julian Days = &quot;, rDl</span>
+<span class="w">      </span><span class="c">!print *</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_RunTestBackwards</span><span class="p">(</span><span class="n">CONVERT_TO_TIME</span><span class="p">,</span><span class="w"> </span><span class="n">YYl</span><span class="p">,</span><span class="w"> </span><span class="n">MM</span><span class="p">,</span><span class="w"> </span><span class="n">DD</span><span class="p">,</span><span class="w"> </span><span class="n">Dl</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                                 </span><span class="n">julianCalendar</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">!EX_UTest</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Low range (convert to time) endpoint not -4712/2/29 or rc=ESMF_SUCCESS&quot;</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Julian/Hatcher Low Range (convert to time) Test&quot;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">YYl</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="o">-</span><span class="mi">4712</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">MM</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">2</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">DD</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">29</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">Dl</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">59</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">rc</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="w">      </span><span class="c">!print *</span>
+
+<span class="w">      </span><span class="c">! Convert-To-Date limit actually goes back 1 day further to 2/29/-4712</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_RunTestBackwards</span><span class="p">(</span><span class="n">CONVERT_TO_DATE</span><span class="p">,</span><span class="w"> </span><span class="n">YYl</span><span class="p">,</span><span class="w"> </span><span class="n">MM</span><span class="p">,</span><span class="w"> </span><span class="n">DD</span><span class="p">,</span><span class="w"> </span><span class="n">Dl</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                                 </span><span class="n">julianCalendar</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">!EX_UTest</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Low range (convert to date) endpoint not -4712/2/28 or rc=ESMF_SUCCESS&quot;</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Julian/Hatcher Low Range (convert to date) Test&quot;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">YYl</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="o">-</span><span class="mi">4712</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">MM</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">2</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">DD</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">28</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">Dl</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">58</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">rc</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="w">      </span><span class="c">!print *</span>
+
+<span class="w">      </span><span class="c">!------------------------------------------------------------------!</span>
+<span class="w">      </span><span class="c">!                     Julian/Hatcher High range test               !</span>
+<span class="w">      </span><span class="c">! Test only 40,000 days (~ 100 years) near the high end, since it  !</span>
+<span class="w">      </span><span class="c">! would take a few decades of real wall clock time to step through !</span>
+<span class="w">      </span><span class="c">! the entire range. (TODO: parallelize?)  This tests the leap year !</span>
+<span class="w">      </span><span class="c">! rule at several 4-year boundaries and at one 100-year boundary.  !</span>
+<span class="w">      </span><span class="c">! For a signed 64-bit representation, the highest valid date is    !</span>
+<span class="w">      </span><span class="c">! 4/24/292,271,018,333 Julian.                                     !</span>
+<span class="w">      </span><span class="c">!------------------------------------------------------------------!</span>
+
+<span class="w">      </span><span class="c">! set days to highest value representable with signed 64-bits:</span>
+<span class="w">      </span><span class="c">! ((2**63)-1)/86400 = 106,751,991,167,300 days</span>
+<span class="w">      </span><span class="n">Dl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">106751991167300_ESMF_KIND_I8</span>
+
+<span class="w">      </span><span class="c">! start back 40000 days, then come forward until it breaks</span>
+<span class="w">      </span><span class="n">Dl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dl</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">40000</span>
+
+<span class="w">      </span><span class="c">! matching start date is October 19, 292,271,018,223</span>
+<span class="w">      </span><span class="n">YYl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">292271018223_ESMF_KIND_I8</span>
+<span class="w">      </span><span class="n">MM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">      </span><span class="n">DD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">19</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeSet</span><span class="p">(</span><span class="nb">Time</span><span class="p">,</span><span class="w"> </span><span class="n">yy_i8</span><span class="o">=</span><span class="n">YYl</span><span class="p">,</span><span class="w"> </span><span class="n">mm</span><span class="o">=</span><span class="n">MM</span><span class="p">,</span><span class="w"> </span><span class="n">dd</span><span class="o">=</span><span class="n">DD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                        </span><span class="n">calendar</span><span class="o">=</span><span class="n">JulianCalendar</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeGet</span><span class="p">(</span><span class="nb">Time</span><span class="p">,</span><span class="w"> </span><span class="n">yy_i8</span><span class="o">=</span><span class="n">rYYl</span><span class="p">,</span><span class="w"> </span><span class="n">mm</span><span class="o">=</span><span class="n">rMM</span><span class="p">,</span><span class="w"> </span><span class="n">dd</span><span class="o">=</span><span class="n">rDD</span><span class="p">,</span><span class="w"> </span><span class="n">d_i8</span><span class="o">=</span><span class="n">rDl</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="c">!print *, &quot;High range test&quot;</span>
+<span class="w">      </span><span class="c">!print *, &quot;  Start Time Julian = &quot;, rYYl, &quot;/&quot;, rMM, &quot;/&quot;, rDD</span>
+<span class="w">      </span><span class="c">!print *, &quot;  Start Julian Days = &quot;, rDl</span>
+<span class="w">      </span><span class="c">!print *</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_RunTestForwards</span><span class="p">(</span><span class="n">YYl</span><span class="p">,</span><span class="w"> </span><span class="n">MM</span><span class="p">,</span><span class="w"> </span><span class="n">DD</span><span class="p">,</span><span class="w"> </span><span class="n">Dl</span><span class="p">,</span><span class="w"> </span><span class="n">julianCalendar</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">! test section ended, check expected endpoint year and julian day</span>
+<span class="w">      </span><span class="n">endYYl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">292271018333_ESMF_KIND_I8</span>
+<span class="w">      </span><span class="n">endDl</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">106751991167301_ESMF_KIND_I8</span>
+<span class="w">          </span>
+<span class="w">      </span><span class="c">!EX_UTest</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="s2">&quot;High range not 4/25/292,271,018,333 or rc=ESMF_SUCCESS&quot;</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Julian/Hatcher High Range Test&quot;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">YYl</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">endYYl</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">MM</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">4</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">DD</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">25</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">Dl</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">endDl</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">rc</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">!-----------------------------------!</span>
+<span class="w">      </span><span class="c">! Test range of Julian day calendar !</span>
+<span class="w">      </span><span class="c">!-----------------------------------!</span>
+
+<span class="w">      </span><span class="c">!------------------------------------------------------------------!</span>
+<span class="w">      </span><span class="c">!                   Julian Day Low Range Test                      !</span>
+<span class="w">      </span><span class="c">! Start 10 days above the bottom and move backward one day at a    !</span>
+<span class="w">      </span><span class="c">! time until it breaks.  The lowest valid signed 64-bit Julian day !</span>
+<span class="w">      </span><span class="c">! is -2^63/86400 = -106,751,991,167,300.                           !</span>
+<span class="w">      </span><span class="c">!------------------------------------------------------------------!</span>
+
+<span class="w">      </span><span class="c">! set days to lowest value representable with signed 64-bits:</span>
+<span class="w">      </span><span class="c">! -(2**63)/86400 = -106,751,991,167,300 days</span>
+<span class="w">      </span><span class="n">Dl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">106751991167300_ESMF_KIND_I8</span>
+<span class="w">      </span><span class="n">endDl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dl</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span>
+
+<span class="w">      </span><span class="c">! start 10 days above bottom, then come back until it breaks</span>
+<span class="w">      </span><span class="n">Dl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dl</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeSet</span><span class="p">(</span><span class="nb">Time</span><span class="p">,</span><span class="w"> </span><span class="n">d_i8</span><span class="o">=</span><span class="n">Dl</span><span class="p">,</span><span class="w"> </span><span class="n">calendar</span><span class="o">=</span><span class="n">julianDayCalendar</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeGet</span><span class="p">(</span><span class="nb">Time</span><span class="p">,</span><span class="w"> </span><span class="n">d_i8</span><span class="o">=</span><span class="n">rDl</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="c">!print *</span>
+<span class="w">      </span><span class="c">!print *, &quot;Low range test&quot;</span>
+<span class="w">      </span><span class="c">!print *, &quot;  Start Julian Days = &quot;, rDl</span>
+<span class="w">      </span><span class="c">!print *</span>
+
+<span class="w">      </span><span class="n">broken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">      </span><span class="k">do while</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="n">broken</span><span class="p">)</span>
+<span class="w">        </span><span class="c">! calculate what previous Julian Day number should be</span>
+<span class="w">        </span><span class="n">Dl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dl</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="c">!print *, Dl</span>
+
+<span class="w">        </span><span class="c">! set date via ESMF Julian Day calendar</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_TimeSet</span><span class="p">(</span><span class="nb">Time</span><span class="p">,</span><span class="w"> </span><span class="n">d_i8</span><span class="o">=</span><span class="n">Dl</span><span class="p">,</span><span class="w"> </span><span class="n">calendar</span><span class="o">=</span><span class="n">julianDayCalendar</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">        </span><span class="c">! see what we get back</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_TimeGet</span><span class="p">(</span><span class="nb">time</span><span class="p">,</span><span class="w"> </span><span class="n">d_i8</span><span class="o">=</span><span class="n">rDl</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.(</span><span class="n">rDl</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">Dl</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          </span><span class="n">broken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">          </span><span class="c">!print *, &quot;Julian Day Set/Get breaks,&quot;</span>
+<span class="w">          </span><span class="c">!print *, &quot; should be = &quot;, Dl</span>
+<span class="w">          </span><span class="c">!print *, &quot; returned  = &quot;, rDl</span>
+<span class="w">          </span><span class="c">!print *</span>
+<span class="w">        </span><span class="k">end if</span>
+<span class="k">      end do</span>
+<span class="w">  </span>
+<span class="w">      </span><span class="c">!EX_UTest</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="s2">&quot;Low range not -106,751,991,167,301 or rc=ESMF_SUCCESS&quot;</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Julian Day Low Range Test&quot;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">Dl</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">endDl</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">rc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">!-------------------------------------------------------------------!</span>
+<span class="w">      </span><span class="c">!                   Julian Day High Range Test                      !</span>
+<span class="w">      </span><span class="c">! Start 10 days below the top and move forward one day at a         !</span>
+<span class="w">      </span><span class="c">! time until it breaks.  The highest valid signed 64-bit Julian day !</span>
+<span class="w">      </span><span class="c">! is (2^63-1)/86400 = 106,751,991,167,300.                          !</span>
+<span class="w">      </span><span class="c">!-------------------------------------------------------------------!</span>
+
+<span class="w">      </span><span class="c">! set days to highest value representable with signed 64-bits:</span>
+<span class="w">      </span><span class="c">! ((2**63)-1)/86400 = 106,751,991,167,300 days</span>
+<span class="w">      </span><span class="n">Dl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">106751991167300_ESMF_KIND_I8</span>
+<span class="w">      </span><span class="n">endDl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dl</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+
+<span class="w">      </span><span class="c">! start 10 days below top, then go forward until it breaks</span>
+<span class="w">      </span><span class="n">Dl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dl</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">10</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeSet</span><span class="p">(</span><span class="nb">Time</span><span class="p">,</span><span class="w"> </span><span class="n">d_i8</span><span class="o">=</span><span class="n">Dl</span><span class="p">,</span><span class="w"> </span><span class="n">calendar</span><span class="o">=</span><span class="n">julianDayCalendar</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeGet</span><span class="p">(</span><span class="nb">Time</span><span class="p">,</span><span class="w"> </span><span class="n">d_i8</span><span class="o">=</span><span class="n">rDl</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="c">!print *</span>
+<span class="w">      </span><span class="c">!print *, &quot;High range test&quot;</span>
+<span class="w">      </span><span class="c">!print *, &quot;  Start Julian Days = &quot;, rDl</span>
+<span class="w">      </span><span class="c">!print *</span>
+
+<span class="w">      </span><span class="n">broken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">      </span><span class="k">do while</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="n">broken</span><span class="p">)</span>
+<span class="w">        </span><span class="c">! calculate what next Julian Day number should be</span>
+<span class="w">        </span><span class="n">Dl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dl</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="c">!print *, Dl</span>
+
+<span class="w">        </span><span class="c">! set date via ESMF Julian Day calendar</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_TimeSet</span><span class="p">(</span><span class="nb">Time</span><span class="p">,</span><span class="w"> </span><span class="n">d_i8</span><span class="o">=</span><span class="n">Dl</span><span class="p">,</span><span class="w"> </span><span class="n">calendar</span><span class="o">=</span><span class="n">julianDayCalendar</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">        </span><span class="c">! see what we get back</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_TimeGet</span><span class="p">(</span><span class="nb">time</span><span class="p">,</span><span class="w"> </span><span class="n">d_i8</span><span class="o">=</span><span class="n">rDl</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.(</span><span class="n">rDl</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">Dl</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          </span><span class="n">broken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">          </span><span class="c">!print *, &quot;Julian Day Set/Get breaks,&quot;</span>
+<span class="w">          </span><span class="c">!print *, &quot; should be = &quot;, Dl</span>
+<span class="w">          </span><span class="c">!print *, &quot; returned  = &quot;, rDl</span>
+<span class="w">          </span><span class="c">!print *</span>
+<span class="w">        </span><span class="k">end if</span>
+<span class="k">      end do</span>
+<span class="w">  </span>
+<span class="w">      </span><span class="c">!EX_UTest</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="s2">&quot;High range not 106,751,991,167,301 or rc=ESMF_SUCCESS&quot;</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Julian Day High Range Test&quot;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">Dl</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">endDl</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">rc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">!--------------------------------------------!</span>
+<span class="w">      </span><span class="c">! Test range of Modified Julian day calendar !</span>
+<span class="w">      </span><span class="c">!--------------------------------------------!</span>
+
+<span class="w">      </span><span class="c">!------------------------------------------------------------------!</span>
+<span class="w">      </span><span class="c">!               Modified Julian Day Low Range Test                 !</span>
+<span class="w">      </span><span class="c">! Start 10 days above the bottom and move backward one day at a    !</span>
+<span class="w">      </span><span class="c">! time until it breaks.  The lowest valid signed 64-bit Modified   !</span>
+<span class="w">      </span><span class="c">! Julian day is -2^63/86400 - 2,400,001 = -106,751,993,567,301.    !</span>
+<span class="w">      </span><span class="c">!------------------------------------------------------------------!</span>
+
+<span class="w">      </span><span class="c">! set days to lowest value representable with signed 64-bits:</span>
+<span class="w">      </span><span class="c">! -(2**63)/86400 - 2,400,001 = -106,751,993,567,300 days</span>
+<span class="w">      </span><span class="n">Dl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">106751993567301_ESMF_KIND_I8</span>
+<span class="w">      </span><span class="n">endDl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dl</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span>
+
+<span class="w">      </span><span class="c">! start 10 days above bottom, then come back until it breaks</span>
+<span class="w">      </span><span class="n">Dl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dl</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeSet</span><span class="p">(</span><span class="nb">Time</span><span class="p">,</span><span class="w"> </span><span class="n">d_i8</span><span class="o">=</span><span class="n">Dl</span><span class="p">,</span><span class="w"> </span><span class="n">calendar</span><span class="o">=</span><span class="n">modifiedJulianDayCalendar</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                        </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeGet</span><span class="p">(</span><span class="nb">Time</span><span class="p">,</span><span class="w"> </span><span class="n">d_i8</span><span class="o">=</span><span class="n">rDl</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="c">!print *</span>
+<span class="w">      </span><span class="c">!print *, &quot;Low range test&quot;</span>
+<span class="w">      </span><span class="c">!print *, &quot;  Start Modified Julian Days = &quot;, rDl</span>
+<span class="w">      </span><span class="c">!print *</span>
+
+<span class="w">      </span><span class="n">broken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">      </span><span class="k">do while</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="n">broken</span><span class="p">)</span>
+<span class="w">        </span><span class="c">! calculate what previous Modified Julian Day number should be</span>
+<span class="w">        </span><span class="n">Dl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dl</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="c">!print *, Dl</span>
+
+<span class="w">        </span><span class="c">! set date via ESMF Modified Julian Day calendar</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_TimeSet</span><span class="p">(</span><span class="nb">Time</span><span class="p">,</span><span class="w"> </span><span class="n">d_i8</span><span class="o">=</span><span class="n">Dl</span><span class="p">,</span><span class="w"> </span><span class="n">calendar</span><span class="o">=</span><span class="n">modifiedJulianDayCalendar</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                          </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">        </span><span class="c">! see what we get back</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_TimeGet</span><span class="p">(</span><span class="nb">time</span><span class="p">,</span><span class="w"> </span><span class="n">d_i8</span><span class="o">=</span><span class="n">rDl</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.(</span><span class="n">rDl</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">Dl</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          </span><span class="n">broken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">          </span><span class="c">!print *, &quot;Modified Julian Day Set/Get breaks,&quot;</span>
+<span class="w">          </span><span class="c">!print *, &quot; should be = &quot;, Dl</span>
+<span class="w">          </span><span class="c">!print *, &quot; returned  = &quot;, rDl</span>
+<span class="w">          </span><span class="c">!print *</span>
+<span class="w">        </span><span class="k">end if</span>
+<span class="k">      end do</span>
+<span class="w">  </span>
+<span class="w">      </span><span class="c">!EX_UTest</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="s2">&quot;Low range not -106,751,993,567,301 or rc=ESMF_SUCCESS&quot;</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Modified Julian Day Low Range Test&quot;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">Dl</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">endDl</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">rc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">!-------------------------------------------------------------------!</span>
+<span class="w">      </span><span class="c">!               Modified Julian Day High Range Test                 !</span>
+<span class="w">      </span><span class="c">! Start 10 days below the top and move forward one day at a         !</span>
+<span class="w">      </span><span class="c">! time until it breaks.  The highest valid signed 64-bit Modified   !</span>
+<span class="w">      </span><span class="c">! Julian day is (2^63-1)/86400 - 2,400,001 = 106,751,988,767,299.   !</span>
+<span class="w">      </span><span class="c">!-------------------------------------------------------------------!</span>
+
+<span class="w">      </span><span class="c">! set days to highest value representable with signed 64-bits:</span>
+<span class="w">      </span><span class="c">! ((2**63)-1)/86400 - 2,400,001 = 106,751,988,767,299 days</span>
+<span class="w">      </span><span class="n">Dl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">106751988767299_ESMF_KIND_I8</span>
+<span class="w">      </span><span class="n">endDl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dl</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+
+<span class="w">      </span><span class="c">! start 10 days below top, then go forward until it breaks</span>
+<span class="w">      </span><span class="n">Dl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dl</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">10</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeSet</span><span class="p">(</span><span class="nb">Time</span><span class="p">,</span><span class="w"> </span><span class="n">d_i8</span><span class="o">=</span><span class="n">Dl</span><span class="p">,</span><span class="w"> </span><span class="n">calendar</span><span class="o">=</span><span class="n">modifiedJulianDayCalendar</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                        </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeGet</span><span class="p">(</span><span class="nb">Time</span><span class="p">,</span><span class="w"> </span><span class="n">d_i8</span><span class="o">=</span><span class="n">rDl</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="c">!print *</span>
+<span class="w">      </span><span class="c">!print *, &quot;High range test&quot;</span>
+<span class="w">      </span><span class="c">!print *, &quot;  Start Modified Julian Days = &quot;, rDl</span>
+<span class="w">      </span><span class="c">!print *</span>
+
+<span class="w">      </span><span class="n">broken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">      </span><span class="k">do while</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="n">broken</span><span class="p">)</span>
+<span class="w">        </span><span class="c">! calculate what next Modified Julian Day number should be</span>
+<span class="w">        </span><span class="n">Dl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dl</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="c">!print *, Dl</span>
+
+<span class="w">        </span><span class="c">! set date via ESMF Modified Julian Day calendar</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_TimeSet</span><span class="p">(</span><span class="nb">Time</span><span class="p">,</span><span class="w"> </span><span class="n">d_i8</span><span class="o">=</span><span class="n">Dl</span><span class="p">,</span><span class="w"> </span><span class="n">calendar</span><span class="o">=</span><span class="n">modifiedJulianDayCalendar</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                          </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">        </span><span class="c">! see what we get back</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_TimeGet</span><span class="p">(</span><span class="nb">time</span><span class="p">,</span><span class="w"> </span><span class="n">d_i8</span><span class="o">=</span><span class="n">rDl</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.(</span><span class="n">rDl</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">Dl</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          </span><span class="n">broken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">          </span><span class="c">!print *, &quot;Modified Julian Day Set/Get breaks,&quot;</span>
+<span class="w">          </span><span class="c">!print *, &quot; should be = &quot;, Dl</span>
+<span class="w">          </span><span class="c">!print *, &quot; returned  = &quot;, rDl</span>
+<span class="w">          </span><span class="c">!print *</span>
+<span class="w">        </span><span class="k">end if</span>
+<span class="k">      end do</span>
+<span class="w">  </span>
+<span class="w">      </span><span class="c">!EX_UTest</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="s2">&quot;High range not 106,751,988,767,300 or rc=ESMF_SUCCESS&quot;</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Modified Julian Day High Range Test&quot;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">Dl</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">endDl</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">rc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">!-------------------!</span>
+<span class="w">      </span><span class="c">! destroy calendars !</span>
+<span class="w">      </span><span class="c">!-------------------!</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_CalendarDestroy</span><span class="p">(</span><span class="n">julianCalendar</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_CalendarDestroy</span><span class="p">(</span><span class="n">gregorianCalendar</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_CalendarDestroy</span><span class="p">(</span><span class="n">julianDayCalendar</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_CalendarDestroy</span><span class="p">(</span><span class="n">modifiedJulianDayCalendar</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="cp">#endif</span>
+
+<span class="w">      </span><span class="c">! finalize ESMF framework</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TestEnd</span><span class="p">(</span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="c">!==============================================================================</span>
+
+<span class="w">      </span><span class="k">contains</span>
+
+<span class="c">!==============================================================================</span>
+
+<span class="c">!------------------------------------------------------------------------------</span>
+<span class="c">!BOPI</span>
+<span class="c">! !IROUTINE: ESMF_RunTestBackwards - Run backwards one day at a time until it breaks</span>
+
+<span class="c">! !INTERFACE:</span>
+<span class="w">      </span><span class="k">subroutine </span><span class="n">ESMF_RunTestBackwards</span><span class="p">(</span><span class="n">testType</span><span class="p">,</span><span class="w"> </span><span class="n">YYl</span><span class="p">,</span><span class="w"> </span><span class="n">MM</span><span class="p">,</span><span class="w"> </span><span class="n">DD</span><span class="p">,</span><span class="w"> </span><span class="n">Dl</span><span class="p">,</span><span class="w"> </span><span class="n">cal</span><span class="p">)</span>
+
+<span class="c">! !ARGUMENTS:</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">testType</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ESMF_KIND_I8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">YYl</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">MM</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">DD</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ESMF_KIND_I8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">Dl</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Calendar</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cal</span>
+<span class="w">        </span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">!     Goes backwards one day at a time until the calendar conversion </span>
+<span class="c">!     algorithm breaks.</span>
+<span class="c">!</span>
+<span class="c">!EOPI</span>
+<span class="w">      </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">broken</span><span class="w"> </span>
+
+<span class="w">      </span><span class="n">broken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">      </span><span class="k">do while</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="n">broken</span><span class="p">)</span>
+<span class="w">    </span>
+<span class="w">        </span><span class="c">! calculate what previous Julian Day number should be</span>
+<span class="w">        </span><span class="n">Dl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dl</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span>
+
+<span class="w">        </span><span class="c">! calculate what the previous date in given calendar should be</span>
+<span class="w">        </span><span class="n">DD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DD</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">DD</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          </span><span class="n">MM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MM</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">MM</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            </span><span class="n">MM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span>
+<span class="w">            </span><span class="n">YYl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">YYl</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">          </span><span class="k">end if</span>
+<span class="k">          </span><span class="n">DD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DaysPerMonth</span><span class="p">(</span><span class="n">MM</span><span class="p">)</span>
+<span class="w">          </span><span class="c">! check if leap year</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">MM</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_IsLeapYear</span><span class="p">(</span><span class="n">YYl</span><span class="p">,</span><span class="w"> </span><span class="n">cal</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">              </span><span class="n">DD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">29</span>
+<span class="w">            </span><span class="k">end if</span>
+<span class="k">          end if</span>
+<span class="k">        end if</span>
+
+<span class="w">        </span><span class="c">! check calculated dates against ESMF dates</span>
+<span class="w">        </span><span class="n">broken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_CheckTime</span><span class="p">(</span><span class="n">testType</span><span class="p">,</span><span class="w"> </span><span class="n">YYl</span><span class="p">,</span><span class="w"> </span><span class="n">MM</span><span class="p">,</span><span class="w"> </span><span class="n">DD</span><span class="p">,</span><span class="w"> </span><span class="n">Dl</span><span class="p">,</span><span class="w"> </span><span class="n">cal</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">end do</span>
+
+<span class="k">      end subroutine </span><span class="n">ESMF_RunTestBackwards</span>
+
+<span class="c">!------------------------------------------------------------------------------</span>
+<span class="c">!BOPI</span>
+<span class="c">! !IROUTINE: ESMF_RunTestForwards - Run forwards one day at a time until it breaks</span>
+
+<span class="c">! !INTERFACE:</span>
+<span class="w">      </span><span class="k">subroutine </span><span class="n">ESMF_RunTestForwards</span><span class="p">(</span><span class="n">YYl</span><span class="p">,</span><span class="w"> </span><span class="n">MM</span><span class="p">,</span><span class="w"> </span><span class="n">DD</span><span class="p">,</span><span class="w"> </span><span class="n">Dl</span><span class="p">,</span><span class="w"> </span><span class="n">cal</span><span class="p">)</span>
+
+<span class="c">! !ARGUMENTS:</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ESMF_KIND_I8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">YYl</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">MM</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">DD</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ESMF_KIND_I8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">Dl</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Calendar</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cal</span>
+<span class="w">        </span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">!     Goes forwards one day at a time until the calendar conversion </span>
+<span class="c">!     algorithm breaks.</span>
+<span class="c">!</span>
+<span class="c">!EOPI</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">daysInThisMonth</span>
+<span class="w">      </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">broken</span><span class="w"> </span>
+
+<span class="w">      </span><span class="n">broken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">      </span><span class="k">do while</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="n">broken</span><span class="p">)</span>
+<span class="w">    </span>
+<span class="w">        </span><span class="c">! calculate what next Julian Day number should be</span>
+<span class="w">        </span><span class="n">Dl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dl</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+
+<span class="w">        </span><span class="c">! calculate what the next date in given calendar should be</span>
+<span class="w">        </span><span class="n">DD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DD</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="n">daysInThisMonth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DaysPerMonth</span><span class="p">(</span><span class="n">MM</span><span class="p">)</span>
+<span class="w">        </span><span class="c">! check if leap year</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">MM</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">2</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">DD</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">29</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_IsLeapYear</span><span class="p">(</span><span class="n">YYl</span><span class="p">,</span><span class="w"> </span><span class="n">cal</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            </span><span class="n">daysInThisMonth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">29</span>
+<span class="w">          </span><span class="k">end if</span>
+<span class="k">        end if</span>
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="n">DD</span><span class="p">.</span><span class="n">gt</span><span class="p">.</span><span class="n">daysInThisMonth</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          </span><span class="n">DD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">          </span><span class="n">MM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MM</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">MM</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">13</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            </span><span class="n">MM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">            </span><span class="n">YYl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">YYl</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">          </span><span class="k">end if</span>
+<span class="k">        end if</span>
+
+<span class="w">        </span><span class="c">! check calculated dates against ESMF dates</span>
+<span class="w">        </span><span class="n">broken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_CheckTime</span><span class="p">(</span><span class="n">CONVERT_TO_BOTH</span><span class="p">,</span><span class="w"> </span><span class="n">YYl</span><span class="p">,</span><span class="w"> </span><span class="n">MM</span><span class="p">,</span><span class="w"> </span><span class="n">DD</span><span class="p">,</span><span class="w"> </span><span class="n">Dl</span><span class="p">,</span><span class="w"> </span><span class="n">cal</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">end do</span>
+
+<span class="k">      end subroutine </span><span class="n">ESMF_RunTestForwards</span>
+
+<span class="c">!------------------------------------------------------------------------------</span>
+<span class="c">!BOPI</span>
+<span class="c">! !IROUTINE: ESMF_CheckTime - Check ESMF Time values against given values</span>
+
+<span class="c">! !INTERFACE:</span>
+<span class="w">      </span><span class="k">function </span><span class="n">ESMF_CheckTime</span><span class="p">(</span><span class="n">testType</span><span class="p">,</span><span class="w"> </span><span class="n">YYl</span><span class="p">,</span><span class="w"> </span><span class="n">MM</span><span class="p">,</span><span class="w"> </span><span class="n">DD</span><span class="p">,</span><span class="w"> </span><span class="n">Dl</span><span class="p">,</span><span class="w"> </span><span class="n">cal</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+
+<span class="c">! !RETURN VALUE:      </span>
+<span class="w">      </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ESMF_CheckTime</span>
+
+<span class="c">! !ARGUMENTS:</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">testType</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ESMF_KIND_I8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">YYl</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">MM</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">DD</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ESMF_KIND_I8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">Dl</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Calendar</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cal</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+
+<span class="w">      </span><span class="c">!character(ESMF_MAXSTR) :: calName</span>
+<span class="w">        </span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">!     Checks given values against those set/get with ESMF</span>
+<span class="c">!</span>
+<span class="c">!EOPI</span>
+
+<span class="w">      </span><span class="c">! ESMF returned variables</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ESMF_KIND_I8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rYYl</span><span class="p">,</span><span class="w"> </span><span class="n">rDl</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rMM</span><span class="p">,</span><span class="w"> </span><span class="n">rDD</span>
+<span class="w">      </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">broken</span><span class="w"> </span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Time</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="nb">time</span>
+
+<span class="nb">      </span><span class="n">broken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">testType</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">CONVERT_TO_TIME</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">testType</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">CONVERT_TO_BOTH</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+
+<span class="w">        </span><span class="c">!</span>
+<span class="w">        </span><span class="c">! Input calendar conversion test</span>
+<span class="w">        </span><span class="c">!</span>
+
+<span class="w">        </span><span class="c">! set date via given ESMF calendar</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_TimeSet</span><span class="p">(</span><span class="nb">time</span><span class="p">,</span><span class="w"> </span><span class="n">yy_i8</span><span class="o">=</span><span class="n">YYl</span><span class="p">,</span><span class="w"> </span><span class="n">mm</span><span class="o">=</span><span class="n">MM</span><span class="p">,</span><span class="w"> </span><span class="n">dd</span><span class="o">=</span><span class="n">DD</span><span class="p">,</span><span class="w"> </span><span class="n">calendar</span><span class="o">=</span><span class="n">cal</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">           </span><span class="n">ESMF_CheckTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">           </span><span class="k">return</span>
+<span class="k">        endif</span>
+
+<span class="w">        </span><span class="c">! see what we get back</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_TimeGet</span><span class="p">(</span><span class="nb">time</span><span class="p">,</span><span class="w"> </span><span class="n">yy_i8</span><span class="o">=</span><span class="n">rYYl</span><span class="p">,</span><span class="w"> </span><span class="n">mm</span><span class="o">=</span><span class="n">rMM</span><span class="p">,</span><span class="w"> </span><span class="n">dd</span><span class="o">=</span><span class="n">rDD</span><span class="p">,</span><span class="w"> </span><span class="n">d_i8</span><span class="o">=</span><span class="n">rDl</span><span class="p">)</span>
+
+<span class="w">        </span><span class="c">! must match</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.(</span><span class="n">rYYl</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">YYl</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">rMM</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">MM</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">rDD</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">DD</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                  </span><span class="n">rDl</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">Dl</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          </span><span class="n">broken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">          </span><span class="c">!call ESMF_CalendarGet(cal, name=calName)</span>
+<span class="w">          </span><span class="c">!print *, trim(calName), &quot; Set/Get breaks,&quot;</span>
+<span class="w">          </span><span class="c">!print *, &quot; should be = &quot;, YYl, &quot;/&quot;, MM, &quot;/&quot;, DD, &quot; &quot;, Dl</span>
+<span class="w">          </span><span class="c">!print *, &quot; returned  = &quot;, rYYl, &quot;/&quot;, rMM, &quot;/&quot;, rDD, &quot; &quot;, rDl</span>
+<span class="w">          </span><span class="c">!print *</span>
+<span class="w">        </span><span class="k">end if</span>
+
+<span class="w">        </span><span class="c">!</span>
+<span class="w">        </span><span class="c">! Input calendar Set/Julian Day Get test</span>
+<span class="w">        </span><span class="c">!</span>
+
+<span class="w">        </span><span class="c">! see what we get back via Julian Day calendar</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_TimeSet</span><span class="p">(</span><span class="nb">time</span><span class="p">,</span><span class="w"> </span><span class="n">calendar</span><span class="o">=</span><span class="n">julianDayCalendar</span><span class="p">)</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_TimeGet</span><span class="p">(</span><span class="nb">time</span><span class="p">,</span><span class="w"> </span><span class="n">d_i8</span><span class="o">=</span><span class="n">rDl</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.(</span><span class="n">rDl</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">Dl</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          </span><span class="n">broken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">          </span><span class="c">!call ESMF_CalendarGet(cal, name=calName)</span>
+<span class="w">          </span><span class="c">!print *, trim(calName), &quot; Set/Julian Day Get breaks,&quot;</span>
+<span class="w">          </span><span class="c">!print *,                &quot; should be = &quot;, Dl</span>
+<span class="w">          </span><span class="c">!print *,                &quot; returned  = &quot;, rDl</span>
+<span class="w">          </span><span class="c">!print *</span>
+<span class="w">        </span><span class="k">end if</span>
+
+<span class="k">      end if</span>
+
+<span class="k">      if</span><span class="p">(</span><span class="n">testType</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">CONVERT_TO_DATE</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">testType</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">CONVERT_TO_BOTH</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+
+<span class="w">        </span><span class="c">!</span>
+<span class="w">        </span><span class="c">! Julian Day test</span>
+<span class="w">        </span><span class="c">!</span>
+
+<span class="w">        </span><span class="c">! set date via ESMF Julian Day calendar</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_TimeSet</span><span class="p">(</span><span class="nb">time</span><span class="p">,</span><span class="w"> </span><span class="n">d_i8</span><span class="o">=</span><span class="n">Dl</span><span class="p">,</span><span class="w"> </span><span class="n">calendar</span><span class="o">=</span><span class="n">julianDayCalendar</span><span class="p">)</span>
+
+<span class="w">        </span><span class="c">! see what we get back</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_TimeGet</span><span class="p">(</span><span class="nb">time</span><span class="p">,</span><span class="w"> </span><span class="n">d_i8</span><span class="o">=</span><span class="n">rDl</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.(</span><span class="n">rDl</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">Dl</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          </span><span class="n">broken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">          </span><span class="c">!print *, &quot;Julian Day Set/Get breaks,&quot;</span>
+<span class="w">          </span><span class="c">!print *, &quot; should be = &quot;, Dl</span>
+<span class="w">          </span><span class="c">!print *, &quot; returned  = &quot;, rDl</span>
+<span class="w">          </span><span class="c">!print *</span>
+<span class="w">        </span><span class="k">end if</span>
+<span class="w">  </span>
+<span class="w">        </span><span class="c">!</span>
+<span class="w">        </span><span class="c">! Julian Day Set/Input calendar Get test</span>
+<span class="w">        </span><span class="c">!</span>
+
+<span class="w">        </span><span class="c">! see what we get back via input calendar</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_TimeSet</span><span class="p">(</span><span class="nb">time</span><span class="p">,</span><span class="w"> </span><span class="n">calendar</span><span class="o">=</span><span class="n">cal</span><span class="p">)</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_TimeGet</span><span class="p">(</span><span class="nb">time</span><span class="p">,</span><span class="w"> </span><span class="n">yy_i8</span><span class="o">=</span><span class="n">rYYl</span><span class="p">,</span><span class="w"> </span><span class="n">mm</span><span class="o">=</span><span class="n">rMM</span><span class="p">,</span><span class="w"> </span><span class="n">dd</span><span class="o">=</span><span class="n">rDD</span><span class="p">,</span><span class="w"> </span><span class="n">d_i8</span><span class="o">=</span><span class="n">rDl</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          </span><span class="n">broken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="k">          if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.(</span><span class="n">rYYl</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">YYl</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">rMM</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">MM</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">rDD</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">DD</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                  </span><span class="n">rDl</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">Dl</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            </span><span class="n">broken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">          </span><span class="c">!print *, &quot;Julian Day Set/&quot;</span>
+<span class="w">          </span><span class="c">!call ESMF_CalendarGet(cal, name=calName)</span>
+<span class="w">          </span><span class="c">!print *, trim(calName), &quot; Get breaks,&quot;</span>
+<span class="w">          </span><span class="c">!print *, &quot; should be = &quot;, YYl, &quot;/&quot;, MM, &quot;/&quot;, DD, &quot; &quot;, Dl</span>
+<span class="w">          </span><span class="c">!print *, &quot; returned  = &quot;, rYYl, &quot;/&quot;, rMM, &quot;/&quot;, rDD, &quot; &quot;, rDl</span>
+<span class="w">          </span><span class="c">!print *</span>
+<span class="w">          </span><span class="k">end if</span>
+<span class="k">        end if</span>
+
+<span class="k">      end if</span>
+
+<span class="w">      </span><span class="c">! function return value</span>
+<span class="w">      </span><span class="n">ESMF_CheckTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">broken</span>
+
+<span class="w">      </span><span class="k">end function </span><span class="n">ESMF_CheckTime</span>
+
+<span class="c">!------------------------------------------------------------------------------</span>
+<span class="c">!BOPI</span>
+<span class="c">! !IROUTINE: ESMF_IsLeapYear - Check if given year is a leap year in the given calendar</span>
+
+<span class="c">! !INTERFACE:</span>
+<span class="w">      </span><span class="k">function </span><span class="n">ESMF_IsLeapYear</span><span class="p">(</span><span class="n">YYl</span><span class="p">,</span><span class="w"> </span><span class="n">cal</span><span class="p">)</span>
+
+<span class="c">! !RETURN VALUE:      </span>
+<span class="w">      </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ESMF_IsLeapYear</span>
+
+<span class="c">! !ARGUMENTS:</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ESMF_KIND_I8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">YYl</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Calendar</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cal</span>
+<span class="w">        </span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">!     Checks given year to see if it is a leap year in the given calendar</span>
+<span class="c">!</span>
+<span class="c">!EOPI</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ESMF_KIND_I8</span><span class="p">),</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ly1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="n">ly2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">ly3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span>
+<span class="w">      </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">leapYear</span><span class="w"> </span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cal</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_CALKIND_GREGORIAN</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="c">! Note: At least one Absoft compiler (in particular, version 9a SP1 on x86_64 linux)</span>
+<span class="c">! may miscompile the following statement - which causes a floating point error at</span>
+<span class="c">! runtime.  See ticket #2800140.</span>
+<span class="w">        </span><span class="n">leapYear</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nb">mod</span><span class="p">(</span><span class="n">YYl</span><span class="p">,</span><span class="n">ly1</span><span class="p">).</span><span class="n">eq</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="p">(</span><span class="nb">mod</span><span class="p">(</span><span class="n">YYl</span><span class="p">,</span><span class="n">ly2</span><span class="p">).</span><span class="n">eq</span><span class="p">.</span><span class="mi">0</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="nb">mod</span><span class="p">(</span><span class="n">YYl</span><span class="p">,</span><span class="n">ly3</span><span class="p">).</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span>
+<span class="w">      </span><span class="k">else if</span><span class="w"> </span><span class="p">(</span><span class="n">cal</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_CALKIND_JULIAN</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">leapYear</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">mod</span><span class="p">(</span><span class="n">YYl</span><span class="p">,</span><span class="n">ly2</span><span class="p">).</span><span class="n">eq</span><span class="p">.</span><span class="mi">0</span>
+<span class="w">      </span><span class="k">else</span>
+<span class="w">        </span><span class="c">!print *, &quot;Error:  Leap year rule unknown for given calendar.&quot;</span>
+<span class="w">      </span><span class="k">end if</span>
+
+<span class="w">      </span><span class="c">! function return value</span>
+<span class="w">      </span><span class="n">ESMF_IsLeapYear</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">leapYear</span>
+
+<span class="w">      </span><span class="k">end function </span><span class="n">ESMF_IsLeapYear</span>
+
+<span class="c">!------------------------------------------------------------------------------</span>
+
+<span class="w">      </span><span class="k">end program </span><span class="n">ESMF_CalRangeUTest</span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

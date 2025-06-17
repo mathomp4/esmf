@@ -1,0 +1,507 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_IPARMQ &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_IPARMQ
+      <small>Function</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.0% of total for procedures.">42 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/iparmq.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/iparmq.f90.html'>iparmq.F90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_IPARMQ</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2> function ESMF_IPARMQ(ISPEC, NAME, OPTS, N, ILO, IHI, LWORK)  
+</h2>
+    
+
+    <p>\brief \b ESMF_IPARMQ
+\htmlonly
+Download ESMF_IPARMQ + dependencies
+<a href="http://www.netlib.org/cgi-bin/netlibfiles.tgz?format=tgz&filename=/lapack/lapack_routine/iparmq.f">
+[TGZ]</a>
+<a href="http://www.netlib.org/cgi-bin/netlibfiles.zip?format=zip&filename=/lapack/lapack_routine/iparmq.f">
+[ZIP]</a>
+<a href="http://www.netlib.org/cgi-bin/netlibfiles.txt?format=txt&filename=/lapack/lapack_routine/iparmq.f">
+[TXT]</a>
+\endhtmlonly
+\par Purpose:</p>
+<p>\verbatim</p>
+<div class="codehilite"><pre><span></span><code> This program sets problem and machine dependent parameters
+ useful for xHSEQR and its subroutines. It is called whenever
+ ESMF_ILAENV is called with 12 &lt;= ISPEC &lt;= 16
+</code></pre></div>
+
+<p>\endverbatim
+\param[in] ISPEC
+\verbatim
+         ISPEC is integer scalar
+             ISPEC specifies which tunable parameter ESMF_IPARMQ should
+             return.</p>
+<div class="codehilite"><pre><span></span><code><span class="w">         </span><span class="nx">ISPEC</span><span class="p">=</span><span class="mi">12</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="nx">INMIN</span><span class="p">)</span><span class="w">  </span><span class="nx">Matrices</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">order</span><span class="w"> </span><span class="nx">nmin</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">less</span>
+<span class="w">                   </span><span class="nx">are</span><span class="w"> </span><span class="nx">sent</span><span class="w"> </span><span class="nx">directly</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">xLAHQR</span><span class="p">,</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">implicit</span>
+<span class="w">                   </span><span class="nx">double</span><span class="w"> </span><span class="nx">shift</span><span class="w"> </span><span class="nx">QR</span><span class="w"> </span><span class="nx">algorithm</span><span class="p">.</span><span class="w">  </span><span class="nx">NMIN</span><span class="w"> </span><span class="nx">must</span><span class="w"> </span><span class="nx">be</span>
+<span class="w">                   </span><span class="nx">at</span><span class="w"> </span><span class="nx">least</span><span class="w"> </span><span class="mi">11</span><span class="p">.</span>
+
+<span class="w">         </span><span class="nx">ISPEC</span><span class="p">=</span><span class="mi">13</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="nx">INWIN</span><span class="p">)</span><span class="w">  </span><span class="nx">Size</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">deflation</span><span class="w"> </span><span class="nx">window</span><span class="p">.</span>
+<span class="w">                   </span><span class="nx">This</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">best</span><span class="w"> </span><span class="nx">set</span><span class="w"> </span><span class="nx">greater</span><span class="w"> </span><span class="nx">than</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">equal</span><span class="w"> </span><span class="nx">to</span>
+<span class="w">                   </span><span class="nx">the</span><span class="w"> </span><span class="nx">number</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">simultaneous</span><span class="w"> </span><span class="nx">shifts</span><span class="w"> </span><span class="nx">NS</span><span class="p">.</span>
+<span class="w">                   </span><span class="nx">Larger</span><span class="w"> </span><span class="nx">matrices</span><span class="w"> </span><span class="nx">benefit</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="nx">larger</span><span class="w"> </span><span class="nx">deflation</span>
+<span class="w">                   </span><span class="nx">windows</span><span class="p">.</span>
+
+<span class="w">         </span><span class="nx">ISPEC</span><span class="p">=</span><span class="mi">14</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="nx">INIBL</span><span class="p">)</span><span class="w"> </span><span class="nx">Determines</span><span class="w"> </span><span class="nx">when</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">stop</span><span class="w"> </span><span class="nx">nibbling</span><span class="w"> </span><span class="k">and</span>
+<span class="w">                   </span><span class="nx">invest</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="p">(</span><span class="nx">expensive</span><span class="p">)</span><span class="w"> </span><span class="nx">multi</span><span class="o">-</span><span class="nx">shift</span><span class="w"> </span><span class="nx">QR</span><span class="w"> </span><span class="nx">sweep</span><span class="p">.</span>
+<span class="w">                   </span><span class="nx">If</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">aggressive</span><span class="w"> </span><span class="nx">early</span><span class="w"> </span><span class="nx">deflation</span><span class="w"> </span><span class="nx">subroutine</span>
+<span class="w">                   </span><span class="nx">finds</span><span class="w"> </span><span class="nx">LD</span><span class="w"> </span><span class="nx">converged</span><span class="w"> </span><span class="nx">eigenvalues</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">order</span>
+<span class="w">                   </span><span class="nx">NW</span><span class="w"> </span><span class="nx">deflation</span><span class="w"> </span><span class="nx">window</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">LD</span><span class="p">.</span><span class="nx">GT</span><span class="p">.(</span><span class="nx">NW</span><span class="o">*</span><span class="nx">NIBBLE</span><span class="p">)</span><span class="o">/</span><span class="mi">100</span><span class="p">,</span>
+<span class="w">                   </span><span class="k">then</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">next</span><span class="w"> </span><span class="nx">QR</span><span class="w"> </span><span class="nx">sweep</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">skipped</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">early</span>
+<span class="w">                   </span><span class="nx">deflation</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">applied</span><span class="w"> </span><span class="nx">immediately</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">the</span>
+<span class="w">                   </span><span class="nx">remaining</span><span class="w"> </span><span class="nx">active</span><span class="w"> </span><span class="nx">diagonal</span><span class="w"> </span><span class="nx">block</span><span class="p">.</span><span class="w">  </span><span class="nx">Setting</span>
+<span class="w">                   </span><span class="nx">ESMF_IPARMQ</span><span class="p">(</span><span class="nx">ISPEC</span><span class="p">=</span><span class="mi">14</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="nx">causes</span><span class="w"> </span><span class="nx">TTQRE</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">skip</span><span class="w"> </span><span class="nx">a</span>
+<span class="w">                   </span><span class="nx">multi</span><span class="o">-</span><span class="nx">shift</span><span class="w"> </span><span class="nx">QR</span><span class="w"> </span><span class="nx">sweep</span><span class="w"> </span><span class="nx">whenever</span><span class="w"> </span><span class="nx">early</span><span class="w"> </span><span class="nx">deflation</span>
+<span class="w">                   </span><span class="nx">finds</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">converged</span><span class="w"> </span><span class="nx">eigenvalue</span><span class="p">.</span><span class="w">  </span><span class="nx">Setting</span>
+<span class="w">                   </span><span class="nx">ESMF_IPARMQ</span><span class="p">(</span><span class="nx">ISPEC</span><span class="p">=</span><span class="mi">14</span><span class="p">)</span><span class="w"> </span><span class="nx">greater</span><span class="w"> </span><span class="nx">than</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">equal</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="mi">100</span>
+<span class="w">                   </span><span class="nx">prevents</span><span class="w"> </span><span class="nx">TTQRE</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="nx">skipping</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">multi</span><span class="o">-</span><span class="nx">shift</span>
+<span class="w">                   </span><span class="nx">QR</span><span class="w"> </span><span class="nx">sweep</span><span class="p">.</span>
+
+<span class="w">         </span><span class="nx">ISPEC</span><span class="p">=</span><span class="mi">15</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="nx">NSHFTS</span><span class="p">)</span><span class="w"> </span><span class="nx">The</span><span class="w"> </span><span class="nx">number</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">simultaneous</span><span class="w"> </span><span class="nx">shifts</span><span class="w"> </span><span class="k">in</span>
+<span class="w">                   </span><span class="nx">a</span><span class="w"> </span><span class="nx">multi</span><span class="o">-</span><span class="nx">shift</span><span class="w"> </span><span class="nx">QR</span><span class="w"> </span><span class="nx">iteration</span><span class="p">.</span>
+
+<span class="w">         </span><span class="nx">ISPEC</span><span class="p">=</span><span class="mi">16</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="nx">IACC22</span><span class="p">)</span><span class="w"> </span><span class="nx">ESMF_IPARMQ</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">set</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="nx">with</span><span class="w"> </span><span class="nx">the</span>
+<span class="w">                   </span><span class="nx">following</span><span class="w"> </span><span class="nx">meanings</span><span class="p">.</span>
+<span class="w">                   </span><span class="mi">0</span><span class="p">:</span><span class="w">  </span><span class="nx">During</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">multi</span><span class="o">-</span><span class="nx">shift</span><span class="w"> </span><span class="nx">QR</span><span class="w"> </span><span class="nx">sweep</span><span class="p">,</span>
+<span class="w">                       </span><span class="nx">xLAQR5</span><span class="w"> </span><span class="nx">does</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="nx">accumulate</span><span class="w"> </span><span class="nx">reflections</span><span class="w"> </span><span class="k">and</span>
+<span class="w">                       </span><span class="nx">does</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="nx">use</span><span class="w"> </span><span class="nx">matrix</span><span class="o">-</span><span class="nx">matrix</span><span class="w"> </span><span class="nx">multiply</span><span class="w"> </span><span class="nx">to</span>
+<span class="w">                       </span><span class="nx">update</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">far</span><span class="o">-</span><span class="nx">from</span><span class="o">-</span><span class="nx">diagonal</span><span class="w"> </span><span class="nx">matrix</span>
+<span class="w">                       </span><span class="nx">entries</span><span class="p">.</span>
+<span class="w">                   </span><span class="mi">1</span><span class="p">:</span><span class="w">  </span><span class="nx">During</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">multi</span><span class="o">-</span><span class="nx">shift</span><span class="w"> </span><span class="nx">QR</span><span class="w"> </span><span class="nx">sweep</span><span class="p">,</span>
+<span class="w">                       </span><span class="nx">xLAQR5</span><span class="w"> </span><span class="k">and</span><span class="o">/</span><span class="k">or</span><span class="w"> </span><span class="nx">xLAQRaccumulates</span><span class="w"> </span><span class="nx">reflections</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">uses</span>
+<span class="w">                       </span><span class="nx">matrix</span><span class="o">-</span><span class="nx">matrix</span><span class="w"> </span><span class="nx">multiply</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">update</span><span class="w"> </span><span class="nx">the</span>
+<span class="w">                       </span><span class="nx">far</span><span class="o">-</span><span class="nx">from</span><span class="o">-</span><span class="nx">diagonal</span><span class="w"> </span><span class="nx">matrix</span><span class="w"> </span><span class="nx">entries</span><span class="p">.</span>
+<span class="w">                   </span><span class="mi">2</span><span class="p">:</span><span class="w">  </span><span class="nx">During</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">multi</span><span class="o">-</span><span class="nx">shift</span><span class="w"> </span><span class="nx">QR</span><span class="w"> </span><span class="nx">sweep</span><span class="p">.</span>
+<span class="w">                       </span><span class="nx">xLAQR5</span><span class="w"> </span><span class="nx">accumulates</span><span class="w"> </span><span class="nx">reflections</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">takes</span>
+<span class="w">                       </span><span class="nx">advantage</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="mi">2</span><span class="o">-</span><span class="nx">by</span><span class="o">-</span><span class="mi">2</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="nx">structure</span><span class="w"> </span><span class="nx">during</span>
+<span class="w">                       </span><span class="nx">matrix</span><span class="o">-</span><span class="nx">matrix</span><span class="w"> </span><span class="nx">multiplies</span><span class="p">.</span>
+<span class="w">                   </span><span class="p">(</span><span class="nx">If</span><span class="w"> </span><span class="nx">xTRMM</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">slower</span><span class="w"> </span><span class="nx">than</span><span class="w"> </span><span class="nx">xGEMM</span><span class="p">,</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                   </span><span class="nx">ESMF_IPARMQ</span><span class="p">(</span><span class="nx">ISPEC</span><span class="p">=</span><span class="mi">16</span><span class="p">)=</span><span class="mi">1</span><span class="w"> </span><span class="nx">may</span><span class="w"> </span><span class="nx">be</span><span class="w"> </span><span class="nx">more</span><span class="w"> </span><span class="nx">efficient</span><span class="w"> </span><span class="nx">than</span>
+<span class="w">                   </span><span class="nx">ESMF_IPARMQ</span><span class="p">(</span><span class="nx">ISPEC</span><span class="p">=</span><span class="mi">16</span><span class="p">)=</span><span class="mi">2</span><span class="w"> </span><span class="nx">despite</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">greater</span><span class="w"> </span><span class="nx">level</span><span class="w"> </span><span class="nx">of</span>
+<span class="w">                   </span><span class="nx">arithmetic</span><span class="w"> </span><span class="nx">work</span><span class="w"> </span><span class="nx">implied</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">latter</span><span class="w"> </span><span class="kd">choice</span><span class="p">.)</span>
+</code></pre></div>
+
+<p>\endverbatim</p>
+<p>\param[in] NAME
+\verbatim
+         NAME is character string
+              Name of the calling subroutine
+\endverbatim</p>
+<p>\param[in] OPTS
+\verbatim
+         OPTS is character string
+              This is a concatenation of the string arguments to
+              TTQRE.
+\endverbatim</p>
+<p>\param[in] N
+\verbatim
+         N is integer scalar
+              N is the order of the Hessenberg matrix H.
+\endverbatim</p>
+<p>\param[in] ILO
+\verbatim
+         ILO is INTEGER
+\endverbatim</p>
+<p>\param[in] IHI
+\verbatim
+         IHI is INTEGER
+              It is assumed that H is already upper triangular
+              in rows and columns 1:ILO-1 and IHI+1:N.
+\endverbatim</p>
+<p>\param[in] LWORK
+\verbatim
+         LWORK is integer scalar
+              The amount of workspace available.
+\endverbatim
+\author Univ. of Tennessee
+\author Univ. of California Berkeley
+\author Univ. of Colorado Denver
+\author NAG Ltd.
+\date November 2011
+\ingroup auxOTHERauxiliary
+\par Further Details:</p>
+<p>\verbatim</p>
+<div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="nx">Little</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">known</span><span class="w"> </span><span class="nx">about</span><span class="w"> </span><span class="nx">how</span><span class="w"> </span><span class="nx">best</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">choose</span><span class="w"> </span><span class="nx">these</span><span class="w"> </span><span class="nx">parameters</span><span class="p">.</span>
+<span class="w">  </span><span class="nx">It</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">possible</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">use</span><span class="w"> </span><span class="nx">different</span><span class="w"> </span><span class="nx">values</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">parameters</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="nx">each</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">CHSEQR</span><span class="p">,</span><span class="w"> </span><span class="nx">ESMF_DHSEQR</span><span class="p">,</span><span class="w"> </span><span class="nx">SHSEQR</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">ZHSEQR</span><span class="p">.</span>
+
+<span class="w">  </span><span class="nx">It</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">probably</span><span class="w"> </span><span class="nx">best</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">choose</span><span class="w"> </span><span class="nx">different</span><span class="w"> </span><span class="nx">parameters</span><span class="w"> </span><span class="k">for</span>
+<span class="w">  </span><span class="nx">different</span><span class="w"> </span><span class="nx">matrices</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">different</span><span class="w"> </span><span class="nx">parameters</span><span class="w"> </span><span class="nx">at</span><span class="w"> </span><span class="nx">different</span>
+<span class="w">  </span><span class="nx">times</span><span class="w"> </span><span class="nx">during</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">iteration</span><span class="p">,</span><span class="w"> </span><span class="nx">but</span><span class="w"> </span><span class="nx">this</span><span class="w"> </span><span class="nx">has</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="nx">been</span>
+<span class="w">  </span><span class="nx">implemented</span><span class="w"> </span><span class="o">---</span><span class="w"> </span><span class="nx">yet</span><span class="p">.</span>
+
+
+<span class="w">  </span><span class="nx">The</span><span class="w"> </span><span class="nx">best</span><span class="w"> </span><span class="nx">choices</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">most</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">parameters</span><span class="w"> </span><span class="nx">depend</span>
+<span class="w">  </span><span class="k">in</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">ill</span><span class="o">-</span><span class="nx">understood</span><span class="w"> </span><span class="nx">way</span><span class="w"> </span><span class="nx">on</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">relative</span><span class="w"> </span><span class="nx">execution</span>
+<span class="w">  </span><span class="nx">rate</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">xLAQR3</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">xLAQR5</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">on</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">nature</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">each</span>
+<span class="w">  </span><span class="nx">particular</span><span class="w"> </span><span class="nx">eigenvalue</span><span class="w"> </span><span class="nx">problem</span><span class="p">.</span><span class="w">  </span><span class="nx">Experiment</span><span class="w"> </span><span class="nx">may</span><span class="w"> </span><span class="nx">be</span><span class="w"> </span><span class="nx">the</span>
+<span class="w">  </span><span class="nx">only</span><span class="w"> </span><span class="nx">practical</span><span class="w"> </span><span class="nx">way</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">determine</span><span class="w"> </span><span class="nx">which</span><span class="w"> </span><span class="nx">choices</span><span class="w"> </span><span class="nx">are</span><span class="w"> </span><span class="nx">most</span>
+<span class="w">  </span><span class="nx">effective</span><span class="p">.</span>
+
+<span class="w">  </span><span class="nx">Following</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">list</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">values</span><span class="w"> </span><span class="nx">supplied</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">ESMF_IPARMQ</span><span class="p">.</span>
+<span class="w">  </span><span class="nx">These</span><span class="w"> </span><span class="nx">defaults</span><span class="w"> </span><span class="nx">may</span><span class="w"> </span><span class="nx">be</span><span class="w"> </span><span class="nx">adjusted</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">order</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">attain</span><span class="w"> </span><span class="nx">better</span>
+<span class="w">  </span><span class="nx">performance</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">any</span><span class="w"> </span><span class="nx">particular</span><span class="w"> </span><span class="nx">computational</span><span class="w"> </span><span class="nx">environment</span><span class="p">.</span>
+
+<span class="w">  </span><span class="nx">ESMF_IPARMQ</span><span class="p">(</span><span class="nx">ISPEC</span><span class="p">=</span><span class="mi">12</span><span class="p">)</span><span class="w"> </span><span class="nx">The</span><span class="w"> </span><span class="nx">xLAHQR</span><span class="w"> </span><span class="nx">vs</span><span class="w"> </span><span class="nx">xLAQR0</span><span class="w"> </span><span class="nx">crossover</span><span class="w"> </span><span class="nx">point</span><span class="p">.</span>
+<span class="w">                   </span><span class="nx">Default</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="p">.</span><span class="w"> </span><span class="p">(</span><span class="nx">Must</span><span class="w"> </span><span class="nx">be</span><span class="w"> </span><span class="nx">at</span><span class="w"> </span><span class="nx">least</span><span class="w"> </span><span class="mi">11</span><span class="p">.)</span>
+
+<span class="w">  </span><span class="nx">ESMF_IPARMQ</span><span class="p">(</span><span class="nx">ISPEC</span><span class="p">=</span><span class="mi">13</span><span class="p">)</span><span class="w"> </span><span class="nx">Recommended</span><span class="w"> </span><span class="nx">deflation</span><span class="w"> </span><span class="nx">window</span><span class="w"> </span><span class="nx">size</span><span class="p">.</span>
+<span class="w">                   </span><span class="nx">This</span><span class="w"> </span><span class="nx">depends</span><span class="w"> </span><span class="nx">on</span><span class="w"> </span><span class="nx">ILO</span><span class="p">,</span><span class="w"> </span><span class="nx">IHI</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">NS</span><span class="p">,</span><span class="w"> </span><span class="nx">the</span>
+<span class="w">                   </span><span class="nx">number</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">simultaneous</span><span class="w"> </span><span class="nx">shifts</span><span class="w"> </span><span class="k">returned</span>
+<span class="w">                   </span><span class="nx">by</span><span class="w"> </span><span class="nx">ESMF_IPARMQ</span><span class="p">(</span><span class="nx">ISPEC</span><span class="p">=</span><span class="mi">15</span><span class="p">).</span><span class="w">  </span><span class="nx">The</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="k">for</span>
+<span class="w">                   </span><span class="p">(</span><span class="nx">IHI</span><span class="o">-</span><span class="nx">ILO</span><span class="o">+</span><span class="mi">1</span><span class="p">).</span><span class="nx">LE</span><span class="m m-Double">.500</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">NS</span><span class="p">.</span><span class="w">  </span><span class="nx">The</span><span class="w"> </span><span class="k">default</span>
+<span class="w">                   </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nx">IHI</span><span class="o">-</span><span class="nx">ILO</span><span class="o">+</span><span class="mi">1</span><span class="p">).</span><span class="nx">GT</span><span class="m m-Double">.500</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="mi">3</span><span class="o">*</span><span class="nx">NS</span><span class="o">/</span><span class="mi">2</span><span class="p">.</span>
+
+<span class="w">  </span><span class="nx">ESMF_IPARMQ</span><span class="p">(</span><span class="nx">ISPEC</span><span class="p">=</span><span class="mi">14</span><span class="p">)</span><span class="w"> </span><span class="nx">Nibble</span><span class="w"> </span><span class="nx">crossover</span><span class="w"> </span><span class="nx">point</span><span class="p">.</span><span class="w">  </span><span class="nx">Default</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">.</span>
+
+<span class="w">  </span><span class="nx">ESMF_IPARMQ</span><span class="p">(</span><span class="nx">ISPEC</span><span class="p">=</span><span class="mi">15</span><span class="p">)</span><span class="w"> </span><span class="nx">Number</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">simultaneous</span><span class="w"> </span><span class="nx">shifts</span><span class="p">,</span><span class="w"> </span><span class="nx">NS</span><span class="p">.</span>
+<span class="w">                   </span><span class="nx">a</span><span class="w"> </span><span class="nx">multi</span><span class="o">-</span><span class="nx">shift</span><span class="w"> </span><span class="nx">QR</span><span class="w"> </span><span class="nx">iteration</span><span class="p">.</span>
+
+<span class="w">                   </span><span class="nx">If</span><span class="w"> </span><span class="nx">IHI</span><span class="o">-</span><span class="nx">ILO</span><span class="o">+</span><span class="mi">1</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="o">...</span>
+
+<span class="w">                   </span><span class="nx">greater</span><span class="w"> </span><span class="nx">than</span><span class="w">      </span><span class="o">...</span><span class="nx">but</span><span class="w"> </span><span class="nx">less</span><span class="w">    </span><span class="o">...</span><span class="w"> </span><span class="nx">the</span>
+<span class="w">                   </span><span class="k">or</span><span class="w"> </span><span class="nx">equal</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="o">...</span><span class="w">      </span><span class="nx">than</span><span class="w">        </span><span class="k">default</span><span class="w"> </span><span class="k">is</span>
+
+<span class="w">                           </span><span class="mi">0</span><span class="w">               </span><span class="mi">30</span><span class="w">       </span><span class="nx">NS</span><span class="w"> </span><span class="p">=</span><span class="w">   </span><span class="mi">2</span><span class="o">+</span>
+<span class="w">                          </span><span class="mi">30</span><span class="w">               </span><span class="mi">60</span><span class="w">       </span><span class="nx">NS</span><span class="w"> </span><span class="p">=</span><span class="w">   </span><span class="mi">4</span><span class="o">+</span>
+<span class="w">                          </span><span class="mi">60</span><span class="w">              </span><span class="mi">150</span><span class="w">       </span><span class="nx">NS</span><span class="w"> </span><span class="p">=</span><span class="w">  </span><span class="mi">10</span>
+<span class="w">                         </span><span class="mi">150</span><span class="w">              </span><span class="mi">590</span><span class="w">       </span><span class="nx">NS</span><span class="w"> </span><span class="p">=</span><span class="w">  </span><span class="o">**</span>
+<span class="w">                         </span><span class="mi">590</span><span class="w">             </span><span class="mi">3000</span><span class="w">       </span><span class="nx">NS</span><span class="w"> </span><span class="p">=</span><span class="w">  </span><span class="mi">64</span>
+<span class="w">                        </span><span class="mi">3000</span><span class="w">             </span><span class="mi">6000</span><span class="w">       </span><span class="nx">NS</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">128</span>
+<span class="w">                        </span><span class="mi">6000</span><span class="w">             </span><span class="nx">infinity</span><span class="w">   </span><span class="nx">NS</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">256</span>
+
+<span class="w">               </span><span class="p">(</span><span class="o">+</span><span class="p">)</span><span class="w">  </span><span class="nx">By</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">matrices</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">this</span><span class="w"> </span><span class="nx">order</span><span class="w"> </span><span class="nx">are</span>
+<span class="w">                    </span><span class="nx">passed</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">implicit</span><span class="w"> </span><span class="nx">double</span><span class="w"> </span><span class="nx">shift</span><span class="w"> </span><span class="nx">routine</span>
+<span class="w">                    </span><span class="nx">xLAHQR</span><span class="p">.</span><span class="w">  </span><span class="nx">See</span><span class="w"> </span><span class="nx">ESMF_IPARMQ</span><span class="p">(</span><span class="nx">ISPEC</span><span class="p">=</span><span class="mi">12</span><span class="p">)</span><span class="w"> </span><span class="nx">above</span><span class="p">.</span><span class="w">   </span><span class="nx">These</span>
+<span class="w">                    </span><span class="nx">values</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">NS</span><span class="w"> </span><span class="nx">are</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="nx">only</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">case</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">rare</span>
+<span class="w">                    </span><span class="nx">xLAHQR</span><span class="w"> </span><span class="nx">failure</span><span class="p">.</span>
+
+<span class="w">               </span><span class="p">(</span><span class="o">**</span><span class="p">)</span><span class="w"> </span><span class="nx">The</span><span class="w"> </span><span class="nx">asterisks</span><span class="w"> </span><span class="p">(</span><span class="o">**</span><span class="p">)</span><span class="w"> </span><span class="nx">indicate</span><span class="w"> </span><span class="nx">an</span><span class="w"> </span><span class="nx">ad</span><span class="o">-</span><span class="nx">hoc</span>
+<span class="w">                    </span><span class="nx">function</span><span class="w"> </span><span class="nx">increasing</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="mi">64</span><span class="p">.</span>
+
+<span class="w">  </span><span class="nx">ESMF_IPARMQ</span><span class="p">(</span><span class="nx">ISPEC</span><span class="p">=</span><span class="mi">16</span><span class="p">)</span><span class="w"> </span><span class="nx">Select</span><span class="w"> </span><span class="nx">structured</span><span class="w"> </span><span class="nx">matrix</span><span class="w"> </span><span class="nx">multiply</span><span class="p">.</span>
+<span class="w">                   </span><span class="p">(</span><span class="nx">See</span><span class="w"> </span><span class="nx">ISPEC</span><span class="p">=</span><span class="mi">16</span><span class="w"> </span><span class="nx">above</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">details</span><span class="p">.)</span>
+<span class="w">                   </span><span class="nx">Default</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">.</span>
+</code></pre></div>
+
+<p>\endverbatim</p>
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ispec~3"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ISPEC</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-name~2"></span>
+              character(len=1)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NAME</strong>*(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-opts~2"></span>
+              character(len=1)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>OPTS</strong>*(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n~67"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>N</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ilo~9"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ILO</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ihi~9"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IHI</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lwork~18"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LWORK</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <h3>Return Value
+        <small>
+          <span class="anchor" id="variable-esmf_iparmq~2"></span>
+          integer
+        </small>
+      </h3>
+      
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

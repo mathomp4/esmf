@@ -1,0 +1,687 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_CompExecute &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_CompExecute
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.1% of total for procedures.">133 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_Comp.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_comp.f90.html'>ESMF_Comp.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/esmf_compmod.html'>ESMF_CompMod</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_CompExecute</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/esmf_compexecute.html#src">ESMF_CompExecute</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public recursive subroutine ESMF_CompExecute(compp, method, importState, exportState, clock, syncflag, phase, port, timeout, userRc, rc)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-compp~7"></span>
+              type(<a href='../type/esmf_compclass.html'>ESMF_CompClass</a>),
+            </td>
+<td></td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>compp</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-method~26"></span>
+              type(<a href='../type/esmf_method_flag.html'>ESMF_Method_Flag</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>method</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-importstate~467"></span>
+              type(<a href='../type/esmf_state.html'>ESMF_State</a>),
+            </td>
+<td>intent(inout),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>importState</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-exportstate~466"></span>
+              type(<a href='../type/esmf_state.html'>ESMF_State</a>),
+            </td>
+<td>intent(inout),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>exportState</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-clock~542"></span>
+              type(<a href='../type/esmf_clock.html'>ESMF_Clock</a>),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>clock</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-syncflag~102"></span>
+              type(<a href='../type/esmf_sync_flag.html'>ESMF_Sync_Flag</a>),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>syncflag</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-phase~96"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>phase</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-port~5"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>port</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-timeout~20"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>timeout</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-userrc~41"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>userRc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~3835"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">  </span><span class="k">recursive subroutine </span><span class="n">ESMF_CompExecute</span><span class="p">(</span><span class="n">compp</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">importState</span><span class="p">,</span><span class="w"> </span><span class="n">exportState</span><span class="p">,</span><span class="w"> </span><span class="n">clock</span><span class="p">,</span><span class="w"> </span><span class="n">syncflag</span><span class="p">,</span><span class="w"> </span><span class="n">phase</span><span class="p">,</span><span class="w"> </span><span class="n">port</span><span class="p">,</span><span class="w"> </span><span class="n">timeout</span><span class="p">,</span><span class="w"> </span><span class="n">userRc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!</span>
+<span class="c">!</span>
+<span class="c">! !ARGUMENTS:</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_CompClass</span><span class="p">),</span><span class="w">    </span><span class="k">pointer</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">compp</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Method_Flag</span><span class="p">),</span><span class="w">  </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">method</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_State</span><span class="p">),</span><span class="w">        </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">importState</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_State</span><span class="p">),</span><span class="w">        </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">exportState</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Clock</span><span class="p">),</span><span class="w">        </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">clock</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Sync_Flag</span><span class="p">),</span><span class="w">    </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">syncflag</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">                 </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">phase</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">                 </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">port</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">                 </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">timeout</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">                 </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w">   </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">userRc</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">                 </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w">   </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+<span class="c">!</span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">! Component Execute method used by GridComp and CplComp for:</span>
+<span class="c">!   * Initialize,</span>
+<span class="c">!   * Run,</span>
+<span class="c">!   * Finalize,</span>
+<span class="c">!   * ReadRestart,</span>
+<span class="c">!   * WriteRestart.</span>
+<span class="c">!</span>
+<span class="c">! Call into the associated user code for a component&#39;s method.</span>
+<span class="c">!</span>
+<span class="c">! The arguments are:</span>
+<span class="c">! \begin{description}</span>
+<span class="c">!</span>
+<span class="c">! \item[compp]</span>
+<span class="c">!   Component to call Initialization routine for.</span>
+<span class="c">! \item[method]</span>
+<span class="c">!   One of the ESMF Component methods. See section \ref{const:methods} </span>
+<span class="c">!   for a complete list of valid methods.</span>
+<span class="c">! \item[{[importState]}]  </span>
+<span class="c">!   Import data for component method.</span>
+<span class="c">! \item[{[exportState]}]  </span>
+<span class="c">!   Export data for component method.</span>
+<span class="c">! \item[{[clock]}]  </span>
+<span class="c">!   External clock for passing in time information.</span>
+<span class="c">! \item[{[syncflag]}]</span>
+<span class="c">!   Blocking behavior of this method call. See section \ref{const:sync} </span>
+<span class="c">!   for a list of valid blocking options. Default option is</span>
+<span class="c">!   {\tt ESMF\_SYNC\_VASBLOCKING} which blocks PETs and their spawned off threads </span>
+<span class="c">!   across each VAS.</span>
+<span class="c">! \item[{[phase]}]</span>
+<span class="c">!   The phase of a multi-phase method. Default is 1.</span>
+<span class="c">! \item[{[port]}]</span>
+<span class="c">!   Port number. Only used for ESMF\_METHOD\_SERVICELOOP.</span>
+<span class="c">! \item[{[timeout]}]</span>
+<span class="c">!   Time out in seconds.</span>
+<span class="c">! \item[{[userRc]}]</span>
+<span class="c">!   Return code set by {\tt userRoutine} before returning.</span>
+<span class="c">! \item[{[rc]}]</span>
+<span class="c">!   Return code; equals {\tt ESMF\_SUCCESS} if there are no errors.</span>
+<span class="c">! \end{description}</span>
+<span class="c">!</span>
+<span class="c">!EOPI</span>
+<span class="c">!------------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">localrc</span><span class="w">      </span><span class="c">! local return code</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">localUserRc</span><span class="w">  </span><span class="c">! return code from user code</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Sync_Flag</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">blocking</span><span class="w">     </span><span class="c">! local blocking flag</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_VM</span><span class="p">)</span><span class="w">           </span><span class="kd">::</span><span class="w"> </span><span class="n">vm</span><span class="w">           </span><span class="c">! VM for current context</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">phaseArg</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">portArg</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">timeoutArg</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">)</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="n">usedTime</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="mi">160</span><span class="p">)</span><span class="w">          </span><span class="kd">::</span><span class="w"> </span><span class="n">msgString</span>
+<span class="w">        </span>
+<span class="w">    </span><span class="c">! dummys that will provide initializer values if args are not present</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_State</span><span class="p">)</span><span class="w">        </span><span class="kd">::</span><span class="w"> </span><span class="n">dummyis</span><span class="p">,</span><span class="w"> </span><span class="n">dummyes</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Clock</span><span class="p">)</span><span class="w">        </span><span class="kd">::</span><span class="w"> </span><span class="n">dummyclock</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Status</span><span class="p">)</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">baseStatus</span>
+
+<span class="w">    </span><span class="c">! Initialize return code; assume not implemented until success is certain</span>
+<span class="w">    </span><span class="n">localrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+<span class="w">        </span>
+<span class="w">    </span><span class="c">! Test incoming compp object</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="nb">associated</span><span class="p">(</span><span class="n">compp</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_RC_OBJ_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;Not a valid pointer to ESMF Component object&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">return</span>
+<span class="k">    endif</span>
+
+<span class="w">    </span><span class="c">! Check init status of arguments</span>
+<span class="w">    </span><span class="n">ESMF_INIT_CHECK_DEEP</span><span class="p">(</span><span class="n">ESMF_CompClassGetInit</span><span class="p">,</span><span class="w"> </span><span class="n">compp</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_BaseGetStatus</span><span class="p">(</span><span class="n">compp</span><span class="p">%</span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="n">baseStatus</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">        </span>
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="n">baseStatus</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_STATUS_READY</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_RC_OBJ_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;uninitialized or destroyed Component object&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">      </span><span class="k">return</span>
+<span class="k">    endif</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c">! check if this is a supported combination of conditions</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">compp</span><span class="p">%</span><span class="n">vm_released</span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="p">(</span><span class="n">method</span><span class="o">/=</span><span class="n">ESMF_METHOD_WAIT</span><span class="p">).</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="p">(</span><span class="n">method</span><span class="o">/=</span><span class="n">ESMF_METHOD_NONE</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_RC_OBJ_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;cannot call this method while the component is executing&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">      </span><span class="k">return</span>
+<span class="k">    endif</span>
+
+<span class="w">    </span><span class="c">! set the default mode to ESMF_SYNC_VASBLOCKING</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">syncflag</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      </span><span class="n">blocking</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">syncflag</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="k">      </span><span class="n">blocking</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SYNC_VASBLOCKING</span>
+<span class="w">    </span><span class="k">endif</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c">! supply default objects if unspecified by the caller</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">importState</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      </span><span class="n">compp</span><span class="p">%</span><span class="k">is</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">importState</span>
+<span class="w">      </span><span class="n">compp</span><span class="p">%</span><span class="n">compStatus</span><span class="p">%</span><span class="n">isIsPresent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">      </span><span class="c">! use dummy variable</span>
+<span class="w">      </span><span class="n">compp</span><span class="p">%</span><span class="k">is</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dummyis</span>
+<span class="w">    </span><span class="k">endif</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">exportState</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      </span><span class="n">compp</span><span class="p">%</span><span class="n">es</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">exportState</span>
+<span class="w">      </span><span class="n">compp</span><span class="p">%</span><span class="n">compStatus</span><span class="p">%</span><span class="n">esIsPresent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">      </span><span class="c">! use dummy variable</span>
+<span class="w">      </span><span class="n">compp</span><span class="p">%</span><span class="n">es</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dummyes</span>
+<span class="w">    </span><span class="k">endif</span>
+
+<span class="w">    </span><span class="c">! and something for clocks?</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">clock</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      </span><span class="n">compp</span><span class="p">%</span><span class="n">argclock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clock</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">      </span><span class="c">! use dummy variable -&gt; set to null pointer since this is deep C++ impl.</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_ClockSetThis</span><span class="p">(</span><span class="n">dummyclock</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_NULL_POINTER</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">      </span><span class="n">compp</span><span class="p">%</span><span class="n">argclock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dummyclock</span>
+<span class="w">    </span><span class="k">endif</span>
+
+<span class="w">    </span><span class="c">! set phase and port number</span>
+<span class="w">    </span><span class="n">phaseArg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="c">! default phase</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">phase</span><span class="p">))</span><span class="w"> </span><span class="n">phaseArg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">phase</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">method</span><span class="o">==</span><span class="n">ESMF_METHOD_SERVICELOOP</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="p">(</span><span class="n">method</span><span class="o">==</span><span class="n">ESMF_METHOD_SERVICELOOPIC</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="w">      </span><span class="c">! deal with special phase/port argument combination</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">phaseArg</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;Phase must be 1 for ServiceLoop() call.&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="k">return</span>
+<span class="k">      endif</span>
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">port</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="n">port</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1024</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">port</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">65535</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;The &#39;port&#39; argument is outside valid range [1024, 65535]&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">          </span><span class="k">return</span>
+<span class="k">        endif</span>
+<span class="k">        </span><span class="n">portArg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">port</span><span class="w">    </span><span class="c">! valid port number</span>
+<span class="w">      </span><span class="k">else</span>
+<span class="k">        </span><span class="n">portArg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w">      </span><span class="c">! indicate that no port was specified</span>
+<span class="w">      </span><span class="k">endif</span>
+<span class="k">    else</span>
+<span class="w">      </span><span class="c">! all other component methods have regular phase arguments</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">port</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;Port is only allowed for ServiceLoop() call.&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="k">return</span>
+<span class="k">      endif</span>
+<span class="k">      </span><span class="n">portArg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w">        </span><span class="c">! indicate that no port was specified</span>
+<span class="w">    </span><span class="k">endif</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c">! Timeout argument</span>
+<span class="w">    </span><span class="n">timeoutArg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c">! default timeout to flag issue if it is really used later</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">timeout</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="n">timeout</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;The &#39;timeout&#39; argument must be positive&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span>
+<span class="k">      endif</span>
+<span class="k">      </span><span class="n">timeoutArg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">timeout</span><span class="w">    </span><span class="c">! valid timeout</span>
+<span class="w">    </span><span class="k">endif</span>
+
+<span class="w">    </span><span class="c">! Wrap comp so it&#39;s passed to C++ correctly.</span>
+<span class="w">    </span><span class="n">compp</span><span class="p">%</span><span class="n">compw</span><span class="p">%</span><span class="n">compp</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">compp</span>
+<span class="w">    </span><span class="n">ESMF_INIT_SET_CREATED</span><span class="p">(</span><span class="n">compp</span><span class="p">%</span><span class="n">compw</span><span class="p">)</span>
+<span class="w">    </span><span class="n">compp</span><span class="p">%</span><span class="n">compw</span><span class="p">%</span><span class="n">isNamedAlias</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+
+<span class="w">    </span><span class="c">! Set up the arguments</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">compp</span><span class="p">%</span><span class="n">iAmParticipant</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">      </span><span class="c">! only call this on PETs that participate</span>
+<span class="w">      </span><span class="k">call </span><span class="n">c_ESMC_FTableSetStateArgs</span><span class="p">(</span><span class="n">compp</span><span class="p">%</span><span class="n">ftable</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="p">,</span><span class="w"> </span><span class="n">phaseArg</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">compp</span><span class="p">%</span><span class="n">compw</span><span class="p">,</span><span class="w"> </span><span class="n">compp</span><span class="p">%</span><span class="k">is</span><span class="p">,</span><span class="w"> </span><span class="n">compp</span><span class="p">%</span><span class="n">es</span><span class="p">,</span><span class="w"> </span><span class="n">compp</span><span class="p">%</span><span class="n">argclock</span><span class="p">,</span><span class="w"> </span><span class="n">compp</span><span class="p">%</span><span class="n">compTunnel</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    endif</span>
+<span class="k">    </span>
+<span class="k">    </span><span class="n">localUserRc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="w">  </span><span class="c">! initialize to success</span>
+<span class="w">    </span><span class="c">! pass back the initialized value of userRc, just in case of a bail out</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">userRc</span><span class="p">))</span><span class="w"> </span><span class="n">userRc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">localUserRc</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c">! All of the participating PETs must call in, but also non-participating</span>
+<span class="w">    </span><span class="c">! PETs that hold a valid VM and show up here enter the callback mechanism.</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">compp</span><span class="p">%</span><span class="n">iAmParticipant</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">compp</span><span class="p">%</span><span class="n">compStatus</span><span class="p">%</span><span class="n">vmIsPresent</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">      </span><span class="c">! store the start time</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_VMWtime</span><span class="p">(</span><span class="n">compp</span><span class="p">%</span><span class="n">startTime</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">      </span><span class="c">! callback into user code</span>
+<span class="cp">#if 0</span>
+<span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="n">msgString</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;ESMF_CompExecute(), calling c_ESMC_FTableCallEntryPointVM(): timeoutArg=&quot;</span><span class="p">,</span><span class="n">timeoutArg</span>
+<span class="k">call </span><span class="n">ESMF_LogWrite</span><span class="p">(</span><span class="n">msgString</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_LOGMSG_DEBUG</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="cp">#endif</span>
+<span class="w">      </span><span class="k">call </span><span class="n">c_ESMC_FTableCallEntryPointVM</span><span class="p">(</span><span class="n">compp</span><span class="p">%</span><span class="n">compw</span><span class="p">,</span><span class="w"> </span><span class="n">compp</span><span class="p">%</span><span class="n">vm_parent</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">compp</span><span class="p">%</span><span class="n">vmplan</span><span class="p">,</span><span class="w"> </span><span class="n">compp</span><span class="p">%</span><span class="n">vm_info</span><span class="p">,</span><span class="w"> </span><span class="n">compp</span><span class="p">%</span><span class="n">vm_cargo</span><span class="p">,</span><span class="w"> </span><span class="n">compp</span><span class="p">%</span><span class="n">ftable</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">phaseArg</span><span class="p">,</span><span class="w"> </span><span class="n">portArg</span><span class="p">,</span><span class="w"> </span><span class="n">timeoutArg</span><span class="p">,</span><span class="w"> </span><span class="n">compp</span><span class="p">%</span><span class="n">vm_recursionCount</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">      </span><span class="c">! For threaded VMs (single- or multi-threaded) the child VM will </span>
+<span class="w">      </span><span class="c">! now be running concurrently with the parent VM.</span>
+<span class="w">      </span><span class="c">! Also for component tunnels, the actual component will now be executing</span>
+<span class="w">      </span><span class="c">! concurrently with the dual component that came in to this call.</span>
+
+<span class="w">      </span><span class="c">! wait for blocking modes</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">blocking</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SYNC_VASBLOCKING</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">blocking</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SYNC_BLOCKING</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="c">! wait for all child PETs that run in this parent&#39;s PET VAS to finish</span>
+<span class="w">        </span><span class="c">! determine how long the component has been released already</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_VMWTime</span><span class="p">(</span><span class="n">usedTime</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">        </span><span class="n">usedTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">usedTime</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">compp</span><span class="p">%</span><span class="n">startTime</span>
+<span class="w">        </span><span class="c">! allow remaining time for timeout, but at least 1 second to wrap up</span>
+<span class="w">        </span><span class="n">timeoutArg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="n">timeoutArg</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">int</span><span class="p">(</span><span class="n">usedTime</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="cp">#if 0</span>
+<span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="n">msgString</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;ESMF_CompExecute(), calling c_ESMC_CompWait(): usedTime=&quot;</span><span class="p">,</span><span class="n">usedTime</span><span class="p">,</span><span class="s2">&quot;timeoutArg=&quot;</span><span class="p">,</span><span class="n">timeoutArg</span>
+<span class="k">call </span><span class="n">ESMF_LogWrite</span><span class="p">(</span><span class="n">msgString</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_LOGMSG_DEBUG</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="cp">#endif</span>
+<span class="w">        </span><span class="k">call </span><span class="n">c_ESMC_CompWait</span><span class="p">(</span><span class="n">compp</span><span class="p">%</span><span class="n">vm_parent</span><span class="p">,</span><span class="w"> </span><span class="n">compp</span><span class="p">%</span><span class="n">vmplan</span><span class="p">,</span><span class="w"> </span><span class="n">compp</span><span class="p">%</span><span class="n">vm_info</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">compp</span><span class="p">%</span><span class="n">vm_cargo</span><span class="p">,</span><span class="w"> </span><span class="n">timeoutArg</span><span class="p">,</span><span class="w"> </span><span class="n">compp</span><span class="p">%</span><span class="n">vm_recursionCount</span><span class="p">,</span><span class="w"> </span><span class="n">localUserRc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="c">! localUserRc - return code of registered user callback method</span>
+<span class="w">        </span><span class="c">! localrc     - return code of ESMF internal callback stack</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">      endif</span>
+<span class="k">    endif</span>
+<span class="w">      </span>
+<span class="w">    </span><span class="c">! sync PETs according to blocking mode</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">blocking</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SYNC_NONBLOCKING</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      </span><span class="n">compp</span><span class="p">%</span><span class="n">vm_released</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="k">      </span><span class="n">compp</span><span class="p">%</span><span class="n">vm_released</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span><span class="w">       </span><span class="c">! indicate child VM has been caught</span>
+<span class="w">      </span><span class="c">! for ESMF_SYNC_BLOCKING _all_ parent PETs will be synced on exit</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">blocking</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SYNC_BLOCKING</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="c">! the current context _is_ the parent context...</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_VMGetCurrent</span><span class="p">(</span><span class="n">vm</span><span class="o">=</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span><span class="w">  </span><span class="c">! determine current VM</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">        call </span><span class="n">ESMF_VMBarrier</span><span class="p">(</span><span class="n">vm</span><span class="o">=</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span><span class="w"> </span><span class="c">! barrier across parent VM</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">      endif</span>
+<span class="k">    endif</span>
+
+<span class="w">    </span><span class="c">! pass back userRc</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">userRc</span><span class="p">))</span><span class="w"> </span><span class="n">userRc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">localUserRc</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c">! Return successfully</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+
+<span class="w">  </span><span class="k">end subroutine </span><span class="n">ESMF_CompExecute</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

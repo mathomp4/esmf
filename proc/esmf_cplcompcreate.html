@@ -1,0 +1,530 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_CplCompCreate &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_CplCompCreate
+      <small>Function</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.0% of total for procedures.">35 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_CplComp.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_cplcomp.f90.html'>ESMF_CplComp.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/esmf_cplcompmod.html'>ESMF_CplCompMod</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_CplCompCreate</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/esmf_cplcompcreate.html#src">ESMF_CplCompCreate</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public recursive function ESMF_CplCompCreate(keywordEnforcer, hconfig, config, configFile, clock, petList, devList, contextflag, name, rc)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-keywordenforcer~1058"></span>
+              type(<a href='../type/esmf_keywordenforcer.html'>ESMF_KeywordEnforcer</a>),
+            </td>
+<td></td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>keywordEnforcer</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-hconfig~231"></span>
+              type(<a href='../type/esmf_hconfig.html'>ESMF_HConfig</a>),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>hconfig</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-config~30"></span>
+              type(<a href='../type/esmf_config.html'>ESMF_Config</a>),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>config</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-configfile~2"></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>configFile</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-clock~485"></span>
+              type(<a href='../type/esmf_clock.html'>ESMF_Clock</a>),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>clock</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-petlist~38"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>petList</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-devlist~4"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>devList</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-contextflag~2"></span>
+              type(<a href='../type/esmf_context_flag.html'>ESMF_Context_Flag</a>),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>contextflag</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-name~1000"></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>name</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~3594"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <h3>Return Value
+        <small>
+          <span class="anchor" id="variable-esmf_cplcompcreate"></span>
+          type(<a href='../type/esmf_cplcomp.html'>ESMF_CplComp</a>)
+        </small>
+      </h3>
+      
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">  </span><span class="k">recursive function </span><span class="n">ESMF_CplCompCreate</span><span class="p">(</span><span class="n">keywordEnforcer</span><span class="p">,</span><span class="w"> </span><span class="n">hconfig</span><span class="p">,</span><span class="w"> </span><span class="n">config</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">configFile</span><span class="p">,</span><span class="w"> </span><span class="n">clock</span><span class="p">,</span><span class="w"> </span><span class="n">petList</span><span class="p">,</span><span class="w"> </span><span class="n">devList</span><span class="p">,</span><span class="w"> </span><span class="n">contextflag</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!</span>
+<span class="c">! !RETURN VALUE:</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_CplComp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ESMF_CplCompCreate</span>
+<span class="c">!</span>
+<span class="c">! !ARGUMENTS:</span>
+<span class="k">type</span><span class="p">(</span><span class="n">ESMF_KeywordEnforcer</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="kd">::</span><span class="w"> </span><span class="n">keywordEnforcer</span><span class="w"> </span><span class="c">! must use keywords below</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_HConfig</span><span class="p">),</span><span class="w">      </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">hconfig</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Config</span><span class="p">),</span><span class="w">       </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">config</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w">        </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">configFile</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Clock</span><span class="p">),</span><span class="w">        </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">clock</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">                 </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">petList</span><span class="p">(:)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">                 </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">devList</span><span class="p">(:)</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Context_Flag</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">contextflag</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w">        </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">name</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">                 </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+<span class="c">!</span>
+<span class="c">! !STATUS:</span>
+<span class="c">! \begin{itemize}</span>
+<span class="c">! \item\apiStatusCompatibleVersion{5.2.0r}</span>
+<span class="c">! \item\apiStatusModifiedSinceVersion{5.2.0r}</span>
+<span class="c">! \begin{description}</span>
+<span class="c">! \item[8.6.0] Added argument {\tt devList} to support management of accelerator</span>
+<span class="c">!   devices.</span>
+<span class="c">! \item[8.7.0] Added argument {\tt hconfig} to simplify direct usage of</span>
+<span class="c">!   {\tt ESMF\_HConfig} objects with Components.</span>
+<span class="c">! \end{description}</span>
+<span class="c">! \end{itemize}</span>
+<span class="c">!</span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">! This interface creates an {\tt ESMF\_CplComp} object. By default, a</span>
+<span class="c">! separate VM context will be created for each component.  This implies</span>
+<span class="c">! creating a new MPI communicator and allocating additional memory to</span>
+<span class="c">! manage the VM resources. When running on a large number of processors,</span>
+<span class="c">! creating a separate VM for each component could be both time and memory</span>
+<span class="c">! inefficient.  If the application is sequential, i.e., each component is</span>
+<span class="c">! running on all the PETs of the global VM, it will be more efficient to use</span>
+<span class="c">! the global VM instead of creating a new one.  This can be done by setting</span>
+<span class="c">! {\tt contextflag} to ESMF\_CONTEXT\_PARENT\_VM.</span>
+<span class="c">!</span>
+<span class="c">! The return value is the new {\tt ESMF\_CplComp}.</span>
+<span class="c">!</span>
+<span class="c">! The arguments are:</span>
+<span class="c">! \begin{description}</span>
+<span class="c">! \item[{[hconfig]}]</span>
+<span class="c">!   An already-created {\tt ESMF\_HConfig} object to be attached to the newly</span>
+<span class="c">!   created component.</span>
+<span class="c">!   Only one of {\tt hconfig}, {\tt config}, or {\tt configFile} must be</span>
+<span class="c">!   specified.</span>
+<span class="c">! \item[{[config]}]</span>
+<span class="c">!   An already-created {\tt ESMF\_Config} object to be attached to the newly</span>
+<span class="c">!   created component.</span>
+<span class="c">!   Only one of {\tt hconfig}, {\tt config}, or {\tt configFile} must be</span>
+<span class="c">!   specified.</span>
+<span class="c">! \item[{[configFile]}]</span>
+<span class="c">!   The filename of a config file.</span>
+<span class="c">!   If specified, a new {\tt ESMF\_Config} object is created and attached to the</span>
+<span class="c">!   newly created component. The {\tt configFile} file is opened and associated</span>
+<span class="c">!   with the new config object.</span>
+<span class="c">!   Only one of {\tt hconfig}, {\tt config}, or {\tt configFile} must be</span>
+<span class="c">!   specified.</span>
+<span class="c">! \item[{[clock]}]</span>
+<span class="c">!   \begin{sloppypar}</span>
+<span class="c">!   The {\tt ESMF\_Clock} object associated with the component. Often this will</span>
+<span class="c">!   be a component specific clock that can be queried and updated by the</span>
+<span class="c">!   component freely. In that case it should be a clock object separate from</span>
+<span class="c">!   that of other components, particularily that of the parent component.</span>
+<span class="c">!   However, ESMF itself does not access or update {\tt clock} and therefore</span>
+<span class="c">!   does not impose any direct restrictions. It is the user&#39;s responsibility to</span>
+<span class="c">!   ensure correct usage of the {\tt clock} object by the parent and child</span>
+<span class="c">!   components.</span>
+<span class="c">!   \end{sloppypar}</span>
+<span class="c">! \item[{[petList]}]</span>
+<span class="c">!   List of parent {\tt PET}s given to the created child component by the</span>
+<span class="c">!   parent component. If {\tt petList} is not specified, or is empty, all of the</span>
+<span class="c">!   parent {\tt PET}s are given to the child component. The order of</span>
+<span class="c">!   PETs in {\tt petList} determines how the child local PETs map back to</span>
+<span class="c">!   the parent PETs.</span>
+<span class="c">! \item[{[devList]}]</span>
+<span class="c">!   List of accelerator devices global ids {\tt DEV}s to be associated with the</span>
+<span class="c">!   created child component. If {\tt devList} is not specified, or is empty,</span>
+<span class="c">!   no devices are associated with the component.</span>
+<span class="c">! \item[{[contextflag]}]</span>
+<span class="c">!   Specify the component&#39;s VM context. The default context is</span>
+<span class="c">!   {\tt ESMF\_CONTEXT\_OWN\_VM}. See section \ref{const:contextflag} for a</span>
+<span class="c">!   complete list of valid flags.</span>
+<span class="c">! \item[{[name]}]</span>
+<span class="c">!   Name of the newly-created {\tt ESMF\_CplComp}.  This name can be altered</span>
+<span class="c">!   from within the {\tt ESMF\_CplComp} code once the initialization routine</span>
+<span class="c">!   is called.</span>
+<span class="c">! \item[{[rc]}]</span>
+<span class="c">!   Return code; equals {\tt ESMF\_SUCCESS} if there are no errors.</span>
+<span class="c">! \end{description}</span>
+<span class="c">!</span>
+<span class="c">!EOP</span>
+<span class="c">!------------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_CompClass</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">compclass</span><span class="w">        </span><span class="c">! generic comp</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_CplComp</span><span class="p">)</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">cplcomp</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localrc</span><span class="w">                                </span><span class="c">! local error localrc</span>
+
+<span class="w">    </span><span class="n">ESMF_INIT_CHECK_DEEP</span><span class="p">(</span><span class="n">ESMF_HConfigGetInit</span><span class="p">,</span><span class="n">hconfig</span><span class="p">,</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="n">ESMF_INIT_CHECK_DEEP</span><span class="p">(</span><span class="n">ESMF_ConfigGetInit</span><span class="p">,</span><span class="n">config</span><span class="p">,</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="n">ESMF_INIT_CHECK_DEEP</span><span class="p">(</span><span class="n">ESMF_ClockGetInit</span><span class="p">,</span><span class="n">clock</span><span class="p">,</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">! Initialize the pointer to null.</span>
+<span class="w">    </span><span class="k">nullify</span><span class="p">(</span><span class="n">ESMF_CplCompCreate</span><span class="p">%</span><span class="n">compp</span><span class="p">)</span>
+<span class="w">    </span><span class="k">nullify</span><span class="p">(</span><span class="n">compclass</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">! initialize return code; assume routine not implemented</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+<span class="w">    </span><span class="n">localrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+
+<span class="w">    </span><span class="c">! Allocate a new comp class</span>
+<span class="w">    </span><span class="k">allocate</span><span class="p">(</span><span class="n">compclass</span><span class="p">,</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;Component class&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">    </span><span class="c">! call Comp method</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_CompConstruct</span><span class="p">(</span><span class="n">compclass</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_COMPTYPE_CPL</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">configFile</span><span class="o">=</span><span class="n">configFile</span><span class="p">,</span><span class="w"> </span><span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span><span class="w"> </span><span class="n">hconfig</span><span class="o">=</span><span class="n">hconfig</span><span class="p">,</span><span class="w"> </span><span class="n">clock</span><span class="o">=</span><span class="n">clock</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">petList</span><span class="o">=</span><span class="n">petList</span><span class="p">,</span><span class="w"> </span><span class="n">devList</span><span class="o">=</span><span class="n">devList</span><span class="p">,</span><span class="w"> </span><span class="n">contextflag</span><span class="o">=</span><span class="n">contextflag</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      deallocate</span><span class="p">(</span><span class="n">compclass</span><span class="p">)</span>
+<span class="w">      </span><span class="k">return</span>
+<span class="k">    endif</span>
+
+<span class="k">    </span><span class="n">cplcomp</span><span class="p">%</span><span class="n">compp</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">compclass</span>
+<span class="w">    </span><span class="c">! Add reference to this object into ESMF garbage collection table</span>
+<span class="w">    </span><span class="k">call </span><span class="n">c_ESMC_VMAddFObject</span><span class="p">(</span><span class="n">cplcomp</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ID_COMPONENT</span><span class="p">%</span><span class="n">objectID</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">! Set return values</span>
+<span class="w">    </span><span class="n">ESMF_CplCompCreate</span><span class="p">%</span><span class="n">compp</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">compclass</span>
+
+<span class="w">    </span><span class="n">ESMF_INIT_SET_CREATED</span><span class="p">(</span><span class="n">ESMF_CplCompCreate</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">! return successfully</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+
+<span class="w">  </span><span class="k">end function </span><span class="n">ESMF_CplCompCreate</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

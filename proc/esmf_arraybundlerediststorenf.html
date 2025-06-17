@@ -1,0 +1,481 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_ArrayBundleRedistStoreNF &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_ArrayBundleRedistStoreNF
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.0% of total for procedures.">42 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_ArrayBundle.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_arraybundle.f90.html'>ESMF_ArrayBundle.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/esmf_arraybundlemod.html'>ESMF_ArrayBundleMod</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_ArrayBundleRedistStoreNF</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/esmf_arraybundlerediststorenf.html#src">ESMF_ArrayBundleRedistStoreNF</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>private  subroutine ESMF_ArrayBundleRedistStoreNF(srcArrayBundle, dstArrayBundle, routehandle, keywordEnforcer, ignoreUnmatchedIndicesFlag, srcToDstTransposeMap, rc)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srcarraybundle~8"></span>
+              type(<a href='../type/esmf_arraybundle.html'>ESMF_ArrayBundle</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>srcArrayBundle</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dstarraybundle~8"></span>
+              type(<a href='../type/esmf_arraybundle.html'>ESMF_ArrayBundle</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dstArrayBundle</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-routehandle~118"></span>
+              type(<a href='../type/esmf_routehandle.html'>ESMF_RouteHandle</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>routehandle</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-keywordenforcer~955"></span>
+              type(<a href='../type/esmf_keywordenforcer.html'>ESMF_KeywordEnforcer</a>),
+            </td>
+<td></td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>keywordEnforcer</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ignoreunmatchedindicesflag~5"></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ignoreUnmatchedIndicesFlag</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srctodsttransposemap~11"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>srcToDstTransposeMap</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~2902"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">  </span><span class="k">subroutine </span><span class="n">ESMF_ArrayBundleRedistStoreNF</span><span class="p">(</span><span class="n">srcArrayBundle</span><span class="p">,</span><span class="w"> </span><span class="n">dstArrayBundle</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">routehandle</span><span class="p">,</span><span class="w"> </span><span class="n">keywordEnforcer</span><span class="p">,</span><span class="w"> </span><span class="n">ignoreUnmatchedIndicesFlag</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">srcToDstTransposeMap</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!</span>
+<span class="c">! !ARGUMENTS:</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_ArrayBundle</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">srcArrayBundle</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_ArrayBundle</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">dstArrayBundle</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_RouteHandle</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">routehandle</span>
+<span class="k">type</span><span class="p">(</span><span class="n">ESMF_KeywordEnforcer</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="kd">::</span><span class="w"> </span><span class="n">keywordEnforcer</span><span class="w"> </span><span class="c">! must use keywords below</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">,</span><span class="w">                </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ignoreUnmatchedIndicesFlag</span><span class="p">(:)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">                </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">srcToDstTransposeMap</span><span class="p">(:)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">                </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+<span class="c">!</span>
+<span class="c">! !STATUS:</span>
+<span class="c">! \begin{itemize}</span>
+<span class="c">! \item\apiStatusCompatibleVersion{5.2.0r}</span>
+<span class="c">! \item\apiStatusModifiedSinceVersion{5.2.0r}</span>
+<span class="c">! \begin{description}</span>
+<span class="c">! \item[8.1.0] Added argument {\tt ignoreUnmatchedIndicesFlag} to support cases</span>
+<span class="c">!    where source and destination side do not cover the exact same index space.</span>
+<span class="c">! \end{description}</span>
+<span class="c">! \end{itemize}</span>
+<span class="c">!</span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">!   Store an ArrayBundle redistribution operation from</span>
+<span class="c">!   {\tt srcArrayBundle} to {\tt dstArrayBundle}. The redistribution</span>
+<span class="c">!   between ArrayBundles is defined as the sequence of</span>
+<span class="c">!   individual Array redistributions over all source and</span>
+<span class="c">!   destination Array pairs in sequence. The method requires that</span>
+<span class="c">!   {\tt srcArrayBundle} and {\tt dstArrayBundle} reference an identical</span>
+<span class="c">!   number of {\tt ESMF\_Array} objects.</span>
+<span class="c">!</span>
+<span class="c">!   The effect of this method on ArrayBundles that contain aliased members is</span>
+<span class="c">!   undefined.</span>
+<span class="c">!</span>
+<span class="c">!   PETs that specify a {\tt factor} argument must use the</span>
+<span class="c">!   &lt;type&gt;&lt;kind&gt; overloaded interface. Other PETs call into the interface</span>
+<span class="c">!   without {\tt factor} argument. If multiple PETs specify the {\tt factor}</span>
+<span class="c">!   argument its type and kind as well as its value must match across all</span>
+<span class="c">!   PETs. If none of the PETs specifies a {\tt factor} argument the default</span>
+<span class="c">!   will be a factor of 1.</span>
+<span class="c">!</span>
+<span class="c">!   See the description of method {\tt ESMF\_ArrayRedistStore()} for</span>
+<span class="c">!   the definition of the Array based operation.</span>
+<span class="c">!</span>
+<span class="c">!   The routine returns an {\tt ESMF\_RouteHandle} that can be used to call </span>
+<span class="c">!   {\tt ESMF\_ArrayBundleRedist()} on any pair of ArrayBundles that matches </span>
+<span class="c">!   {\tt srcArrayBundle} and {\tt dstArrayBundle} in {\em type}, {\em kind},</span>
+<span class="c">!   and memory layout of the {\em distributed} dimensions. However, the size, </span>
+<span class="c">!   number, and index order of {\em undistributed} dimensions may be different.</span>
+<span class="c">!   See section \ref{RH:Reusability} for a more detailed discussion of</span>
+<span class="c">!   RouteHandle reusability.</span>
+<span class="c">!  </span>
+<span class="c">!   This call is {\em collective} across the current VM.</span>
+<span class="c">!</span>
+<span class="c">!   \begin{description}</span>
+<span class="c">!   \item [srcArrayBundle]</span>
+<span class="c">!     {\tt ESMF\_ArrayBundle} with source data.</span>
+<span class="c">!   \item [dstArrayBundle]</span>
+<span class="c">!     {\tt ESMF\_ArrayBundle} with destination data. The data in these Arrays</span>
+<span class="c">!     may be destroyed by this call.</span>
+<span class="c">!   \item [routehandle]</span>
+<span class="c">!     Handle to the precomputed Route.</span>
+<span class="c">!   \item [{[ignoreUnmatchedIndicesFlag]}] </span>
+<span class="c">!     If set to {.false.}, the {\em default}, source and destination side must</span>
+<span class="c">!     cover the identical index space, using precisely matching sequence</span>
+<span class="c">!     indices. If set to {.true.}, mismatching sequence indices between source</span>
+<span class="c">!     and destination side are silently ignored.</span>
+<span class="c">!     The size of this array argument must either be 1 or equal the number of</span>
+<span class="c">!     Arrays in the {\tt srcArrayBundle} and {\tt dstArrayBundle} arguments. In</span>
+<span class="c">!     the latter case, the handling of unmatched indices is specified for each</span>
+<span class="c">!     Array pair separately. If only one element is specified, it is</span>
+<span class="c">!     used for {\em all} Array pairs.</span>
+<span class="c">!   \item [{[srcToDstTransposeMap]}]</span>
+<span class="c">!     List with as many entries as there are dimensions in the Arrays in</span>
+<span class="c">!     {\tt srcArrayBundle}. Each</span>
+<span class="c">!     entry maps the corresponding source Array dimension against the </span>
+<span class="c">!     specified destination Array dimension. Mixing of distributed and</span>
+<span class="c">!     undistributed dimensions is supported.</span>
+<span class="c">!   \item [{[rc]}]</span>
+<span class="c">!     Return code; equals {\tt ESMF\_SUCCESS} if there are no errors.</span>
+<span class="c">!   \end{description}</span>
+<span class="c">!</span>
+<span class="c">!EOP</span>
+<span class="c">!------------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">                       </span><span class="kd">::</span><span class="w"> </span><span class="n">localrc</span><span class="w">      </span><span class="c">! local return code</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Logical</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">opt_ignoreUnmatched</span><span class="p">(:)</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Logical</span><span class="p">),</span><span class="w"> </span><span class="k">target</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">def_ignoreUnmatched</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">                       </span><span class="kd">::</span><span class="w"> </span><span class="n">len_ignoreUnmatched</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_InterArray</span><span class="p">)</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">srcToDstTransposeMapArg</span>
+
+<span class="w">    </span><span class="c">! initialize return code; assume routine not implemented</span>
+<span class="w">    </span><span class="n">localrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+
+<span class="w">    </span><span class="c">! Check init status of arguments</span>
+<span class="w">    </span><span class="n">ESMF_INIT_CHECK_DEEP_SHORT</span><span class="p">(</span><span class="n">ESMF_ArrayBundleGetInit</span><span class="p">,</span><span class="w"> </span><span class="n">srcArrayBundle</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="n">ESMF_INIT_CHECK_DEEP_SHORT</span><span class="p">(</span><span class="n">ESMF_ArrayBundleGetInit</span><span class="p">,</span><span class="w"> </span><span class="n">dstArrayBundle</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c">! Deal with ignoreUnmatchedIndicesFlag</span>
+<span class="w">    </span><span class="n">def_ignoreUnmatched</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">ignoreUnmatchedIndicesFlag</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">ignoreUnmatchedIndicesFlag</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_SIZE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;Size of &#39;ignoreUnmatchedIndicesFlag&#39; argument must not be zero.&quot;</span><span class="p">,&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="c">! bail out</span>
+<span class="w">      </span><span class="k">endif</span>
+<span class="k">      allocate</span><span class="p">(</span><span class="n">opt_ignoreUnmatched</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">ignoreUnmatchedIndicesFlag</span><span class="p">)))</span>
+<span class="w">      </span><span class="n">opt_ignoreUnmatched</span><span class="p">(:)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ignoreUnmatchedIndicesFlag</span><span class="p">(:)</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="k">      </span><span class="n">opt_ignoreUnmatched</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">def_ignoreUnmatched</span>
+<span class="w">    </span><span class="k">endif</span>
+<span class="k">    </span><span class="n">len_ignoreUnmatched</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">opt_ignoreUnmatched</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">! Deal with srcToDstTransposeMap</span>
+<span class="w">    </span><span class="n">srcToDstTransposeMapArg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_InterArrayCreate</span><span class="p">(</span><span class="n">srcToDstTransposeMap</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">    </span><span class="c">! Call into the C++ interface, which will sort out optional arguments</span>
+<span class="w">    </span><span class="k">call </span><span class="n">c_ESMC_ArrayBundleRedistStoreNF</span><span class="p">(</span><span class="n">srcArrayBundle</span><span class="p">,</span><span class="w"> </span><span class="n">dstArrayBundle</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">routehandle</span><span class="p">,</span><span class="w"> </span><span class="n">opt_ignoreUnmatched</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">len_ignoreUnmatched</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">srcToDstTransposeMapArg</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c">! Mark routehandle object as being created</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_RouteHandleSetInitCreated</span><span class="p">(</span><span class="n">routehandle</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c">! garbage collection</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_InterArrayDestroy</span><span class="p">(</span><span class="n">srcToDstTransposeMapArg</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">ignoreUnmatchedIndicesFlag</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      deallocate</span><span class="p">(</span><span class="n">opt_ignoreUnmatched</span><span class="p">)</span>
+<span class="w">    </span><span class="k">endif</span>
+
+<span class="w">    </span><span class="c">! return successfully</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+
+<span class="w">  </span><span class="k">end subroutine </span><span class="n">ESMF_ArrayBundleRedistStoreNF</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

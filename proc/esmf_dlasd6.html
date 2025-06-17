@@ -1,0 +1,848 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_DLASD6 &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_DLASD6
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.0% of total for procedures.">64 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/dlasd6.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/dlasd6.f90.html'>dlasd6.F90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_DLASD6</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2> subroutine ESMF_DLASD6(ICOMPQ, NL, NR, SQRE, D, VF, VL, ALPHA, BETA, IDXQ, PERM, GIVPTR, GIVCOL, LDGCOL, GIVNUM, LDGNUM, POLES, DIFL, DIFR, Z, K, C, S, WORK, IWORK, INFO)  
+</h2>
+    
+
+    <p>\brief \b ESMF_DLASD6
+\htmlonly
+Download ESMF_DLASD6 + dependencies
+<a href="http://www.netlib.org/cgi-bin/netlibfiles.tgz?format=tgz&filename=/lapack/lapack_routine/dlasd6.f">
+[TGZ]</a>
+<a href="http://www.netlib.org/cgi-bin/netlibfiles.zip?format=zip&filename=/lapack/lapack_routine/dlasd6.f">
+[ZIP]</a>
+<a href="http://www.netlib.org/cgi-bin/netlibfiles.txt?format=txt&filename=/lapack/lapack_routine/dlasd6.f">
+[TXT]</a>
+\endhtmlonly
+\par Purpose:</p>
+<p>\verbatim</p>
+<p>ESMF_DLASD6 computes the SVD of an updated upper bidiagonal matrix B
+obtained by merging two smaller ones by appending a row. This
+routine is used only for the problem which requires all singular
+values and optionally singular vector matrices in factored form.
+B is an N-by-M matrix with N = NL + NR + 1 and M = N + SQRE.
+A related subroutine, DLASD1, handles the case in which all singular
+values and singular vectors of the bidiagonal matrix are desired.</p>
+<p>ESMF_DLASD6 computes the SVD as follows:</p>
+<div class="codehilite"><pre><span></span><code>          ( D1(in)    0    0       0 )
+</code></pre></div>
+
+<p>B = U(in) * (   Z1<strong>T   a   Z2</strong>T    b ) * VT(in)
+              (   0       0   D2(in)   0 )</p>
+<div class="codehilite"><pre><span></span><code>= U(out) <span class="gs">* ( D(out) 0) *</span> VT(out)
+</code></pre></div>
+
+<p>where Z<strong>T = (Z1</strong>T a Z2<strong>T b) = u</strong>T VT**T, and u is a vector of dimension M
+with ALPHA and BETA in the NL+1 and NL+2 th entries and zeros
+elsewhere; and the entry b is empty if SQRE = 0.</p>
+<p>The singular values of B can be computed using D1, D2, the first
+components of all the right singular vectors of the lower block, and
+the last components of all the right singular vectors of the upper
+block. These components are stored and updated in VF and VL,
+respectively, in ESMF_DLASD6. Hence U and VT are not explicitly
+referenced.</p>
+<p>The singular values are stored in D. The algorithm consists of two
+stages:</p>
+<div class="codehilite"><pre><span></span><code>  The first stage consists of deflating the size of the problem
+  when there are multiple singular values or if there is a zero
+  in the Z vector. For each such occurence the dimension of the
+  secular equation problem is reduced by one. This stage is
+  performed by the routine ESMF_DLASD7.
+
+  The second stage consists of calculating the updated
+  singular values. This is done by finding the roots of the
+  secular equation via the routine ESMF_DLASD4 (as called by ESMF_DLASD8).
+  This routine also updates VF and VL and computes the distances
+  between the updated singular values and the old singular
+  values.
+</code></pre></div>
+
+<p>ESMF_DLASD6 is called from ESMF_DLASDA.
+\endverbatim
+\param[in] ICOMPQ
+\verbatim
+         ICOMPQ is INTEGER
+        Specifies whether singular vectors are to be computed in
+        factored form:
+        = 0: Compute singular values only.
+        = 1: Compute singular vectors in factored form as well.
+\endverbatim</p>
+<p>\param[in] NL
+\verbatim
+         NL is INTEGER
+        The row dimension of the upper block.  NL &gt;= 1.
+\endverbatim</p>
+<p>\param[in] NR
+\verbatim
+         NR is INTEGER
+        The row dimension of the lower block.  NR &gt;= 1.
+\endverbatim</p>
+<p>\param[in] SQRE
+\verbatim
+         SQRE is INTEGER
+        = 0: the lower block is an NR-by-NR square matrix.
+        = 1: the lower block is an NR-by-(NR+1) rectangular matrix.</p>
+<div class="codehilite"><pre><span></span><code>    The bidiagonal matrix has row dimension N = NL + NR + 1,
+    and column dimension M = N + SQRE.
+</code></pre></div>
+
+<p>\endverbatim</p>
+<p>\param[in,out] D
+\verbatim
+         D is DOUBLE PRECISION array, dimension ( NL+NR+1 ).
+        On entry D(1:NL,1:NL) contains the singular values of the
+        upper block, and D(NL+2:N) contains the singular values
+        of the lower block. On exit D(1:N) contains the singular
+        values of the modified matrix.
+\endverbatim</p>
+<p>\param[in,out] VF
+\verbatim
+         VF is DOUBLE PRECISION array, dimension ( M )
+        On entry, VF(1:NL+1) contains the first components of all
+        right singular vectors of the upper block; and VF(NL+2:M)
+        contains the first components of all right singular vectors
+        of the lower block. On exit, VF contains the first components
+        of all right singular vectors of the bidiagonal matrix.
+\endverbatim</p>
+<p>\param[in,out] VL
+\verbatim
+         VL is DOUBLE PRECISION array, dimension ( M )
+        On entry, VL(1:NL+1) contains the  last components of all
+        right singular vectors of the upper block; and VL(NL+2:M)
+        contains the last components of all right singular vectors of
+        the lower block. On exit, VL contains the last components of
+        all right singular vectors of the bidiagonal matrix.
+\endverbatim</p>
+<p>\param[in,out] ALPHA
+\verbatim
+         ALPHA is DOUBLE PRECISION
+        Contains the diagonal element associated with the added row.
+\endverbatim</p>
+<p>\param[in,out] BETA
+\verbatim
+         BETA is DOUBLE PRECISION
+        Contains the off-diagonal element associated with the added
+        row.
+\endverbatim</p>
+<p>\param[out] IDXQ
+\verbatim
+         IDXQ is INTEGER array, dimension ( N )
+        This contains the permutation which will reintegrate the
+        subproblem just solved back into sorted order, i.e.
+        D( IDXQ( I = 1, N ) ) will be in ascending order.
+\endverbatim</p>
+<p>\param[out] PERM
+\verbatim
+         PERM is INTEGER array, dimension ( N )
+        The permutations (from deflation and sorting) to be applied
+        to each block. Not referenced if ICOMPQ = 0.
+\endverbatim</p>
+<p>\param[out] GIVPTR
+\verbatim
+         GIVPTR is INTEGER
+        The number of Givens rotations which took place in this
+        subproblem. Not referenced if ICOMPQ = 0.
+\endverbatim</p>
+<p>\param[out] GIVCOL
+\verbatim
+         GIVCOL is INTEGER array, dimension ( LDGCOL, 2 )
+        Each pair of numbers indicates a pair of columns to take place
+        in a Givens rotation. Not referenced if ICOMPQ = 0.
+\endverbatim</p>
+<p>\param[in] LDGCOL
+\verbatim
+         LDGCOL is INTEGER
+        leading dimension of GIVCOL, must be at least N.
+\endverbatim</p>
+<p>\param[out] GIVNUM
+\verbatim
+         GIVNUM is DOUBLE PRECISION array, dimension ( LDGNUM, 2 )
+        Each number indicates the C or S value to be used in the
+        corresponding Givens rotation. Not referenced if ICOMPQ = 0.
+\endverbatim</p>
+<p>\param[in] LDGNUM
+\verbatim
+         LDGNUM is INTEGER
+        The leading dimension of GIVNUM and POLES, must be at least N.
+\endverbatim</p>
+<p>\param[out] POLES
+\verbatim
+         POLES is DOUBLE PRECISION array, dimension ( LDGNUM, 2 )
+        On exit, POLES(1,<em>) is an array containing the new singular
+        values obtained from solving the secular equation, and
+        POLES(2,</em>) is an array containing the poles in the secular
+        equation. Not referenced if ICOMPQ = 0.
+\endverbatim</p>
+<p>\param[out] DIFL
+\verbatim
+         DIFL is DOUBLE PRECISION array, dimension ( N )
+        On exit, DIFL(I) is the distance between I-th updated
+        (undeflated) singular value and the I-th (undeflated) old
+        singular value.
+\endverbatim</p>
+<p>\param[out] DIFR
+\verbatim
+         DIFR is DOUBLE PRECISION array,
+                 dimension ( LDGNUM, 2 ) if ICOMPQ = 1 and
+                 dimension ( N ) if ICOMPQ = 0.
+        On exit, DIFR(I, 1) is the distance between I-th updated
+        (undeflated) singular value and the I+1-th (undeflated) old
+        singular value.</p>
+<div class="codehilite"><pre><span></span><code>    If ICOMPQ = 1, DIFR(1:K,2) is an array containing the
+    normalizing factors for the right singular vector matrix.
+
+    See ESMF_DLASD8 for details on DIFL and DIFR.
+</code></pre></div>
+
+<p>\endverbatim</p>
+<p>\param[out] Z
+\verbatim
+         Z is DOUBLE PRECISION array, dimension ( M )
+        The first elements of this array contain the components
+        of the deflation-adjusted updating row vector.
+\endverbatim</p>
+<p>\param[out] K
+\verbatim
+         K is INTEGER
+        Contains the dimension of the non-deflated matrix,
+        This is the order of the related secular equation. 1 &lt;= K &lt;=N.
+\endverbatim</p>
+<p>\param[out] C
+\verbatim
+         C is DOUBLE PRECISION
+        C contains garbage if SQRE =0 and the C-value of a Givens
+        rotation related to the right null space if SQRE = 1.
+\endverbatim</p>
+<p>\param[out] S
+\verbatim
+         S is DOUBLE PRECISION
+        S contains garbage if SQRE =0 and the S-value of a Givens
+        rotation related to the right null space if SQRE = 1.
+\endverbatim</p>
+<p>\param[out] WORK
+\verbatim
+         WORK is DOUBLE PRECISION array, dimension ( 4 * M )
+\endverbatim</p>
+<p>\param[out] IWORK
+\verbatim
+         IWORK is INTEGER array, dimension ( 3 * N )
+\endverbatim</p>
+<p>\param[out] INFO
+\verbatim
+         INFO is INTEGER
+         = 0:  successful exit.
+         &lt; 0:  if INFO = -i, the i-th argument had an illegal value.
+         &gt; 0:  if INFO = 1, a singular value did not converge
+\endverbatim
+\author Univ. of Tennessee
+\author Univ. of California Berkeley
+\author Univ. of Colorado Denver
+\author NAG Ltd.
+\date November 2011
+\ingroup auxOTHERauxiliary
+\par Contributors:</p>
+<div class="codehilite"><pre><span></span><code>Ming Gu and Huan Ren, Computer Science Division, University of
+California at Berkeley, USA
+</code></pre></div>
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-icompq~8"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ICOMPQ</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nl~6"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NL</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nr~6"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NR</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sqre~7"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>SQRE</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-d~34"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>D</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vf~3"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>VF</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vl~6"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>VL</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-alpha~17"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ALPHA</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-beta~12"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>BETA</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-idxq~3"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IDXQ</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-perm~9"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>PERM</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-givptr~9"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>GIVPTR</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-givcol~9"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>GIVCOL</strong>(LDGCOL,*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ldgcol~5"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LDGCOL</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-givnum~9"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>GIVNUM</strong>(LDGNUM,*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ldgnum~3"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LDGNUM</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-poles~5"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>POLES</strong>(LDGNUM,*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-difl~5"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>DIFL</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-difr~5"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>DIFR</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-z~29"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Z</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-k~46"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>K</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-c~41"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>C</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-s~27"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>S</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-work~58"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>WORK</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iwork~11"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IWORK</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-info~75"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>INFO</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

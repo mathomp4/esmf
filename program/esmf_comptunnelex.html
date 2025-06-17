@@ -1,0 +1,925 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_CompTunnelEx &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_CompTunnelEx      <small>Program</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.0% of total for programs.">36 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_CompTunnelEx.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_comptunnelex.f90.html'>ESMF_CompTunnelEx.F90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_CompTunnelEx</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/esmf_comptunnelex.html#variable-failmsg~161">failMsg</a>
+            <a class="list-group-item" href="../program/esmf_comptunnelex.html#variable-testname~77">testname</a>
+            <a class="list-group-item" href="../program/esmf_comptunnelex.html#variable-finalrc~72">finalrc</a>
+            <a class="list-group-item" href="../program/esmf_comptunnelex.html#variable-localpet~201">localPet</a>
+            <a class="list-group-item" href="../program/esmf_comptunnelex.html#variable-petcount~231">petCount</a>
+            <a class="list-group-item" href="../program/esmf_comptunnelex.html#variable-petlist~32">petList</a>
+            <a class="list-group-item" href="../program/esmf_comptunnelex.html#variable-rc~3019">rc</a>
+            <a class="list-group-item" href="../program/esmf_comptunnelex.html#variable-result~160">result</a>
+            <a class="list-group-item" href="../program/esmf_comptunnelex.html#variable-userrc~6">userRc</a>
+            <a class="list-group-item" href="../program/esmf_comptunnelex.html#variable-timeoutflag">timeoutFlag</a>
+            <a class="list-group-item" href="../program/esmf_comptunnelex.html#variable-actualcplcomp">actualCplComp</a>
+            <a class="list-group-item" href="../program/esmf_comptunnelex.html#variable-actualcomp~3">actualComp</a>
+            <a class="list-group-item" href="../program/esmf_comptunnelex.html#variable-dualcomp~3">dualComp</a>
+            <a class="list-group-item" href="../program/esmf_comptunnelex.html#variable-vm~569">vm</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../program/esmf_comptunnelex.html#src">ESMF_CompTunnelEx</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='../module/esmf.html'>ESMF</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf_testmod.html'>ESMF_TestMod</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf_comptunnelex_mod.html'>ESMF_CompTunnelEx_mod</a></li>
+              </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    
+
+
+    <section>
+    <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-failmsg~161"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>failMsg</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-testname~77"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>testname</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-finalrc~72"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>finalrc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-localpet~201"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>localPet</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-petcount~231"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>petCount</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-petlist~32"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>petList</strong>(3)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~3019"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-result~160"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>result</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-userrc~6"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>userRc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-timeoutflag"></span>
+              logical
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>timeoutFlag</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-actualcplcomp"></span>
+              type(<a href='../type/esmf_cplcomp.html'>ESMF_CplComp</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>actualCplComp</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-actualcomp~3"></span>
+              type(<a href='../type/esmf_gridcomp.html'>ESMF_GridComp</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>actualComp</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dualcomp~3"></span>
+              type(<a href='../type/esmf_gridcomp.html'>ESMF_GridComp</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dualComp</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vm~569"></span>
+              type(<a href='../type/esmf_vm.html'>ESMF_VM</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>vm</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+    
+
+    
+
+
+    
+
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="k">program </span><span class="n">ESMF_CompTunnelEx</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="c">! The ESMF Framework module</span>
+<span class="w">  </span><span class="k">use </span><span class="n">ESMF</span>
+<span class="w">  </span><span class="k">use </span><span class="n">ESMF_TestMod</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="c">! User supplied modules</span>
+<span class="w">  </span><span class="k">use </span><span class="n">ESMF_CompTunnelEx_mod</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">setservices</span><span class="p">,</span><span class="w"> </span><span class="n">setservicesCPL</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="k">implicit none</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="c">! Local variables</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">userRc</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_VM</span><span class="p">)</span><span class="w">           </span><span class="kd">::</span><span class="w"> </span><span class="n">vm</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">localPet</span><span class="p">,</span><span class="w"> </span><span class="n">petCount</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">petList</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_GridComp</span><span class="p">)</span><span class="w">     </span><span class="kd">::</span><span class="w"> </span><span class="n">actualComp</span><span class="p">,</span><span class="w"> </span><span class="n">dualComp</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_CplComp</span><span class="p">)</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="n">actualCplComp</span>
+<span class="w">  </span><span class="kt">logical</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">timeoutFlag</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">testname</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">failMsg</span>
+
+<span class="w">  </span><span class="kt">integer</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">finalrc</span><span class="p">,</span><span class="w"> </span><span class="k">result</span>
+
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w">   </span><span class="s2">&quot;Example failure&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">testname</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w">  </span><span class="s2">&quot;Example ESMF_CompTunnelEx&quot;</span>
+<span class="c">! ------------------------------------------------------------------------------</span>
+<span class="c">! ------------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! Initialize the Framework and get the default VM</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Initialize</span><span class="p">(</span><span class="n">vm</span><span class="o">=</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">defaultlogfilename</span><span class="o">=</span><span class="s2">&quot;CompTunnelEx.Log&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">logkindflag</span><span class="o">=</span><span class="n">ESMF_LOGKIND_MULTI</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_VMGet</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">localPet</span><span class="o">=</span><span class="n">localPet</span><span class="p">,</span><span class="w"> </span><span class="n">petCount</span><span class="o">=</span><span class="n">petCount</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">petCount</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">    </span><span class="k">goto</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">  </span><span class="k">endif</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="cp">#ifdef ESMF_TESTCOMPTUNNEL</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+
+<span class="c">!-----------------------------------------------------------------------------</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Creating an {\em actual} Component}</span>
+<span class="c">! </span>
+<span class="c">! \label{sec:CompTunnelActualCreate}</span>
+<span class="c">!</span>
+<span class="c">! The creation process of an {\em actual} Gridded Component, which will become</span>
+<span class="c">! one of the two end points of a Component Tunnel, is identical to the creation</span>
+<span class="c">! of a regular Gridded Component. On the actual side, an actual Component is </span>
+<span class="c">! very similar to a regular Component. Here the actual Component is created</span>
+<span class="c">! with a custom {\tt petList}.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">  </span><span class="n">petList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="o">/</span><span class="p">)</span>
+<span class="w">  </span><span class="n">actualComp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_GridCompCreate</span><span class="p">(</span><span class="n">petList</span><span class="o">=</span><span class="n">petList</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;actual&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="n">petList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="o">/</span><span class="p">)</span>
+<span class="w">  </span><span class="n">actualCplComp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_CplCompCreate</span><span class="p">(</span><span class="n">petList</span><span class="o">=</span><span class="n">petList</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;actCplComp&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!-----------------------------------------------------------------------------</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Creating a {\em dual} Component}</span>
+<span class="c">! </span>
+<span class="c">! \label{sec:CompTunnelDualCreate}</span>
+<span class="c">!</span>
+<span class="c">! The same way an actual Component appears as a regular Component in</span>
+<span class="c">! the context of the actual side application, a {\em dual} Component</span>
+<span class="c">! is created as a regular Component on the dual side.</span>
+<span class="c">! A dual Gridded Component with custom {\tt petList} is created using the</span>
+<span class="c">! regular create call.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">  </span><span class="n">petList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="o">/</span><span class="p">)</span>
+<span class="w">  </span><span class="n">dualComp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_GridCompCreate</span><span class="p">(</span><span class="n">petList</span><span class="o">=</span><span class="n">petList</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;dual&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!-----------------------------------------------------------------------------</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Setting up the {\em actual} side of a Component Tunnel}</span>
+<span class="c">! </span>
+<span class="c">! \label{sec:CompTunnelActualSide}</span>
+<span class="c">!</span>
+<span class="c">! After creation, the regular procedure for registering the standard Component</span>
+<span class="c">! methods is followed for the actual Gridded Component.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridCompSetServices</span><span class="p">(</span><span class="n">actualComp</span><span class="p">,</span><span class="w"> </span><span class="n">userRoutine</span><span class="o">=</span><span class="n">setservices</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">userRc</span><span class="o">=</span><span class="n">userRc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">userRc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOE</span>
+<span class="c">! So far the {\tt actualComp} object is no different from a regular Gridded</span>
+<span class="c">! Component. In order to turn it into the {\em actual} end point of a Component</span>
+<span class="c">! Tunnel the {\tt ServiceLoop()} method is called. Here the socket-based</span>
+<span class="c">! implementation is chosen.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridCompServiceLoop</span><span class="p">(</span><span class="n">actualComp</span><span class="p">,</span><span class="w"> </span><span class="n">port</span><span class="o">=</span><span class="mi">61010</span><span class="p">,</span><span class="w"> </span><span class="n">timeout</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOE</span>
+<span class="c">! This call opens the actual side of the Component Tunnel in form of a</span>
+<span class="c">! socket-based server, listening on {\tt port} 61010. The {\tt timeout} argument</span>
+<span class="c">! specifies how long the actual side will wait for the dual side</span>
+<span class="c">! to connect, before the actual side returns with a time out condition. The</span>
+<span class="c">! time out is set to 20 seconds.</span>
+<span class="c">!</span>
+<span class="c">! At this point, before a dual Component connects to the other side of the </span>
+<span class="c">! Component Tunnel, it is</span>
+<span class="c">! possible to manually connect to the waiting actual Component. This can be</span>
+<span class="c">! useful when debugging connection issues. A convenient tool for this is the </span>
+<span class="c">! standard {\tt telnet} application. Below is a transcript of such a connection.</span>
+<span class="c">! The manually typed commands are separate from the previous responses by a </span>
+<span class="c">! blank line.</span>
+<span class="c">!</span>
+<span class="c">! \begin{verbatim}</span>
+<span class="c">! $ telnet localhost 61010</span>
+<span class="c">! Trying 127.0.0.1...</span>
+<span class="c">! Connected to localhost.</span>
+<span class="c">! Escape character is &#39;^]&#39;.</span>
+<span class="c">! Hello from ESMF Actual Component server!</span>
+<span class="c">!</span>
+<span class="c">! date</span>
+<span class="c">! Tue Apr  3 21:53:03 2012</span>
+<span class="c">! </span>
+<span class="c">! version</span>
+<span class="c">! ESMF_VERSION_STRING: 5.3.0</span>
+<span class="c">! \end{verbatim}</span>
+<span class="c">!</span>
+<span class="c">! If at any point the {\tt telnet} session is manually shut down, the </span>
+<span class="c">! {\tt ServiceLoop()} on the actual side will return with an error condition. </span>
+<span class="c">! The clean way to</span>
+<span class="c">! disconnect the {\tt telnet} session, and to have the {\tt ServiceLoop()}</span>
+<span class="c">! wait for a new connection, e.g. from a dual Component, is to send the</span>
+<span class="c">! {\tt reconnect} command. This will automatically shut down the {\tt telnet}</span>
+<span class="c">! connection.</span>
+<span class="c">!</span>
+<span class="c">! \begin{verbatim}</span>
+<span class="c">! reconnect</span>
+<span class="c">! Actual Component server will reconnect now!</span>
+<span class="c">! Connection closed by foreign host.</span>
+<span class="c">! $</span>
+<span class="c">! \end{verbatim}</span>
+<span class="c">!</span>
+<span class="c">! At this point the actual Component is back in listening mode, with a time out</span>
+<span class="c">! of 20 seconds, as specified during the ServiceLoop() call.</span>
+<span class="c">!</span>
+<span class="c">! \begin{sloppypar}</span>
+<span class="c">! Before moving on to the dual side of the GridComp based Component Tunnel </span>
+<span class="c">! example, it should be pointed out that the exact same procedure is used to</span>
+<span class="c">! set up the actual side of a {\em CplComp} based Component Tunnel. Assuming</span>
+<span class="c">! that {\tt actualCplComp} is a CplComp object for which SetServices has already</span>
+<span class="c">! been called, the actual side uses {\tt ESMF\_CplCompServiceLoop()} to start</span>
+<span class="c">! listening for connections from the dual side.</span>
+<span class="c">! \end{sloppypar}</span>
+<span class="c">!EOE</span>
+
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_CplCompSetServices</span><span class="p">(</span><span class="n">actualCplComp</span><span class="p">,</span><span class="w"> </span><span class="n">userRoutine</span><span class="o">=</span><span class="n">setservicesCPL</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">userRc</span><span class="o">=</span><span class="n">userRc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">userRc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!BOC</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_CplCompServiceLoop</span><span class="p">(</span><span class="n">actualCplComp</span><span class="p">,</span><span class="w"> </span><span class="n">port</span><span class="o">=</span><span class="mi">61011</span><span class="p">,</span><span class="w"> </span><span class="n">timeout</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">timeoutFlag</span><span class="o">=</span><span class="n">timeoutFlag</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOE</span>
+<span class="c">! Here the {\tt timeoutFlag} is specified in order to prevent the expected</span>
+<span class="c">! time-out condition to be indicated through the return code. Instead, when</span>
+<span class="c">! {\tt timeoutFlag} is present, the return code is still {\tt ESMF\_SUCCESS}, </span>
+<span class="c">! but {\tt timeoutFlag} is set to {\tt .true.} when a time-out occurs.</span>
+<span class="c">!EOE</span>
+
+<span class="c">!-----------------------------------------------------------------------------</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Setting up the {\em dual} side of a Component Tunnel}</span>
+<span class="c">! </span>
+<span class="c">! \label{sec:CompTunnelDualSide}</span>
+<span class="c">!</span>
+<span class="c">! On the dual side, the {\tt dualComp} object needs to be connected to the</span>
+<span class="c">! actual Component in order to complete the Component Tunnel. Instead of</span>
+<span class="c">! registering standard Component methods locally, a special variant of the</span>
+<span class="c">! {\tt SetServices()} call is used to connect to the actual Component.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridCompSetServices</span><span class="p">(</span><span class="n">dualComp</span><span class="p">,</span><span class="w"> </span><span class="n">port</span><span class="o">=</span><span class="mi">61010</span><span class="p">,</span><span class="w"> </span><span class="n">server</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">timeoutFlag</span><span class="o">=</span><span class="n">timeoutFlag</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOE</span>
+<span class="c">! The {\tt port} and {\tt server} arguments are used to connect to the desired</span>
+<span class="c">! actual Component. The time out of 10 seconds ensures that if the actual</span>
+<span class="c">! Component is not available, a time out condition is returned instead of</span>
+<span class="c">! resulting in a hang. The {\tt timeoutFlag} argument further absorbs the time</span>
+<span class="c">! out condition, either returning as {\tt .true.} or {\tt .false.}. In this mode</span>
+<span class="c">! the standard {\tt rc} will indicate success even when a time out condition</span>
+<span class="c">! was reached.</span>
+<span class="c">!EOE</span>
+
+<span class="c">!-----------------------------------------------------------------------------</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Invoking standard Component methods through a Component Tunnel}</span>
+<span class="c">! </span>
+<span class="c">! \label{sec:CompTunnelInvoking}</span>
+<span class="c">!</span>
+<span class="c">! Once a Component Tunnel is established, the actual Component is fully under</span>
+<span class="c">! the control of the dual Component. A standard Component method invoked on the</span>
+<span class="c">! dual Component is not executed by the dual Component itself, but by the </span>
+<span class="c">! actual Component instead. In fact, it is the entry points registered with</span>
+<span class="c">! the actual Component that are executed when standard methods are invoked on</span>
+<span class="c">! the dual Component. The connected {\tt dualComp} object serves as a portal</span>
+<span class="c">! through which the connected {\tt actualComp} becomes accessible on the dual</span>
+<span class="c">! side.</span>
+<span class="c">!</span>
+<span class="c">! Typically the first standard method called is the {\tt CompInitialize()}</span>
+<span class="c">! routine.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridCompInitialize</span><span class="p">(</span><span class="n">dualComp</span><span class="p">,</span><span class="w"> </span><span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">timeoutFlag</span><span class="o">=</span><span class="n">timeoutFlag</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">userRc</span><span class="o">=</span><span class="n">userRc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">userRc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOE</span>
+<span class="c">! Again, the {\tt timeout} argument serves to prevent the dual side from </span>
+<span class="c">! hanging if the actual Component application has experienced a catastrophic</span>
+<span class="c">! condition and is no longer available, or takes longer than expected. The</span>
+<span class="c">! presence of the {\tt timeoutFlag} allows time out conditions to be caught</span>
+<span class="c">! gracefully, so the dual side can deal with it in an orderly fashion, instead</span>
+<span class="c">! of triggering an application abort due to an error condition.</span>
+<span class="c">!</span>
+<span class="c">! The {\tt CompRun()} and {\tt CompFinalize()} methods follow the same format.</span>
+<span class="c">!</span>
+<span class="c">!BOC</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridCompRun</span><span class="p">(</span><span class="n">dualComp</span><span class="p">,</span><span class="w"> </span><span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">timeoutFlag</span><span class="o">=</span><span class="n">timeoutFlag</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">userRc</span><span class="o">=</span><span class="n">userRc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">userRc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridCompFinalize</span><span class="p">(</span><span class="n">dualComp</span><span class="p">,</span><span class="w"> </span><span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">timeoutFlag</span><span class="o">=</span><span class="n">timeoutFlag</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">userRc</span><span class="o">=</span><span class="n">userRc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">userRc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!-----------------------------------------------------------------------------</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{The non-blocking option to invoke standard Component methods through a Component Tunnel}</span>
+<span class="c">! </span>
+<span class="c">! \label{sec:CompTunnelInvokingNonblocking}</span>
+<span class="c">!</span>
+<span class="c">! Standard Component methods called on a connected dual Component are executed</span>
+<span class="c">! on the actual side, across the PETs of the actual Component. By default the</span>
+<span class="c">! dual Component PETs are blocked until the actual Component has finished</span>
+<span class="c">! executing the invoked Component method, or until a time out condition has been</span>
+<span class="c">! reached. In many practical applications a more loose synchronization between</span>
+<span class="c">! dual and actual Components is useful. Having the PETs of a dual</span>
+<span class="c">! Component return immediately from a standard Component method allows multiple</span>
+<span class="c">! dual Component, on the same PETs, to control multiple actual Components. </span>
+<span class="c">! If the actual Components are executing in separate executables, or the same </span>
+<span class="c">! executable but on exclusive sets of PETs, they can execute concurrently, even</span>
+<span class="c">! with the controlling dual Components all running on the same PETs.</span>
+<span class="c">! The non-blocking dual side regains control over the actual Component by </span>
+<span class="c">! synchronizing through the CompWait() call.</span>
+<span class="c">!</span>
+<span class="c">! Any of the standard Component methods can be called in non-blocking mode</span>
+<span class="c">! by setting the optional {\tt syncflag} argument to </span>
+<span class="c">! {\tt ESMF\_SYNC\_NONBLOCKING}. </span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridCompInitialize</span><span class="p">(</span><span class="n">dualComp</span><span class="p">,</span><span class="w"> </span><span class="n">syncflag</span><span class="o">=</span><span class="n">ESMF_SYNC_NONBLOCKING</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOE</span>
+<span class="c">!</span>
+<span class="c">! {\em If} communication between the dual and the actual Component was successful, </span>
+<span class="c">! this call will return immediately on all of the dual Component PETs, while the</span>
+<span class="c">! actual Component continues to execute the invoked Component method.</span>
+<span class="c">! However, if the dual Component has difficulties reaching the actual Component,</span>
+<span class="c">! the call will block on all dual PETs until successful contact was made, or the</span>
+<span class="c">! default time out (3600 seconds, i.e. 1 hour) has been reached. In most cases a </span>
+<span class="c">! shorter time out condition is desired with the non-blocking option, as shown</span>
+<span class="c">! below.</span>
+<span class="c">!</span>
+<span class="c">! First the dual Component must wait for the outstanding method.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridCompWait</span><span class="p">(</span><span class="n">dualComp</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOE</span>
+<span class="c">!</span>
+<span class="c">! Now the same non-blocking CompInitialize() call is issued again, but this time</span>
+<span class="c">! with an explicit 10 second time out.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridCompInitialize</span><span class="p">(</span><span class="n">dualComp</span><span class="p">,</span><span class="w"> </span><span class="n">syncflag</span><span class="o">=</span><span class="n">ESMF_SYNC_NONBLOCKING</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">timeoutFlag</span><span class="o">=</span><span class="n">timeoutFlag</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOE</span>
+<span class="c">!</span>
+<span class="c">! This call is guaranteed to return within 10 seconds, or less, on the dual Component</span>
+<span class="c">! PETs, either without time out condition, indicating that the actual Component</span>
+<span class="c">! has been contacted successfully, or with time out condition, indicating that</span>
+<span class="c">! the actual Component was unreachable at the time. Either way, the dual </span>
+<span class="c">! Component PETs are back under user control quickly.</span>
+<span class="c">!</span>
+<span class="c">! Calling the CompWait() method on the dual Component causes the dual Component</span>
+<span class="c">! PETs to block until the actual Component method has returned, or a time out</span>
+<span class="c">! condition has been reached.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridCompWait</span><span class="p">(</span><span class="n">dualComp</span><span class="p">,</span><span class="w"> </span><span class="n">userRc</span><span class="o">=</span><span class="n">userRc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">userRc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOE</span>
+<span class="c">!</span>
+<span class="c">! The default time out for CompWait() is 3600 seconds, i.e. 1 hour, just like</span>
+<span class="c">! for the other Component methods. However, the semantics of a time out </span>
+<span class="c">! condition under CompWait() is different from the other Component methods. Typically the {\tt timeout} is simply the</span>
+<span class="c">! maximum time that any communication between dual and actual Component is allowed </span>
+<span class="c">! to take before a time out condition is raised. For CompWait(), the {\tt timeout}</span>
+<span class="c">! is the maximum time that an actual Component is allowed to execute before</span>
+<span class="c">! reporting back to the dual Component. Here, even with the default time out, </span>
+<span class="c">! the dual Component would return from CompWait() immediately with a time out</span>
+<span class="c">! condition if the actual Component has already been executing for over 1 hour, </span>
+<span class="c">! and is not already waiting to report back when the dual Component calls </span>
+<span class="c">! CompWait(). On the other hand, if it has only been 30 minutes since </span>
+<span class="c">! CompInitialize() was called on the dual Component, then the actual Component</span>
+<span class="c">! still has 30 minutes before CompWait() returns with a time out condition.</span>
+<span class="c">! During this time (or until the actual Component returns) the dual Component</span>
+<span class="c">! PETs are blocked.</span>
+<span class="c">!</span>
+<span class="c">! A standard Component method is invoked in non-blocking mode.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridCompRun</span><span class="p">(</span><span class="n">dualComp</span><span class="p">,</span><span class="w"> </span><span class="n">syncflag</span><span class="o">=</span><span class="n">ESMF_SYNC_NONBLOCKING</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">timeoutFlag</span><span class="o">=</span><span class="n">timeoutFlag</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOE</span>
+<span class="c">!</span>
+<span class="c">! Once the user code on the dual side is ready to regain control over the</span>
+<span class="c">! actual Component it calls CompWait() on the dual Component. Here a</span>
+<span class="c">! {\tt timeout} of 60s is specified, meaning that the total execution time the</span>
+<span class="c">! actual Component spends in the registered Run() routine may not exceed 60s</span>
+<span class="c">! before CompWait() returns with a time out condition.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridCompWait</span><span class="p">(</span><span class="n">dualComp</span><span class="p">,</span><span class="w"> </span><span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="n">userRc</span><span class="o">=</span><span class="n">userRc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">userRc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!-----------------------------------------------------------------------------</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Destroying a connected {\em dual} Component}</span>
+<span class="c">! </span>
+<span class="c">! \label{sec:CompTunnelDualDestroy}</span>
+<span class="c">!</span>
+<span class="c">! A dual Component that is connected to an actual Component through a Component</span>
+<span class="c">! Tunnel is destroyed the same way a regular Component is. The only</span>
+<span class="c">! difference is that a connected dual Component may specify a {\tt timeout}</span>
+<span class="c">! argument to the {\tt CompDestroy()} call.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridCompDestroy</span><span class="p">(</span><span class="n">dualComp</span><span class="p">,</span><span class="w"> </span><span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOE</span>
+<span class="c">! The {\tt timeout} argument again ensures that the dual side does not hang</span>
+<span class="c">! indefinitely in case the actual Component has become unavailable. If the</span>
+<span class="c">! actual Component is available, the destroy call will indicate to the actual</span>
+<span class="c">! Component that it should break out of the {\tt ServiceLoop()}. Either way,</span>
+<span class="c">! the local dual Component is destroyed.</span>
+<span class="c">!EOE</span>
+
+<span class="c">!-----------------------------------------------------------------------------</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Destroying a connected {\em actual} Component}</span>
+<span class="c">! </span>
+<span class="c">! \label{sec:CompTunnelActualDestroy}</span>
+<span class="c">!</span>
+<span class="c">! An actual Component that is in a {\tt ServiceLoop()} must first return from </span>
+<span class="c">! that call before it can be destroyed. This can either happen when a connected</span>
+<span class="c">! dual Component calls its {\tt CompDestroy()} method, or if the</span>
+<span class="c">! {\tt ServiceLoop()} reaches the specified time out condition. Either way,</span>
+<span class="c">! once control has been returned to the user code, the actual Component is </span>
+<span class="c">! destroyed in the same way a regular Component is, by calling the destroy</span>
+<span class="c">! method.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridCompDestroy</span><span class="p">(</span><span class="n">actualComp</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="cp">#endif</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="mi">10</span><span class="w"> </span><span class="k">continue</span>
+<span class="w">  </span><span class="c">! IMPORTANT: ESMF_STest() prints the PASS string and the # of processors in the log</span>
+<span class="w">  </span><span class="c">! file that the scripts grep for.</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_STest</span><span class="p">((</span><span class="n">finalrc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">testname</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="o">/=</span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">finalrc</span><span class="o">==</span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;PASS: ESMF_CompTunnelEx.F90&quot;</span>
+<span class="w">  </span><span class="k">else</span>
+<span class="k">    print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;FAIL: ESMF_CompTunnelEx.F90&quot;</span>
+<span class="w">  </span><span class="k">endif</span>
+
+<span class="k">  call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="k">end program </span><span class="n">ESMF_CompTunnelEx</span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

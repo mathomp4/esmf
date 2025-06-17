@@ -1,0 +1,799 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_DSYEVR &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_DSYEVR
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.1% of total for procedures.">210 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/dsyevr.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/dsyevr.f90.html'>dsyevr.F90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_DSYEVR</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2> subroutine ESMF_DSYEVR(JOBZ, RANGE, UPLO, N, A, LDA, VL, VU, IL, IU, ABSTOL, M, W, Z, LDZ, ISUPPZ, WORK, LWORK, IWORK, LIWORK, INFO)  
+</h2>
+    
+
+    <p>\brief <b> ESMF_DSYEVR computes the eigenvalues and, optionally, the left and/or right eigenvectors for SY matrices</b>
+\htmlonly
+Download ESMF_DSYEVR + dependencies
+<a href="http://www.netlib.org/cgi-bin/netlibfiles.tgz?format=tgz&filename=/lapack/lapack_routine/dsyevr.f">
+[TGZ]</a>
+<a href="http://www.netlib.org/cgi-bin/netlibfiles.zip?format=zip&filename=/lapack/lapack_routine/dsyevr.f">
+[ZIP]</a>
+<a href="http://www.netlib.org/cgi-bin/netlibfiles.txt?format=txt&filename=/lapack/lapack_routine/dsyevr.f">
+[TXT]</a>
+\endhtmlonly
+\par Purpose:</p>
+<p>\verbatim</p>
+<p>ESMF_DSYEVR computes selected eigenvalues and, optionally, eigenvectors
+of a real symmetric matrix A.  Eigenvalues and eigenvectors can be
+selected by specifying either a range of values or a range of
+indices for the desired eigenvalues.</p>
+<p>ESMF_DSYEVR first reduces the matrix A to tridiagonal form T with a call
+to ESMF_DSYTRD.  Then, whenever possible, ESMF_DSYEVR calls DSTEMR to compute
+the eigenspectrum using Relatively Robust Representations.  DSTEMR
+computes eigenvalues by the dqds algorithm, while orthogonal
+eigenvectors are computed from various &ldquo;good&rdquo; L D L^T representations
+(also known as Relatively Robust Representations). Gram-Schmidt
+orthogonalization is avoided as far as possible. More specifically,
+the various steps of the algorithm are as follows.</p>
+<p>For each unreduced block (submatrix) of T,
+   (a) Compute T - sigma I  = L D L^T, so that L and D
+       define all the wanted eigenvalues to high relative accuracy.
+       This means that small relative changes in the entries of D and L
+       cause only small relative changes in the eigenvalues and
+       eigenvectors. The standard (unfactored) representation of the
+       tridiagonal matrix T does not have this property in general.
+   (b) Compute the eigenvalues to suitable accuracy.
+       If the eigenvectors are desired, the algorithm attains full
+       accuracy of the computed eigenvalues only right before
+       the corresponding vectors have to be computed, see steps c) and d).
+   (c) For each cluster of close eigenvalues, select a new
+       shift close to the cluster, find a new factorization, and refine
+       the shifted eigenvalues to suitable accuracy.
+   (d) For each eigenvalue with a large enough relative separation compute
+       the corresponding eigenvector by forming a rank revealing twisted
+       factorization. Go back to (c) for any clusters that remain.</p>
+<p>The desired accuracy of the output can be specified by the input
+parameter ABSTOL.</p>
+<p>For more details, see DSTEMR&rsquo;s documentation and:
+- Inderjit S. Dhillon and Beresford N. Parlett: &ldquo;Multiple representations
+  to compute orthogonal eigenvectors of symmetric tridiagonal matrices,&rdquo;
+  Linear Algebra and its Applications, 387(1), pp. 1-28, August 2004.
+- Inderjit Dhillon and Beresford Parlett: &ldquo;Orthogonal Eigenvectors and
+  Relative Gaps,&rdquo; SIAM Journal on Matrix Analysis and Applications, Vol. 25,
+  2004.  Also LAPACK Working Note 154.
+- Inderjit Dhillon: &ldquo;A new O(n^2) algorithm for the symmetric
+  tridiagonal eigenvalue/eigenvector problem&rdquo;,
+  Computer Science Division Technical Report No. UCB/CSD-97-971,
+  UC Berkeley, May 1997.</p>
+<p>Note 1 : ESMF_DSYEVR calls DSTEMR when the full spectrum is requested
+on machines which conform to the ieee-754 floating point standard.
+ESMF_DSYEVR calls DSTEBZ and DSTEIN on non-ieee machines and
+when partial spectrum requests are made.</p>
+<p>Normal execution of DSTEMR may create NaNs and infinities and
+hence may abort due to a floating point exception in environments
+which do not handle NaNs and infinities in the ieee standard default
+manner.
+\endverbatim
+\param[in] JOBZ
+\verbatim
+         JOBZ is CHARACTER*1
+         = &lsquo;N&rsquo;:  Compute eigenvalues only;
+         = &lsquo;V&rsquo;:  Compute eigenvalues and eigenvectors.
+\endverbatim</p>
+<p>\param[in] RANGE
+\verbatim
+         RANGE is CHARACTER*1
+         = &lsquo;A&rsquo;: all eigenvalues will be found.
+         = &lsquo;V&rsquo;: all eigenvalues in the half-open interval (VL,VU]
+                will be found.
+         = &lsquo;I&rsquo;: the IL-th through IU-th eigenvalues will be found.
+         For RANGE = &lsquo;V&rsquo; or &lsquo;I&rsquo; and IU - IL &lt; N - 1, DSTEBZ and
+         DSTEIN are called
+\endverbatim</p>
+<p>\param[in] UPLO
+\verbatim
+         UPLO is CHARACTER*1
+         = &lsquo;U&rsquo;:  Upper triangle of A is stored;
+         = &lsquo;L&rsquo;:  Lower triangle of A is stored.
+\endverbatim</p>
+<p>\param[in] N
+\verbatim
+         N is INTEGER
+         The order of the matrix A.  N &gt;= 0.
+\endverbatim</p>
+<p>\param[in,out] A
+\verbatim
+         A is DOUBLE PRECISION array, dimension (LDA, N)
+         On entry, the symmetric matrix A.  If UPLO = &lsquo;U&rsquo;, the
+         leading N-by-N upper triangular part of A contains the
+         upper triangular part of the matrix A.  If UPLO = &lsquo;L&rsquo;,
+         the leading N-by-N lower triangular part of A contains
+         the lower triangular part of the matrix A.
+         On exit, the lower triangle (if UPLO=&rsquo;L&rsquo;) or the upper
+         triangle (if UPLO=&rsquo;U&rsquo;) of A, including the diagonal, is
+         destroyed.
+\endverbatim</p>
+<p>\param[in] LDA
+\verbatim
+         LDA is INTEGER
+         The leading dimension of the array A.  LDA &gt;= max(1,N).
+\endverbatim</p>
+<p>\param[in] VL
+\verbatim
+         VL is DOUBLE PRECISION
+         If RANGE=&rsquo;V&rsquo;, the lower bound of the interval to
+         be searched for eigenvalues. VL &lt; VU.
+         Not referenced if RANGE = &lsquo;A&rsquo; or &lsquo;I&rsquo;.
+\endverbatim</p>
+<p>\param[in] VU
+\verbatim
+         VU is DOUBLE PRECISION
+         If RANGE=&rsquo;V&rsquo;, the upper bound of the interval to
+         be searched for eigenvalues. VL &lt; VU.
+         Not referenced if RANGE = &lsquo;A&rsquo; or &lsquo;I&rsquo;.
+\endverbatim</p>
+<p>\param[in] IL
+\verbatim
+         IL is INTEGER
+         If RANGE=&rsquo;I&rsquo;, the index of the
+         smallest eigenvalue to be returned.
+         1 &lt;= IL &lt;= IU &lt;= N, if N &gt; 0; IL = 1 and IU = 0 if N = 0.
+         Not referenced if RANGE = &lsquo;A&rsquo; or &lsquo;V&rsquo;.
+\endverbatim</p>
+<p>\param[in] IU
+\verbatim
+         IU is INTEGER
+         If RANGE=&rsquo;I&rsquo;, the index of the
+         largest eigenvalue to be returned.
+         1 &lt;= IL &lt;= IU &lt;= N, if N &gt; 0; IL = 1 and IU = 0 if N = 0.
+         Not referenced if RANGE = &lsquo;A&rsquo; or &lsquo;V&rsquo;.
+\endverbatim</p>
+<p>\param[in] ABSTOL
+\verbatim
+         ABSTOL is DOUBLE PRECISION
+         The absolute error tolerance for the eigenvalues.
+         An approximate eigenvalue is accepted as converged
+         when it is determined to lie in an interval [a,b]
+         of width less than or equal to</p>
+<div class="codehilite"><pre><span></span><code>             ABSTOL + EPS <span class="gs">*   max( |a|,|b| ) ,</span>
+
+<span class="gs">     where EPS is the machine precision.  If ABSTOL is less than</span>
+<span class="gs">     or equal to zero, then  EPS*</span>|T|  will be used in its place,
+     where |T| is the 1-norm of the tridiagonal matrix obtained
+     by reducing A to tridiagonal form.
+
+     See &quot;Computing Small Singular Values of Bidiagonal Matrices
+     with Guaranteed High Relative Accuracy,&quot; by Demmel and
+     Kahan, LAPACK Working Note #3.
+
+     If high relative accuracy is important, set ABSTOL to
+     ESMF_DLAMCH( &#39;Safe minimum&#39; ).  Doing so will guarantee that
+     eigenvalues are computed to high relative accuracy when
+     possible in future releases.  The current code does not
+     make any guarantees about high relative accuracy, but
+     future releases will. See J. Barlow and J. Demmel,
+     &quot;Computing Accurate Eigensystems of Scaled Diagonally
+     Dominant Matrices&quot;, LAPACK Working Note #7, for a discussion
+     of which matrices define their eigenvalues to high relative
+     accuracy.
+</code></pre></div>
+
+<p>\endverbatim</p>
+<p>\param[out] M
+\verbatim
+         M is INTEGER
+         The total number of eigenvalues found.  0 &lt;= M &lt;= N.
+         If RANGE = &lsquo;A&rsquo;, M = N, and if RANGE = &lsquo;I&rsquo;, M = IU-IL+1.
+\endverbatim</p>
+<p>\param[out] W
+\verbatim
+         W is DOUBLE PRECISION array, dimension (N)
+         The first M elements contain the selected eigenvalues in
+         ascending order.
+\endverbatim</p>
+<p>\param[out] Z
+\verbatim
+         Z is DOUBLE PRECISION array, dimension (LDZ, max(1,M))
+         If JOBZ = &lsquo;V&rsquo;, then if INFO = 0, the first M columns of Z
+         contain the orthonormal eigenvectors of the matrix A
+         corresponding to the selected eigenvalues, with the i-th
+         column of Z holding the eigenvector associated with W(i).
+         If JOBZ = &lsquo;N&rsquo;, then Z is not referenced.
+         Note: the user must ensure that at least max(1,M) columns are
+         supplied in the array Z; if RANGE = &lsquo;V&rsquo;, the exact value of M
+         is not known in advance and an upper bound must be used.
+         Supplying N columns is always safe.
+\endverbatim</p>
+<p>\param[in] LDZ
+\verbatim
+         LDZ is INTEGER
+         The leading dimension of the array Z.  LDZ &gt;= 1, and if
+         JOBZ = &lsquo;V&rsquo;, LDZ &gt;= max(1,N).
+\endverbatim</p>
+<p>\param[out] ISUPPZ
+\verbatim
+         ISUPPZ is INTEGER array, dimension ( 2<em>max(1,M) )
+         The support of the eigenvectors in Z, i.e., the indices
+         indicating the nonzero elements in Z. The i-th eigenvector
+         is nonzero only in elements ISUPPZ( 2</em>i-1 ) through
+         ISUPPZ( 2*i ). This is an output of DSTEMR (tridiagonal
+         matrix). The support of the eigenvectors of A is typically
+         1:N because of the orthogonal transformations applied by ESMF_DORMTR.
+         Implemented only for RANGE = &lsquo;A&rsquo; or &lsquo;I&rsquo; and IU - IL = N - 1
+\endverbatim</p>
+<p>\param[out] WORK
+\verbatim
+         WORK is DOUBLE PRECISION array, dimension (MAX(1,LWORK))
+         On exit, if INFO = 0, WORK(1) returns the optimal LWORK.
+\endverbatim</p>
+<p>\param[in] LWORK
+\verbatim
+         LWORK is INTEGER
+         The dimension of the array WORK.  LWORK &gt;= max(1,26<em>N).
+         For optimal efficiency, LWORK &gt;= (NB+6)</em>N,
+         where NB is the max of the blocksize for ESMF_DSYTRD and ESMF_DORMTR
+         returned by ESMF_ILAENV.</p>
+<div class="codehilite"><pre><span></span><code>     If LWORK = -1, then a workspace query is assumed; the routine
+     only calculates the optimal size of the WORK array, returns
+     this value as the first entry of the WORK array, and no error
+     message related to LWORK is issued by ESMF_XERBLA.
+</code></pre></div>
+
+<p>\endverbatim</p>
+<p>\param[out] IWORK
+\verbatim
+         IWORK is INTEGER array, dimension (MAX(1,LIWORK))
+         On exit, if INFO = 0, IWORK(1) returns the optimal LWORK.
+\endverbatim</p>
+<p>\param[in] LIWORK
+\verbatim
+         LIWORK is INTEGER
+         The dimension of the array IWORK.  LIWORK &gt;= max(1,10*N).</p>
+<div class="codehilite"><pre><span></span><code>     If LIWORK = -1, then a workspace query is assumed; the
+     routine only calculates the optimal size of the IWORK array,
+     returns this value as the first entry of the IWORK array, and
+     no error message related to LIWORK is issued by ESMF_XERBLA.
+</code></pre></div>
+
+<p>\endverbatim</p>
+<p>\param[out] INFO
+\verbatim
+         INFO is INTEGER
+         = 0:  successful exit
+         &lt; 0:  if INFO = -i, the i-th argument had an illegal value
+         &gt; 0:  Internal error
+\endverbatim
+\author Univ. of Tennessee
+\author Univ. of California Berkeley
+\author Univ. of Colorado Denver
+\author NAG Ltd.
+\date June 2016
+\ingroup doubleSYeigen
+\par Contributors:</p>
+<div class="codehilite"><pre><span></span><code>Inderjit Dhillon, IBM Almaden, USA \n
+Osni Marques, LBNL/NERSC, USA \n
+Ken Stanley, Computer Science Division, University of
+  California at Berkeley, USA \n
+Jason Riedy, Computer Science Division, University of
+  California at Berkeley, USA \n
+</code></pre></div>
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-jobz~2"></span>
+              character(len=1)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>JOBZ</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-range"></span>
+              character(len=1)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>RANGE</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-uplo~9"></span>
+              character(len=1)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>UPLO</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n~53"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>N</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-a~35"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>A</strong>(LDA,*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lda~29"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LDA</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vl~4"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>VL</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vu"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>VU</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-il~2"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IL</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iu"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IU</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-abstol"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ABSTOL</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-m~33"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>M</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-w~8"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>W</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-z~14"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Z</strong>(LDZ,*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ldz~4"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LDZ</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-isuppz"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ISUPPZ</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-work~30"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>WORK</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lwork~13"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LWORK</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iwork~5"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IWORK</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-liwork~3"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LIWORK</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-info~43"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>INFO</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

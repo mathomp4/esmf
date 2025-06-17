@@ -1,0 +1,1492 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_XGridEx &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_XGridEx      <small>Program</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.2% of total for programs.">171 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_XGridEx.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_xgridex.f90.html'>ESMF_XGridEx.F90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_XGridEx</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-failmsg~226">failMsg</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-testname~108">testname</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-ec~30">ec</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-elb~9">elb</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-elecount~5">eleCount</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-eub~9">eub</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-finalrc~106">finalrc</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-i~642">i</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-j~229">j</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-localrc~2516">localrc</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-ngrida~5">ngridA</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-ngridb~5">ngridB</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-result~228">result</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-xlb~5">xlb</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-xub~5">xub</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-area~17">area</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-centroid~9">centroid</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-coordx~34">coordX</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-coordy~34">coordY</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-farrayptr~89">farrayPtr</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-xfarrayptr~25">xfarrayPtr</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-distgrid~209">distgrid</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-l_sideadg~5">l_sideAdg</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-l_sidebdg~5">l_sideBdg</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-sideadg~3">sideAdg</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-sidebdg~3">sideBdg</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-dstfield~125">dstField</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-dstfrac~8">dstFrac</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-dstfrac2~6">dstFrac2</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-field~249">field</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-srcfield~115">srcField</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-l_sidea~5">l_sideA</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-l_sideb~5">l_sideB</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-sidea~14">sideA</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-sideb~14">sideB</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-rh_src2xgrid~7">rh_src2xgrid</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-rh_xgrid2dst~7">rh_xgrid2dst</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-xgrid~73">xgrid</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-l_sparsemata2x~5">l_sparseMatA2X</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-l_sparsematx2b~5">l_sparseMatX2B</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-sparsemata2x~14">sparseMatA2X</a>
+            <a class="list-group-item" href="../program/esmf_xgridex.html#variable-sparsematx2b~10">sparseMatX2B</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../program/esmf_xgridex.html#src">ESMF_XGridEx</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='../module/esmf.html'>ESMF</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf_xgridcreatemod.html'>ESMF_XGridCreateMod</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf_xgridmod.html'>ESMF_XGridMod</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf_testmod.html'>ESMF_TestMod</a></li>
+              </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    <p>%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%
+%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</p>
+<p>%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</p>
+<br>
+
+    <section>
+    <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-failmsg~226"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>failMsg</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-testname~108"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>testname</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ec~30"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ec</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-elb~9"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>elb</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-elecount~5"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>eleCount</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-eub~9"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>eub</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-finalrc~106"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>finalrc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i~642"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-j~229"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>j</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-localrc~2516"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>localrc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ngrida~5"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ngridA</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ngridb~5"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ngridB</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-result~228"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>result</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xlb~5"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xlb</strong>(1)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xub~5"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xub</strong>(1)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-area~17"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>area</strong>(12)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-centroid~9"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>centroid</strong>(12,2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-coordx~34"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>coordX</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-coordy~34"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>coordY</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farrayptr~89"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farrayPtr</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xfarrayptr~25"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>xfarrayPtr</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-distgrid~209"></span>
+              type(<a href='../type/esmf_distgrid.html'>ESMF_DistGrid</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>distgrid</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-l_sideadg~5"></span>
+              type(<a href='../type/esmf_distgrid.html'>ESMF_DistGrid</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>l_sideAdg</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-l_sidebdg~5"></span>
+              type(<a href='../type/esmf_distgrid.html'>ESMF_DistGrid</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>l_sideBdg</strong>(1)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sideadg~3"></span>
+              type(<a href='../type/esmf_distgrid.html'>ESMF_DistGrid</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>sideAdg</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sidebdg~3"></span>
+              type(<a href='../type/esmf_distgrid.html'>ESMF_DistGrid</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>sideBdg</strong>(1)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dstfield~125"></span>
+              type(<a href='../type/esmf_field.html'>ESMF_Field</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dstField</strong>(1)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dstfrac~8"></span>
+              type(<a href='../type/esmf_field.html'>ESMF_Field</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dstFrac</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dstfrac2~6"></span>
+              type(<a href='../type/esmf_field.html'>ESMF_Field</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dstFrac2</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-field~249"></span>
+              type(<a href='../type/esmf_field.html'>ESMF_Field</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>field</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srcfield~115"></span>
+              type(<a href='../type/esmf_field.html'>ESMF_Field</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>srcField</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-l_sidea~5"></span>
+              type(<a href='../type/esmf_grid.html'>ESMF_Grid</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>l_sideA</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-l_sideb~5"></span>
+              type(<a href='../type/esmf_grid.html'>ESMF_Grid</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>l_sideB</strong>(1)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sidea~14"></span>
+              type(<a href='../type/esmf_grid.html'>ESMF_Grid</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>sideA</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sideb~14"></span>
+              type(<a href='../type/esmf_grid.html'>ESMF_Grid</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>sideB</strong>(1)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rh_src2xgrid~7"></span>
+              type(<a href='../type/esmf_routehandle.html'>ESMF_RouteHandle</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rh_src2xgrid</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rh_xgrid2dst~7"></span>
+              type(<a href='../type/esmf_routehandle.html'>ESMF_RouteHandle</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rh_xgrid2dst</strong>(1)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xgrid~73"></span>
+              type(<a href='../type/esmf_xgrid.html'>ESMF_XGrid</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xgrid</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-l_sparsemata2x~5"></span>
+              type(<a href='../type/esmf_xgridspec.html'>ESMF_XGridSpec</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>l_sparseMatA2X</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-l_sparsematx2b~5"></span>
+              type(<a href='../type/esmf_xgridspec.html'>ESMF_XGridSpec</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>l_sparseMatX2B</strong>(1)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sparsemata2x~14"></span>
+              type(<a href='../type/esmf_xgridspec.html'>ESMF_XGridSpec</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>sparseMatA2X</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sparsematx2b~10"></span>
+              type(<a href='../type/esmf_xgridspec.html'>ESMF_XGridSpec</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>sparseMatX2B</strong>(1)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+    
+
+    
+
+
+    
+
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">    </span><span class="k">program </span><span class="n">ESMF_XGridEx</span>
+
+<span class="c">!------------------------------------------------------------------------------</span>
+<span class="c">!ESMF_MULTI_PROC_EXAMPLE        String used by test script to count examples.</span>
+<span class="c">!==============================================================================</span>
+<span class="c">! !PROGRAM: ESMF_XGridEx - XGrid Examples</span>
+<span class="c">!</span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">!</span>
+<span class="c">! This program shows examples of XGrid creation and usage</span>
+<span class="c">!-----------------------------------------------------------------------------</span>
+<span class="cp">#include &quot;ESMF.h&quot;</span>
+<span class="w">    </span><span class="c">! ESMF Framework module</span>
+<span class="w">    </span><span class="k">use </span><span class="n">ESMF_TestMod</span>
+<span class="w">    </span><span class="k">use </span><span class="n">ESMF</span>
+<span class="w">    </span><span class="k">use </span><span class="n">ESMF_XGridMod</span>
+<span class="w">    </span><span class="k">use </span><span class="n">ESMF_XGridCreateMod</span>
+<span class="w">    </span><span class="k">implicit none</span>
+
+<span class="w">    </span><span class="c">! Local variables</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">                             </span><span class="kd">::</span><span class="w"> </span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_XGrid</span><span class="p">)</span><span class="w">                    </span><span class="kd">::</span><span class="w"> </span><span class="n">xgrid</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Grid</span><span class="p">)</span><span class="w">                     </span><span class="kd">::</span><span class="w"> </span><span class="n">sideA</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">sideB</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_DistGrid</span><span class="p">)</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">sideAdg</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">sideBdg</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">distgrid</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">)</span><span class="w">                  </span><span class="kd">::</span><span class="w"> </span><span class="n">centroid</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">area</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_XGridSpec</span><span class="p">)</span><span class="w">                </span><span class="kd">::</span><span class="w"> </span><span class="n">sparseMatA2X</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">sparseMatX2B</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Grid</span><span class="p">)</span><span class="w">                     </span><span class="kd">::</span><span class="w"> </span><span class="n">l_sideA</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">l_sideB</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_DistGrid</span><span class="p">)</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">l_sideAdg</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">l_sideBdg</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_XGridSpec</span><span class="p">)</span><span class="w">                </span><span class="kd">::</span><span class="w"> </span><span class="n">l_sparseMatA2X</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">l_sparseMatX2B</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Field</span><span class="p">)</span><span class="w">                    </span><span class="kd">::</span><span class="w"> </span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">srcField</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">dstField</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Field</span><span class="p">)</span><span class="w">                    </span><span class="kd">::</span><span class="w"> </span><span class="n">dstFrac</span><span class="p">,</span><span class="w"> </span><span class="n">dstFrac2</span>
+
+<span class="w">    </span><span class="kt">integer</span><span class="w">                             </span><span class="kd">::</span><span class="w"> </span><span class="n">eleCount</span><span class="p">,</span><span class="w"> </span><span class="n">ngridA</span><span class="p">,</span><span class="w"> </span><span class="n">ngridB</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">                             </span><span class="kd">::</span><span class="w"> </span><span class="n">elb</span><span class="p">,</span><span class="w"> </span><span class="n">eub</span><span class="p">,</span><span class="w"> </span><span class="n">ec</span>
+
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">farrayPtr</span><span class="p">(:,:),</span><span class="w"> </span><span class="n">xfarrayPtr</span><span class="p">(:)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">                             </span><span class="kd">::</span><span class="w"> </span><span class="n">xlb</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">xub</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_RouteHandle</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">rh_src2xgrid</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">rh_xgrid2dst</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">coordX</span><span class="p">(:,:),</span><span class="w"> </span><span class="n">coordY</span><span class="p">(:,:)</span>
+
+<span class="w">    </span><span class="kt">integer</span><span class="w">                             </span><span class="kd">::</span><span class="w"> </span><span class="n">finalrc</span><span class="p">,</span><span class="w"> </span><span class="k">result</span>
+<span class="k">    </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">testname</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">failMsg</span>
+<span class="c">!   !Set finalrc to success</span>
+<span class="w">    </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+
+<span class="w">    </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Example failure&quot;</span>
+<span class="w">    </span><span class="k">write</span><span class="p">(</span><span class="n">testname</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Example ESMF_XGridEx&quot;</span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Initialize</span><span class="p">(</span><span class="n">defaultlogfilename</span><span class="o">=</span><span class="s2">&quot;XGridEx.Log&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="n">logkindflag</span><span class="o">=</span><span class="n">ESMF_LOGKIND_MULTI</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</span>
+<span class="c">!-------------------------------- Example -----------------------------</span>
+<span class="c">!&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Create an XGrid from Grids then use it for regridding}</span>
+<span class="c">!\label{sec:xgrid:usage:xgrid_create}</span>
+<span class="c">!</span>
+<span class="c">! An {\tt ESMF\_XGrid} object can be created from Grids on either side</span>
+<span class="c">! of the exchange grid. Internally the</span>
+<span class="c">! weight matrices and index mapping are computed and stored in the XGrid, along</span>
+<span class="c">! with other necessary information for flux exchange calculation between</span>
+<span class="c">! any pair of model components used for the XGrid creation.</span>
+<span class="c">!</span>
+<span class="c">! In this example, we create an XGrid from overlapping Grids on</span>
+<span class="c">! either side of the XGrid. Then we perform a flux exchange from one side</span>
+<span class="c">! to the other side of the XGrid.</span>
+<span class="c">!</span>
+<span class="c">! We start by creating the Grids on both sides and associate coordinates with</span>
+<span class="c">! the Grids on the corner stagger. The Grids use global indexing and padding</span>
+<span class="c">! for coordinates on the corner stagger.</span>
+<span class="c">!</span>
+<span class="c">! For details of Grid creation and coordinate use,</span>
+<span class="c">! please refer to Grid class documentation: \ref{example:2DRegUniGrid}.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="c">! First Grid on side A</span>
+<span class="w">    </span><span class="n">sideA</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_GridCreateNoPeriDim</span><span class="p">(</span><span class="n">maxIndex</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">indexflag</span><span class="o">=</span><span class="n">ESMF_INDEX_GLOBAL</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">gridEdgeLWidth</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">gridEdgeUWidth</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;source Grid 1 on side A&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="c">! Second Grid on side A</span>
+<span class="w">    </span><span class="n">sideA</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_GridCreateNoPeriDim</span><span class="p">(</span><span class="n">maxIndex</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">indexflag</span><span class="o">=</span><span class="n">ESMF_INDEX_GLOBAL</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">gridEdgeLWidth</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">gridEdgeUWidth</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;source Grid 2 on side A&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="c">! Allocate coordinates for Grid corner stagger</span>
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_GridAddCoord</span><span class="p">(</span><span class="n">sideA</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CORNER</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">enddo</span>
+<span class="c">!EOC</span>
+
+<span class="c">!BOE</span>
+<span class="c">! Assign coordinate for the Grids on sideA at corner stagger.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="c">! SideA first grid spans (0-20, 0-20) with 1.0x1.0 degree resolution</span>
+<span class="w">    </span><span class="c">! X corner</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_GridGetCoord</span><span class="p">(</span><span class="n">sideA</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">localDE</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">staggerLoc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CORNER</span><span class="p">,</span><span class="w"> </span><span class="n">coordDim</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">coordX</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="c">! Y corner</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_GridGetCoord</span><span class="p">(</span><span class="n">sideA</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">localDE</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">staggerLoc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CORNER</span><span class="p">,</span><span class="w"> </span><span class="n">coordDim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">coordY</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">lbound</span><span class="p">(</span><span class="n">coordX</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="nb">ubound</span><span class="p">(</span><span class="n">coordX</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">      </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">lbound</span><span class="p">(</span><span class="n">coordX</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="nb">ubound</span><span class="p">(</span><span class="n">coordX</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="w">        </span><span class="n">coordX</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mf">1.0</span>
+<span class="w">        </span><span class="n">coordY</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mf">1.0</span>
+<span class="w">      </span><span class="k">enddo</span>
+<span class="k">    enddo</span>
+<span class="c">!EOC</span>
+
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="c">! SideA second grid spans (14.3-24.3, 14.2-24.2) with 0.5x1.0 degree</span>
+<span class="w">    </span><span class="c">! resolution X corner</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_GridGetCoord</span><span class="p">(</span><span class="n">sideA</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">localDE</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">staggerLoc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CORNER</span><span class="p">,</span><span class="w"> </span><span class="n">coordDim</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">coordX</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="c">! Y corner</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_GridGetCoord</span><span class="p">(</span><span class="n">sideA</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">localDE</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">staggerLoc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CORNER</span><span class="p">,</span><span class="w"> </span><span class="n">coordDim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">coordY</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">lbound</span><span class="p">(</span><span class="n">coordX</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="nb">ubound</span><span class="p">(</span><span class="n">coordX</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">      </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">lbound</span><span class="p">(</span><span class="n">coordX</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="nb">ubound</span><span class="p">(</span><span class="n">coordX</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="w">        </span><span class="n">coordX</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="mf">4.3</span><span class="o">+</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mf">0.5</span>
+<span class="w">        </span><span class="n">coordY</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="mf">4.2</span><span class="o">+</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mf">1.0</span>
+<span class="w">      </span><span class="k">enddo</span>
+<span class="k">    enddo</span>
+<span class="c">!EOC</span>
+
+<span class="c">!BOE</span>
+<span class="c">! Create the destination grid on side B, only one Grid exists on side B. Also associate</span>
+<span class="c">! coordinate with the Grid:</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="n">sideB</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_GridCreateNoPeriDim</span><span class="p">(</span><span class="n">maxIndex</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">indexflag</span><span class="o">=</span><span class="n">ESMF_INDEX_GLOBAL</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">gridEdgeLWidth</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">gridEdgeUWidth</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;source Grid 1 on side B&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_GridAddCoord</span><span class="p">(</span><span class="n">sideB</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CORNER</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">enddo</span>
+<span class="c">!EOC</span>
+
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="c">! SideB grid spans (0-30, 0-30) with 1.0x1.0 degree resolution</span>
+<span class="w">    </span><span class="c">! X corner</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_GridGetCoord</span><span class="p">(</span><span class="n">sideB</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">localDE</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">staggerLoc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CORNER</span><span class="p">,</span><span class="w"> </span><span class="n">coordDim</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">coordX</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="c">! Y corner</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_GridGetCoord</span><span class="p">(</span><span class="n">sideB</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">localDE</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">staggerLoc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CORNER</span><span class="p">,</span><span class="w"> </span><span class="n">coordDim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">coordY</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">lbound</span><span class="p">(</span><span class="n">coordX</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="nb">ubound</span><span class="p">(</span><span class="n">coordX</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">      </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">lbound</span><span class="p">(</span><span class="n">coordX</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="nb">ubound</span><span class="p">(</span><span class="n">coordX</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="w">        </span><span class="n">coordX</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mf">1.0</span>
+<span class="w">        </span><span class="n">coordY</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mf">1.0</span>
+<span class="w">      </span><span class="k">enddo</span>
+<span class="k">    enddo</span>
+<span class="c">!EOC</span>
+
+<span class="c">!BOE</span>
+<span class="c">! Create an {\tt ESMF\_XGrid} object from the two lists of Grids on side A and B.</span>
+<span class="c">! In this example both Grids on side A overlaps with the Grid on side B. It&#39;s an error to have a Grid</span>
+<span class="c">! on either side that is spatially disjoint with the XGrid. Neither of the Grid on side A is</span>
+<span class="c">! identical to the Grid on side B. Calling the {\tt ESMF\_XGridCreate()} method is straightforward:</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="n">xgrid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_XGridCreate</span><span class="p">(</span><span class="n">sideAGrid</span><span class="o">=</span><span class="n">sideA</span><span class="p">,</span><span class="w"> </span><span class="n">sideBGrid</span><span class="o">=</span><span class="n">sideB</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!BOE</span>
+<span class="c">! Create an {\tt ESMF\_Field} on the XGrid:</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span><span class="w"> </span><span class="n">typekind</span><span class="o">=</span><span class="n">ESMF_TYPEKIND_R8</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOE</span>
+<span class="c">! Query the Field for its Fortran data pointer and its exclusive bounds:</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">xfarrayPtr</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">exclusiveLBound</span><span class="o">=</span><span class="n">xlb</span><span class="p">,</span><span class="w"> </span><span class="n">exclusiveUBound</span><span class="o">=</span><span class="n">xub</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!BOE</span>
+<span class="c">! Create src and dst Fields on side A and side B Grids.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">        </span><span class="n">srcField</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">sideA</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">typekind</span><span class="o">=</span><span class="n">ESMF_TYPEKIND_R8</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">enddo</span>
+<span class="k">    do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="n">dstField</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">sideB</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">typekind</span><span class="o">=</span><span class="n">ESMF_TYPEKIND_R8</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">enddo</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="n">dstFrac</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">sideB</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">typekind</span><span class="o">=</span><span class="n">ESMF_TYPEKIND_R8</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="n">dstFrac2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">sideB</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">typekind</span><span class="o">=</span><span class="n">ESMF_TYPEKIND_R8</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+
+<span class="c">!BOE</span>
+<span class="c">!</span>
+<span class="c">! The current implementation requires that Grids used to generate the XGrid</span>
+<span class="c">! must not match, i.e. they are different either topologically or geometrically or both.</span>
+<span class="c">! In this example, the first source Grid is topologically identical to the destination</span>
+<span class="c">! Grid but their geometric coordinates are different.</span>
+<span class="c">!</span>
+<span class="c">! First we compute the regrid routehandles, these routehandles can be used repeatedly</span>
+<span class="c">! afterwards. Then we initialize the values in the Fields. Finally we execute the Regrid.</span>
+<span class="c">!</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="c">! Compute regrid routehandles. The routehandles can be used</span>
+<span class="w">    </span><span class="c">! repeatedly afterwards.</span>
+<span class="w">    </span><span class="c">! From A -&gt; X</span>
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_FieldRegridStore</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span><span class="w"> </span><span class="n">srcField</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">routehandle</span><span class="o">=</span><span class="n">rh_src2xgrid</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">enddo</span>
+<span class="w">    </span><span class="c">! from X -&gt; B, retrieve the destination fraction Fields.</span>
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_FieldRegridStore</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span><span class="w"> </span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">dstField</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">dstFracField</span><span class="o">=</span><span class="n">dstFrac</span><span class="p">,</span><span class="w"> </span><span class="n">dstMergeFracField</span><span class="o">=</span><span class="n">dstFrac2</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">routehandle</span><span class="o">=</span><span class="n">rh_xgrid2dst</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">enddo</span>
+
+<span class="w">    </span><span class="c">! Initialize values in the source Fields on side A</span>
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">srcField</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">farrayPtr</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="n">farrayPtr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span>
+<span class="w">    </span><span class="k">enddo</span>
+<span class="w">    </span><span class="c">! Initialize values in the destination Field on XGrid</span>
+<span class="w">    </span><span class="n">xfarrayPtr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span>
+<span class="w">    </span><span class="c">! Initialize values in the destination Field on Side B</span>
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">dstField</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">farrayPtr</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="n">farrayPtr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span>
+<span class="w">    </span><span class="k">enddo</span>
+<span class="c">!EOC</span>
+<span class="c">!BOE</span>
+<span class="c">! First we regrid from the Fields on side A to the Field on the XGrid:</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="c">! Execute regrid from A -&gt; X</span>
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_FieldRegrid</span><span class="p">(</span><span class="n">srcField</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">routehandle</span><span class="o">=</span><span class="n">rh_src2xgrid</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">zeroregion</span><span class="o">=</span><span class="n">ESMF_REGION_SELECT</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">enddo</span>
+<span class="c">!EOC</span>
+
+<span class="w">    </span><span class="c">! xfarrayPtr should be all 1. at this point</span>
+<span class="w">    </span><span class="c">! To get the surface integral of flux on XGrid, adjust by dst area</span>
+
+<span class="w">    </span><span class="c">!do i = xlb(1), xub(1)</span>
+<span class="w">    </span><span class="c">!    xfarrayPtr(i) = xfarrayPtr(i) * xgrid_area(i)</span>
+<span class="w">    </span><span class="c">!enddo</span>
+
+<span class="w">    </span><span class="c">!print *, &#39;- after SMM from A -&gt; X&#39;</span>
+<span class="w">    </span><span class="c">!print *, xfarrayPtr ! should be xgrid_area</span>
+
+<span class="w">    </span><span class="c">!print *, &#39;- B before SMM from X -&gt; B&#39;</span>
+<span class="w">    </span><span class="c">!print *, farrayPtr ! should be 0.</span>
+<span class="c">!BOE</span>
+<span class="c">! Next we regrid from the Field on XGrid to the destination Field on side B:</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="c">! Execute the regrid store</span>
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_FieldRegrid</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">dstField</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">routehandle</span><span class="o">=</span><span class="n">rh_xgrid2dst</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">enddo</span>
+<span class="c">!EOC</span>
+
+<span class="w">    </span><span class="c">!print *, &#39;- B after SMM from X -&gt; B&#39;</span>
+<span class="w">    </span><span class="c">!print *, farrayPtr ! should be 1/B_area</span>
+
+<span class="c">!BOE</span>
+<span class="c">! After the regridding calls, the routehandle can be released by calling the</span>
+<span class="c">! {\tt ESMF\_FieldRegridRelease()} method.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_FieldRegridRelease</span><span class="p">(</span><span class="n">routehandle</span><span class="o">=</span><span class="n">rh_src2xgrid</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">enddo</span>
+<span class="k">    call </span><span class="n">ESMF_FieldRegridRelease</span><span class="p">(</span><span class="n">routehandle</span><span class="o">=</span><span class="n">rh_xgrid2dst</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!EOC</span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_XGridDestroy</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!BOE</span>
+<span class="c">! In the above example, we first set up all the required parameters to create an XGrid from user</span>
+<span class="c">! supplied input. Then we create Fields on the XGrid and the Grids on either side. Finally</span>
+<span class="c">! we use the {\tt ESMF\_FieldRegrid()} interface to perform a flux exchange from the source side</span>
+<span class="c">! to the destination side.</span>
+<span class="c">!EOE</span>
+
+<span class="c">!&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%&gt;%</span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Using XGrid in Earth System modeling}</span>
+<span class="c">!\label{sec:xgrid:usage:xgrid_create_masking}</span>
+<span class="c">!</span>
+<span class="c">! A typical application in Earth System Modeling is to calculate flux exchange</span>
+<span class="c">! through the planetary boundary layer that can be represented by {\tt ESMF\_XGrid}.</span>
+<span class="c">! Atmosphere is above the planetary boundary layer while land and ocean are below the boundary layer.</span>
+<span class="c">! To create an XGrid, the land and ocean Grids that are usually different in resolution</span>
+<span class="c">! need to be merged first to create a super Mesh. This merging process is enabled through the support</span>
+<span class="c">! of masking.</span>
+<span class="c">!</span>
+<span class="c">! The global land and ocean Grids need to be created with masking enabled.</span>
+<span class="c">! In practice, each Grid cell has an integer masking value attached to it. For examples using masking in</span>
+<span class="c">! {\tt ESMF\_Grid} please refer to section \ref{sec:usage:items}.</span>
+<span class="c">!</span>
+<span class="c">! When calling the {\tt ESMF\_XGridCreate()} method, user can supply the optional arguments</span>
+<span class="c">! sideAMaskValues and sideBMaskValues.</span>
+<span class="c">! These arguments are one dimensional Fortran integer arrays. If any of the sideAMaskValues entry</span>
+<span class="c">! matches the masking value used in sideA Grid, the sideA Grid cell is masked out, vice versa for sideB.</span>
+<span class="c">! Thus by specifying different regions of a land and ocean Grids to be masked out, the two global Grids</span>
+<span class="c">! can be merged into a new global Mesh covering the entire Earth.</span>
+<span class="c">!</span>
+<span class="c">! The following call shows how to use the {\tt ESMF\_XGridCreate()} method with the optional</span>
+<span class="c">! arguments sideAMaskValues and sideBMaskValues.</span>
+<span class="c">!</span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="n">xgrid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_XGridCreate</span><span class="p">(</span><span class="n">sideAGrid</span><span class="o">=</span><span class="n">sideA</span><span class="p">,</span><span class="w"> </span><span class="n">sideBGrid</span><span class="o">=</span><span class="n">sideB</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">sideAMaskValues</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">sideBMaskValues</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_XGridGet</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">sideAGridCount</span><span class="o">=</span><span class="n">ngridA</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">    </span><span class="c">! number of Grids on side A</span>
+<span class="w">      </span><span class="n">sideBGridCount</span><span class="o">=</span><span class="n">ngridB</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">    </span><span class="c">! number of Grids on side B</span>
+<span class="w">      </span><span class="n">sideAGrid</span><span class="o">=</span><span class="n">l_sideA</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">    </span><span class="c">! list of Grids on side A</span>
+<span class="w">      </span><span class="n">sideBGrid</span><span class="o">=</span><span class="n">l_sideB</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">    </span><span class="c">! list of Grids on side B</span>
+<span class="w">      </span><span class="n">distgridA</span><span class="o">=</span><span class="n">l_sideAdg</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span><span class="c">! list of Distgrids on side A</span>
+<span class="w">      </span><span class="n">distgridM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">distgrid</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! balanced distgrid</span>
+<span class="w">      </span><span class="n">sparseMatA2X</span><span class="o">=</span><span class="n">l_sparseMatA2X</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">!sparse matrix matmul parameters A to X</span>
+<span class="w">      </span><span class="n">sparseMatX2B</span><span class="o">=</span><span class="n">l_sparseMatX2B</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">!sparse matrix matmul parameters X to B</span>
+<span class="w">      </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_XGridGet</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span><span class="w"> </span><span class="n">localDe</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">elementCount</span><span class="o">=</span><span class="n">eleCount</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">    </span><span class="c">! elementCount on the localDE</span>
+<span class="w">      </span><span class="n">exclusiveCount</span><span class="o">=</span><span class="n">ec</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">        </span><span class="c">! exclusive count</span>
+<span class="w">      </span><span class="n">exclusiveLBound</span><span class="o">=</span><span class="n">elb</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">      </span><span class="c">! exclusive lower bound</span>
+<span class="w">      </span><span class="n">exclusiveUBound</span><span class="o">=</span><span class="n">eub</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">      </span><span class="c">! exclusive upper bound</span>
+<span class="w">      </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_XGridGet</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">xgridSide</span><span class="o">=</span><span class="n">ESMF_XGRIDSIDE_A</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! side of the XGrid to query</span>
+<span class="w">      </span><span class="n">gridIndex</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">              </span><span class="c">! index of the distgrid</span>
+<span class="w">      </span><span class="n">distgrid</span><span class="o">=</span><span class="n">distgrid</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">        </span><span class="c">! the distgrid returned</span>
+<span class="w">      </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_XGridGet</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span><span class="w"> </span><span class="n">xgridSide</span><span class="o">=</span><span class="n">ESMF_XGRIDSIDE_A</span><span class="p">,</span><span class="w"> </span><span class="n">gridIndex</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">distgrid</span><span class="o">=</span><span class="n">distgrid</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_XGridGet</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span><span class="w"> </span><span class="n">xgridSide</span><span class="o">=</span><span class="n">ESMF_XGRIDSIDE_B</span><span class="p">,</span><span class="w"> </span><span class="n">gridIndex</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">distgrid</span><span class="o">=</span><span class="n">distgrid</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">! After the regridding is successful.</span>
+<span class="w">    </span><span class="c">! Clean up all the allocated resources:</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_FieldDestroy</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_XGridDestroy</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_FieldDestroy</span><span class="p">(</span><span class="n">srcField</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_GridDestroy</span><span class="p">(</span><span class="n">sideA</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">enddo</span>
+
+<span class="k">    do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_FieldDestroy</span><span class="p">(</span><span class="n">dstField</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_GridDestroy</span><span class="p">(</span><span class="n">sideB</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">enddo</span>
+<span class="k">    call </span><span class="n">ESMF_FieldDestroy</span><span class="p">(</span><span class="n">dstFrac</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_FieldDestroy</span><span class="p">(</span><span class="n">dstFrac2</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Regridding through XGrid example returned&quot;</span>
+
+<span class="w">    </span><span class="c">! IMPORTANT: ESMF_STest() prints the PASS string and the # of processors in the log</span>
+<span class="w">    </span><span class="c">! file that the scripts grep for.</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_STest</span><span class="p">((</span><span class="n">finalrc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">testname</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="p">.</span><span class="n">NE</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">finalrc</span><span class="p">.</span><span class="n">EQ</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;PASS: ESMF_XGridEx.F90&quot;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="k">        print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;FAIL: ESMF_XGridEx.F90&quot;</span>
+<span class="w">    </span><span class="k">end if</span>
+<span class="k">end program </span><span class="n">ESMF_XGridEx</span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

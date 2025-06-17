@@ -1,0 +1,473 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_FieldValidate &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_FieldValidate
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.0% of total for procedures.">96 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_Field.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_field.f90.html'>ESMF_Field.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/esmf_fieldmod.html'>ESMF_FieldMod</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_FieldValidate</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/esmf_fieldvalidate.html#src">ESMF_FieldValidate</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  subroutine ESMF_FieldValidate(field, keywordEnforcer, rc)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-field~256"></span>
+              type(<a href='../type/esmf_field.html'>ESMF_Field</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>field</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-keywordenforcer~1201"></span>
+              type(<a href='../type/esmf_keywordenforcer.html'>ESMF_KeywordEnforcer</a>),
+            </td>
+<td></td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>keywordEnforcer</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~4104"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">      </span><span class="k">subroutine </span><span class="n">ESMF_FieldValidate</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">keywordEnforcer</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!</span>
+<span class="c">! !ARGUMENTS:</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Field</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">field</span><span class="w"> </span>
+<span class="k">type</span><span class="p">(</span><span class="n">ESMF_KeywordEnforcer</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="kd">::</span><span class="w"> </span><span class="n">keywordEnforcer</span><span class="w"> </span><span class="c">! must use keywords below</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">          </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span><span class="w">   </span>
+<span class="c">!</span>
+<span class="c">! !STATUS:</span>
+<span class="c">! \begin{itemize}</span>
+<span class="c">! \item\apiStatusCompatibleVersion{5.2.0r}</span>
+<span class="c">! \end{itemize}</span>
+<span class="c">!</span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">!      Validates that the {\tt field} is internally consistent.</span>
+<span class="c">!      Currently this method determines if the {\tt field} is uninitialized </span>
+<span class="c">!      or already destroyed. It validates the contained array and grid objects.</span>
+<span class="c">!      The code also checks if the array and grid sizes agree.</span>
+<span class="c">!      This check compares the distgrid contained in array and grid; </span>
+<span class="c">!      then it proceeds to compare the computational bounds contained </span>
+<span class="c">!      in array and grid. </span>
+<span class="c">!</span>
+<span class="c">!      The method returns an error code if problems are found.  </span>
+<span class="c">!</span>
+<span class="c">!     The arguments are:</span>
+<span class="c">!     \begin{description}</span>
+<span class="c">!     \item [field]</span>
+<span class="c">!           {\tt ESMF\_Field} to validate.</span>
+<span class="c">!     \item [{[rc]}]</span>
+<span class="c">!           Return code; equals {\tt ESMF\_SUCCESS} if the {\tt field} </span>
+<span class="c">!           is valid.</span>
+<span class="c">!     \end{description}</span>
+<span class="c">!</span>
+<span class="c">!EOP</span>
+
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localrc</span>
+
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_FieldType</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ftypep</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">exclLBounds</span><span class="p">(</span><span class="n">ESMF_MAXDIM</span><span class="p">)</span><span class="w">  </span><span class="c">! exclusive grid lower bounds</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">exclUBounds</span><span class="p">(</span><span class="n">ESMF_MAXDIM</span><span class="p">)</span><span class="w">  </span><span class="c">! exclusive grid upper bounds</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">gridrank</span><span class="p">,</span><span class="w"> </span><span class="n">arrayrank</span><span class="p">,</span><span class="w"> </span><span class="n">gridrank_norep</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">lDE</span><span class="w">                        </span><span class="c">! helper variables to verify bounds</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localDECount</span><span class="p">,</span><span class="w"> </span><span class="n">dimCount</span><span class="w">        </span><span class="c">! and distgrid</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">distgridToGridMap</span><span class="p">(:)</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">distgridToPackedArrayMap</span><span class="p">(:)</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">arrayCompUBnd</span><span class="p">(:,</span><span class="w"> </span><span class="p">:),</span><span class="w"> </span><span class="n">arrayCompLBnd</span><span class="p">(:,</span><span class="w"> </span><span class="p">:)</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_DistGrid</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">arrayDistGrid</span><span class="p">,</span><span class="w"> </span><span class="n">geomDistGrid</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_GridDecompType</span><span class="p">)</span><span class="w">     </span><span class="kd">::</span><span class="w"> </span><span class="n">decompType</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_GeomType_Flag</span><span class="p">)</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="n">geomtype</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Grid</span><span class="p">)</span><span class="w">               </span><span class="kd">::</span><span class="w"> </span><span class="n">grid</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Status</span><span class="p">)</span><span class="w">             </span><span class="kd">::</span><span class="w"> </span><span class="n">basestatus</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_DistGridMatch_Flag</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dgMatch</span>
+
+<span class="w">      </span><span class="c">! Initialize</span>
+<span class="w">      </span><span class="n">localrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+
+<span class="w">      </span><span class="c">! check variables</span>
+<span class="w">      </span><span class="n">ESMF_INIT_CHECK_DEEP</span><span class="p">(</span><span class="n">ESMF_FieldGetInit</span><span class="p">,</span><span class="n">field</span><span class="p">,</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="nb">associated</span><span class="p">(</span><span class="n">field</span><span class="p">%</span><span class="n">ftypep</span><span class="p">))</span><span class="w"> </span><span class="k">then </span>
+<span class="k">         call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_OBJ_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;Uninitialized or already destroyed Field: ftypep unassociated&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">         </span><span class="k">return</span>
+<span class="k">      endif </span>
+
+<span class="k">      </span><span class="n">ftypep</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">field</span><span class="p">%</span><span class="n">ftypep</span>
+
+
+<span class="w">      </span><span class="c">! make sure the field is ready before trying to look at contents</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_BaseGetStatus</span><span class="p">(</span><span class="n">ftypep</span><span class="p">%</span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="n">basestatus</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="n">basestatus</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_STATUS_READY</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">         call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_OBJ_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;Uninitialized or already destroyed Field: fieldstatus not ready&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">         </span><span class="k">return</span>
+<span class="k">      endif</span><span class="w"> </span>
+
+<span class="w">      </span><span class="c">! make sure there is a grid before asking it questions.</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ftypep</span><span class="p">%</span><span class="n">status</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_FIELDSTATUS_GRIDSET</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ftypep</span><span class="p">%</span><span class="n">status</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_FIELDSTATUS_COMPLETE</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          call </span><span class="n">ESMF_GeomValidate</span><span class="p">(</span><span class="n">ftypep</span><span class="p">%</span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                                    </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                                    </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">      </span><span class="c">! get the grid decomp type if geom is grid</span>
+<span class="w">      </span><span class="n">decompType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_GRID_NONARBITRARY</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_GeomGet</span><span class="p">(</span><span class="n">ftypep</span><span class="p">%</span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">geomtype</span><span class="o">=</span><span class="n">geomtype</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span>
+<span class="w">            </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span>
+<span class="w">            </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return  </span>
+<span class="k">          </span>
+<span class="k">          if</span><span class="w"> </span><span class="p">(</span><span class="n">geomtype</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_GEOMTYPE_GRID</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">             call </span><span class="n">ESMF_GeomGet</span><span class="p">(</span><span class="n">ftypep</span><span class="p">%</span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">grid</span><span class="o">=</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">             </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span>
+<span class="w">                    </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span>
+<span class="w">                    </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return  </span>
+<span class="k">             call </span><span class="n">ESMF_GridGetDecompType</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">decompType</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">             </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span>
+<span class="w">                    </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span>
+<span class="w">                    </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return  </span>
+<span class="k">          endif</span><span class="w">   </span>
+<span class="w">          </span><span class="c">! get grid dim and extents for the local piece</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_GeomGet</span><span class="p">(</span><span class="n">ftypep</span><span class="p">%</span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">dimCount</span><span class="o">=</span><span class="n">gridrank</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                            </span><span class="n">distgrid</span><span class="o">=</span><span class="n">geomDistGrid</span><span class="p">,</span><span class="w"> </span><span class="n">localDECount</span><span class="o">=</span><span class="n">localDECount</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">             call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_OBJ_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;Cannot retrieve distgrid, gridrank, localDECount from ftypep%grid&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">             </span><span class="k">return</span>
+<span class="k">          endif</span><span class="w"> </span>
+<span class="w">          </span><span class="c">! Bounds only valid if there are local DE&#39;s</span>
+<span class="w">          </span><span class="k">do </span><span class="n">lDE</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">localDECount</span><span class="o">-</span><span class="mi">1</span>
+<span class="w">             </span><span class="k">call </span><span class="n">ESMF_GeomGetPLocalDe</span><span class="p">(</span><span class="n">ftypep</span><span class="p">%</span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">localDE</span><span class="o">=</span><span class="n">lDE</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">                               </span><span class="n">exclusiveLBound</span><span class="o">=</span><span class="n">exclLBounds</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                               </span><span class="n">exclusiveUBound</span><span class="o">=</span><span class="n">exclUBounds</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                               </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                 call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_OBJ_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;Cannot retrieve exclusive bounds from ftypep%grid&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">                 </span><span class="k">return</span>
+<span class="k">              endif </span>
+<span class="k">          enddo</span>
+<span class="k">      endif</span>
+<span class="w">      </span><span class="c">! make sure there is data before asking it questions.</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ftypep</span><span class="p">%</span><span class="n">status</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_FIELDSTATUS_COMPLETE</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          call </span><span class="n">ESMF_ArrayValidate</span><span class="p">(</span><span class="k">array</span><span class="o">=</span><span class="n">ftypep</span><span class="p">%</span><span class="k">array</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">             call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_OBJ_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;Cannot validate ftypep%array&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">             </span><span class="k">return</span>
+<span class="k">          endif </span>
+<span class="k">          call </span><span class="n">ESMF_ArrayGet</span><span class="p">(</span><span class="n">ftypep</span><span class="p">%</span><span class="k">array</span><span class="p">,</span><span class="w"> </span><span class="n">dimCount</span><span class="o">=</span><span class="n">dimCount</span><span class="p">,</span><span class="w"> </span><span class="n">localDECount</span><span class="o">=</span><span class="n">localDECount</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">distgrid</span><span class="o">=</span><span class="n">arrayDistGrid</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="o">=</span><span class="n">arrayrank</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">             call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_OBJ_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;Cannot retrieve dimCount, localDECount, arrayDistGrid, arrayrank from ftypep%array&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">             </span><span class="k">return</span>
+<span class="k">          endif</span>
+
+<span class="w">          </span><span class="c">! Verify the distgrids in array and geom match.</span>
+<span class="w">          </span><span class="n">dgMatch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_DistGridMatch</span><span class="p">(</span><span class="n">geomDistGrid</span><span class="p">,</span><span class="w"> </span><span class="n">arrayDistGrid</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">          if</span><span class="p">(</span><span class="n">dgMatch</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">ESMF_DISTGRIDMATCH_EXACT</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">              call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_OBJ_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;geom DistGrid does not match array DistGrid&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                  </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">              </span><span class="k">return</span>
+<span class="k">          endif</span>
+
+<span class="w">           </span><span class="c">! cannot use distgridToGridMap to index arrayCompBnds and compare with</span>
+<span class="w">          </span><span class="c">! gridCompBnds, skip the check for arb. array for now, need to figure</span>
+<span class="w">          </span><span class="c">! out how to validate -- P.Li</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">decompType</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_GRID_NONARBITRARY</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+
+<span class="w">             </span><span class="c">! Verify that array rank is greater than or equal to grid rank + ungridded bound rank</span>
+<span class="w">             </span><span class="k">allocate</span><span class="p">(</span><span class="n">distgridToPackedArrayMap</span><span class="p">(</span><span class="n">dimCount</span><span class="p">))</span>
+
+<span class="w">             </span><span class="k">call </span><span class="n">ESMF_ArrayGet</span><span class="p">(</span><span class="n">ftypep</span><span class="p">%</span><span class="k">array</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                  </span><span class="n">distgridToPackedArrayMap</span><span class="o">=</span><span class="n">distgridToPackedArrayMap</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                  </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">             </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                 call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_OBJ_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;Cannot retrieve distgridToPackedArrayMap from ftypep%array&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">                </span><span class="k">return</span>
+<span class="k">             endif</span><span class="w"> </span>
+
+<span class="w">            </span><span class="c">! Verify that array rank is greater than or equal to grid rank + ungridded bound rank      </span>
+<span class="w">            </span><span class="n">gridrank_norep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gridrank</span>
+<span class="w">            </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">dimCount</span>
+<span class="w">               </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">distgridToPackedArrayMap</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">gridrank_norep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gridrank_norep</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">            </span><span class="k">enddo</span>
+
+<span class="k">            if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">arrayrank</span><span class="w"> </span><span class="p">.</span><span class="n">lt</span><span class="p">.</span><span class="w"> </span><span class="n">gridrank_norep</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_OBJ_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;grid rank + ungridded Bound rank not equal to array rank&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">                </span><span class="k">return</span>
+<span class="k">            endif</span>
+
+<span class="k">            deallocate</span><span class="p">(</span><span class="n">distgridToPackedArrayMap</span><span class="p">)</span>
+<span class="w">        </span><span class="k">endif</span>
+<span class="k">      endif</span><span class="w"> </span><span class="c">! skip for arbitrary grid case</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+
+<span class="w">      </span><span class="k">end subroutine </span><span class="n">ESMF_FieldValidate</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

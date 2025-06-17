@@ -1,0 +1,611 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_GridspecReadMosaic &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_GridspecReadMosaic
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.0% of total for procedures.">8 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_IOGridmosaic.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_iogridmosaic.f90.html'>ESMF_IOGridmosaic.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/esmf_iogridmosaicmod.html'>ESMF_IOGridmosaicMod</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_GridspecReadMosaic</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/esmf_gridspecreadmosaic.html#src">ESMF_GridspecReadMosaic</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  subroutine ESMF_GridspecReadMosaic(filename, mosaic, tileFilePath, rc)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-filename~75"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>filename</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mosaic~5"></span>
+              type(<a href='../type/esmf_mosaic.html'>ESMF_Mosaic</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>mosaic</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-tilefilepath~5"></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tileFilePath</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~3733"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="k">subroutine </span><span class="n">ESMF_GridspecReadMosaic</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">mosaic</span><span class="p">,</span><span class="w"> </span><span class="n">tileFilePath</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+
+<span class="c">! !ARGUMENTS:</span>
+<span class="w"> </span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">           </span><span class="kd">::</span><span class="w"> </span><span class="n">filename</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Mosaic</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">mosaic</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tileFilePath</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">optional</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+
+<span class="c">! !DESCRIPTIONS:</span>
+<span class="c">!   find a variable with the standard_name attribute set to &quot;grid_mosaic_spec&quot;</span>
+<span class="c">!   use the &quot;children&quot; attribute to find the variable that defines tile names</span>
+<span class="c">!   use the &quot;contact_regions&quot; attribute to find the variable that defines the contacts</span>
+<span class="c">!   The value of the variable is the mosaic name used in the contact list</span>
+<span class="c">!   </span>
+<span class="c">!   Variable &quot;gridfiles&quot; defines the path where the tile files are stored. If the </span>
+<span class="c">!   optional argument tileFilePath is given, use it instead of the path defined in the</span>
+<span class="c">!   mosaic file.  Variable &quot;gridfiles&quot; defines the name of the tile files.  It is a 1D </span>
+<span class="c">!   array with the same size as the &quot;children&quot; variable.</span>
+<span class="c">!</span>
+<span class="c">!   the &quot;children&quot; varible is a 1D array containing a list of tile names.  The dimension</span>
+<span class="c">!   of the variable defines the number of tiles</span>
+<span class="c">!</span>
+<span class="c">!   the &quot;contact&quot; variable defines the contacts of the tiles, it should have the following </span>
+<span class="c">!   attributes:</span>
+<span class="c">!    standard_name = &quot;grid_contact_spec&quot;</span>
+<span class="c">!    contact_type = &quot;boundary&quot;</span>
+<span class="c">!    contact_index = variable name that defines how each contact is connected</span>
+<span class="c">!   This variable is a 1D array and its size defines the number of contacts in this mosaic</span>
+<span class="c">!   Each entry is a character string with the format:</span>
+<span class="c">!     mosaic_name:tilex::mosaic_name::tiley</span>
+<span class="c">!   Assuming mosaic_name should match with the value defined in the grid_mosaic variable, </span>
+<span class="c">!    and the tilename is one of the tiles defined in the children variable.</span>
+<span class="c">!</span>
+<span class="c">!   the &quot;contact_index&quot; variable defines the two edges of the neighboring tiles at the boundary</span>
+<span class="c">!   It is a 1D array with the same size as the &quot;contact&quot; variable</span>
+<span class="c">!   Each entry has the following format:</span>
+<span class="c">!    i1,i2:j1,j2::i3,i4,j3,j4</span>
+<span class="c">!   where (i1,j1) and (i2, j2) are the two end points of edge in the first tile and </span>
+<span class="c">!   (i3,j3) and (i4,j4) are the two end points of the edge in the second tile.  The index are</span>
+<span class="c">!   both local indices within the tile with 1-based index.</span>
+<span class="c">!   (i1,j1) is the same point as (i3,j3) and (i2,j2) is the same point as (i4,j4)</span>
+<span class="c">!</span>
+<span class="c">!EOPI</span>
+<span class="cp">#ifdef ESMF_NETCDF</span>
+
+<span class="w">    </span><span class="kt">integer</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">ncid</span><span class="p">,</span><span class="w"> </span><span class="n">varid</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">nvars</span><span class="p">,</span><span class="w"> </span><span class="n">attlen</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">ntiles</span><span class="p">,</span><span class="w"> </span><span class="n">ncontacts</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">attstr</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">mosaicname</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">ESMF_MAXPATHLEN</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tempname</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">strlen</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">temptilenames</span><span class="p">(:,:)</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span><span class="w">  </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tilefilenames</span><span class="p">(:,:)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">contact</span><span class="p">(:,:)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">connindex</span><span class="p">(:,:,:)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">dimids</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">ndims</span><span class="p">,</span><span class="w"> </span><span class="n">dims</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">ncStatus</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">totallen</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">k</span>
+
+<span class="w">    </span><span class="c">!initialize mosaic values</span>
+<span class="w">    </span><span class="n">mosaic</span><span class="p">%</span><span class="n">ntiles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">ESMF_FAILURE</span>
+
+<span class="w">    </span><span class="n">ncStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nf90_open</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">mode</span><span class="o">=</span><span class="n">nf90_nowrite</span><span class="p">,</span><span class="w"> </span><span class="n">ncid</span><span class="o">=</span><span class="n">ncid</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CDFCheckError</span><span class="w"> </span><span class="p">(</span><span class="n">ncStatus</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="nb">trim</span><span class="p">(</span><span class="n">filename</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    </span><span class="n">ncStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nf90_inquire</span><span class="p">(</span><span class="n">ncid</span><span class="p">,</span><span class="w"> </span><span class="n">nVariables</span><span class="o">=</span><span class="n">nvars</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CDFCheckError</span><span class="w"> </span><span class="p">(</span><span class="n">ncStatus</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="nb">trim</span><span class="p">(</span><span class="n">filename</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">     do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">nvars</span>
+<span class="w">       </span><span class="c">! Check its standard_name attribute</span>
+<span class="w">       </span><span class="n">ncStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nf90_inquire_attribute</span><span class="p">(</span><span class="n">ncid</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;standard_name&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">len</span><span class="o">=</span><span class="n">attlen</span><span class="p">)</span>
+<span class="w">       </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ncStatus</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">nf90_noerr</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          </span><span class="n">ncStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nf90_get_att</span><span class="p">(</span><span class="n">ncid</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;standard_name&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">values</span><span class="o">=</span><span class="n">attstr</span><span class="p">)</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">attstr</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">attlen</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="s1">&#39;grid_mosaic_spec&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">            </span><span class="c">! get mosaic name</span>
+<span class="w">            </span><span class="n">ncStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nf90_get_var</span><span class="p">(</span><span class="n">ncid</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">mosaicname</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CDFCheckError</span><span class="w"> </span><span class="p">(</span><span class="n">ncStatus</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="nb">trim</span><span class="p">(</span><span class="n">filename</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">            </span><span class="n">mosaic</span><span class="p">%</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">mosaicname</span><span class="p">)</span>
+<span class="w">            </span><span class="c">! Get attributes children and contact_regions</span>
+<span class="w">            </span><span class="n">ncStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nf90_get_att</span><span class="p">(</span><span class="n">ncid</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;children&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">values</span><span class="o">=</span><span class="n">attstr</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CDFCheckError</span><span class="w"> </span><span class="p">(</span><span class="n">ncStatus</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="s2">&quot;children attribute does not exit&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">            </span><span class="c">! Get the tilenames from the variable defined in &quot;children&quot; variable</span>
+<span class="w">            </span><span class="n">ncStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nf90_inq_varid</span><span class="p">(</span><span class="n">ncid</span><span class="p">,</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">attstr</span><span class="p">),</span><span class="w"> </span><span class="n">varid</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CDFCheckError</span><span class="w"> </span><span class="p">(</span><span class="n">ncStatus</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="s2">&quot;children variable does not exit&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">            </span><span class="c">! Find the dimension of the tile variable</span>
+<span class="w">            </span><span class="n">ncStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nf90_inquire_variable</span><span class="p">(</span><span class="n">ncid</span><span class="p">,</span><span class="w"> </span><span class="n">varid</span><span class="p">,</span><span class="w"> </span><span class="n">ndims</span><span class="o">=</span><span class="n">ndims</span><span class="p">,</span><span class="w"> </span><span class="n">dimids</span><span class="o">=</span><span class="n">dimids</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CDFCheckError</span><span class="w"> </span><span class="p">(</span><span class="n">ncStatus</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="s2">&quot;fail to inquire the variable defined by children attribute&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">            if</span><span class="w"> </span><span class="p">(</span><span class="n">ndims</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- tile variable dimension greater than 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">                 </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">               </span><span class="k">return</span>
+<span class="k">            endif</span>
+<span class="w">            </span><span class="c">! query it&#39;s dimension to find out number of tiles</span>
+<span class="w">            </span><span class="n">ncStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nf90_inquire_dimension</span><span class="p">(</span><span class="n">ncid</span><span class="p">,</span><span class="w"> </span><span class="n">dimids</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="nb">len</span><span class="o">=</span><span class="n">ntiles</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CDFCheckError</span><span class="w"> </span><span class="p">(</span><span class="n">ncStatus</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="s2">&quot;tile dimension inquire&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">            </span><span class="n">ncStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nf90_inquire_dimension</span><span class="p">(</span><span class="n">ncid</span><span class="p">,</span><span class="w"> </span><span class="n">dimids</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="nb">len</span><span class="o">=</span><span class="n">strlen</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CDFCheckError</span><span class="w"> </span><span class="p">(</span><span class="n">ncStatus</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="s2">&quot;tile dimension inquire&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">             </span><span class="n">mosaic</span><span class="p">%</span><span class="n">ntiles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ntiles</span>
+<span class="w">             </span><span class="c">! get the tile names</span>
+<span class="w">             </span><span class="k">allocate</span><span class="p">(</span><span class="n">mosaic</span><span class="p">%</span><span class="n">tilenames</span><span class="p">(</span><span class="n">ntiles</span><span class="p">),</span><span class="w"> </span><span class="n">temptilenames</span><span class="p">(</span><span class="n">strlen</span><span class="p">,</span><span class="w"> </span><span class="n">ntiles</span><span class="p">))</span>
+<span class="w">             </span><span class="n">ncStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nf90_get_var</span><span class="p">(</span><span class="n">ncid</span><span class="p">,</span><span class="w"> </span><span class="n">varid</span><span class="p">,</span><span class="w"> </span><span class="n">temptilenames</span><span class="p">,</span><span class="w"> </span><span class="n">start</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="nb">count</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="n">strlen</span><span class="p">,</span><span class="w"> </span><span class="n">ntiles</span><span class="o">/</span><span class="p">))</span>
+<span class="w">             </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CDFCheckError</span><span class="w"> </span><span class="p">(</span><span class="n">ncStatus</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="s2">&quot;get tile names&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">              </span><span class="c">! replace null character by blank</span>
+<span class="w">             </span><span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ntiles</span>
+<span class="w">              </span><span class="n">mosaic</span><span class="p">%</span><span class="n">tilenames</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_UtilArray2String</span><span class="p">(</span><span class="n">temptilenames</span><span class="p">(:,</span><span class="n">j</span><span class="p">))</span>
+<span class="w">              </span><span class="k">call </span><span class="n">trim_null</span><span class="p">(</span><span class="n">mosaic</span><span class="p">%</span><span class="n">tilenames</span><span class="p">(</span><span class="n">j</span><span class="p">))</span>
+<span class="w">             </span><span class="k">enddo</span>
+<span class="k">             </span>
+<span class="k">            if</span><span class="w"> </span><span class="p">(</span><span class="n">ntiles</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">              </span><span class="c">! Find contact regions</span>
+<span class="w">              </span><span class="n">ncStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nf90_get_att</span><span class="p">(</span><span class="n">ncid</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;contact_regions&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">values</span><span class="o">=</span><span class="n">attstr</span><span class="p">)</span>
+<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CDFCheckError</span><span class="w"> </span><span class="p">(</span><span class="n">ncStatus</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="s2">&quot;contact_regions attribute does not exit&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">              </span><span class="c">! Get the contact info from the variable defined in &quot;contact_regions&quot; variable</span>
+<span class="w">              </span><span class="n">ncStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nf90_inq_varid</span><span class="p">(</span><span class="n">ncid</span><span class="p">,</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">attstr</span><span class="p">),</span><span class="w"> </span><span class="n">varid</span><span class="p">)</span>
+<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CDFCheckError</span><span class="w"> </span><span class="p">(</span><span class="n">ncStatus</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="s2">&quot;contact_regions variable does not exit&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">              </span><span class="c">! Find the dimension of this variable</span>
+<span class="w">              </span><span class="n">ncStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nf90_inquire_variable</span><span class="p">(</span><span class="n">ncid</span><span class="p">,</span><span class="w"> </span><span class="n">varid</span><span class="p">,</span><span class="w"> </span><span class="n">ndims</span><span class="o">=</span><span class="n">ndims</span><span class="p">,</span><span class="w"> </span><span class="n">dimids</span><span class="o">=</span><span class="n">dimids</span><span class="p">)</span>
+<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CDFCheckError</span><span class="w"> </span><span class="p">(</span><span class="n">ncStatus</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="s2">&quot;fail to inquire the variable defined by contact_regions&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">              if</span><span class="w"> </span><span class="p">(</span><span class="n">ndims</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                 call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                     </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- contact region variable dimension greater than 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">                 </span><span class="k">return</span>
+<span class="k">              endif</span>
+<span class="w">              </span><span class="c">! query it&#39;s dimension to find out the string length</span>
+<span class="w">              </span><span class="n">ncStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nf90_inquire_dimension</span><span class="p">(</span><span class="n">ncid</span><span class="p">,</span><span class="w"> </span><span class="n">dimids</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="nb">len</span><span class="o">=</span><span class="n">dims</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CDFCheckError</span><span class="w"> </span><span class="p">(</span><span class="n">ncStatus</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="s2">&quot;contact dimension inquire&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">              </span><span class="c">! query it&#39;s dimension to find out number of contacts</span>
+<span class="w">              </span><span class="n">ncStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nf90_inquire_dimension</span><span class="p">(</span><span class="n">ncid</span><span class="p">,</span><span class="w"> </span><span class="n">dimids</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="nb">len</span><span class="o">=</span><span class="n">dims</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CDFCheckError</span><span class="w"> </span><span class="p">(</span><span class="n">ncStatus</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="s2">&quot;contact dimension inquire&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">              allocate</span><span class="p">(</span><span class="n">mosaic</span><span class="p">%</span><span class="n">contact</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">dims</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+<span class="w">              </span><span class="k">allocate</span><span class="p">(</span><span class="n">mosaic</span><span class="p">%</span><span class="n">connindex</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">dims</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+<span class="w">              </span><span class="k">call </span><span class="n">readContacts</span><span class="p">(</span><span class="n">ncid</span><span class="p">,</span><span class="w"> </span><span class="n">varid</span><span class="p">,</span><span class="w"> </span><span class="n">dims</span><span class="p">,</span><span class="w"> </span><span class="n">mosaicname</span><span class="p">,</span><span class="w"> </span><span class="n">mosaic</span><span class="p">%</span><span class="n">tilenames</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">mosaic</span><span class="p">%</span><span class="n">contact</span><span class="p">,</span><span class="w"> </span><span class="n">mosaic</span><span class="p">%</span><span class="n">connindex</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">              </span><span class="n">mosaic</span><span class="p">%</span><span class="n">ncontacts</span><span class="o">=</span><span class="n">dims</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">            </span><span class="k">endif</span>
+<span class="k">         endif</span>
+<span class="k">       endif</span>
+<span class="k">     enddo</span>
+
+<span class="w">     </span><span class="c">! find the tile file path</span>
+<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">tileFilePath</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">       </span><span class="n">mosaic</span><span class="p">%</span><span class="n">tileDirectory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tileFilePath</span>
+<span class="w">     </span><span class="k">else</span>
+<span class="k">       </span><span class="n">ncStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nf90_inq_varid</span><span class="p">(</span><span class="n">ncid</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;gridlocation&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">varid</span><span class="p">)</span>
+<span class="w">       </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CDFCheckError</span><span class="w"> </span><span class="p">(</span><span class="n">ncStatus</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="s2">&quot;inquire variable gridlocation&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">       </span><span class="c">! Get the directory name where the tile files are stored</span>
+<span class="w">       </span><span class="n">ncStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nf90_inquire_variable</span><span class="p">(</span><span class="n">ncid</span><span class="p">,</span><span class="w"> </span><span class="n">varid</span><span class="p">,</span><span class="w"> </span><span class="n">ndims</span><span class="o">=</span><span class="n">ndims</span><span class="p">,</span><span class="w"> </span><span class="n">dimids</span><span class="o">=</span><span class="n">dimids</span><span class="p">)</span>
+<span class="w">       </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CDFCheckError</span><span class="w"> </span><span class="p">(</span><span class="n">ncStatus</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="s2">&quot;inquire variable gridlocation&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">       </span><span class="n">ncStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nf90_inquire_dimension</span><span class="p">(</span><span class="n">ncid</span><span class="p">,</span><span class="w"> </span><span class="n">dimids</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="nb">len</span><span class="o">=</span><span class="n">dims</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CDFCheckError</span><span class="w"> </span><span class="p">(</span><span class="n">ncStatus</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="s2">&quot;contact dimension inquire&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">       </span><span class="c">! initialize the string to null characters</span>
+<span class="w">       </span><span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ESMF_MAXPATHLEN</span>
+<span class="w">           </span><span class="n">mosaic</span><span class="p">%</span><span class="n">tileDirectory</span><span class="p">(</span><span class="n">k</span><span class="p">:</span><span class="n">k</span><span class="p">)</span><span class="o">=</span><span class="nb">char</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="w">       </span><span class="k">enddo</span>
+<span class="k">       </span><span class="n">ncStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nf90_get_var</span><span class="p">(</span><span class="n">ncid</span><span class="p">,</span><span class="w"> </span><span class="n">varid</span><span class="p">,</span><span class="w"> </span><span class="n">mosaic</span><span class="p">%</span><span class="n">tileDirectory</span><span class="p">,</span><span class="w"> </span><span class="n">start</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="nb">count</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="n">dims</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">))</span>
+<span class="w">       </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CDFCheckError</span><span class="w"> </span><span class="p">(</span><span class="n">ncStatus</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="s2">&quot;fail to get gridlocation&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">       call </span><span class="n">trim_null</span><span class="p">(</span><span class="n">mosaic</span><span class="p">%</span><span class="n">tileDirectory</span><span class="p">)</span>
+<span class="w">     </span><span class="k">endif</span>
+
+<span class="w">     </span><span class="c">! get the tile file names</span>
+<span class="w">     </span><span class="n">ncStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nf90_inq_varid</span><span class="p">(</span><span class="n">ncid</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;gridfiles&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">varid</span><span class="p">)</span>
+<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CDFCheckError</span><span class="w"> </span><span class="p">(</span><span class="n">ncStatus</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="s2">&quot;inquire variable gridfiles&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">       </span>
+<span class="w">     </span><span class="c">! Find the dimension of this variable</span>
+<span class="w">     </span><span class="n">ncStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nf90_inquire_variable</span><span class="p">(</span><span class="n">ncid</span><span class="p">,</span><span class="w"> </span><span class="n">varid</span><span class="p">,</span><span class="w"> </span><span class="n">ndims</span><span class="o">=</span><span class="n">ndims</span><span class="p">,</span><span class="w"> </span><span class="n">dimids</span><span class="o">=</span><span class="n">dimids</span><span class="p">)</span>
+<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CDFCheckError</span><span class="w"> </span><span class="p">(</span><span class="n">ncStatus</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="s2">&quot;inquire variable gridfiles error&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">     if</span><span class="w"> </span><span class="p">(</span><span class="n">ndims</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- gridfiles variable dimension /= 2&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">                 </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="k">return</span>
+<span class="k">     endif</span><span class="w">    </span>
+<span class="w">     </span><span class="c">! query it&#39;s dimension to find out the string length</span>
+<span class="w">     </span><span class="n">ncStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nf90_inquire_dimension</span><span class="p">(</span><span class="n">ncid</span><span class="p">,</span><span class="w"> </span><span class="n">dimids</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="nb">len</span><span class="o">=</span><span class="n">dims</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CDFCheckError</span><span class="w"> </span><span class="p">(</span><span class="n">ncStatus</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="s2">&quot;gridfiles dimension inquire&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">     allocate</span><span class="p">(</span><span class="n">tilefilenames</span><span class="p">(</span><span class="n">dims</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">ntiles</span><span class="p">))</span>
+<span class="w">     </span><span class="k">allocate</span><span class="p">(</span><span class="n">mosaic</span><span class="p">%</span><span class="n">filenames</span><span class="p">(</span><span class="n">ntiles</span><span class="p">))</span>
+<span class="w">     </span><span class="c">! initialize the string to null characters</span>
+<span class="w">     </span><span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ntiles</span>
+<span class="w">        </span><span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ESMF_MAXPATHLEN</span>
+<span class="w">            </span><span class="n">mosaic</span><span class="p">%</span><span class="n">filenames</span><span class="p">(</span><span class="n">ntiles</span><span class="p">)(</span><span class="n">k</span><span class="p">:</span><span class="n">k</span><span class="p">)</span><span class="o">=</span><span class="nb">char</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="k">enddo</span>
+<span class="k">     enddo</span>
+<span class="k">     </span><span class="n">ncStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nf90_get_var</span><span class="p">(</span><span class="n">ncid</span><span class="p">,</span><span class="w"> </span><span class="n">varid</span><span class="p">,</span><span class="w"> </span><span class="n">tilefilenames</span><span class="p">,</span><span class="w"> </span><span class="n">start</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="nb">count</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="n">dims</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">ntiles</span><span class="o">/</span><span class="p">))</span>
+<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CDFCheckError</span><span class="w"> </span><span class="p">(</span><span class="n">ncStatus</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="s2">&quot;fail to get gridfiles&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">     </span><span class="c">! replace null character by blank</span>
+<span class="w">     </span><span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ntiles</span>
+<span class="w">          </span><span class="n">mosaic</span><span class="p">%</span><span class="n">filenames</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">=</span><span class="n">ESMF_UtilArray2String</span><span class="p">(</span><span class="n">tilefilenames</span><span class="p">(:,</span><span class="n">j</span><span class="p">))</span>
+<span class="w">          </span><span class="k">call </span><span class="n">trim_null</span><span class="p">(</span><span class="n">mosaic</span><span class="p">%</span><span class="n">filenames</span><span class="p">(</span><span class="n">j</span><span class="p">))</span>
+<span class="w">     </span><span class="k">enddo</span>
+
+<span class="k">      </span><span class="n">ncStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nf90_close</span><span class="p">(</span><span class="n">ncid</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CDFCheckError</span><span class="w"> </span><span class="p">(</span><span class="n">ncStatus</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot;close mosaic file&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">      </span><span class="c">! check if we found the mosaic variables</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mosaic</span><span class="p">%</span><span class="n">ntiles</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">         call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">                 </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- Failed to parse GridSpec Mosaic file&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">                 </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">         </span><span class="k">return    </span>
+<span class="k">       else</span>
+<span class="w">         </span><span class="c">! find the dimension of the tile by reading one of the tilefiles</span>
+<span class="w">         </span><span class="c">! assuming all the tilefiles have the same size</span>
+<span class="w">         </span><span class="n">tempname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">mosaic</span><span class="p">%</span><span class="n">TileDirectory</span><span class="p">)</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">mosaic</span><span class="p">%</span><span class="n">filenames</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="w">         </span><span class="k">call </span><span class="n">ESMF_GridSpecQueryTileSize</span><span class="p">(</span><span class="n">tempname</span><span class="p">,</span><span class="w"> </span><span class="n">mosaic</span><span class="p">%</span><span class="n">nx</span><span class="p">,</span><span class="w"> </span><span class="n">mosaic</span><span class="p">%</span><span class="n">ny</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">         if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">ESMF_SUCCESS</span>
+<span class="w">         </span><span class="k">return</span>
+<span class="k">       endif</span>
+
+<span class="cp">#else       </span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_RC_LIB_NOT_PRESENT</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">                 </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- ESMF_NETCDF not defined when lib was compiled&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">                 </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="k">return</span>
+<span class="cp">#endif</span>
+
+<span class="k">end subroutine </span><span class="n">ESMF_GridspecReadMosaic</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

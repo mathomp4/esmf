@@ -1,0 +1,767 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_VMGetDefault &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_VMGetDefault
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.0% of total for procedures.">75 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_VM.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_vm.f90.html'>ESMF_VM.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/esmf_vmmod.html'>ESMF_VMMod</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_VMGetDefault</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/esmf_vmgetdefault.html#src">ESMF_VMGetDefault</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>private recursive subroutine ESMF_VMGetDefault(vm, keywordEnforcer, localPet, currentSsiPe, petCount, peCount, ssiCount, ssiMap, ssiMinPetCount, ssiMaxPetCount, ssiLocalPetCount, ssiLocalPet, ssiLocalDevCount, ssiLocalDevList, mpiCommunicator, pthreadsEnabledFlag, openMPEnabledFlag, ssiSharedMemoryEnabledFlag, esmfComm, rc)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vm~193"></span>
+              type(<a href='../type/esmf_vm.html'>ESMF_VM</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>vm</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-keywordenforcer~214"></span>
+              type(<a href='../type/esmf_keywordenforcer.html'>ESMF_KeywordEnforcer</a>),
+            </td>
+<td></td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>keywordEnforcer</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-localpet~65"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>localPet</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-currentssipe"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>currentSsiPe</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-petcount~69"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>petCount</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pecount~2"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>peCount</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ssicount"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ssiCount</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ssimap"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional,</td>            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>ssiMap</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ssiminpetcount"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ssiMinPetCount</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ssimaxpetcount"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ssiMaxPetCount</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ssilocalpetcount~2"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ssiLocalPetCount</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ssilocalpet"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ssiLocalPet</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ssilocaldevcount"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ssiLocalDevCount</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ssilocaldevlist"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional,</td>            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>ssiLocalDevList</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mpicommunicator"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>mpiCommunicator</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pthreadsenabledflag"></span>
+              logical,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>pthreadsEnabledFlag</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-openmpenabledflag"></span>
+              logical,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>openMPEnabledFlag</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ssisharedmemoryenabledflag"></span>
+              logical,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ssiSharedMemoryEnabledFlag</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-esmfcomm"></span>
+              character(len=:),
+            </td>
+<td>intent(out),</td>
+              <td>optional,</td>            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>esmfComm</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~879"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">  </span><span class="k">recursive subroutine </span><span class="n">ESMF_VMGetDefault</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">keywordEnforcer</span><span class="p">,</span><span class="w"> </span><span class="n">localPet</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">currentSsiPe</span><span class="p">,</span><span class="w"> </span><span class="n">petCount</span><span class="p">,</span><span class="w"> </span><span class="n">peCount</span><span class="p">,</span><span class="w"> </span><span class="n">ssiCount</span><span class="p">,</span><span class="w"> </span><span class="n">ssiMap</span><span class="p">,</span><span class="w"> </span><span class="n">ssiMinPetCount</span><span class="p">,</span><span class="w"> </span><span class="n">ssiMaxPetCount</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">ssiLocalPetCount</span><span class="p">,</span><span class="w"> </span><span class="n">ssiLocalPet</span><span class="p">,</span><span class="w"> </span><span class="n">ssiLocalDevCount</span><span class="p">,</span><span class="w"> </span><span class="n">ssiLocalDevList</span><span class="p">,</span><span class="w"> </span><span class="n">mpiCommunicator</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">pthreadsEnabledFlag</span><span class="p">,</span><span class="w"> </span><span class="n">openMPEnabledFlag</span><span class="p">,</span><span class="w"> </span><span class="n">ssiSharedMemoryEnabledFlag</span><span class="p">,</span><span class="w"> </span><span class="n">esmfComm</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!</span>
+<span class="c">! !ARGUMENTS:</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_VM</span><span class="p">),</span><span class="w">        </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">vm</span>
+<span class="k">type</span><span class="p">(</span><span class="n">ESMF_KeywordEnforcer</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="kd">::</span><span class="w"> </span><span class="n">keywordEnforcer</span><span class="w"> </span><span class="c">! must use keywords below</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">              </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localPet</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">              </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">currentSsiPe</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">              </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">petCount</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">              </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">peCount</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">              </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ssiCount</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">allocatable</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ssiMap</span><span class="p">(:)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">              </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ssiMinPetCount</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">              </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ssiMaxPetCount</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">              </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ssiLocalPetCount</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">              </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ssiLocalPet</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">              </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ssiLocalDevCount</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">allocatable</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ssiLocalDevList</span><span class="p">(:)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">              </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">mpiCommunicator</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">,</span><span class="w">              </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">pthreadsEnabledFlag</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">,</span><span class="w">              </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">openMPEnabledFlag</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">,</span><span class="w">              </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ssiSharedMemoryEnabledFlag</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(:),</span><span class="w"> </span><span class="k">allocatable</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">esmfComm</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">              </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+<span class="c">!</span>
+<span class="c">! !STATUS:</span>
+<span class="c">! \begin{itemize}</span>
+<span class="c">! \item\apiStatusCompatibleVersion{5.2.0r}</span>
+<span class="c">! \item\apiStatusModifiedSinceVersion{5.2.0r}</span>
+<span class="c">! \begin{description}</span>
+<span class="c">! \item[8.0.0] Added arguments {\tt ssiCount}, {\tt ssiMinPetCount}, </span>
+<span class="c">!   {\tt ssiMaxPetCount}, and {\tt ssiLocalPetCount} to provide access </span>
+<span class="c">!   to information about how the VM is mapped across the single system images</span>
+<span class="c">!   (SSIs) -- typically synonymous to nodes -- of the compute environment. This</span>
+<span class="c">!   information is useful when constructing custom petLists. \newline</span>
+<span class="c">!   Added argument {\tt ssiSharedMemoryEnabledFlag} that allows the user to </span>
+<span class="c">!   query whether ESMF was compiled with support for shared memory </span>
+<span class="c">!   access between PETs on the same SSI.</span>
+<span class="c">! \item[8.1.0] Added argument {\tt currentSsiPe} for easy query of the</span>
+<span class="c">!   current PE within the local SSI that is executing the request.\newline</span>
+<span class="c">!   Added argument {\tt ssiMap} for a convenient way to obtain a view</span>
+<span class="c">!   of the mapping of PETs to single system images across the entire VM.</span>
+<span class="c">! \item[8.2.0] Added argument {\tt esmfComm} to provide easy access to the</span>
+<span class="c">!   {\tt ESMF\_COMM} setting used by the ESMF installation.</span>
+<span class="c">! \item[8.6.0] Added arguments {\tt ssiLocalDevCount} and {\tt ssiLocalDevCount}</span>
+<span class="c">!   to provide information about devices associated with the VM on the local</span>
+<span class="c">!   SSI. \newline</span>
+<span class="c">!   Added argument {\tt ssiLocalPet} to help with SSI specific assignment</span>
+<span class="c">!   between PET and device resources.</span>
+<span class="c">! \end{description}</span>
+<span class="c">! \end{itemize}</span>
+<span class="c">!</span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">!   Get internal information about the specified {\tt ESMF\_VM} object.</span>
+<span class="c">!</span>
+<span class="c">!   The arguments are:</span>
+<span class="c">!   \begin{description}</span>
+<span class="c">!   \item[vm] </span>
+<span class="c">!        Queried {\tt ESMF\_VM} object.</span>
+<span class="c">!   \item[{[localPet]}]</span>
+<span class="c">!        Upon return this holds the id of the local PET that issued this call.</span>
+<span class="c">!        The valid range of {\tt localPet} is $[0..petCount-1]$. A value of $-1$</span>
+<span class="c">!        is returned on PETs that are not active under the specified {\tt vm}.</span>
+<span class="c">!   \item[{[currentSsiPe]}]</span>
+<span class="c">!        Upon return this holds the id of the PE within the local SSI on which</span>
+<span class="c">!        the calling PET (i.e. localPet) is currently executing. If the PET is</span>
+<span class="c">!        associated with a set of PEs, or PETs are not pinned, the returned</span>
+<span class="c">!        value might change each time the call is made.</span>
+<span class="c">!   \item[{[petCount]}]</span>
+<span class="c">!        Upon return this holds the number of PETs running under {\tt vm}.</span>
+<span class="c">!   \item[{[peCount]}]</span>
+<span class="c">!        Upon return this holds the number of PEs referenced by {\tt vm}.</span>
+<span class="c">!   \item[{[ssiCount]}]</span>
+<span class="c">!        Upon return this holds the number of single system images referenced </span>
+<span class="c">!        by {\tt vm}.</span>
+<span class="c">!   \item[{[ssiMap]}]</span>
+<span class="c">!        Upon return this array is allocated and holds the single system image</span>
+<span class="c">!        id for each PET across the {\tt vm}. The size of {\tt ssiMap} is</span>
+<span class="c">!        equal to {\tt petCount}, with lower bound 0 and upper bound</span>
+<span class="c">!        {\tt petCount - 1}.</span>
+<span class="c">!   \item[{[ssiMinPetCount]}]</span>
+<span class="c">!        Upon return this holds the smallest number of PETs running in the same</span>
+<span class="c">!        single system images under {\tt vm}.</span>
+<span class="c">!   \item[{[ssiMaxPetCount]}]</span>
+<span class="c">!        Upon return this holds the largest number of PETs running in the same</span>
+<span class="c">!        single system images under {\tt vm}.</span>
+<span class="c">!   \item[{[ssiLocalPetCount]}]</span>
+<span class="c">!        Upon return this holds the number of PETs running in the same</span>
+<span class="c">!        single system as {\tt localPet}.</span>
+<span class="c">!   \item[{[ssiLocalPet]}]</span>
+<span class="c">!        Upon return this holds the SSI local index of the executing</span>
+<span class="c">!        {\tt localPet}.</span>
+<span class="c">!   \item[{[ssiLocalDevCount]}]</span>
+<span class="c">!        Upon return this holds the number of devices associated with this VM</span>
+<span class="c">!        on the local single system.</span>
+<span class="c">!   \item[{[ssiLocalDevList]}]</span>
+<span class="c">!        Upon return this array is allocated and holds the local device ids</span>
+<span class="c">!        of devices associated with this VM. The size of {\tt ssiLocalDevList}</span>
+<span class="c">!        is equal to {\tt ssiLocalDevCount}, with lower bound 0 and upper</span>
+<span class="c">!        bound {\tt ssiLocalDevCount - 1}. Local device ids can be used to</span>
+<span class="c">!        target specific devices using OpenMP, OpenACC, or similar device</span>
+<span class="c">!        API.</span>
+<span class="c">!   \item[{[mpiCommunicator]}]</span>
+<span class="c">!        Upon return this holds the MPI intra-communicator used by the </span>
+<span class="c">!        specified {\tt ESMF\_VM} object. This communicator may be used for</span>
+<span class="c">!        user-level MPI communications. It is recommended that the user</span>
+<span class="c">!        duplicates the communicator via {\tt MPI\_Comm\_Dup()} in order to</span>
+<span class="c">!        prevent any interference with ESMF communications.</span>
+<span class="c">!        {\tt MPI\_COMM\_NULL} is returned on PETs that are not active</span>
+<span class="c">!        under the specified {\tt vm}.</span>
+<span class="c">!   \item[{[pthreadsEnabledFlag]}]</span>
+<span class="c">!        \begin{description}</span>
+<span class="c">!        \item[{\tt .TRUE.}]</span>
+<span class="c">!             ESMF has been compiled with Pthreads, and the MPI environment</span>
+<span class="c">!             supports threading.</span>
+<span class="c">!        \item[{\tt .FALSE.}]</span>
+<span class="c">!             ESMF has {\em not} been compiled with Pthreads, or the MPI</span>
+<span class="c">!             environment does {\em not} support threading.</span>
+<span class="c">!        \end{description}</span>
+<span class="c">!   \item[{[openMPEnabledFlag]}]</span>
+<span class="c">!        \begin{description}</span>
+<span class="c">!        \item[{\tt .TRUE.}]</span>
+<span class="c">!             ESMF has been compiled with OpenMP.</span>
+<span class="c">!        \item[{\tt .FALSE.}]</span>
+<span class="c">!             ESMF has {\em not} been compiled with OpenMP.</span>
+<span class="c">!        \end{description}</span>
+<span class="c">!   \item[{[ssiSharedMemoryEnabledFlag]}]</span>
+<span class="c">!        \begin{description}</span>
+<span class="c">!        \item[{\tt .TRUE.}]</span>
+<span class="c">!             ESMF has been compiled to support shared memory access</span>
+<span class="c">!             between PETs that are on the same single system image (SSI).</span>
+<span class="c">!        \item[{\tt .FALSE.}]</span>
+<span class="c">!             ESMF has {\em not} been compiled to support shared memory access</span>
+<span class="c">!             between PETs that are on the same single system image (SSI).</span>
+<span class="c">!        \end{description}</span>
+<span class="c">!   \item[{[esmfComm]}]</span>
+<span class="c">!        Upon return this string is allocated to the appropriate size and holds</span>
+<span class="c">!        the exact value of the {\tt ESMF\_COMM} build environment variable used</span>
+<span class="c">!        by the ESMF installation. This provides a convenient way for the user</span>
+<span class="c">!        to determine the underlying MPI implementation.</span>
+<span class="c">!   \item[{[rc]}] </span>
+<span class="c">!        Return code; equals {\tt ESMF\_SUCCESS} if there are no errors.</span>
+<span class="c">!   \end{description}</span>
+<span class="c">!</span>
+<span class="c">!EOP</span>
+<span class="c">!------------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Logical</span><span class="p">)</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="n">pthreadsEnabledFlagArg</span><span class="w">         </span><span class="c">! helper variable</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Logical</span><span class="p">)</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="n">openMPEnabledFlagArg</span><span class="w">           </span><span class="c">! helper variable</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Logical</span><span class="p">)</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="n">ssiSharedMemoryEnabledFlagArg</span><span class="w">  </span><span class="c">! helper variable</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">petCountArg</span><span class="p">,</span><span class="w"> </span><span class="n">ssiLocalDevCountArg</span><span class="w"> </span><span class="c">! helper variable</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w">                </span><span class="c">! helper variable</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">localrc</span><span class="w">  </span><span class="c">! local return code</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">esmfCommArg</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_InterArray</span><span class="p">)</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">ssiLocalDevListArg</span><span class="w">       </span><span class="c">! interface variable</span>
+
+<span class="w">    </span><span class="c">! initialize return code; assume routine not implemented</span>
+<span class="w">    </span><span class="n">localrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+
+<span class="w">    </span><span class="c">! Check init status of arguments</span>
+<span class="w">    </span><span class="n">ESMF_INIT_CHECK_DEEP</span><span class="p">(</span><span class="n">ESMF_VMGetInit</span><span class="p">,</span><span class="w"> </span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">vm</span><span class="p">%</span><span class="n">this</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_NULL_POINTER</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">      </span><span class="c">! Call into the C++ interface.</span>
+<span class="w">      </span><span class="k">call </span><span class="n">c_ESMC_VMGet</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">localPet</span><span class="p">,</span><span class="w"> </span><span class="n">currentSsiPe</span><span class="p">,</span><span class="w"> </span><span class="n">petCountArg</span><span class="p">,</span><span class="w"> </span><span class="n">peCount</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ssiCount</span><span class="p">,</span><span class="w"> </span><span class="n">ssiMinPetCount</span><span class="p">,</span><span class="w"> </span><span class="n">ssiMaxPetCount</span><span class="p">,</span><span class="w"> </span><span class="n">ssiLocalPetCount</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ssiLocalPet</span><span class="p">,</span><span class="w"> </span><span class="n">ssiLocalDevCountArg</span><span class="p">,</span><span class="w"> </span><span class="n">mpiCommunicator</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">pthreadsEnabledFlagArg</span><span class="p">,</span><span class="w"> </span><span class="n">openMPEnabledFlagArg</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ssiSharedMemoryEnabledFlagArg</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">petCount</span><span class="p">))</span><span class="w"> </span><span class="n">petCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">petCountArg</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="w"> </span><span class="p">(</span><span class="n">pthreadsEnabledFlag</span><span class="p">))</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">pthreadsEnabledFlag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pthreadsEnabledFlagArg</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="w"> </span><span class="p">(</span><span class="n">openMPEnabledFlag</span><span class="p">))</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">openMPEnabledFlag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">openMPEnabledFlagArg</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="w"> </span><span class="p">(</span><span class="n">ssiSharedMemoryEnabledFlag</span><span class="p">))</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ssiSharedMemoryEnabledFlag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ssiSharedMemoryEnabledFlagArg</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">ssiMap</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="n">ssiMap</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">petCountArg</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="w">        </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">petCountArg</span><span class="o">-</span><span class="mi">1</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_VMGet</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">pet</span><span class="o">=</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">ssiId</span><span class="o">=</span><span class="n">ssiMap</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">        enddo</span>
+<span class="k">      endif</span>
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">ssiLocalDevCount</span><span class="p">))</span><span class="w"> </span><span class="n">ssiLocalDevCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ssiLocalDevCountArg</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">ssiLocalDevList</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="n">ssiLocalDevList</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">ssiLocalDevCountArg</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="w">        </span><span class="n">ssiLocalDevListArg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_InterArrayCreate</span><span class="p">(</span><span class="n">ssiLocalDevList</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">        call </span><span class="n">c_ESMC_VMGetSsiLocalDevList</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">ssiLocalDevListArg</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">        call </span><span class="n">ESMF_InterArrayDestroy</span><span class="p">(</span><span class="n">ssiLocalDevListArg</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">      endif</span>
+<span class="k">    else</span>
+<span class="w">      </span><span class="c">! Only very specific cases are supported for a NULL this pointer</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">petCount</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">peCount</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">ssiCount</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="nb">present</span><span class="p">(</span><span class="n">ssiMap</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">ssiMinPetCount</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="nb">present</span><span class="p">(</span><span class="n">ssiMaxPetCount</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">ssiLocalPetCount</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="nb">present</span><span class="p">(</span><span class="n">ssiLocalPetCount</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="nb">present</span><span class="p">(</span><span class="n">ssiLocalDevCount</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">ssiLocalDevList</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="nb">present</span><span class="p">(</span><span class="n">pthreadsEnabledFlag</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">openMPEnabledFlag</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="nb">present</span><span class="p">(</span><span class="n">ssiSharedMemoryEnabledFlag</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_RC_PTR_NULL</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;Not a valid pointer to VM&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span>
+<span class="k">      endif</span>
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">localPet</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="c">! a value of -1 indicates that </span>
+<span class="w">        </span><span class="n">localPet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span>
+<span class="w">      </span><span class="k">endif</span>
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">mpiCommunicator</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        call </span><span class="n">c_ESMC_VMGetMpiCommNull</span><span class="p">(</span><span class="n">mpiCommunicator</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">      endif</span>
+<span class="k">    endif</span>
+
+<span class="w">    </span><span class="c">! deal with esmfComm directly on Fortran layer</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">esmfComm</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      call </span><span class="n">c_esmc_initget_esmf_comm</span><span class="p">(</span><span class="n">esmfCommArg</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="n">esmfComm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">esmfCommArg</span><span class="p">)</span><span class="w">  </span><span class="c">! implicit allocation of esmfComm</span>
+<span class="w">    </span><span class="k">endif</span>
+
+<span class="w">    </span><span class="c">! return successfully</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+
+<span class="w">  </span><span class="k">end subroutine </span><span class="n">ESMF_VMGetDefault</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

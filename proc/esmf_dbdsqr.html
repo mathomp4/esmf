@@ -1,0 +1,611 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_DBDSQR &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_DBDSQR
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.1% of total for procedures.">335 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/dbdsqr.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/dbdsqr.f90.html'>dbdsqr.F90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_DBDSQR</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2> subroutine ESMF_DBDSQR(UPLO, N, NCVT, NRU, NCC, D, E, VT, LDVT, U, LDU, C, LDC, WORK, INFO)  
+</h2>
+    
+
+    <p>\brief \b ESMF_DBDSQR
+\htmlonly
+Download ESMF_DBDSQR + dependencies
+<a href="http://www.netlib.org/cgi-bin/netlibfiles.tgz?format=tgz&filename=/lapack/lapack_routine/dbdsqr.f">
+[TGZ]</a>
+<a href="http://www.netlib.org/cgi-bin/netlibfiles.zip?format=zip&filename=/lapack/lapack_routine/dbdsqr.f">
+[ZIP]</a>
+<a href="http://www.netlib.org/cgi-bin/netlibfiles.txt?format=txt&filename=/lapack/lapack_routine/dbdsqr.f">
+[TXT]</a>
+\endhtmlonly
+\par Purpose:</p>
+<p>\verbatim</p>
+<p>ESMF_DBDSQR computes the singular values and, optionally, the right and/or
+left singular vectors from the singular value decomposition (SVD) of
+a real N-by-N (upper or lower) bidiagonal matrix B using the implicit
+zero-shift QR algorithm.  The SVD of B has the form</p>
+<p>B = Q * S * P**T</p>
+<p>where S is the diagonal matrix of singular values, Q is an orthogonal
+matrix of left singular vectors, and P is an orthogonal matrix of
+right singular vectors.  If left singular vectors are requested, this
+subroutine actually returns U<em>Q instead of Q, and, if right singular
+vectors are requested, this subroutine returns P</em><em>T</em>VT instead of
+P<em><em>T, for given real input matrices U and VT.  When U and VT are the
+orthogonal matrices that reduce a general matrix A to bidiagonal
+form:  A = U</em>B</em>VT, as computed by ESMF_DGEBRD, then</p>
+<p>A = (U<em>Q) * S * (P</em><em>T</em>VT)</p>
+<p>is the SVD of A.  Optionally, the subroutine may also compute Q*<em>T</em>C
+for a given real input matrix C.</p>
+<p>See &ldquo;Computing  Small Singular Values of Bidiagonal Matrices With
+Guaranteed High Relative Accuracy,&rdquo; by J. Demmel and W. Kahan,
+LAPACK Working Note #3 (or SIAM J. Sci. Statist. Comput. vol. 11,
+no. 5, pp. 873-912, Sept 1990) and
+&ldquo;Accurate singular values and differential qd algorithms,&rdquo; by
+B. Parlett and V. Fernando, Technical Report CPAM-554, Mathematics
+Department, University of California at Berkeley, July 1992
+for a detailed description of the algorithm.
+\endverbatim
+\param[in] UPLO
+\verbatim
+         UPLO is CHARACTER*1
+         = &lsquo;U&rsquo;:  B is upper bidiagonal;
+         = &lsquo;L&rsquo;:  B is lower bidiagonal.
+\endverbatim</p>
+<p>\param[in] N
+\verbatim
+         N is INTEGER
+         The order of the matrix B.  N &gt;= 0.
+\endverbatim</p>
+<p>\param[in] NCVT
+\verbatim
+         NCVT is INTEGER
+         The number of columns of the matrix VT. NCVT &gt;= 0.
+\endverbatim</p>
+<p>\param[in] NRU
+\verbatim
+         NRU is INTEGER
+         The number of rows of the matrix U. NRU &gt;= 0.
+\endverbatim</p>
+<p>\param[in] NCC
+\verbatim
+         NCC is INTEGER
+         The number of columns of the matrix C. NCC &gt;= 0.
+\endverbatim</p>
+<p>\param[in,out] D
+\verbatim
+         D is DOUBLE PRECISION array, dimension (N)
+         On entry, the n diagonal elements of the bidiagonal matrix B.
+         On exit, if INFO=0, the singular values of B in decreasing
+         order.
+\endverbatim</p>
+<p>\param[in,out] E
+\verbatim
+         E is DOUBLE PRECISION array, dimension (N-1)
+         On entry, the N-1 offdiagonal elements of the bidiagonal
+         matrix B.
+         On exit, if INFO = 0, E is destroyed; if INFO &gt; 0, D and E
+         will contain the diagonal and superdiagonal elements of a
+         bidiagonal matrix orthogonally equivalent to the one given
+         as input.
+\endverbatim</p>
+<p>\param[in,out] VT
+\verbatim
+         VT is DOUBLE PRECISION array, dimension (LDVT, NCVT)
+         On entry, an N-by-NCVT matrix VT.
+         On exit, VT is overwritten by P**T * VT.
+         Not referenced if NCVT = 0.
+\endverbatim</p>
+<p>\param[in] LDVT
+\verbatim
+         LDVT is INTEGER
+         The leading dimension of the array VT.
+         LDVT &gt;= max(1,N) if NCVT &gt; 0; LDVT &gt;= 1 if NCVT = 0.
+\endverbatim</p>
+<p>\param[in,out] U
+\verbatim
+         U is DOUBLE PRECISION array, dimension (LDU, N)
+         On entry, an NRU-by-N matrix U.
+         On exit, U is overwritten by U * Q.
+         Not referenced if NRU = 0.
+\endverbatim</p>
+<p>\param[in] LDU
+\verbatim
+         LDU is INTEGER
+         The leading dimension of the array U.  LDU &gt;= max(1,NRU).
+\endverbatim</p>
+<p>\param[in,out] C
+\verbatim
+         C is DOUBLE PRECISION array, dimension (LDC, NCC)
+         On entry, an N-by-NCC matrix C.
+         On exit, C is overwritten by Q**T * C.
+         Not referenced if NCC = 0.
+\endverbatim</p>
+<p>\param[in] LDC
+\verbatim
+         LDC is INTEGER
+         The leading dimension of the array C.
+         LDC &gt;= max(1,N) if NCC &gt; 0; LDC &gt;=1 if NCC = 0.
+\endverbatim</p>
+<p>\param[out] WORK
+\verbatim
+         WORK is DOUBLE PRECISION array, dimension (4*N)
+\endverbatim</p>
+<p>\param[out] INFO
+\verbatim
+         INFO is INTEGER
+         = 0:  successful exit
+         &lt; 0:  If INFO = -i, the i-th argument had an illegal value
+         &gt; 0:
+            if NCVT = NRU = NCC = 0,
+               = 1, a split was marked by a positive value in E
+               = 2, current block of Z not diagonalized after 30*N
+                    iterations (in inner while loop)
+               = 3, termination criterion of outer while loop not met
+                    (program created more than N unreduced blocks)
+            else NCVT = NRU = NCC = 0,
+                  the algorithm did not converge; D and E contain the
+                  elements of a bidiagonal matrix which is orthogonally
+                  similar to the input matrix B;  if INFO = i, i
+                  elements of E have not converged to zero.
+\endverbatim
+\par Internal Parameters:</p>
+<p>\verbatim
+ TOLMUL  DOUBLE PRECISION, default = max(10,min(100,EPS<em><em>(-1/8)))
+         TOLMUL controls the convergence criterion of the QR loop.
+         If it is positive, TOLMUL</em>EPS is the desired relative
+            precision in the computed singular values.
+         If it is negative, abs(TOLMUL</em>EPS<em>sigma_max) is the
+            desired absolute accuracy in the computed singular
+            values (corresponds to relative accuracy
+            abs(TOLMUL</em>EPS) in the largest singular value.
+         abs(TOLMUL) should be between 1 and 1/EPS, and preferably
+            between 10 (for fast convergence) and .1/EPS
+            (for there to be some accuracy in the results).
+         Default is to lose at either one eighth or 2 of the
+            available decimal digits in each computed singular value
+            (whichever is smaller).</p>
+<p>MAXITR  INTEGER, default = 6
+         MAXITR controls the maximum number of passes of the
+         algorithm through its inner loop. The algorithms stops
+         (and so fails to converge) if the number of passes
+         through the inner loop exceeds MAXITR<em>N</em>*2.
+\endverbatim
+\author Univ. of Tennessee
+\author Univ. of California Berkeley
+\author Univ. of Colorado Denver
+\author NAG Ltd.
+\date November 2011
+\ingroup auxOTHERcomputational</p>
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-uplo~16"></span>
+              character(len=1)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>UPLO</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n~90"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>N</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ncvt~2"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NCVT</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nru~3"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NRU</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ncc~3"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NCC</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-d~32"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>D</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-e~15"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>E</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vt~6"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>VT</strong>(LDVT,*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ldvt~2"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LDVT</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-u~7"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>U</strong>(LDU,*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ldu~5"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LDU</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-c~37"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>C</strong>(LDC,*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ldc~16"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LDC</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-work~50"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>WORK</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-info~66"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>INFO</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,698 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>SetServices &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>SetServices
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.0% of total for procedures.">17 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_NUOPCAtmModelEx.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_nuopcatmmodelex.f90.html'>ESMF_NUOPCAtmModelEx.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/driver~2.html'>DRIVER</a></li>
+            <li class="breadcrumb-item active" aria-current="page">SetServices</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/setservices~13.html#src">SetServices</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  subroutine SetServices(drvr, rc)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-drvr~4"></span>
+              type(<a href='../type/esmf_gridcomp.html'>ESMF_GridComp</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>drvr</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~3322"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">  </span><span class="k">subroutine </span><span class="n">SetServices</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_GridComp</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">model</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c">! the NUOPC model component will register the generic methods</span>
+<span class="w">    </span><span class="k">call </span><span class="n">NUOPC_CompDerive</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">modelSS</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">file</span><span class="o">=</span><span class="err">__</span><span class="n">FILE__</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">return</span><span class="w">  </span><span class="c">! bail out</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c">! specialize model</span>
+<span class="w">    </span><span class="k">call </span><span class="n">NUOPC_CompSpecialize</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">specLabel</span><span class="o">=</span><span class="n">label_Advertise</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">specRoutine</span><span class="o">=</span><span class="n">Advertise</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">file</span><span class="o">=</span><span class="err">__</span><span class="n">FILE__</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">return</span><span class="w">  </span><span class="c">! bail out</span>
+<span class="w">    </span><span class="k">call </span><span class="n">NUOPC_CompSpecialize</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">specLabel</span><span class="o">=</span><span class="n">label_RealizeProvided</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">specRoutine</span><span class="o">=</span><span class="n">Realize</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">file</span><span class="o">=</span><span class="err">__</span><span class="n">FILE__</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">return</span><span class="w">  </span><span class="c">! bail out</span>
+<span class="w">    </span><span class="k">call </span><span class="n">NUOPC_CompSpecialize</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">specLabel</span><span class="o">=</span><span class="n">label_Advance</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">specRoutine</span><span class="o">=</span><span class="n">Advance</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">file</span><span class="o">=</span><span class="err">__</span><span class="n">FILE__</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">return</span><span class="w">  </span><span class="c">! bail out</span>
+<span class="w">    </span>
+<span class="w">  </span><span class="k">end subroutine</span>
+<span class="c">!EOC</span>
+
+<span class="c">!BOE</span>
+<span class="c">!\subsection{Checking Return Codes}</span>
+<span class="c">!\label{sec:atmexample_retcodes}</span>
+<span class="c">! Essentially all ESMF and NUOPC methods have an optional integer</span>
+<span class="c">! return code parameter.  You are highly encouraged to call</span>
+<span class="c">! {\tt ESMF\_LogFoundError} after every ESMF/NUOPC call in order to</span>
+<span class="c">! check the return code and record any errors in the log files</span>
+<span class="c">! that ESMF generates during the run.  Including the {\tt line} and</span>
+<span class="c">! {\tt file} parameters will help to located where errors occur in the code.</span>
+<span class="c">! These parameter values are typically filled in by the pre-processor.</span>
+<span class="c">!</span>
+<span class="c">!\subsection{Initialize Phase - Advertise Fields}</span>
+<span class="c">!\label{sec:atmexample_advertisefields}</span>
+<span class="c">! In this section we see the implementation of the {\tt Advertise} subroutine,</span>
+<span class="c">! which is registered for the {\tt label\_Advertise} specialization.</span>
+<span class="c">! The full list of specialization labels is described in the NUOPC Reference</span>
+<span class="c">! Manual.</span>
+<span class="c">!</span>
+<span class="c">! For now you should notice a few things:</span>
+<span class="c">! \begin{itemize}</span>
+<span class="c">! \item All specialization subroutines are standard ESMF attachable methods</span>
+<span class="c">! with the same parameter list:</span>
+<span class="c">!   \begin{itemize}</span>
+<span class="c">!   \item {\tt model} - a reference to the component itself ({\tt ESMF\_GridComp})</span>
+<span class="c">!   \item {\tt rc} - an {\tt integer} return code</span>
+<span class="c">!   \end{itemize}</span>
+<span class="c">! \item If the subroutine succeeds, it should return {\tt ESMF\_SUCCESS} in</span>
+<span class="c">!  the return code.  Otherwise it should return an error code. The</span>
+<span class="c">!  list of pre-defined ESMF error codes is provided in the</span>
+<span class="c">!  \htmladdnormallink{ESMF Reference Manual}{http://www.earthsystemmodeling.org/esmf\_releases/public/last/ESMF\_refdoc/node9.html\#SECTION09030000000000000000}.</span>
+<span class="c">!\end{itemize}</span>
+
+<span class="c">! The purpose of this phase is for your model to \textbf{advertise its import and</span>
+<span class="c">! export fields}.  This means that your model announces which model variables</span>
+<span class="c">! it is capable of exporting (e.g., an atmosphere might export air pressure at sea level)</span>
+<span class="c">! and which model variables it requires (e.g., an atmosphere might require</span>
+<span class="c">! sea surface temperature as a boundary condition).  The reason there is an</span>
+<span class="c">! explicit \textbf{advertise} phase is because NUOPC dynamically matches fields among</span>
+<span class="c">! all the models participating in a coupled simulation during runtime. So, we</span>
+<span class="c">! need to collect the list of possible input and output fields from all the</span>
+<span class="c">! models during their initialization.</span>
+<span class="c">!</span>
+<span class="c">! As shown in the code below, to advertise a field you call</span>
+<span class="c">! {\tt NUOPC\_Advertise} with the following parameters:</span>
+<span class="c">! \begin{itemize}</span>
+<span class="c">! \item either the {\tt importState} or {\tt exportState} object</span>
+<span class="c">! \item the standard name of the field, based on the</span>
+<span class="c">! \htmladdnormallink{CF conventions}{http://cfconventions.org/standard-names.html}</span>
+<span class="c">! \item an optional name for the field, which can be used to</span>
+<span class="c">!  retrieve it later from its {\tt ESMF\_State}; if ommited</span>
+<span class="c">!  the standard name will be used as the field name</span>
+<span class="c">! \item a return code</span>
+<span class="c">!\end{itemize}</span>
+<span class="c">!</span>
+<span class="c">! The example code below advertises one import field with the standard</span>
+<span class="c">! name {\tt &quot;sea\_surface\_temperature&quot;}, and two export fields with standard</span>
+<span class="c">! names {\tt &quot;air\_pressure\_at\_sea\_level&quot;} and {\tt &quot;surface\_net\_downward\_shortwave\_flux&quot;}.</span>
+<span class="c">!</span>
+<span class="c">! \textbf{Advertising a Field does NOT allocate memory}</span>
+<span class="c">! \\</span>
+<span class="c">! Note that NUOPC does not allocate memory for fields during the</span>
+<span class="c">! advertise phase or when {\tt NUOPC\_Advertise} is called.</span>
+<span class="c">! Instead, this is simply a way for models to communicate the</span>
+<span class="c">! standard names of fields.  During a later phase, only those fields that</span>
+<span class="c">! are \emph{connected} (e.g., a field exported from one model that is</span>
+<span class="c">! imported by another) need to have memory allocated.</span>
+<span class="c">! Also, since ESMF will accept pointers to pre-allocated memory, it is usually not</span>
+<span class="c">! necessary to change how memory is allocated for your model&#39;s variables.</span>
+
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+
+<span class="w">  </span><span class="k">subroutine </span><span class="n">Advertise</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_GridComp</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">model</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+
+<span class="w">    </span><span class="c">! local variables</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_State</span><span class="p">)</span><span class="w">        </span><span class="kd">::</span><span class="w"> </span><span class="n">importState</span><span class="p">,</span><span class="w"> </span><span class="n">exportState</span>
+
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+
+<span class="w">    </span><span class="c">! query for importState and exportState</span>
+<span class="w">    </span><span class="k">call </span><span class="n">NUOPC_ModelGet</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">importState</span><span class="o">=</span><span class="n">importState</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">exportState</span><span class="o">=</span><span class="n">exportState</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">file</span><span class="o">=</span><span class="err">__</span><span class="n">FILE__</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">return</span><span class="w">  </span><span class="c">! bail out</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c">! importable field: sea_surface_temperature</span>
+<span class="w">    </span><span class="k">call </span><span class="n">NUOPC_Advertise</span><span class="p">(</span><span class="n">importState</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">StandardName</span><span class="o">=</span><span class="s2">&quot;sea_surface_temperature&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;sst&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">      </span><span class="n">TransferOfferGeomObject</span><span class="o">=</span><span class="s2">&quot;will provide&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">file</span><span class="o">=</span><span class="err">__</span><span class="n">FILE__</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">return</span><span class="w">  </span><span class="c">! bail out</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c">! exportable field: air_pressure_at_sea_level</span>
+<span class="w">    </span><span class="k">call </span><span class="n">NUOPC_Advertise</span><span class="p">(</span><span class="n">exportState</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">StandardName</span><span class="o">=</span><span class="s2">&quot;air_pressure_at_sea_level&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;pmsl&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">      </span><span class="n">TransferOfferGeomObject</span><span class="o">=</span><span class="s2">&quot;will provide&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">file</span><span class="o">=</span><span class="err">__</span><span class="n">FILE__</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">return</span><span class="w">  </span><span class="c">! bail out</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c">! exportable field: surface_net_downward_shortwave_flux</span>
+<span class="w">    </span><span class="k">call </span><span class="n">NUOPC_Advertise</span><span class="p">(</span><span class="n">exportState</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">StandardName</span><span class="o">=</span><span class="s2">&quot;surface_net_downward_shortwave_flux&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;rsns&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">      </span><span class="n">TransferOfferGeomObject</span><span class="o">=</span><span class="s2">&quot;will provide&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">file</span><span class="o">=</span><span class="err">__</span><span class="n">FILE__</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">return</span><span class="w">  </span><span class="c">! bail out</span>
+
+<span class="w">  </span><span class="k">end subroutine</span>
+<span class="w">  </span>
+<span class="c">!EOC</span>
+
+<span class="c">!BOE</span>
+<span class="c">!\subsection{Initialize Phase - Realize Fields}</span>
+<span class="c">!\label{sec:atmexample_realizefields}</span>
+<span class="c">!</span>
+<span class="c">!</span>
+<span class="c">! The following code fragment shows the {\tt Realize} subroutine, which</span>
+<span class="c">! specializes {\tt label\_RealizeProvided}.   During this phase, fields that</span>
+<span class="c">! were previously advertised should now be \textbf{realized}.  Realizing a field</span>
+<span class="c">! means that an {\tt ESMF\_Field} object is created and it is added to the appropriate</span>
+<span class="c">! {\tt ESMF\_State}, either import or export.</span>
+<span class="c">!</span>
+<span class="c">! In order to create an {\tt ESMF\_Field}, you&#39;ll first need to create one of the</span>
+<span class="c">! ESMF geometric types, {\tt ESMF\_Grid}, {\tt ESMF\_Mesh}, or {\tt ESMF\_LocStream}.</span>
+<span class="c">! For 2D and 3D logically rectangular grids (such as a lat-lon grid), the</span>
+<span class="c">! typical choice is {\tt ESMF\_Grid}.  For unstructured grids, use an {\tt ESMF\_Mesh}.</span>
+<span class="c">!</span>
+<span class="c">! Describing your model&#39;s grid (physical discretization) in the</span>
+<span class="c">! ESMF representation is  one of the most important parts of creating</span>
+<span class="c">! a NUOPC cap. The ESMF geometric types are described in detail in the ESMF Reference Manual:</span>
+<span class="c">! \begin{itemize}</span>
+<span class="c">! \item \htmladdnormallink{ESMF\_Grid}{http://www.earthsystemmodeling.org/esmf\_releases/public/last/ESMF\_refdoc/node5.html\#SECTION05080000000000000000}</span>
+<span class="c">! - logically rectangular grids</span>
+<span class="c">! \item \htmladdnormallink{ESMF\_Mesh}{http://www.earthsystemmodeling.org/esmf\_releases/public/last/ESMF\_refdoc/node5.html\#SECTION050100000000000000000}</span>
+<span class="c">! - unstructured grids</span>
+<span class="c">! \item \htmladdnormallink{ESMF\_LocStream}{http://www.earthsystemmodeling.org/esmf\_releases/public/last/ESMF\_refdoc/node5.html\#SECTION05090000000000000000}</span>
+<span class="c">! - a set of observational points</span>
+<span class="c">! \end{itemize}</span>
+<span class="c">!</span>
+<span class="c">! For the sake a simplicity, a 10x100 Cartesian grid is created in the code below</span>
+<span class="c">! and assigned to the variable {\tt gridIn}.</span>
+<span class="c">!</span>
+<span class="c">! An {\tt ESMF\_Field} is created by by passing in the field</span>
+<span class="c">! name (should be the same as advertised), the grid, and the data type of the</span>
+<span class="c">! field to {\tt ESMF\_FieldCreate}.</span>
+<span class="c">!</span>
+<span class="c">! Fields are put into import or export States by calling {\tt NUOPC\_Realize}.  </span>
+<span class="c">! The example code realizes three fields in total, one import and two export, </span>
+<span class="c">! and all three share the same grid.</span>
+
+<span class="c">!EOE</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="c">!BOC</span>
+<span class="w">  </span><span class="k">subroutine </span><span class="n">Realize</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_GridComp</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">model</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+
+<span class="w">    </span><span class="c">! local variables</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_State</span><span class="p">)</span><span class="w">        </span><span class="kd">::</span><span class="w"> </span><span class="n">importState</span><span class="p">,</span><span class="w"> </span><span class="n">exportState</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Field</span><span class="p">)</span><span class="w">        </span><span class="kd">::</span><span class="w"> </span><span class="n">field</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Grid</span><span class="p">)</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">gridIn</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Grid</span><span class="p">)</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">gridOut</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c">! query for importState and exportState</span>
+<span class="w">    </span><span class="k">call </span><span class="n">NUOPC_ModelGet</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">importState</span><span class="o">=</span><span class="n">importState</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">exportState</span><span class="o">=</span><span class="n">exportState</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">file</span><span class="o">=</span><span class="err">__</span><span class="n">FILE__</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">return</span><span class="w">  </span><span class="c">! bail out</span>
+
+<span class="w">    </span><span class="c">! create a Grid object for Fields</span>
+<span class="w">    </span><span class="n">gridIn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_GridCreateNoPeriDimUfrm</span><span class="p">(</span><span class="n">maxIndex</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">minCornerCoord</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="mf">0._ESMF_KIND_R8</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="mf">0._ESMF_KIND_R8</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">maxCornerCoord</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">10</span><span class="mf">0._ESMF_KIND_R8</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="mf">0._ESMF_KIND_R8</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">coordSys</span><span class="o">=</span><span class="n">ESMF_COORDSYS_CART</span><span class="p">,</span><span class="w"> </span><span class="n">staggerLocList</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="n">ESMF_STAGGERLOC_CENTER</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">file</span><span class="o">=</span><span class="err">__</span><span class="n">FILE__</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">return</span><span class="w">  </span><span class="c">! bail out</span>
+<span class="w">    </span><span class="n">gridOut</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gridIn</span><span class="w"> </span><span class="c">! for now out same as in</span>
+
+<span class="w">    </span><span class="c">! importable field: sea_surface_temperature</span>
+<span class="w">    </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;sst&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">grid</span><span class="o">=</span><span class="n">gridIn</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">typekind</span><span class="o">=</span><span class="n">ESMF_TYPEKIND_R8</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">file</span><span class="o">=</span><span class="err">__</span><span class="n">FILE__</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">return</span><span class="w">  </span><span class="c">! bail out</span>
+<span class="w">    </span><span class="k">call </span><span class="n">NUOPC_Realize</span><span class="p">(</span><span class="n">importState</span><span class="p">,</span><span class="w"> </span><span class="n">field</span><span class="o">=</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">file</span><span class="o">=</span><span class="err">__</span><span class="n">FILE__</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">return</span><span class="w">  </span><span class="c">! bail out</span>
+
+<span class="w">    </span><span class="c">! exportable field: air_pressure_at_sea_level</span>
+<span class="w">    </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;pmsl&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">grid</span><span class="o">=</span><span class="n">gridOut</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">typekind</span><span class="o">=</span><span class="n">ESMF_TYPEKIND_R8</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">file</span><span class="o">=</span><span class="err">__</span><span class="n">FILE__</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">return</span><span class="w">  </span><span class="c">! bail out</span>
+<span class="w">    </span><span class="k">call </span><span class="n">NUOPC_Realize</span><span class="p">(</span><span class="n">exportState</span><span class="p">,</span><span class="w"> </span><span class="n">field</span><span class="o">=</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">file</span><span class="o">=</span><span class="err">__</span><span class="n">FILE__</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">return</span><span class="w">  </span><span class="c">! bail out</span>
+
+<span class="w">    </span><span class="c">! exportable field: surface_net_downward_shortwave_flux</span>
+<span class="w">    </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;rsns&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">grid</span><span class="o">=</span><span class="n">gridOut</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">typekind</span><span class="o">=</span><span class="n">ESMF_TYPEKIND_R8</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">file</span><span class="o">=</span><span class="err">__</span><span class="n">FILE__</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">return</span><span class="w">  </span><span class="c">! bail out</span>
+<span class="w">    </span><span class="k">call </span><span class="n">NUOPC_Realize</span><span class="p">(</span><span class="n">exportState</span><span class="p">,</span><span class="w"> </span><span class="n">field</span><span class="o">=</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">file</span><span class="o">=</span><span class="err">__</span><span class="n">FILE__</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">return</span><span class="w">  </span><span class="c">! bail out</span>
+
+<span class="w">  </span><span class="k">end subroutine</span>
+<span class="c">!EOC</span>
+
+<span class="c">!BOE</span>
+<span class="c">! \subsection{Model Advance Specialization}</span>
+<span class="c">! \label{sec:atmexample_advancespec}</span>
+<span class="c">!</span>
+<span class="c">! As described in the section \ref{sec:atmexample_setservices},</span>
+<span class="c">! the subroutine {\tt Advance} (shown below) has been</span>
+<span class="c">! registered to the \emph{specialization point} with the label</span>
+<span class="c">! {\tt model\_label\_Advance} in the {\tt SetServices} subroutine. This</span>
+<span class="c">! specialization point subroutine is called within the generic {\tt NUOPC\_Model}</span>
+<span class="c">! run phase in order to request that your model take a timestep</span>
+<span class="c">! forward.  The code to do this is model dependent, so it does not appear</span>
+<span class="c">! in the subroutine below.</span>
+<span class="c">!</span>
+<span class="c">! \textbf{Each NUOPC component maintains its own clock} (an {\tt ESMF\_Clock} object).</span>
+<span class="c">! The clock is used here to indicate the current model time and the</span>
+<span class="c">! timestep size. When the subroutine finishes, your model should be</span>
+<span class="c">! moved ahead in time from the current time by one timestep.  NUOPC will</span>
+<span class="c">! automatically advance the clock for you, so there is no explicit call</span>
+<span class="c">! to do that here.</span>
+<span class="c">!</span>
+<span class="c">! Since there is no actual model for us to advance in this example,</span>
+<span class="c">! the code below simply prints the current time and stop time (current time + timestep)</span>
+<span class="c">! to standard out.</span>
+<span class="c">!</span>
+<span class="c">! With respect to specialization point subroutines in general, note that:</span>
+<span class="c">! \begin{itemize}</span>
+<span class="c">! \item All specialization point subroutines rely on the ESMF attachable</span>
+<span class="c">!    methods capability, and therefore all share the same parameter list:</span>
+<span class="c">! \begin{itemize}</span>
+<span class="c">!    \item a pointer to the component ({\tt ESMF\_GridComp})</span>
+<span class="c">!    \item an {\tt integer} return code</span>
+<span class="c">! \end{itemize}</span>
+<span class="c">! \item Because the import/export states and the clock do not come in through</span>
+<span class="c">!   the parameter list, they must be accessed via a call to {\tt NUOPC\_ModelGet}</span>
+<span class="c">!   as shown in the code below.</span>
+<span class="c">!\end{itemize}</span>
+<span class="c">!EOE</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+
+<span class="c">!BOC</span>
+<span class="w">  </span><span class="k">subroutine </span><span class="n">Advance</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_GridComp</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">model</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c">! local variables</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Clock</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">clock</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_State</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">importState</span><span class="p">,</span><span class="w"> </span><span class="n">exportState</span>
+
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c">! query the Component for its clock, importState and exportState</span>
+<span class="w">    </span><span class="k">call </span><span class="n">NUOPC_ModelGet</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">modelClock</span><span class="o">=</span><span class="n">clock</span><span class="p">,</span><span class="w"> </span><span class="n">importState</span><span class="o">=</span><span class="n">importState</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">exportState</span><span class="o">=</span><span class="n">exportState</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">file</span><span class="o">=</span><span class="err">__</span><span class="n">FILE__</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">return</span><span class="w">  </span><span class="c">! bail out</span>
+
+<span class="w">    </span><span class="c">! HERE THE MODEL ADVANCES: currTime -&gt; currTime + timeStep</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c">! Because of the way that the internal Clock was set by default,</span>
+<span class="w">    </span><span class="c">! its timeStep is equal to the parent timeStep. As a consequence the</span>
+<span class="w">    </span><span class="c">! currTime + timeStep is equal to the stopTime of the internal Clock</span>
+<span class="w">    </span><span class="c">! for this call of the Advance() routine.</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_ClockPrint</span><span class="p">(</span><span class="n">clock</span><span class="p">,</span><span class="w"> </span><span class="k">options</span><span class="o">=</span><span class="s2">&quot;currTime&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">preString</span><span class="o">=</span><span class="s2">&quot;------&gt;Advancing ATM from: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">file</span><span class="o">=</span><span class="err">__</span><span class="n">FILE__</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">return</span><span class="w">  </span><span class="c">! bail out</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_ClockPrint</span><span class="p">(</span><span class="n">clock</span><span class="p">,</span><span class="w"> </span><span class="k">options</span><span class="o">=</span><span class="s2">&quot;stopTime&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">preString</span><span class="o">=</span><span class="s2">&quot;--------------------------------&gt; to: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">file</span><span class="o">=</span><span class="err">__</span><span class="n">FILE__</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">return</span><span class="w">  </span><span class="c">! bail out</span>
+
+<span class="w">  </span><span class="k">end subroutine</span>
+
+<span class="k">end module</span>
+<span class="c">!EOC</span>
+
+<span class="c">! A driver set up to mirror fields</span>
+<span class="c">! in ATM component above</span>
+<span class="k">module </span><span class="n">DRIVER</span>
+
+<span class="w">  </span><span class="k">use </span><span class="n">ESMF</span>
+<span class="w">  </span><span class="k">use </span><span class="n">NUOPC</span>
+<span class="w">  </span><span class="k">use </span><span class="n">NUOPC_Driver</span><span class="p">,</span><span class="w"> </span><span class="n">driverSS</span><span class="w">         </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">SetServices</span>
+
+<span class="w">  </span><span class="k">use </span><span class="n">NUOPC_Connector</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">cplSS</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">SetServices</span>
+
+<span class="w">  </span><span class="k">use </span><span class="n">ATM</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">atmSS</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">SetServices</span>
+
+<span class="w">  </span><span class="k">implicit none</span>
+
+<span class="k">  private</span>
+
+<span class="k">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">stepCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">stepTime</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="mf">0.D0</span><span class="w">  </span><span class="c">! step time [s]</span>
+
+
+<span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">SetServices</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="k">contains</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+
+<span class="w">  </span><span class="k">subroutine </span><span class="n">SetServices</span><span class="p">(</span><span class="n">drvr</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_GridComp</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">drvr</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+
+<span class="w">    </span><span class="c">! NUOPC_Driver registers the generic methods</span>
+<span class="w">    </span><span class="k">call </span><span class="n">NUOPC_CompDerive</span><span class="p">(</span><span class="n">drvr</span><span class="p">,</span><span class="w"> </span><span class="n">driverSS</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="k">file</span><span class="o">=</span><span class="err">__</span><span class="n">FILE__</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="k">return</span><span class="w">  </span><span class="c">! bail out</span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">NUOPC_CompSetInternalEntryPoint</span><span class="p">(</span><span class="n">drvr</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_METHOD_INITIALIZE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">phaseLabelList</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="s2">&quot;IPDv05p8&quot;</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">userRoutine</span><span class="o">=</span><span class="n">TimestampImportState</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="k">file</span><span class="o">=</span><span class="err">__</span><span class="n">FILE__</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="k">return</span><span class="w">  </span><span class="c">! bail out</span>
+<span class="w">    </span><span class="k">call </span><span class="n">NUOPC_CompSetInternalEntryPoint</span><span class="p">(</span><span class="n">drvr</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_METHOD_RUN</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">phaseLabelList</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="s2">&quot;InternalRun&quot;</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">userRoutine</span><span class="o">=</span><span class="n">RunTimestampImportState</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="k">file</span><span class="o">=</span><span class="err">__</span><span class="n">FILE__</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="k">return</span><span class="w">  </span><span class="c">! bail out</span>
+
+<span class="w">    </span><span class="c">! set HierarchyProtocol on the driver</span>
+<span class="w">    </span><span class="k">call </span><span class="n">NUOPC_CompAttributeSet</span><span class="p">(</span><span class="n">drvr</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;HierarchyProtocol&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">value</span><span class="o">=</span><span class="s2">&quot;Explorer&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="k">file</span><span class="o">=</span><span class="err">__</span><span class="n">FILE__</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="k">return</span><span class="w">  </span><span class="c">! bail out</span>
+
+<span class="w">    </span><span class="c">! attach specializing method(s)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">NUOPC_CompSpecialize</span><span class="p">(</span><span class="n">drvr</span><span class="p">,</span><span class="w"> </span><span class="n">specLabel</span><span class="o">=</span><span class="n">label_SetModelServices</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">specRoutine</span><span class="o">=</span><span class="n">SetModelServices</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="k">file</span><span class="o">=</span><span class="err">__</span><span class="n">FILE__</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="k">return</span><span class="w">  </span><span class="c">! bail out</span>
+<span class="w">    </span><span class="k">call </span><span class="n">NUOPC_CompSpecialize</span><span class="p">(</span><span class="n">drvr</span><span class="p">,</span><span class="w"> </span><span class="n">specLabel</span><span class="o">=</span><span class="n">label_SetRunSequence</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">specRoutine</span><span class="o">=</span><span class="n">SetRunSequence</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="k">file</span><span class="o">=</span><span class="err">__</span><span class="n">FILE__</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="k">return</span><span class="w">  </span><span class="c">! bail out</span>
+
+<span class="w">  </span><span class="k">end subroutine </span><span class="n">SetServices</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

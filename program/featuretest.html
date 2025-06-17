@@ -1,0 +1,1064 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>FeatureTest &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>FeatureTest      <small>Program</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.1% of total for programs.">64 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_FeatureUTest.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_featureutest.f90.html'>ESMF_FeatureUTest.F90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">FeatureTest</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/featuretest.html#variable-alloc_string7">alloc_string7</a>
+            <a class="list-group-item" href="../program/featuretest.html#variable-alloc_string7_array">alloc_string7_array</a>
+            <a class="list-group-item" href="../program/featuretest.html#variable-strings">strings</a>
+            <a class="list-group-item" href="../program/featuretest.html#variable-alloc_string">alloc_string</a>
+            <a class="list-group-item" href="../program/featuretest.html#variable-alloc_string_array">alloc_string_array</a>
+            <a class="list-group-item" href="../program/featuretest.html#variable-failmsg~170">failMsg</a>
+            <a class="list-group-item" href="../program/featuretest.html#variable-name~926">name</a>
+            <a class="list-group-item" href="../program/featuretest.html#variable-i~492">i</a>
+            <a class="list-group-item" href="../program/featuretest.html#variable-indicies~3">indicies</a>
+            <a class="list-group-item" href="../program/featuretest.html#variable-memstat~29">memstat</a>
+            <a class="list-group-item" href="../program/featuretest.html#variable-rc~3150">rc</a>
+            <a class="list-group-item" href="../program/featuretest.html#variable-result~171">result</a>
+            <a class="list-group-item" href="../program/featuretest.html#variable-tf~6">tf</a>
+            <a class="list-group-item" href="../program/featuretest.html#variable-tfs~3">tfs</a>
+            <a class="list-group-item" href="../program/featuretest.html#variable-a~12">a</a>
+            <a class="list-group-item" href="../program/featuretest.html#variable-b~4">b</a>
+            <a class="list-group-item" href="../program/featuretest.html#variable-c~4">c</a>
+            <a class="list-group-item" href="../program/featuretest.html#variable-dts~2">dts</a>
+            <a class="list-group-item" href="../program/featuretest.html#variable-tf_c">tf_c</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#inters-0"
+         aria-expanded="false" aria-controls="inters-0">
+         <h4 class="card-header bg-primary text-white">Interfaces</h4>
+      </a>
+      <div id="inters-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/featuretest.html#interface-esmc_present_test">ESMC_Present_test</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../program/featuretest.html#src">FeatureTest</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='../module/esmf.html'>ESMF</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf_featuretr15581subr_mod.html'>ESMF_FeatureTR15581Subr_mod</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf_testmod.html'>ESMF_TestMod</a></li>
+              </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    
+
+
+    <section>
+    <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-alloc_string7"></span>
+              character(len=7),
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>alloc_string7</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-alloc_string7_array"></span>
+              character(len=7),
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>alloc_string7_array</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-strings"></span>
+              character(len=8),
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>strings</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-alloc_string"></span>
+              character(len=:),
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>alloc_string</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-alloc_string_array"></span>
+              character(len=:),
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>alloc_string_array</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-failmsg~170"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>failMsg</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-name~926"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>name</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i~492"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-indicies~3"></span>
+              integer,
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>indicies</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-memstat~29"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>memstat</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~3150"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-result~171"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>result</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-tf~6"></span>
+              logical
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tf</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-tfs~3"></span>
+              logical,
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>tfs</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-a~12"></span>
+              real,
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>a</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-b~4"></span>
+              real,
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>b</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-c~4"></span>
+              real,
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>c</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dts~2"></span>
+              type(<a href='../type/esmf_allocdtype.html'>ESMF_AllocDType</a>),
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>dts</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-tf_c"></span>
+              type(<a href='../type/esmf_logical.html'>ESMF_Logical</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tf_c</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+    <section>
+   <h2>Interfaces</h2>
+       <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-esmc_present_test"></span>
+      <h3>        interface
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+     subroutine ESMC_Present_test(arg, present_val)  
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-arg"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>arg</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-present_val"></span>
+              type(<a href='../type/esmf_logical.html'>ESMF_Logical</a>),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>present_val</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+    </section>
+   <br>
+    
+
+    
+
+
+    
+
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">    </span><span class="k">program </span><span class="n">FeatureTest</span>
+<span class="w">    </span>
+<span class="cp">#include &quot;ESMF.h&quot;</span>
+
+<span class="w">    </span><span class="k">use </span><span class="n">ESMF</span>
+<span class="w">    </span><span class="k">use </span><span class="n">ESMF_TestMod</span>
+<span class="w">    </span><span class="k">use </span><span class="n">ESMF_FeatureTR15581Subr_mod</span>
+<span class="w">    </span><span class="k">implicit none</span>
+
+<span class="k">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="k">result</span>
+<span class="k">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="n">name</span>
+
+<span class="w">    </span><span class="kt">real</span><span class="p">,</span><span class="w">    </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">a</span><span class="p">(:),</span><span class="w"> </span><span class="n">b</span><span class="p">(:),</span><span class="w"> </span><span class="n">c</span><span class="p">(:)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">indicies</span><span class="p">(:)</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">,</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tfs</span><span class="p">(:)</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">strings</span><span class="p">(:)</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_AllocDType</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dts</span><span class="p">(:)</span>
+
+<span class="cp">#if !defined (ESMF_NO_F2003_ALLOC_STRING_LENS)</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">alloc_string</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="mi">7</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">alloc_string7</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">alloc_string_array</span><span class="p">(:)</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="mi">7</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">alloc_string7_array</span><span class="p">(:)</span>
+<span class="cp">#endif</span>
+
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Logical</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tf_c</span>
+<span class="w">    </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tf</span>
+
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">memstat</span>
+
+<span class="w">    </span><span class="k">interface</span>
+<span class="k">      subroutine </span><span class="n">ESMC_Present_test</span><span class="w"> </span><span class="p">(</span><span class="n">arg</span><span class="p">,</span><span class="w"> </span><span class="n">present_val</span><span class="p">)</span>
+<span class="w">        </span><span class="k">use </span><span class="n">ESMF</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">ESMF_Logical</span>
+<span class="w">        </span><span class="k">implicit none</span>
+<span class="k">        </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">arg</span>
+<span class="w">        </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Logical</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">present_val</span>
+<span class="w">      </span><span class="k">end subroutine</span>
+<span class="k">    end interface</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="c">! Tests for various Fortran features and implementation issues that ESMF</span>
+<span class="c">! depends on.</span>
+
+<span class="w">    </span><span class="k">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_TestStart</span><span class="p">(</span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="c">! Test to ensure that NULL is used for an OPTIONAL argument when the</span>
+<span class="c">! argument is not present.  NULL conforms to the value specified in</span>
+<span class="c">! Section 8.7 of Fortran TS 29113 (WG5/N1942 - 9/19/2012.)</span>
+
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! NEX_UTest</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fortran argument present in C test&quot;</span>
+<span class="w">    </span><span class="n">failMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Argument was not indicated as present when present&quot;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMC_Present_test</span><span class="w"> </span><span class="p">(</span><span class="n">arg</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="n">present_val</span><span class="o">=</span><span class="n">tf_c</span><span class="p">)</span>
+<span class="w">    </span><span class="n">tf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tf_c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_TRUE</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">(</span><span class="n">tf</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! NEX_UTest</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fortran argument not present in C test&quot;</span>
+<span class="w">    </span><span class="n">failMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Argument was indicated as present when not present&quot;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMC_Present_test</span><span class="w"> </span><span class="p">(</span><span class="n">present_val</span><span class="o">=</span><span class="n">tf_c</span><span class="p">)</span>
+<span class="w">    </span><span class="n">tf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tf_c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_TRUE</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">tf</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="c">! Test to ensure that the F95+TR15581 (and F2003) allocatable features are supported.</span>
+<span class="c">! These include:</span>
+<span class="c">!   - Allocatable derived type components</span>
+<span class="c">!   - Allocatable dummy arguments</span>
+<span class="c">!   - Allocatable function return values</span>
+
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! NEX_UTest</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fortran allocatable arguments call test&quot;</span>
+<span class="w">    </span><span class="n">failMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_FeatureAllocArg</span><span class="w"> </span><span class="p">(</span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">indicies</span><span class="p">,</span><span class="w"> </span><span class="n">tfs</span><span class="p">,</span><span class="w"> </span><span class="n">dts</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! NEX_UTest</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fortran allocatable arguments size test&quot;</span>
+<span class="w">    </span><span class="n">failMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Incorrect allocated size&quot;</span>
+<span class="w">    </span><span class="n">tf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">42</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="n">indicies</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">42</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="n">tfs</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">42</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="n">dts</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">42</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">merge</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_RC_ARG_SIZE</span><span class="p">,</span><span class="w"> </span><span class="n">tf</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">deallocate</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">indicies</span><span class="p">,</span><span class="w"> </span><span class="n">tfs</span><span class="p">,</span><span class="w"> </span><span class="n">dts</span><span class="p">)</span>
+
+
+<span class="w">    </span><span class="c">! TODO: Tests are currently disabled on older compilers - e.g., pre-4.6 gfortran,</span>
+<span class="w">    </span><span class="c">! and with Absoft, g95, and Lahey/Fujitsu due to lack of deferred-length allocatable</span>
+<span class="w">    </span><span class="c">! character string support.  Re-enable when ESMF support for these older compilers</span>
+<span class="w">    </span><span class="c">! is no longer required.</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! NEX_UTest</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fortran allocatable string scalar arguments call test&quot;</span>
+<span class="w">    </span><span class="n">failMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="cp">#if !defined (ESMF_NO_F2003_ALLOC_STRING_LENS)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_FeatureAllocArgStr</span><span class="w"> </span><span class="p">(</span><span class="mi">42</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">str_dllen</span><span class="o">=</span><span class="n">alloc_string</span><span class="p">,</span><span class="w"> </span><span class="n">str_pilen</span><span class="o">=</span><span class="n">alloc_string7</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Bypassed &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! NEX_UTest</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fortran allocatable string scalar arguments len test&quot;</span>
+<span class="w">    </span><span class="n">failMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Incorrect allocated string len&quot;</span>
+<span class="cp">#if !defined (ESMF_NO_F2003_ALLOC_STRING_LENS)</span>
+<span class="w">    </span><span class="n">tf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">len</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">42</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="nb">len</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string7</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">7</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">merge</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_RC_ARG_SIZE</span><span class="p">,</span><span class="w"> </span><span class="n">tf</span><span class="p">)</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Bypassed &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="cp">#if !defined (ESMF_NO_F2003_ALLOC_STRING_LENS)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">allocated</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string</span><span class="p">))</span><span class="w"> </span><span class="k">deallocate</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">allocated</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string7</span><span class="p">))</span><span class="w"> </span><span class="k">deallocate</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string7</span><span class="p">)</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#ifdef ESMF_TESTEXHAUSTIVE</span>
+
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+
+<span class="cp">#if 0</span>
+<span class="w">    </span><span class="c">! TODO: Tests are currently disabled because gfortran prior to v5.1 has issues with</span>
+<span class="w">    </span><span class="c">! arrays of deferred-length strings.  Re-enable when ESMF support for these older</span>
+<span class="w">    </span><span class="c">! compilers is no longer required.</span>
+
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! NEX_xxxUTest</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fortran allocatable string array arguments call test&quot;</span>
+<span class="w">    </span><span class="n">failMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="cp">#if !defined (ESMF_NO_F2003_ALLOC_STRING_LENS)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_FeatureAllocArgStr</span><span class="w"> </span><span class="p">(</span><span class="mi">42</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">str_dllensize</span><span class="o">=</span><span class="n">alloc_string_array</span><span class="p">,</span><span class="w"> </span><span class="n">str_pilensize</span><span class="o">=</span><span class="n">alloc_string7_array</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Bypassed &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! NEX_xxxUTest</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fortran allocatable string array arguments size test&quot;</span>
+<span class="w">    </span><span class="n">failMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Incorrect allocated string array size&quot;</span>
+<span class="cp">#if !defined (ESMF_NO_F2003_ALLOC_STRING_LENS)</span>
+<span class="w">    </span><span class="n">tf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string7_array</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">42</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string_array</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">42</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">merge</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_RC_ARG_SIZE</span><span class="p">,</span><span class="w"> </span><span class="n">tf</span><span class="p">)</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Bypassed &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! NEX_xxxUTest</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fortran allocatable string arguments len test&quot;</span>
+<span class="w">    </span><span class="n">failMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Incorrect allocated string len&quot;</span>
+<span class="cp">#if !defined (ESMF_NO_F2003_ALLOC_STRING_LENS)</span>
+<span class="w">    </span><span class="n">tf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">len</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string_array</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">42</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="nb">len</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string7_array</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">7</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">merge</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_RC_ARG_SIZE</span><span class="p">,</span><span class="w"> </span><span class="n">tf</span><span class="p">)</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Bypassed &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="cp">#if !defined (ESMF_NO_F2003_ALLOC_STRING_LENS)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">allocated</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string_array</span><span class="p">))</span><span class="w"> </span><span class="k">deallocate</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string_array</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">allocated</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string7_array</span><span class="p">))</span><span class="w"> </span><span class="k">deallocate</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string7_array</span><span class="p">)</span>
+<span class="cp">#endif</span>
+<span class="cp">#endif</span>
+
+<span class="w">    </span><span class="c">! NOTE: Some compilers may require a special command line argument for</span>
+<span class="w">    </span><span class="c">! the following tests to work.  This is needed to turn on the F2003</span>
+<span class="w">    </span><span class="c">! semantics for reassignment of allocatable arrays to different sizes</span>
+<span class="w">    </span><span class="c">! than originally allocated.  For example PGI requires -Mallocatable=03</span>
+<span class="w">    </span><span class="c">! and Intel requires -assume realloc_lhs.</span>
+
+<span class="w">    </span><span class="c">! TODO: Tests are currently disabled on older compilers - e.g., pre-4.6 gfortran,</span>
+<span class="w">    </span><span class="c">! and with Absoft, g95, and Lahey/Fujitsu due to lack of re-allocate on</span>
+<span class="w">    </span><span class="c">! assignment support.  Re-enable when ESMF support for these older compilers</span>
+<span class="w">    </span><span class="c">! is no longer required.</span>
+
+<span class="cp">#if 0</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! NEX_xxxUTest</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fortran allocatable function result test&quot;</span>
+<span class="w">    </span><span class="n">failMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">    </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FeatureAllocFRet</span><span class="w"> </span><span class="p">(</span><span class="mi">420</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! NEX_xxxUTest</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fortran allocatable function return size test&quot;</span>
+<span class="w">    </span><span class="n">failMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Incorrect allocated size&quot;</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">merge</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_RC_ARG_SIZE</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">420</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;result size (b) =&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! NEX_xxxUTest</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fortran re-allocate existing allocatable array via assignment test&quot;</span>
+<span class="w">    </span><span class="n">failMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Incorrect allocated size&quot;</span>
+<span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">merge</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_RC_ARG_SIZE</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">420</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;resized size (a) =&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! NEX_xxxUTest</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fortran allocate unallocated allocatable array via assignment test&quot;</span>
+<span class="w">    </span><span class="n">failMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Incorrect allocated size&quot;</span>
+<span class="w">    </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">merge</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_RC_ARG_SIZE</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">420</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;new size (c) =&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="cp">#endif</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="c">! F2003 allocatable deferred-length character string scalar support.</span>
+
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! EX_UTest</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fortran allocatable deferred-length string scalar assignment test&quot;</span>
+<span class="w">    </span><span class="n">failMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Did not return correct length&quot;</span>
+<span class="cp">#if !defined (ESMF_NO_F2003_ALLOC_STRING_LENS)</span>
+<span class="w">    </span><span class="n">alloc_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;123456&#39;</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">merge</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w"> </span><span class="nb">len</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Bypassed &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! EX_UTest</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fortran allocatable deferred-length string scalar deallocate test&quot;</span>
+<span class="w">    </span><span class="n">failMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Did not return success&quot;</span>
+<span class="cp">#if !defined (ESMF_NO_F2003_ALLOC_STRING_LENS)</span>
+<span class="w">    </span><span class="k">deallocate</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string</span><span class="p">,</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">memstat</span><span class="p">)</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">merge</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w"> </span><span class="n">memstat</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Bypassed &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! EX_UTest</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fortran allocatable deferred-length string scalar allocate test&quot;</span>
+<span class="w">    </span><span class="n">failMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Did not return success&quot;</span>
+<span class="cp">#if !defined (ESMF_NO_F2003_ALLOC_STRING_LENS)</span>
+<span class="w">    </span><span class="k">allocate</span><span class="w"> </span><span class="p">(</span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span><span class="kd">::</span><span class="n">alloc_string</span><span class="p">,</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">memstat</span><span class="p">)</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">merge</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w"> </span><span class="n">memstat</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Bypassed &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! EX_UTest</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fortran allocatable deferred-length string scalar allocate length test&quot;</span>
+<span class="w">    </span><span class="n">failMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Did not return success&quot;</span>
+<span class="cp">#if !defined (ESMF_NO_F2003_ALLOC_STRING_LENS)</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">merge</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w"> </span><span class="nb">len</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Bypassed &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="cp">#if !defined (ESMF_NO_F2003_ALLOC_STRING_LENS)</span>
+<span class="w">    </span><span class="k">deallocate</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string</span><span class="p">)</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+
+<span class="cp">#if 0</span>
+<span class="w">    </span><span class="c">! TODO: Tests are currently disabled because gfortran prior to v5.1 has issues with</span>
+<span class="w">    </span><span class="c">! arrays of deferred-length strings.  Re-enable when ESMF support for these older</span>
+<span class="w">    </span><span class="c">! compilers is no longer required.</span>
+
+
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! EX_xxxUTest</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fortran allocatable deferred-length string array assignment test&quot;</span>
+<span class="w">    </span><span class="n">failMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Did not return correct length&quot;</span>
+<span class="cp">#if !defined (ESMF_NO_F2003_ALLOC_STRING_LENS)</span>
+<span class="w">    </span><span class="n">alloc_string_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="o">/</span><span class="w"> </span><span class="s1">&#39;123456&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;789012&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;345678&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;901234&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;567890&#39;</span><span class="w"> </span><span class="o">/</span><span class="p">)</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">merge</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w"> </span><span class="nb">len</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string_array</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Bypassed &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! EX_xxxUTest</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fortran allocatable deferred-length string array size test&quot;</span>
+<span class="w">    </span><span class="n">failMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Did not return correct length&quot;</span>
+<span class="cp">#if !defined (ESMF_NO_F2003_ALLOC_STRING_LENS)</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">merge</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string_array</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Bypassed &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! EX_xxxUTest</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fortran allocatable deferred-length string array deallocate test&quot;</span>
+<span class="w">    </span><span class="n">failMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Did not return success&quot;</span>
+<span class="cp">#if !defined (ESMF_NO_F2003_ALLOC_STRING_LENS)</span>
+<span class="w">    </span><span class="k">deallocate</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string_array</span><span class="p">,</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">memstat</span><span class="p">)</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">merge</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w"> </span><span class="n">memstat</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Bypassed &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! EX_xxxUTest</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fortran allocatable deferred-length string array allocate test&quot;</span>
+<span class="w">    </span><span class="n">failMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Did not return success&quot;</span>
+<span class="cp">#if !defined (ESMF_NO_F2003_ALLOC_STRING_LENS)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">allocated</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string_array</span><span class="p">))</span><span class="w"> </span><span class="k">deallocate</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string_array</span><span class="p">)</span>
+<span class="w">    </span><span class="k">allocate</span><span class="w"> </span><span class="p">(</span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span><span class="kd">::</span><span class="n">alloc_string_array</span><span class="p">(</span><span class="mi">24</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">memstat</span><span class="p">)</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">merge</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w"> </span><span class="n">memstat</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Bypassed &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! EX_xxxUTest</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fortran allocatable deferred-length string array allocate length test&quot;</span>
+<span class="w">    </span><span class="n">failMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Did not return success&quot;</span>
+<span class="cp">#if !defined (ESMF_NO_F2003_ALLOC_STRING_LENS)</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">merge</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w"> </span><span class="nb">len</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string_array</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span>
+<span class="w">    </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Expected string length of 42, returned&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">len</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string_array</span><span class="p">)</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Bypassed &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! EX_xxxUTest</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fortran allocatable deferred-length string array allocate size test&quot;</span>
+<span class="w">    </span><span class="n">failMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Did not return success&quot;</span>
+<span class="cp">#if !defined (ESMF_NO_F2003_ALLOC_STRING_LENS)</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">merge</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string_array</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">24</span><span class="p">)</span>
+<span class="w">    </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Expected string array size of 24, returned&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string_array</span><span class="p">)</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Bypassed &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="cp">#if !defined (ESMF_NO_F2003_ALLOC_STRING_LENS)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">allocated</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string_array</span><span class="p">))</span><span class="w"> </span><span class="k">deallocate</span><span class="w"> </span><span class="p">(</span><span class="n">alloc_string_array</span><span class="p">)</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="cp">#endif</span>
+
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+
+
+<span class="cp">#endif</span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_TestEnd</span><span class="p">(</span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">end program </span><span class="n">FeatureTest</span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

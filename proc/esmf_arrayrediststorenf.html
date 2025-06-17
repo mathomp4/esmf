@@ -1,0 +1,548 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_ArrayRedistStoreNF &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_ArrayRedistStoreNF
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.0% of total for procedures.">30 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_ArrayHa.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_arrayha.f90.html'>ESMF_ArrayHa.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/esmf_arrayhamod.html'>ESMF_ArrayHaMod</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_ArrayRedistStoreNF</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/esmf_arrayrediststorenf.html#src">ESMF_ArrayRedistStoreNF</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>private  subroutine ESMF_ArrayRedistStoreNF(srcArray, dstArray, routehandle, keywordEnforcer, srcToDstTransposeMap, ignoreUnmatchedIndices, pipelineDepth, rc)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srcarray~100"></span>
+              type(ESMF_Array),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>srcArray</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dstarray~105"></span>
+              type(ESMF_Array),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dstArray</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-routehandle~153"></span>
+              type(<a href='../type/esmf_routehandle.html'>ESMF_RouteHandle</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>routehandle</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-keywordenforcer~1051"></span>
+              type(<a href='../type/esmf_keywordenforcer.html'>ESMF_KeywordEnforcer</a>),
+            </td>
+<td></td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>keywordEnforcer</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srctodsttransposemap~21"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>srcToDstTransposeMap</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ignoreunmatchedindices~47"></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ignoreUnmatchedIndices</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pipelinedepth~32"></span>
+              integer,
+            </td>
+<td>intent(inout),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>pipelineDepth</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~3457"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">  </span><span class="k">subroutine </span><span class="n">ESMF_ArrayRedistStoreNF</span><span class="p">(</span><span class="n">srcArray</span><span class="p">,</span><span class="w"> </span><span class="n">dstArray</span><span class="p">,</span><span class="w"> </span><span class="n">routehandle</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">keywordEnforcer</span><span class="p">,</span><span class="w"> </span><span class="n">srcToDstTransposeMap</span><span class="p">,</span><span class="w"> </span><span class="n">ignoreUnmatchedIndices</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">pipelineDepth</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!</span>
+<span class="c">! !ARGUMENTS:</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Array</span><span class="p">),</span><span class="w">       </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">srcArray</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Array</span><span class="p">),</span><span class="w">       </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">           </span><span class="kd">::</span><span class="w"> </span><span class="n">dstArray</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_RouteHandle</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">           </span><span class="kd">::</span><span class="w"> </span><span class="n">routehandle</span>
+<span class="k">type</span><span class="p">(</span><span class="n">ESMF_KeywordEnforcer</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="kd">::</span><span class="w"> </span><span class="n">keywordEnforcer</span><span class="w"> </span><span class="c">! must use keywords below</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">                </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">srcToDstTransposeMap</span><span class="p">(:)</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">,</span><span class="w">                </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ignoreUnmatchedIndices</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">                </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">pipelineDepth</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">                </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w">   </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+<span class="c">!</span>
+<span class="c">! !STATUS:</span>
+<span class="c">! \begin{itemize}</span>
+<span class="c">! \item\apiStatusCompatibleVersion{5.2.0r}</span>
+<span class="c">! \item\apiStatusModifiedSinceVersion{5.2.0r}</span>
+<span class="c">! \begin{description}</span>
+<span class="c">! \item[6.1.0] Added argument {\tt pipelineDepth}.</span>
+<span class="c">!              The new argument provide access to the tuning parameter</span>
+<span class="c">!              affecting the sparse matrix execution.</span>
+<span class="c">! \item[7.0.0] Added argument {\tt transposeRoutehandle} to allow a handle to</span>
+<span class="c">!              the transposed redist operation to be returned.\newline</span>
+<span class="c">!              Added argument {\tt ignoreUnmatchedIndices} to support situations </span>
+<span class="c">!              where not all elements between source and destination Arrays </span>
+<span class="c">!              match.</span>
+<span class="c">! \item[7.1.0r] Removed argument {\tt transposeRoutehandle} and provide it</span>
+<span class="c">!              via interface overloading instead. This allows argument </span>
+<span class="c">!              {\tt srcArray} to stay strictly intent(in) for this entry point.</span>
+<span class="c">! \end{description}</span>
+<span class="c">! \end{itemize}</span>
+<span class="c">!</span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">! \label{ArrayRedistStoreNF}</span>
+<span class="c">! {\tt ESMF\_ArrayRedistStore()} is a collective method across all PETs of the</span>
+<span class="c">! current Component. The interface of the method is overloaded, allowing </span>
+<span class="c">! -- in principle -- each PET to call into {\tt ESMF\_ArrayRedistStore()}</span>
+<span class="c">! through a different entry point. Restrictions apply as to which combinations</span>
+<span class="c">! are sensible. All other combinations result in ESMF run time errors. The</span>
+<span class="c">! complete semantics of the {\tt ESMF\_ArrayRedistStore()} method, as provided</span>
+<span class="c">! through the separate entry points shown in \ref{ArrayRedistStoreTK} and</span>
+<span class="c">! \ref{ArrayRedistStoreNF}, is described in the following paragraphs as a whole.</span>
+<span class="c">!</span>
+<span class="c">! Store an Array redistribution operation from {\tt srcArray} to {\tt dstArray}.</span>
+<span class="c">! Interface \ref{ArrayRedistStoreTK} allows PETs to specify a {\tt factor}</span>
+<span class="c">! argument. PETs not specifying a {\tt factor} argument call into interface</span>
+<span class="c">! \ref{ArrayRedistStoreNF}. If multiple PETs specify the {\tt factor} argument,</span>
+<span class="c">! its type and kind, as well as its value must match across all PETs. If none</span>
+<span class="c">! of the PETs specify a {\tt factor} argument the default will be a factor of</span>
+<span class="c">! 1. The resulting factor is applied to all of the source data during</span>
+<span class="c">! redistribution, allowing scaling of the data, e.g. for unit transformation.</span>
+<span class="c">!</span>
+<span class="c">! Both {\tt srcArray} and {\tt dstArray} are interpreted as sequentialized </span>
+<span class="c">! vectors. The sequence is defined by the order of DistGrid dimensions and the</span>
+<span class="c">! order of tiles within the DistGrid or by user-supplied arbitrary sequence</span>
+<span class="c">! indices. See section \ref{Array:SparseMatMul} for details on the definition</span>
+<span class="c">! of {\em sequence indices}.</span>
+<span class="c">!</span>
+<span class="c">! Source Array, destination Array, and the factor may be of different</span>
+<span class="c">! &lt;type&gt;&lt;kind&gt;. Further, source and destination Arrays may differ in shape,</span>
+<span class="c">! however, the number of elements must match. </span>
+<span class="c">!</span>
+<span class="c">! The default redistribution operation, when {\tt srcToDstTransposeMap} is not</span>
+<span class="c">! specified, corresponds to the identity mapping: each element of the</span>
+<span class="c">! sequentialized source Array is copied to the sequentialized</span>
+<span class="c">! destination Array element in order.</span>
+<span class="c">!</span>
+<span class="c">! \begin{sloppypar}</span>
+<span class="c">! If the {\tt srcToDstTransposeMap} argument is provided it must be identical</span>
+<span class="c">! across all PETs. The {\tt srcToDstTransposeMap} allows source and destination</span>
+<span class="c">! Array dimensions to be transposed during the redistribution. To support this</span>
+<span class="c">! option, the number of source and destination Array dimensions must be equal</span>
+<span class="c">! and the size of the associated dimensions must match.</span>
+<span class="c">! See section \ref{Array:Redist:TransposeMode} for more details about the</span>
+<span class="c">! use of the {\tt srcToDstTransposeMap} argument.</span>
+<span class="c">! \end{sloppypar}</span>
+<span class="c">!</span>
+<span class="c">! It is erroneous to specify the identical Array object for {\tt srcArray} and</span>
+<span class="c">! {\tt dstArray} arguments. </span>
+<span class="c">!</span>
+<span class="c">!   The routine returns an {\tt ESMF\_RouteHandle} that can be used to call </span>
+<span class="c">!   {\tt ESMF\_ArrayRedist()} on any pair of Arrays that matches </span>
+<span class="c">!   {\tt srcArray} and {\tt dstArray} in {\em type}, {\em kind}, and </span>
+<span class="c">!   memory layout of the {\em distributed} dimensions. However, the size,</span>
+<span class="c">!   number, and index order of {\em undistributed} dimensions may be different.</span>
+<span class="c">!   See section \ref{RH:Reusability} for a more detailed discussion of</span>
+<span class="c">!   RouteHandle reusability.</span>
+<span class="c">!</span>
+<span class="c">! This call is {\em collective} across the current VM.  </span>
+<span class="c">!</span>
+<span class="c">!   \begin{description}</span>
+<span class="c">!</span>
+<span class="c">!   \item [srcArray]</span>
+<span class="c">!     {\tt ESMF\_Array} with source data.</span>
+<span class="c">!</span>
+<span class="c">!   \item [dstArray]</span>
+<span class="c">!     {\tt ESMF\_Array} with destination data. The data in this Array may be</span>
+<span class="c">!     destroyed by this call.</span>
+<span class="c">!</span>
+<span class="c">!   \item [routehandle]</span>
+<span class="c">!     Handle to the precomputed Route.</span>
+<span class="c">!</span>
+<span class="c">!   \item [{[srcToDstTransposeMap]}]</span>
+<span class="c">!     A list with as many entries as there are dimensions in {\tt srcArray}, or</span>
+<span class="c">!     {\tt tileCount} times this many entries.</span>
+<span class="c">!     Each entry maps the corresponding {\tt srcArray} dimension against the</span>
+<span class="c">!     specified {\tt dstArray} dimension. Mixing distributed and</span>
+<span class="c">!     undistributed dimensions is supported.</span>
+<span class="c">!     Negative entries reverse the order of elements along the specified</span>
+<span class="c">!     dimension when going from source to destination.</span>
+<span class="c">!     When providing $rank \times tileCount$ elements in</span>
+<span class="c">!     {\tt srcToDstTransposeMap},  each block of size {\tt rank} is associated</span>
+<span class="c">!     with the corresponding tile (in order), and interpreted as the</span>
+<span class="c">!     tile-specific transpose map.</span>
+<span class="c">!</span>
+<span class="c">!   \item [{[ignoreUnmatchedIndices]}]</span>
+<span class="c">!     A logical flag that affects the behavior for when not all elements match</span>
+<span class="c">!     between the {\tt srcArray} and {\tt dstArray} side. The default setting</span>
+<span class="c">!     is {\tt .false.}, indicating that it is an error when such a situation is </span>
+<span class="c">!     encountered. Setting {\tt ignoreUnmatchedIndices} to {\tt .true.} ignores</span>
+<span class="c">!     unmatched indices.</span>
+<span class="c">!</span>
+<span class="c">!   \item [{[pipelineDepth]}]</span>
+<span class="c">!     The {\tt pipelineDepth} parameter controls how many messages a PET</span>
+<span class="c">!     may have outstanding during a redist exchange. Larger values</span>
+<span class="c">!     of {\tt pipelineDepth} typically lead to better performance. However,</span>
+<span class="c">!     on some systems too large a value may lead to performance degradation,</span>
+<span class="c">!     or runtime errors.</span>
+<span class="c">!</span>
+<span class="c">!     Note that the pipeline depth has no effect on the bit-for-bit</span>
+<span class="c">!     reproducibility of the results. However, it may affect the performance</span>
+<span class="c">!     reproducibility of the exchange.</span>
+<span class="c">!</span>
+<span class="c">!     The {\tt ESMF\_ArraySMMStore()} method implements an auto-tuning scheme</span>
+<span class="c">!     for the {\tt pipelineDepth} parameter. The intent on the </span>
+<span class="c">!     {\tt pipelineDepth} argument is &quot;{\tt inout}&quot; in order to </span>
+<span class="c">!     support both overriding and accessing the auto-tuning parameter.</span>
+<span class="c">!     If an argument $&gt;= 0$ is specified, it is used for the </span>
+<span class="c">!     {\tt pipelineDepth} parameter, and the auto-tuning phase is skipped.</span>
+<span class="c">!     In this case the {\tt pipelineDepth} argument is not modified on</span>
+<span class="c">!     return. If the provided argument is $&lt; 0$, the {\tt pipelineDepth}</span>
+<span class="c">!     parameter is determined internally using the auto-tuning scheme. In this</span>
+<span class="c">!     case the {\tt pipelineDepth} argument is re-set to the internally</span>
+<span class="c">!     determined value on return. Auto-tuning is also used if the optional </span>
+<span class="c">!     {\tt pipelineDepth} argument is omitted.</span>
+<span class="c">!</span>
+<span class="c">!   \item [{[rc]}]</span>
+<span class="c">!     Return code; equals {\tt ESMF\_SUCCESS} if there are no errors.</span>
+<span class="c">!   \end{description}</span>
+<span class="c">!</span>
+<span class="c">!EOP</span>
+<span class="c">!------------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">               </span><span class="kd">::</span><span class="w"> </span><span class="n">localrc</span><span class="w">                  </span><span class="c">! local return code</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_InterArray</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">srcToDstTransposeMapArg</span><span class="w">  </span><span class="c">! index helper</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Logical</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">opt_ignoreUnmatched</span><span class="w">      </span><span class="c">! helper variable</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">allocatable</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">dstToSrcTransposeMap</span><span class="p">(:)</span><span class="w">  </span><span class="c">! helper variable</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">               </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span>
+
+<span class="w">    </span><span class="c">! initialize return code; assume routine not implemented</span>
+<span class="w">    </span><span class="n">localrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c">! Check init status of arguments</span>
+<span class="w">    </span><span class="n">ESMF_INIT_CHECK_DEEP</span><span class="p">(</span><span class="n">ESMF_ArrayGetInit</span><span class="p">,</span><span class="w"> </span><span class="n">srcArray</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="n">ESMF_INIT_CHECK_DEEP</span><span class="p">(</span><span class="n">ESMF_ArrayGetInit</span><span class="p">,</span><span class="w"> </span><span class="n">dstArray</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">! Deal with (optional) array arguments</span>
+<span class="w">    </span><span class="n">srcToDstTransposeMapArg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_InterArrayCreate</span><span class="p">(</span><span class="n">srcToDstTransposeMap</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">    </span><span class="c">! Set default flags</span>
+<span class="w">    </span><span class="n">opt_ignoreUnmatched</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FALSE</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">ignoreUnmatchedIndices</span><span class="p">))</span><span class="w"> </span><span class="n">opt_ignoreUnmatched</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ignoreUnmatchedIndices</span>
+
+<span class="w">    </span><span class="c">! Call into the C++ interface, which will sort out optional arguments</span>
+<span class="w">    </span><span class="k">call </span><span class="n">c_ESMC_ArrayRedistStoreNF</span><span class="p">(</span><span class="n">srcArray</span><span class="p">,</span><span class="w"> </span><span class="n">dstArray</span><span class="p">,</span><span class="w"> </span><span class="n">routehandle</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">srcToDstTransposeMapArg</span><span class="p">,</span><span class="w"> </span><span class="n">opt_ignoreUnmatched</span><span class="p">,</span><span class="w"> </span><span class="n">pipelineDepth</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c">! Mark routehandle object as being created</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_RouteHandleSetInitCreated</span><span class="p">(</span><span class="n">routehandle</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c">! garbage collection</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_InterArrayDestroy</span><span class="p">(</span><span class="n">srcToDstTransposeMapArg</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">    </span><span class="c">! return successfully</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+
+<span class="w">  </span><span class="k">end subroutine </span><span class="n">ESMF_ArrayRedistStoreNF</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

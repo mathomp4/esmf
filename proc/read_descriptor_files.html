@@ -1,0 +1,851 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>read_descriptor_files &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>read_descriptor_files
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.1% of total for procedures.">275 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_TestHarnessParser.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_testharnessparser.f90.html'>ESMF_TestHarnessParser.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/esmf_testharnessparser.html'>ESMF_TestHarnessParser</a></li>
+            <li class="breadcrumb-item active" aria-current="page">read_descriptor_files</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/read_descriptor_files.html#src">read_descriptor_files</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  subroutine read_descriptor_files(srcPath, numRecords, rcrd, rc)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srcpath~4"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>srcPath</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-numrecords"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>numRecords</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rcrd"></span>
+              type(<a href='../type/problem_descriptor_records.html'>problem_descriptor_records</a>),
+            </td>
+<td></td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>rcrd</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~4045"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">  </span><span class="k">subroutine </span><span class="n">read_descriptor_files</span><span class="p">(</span><span class="n">srcPath</span><span class="p">,</span><span class="w"> </span><span class="n">numRecords</span><span class="p">,</span><span class="n">rcrd</span><span class="p">,</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!-------------------------------------------------------------------------------</span>
+<span class="c">!</span>
+<span class="c">! !ARGUMENTS:</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w">                 </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">srcPath</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w">                          </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">numRecords</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">problem_descriptor_records</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w">     </span><span class="kd">::</span><span class="w"> </span><span class="n">rcrd</span><span class="p">(:)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w">                          </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+
+<span class="c">!</span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">! This routine takes the problem descriptor file names specified in the top</span>
+<span class="c">! level config file &quot;test_harness.rc&quot; and extracts from a config table the</span>
+<span class="c">! &quot;problem descriptor string&quot; and all the &quot;problem specifier files.&quot; These</span>
+<span class="c">! helper files are divided into groups by flags preceeded by a dash. The</span>
+<span class="c">! &quot;-c&quot; flag (currently not implemented) indicates file(s) containing the CLASS</span>
+<span class="c">! specific settings. The &quot;-d&quot; flag indicates the file(s) containing an ensemble</span>
+<span class="c">! of distribution configurations to be run with the specific &quot;problem descriptor</span>
+<span class="c">! string.&quot; Likewise the &quot;-g&quot; flag indicates the file(s) containing an ensemble</span>
+<span class="c">! of grid configurations to be run with the specific &quot;problem descriptor string.&quot;</span>
+<span class="c">! This routine only extracts the information from the configuration file,</span>
+<span class="c">! additional processing occurs in a later routine.</span>
+<span class="c">!</span>
+<span class="c">! Upon completion, the routine returns the values to a public record</span>
+
+<span class="c">!   har%rcrd(n)%numStrings      number of problem descriptor strings in</span>
+<span class="c">!                               the n&#39;th problem descriptor file.</span>
+
+<span class="c">!   har%rcrd(n)%str(k)%pds   k&#39;th problem descriptor from the n&#39;th</span>
+<span class="c">!                               problem descriptor file.</span>
+<span class="c">!</span>
+<span class="c">!   har%rcrd(n)%str(k)%nDfiles   number of distribution specifier files</span>
+
+<span class="c">!   har%rcrd(n)%str(k)%Dfiles(l)%filename   filename string for</span>
+<span class="c">!                                        the l&#39;th distribution specifier file</span>
+<span class="c">!                                        associated with the k&#39;th problem descriptor</span>
+<span class="c">!                                        string, located in the n&#39;th problem</span>
+<span class="c">!                                        descriptor file.</span>
+<span class="c">!</span>
+<span class="c">!   har%rcrd(n)%str(k)%nGfiles        number of grid specifier files</span>
+<span class="c">!</span>
+<span class="c">!   har%rcrd(n)%str(k)%Gfile(l)%filename   filename string for</span>
+<span class="c">!                                        the l&#39;th grid specifier file associated</span>
+<span class="c">!                                        with the k&#39;th problem descriptor string</span>
+<span class="c">!                                        located in the n&#39;th problem descriptor</span>
+<span class="c">!                                        file.</span>
+<span class="c">!===============================================================================</span>
+
+<span class="w">  </span><span class="c">! local ESMF types</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Config</span><span class="p">)</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="n">localcf</span>
+
+<span class="w">  </span><span class="c">! local parameters</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="n">THARN_MAXSTR</span><span class="p">),</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">descriptor_label</span><span class="w">      </span><span class="p">&amp;</span>
+<span class="w">                                               </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;problem_descriptor_string::&quot;</span>
+
+<span class="w">  </span><span class="c">! local character types</span>
+<span class="w">  </span><span class="k">type</span><span class="w"> </span><span class="p">(</span><span class="n">sized_char_array</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ltmpstring</span><span class="p">(:),</span><span class="w"> </span><span class="n">lstring</span><span class="p">(:)</span>
+
+<span class="w">  </span><span class="c">! local character strings</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="n">THARN_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">lfilename</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="n">THARN_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ltmp</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="n">THARN_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">lchar</span><span class="p">,</span><span class="w"> </span><span class="n">lchar1</span><span class="p">,</span><span class="w"> </span><span class="n">lchar2</span>
+
+<span class="w">  </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">flag</span>
+
+<span class="c">! local integer variables</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">nn</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="n">kcol</span><span class="p">,</span><span class="w"> </span><span class="n">ncount</span><span class="p">,</span><span class="w"> </span><span class="n">npds</span><span class="p">,</span><span class="w"> </span><span class="n">ntmp</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">kfile</span><span class="p">,</span><span class="w"> </span><span class="n">kstr</span><span class="p">,</span><span class="w"> </span><span class="n">pstring</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cpos</span><span class="p">,</span><span class="w"> </span><span class="n">dpos</span><span class="p">,</span><span class="w"> </span><span class="n">gpos</span><span class="p">,</span><span class="w"> </span><span class="n">csize</span><span class="p">,</span><span class="w"> </span><span class="n">dsize</span><span class="p">,</span><span class="w"> </span><span class="n">gsize</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">kcount</span><span class="p">(:),</span><span class="w"> </span><span class="n">ncolumns</span><span class="p">(:),</span><span class="w"> </span><span class="n">nstrings</span><span class="p">(:)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">pds_loc</span><span class="p">(:),</span><span class="w"> </span><span class="n">pds_flag</span><span class="p">(:)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localrc</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">allocRcToTest</span>
+
+<span class="c">! local logical variable</span>
+<span class="w">  </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">endflag</span>
+<span class="w">  </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cflag</span><span class="p">,</span><span class="w"> </span><span class="n">dflag</span><span class="p">,</span><span class="w"> </span><span class="n">gflag</span>
+
+<span class="w">  </span><span class="c">! initialize return flag</span>
+<span class="w">  </span><span class="n">localrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+<span class="w">  </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! open each problem descriptor and extract the contents of the table</span>
+<span class="w">  </span><span class="c">! containing the problem descriptor strings and the specifier filenames</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="k">allocate</span><span class="p">(</span><span class="w"> </span><span class="n">nstrings</span><span class="p">(</span><span class="n">numRecords</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer array &quot;</span><span class="o">//</span><span class="w">             </span><span class="p">&amp;</span>
+<span class="w">     </span><span class="s2">&quot; nstrings in read_descriptor_files&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">  endif</span>
+
+<span class="k">  do </span><span class="n">kfile</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">numRecords</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! create a new config handle for reading problem descriptor strings</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="n">localcf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_ConfigCreate</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;cannot create config object&quot;</span><span class="p">,</span><span class="w">          </span><span class="p">&amp;</span>
+<span class="w">                         </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! load file holding the problem descriptor strings</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="n">lfilename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">rcrd</span><span class="p">(</span><span class="n">kfile</span><span class="p">)%</span><span class="n">filename</span><span class="p">))</span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_ConfigLoadFile</span><span class="p">(</span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">lfilename</span><span class="p">)),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">CheckError</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">FILE__</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;cannot load config file &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">           </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">lfilename</span><span class="p">)),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! Search for the problem descriptor string table</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_ConfigFindLabel</span><span class="p">(</span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">descriptor_label</span><span class="p">)),</span><span class="w">        </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">CheckError</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">FILE__</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;cannot find config label &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">          </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">descriptor_label</span><span class="p">)),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! determine the number of entries</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_ConfigGetDim</span><span class="p">(</span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="n">nstrings</span><span class="p">(</span><span class="n">kfile</span><span class="p">),</span><span class="w"> </span><span class="n">ntmp</span><span class="p">,</span><span class="w">                     </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">label</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">descriptor_label</span><span class="p">)),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">CheckError</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">FILE__</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;cannot get descriptor table size in &quot;</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot;file &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">lfilename</span><span class="p">)),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! determine that the table has entries before preceeding</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">nstrings</span><span class="p">(</span><span class="n">kfile</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">le</span><span class="p">.</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;problem descriptor table empty&quot;</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; in file &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">lfilename</span><span class="p">)),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">return</span>
+<span class="k">    endif</span>
+
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! extract column lengths of the table to determine the number of specifier files</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_ConfigFindLabel</span><span class="p">(</span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">descriptor_label</span><span class="p">)),</span><span class="w">        </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">CheckError</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">FILE__</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;cannot find config label&quot;</span><span class="w"> </span><span class="o">//</span><span class="w">           </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">descriptor_label</span><span class="p">)),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    allocate</span><span class="p">(</span><span class="w"> </span><span class="n">ncolumns</span><span class="p">(</span><span class="n">nstrings</span><span class="p">(</span><span class="n">kfile</span><span class="p">)),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer array &quot;</span><span class="o">//</span><span class="w">           </span><span class="p">&amp;</span>
+<span class="w">       </span><span class="s2">&quot; nstrings in read_descriptor_files&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    endif</span>
+<span class="k">    allocate</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">ltmpstring</span><span class="p">(</span><span class="n">nstrings</span><span class="p">(</span><span class="n">kfile</span><span class="p">)),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;type &quot;</span><span class="o">//</span><span class="w">                    </span><span class="p">&amp;</span>
+<span class="w">       </span><span class="s2">&quot; ltmpstring in read_descriptor_files&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    endif</span>
+
+<span class="k">    do </span><span class="n">kstr</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">nstrings</span><span class="p">(</span><span class="n">kfile</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_ConfigNextLine</span><span class="p">(</span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="n">tableEnd</span><span class="o">=</span><span class="n">flag</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">CheckError</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">FILE__</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;cannot advance to the next line of&quot;</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="o">//</span><span class="s2">&quot; the table &quot;</span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">descriptor_label</span><span class="p">))</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; in file &quot;</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">lfilename</span><span class="p">)),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">      </span><span class="n">ncolumns</span><span class="p">(</span><span class="n">kstr</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_ConfigGetLen</span><span class="p">(</span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">ncolumns</span><span class="p">(</span><span class="n">kstr</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">lt</span><span class="p">.</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        write</span><span class="p">(</span><span class="n">lchar</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w">  </span><span class="n">kstr</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;problem reading line &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">     </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">lchar</span><span class="p">))</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; of table in file &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">               </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">lfilename</span><span class="p">)),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span>
+<span class="k">      endif</span>
+
+<span class="w">      </span><span class="c">!-------------------------------------------------------------------------</span>
+<span class="w">      </span><span class="c">! allocate tempory storage so that the file needs to be read only once</span>
+<span class="w">      </span><span class="c">!-------------------------------------------------------------------------</span>
+<span class="w">      </span><span class="k">allocate</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">ltmpstring</span><span class="p">(</span><span class="n">kstr</span><span class="p">)%</span><span class="n">tag</span><span class="p">(</span><span class="w"> </span><span class="n">ncolumns</span><span class="p">(</span><span class="n">kstr</span><span class="p">)</span><span class="w"> </span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;type &quot;</span><span class="o">//</span><span class="w">                  </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="s2">&quot; ltmpstring in read_descriptor_files&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      endif</span>
+<span class="k">      </span><span class="n">ltmpstring</span><span class="p">(</span><span class="n">kstr</span><span class="p">)%</span><span class="n">tagsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ncolumns</span><span class="p">(</span><span class="n">kstr</span><span class="p">)</span>
+<span class="w">    </span><span class="k">enddo</span><span class="w">    </span><span class="c">! end string</span>
+
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! Starting again at the top of the table, extract the table contents into</span>
+<span class="w">    </span><span class="c">! a local character array structure for later processing</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_ConfigFindLabel</span><span class="p">(</span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">descriptor_label</span><span class="p">)),</span><span class="w">        </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">CheckError</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">FILE__</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">,</span><span class="w">                                         </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="s2">&quot;cannot find config label &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">descriptor_label</span><span class="p">)),</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    do </span><span class="n">kstr</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">nstrings</span><span class="p">(</span><span class="n">kfile</span><span class="p">)</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! copy the table into a character array</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_ConfigNextLine</span><span class="p">(</span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="n">tableEnd</span><span class="o">=</span><span class="n">flag</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">CheckError</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">FILE__</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;cannot advance to the next line &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="s2">&quot;of table &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">descriptor_label</span><span class="p">))</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; in file &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">lfilename</span><span class="p">)),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">      do </span><span class="n">kcol</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">ncolumns</span><span class="p">(</span><span class="n">kstr</span><span class="p">)</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_ConfigGetAttribute</span><span class="p">(</span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="n">ltmp</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">lchar</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">kstr</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">CheckError</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">FILE__</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;cannot get table entry from line &quot;</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustl</span><span class="p">(</span><span class="n">lchar</span><span class="p">))</span><span class="w"> </span><span class="o">//</span><span class="w">  </span><span class="s2">&quot; column &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">char</span><span class="p">(</span><span class="n">kcol</span><span class="p">)</span><span class="w">  </span><span class="o">//</span><span class="w">       </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="s2">&quot;of file &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">lfilename</span><span class="p">)),</span><span class="w">                        </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">         </span><span class="n">ltmpstring</span><span class="p">(</span><span class="n">kstr</span><span class="p">)%</span><span class="n">tag</span><span class="p">(</span><span class="n">kcol</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="w"> </span><span class="n">ltmp</span><span class="w"> </span><span class="p">)</span>
+<span class="w">      </span><span class="k">enddo</span><span class="w">     </span><span class="c">! end col</span>
+<span class="w">    </span><span class="k">enddo</span><span class="w">       </span><span class="c">! end string</span>
+
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! count the number of actual problem descriptor strings &amp; continuation lines</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="n">ncount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="n">npds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="k">allocate</span><span class="p">(</span><span class="w"> </span><span class="n">pds_flag</span><span class="p">(</span><span class="n">nstrings</span><span class="p">(</span><span class="n">kfile</span><span class="p">)),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;type &quot;</span><span class="o">//</span><span class="w">                    </span><span class="p">&amp;</span>
+<span class="w">       </span><span class="s2">&quot; pdf_flag in read_descriptor_files&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    endif</span>
+
+<span class="k">    do </span><span class="n">kstr</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">nstrings</span><span class="p">(</span><span class="n">kfile</span><span class="p">)</span>
+<span class="w">       </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">ltmpstring</span><span class="p">(</span><span class="n">kstr</span><span class="p">)%</span><span class="n">tag</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">string</span><span class="p">))</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="s2">&quot;&amp;&quot;</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">         </span><span class="n">pds_flag</span><span class="p">(</span><span class="n">kstr</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">         </span><span class="n">npds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">npds</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">       </span><span class="k">else</span>
+<span class="k">         </span><span class="n">ncount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ncount</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">         </span><span class="n">pds_flag</span><span class="p">(</span><span class="n">kstr</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">       </span><span class="k">endif</span>
+<span class="k">    enddo</span><span class="w">     </span><span class="c">! end string</span>
+<span class="w">    </span><span class="c">! sanity check</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="n">npds</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ncount</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">nstrings</span><span class="p">(</span><span class="n">kfile</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      write</span><span class="p">(</span><span class="n">lchar</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w">  </span><span class="n">nstrings</span><span class="p">(</span><span class="n">kfile</span><span class="p">)</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">lchar1</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w">  </span><span class="n">npds</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">lchar2</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w">  </span><span class="n">ncount</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;number of rows &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">             </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustl</span><span class="p">(</span><span class="n">lchar</span><span class="p">))</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; in the table&quot;</span><span class="w">  </span><span class="o">//</span><span class="w">                       </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="s2">&quot; does not match the sum of strings &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustl</span><span class="p">(</span><span class="n">lchar1</span><span class="p">))</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; and continuation lines &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">  </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustl</span><span class="p">(</span><span class="n">lchar2</span><span class="p">))</span><span class="w"> </span><span class="o">//</span><span class="w">        </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="s2">&quot; of file &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">lfilename</span><span class="p">)),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">return</span>
+<span class="k">    endif</span>
+
+<span class="k">    </span><span class="n">rcrd</span><span class="p">(</span><span class="n">kfile</span><span class="p">)%</span><span class="n">numStrings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">npds</span>
+
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! save the addresses of the non-continuation lines</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="k">allocate</span><span class="p">(</span><span class="w"> </span><span class="n">pds_loc</span><span class="p">(</span><span class="n">npds</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;type &quot;</span><span class="o">//</span><span class="w">                    </span><span class="p">&amp;</span>
+<span class="w">       </span><span class="s2">&quot; pds_loc in read_descriptor_files&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    endif</span>
+
+<span class="k">    do </span><span class="n">kstr</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">nstrings</span><span class="p">(</span><span class="n">kfile</span><span class="p">)</span>
+<span class="w">       </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">pds_flag</span><span class="p">(</span><span class="n">kstr</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">         </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">         </span><span class="n">pds_loc</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="n">kstr</span>
+<span class="w">       </span><span class="k">endif</span>
+<span class="k">    enddo</span><span class="w">     </span><span class="c">! end string</span>
+<span class="w">    </span><span class="c">! sanity check</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">npds</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      write</span><span class="p">(</span><span class="n">lchar</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w">  </span><span class="n">nstrings</span><span class="p">(</span><span class="n">kfile</span><span class="p">)</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">lchar1</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w">  </span><span class="n">npds</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">lchar2</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w">  </span><span class="n">ncount</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;number of rows &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">             </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustl</span><span class="p">(</span><span class="n">lchar</span><span class="p">))</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; in the table&quot;</span><span class="w"> </span><span class="o">//</span><span class="w">                        </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="s2">&quot; does not match the sum of strings &quot;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustl</span><span class="p">(</span><span class="n">lchar1</span><span class="p">))</span><span class="w">      </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; and continuation lines &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustl</span><span class="p">(</span><span class="n">lchar2</span><span class="p">))</span><span class="w"> </span><span class="o">//</span><span class="w">         </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="s2">&quot; of file &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">lfilename</span><span class="p">)),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">return</span>
+<span class="k">    endif</span>
+
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! to simplify the later search algorithm, reshape the input table from a</span>
+<span class="w">    </span><span class="c">! series of lines with a PDS plus optional continuations lines, to a single</span>
+<span class="w">    </span><span class="c">! line with everything on it. Count the total number of elements on both</span>
+<span class="w">    </span><span class="c">! type of lines to that we can allocate enough memory to store the whole</span>
+<span class="w">    </span><span class="c">! specification.</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="k">allocate</span><span class="p">(</span><span class="w"> </span><span class="n">kcount</span><span class="p">(</span><span class="n">npds</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer variable &quot;</span><span class="o">//</span><span class="w">        </span><span class="p">&amp;</span>
+<span class="w">       </span><span class="s2">&quot; kcount in read_descriptor_files&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    endif</span>
+
+<span class="k">    do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">npds</span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="w"> </span><span class="n">ltmpstring</span><span class="p">(</span><span class="w"> </span><span class="n">pds_loc</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">)%</span><span class="n">tag</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;&amp;&quot;</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        write</span><span class="p">(</span><span class="n">lchar</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w">   </span><span class="n">pds_loc</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w">                                </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;no problem descriptor string on line &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">                    </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustl</span><span class="p">(</span><span class="n">lchar</span><span class="p">))</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; of file &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">                        </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">lfilename</span><span class="p">)),</span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span>
+<span class="k">      else</span><span class="w">    </span><span class="c">! at new PDS</span>
+<span class="w">        </span><span class="n">kcount</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ncolumns</span><span class="p">(</span><span class="n">pds_loc</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+<span class="w">        </span><span class="n">pstring</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="n">pds_loc</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w"> </span><span class="mi">21</span><span class="w">     </span><span class="k">continue</span>
+<span class="w">        </span><span class="c">!-----------------------------------------------------------------------</span>
+<span class="w">        </span><span class="c">! if not end of table, look for additional continuation lines</span>
+<span class="w">        </span><span class="c">!-----------------------------------------------------------------------</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">pstring</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nstrings</span><span class="p">(</span><span class="n">kfile</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          </span><span class="n">pstring</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="n">pstring</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">          </span><span class="c">!---------------------------------------------------------------------</span>
+<span class="w">          </span><span class="c">! if find a continuation line add additional elements (minus the</span>
+<span class="w">          </span><span class="c">! continuation symbol &quot;&amp;&quot;)</span>
+<span class="w">          </span><span class="c">!---------------------------------------------------------------------</span>
+<span class="w">          </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="w"> </span><span class="n">ltmpstring</span><span class="p">(</span><span class="n">pstring</span><span class="p">)%</span><span class="n">tag</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;&amp;&quot;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            </span><span class="n">kcount</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kcount</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ncolumns</span><span class="p">(</span><span class="n">pstring</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span>
+<span class="w">            </span><span class="k">goto</span><span class="w"> </span><span class="mi">21</span>
+<span class="w">          </span><span class="k">endif</span>
+<span class="k">        endif</span>
+
+<span class="k">      endif</span>
+<span class="k">    enddo</span><span class="w">     </span><span class="c">! k</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! create reshaped workspace to hold the problem descriptor table contents</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="k">allocate</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">lstring</span><span class="p">(</span><span class="n">npds</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;type &quot;</span><span class="o">//</span><span class="w">                    </span><span class="p">&amp;</span>
+<span class="w">       </span><span class="s2">&quot; lstring in read_descriptor_files&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    endif</span>
+
+<span class="k">    do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">npds</span>
+<span class="w">      </span><span class="k">allocate</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">lstring</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">tag</span><span class="p">(</span><span class="n">kcount</span><span class="p">(</span><span class="n">k</span><span class="p">)),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;type &quot;</span><span class="o">//</span><span class="w">                  </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="s2">&quot; lstring tag in read_descriptor_files&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      endif</span>
+
+<span class="k">      do </span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ncolumns</span><span class="p">(</span><span class="n">pds_loc</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+<span class="w">        </span><span class="n">lstring</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">tag</span><span class="p">(</span><span class="n">n</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="w"> </span><span class="n">ltmpstring</span><span class="p">(</span><span class="n">pds_loc</span><span class="p">(</span><span class="n">k</span><span class="p">))%</span><span class="n">tag</span><span class="p">(</span><span class="n">n</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="p">)</span>
+<span class="w">      </span><span class="k">enddo</span><span class="w">     </span><span class="c">! n</span>
+
+<span class="w">      </span><span class="n">pstring</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="n">pds_loc</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">      </span><span class="n">nn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ncolumns</span><span class="p">(</span><span class="n">pds_loc</span><span class="p">(</span><span class="n">k</span><span class="p">))</span><span class="o">+</span><span class="mi">1</span>
+<span class="w"> </span><span class="mi">22</span><span class="w">   </span><span class="k">continue</span>
+
+<span class="w">      </span><span class="c">!-------------------------------------------------------------------------</span>
+<span class="w">      </span><span class="c">! if not end of table, look for additional continuation lines</span>
+<span class="w">      </span><span class="c">!-------------------------------------------------------------------------</span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">pstring</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nstrings</span><span class="p">(</span><span class="n">kfile</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">pstring</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="n">pstring</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+
+<span class="w">        </span><span class="c">!-----------------------------------------------------------------------</span>
+<span class="w">        </span><span class="c">! if find a continuation line, and add to the line length (minus the</span>
+<span class="w">        </span><span class="c">! continuation symbol)</span>
+<span class="w">        </span><span class="c">!-----------------------------------------------------------------------</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="w"> </span><span class="n">ltmpstring</span><span class="p">(</span><span class="n">pstring</span><span class="p">)%</span><span class="n">tag</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;&amp;&quot;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          do </span><span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">ncolumns</span><span class="p">(</span><span class="n">pstring</span><span class="p">)</span>
+<span class="w">            </span><span class="n">lstring</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">tag</span><span class="p">(</span><span class="n">nn</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">ltmpstring</span><span class="p">(</span><span class="n">pstring</span><span class="p">)%</span><span class="n">tag</span><span class="p">(</span><span class="n">n</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="p">)</span>
+<span class="w">            </span><span class="n">nn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nn</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">          </span><span class="k">enddo</span><span class="w">     </span><span class="c">! n</span>
+<span class="w">          </span><span class="k">goto</span><span class="w"> </span><span class="mi">22</span>
+<span class="w">        </span><span class="k">endif</span>
+<span class="k">      endif</span>
+<span class="k">    enddo</span><span class="w">     </span><span class="c">! k</span>
+
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! mine the table entries for the problem descriptor strings</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="k">allocate</span><span class="p">(</span><span class="w"> </span><span class="n">rcrd</span><span class="p">(</span><span class="n">kfile</span><span class="p">)%</span><span class="n">str</span><span class="p">(</span><span class="n">npds</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;type &quot;</span><span class="o">//</span><span class="w">                    </span><span class="p">&amp;</span>
+<span class="w">       </span><span class="s2">&quot; rcrd string in read_descriptor_files&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    endif</span>
+<span class="k">    do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">npds</span>
+<span class="w">       </span><span class="n">rcrd</span><span class="p">(</span><span class="n">kfile</span><span class="p">)%</span><span class="n">str</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">pds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="w"> </span><span class="n">lstring</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">tag</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="k">enddo</span><span class="w">     </span><span class="c">! k</span>
+
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! mine the table entries for the names of the specifier files</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">npds</span>
+<span class="w">      </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">      </span><span class="n">endflag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">      </span><span class="c">! drs debug</span>
+<span class="w">      </span><span class="n">cflag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span><span class="w">  </span><span class="c">! set to true so that it doesn&#39;t look for a &quot;-c&quot; argument</span>
+<span class="w">      </span><span class="c">! drs debug</span>
+<span class="w">      </span><span class="n">dflag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">      </span><span class="n">gflag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">      </span><span class="c">!-------------------------------------------------------------------------</span>
+<span class="w">      </span><span class="c">! loop through the specifiers for each of the problem desriptor strings</span>
+<span class="w">      </span><span class="c">!-------------------------------------------------------------------------</span>
+<span class="w">      </span><span class="k">do while</span><span class="p">(</span><span class="n">endflag</span><span class="p">)</span>
+<span class="w">      </span><span class="n">ltmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="w"> </span><span class="n">lstring</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">tag</span><span class="p">(</span><span class="n">pos</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">select case</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">ltmp</span><span class="p">))</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">         </span><span class="c">!----------------------------------------------------------------------</span>
+<span class="w">         </span><span class="c">! class descriptor file</span>
+<span class="w">         </span><span class="c">!----------------------------------------------------------------------</span>
+<span class="w">         </span><span class="k">case</span><span class="p">(</span><span class="s1">&#39;-c&#39;</span><span class="p">)</span>
+<span class="w">         </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">cflag</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">           write</span><span class="p">(</span><span class="n">lchar</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">k</span>
+<span class="w">           </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;the -c specifier flag&quot;</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; is used more than once on the &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">                 </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustl</span><span class="p">(</span><span class="n">lchar</span><span class="p">))</span><span class="o">//</span><span class="s2">&quot;th string of the problem &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">     </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="s2">&quot;descriptor table in file&quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">lfilename</span><span class="p">),</span><span class="w">           </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">           </span><span class="k">return</span>
+<span class="k">         endif</span>
+<span class="w">         </span><span class="c">! starting position</span>
+<span class="w">         </span><span class="n">cpos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pos</span>
+<span class="w"> </span><span class="mi">11</span><span class="w">      </span><span class="k">continue</span>
+<span class="w">         </span><span class="c">! if not at the end of the row, then check next element</span>
+<span class="w">         </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">kcount</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">           </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">           </span><span class="n">ltmp</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="w"> </span><span class="n">lstring</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">tag</span><span class="p">(</span><span class="n">pos</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="p">))</span>
+<span class="w">           </span><span class="c">! if not a flag, repeat until a flag</span>
+<span class="w">           </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">ltmp</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="s1">&#39;-&#39;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">goto</span><span class="w"> </span><span class="mi">11</span>
+<span class="w">           </span><span class="n">csize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pos</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">cpos</span>
+<span class="w">           </span><span class="n">endflag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">         </span><span class="k">else</span><span class="w">  </span><span class="c">! at end of row</span>
+<span class="w">           </span><span class="n">csize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pos</span><span class="o">-</span><span class="n">cpos</span>
+<span class="w">           </span><span class="n">endflag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">         </span><span class="k">endif</span>
+
+<span class="k">         allocate</span><span class="p">(</span><span class="w"> </span><span class="n">rcrd</span><span class="p">(</span><span class="n">kfile</span><span class="p">)%</span><span class="n">str</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">classfile</span><span class="p">%</span><span class="n">tag</span><span class="p">(</span><span class="n">csize</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;type &quot;</span><span class="o">//</span><span class="w">               </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="s2">&quot; rcrd tag in read_descriptor_files&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">         endif</span>
+
+<span class="k">         </span><span class="n">rcrd</span><span class="p">(</span><span class="n">kfile</span><span class="p">)%</span><span class="n">str</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">classfile</span><span class="p">%</span><span class="n">tagsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">csize</span>
+<span class="w">         </span><span class="k">do </span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">csize</span>
+<span class="w">           </span><span class="n">rcrd</span><span class="p">(</span><span class="n">kfile</span><span class="p">)%</span><span class="n">str</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">classfile</span><span class="p">%</span><span class="n">tag</span><span class="p">(</span><span class="n">n</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w">                        </span><span class="p">&amp;</span>
+<span class="w">                                 </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="w"> </span><span class="n">lstring</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">tag</span><span class="p">(</span><span class="n">cpos</span><span class="o">+</span><span class="n">n</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="p">))</span>
+<span class="w">         </span><span class="k">enddo</span><span class="w">      </span><span class="c">! n</span>
+<span class="w">         </span><span class="n">cflag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+
+<span class="w">         </span><span class="c">!----------------------------------------------------------------------</span>
+<span class="w">         </span><span class="c">! distribution descriptor file</span>
+<span class="w">         </span><span class="c">!----------------------------------------------------------------------</span>
+<span class="w">         </span><span class="k">case</span><span class="p">(</span><span class="s1">&#39;-d&#39;</span><span class="p">)</span>
+<span class="w">         </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">dflag</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">           write</span><span class="p">(</span><span class="n">lchar</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">k</span>
+<span class="w">           </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;the -d specifier flag&quot;</span><span class="w">     </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; is used more than once on the &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">                    </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustl</span><span class="p">(</span><span class="n">lchar</span><span class="p">))</span><span class="o">//</span><span class="s2">&quot;th string of the problem &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">        </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="s2">&quot;descriptor table in file&quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">lfilename</span><span class="p">)),</span><span class="w">     </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">           </span><span class="k">return</span>
+<span class="k">         endif</span>
+<span class="w">         </span><span class="c">! starting position</span>
+<span class="w">         </span><span class="n">dpos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pos</span>
+
+<span class="w"> </span><span class="mi">12</span><span class="w">      </span><span class="k">continue</span>
+<span class="w">         </span><span class="c">! if not at the end of the row, then check next element</span>
+<span class="w">         </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">kcount</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">           </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">           </span><span class="n">ltmp</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="w"> </span><span class="n">lstring</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">tag</span><span class="p">(</span><span class="n">pos</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="p">))</span>
+<span class="w">           </span><span class="c">! if not a flag, repeat until a flag</span>
+<span class="w">           </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">ltmp</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="s1">&#39;-&#39;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">goto</span><span class="w"> </span><span class="mi">12</span>
+<span class="w">           </span><span class="n">dsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pos</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">dpos</span>
+<span class="w">           </span><span class="n">endflag</span><span class="w"> </span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">         </span><span class="k">else</span><span class="w">  </span><span class="c">! at end of row</span>
+<span class="w">           </span><span class="n">dsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pos</span><span class="o">-</span><span class="n">dpos</span>
+<span class="w">           </span><span class="n">endflag</span><span class="w"> </span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">         </span><span class="k">endif</span>
+
+<span class="k">         allocate</span><span class="p">(</span><span class="w"> </span><span class="n">rcrd</span><span class="p">(</span><span class="n">kfile</span><span class="p">)%</span><span class="n">str</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">Dfiles</span><span class="p">(</span><span class="n">dsize</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;type &quot;</span><span class="o">//</span><span class="w">               </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="s2">&quot; rcrd Dfiles in read_descriptor_files&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">         endif</span>
+
+<span class="k">         </span><span class="n">rcrd</span><span class="p">(</span><span class="n">kfile</span><span class="p">)%</span><span class="n">str</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">nDfiles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dsize</span>
+<span class="w">         </span><span class="k">do </span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">dsize</span>
+<span class="w">           </span><span class="c">! build complete filename icluding source path</span>
+<span class="w">           </span><span class="n">lfilename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">srcPath</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot;/&quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">lstring</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">tag</span><span class="p">(</span><span class="n">dpos</span><span class="o">+</span><span class="n">n</span><span class="p">)%</span><span class="n">string</span><span class="p">))</span>
+<span class="w">           </span><span class="n">rcrd</span><span class="p">(</span><span class="n">kfile</span><span class="p">)%</span><span class="n">str</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">Dfiles</span><span class="p">(</span><span class="n">n</span><span class="p">)%</span><span class="n">filename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lfilename</span>
+
+<span class="w">           </span><span class="c">!rcrd(kfile)%str(k)%Dfiles(n)%filename =                             &amp;</span>
+<span class="w">                              </span><span class="c">! trim(adjustL( lstring(k)%tag(dpos+n)%string ))</span>
+<span class="w">         </span><span class="k">enddo</span><span class="w">      </span><span class="c">! n</span>
+<span class="w">         </span><span class="n">dflag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+
+<span class="w">         </span><span class="c">!----------------------------------------------------------------------</span>
+<span class="w">         </span><span class="c">! grid descriptor file</span>
+<span class="w">         </span><span class="c">!----------------------------------------------------------------------</span>
+<span class="w">         </span><span class="k">case</span><span class="p">(</span><span class="s1">&#39;-g&#39;</span><span class="p">)</span>
+<span class="w">         </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">gflag</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">           write</span><span class="p">(</span><span class="n">lchar</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">k</span>
+<span class="w">           </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;the -g specifier flag&quot;</span><span class="w"> </span><span class="o">//</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="s2">&quot; is used more than once on the &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustl</span><span class="p">(</span><span class="n">lchar</span><span class="p">))</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="o">//</span><span class="s2">&quot;th string of the problem descriptor table in file &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">lfilename</span><span class="p">)),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">           </span><span class="k">return</span>
+<span class="k">         endif</span>
+<span class="w">         </span><span class="c">! starting position</span>
+<span class="w">         </span><span class="n">gpos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pos</span>
+
+<span class="w"> </span><span class="mi">13</span><span class="w">      </span><span class="k">continue</span>
+<span class="w">         </span><span class="c">! if not at the end of the row, then check next element</span>
+<span class="w">         </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">kcount</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">           </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">           </span><span class="n">ltmp</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="w"> </span><span class="n">lstring</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">tag</span><span class="p">(</span><span class="n">pos</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="p">))</span>
+<span class="w">           </span><span class="c">! if not a flag, repeat until a flag</span>
+<span class="w">           </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">ltmp</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="s1">&#39;-&#39;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">goto</span><span class="w"> </span><span class="mi">13</span>
+<span class="w">           </span><span class="n">gsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pos</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">gpos</span>
+<span class="w">           </span><span class="n">endflag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">         </span><span class="k">else</span><span class="w">  </span><span class="c">! at end of row</span>
+<span class="w">           </span><span class="n">gsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pos</span><span class="o">-</span><span class="n">gpos</span>
+<span class="w">           </span><span class="n">endflag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">         </span><span class="k">endif</span>
+
+<span class="k">         allocate</span><span class="p">(</span><span class="w"> </span><span class="n">rcrd</span><span class="p">(</span><span class="n">kfile</span><span class="p">)%</span><span class="n">str</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">Gfiles</span><span class="p">(</span><span class="n">gsize</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;type &quot;</span><span class="o">//</span><span class="w">               </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="s2">&quot; rcrd Gfiles in read_descriptor_files&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">         endif</span>
+
+<span class="k">         </span><span class="n">rcrd</span><span class="p">(</span><span class="n">kfile</span><span class="p">)%</span><span class="n">str</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">nGfiles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gsize</span>
+<span class="w">         </span><span class="k">do </span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">gsize</span>
+<span class="w">           </span><span class="c">! build complete filename icluding source path</span>
+<span class="w">           </span><span class="n">lfilename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">srcPath</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot;/&quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">lstring</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">tag</span><span class="p">(</span><span class="n">gpos</span><span class="o">+</span><span class="n">n</span><span class="p">)%</span><span class="n">string</span><span class="p">))</span>
+<span class="w">           </span><span class="n">rcrd</span><span class="p">(</span><span class="n">kfile</span><span class="p">)%</span><span class="n">str</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">Gfiles</span><span class="p">(</span><span class="n">n</span><span class="p">)%</span><span class="n">filename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lfilename</span>
+
+<span class="w">           </span><span class="c">!rcrd(kfile)%str(k)%Gfiles(n)%filename =                             &amp;</span>
+<span class="w">                             </span><span class="c">!trim(adjustL(lstring(k)%tag(gpos+n)%string))</span>
+<span class="w">         </span><span class="k">enddo</span><span class="w">     </span><span class="c">! n</span>
+<span class="w">         </span><span class="n">gflag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+
+<span class="w">         </span><span class="c">!----------------------------------------------------------------------</span>
+<span class="w">         </span><span class="c">! syntax error - entry after pds should be a flag</span>
+<span class="w">         </span><span class="c">!----------------------------------------------------------------------</span>
+<span class="w">         </span><span class="k">case </span><span class="n">default</span>
+<span class="w">         </span><span class="k">write</span><span class="p">(</span><span class="n">lchar</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w">  </span><span class="n">pds_loc</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">         </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w">                               </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;no specifier flag on line &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustl</span><span class="p">(</span><span class="n">lchar</span><span class="p">))</span><span class="w"> </span><span class="o">//</span><span class="w">         </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="s2">&quot; of file &quot;</span><span class="w"> </span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">lfilename</span><span class="p">),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">         </span><span class="k">return</span>
+
+<span class="k">        end select</span><span class="w">  </span><span class="c">! specifier flag type</span>
+<span class="w">      </span><span class="k">end do</span><span class="w">  </span><span class="c">! while</span>
+<span class="w">    </span><span class="k">enddo</span><span class="w">      </span><span class="c">! k</span>
+
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! finish cleaning up workspace before opening new file</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+
+<span class="w">    </span><span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">npds</span>
+<span class="w">      </span><span class="k">deallocate</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">lstring</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">tag</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="k">enddo</span>
+<span class="k">    do </span><span class="n">kstr</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">nstrings</span><span class="p">(</span><span class="n">kfile</span><span class="p">)</span>
+<span class="w">      </span><span class="k">deallocate</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">ltmpstring</span><span class="p">(</span><span class="n">kstr</span><span class="p">)%</span><span class="n">tag</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="k">enddo</span>
+<span class="k">    deallocate</span><span class="p">(</span><span class="w"> </span><span class="n">ncolumns</span><span class="p">,</span><span class="w"> </span><span class="n">kcount</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="k">deallocate</span><span class="p">(</span><span class="w"> </span><span class="n">ltmpstring</span><span class="p">,</span><span class="w"> </span><span class="n">lstring</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="k">deallocate</span><span class="p">(</span><span class="w"> </span><span class="n">pds_loc</span><span class="p">,</span><span class="w"> </span><span class="n">pds_flag</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! clean up CF</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_ConfigDestroy</span><span class="p">(</span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">CheckError</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">FILE__</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;cannot destroy config file &quot;</span><span class="w">  </span><span class="o">//</span><span class="w">       </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">lfilename</span><span class="p">)),</span><span class="w">  </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">  enddo</span><span class="w">  </span><span class="c">! file</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! final deallocation</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="k">deallocate</span><span class="p">(</span><span class="w"> </span><span class="n">nstrings</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! if I&#39;ve gotten this far without an error, then the routine has succeeded.</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="k">end subroutine </span><span class="n">read_descriptor_files</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

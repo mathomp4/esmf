@@ -1,0 +1,438 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>compactMatrix &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>compactMatrix
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.0% of total for procedures.">72 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_RegridWeightGen.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_regridweightgen.f90~2.html'>ESMF_RegridWeightGen.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/esmf_regridweightgenmod.html'>ESMF_RegridWeightGenMod</a></li>
+            <li class="breadcrumb-item active" aria-current="page">compactMatrix</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/compactmatrix.html#src">compactMatrix</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>private  subroutine compactMatrix(inFactorList, inFactorIndexList, wasCompacted, outFactorList, outFactorIndexList, rc)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-infactorlist"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>inFactorList</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-infactorindexlist"></span>
+              integer(kind=ESMF_KIND_I4),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>inFactorIndexList</strong>(:,:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-wascompacted~3"></span>
+              logical,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>wasCompacted</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-outfactorlist"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+<td></td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>outFactorList</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-outfactorindexlist"></span>
+              integer(kind=ESMF_KIND_I4),
+            </td>
+<td></td>
+              <td></td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>outFactorIndexList</strong>(:,:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~4329"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="k">subroutine </span><span class="n">compactMatrix</span><span class="p">(</span><span class="n">inFactorList</span><span class="p">,</span><span class="w"> </span><span class="n">inFactorIndexList</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                         </span><span class="n">wasCompacted</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                         </span><span class="n">outFactorList</span><span class="p">,</span><span class="w"> </span><span class="n">outFactorIndexList</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                         </span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">               </span><span class="kd">::</span><span class="w"> </span><span class="n">inFactorList</span><span class="p">(:)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">ESMF_KIND_I4</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">             </span><span class="kd">::</span><span class="w"> </span><span class="n">inFactorIndexList</span><span class="p">(:,:)</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w">                            </span><span class="kd">::</span><span class="w"> </span><span class="n">wasCompacted</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w">                     </span><span class="kd">::</span><span class="w"> </span><span class="n">outFactorList</span><span class="p">(:)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">ESMF_KIND_I4</span><span class="p">),</span><span class="k">pointer</span><span class="w">                   </span><span class="kd">::</span><span class="w"> </span><span class="n">outFactorIndexList</span><span class="p">(:,:)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w">                            </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">localrc</span><span class="w">      </span><span class="c">! local return code</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">inListCount</span><span class="p">,</span><span class="w"> </span><span class="n">outListCount</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">srcInd</span><span class="p">,</span><span class="w"> </span><span class="n">dstInd</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">outListPos</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">factorSum</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">beg</span>
+
+
+<span class="w">    </span><span class="c">! Get size of list</span>
+<span class="w">    </span><span class="n">inListCount</span><span class="o">=</span><span class="n">size</span><span class="p">(</span><span class="n">inFactorIndexList</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">! if too small to need compacting (e.g. &lt;2) return</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">inListCount</span><span class="w"> </span><span class="p">.</span><span class="n">lt</span><span class="p">.</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">       </span><span class="n">wasCompacted</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">       </span><span class="k">return</span>
+<span class="k">    endif</span>
+
+<span class="w">   </span><span class="c">! Sort the dstInd first</span>
+<span class="w">   </span><span class="k">call </span><span class="n">QSort</span><span class="p">(</span><span class="n">inListCount</span><span class="p">,</span><span class="w"> </span><span class="n">inFactorIndexList</span><span class="p">,</span><span class="w"> </span><span class="n">InFactorList</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! Put source indices for each run of destination</span>
+<span class="w">   </span><span class="c">! indices in sorted order to allow weights with</span>
+<span class="w">   </span><span class="c">! the same indices to be merged below. Note</span>
+<span class="w">   </span><span class="c">! runs with less than 3 entries are not sorted because</span>
+<span class="w">   </span><span class="c">! they will be handled correctly by the merge code below.</span>
+<span class="w">    </span><span class="n">beg</span><span class="o">=</span><span class="mi">1</span>
+<span class="w">    </span><span class="n">dstInd</span><span class="o">=</span><span class="n">inFactorIndexList</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">inListCount</span>
+<span class="w">       </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">inFactorIndexList</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">dstInd</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">          </span><span class="c">! Sort [beg,i-1] if there could be repeats</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">beg</span><span class="o">+</span><span class="mi">1</span><span class="w"> </span><span class="o">&gt;</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">             call </span><span class="n">hsort_array</span><span class="p">(</span><span class="n">inFactorIndexList</span><span class="p">(:,</span><span class="n">beg</span><span class="p">:</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">inFactorList</span><span class="p">(</span><span class="n">beg</span><span class="p">:</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="w">          </span><span class="k">endif</span>
+
+<span class="w">          </span><span class="c">! Reset</span>
+<span class="w">          </span><span class="n">beg</span><span class="o">=</span><span class="n">i</span>
+<span class="w">          </span><span class="n">dstInd</span><span class="o">=</span><span class="n">inFactorIndexList</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
+<span class="w">       </span><span class="k">endif</span>
+<span class="k">    enddo</span>
+
+<span class="w">    </span><span class="c">! If long enough sort [beg,inListCount], because it&#39;s not handled above</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">inListCount</span><span class="p">)</span><span class="o">-</span><span class="n">beg</span><span class="o">+</span><span class="mi">1</span><span class="w"> </span><span class="o">&gt;</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">       call </span><span class="n">hsort_array</span><span class="p">(</span><span class="n">inFactorIndexList</span><span class="p">(:,</span><span class="n">beg</span><span class="p">:</span><span class="n">inListCount</span><span class="p">),</span><span class="w"> </span><span class="n">inFactorList</span><span class="p">(</span><span class="n">beg</span><span class="p">:</span><span class="n">inListCount</span><span class="p">))</span>
+<span class="w">    </span><span class="k">endif</span>
+
+
+<span class="w">    </span><span class="c">! Loop counting unique entries</span>
+<span class="w">    </span><span class="n">outListCount</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="c">! 1 because counting switches below</span>
+<span class="w">    </span><span class="n">srcInd</span><span class="o">=</span><span class="n">inFactorIndexList</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="n">dstInd</span><span class="o">=</span><span class="n">inFactorIndexList</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">inListCount</span>
+<span class="w">       </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">srcInd</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">inFactorIndexList</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">))</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="p">(</span><span class="n">dstInd</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">inFactorIndexList</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="p">)))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          </span><span class="n">srcInd</span><span class="o">=</span><span class="n">inFactorIndexList</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
+<span class="w">          </span><span class="n">dstInd</span><span class="o">=</span><span class="n">inFactorIndexList</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
+<span class="w">          </span><span class="n">outListCount</span><span class="o">=</span><span class="n">outListCount</span><span class="o">+</span><span class="mi">1</span>
+<span class="w">       </span><span class="k">endif</span>
+<span class="k">    enddo</span>
+
+<span class="w">    </span><span class="c">! if all unique then don&#39;t compact</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">inListCount</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="n">outListCount</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">       </span><span class="n">wasCompacted</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">       </span><span class="k">return</span>
+<span class="k">    endif</span>
+
+
+<span class="w">    </span><span class="c">! Allocate new lists</span>
+<span class="w">    </span><span class="k">allocate</span><span class="p">(</span><span class="n">outFactorList</span><span class="p">(</span><span class="n">outListCount</span><span class="p">))</span>
+<span class="w">    </span><span class="k">allocate</span><span class="p">(</span><span class="n">outFactorIndexList</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">outListCount</span><span class="p">))</span>
+
+<span class="w">    </span><span class="c">! Loop counting unique entries</span>
+<span class="w">    </span><span class="n">outListPos</span><span class="o">=</span><span class="mi">1</span>
+<span class="w">    </span><span class="n">srcInd</span><span class="o">=</span><span class="n">inFactorIndexList</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="n">dstInd</span><span class="o">=</span><span class="n">inFactorIndexList</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="n">factorSum</span><span class="o">=</span><span class="n">inFactorList</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">inListCount</span>
+<span class="w">       </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">srcInd</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">inFactorIndexList</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">))</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="p">(</span><span class="n">dstInd</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">inFactorIndexList</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="p">)))</span><span class="w"> </span><span class="k">then</span>
+<span class="w">          </span><span class="c">! Save the old entry</span>
+<span class="w">          </span><span class="n">outFactorIndexList</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">outListPos</span><span class="p">)</span><span class="o">=</span><span class="n">srcInd</span>
+<span class="w">          </span><span class="n">outFactorIndexList</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">outListPos</span><span class="p">)</span><span class="o">=</span><span class="n">dstInd</span>
+<span class="w">          </span><span class="n">outFactorList</span><span class="p">(</span><span class="n">outListPos</span><span class="p">)</span><span class="o">=</span><span class="n">factorSum</span>
+
+<span class="w">          </span><span class="c">! Change to a new entry</span>
+<span class="w">          </span><span class="n">srcInd</span><span class="o">=</span><span class="n">inFactorIndexList</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
+<span class="w">          </span><span class="n">dstInd</span><span class="o">=</span><span class="n">inFactorIndexList</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
+<span class="w">          </span><span class="n">factorSum</span><span class="o">=</span><span class="n">inFactorList</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="w">          </span><span class="n">outListPos</span><span class="o">=</span><span class="n">outListPos</span><span class="o">+</span><span class="mi">1</span>
+<span class="w">       </span><span class="k">else</span>
+<span class="k">          </span><span class="n">factorSum</span><span class="o">=</span><span class="n">factorSum</span><span class="o">+</span><span class="n">inFactorList</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="w">       </span><span class="k">endif</span>
+<span class="k">    enddo</span>
+
+<span class="w">    </span><span class="c">! Save the last entry</span>
+<span class="w">    </span><span class="n">outFactorIndexList</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">outListPos</span><span class="p">)</span><span class="o">=</span><span class="n">srcInd</span>
+<span class="w">    </span><span class="n">outFactorIndexList</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">outListPos</span><span class="p">)</span><span class="o">=</span><span class="n">dstInd</span>
+<span class="w">    </span><span class="n">outFactorList</span><span class="p">(</span><span class="n">outListPos</span><span class="p">)</span><span class="o">=</span><span class="n">factorSum</span>
+
+
+<span class="w">    </span><span class="c">! Output that the lists were compacted</span>
+<span class="w">    </span><span class="n">wasCompacted</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+
+<span class="w">    </span><span class="c">! return success</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+
+<span class="k">end subroutine </span><span class="n">CompactMatrix</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

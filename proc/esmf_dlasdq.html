@@ -1,0 +1,612 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_DLASDQ &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_DLASDQ
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.1% of total for procedures.">120 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/dlasdq.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/dlasdq.f90.html'>dlasdq.F90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_DLASDQ</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2> subroutine ESMF_DLASDQ(UPLO, SQRE, N, NCVT, NRU, NCC, D, E, VT, LDVT, U, LDU, C, LDC, WORK, INFO)  
+</h2>
+    
+
+    <p>\brief \b ESMF_DLASDQ
+\htmlonly
+Download ESMF_DLASDQ + dependencies
+<a href="http://www.netlib.org/cgi-bin/netlibfiles.tgz?format=tgz&filename=/lapack/lapack_routine/dlasdq.f">
+[TGZ]</a>
+<a href="http://www.netlib.org/cgi-bin/netlibfiles.zip?format=zip&filename=/lapack/lapack_routine/dlasdq.f">
+[ZIP]</a>
+<a href="http://www.netlib.org/cgi-bin/netlibfiles.txt?format=txt&filename=/lapack/lapack_routine/dlasdq.f">
+[TXT]</a>
+\endhtmlonly
+\par Purpose:</p>
+<p>\verbatim</p>
+<p>ESMF_DLASDQ computes the singular value decomposition (SVD) of a real
+(upper or lower) bidiagonal matrix with diagonal D and offdiagonal
+E, accumulating the transformations if desired. Letting B denote
+the input bidiagonal matrix, the algorithm computes orthogonal
+matrices Q and P such that B = Q * S * P<strong>T (P</strong>T denotes the transpose
+of P). The singular values S are overwritten on D.</p>
+<p>The input matrix U  is changed to U  * Q  if desired.
+The input matrix VT is changed to P<strong>T * VT if desired.
+The input matrix C  is changed to Q</strong>T * C  if desired.</p>
+<p>See &ldquo;Computing  Small Singular Values of Bidiagonal Matrices With
+Guaranteed High Relative Accuracy,&rdquo; by J. Demmel and W. Kahan,
+LAPACK Working Note #3, for a detailed description of the algorithm.
+\endverbatim
+\param[in] UPLO
+\verbatim
+         UPLO is CHARACTER*1
+       On entry, UPLO specifies whether the input bidiagonal matrix
+       is upper or lower bidiagonal, and wether it is square are
+       not.
+          UPLO = &lsquo;U&rsquo; or &lsquo;u&rsquo;   B is upper bidiagonal.
+          UPLO = &lsquo;L&rsquo; or &lsquo;l&rsquo;   B is lower bidiagonal.
+\endverbatim</p>
+<p>\param[in] SQRE
+\verbatim
+         SQRE is INTEGER
+       = 0: then the input matrix is N-by-N.
+       = 1: then the input matrix is N-by-(N+1) if UPLU = &lsquo;U&rsquo; and
+            (N+1)-by-N if UPLU = &lsquo;L&rsquo;.</p>
+<div class="codehilite"><pre><span></span><code>   The bidiagonal matrix has
+   N = NL + NR + 1 rows and
+   M = N + SQRE &gt;= N columns.
+</code></pre></div>
+
+<p>\endverbatim</p>
+<p>\param[in] N
+\verbatim
+         N is INTEGER
+       On entry, N specifies the number of rows and columns
+       in the matrix. N must be at least 0.
+\endverbatim</p>
+<p>\param[in] NCVT
+\verbatim
+         NCVT is INTEGER
+       On entry, NCVT specifies the number of columns of
+       the matrix VT. NCVT must be at least 0.
+\endverbatim</p>
+<p>\param[in] NRU
+\verbatim
+         NRU is INTEGER
+       On entry, NRU specifies the number of rows of
+       the matrix U. NRU must be at least 0.
+\endverbatim</p>
+<p>\param[in] NCC
+\verbatim
+         NCC is INTEGER
+       On entry, NCC specifies the number of columns of
+       the matrix C. NCC must be at least 0.
+\endverbatim</p>
+<p>\param[in,out] D
+\verbatim
+         D is DOUBLE PRECISION array, dimension (N)
+       On entry, D contains the diagonal entries of the
+       bidiagonal matrix whose SVD is desired. On normal exit,
+       D contains the singular values in ascending order.
+\endverbatim</p>
+<p>\param[in,out] E
+\verbatim
+         E is DOUBLE PRECISION array.
+       dimension is (N-1) if SQRE = 0 and N if SQRE = 1.
+       On entry, the entries of E contain the offdiagonal entries
+       of the bidiagonal matrix whose SVD is desired. On normal
+       exit, E will contain 0. If the algorithm does not converge,
+       D and E will contain the diagonal and superdiagonal entries
+       of a bidiagonal matrix orthogonally equivalent to the one
+       given as input.
+\endverbatim</p>
+<p>\param[in,out] VT
+\verbatim
+         VT is DOUBLE PRECISION array, dimension (LDVT, NCVT)
+       On entry, contains a matrix which on exit has been
+       premultiplied by P**T, dimension N-by-NCVT if SQRE = 0
+       and (N+1)-by-NCVT if SQRE = 1 (not referenced if NCVT=0).
+\endverbatim</p>
+<p>\param[in] LDVT
+\verbatim
+         LDVT is INTEGER
+       On entry, LDVT specifies the leading dimension of VT as
+       declared in the calling (sub) program. LDVT must be at
+       least 1. If NCVT is nonzero LDVT must also be at least N.
+\endverbatim</p>
+<p>\param[in,out] U
+\verbatim
+         U is DOUBLE PRECISION array, dimension (LDU, N)
+       On entry, contains a  matrix which on exit has been
+       postmultiplied by Q, dimension NRU-by-N if SQRE = 0
+       and NRU-by-(N+1) if SQRE = 1 (not referenced if NRU=0).
+\endverbatim</p>
+<p>\param[in] LDU
+\verbatim
+         LDU is INTEGER
+       On entry, LDU  specifies the leading dimension of U as
+       declared in the calling (sub) program. LDU must be at
+       least max( 1, NRU ) .
+\endverbatim</p>
+<p>\param[in,out] C
+\verbatim
+         C is DOUBLE PRECISION array, dimension (LDC, NCC)
+       On entry, contains an N-by-NCC matrix which on exit
+       has been premultiplied by Q**T  dimension N-by-NCC if SQRE = 0
+       and (N+1)-by-NCC if SQRE = 1 (not referenced if NCC=0).
+\endverbatim</p>
+<p>\param[in] LDC
+\verbatim
+         LDC is INTEGER
+       On entry, LDC  specifies the leading dimension of C as
+       declared in the calling (sub) program. LDC must be at
+       least 1. If NCC is nonzero, LDC must also be at least N.
+\endverbatim</p>
+<p>\param[out] WORK
+\verbatim
+         WORK is DOUBLE PRECISION array, dimension (4*N)
+       Workspace. Only referenced if one of NCVT, NRU, or NCC is
+       nonzero, and if N is at least 2.
+\endverbatim</p>
+<p>\param[out] INFO
+\verbatim
+         INFO is INTEGER
+       On exit, a value of 0 indicates a successful exit.
+       If INFO &lt; 0, argument number -INFO is illegal.
+       If INFO &gt; 0, the algorithm did not converge, and INFO
+       specifies how many superdiagonals did not converge.
+\endverbatim
+\author Univ. of Tennessee
+\author Univ. of California Berkeley
+\author Univ. of Colorado Denver
+\author NAG Ltd.
+\date November 2011
+\ingroup auxOTHERauxiliary
+\par Contributors:</p>
+<div class="codehilite"><pre><span></span><code>Ming Gu and Huan Ren, Computer Science Division, University of
+California at Berkeley, USA
+</code></pre></div>
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-uplo~13"></span>
+              character(len=1)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>UPLO</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sqre~5"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>SQRE</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n~87"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>N</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ncvt"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NCVT</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nru~2"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NRU</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ncc~2"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NCC</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-d~29"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>D</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-e~13"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>E</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vt~5"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>VT</strong>(LDVT,*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ldvt"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LDVT</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-u~6"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>U</strong>(LDU,*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ldu~4"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LDU</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-c~35"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>C</strong>(LDC,*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ldc~15"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LDC</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-work~48"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>WORK</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-info~64"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>INFO</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

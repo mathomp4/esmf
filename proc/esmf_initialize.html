@@ -1,0 +1,901 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_Initialize &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_Initialize
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.0% of total for procedures.">37 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_Init.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_init.f90.html'>ESMF_Init.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/esmf_initmod.html'>ESMF_InitMod</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_Initialize</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/esmf_initialize.html#src">ESMF_Initialize</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  subroutine ESMF_Initialize(keywordEnforcer, configFilenameFromArgNum, configFilename, configKey, defaultDefaultCalKind, defaultCalKind, defaultDefaultLogFilename, defaultLogFilename, defaultLogAppendFlag, logAppendFlag, defaultLogKindFlag, logKindFlag, mpiCommunicator, ioUnitLBound, ioUnitUBound, defaultGlobalResourceControl, globalResourceControl, config, hconfig, vm, rc)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-keywordenforcer~863"></span>
+              type(<a href='../type/esmf_keywordenforcer.html'>ESMF_KeywordEnforcer</a>),
+            </td>
+<td></td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>keywordEnforcer</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-configfilenamefromargnum"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>configFilenameFromArgNum</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-configfilename"></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>configFilename</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-configkey~2"></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>configKey</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-defaultdefaultcalkind"></span>
+              type(<a href='../type/esmf_calkind_flag.html'>ESMF_CalKind_Flag</a>),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>defaultDefaultCalKind</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-defaultcalkind~2"></span>
+              type(<a href='../type/esmf_calkind_flag.html'>ESMF_CalKind_Flag</a>),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>defaultCalKind</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-defaultdefaultlogfilename"></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>defaultDefaultLogFilename</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-defaultlogfilename"></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>defaultLogFilename</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-defaultlogappendflag"></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>defaultLogAppendFlag</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-logappendflag"></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>logAppendFlag</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-defaultlogkindflag"></span>
+              type(<a href='../type/esmf_logkind_flag.html'>ESMF_LogKind_Flag</a>),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>defaultLogKindFlag</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-logkindflag"></span>
+              type(<a href='../type/esmf_logkind_flag.html'>ESMF_LogKind_Flag</a>),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>logKindFlag</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mpicommunicator~3"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>mpiCommunicator</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iounitlbound"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ioUnitLBound</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iounitubound"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ioUnitUBound</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-defaultglobalresourcecontrol"></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>defaultGlobalResourceControl</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-globalresourcecontrol~3"></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>globalResourceControl</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-config~23"></span>
+              type(<a href='../type/esmf_config.html'>ESMF_Config</a>),
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>config</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-hconfig~225"></span>
+              type(<a href='../type/esmf_hconfig.html'>ESMF_HConfig</a>),
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>hconfig</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vm~468"></span>
+              type(<a href='../type/esmf_vm.html'>ESMF_VM</a>),
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>vm</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~2560"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">      </span><span class="k">subroutine </span><span class="n">ESMF_Initialize</span><span class="p">(</span><span class="n">keywordEnforcer</span><span class="p">,</span><span class="w"> </span><span class="n">configFilenameFromArgNum</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">configFilename</span><span class="p">,</span><span class="w"> </span><span class="n">configKey</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">defaultDefaultCalKind</span><span class="p">,</span><span class="w"> </span><span class="n">defaultCalKind</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">defaultDefaultLogFilename</span><span class="p">,</span><span class="w"> </span><span class="n">defaultLogFilename</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">defaultLogAppendFlag</span><span class="p">,</span><span class="w"> </span><span class="n">logAppendFlag</span><span class="p">,</span><span class="w"> </span><span class="n">defaultLogKindFlag</span><span class="p">,</span><span class="w"> </span><span class="n">logKindFlag</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">mpiCommunicator</span><span class="p">,</span><span class="w">  </span><span class="n">ioUnitLBound</span><span class="p">,</span><span class="w"> </span><span class="n">ioUnitUBound</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">defaultGlobalResourceControl</span><span class="p">,</span><span class="w"> </span><span class="n">globalResourceControl</span><span class="p">,</span><span class="w"> </span><span class="n">config</span><span class="p">,</span><span class="w"> </span><span class="n">hconfig</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!</span>
+<span class="c">! !ARGUMENTS:</span>
+<span class="k">type</span><span class="p">(</span><span class="n">ESMF_KeywordEnforcer</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="kd">::</span><span class="w"> </span><span class="n">keywordEnforcer</span><span class="w"> </span><span class="c">! must use keywords below</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">                 </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">configFilenameFromArgNum</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w">        </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">configFilename</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w">        </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">configKey</span><span class="p">(:)</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_CalKind_Flag</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">defaultDefaultCalKind</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_CalKind_Flag</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">defaultCalKind</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w">        </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">defaultDefaultLogFilename</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w">        </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">defaultLogFilename</span>
+<span class="w">      </span><span class="kt">logical</span><span class="p">,</span><span class="w">                 </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">defaultLogAppendFlag</span>
+<span class="w">      </span><span class="kt">logical</span><span class="p">,</span><span class="w">                 </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">logAppendFlag</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_LogKind_Flag</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">defaultLogKindFlag</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_LogKind_Flag</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">logKindFlag</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">                 </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">mpiCommunicator</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">                 </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ioUnitLBound</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">                 </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ioUnitUBound</span>
+<span class="w">      </span><span class="kt">logical</span><span class="p">,</span><span class="w">                 </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">defaultGlobalResourceControl</span>
+<span class="w">      </span><span class="kt">logical</span><span class="p">,</span><span class="w">                 </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">globalResourceControl</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Config</span><span class="p">),</span><span class="w">       </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">config</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_HConfig</span><span class="p">),</span><span class="w">      </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">hconfig</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_VM</span><span class="p">),</span><span class="w">           </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">vm</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">                 </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+
+<span class="c">!</span>
+<span class="c">! !STATUS:</span>
+<span class="c">! \begin{itemize}</span>
+<span class="c">! \item\apiStatusCompatibleVersion{5.2.0r}</span>
+<span class="c">! \item\apiStatusModifiedSinceVersion{5.2.0r}</span>
+<span class="c">! \begin{description}</span>
+<span class="c">! \item[7.0.0] Added argument {\tt logAppendFlag} to allow specifying that the</span>
+<span class="c">!              existing log files will be overwritten.</span>
+<span class="c">! \item[8.2.0] Added argument {\tt globalResourceControl} to support ESMF-aware</span>
+<span class="c">!              threading and resource control on the global VM level.\newline</span>
+<span class="c">!              Added argument {\tt config} to return default handle to the</span>
+<span class="c">!              defaultConfig.\newline</span>
+<span class="c">!              Renamed argument {\tt defaultConfigFilename} to</span>
+<span class="c">!              {\tt configFilename}, in order to clarify that provided settings</span>
+<span class="c">!              in the Config file are {\em not} defaults, but final</span>
+<span class="c">!              overrides.\newline</span>
+<span class="c">!              Introduce {\tt default} prefixed arguments:</span>
+<span class="c">!              {\tt defaultDefaultLogFilename},</span>
+<span class="c">!              {\tt defaultLogAppendFlag}, {\tt defaultLogKindFlag},</span>
+<span class="c">!              {\tt defaultGlobalResourceControl}. These arguments allow</span>
+<span class="c">!              specification of defaults for the associated settings. This</span>
+<span class="c">!              default can be overridden via the associated argument, without</span>
+<span class="c">!              the extra {\tt default} prefix, either specified in the call, or</span>
+<span class="c">!              within the specified Config file.</span>
+<span class="c">! \item[8.5.0] Added argument {\tt configKey} to support custom location of the</span>
+<span class="c">!              map of predefined initialization options for YAML</span>
+<span class="c">!              configurations.\newline</span>
+<span class="c">!              Added argument {\tt configFilenameFromArgNum} to support config</span>
+<span class="c">!              file specification via the command line.</span>
+<span class="c">! \item[8.6.0] Added {\tt defaultDefaultCalKind} argument to allow specifiation</span>
+<span class="c">!              of a default for {\tt defaultCalKind}.</span>
+<span class="c">! \item[8.7.0] Added argument {\tt hconfig} to simplify direct access to the</span>
+<span class="c">!              default {\tt ESMF\_HConfig} object.</span>
+<span class="c">! \end{description}</span>
+<span class="c">! \end{itemize}</span>
+<span class="c">!</span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">!     This method must be called once on each PET before</span>
+<span class="c">!     any other ESMF methods are used.  The method contains a</span>
+<span class="c">!     barrier before returning, ensuring that all processes</span>
+<span class="c">!     made it successfully through initialization.</span>
+<span class="c">!</span>
+<span class="c">!     Typically {\tt ESMF\_Initialize()} will call {\tt MPI\_Init()} </span>
+<span class="c">!     internally unless MPI has been initialized by the user code before</span>
+<span class="c">!     initializing the framework. If the MPI initialization is left to</span>
+<span class="c">!     {\tt ESMF\_Initialize()} it inherits all of the MPI implementation </span>
+<span class="c">!     dependent limitations of what may or may not be done before </span>
+<span class="c">!     {\tt MPI\_Init()}. For instance, it is unsafe for some MPI</span>
+<span class="c">!     implementations, such as MPICH1, to do I/O before the MPI environment</span>
+<span class="c">!     is initialized. Please consult the documentation of your MPI</span>
+<span class="c">!     implementation for details.</span>
+<span class="c">!</span>
+<span class="c">!     Note that when using MPICH1 as the MPI library, ESMF needs to use</span>
+<span class="c">!     the application command line arguments for {\tt MPI\_Init()}. However,</span>
+<span class="c">!     ESMF acquires these arguments internally and the user does not need</span>
+<span class="c">!     to worry about providing them. Also, note that ESMF does not alter</span>
+<span class="c">!     the command line arguments, so that if the user obtains them they will</span>
+<span class="c">!     be as specified on the command line (including those which MPICH1 would</span>
+<span class="c">!     normally strip out).</span>
+<span class="c">!</span>
+<span class="c">!     {\tt ESMF\_Initialize()} supports running ESMF inside a user MPI program.</span>
+<span class="c">!     Details of this feature are discussed under the VM example </span>
+<span class="c">!     \ref{vm_inside_user_mpi}. It is not necessary that all MPI ranks are</span>
+<span class="c">!     handed to ESMF. Section \ref{vm_nesting_esmf} shows how an MPI</span>
+<span class="c">!     communicator can be used to execute ESMF on a subset of MPI ranks.</span>
+<span class="c">!     {\tt ESMF\_Initialize()} supports running multiple concurrent</span>
+<span class="c">!     instances of ESMF under the same user MPI program. This feature is</span>
+<span class="c">!     discussed under \ref{vm_multi_instance_esmf}.</span>
+<span class="c">!</span>
+<span class="c">!     In order to use any of the advanced resource management functions that</span>
+<span class="c">!     ESMF provides via the {\tt ESMF\_*CompSetVM*()} methods, the MPI</span>
+<span class="c">!     environment must be thread-safe. {\tt ESMF\_Initialize()} handles this</span>
+<span class="c">!     automatically if it is in charge of initializing MPI. However, if the</span>
+<span class="c">!     user code initializes MPI before calling into {\tt ESMF\_Initialize()},</span>
+<span class="c">!     it must do so via {\tt MPI\_Init\_thread()}, specifying</span>
+<span class="c">!     {\tt MPI\_THREAD\_SERIALIZED} or above for the required level of thread</span>
+<span class="c">!     support.</span>
+<span class="c">!</span>
+<span class="c">!     In cases where {\tt ESMF\_*CompSetVM*()} methods are used to move</span>
+<span class="c">!     processing elements (PEs), i.e. CPU cores, between persistent execution</span>
+<span class="c">!     threads (PETs), ESMF uses POSIX signals between PETs. In order to do so</span>
+<span class="c">!     safely, the proper signal handlers must be installed {\em before} MPI is</span>
+<span class="c">!     initialized. {\tt ESMF\_Initialize()} handles this automatically if it is</span>
+<span class="c">!     in charge of initializing MPI. If, however, MPI is explicitly initialized</span>
+<span class="c">!     by user code, then to ensure correct signal handling it is necessary to</span>
+<span class="c">!     call {\tt ESMF\_InitializePreMPI()} from the user code prior to the MPI</span>
+<span class="c">!     initialization.</span>
+<span class="c">!</span>
+<span class="c">!     By default, {\tt ESMF\_Initialize()} opens multiple error log files,</span>
+<span class="c">!     one per processor.  This is very useful for debugging purpose.  However,</span>
+<span class="c">!     when running the application on a large number of tasks, opening a</span>
+<span class="c">!     large number of log files and writing log messages from all the tasks</span>
+<span class="c">!     can become a performance bottleneck.  Therefore, it is recommended</span>
+<span class="c">!     for production runs to set {\tt logKindFlag} to ESMF\_LOGKIND\_NONE, or</span>
+<span class="c">!     {\tt ESMF\_LOGKIND\_Multi\_On\_Error}. The latter only creates log files</span>
+<span class="c">!     when an error occurs.</span>
+<span class="c">!</span>
+<span class="c">!     When integrating ESMF with applications where Fortran unit number conflicts</span>
+<span class="c">!     exist, the optional {\tt ioUnitLBound} and {\tt ioUnitUBound} arguments may be</span>
+<span class="c">!     used to specify an alternate unit number range.  See section \ref{fio:unitnumbers}</span>
+<span class="c">!     for more information on how ESMF uses Fortran unit numbers.</span>
+<span class="c">!</span>
+<span class="c">!     Before exiting the application the user must call {\tt ESMF\_Finalize()}</span>
+<span class="c">!     to release resources and clean up ESMF gracefully. See the</span>
+<span class="c">!     {\tt ESMF\_Finalize()} documentation about details relating to the MPI</span>
+<span class="c">!     environment.</span>
+<span class="c">!</span>
+<span class="c">!     The arguments are:</span>
+<span class="c">!     \begin{description}</span>
+<span class="c">!     \item [{[configFilenameFromArgNum]}]</span>
+<span class="c">!           Index of the command line argument specifying the config file</span>
+<span class="c">!           name. If the specified command line argument does not exist, or</span>
+<span class="c">!           {\tt configFilenameFromArgNum} was not specified, the</span>
+<span class="c">!           {\tt configFilename} argument, if provided, is used by default.</span>
+<span class="c">!     \item [{[configFilename]}]</span>
+<span class="c">!           Name of the configuration file for the entire application.</span>
+<span class="c">!           If this argument is specified, the configuration file must exist.</span>
+<span class="c">!           Its content is read during {\tt ESMF\_Initialize()}, and</span>
+<span class="c">!           returned in optional argument {\tt config} if present.</span>
+<span class="c">!</span>
+<span class="c">!           The traditional {\tt ESMF\_Config} format and the YAML format</span>
+<span class="c">!           are supported. The latter is identified by file suffix {\tt .yaml}</span>
+<span class="c">!           and {\tt .yml}, including all lower/upper case letter combinations</span>
+<span class="c">!           that map to either suffix.</span>
+<span class="c">!</span>
+<span class="c">!           In the case of the traditional {\tt ESMF\_Config} format, the</span>
+<span class="c">!           predefined labels of initialization options discussed below are</span>
+<span class="c">!           expected on the top level of the configuration. The expected</span>
+<span class="c">!           termination character for this case is a single colon following</span>
+<span class="c">!           each label.</span>
+<span class="c">!</span>
+<span class="c">!           For the YAML case, the predefined initialization option labels are</span>
+<span class="c">!           expected as the keys of a map. If the optional argument</span>
+<span class="c">!           {\tt configKey} is specified, it is used to locate this map. The</span>
+<span class="c">!           map is expected as the terminal value of a succession of mappings:</span>
+<span class="c">!           \begin{verbatim}</span>
+<span class="c">!             configKey(1) : </span>
+<span class="c">!               configKey(2) : </span>
+<span class="c">!                 ...</span>
+<span class="c">!                   configKey(size(configKey)) :</span>
+<span class="c">!                     {map of specified init options}</span>
+<span class="c">!           \end{verbatim}</span>
+<span class="c">!           By default, in the absence of argument {\tt configKey}, the top</span>
+<span class="c">!           level itself is searched for a mapping of predefined labels,</span>
+<span class="c">!           analogous to the traditional case.</span>
+<span class="c">!</span>
+<span class="c">!           If any of the following predefined labels are found in the specified</span>
+<span class="c">!           configuration file (as per the above defined rules), their</span>
+<span class="c">!           {\em values} are used to set the associated {\tt ESMF\_Initialize()}</span>
+<span class="c">!           argument, overriding any defaults.</span>
+<span class="c">!           If the same argument is also specified in the</span>
+<span class="c">!           {\tt ESMF\_Initialize()} call directly, an error is returned,</span>
+<span class="c">!           and ESMF is not initialized.</span>
+<span class="c">!           The supported config labels are:</span>
+<span class="c">!           \begin{itemize}</span>
+<span class="c">!              \item {\tt defaultCalKind}</span>
+<span class="c">!              \item {\tt defaultLogFilename}</span>
+<span class="c">!              \item {\tt logAppendFlag}</span>
+<span class="c">!              \item {\tt logKindFlag}</span>
+<span class="c">!              \item {\tt globalResourceControl}</span>
+<span class="c">!           \end{itemize}</span>
+<span class="c">!</span>
+<span class="c">!           ESMF allows the user to affect certain details about the execution</span>
+<span class="c">!           of an application through a number of run-time environment variables.</span>
+<span class="c">!           The following list of variables are checked within the specified</span>
+<span class="c">!           configuration file. If a matching label is found, the respective</span>
+<span class="c">!           value is set, potentially overriding the value defined within the</span>
+<span class="c">!           user environment for the same variable.</span>
+<span class="c">!           \begin{itemize}</span>
+<span class="c">!              \item {\tt ESMF\_RUNTIME\_ABORT\_ACTION}</span>
+<span class="c">!              \item {\tt ESMF\_RUNTIME\_ABORT\_LOGMSG\_TYPES}</span>
+<span class="c">!              \item {\tt ESMF\_RUNTIME\_COMPLIANCECHECK}</span>
+<span class="c">!              \item {\tt ESMF\_RUNTIME\_GARBAGE}</span>
+<span class="c">!              \item {\tt ESMF\_RUNTIME\_GARBAGE\_LOG}</span>
+<span class="c">!              \item {\tt ESMF\_RUNTIME\_PROFILE}</span>
+<span class="c">!              \item {\tt ESMF\_RUNTIME\_PROFILE\_OUTPUT}</span>
+<span class="c">!              \item {\tt ESMF\_RUNTIME\_PROFILE\_PETLIST}</span>
+<span class="c">!              \item {\tt ESMF\_RUNTIME\_PROFILE\_REGRID}</span>
+<span class="c">!              \item {\tt ESMF\_RUNTIME\_TRACE}</span>
+<span class="c">!              \item {\tt ESMF\_RUNTIME\_TRACE\_CLOCK}</span>
+<span class="c">!              \item {\tt ESMF\_RUNTIME\_TRACE\_FLUSH}</span>
+<span class="c">!              \item {\tt ESMF\_RUNTIME\_TRACE\_COMPONENT}</span>
+<span class="c">!              \item {\tt ESMF\_RUNTIME\_TRACE\_PETLIST}</span>
+<span class="c">!           \end{itemize}</span>
+<span class="c">!     \item [{[configKey]}]</span>
+<span class="c">!           If present, use {\tt configKey} to find the map of predefined</span>
+<span class="c">!           initialization options that are used during ESMF initialization.</span>
+<span class="c">!           The default is to search the top level of the configuration for the</span>
+<span class="c">!           labels directly.</span>
+<span class="c">!           The {\tt configKey} option is only supported for YAML configurations.</span>
+<span class="c">!           An error is returned if {\tt configKey} is specified for the</span>
+<span class="c">!           traditional {\tt ESMF\_Config} case.</span>
+<span class="c">!     \item [{[defaultDefaultCalKind]}]</span>
+<span class="c">!           Default value for argument {\tt defaultCalKind}, the calendar</span>
+<span class="c">!           used by ESMF Time Manger by default.</span>
+<span class="c">!           If not specified, defaults to {\tt ESMF\_CALKIND\_NOCALENDAR}.</span>
+<span class="c">!     \item [{[defaultCalKind]}]</span>
+<span class="c">!           Sets the default calendar to be used by ESMF Time Manager.</span>
+<span class="c">!           See section \ref{const:calkindflag} for a list of valid options.</span>
+<span class="c">!           If not specified,</span>
+<span class="c">!           defaults according to {\tt defaultDefaultCalKind}.</span>
+<span class="c">!     \item [{[defaultDefaultLogFilename]}]</span>
+<span class="c">!           Default value for argument {\tt defaultLogFilename}, the name of</span>
+<span class="c">!           the default log file for warning and error messages.</span>
+<span class="c">!           If not specified, the default is {\tt ESMF\_LogFile}.</span>
+<span class="c">!     \item [{[defaultLogFilename]}]</span>
+<span class="c">!           Name of the default log file for warning and error messages.</span>
+<span class="c">!           If not specified,</span>
+<span class="c">!           defaults according to {\tt defaultDefaultLogFilename}.</span>
+<span class="c">!     \item [{[defaultLogAppendFlag]}]</span>
+<span class="c">!           Default value for argument {\tt logAppendFlag}, indicating the</span>
+<span class="c">!           overwrite behavior in case the default log file already exists.</span>
+<span class="c">!           If not specified, the default is {\tt .true.}.</span>
+<span class="c">!     \item [{[logAppendFlag]}]</span>
+<span class="c">!           If the default log file already exists, a value of {\tt .false.}</span>
+<span class="c">!           will set the file position to the beginning of the file.  A value</span>
+<span class="c">!           of {\tt .true.} sets the position to the end of the file.</span>
+<span class="c">!           If not specified,</span>
+<span class="c">!           defaults according to {\tt defaultLogAppendFlag}.</span>
+<span class="c">!     \item [{[defaultLogKindFlag]}]</span>
+<span class="c">!           Default value for argument {\tt logKindFlag}, setting the LogKind</span>
+<span class="c">!           of the default ESMF log.</span>
+<span class="c">!           If not specified, the default is {\tt ESMF\_LOGKIND\_MULTI}.</span>
+<span class="c">!     \item [{[logKindFlag]}]</span>
+<span class="c">!           Sets the LogKind of the default ESMF log. See section</span>
+<span class="c">!           \ref{const:logkindflag} for a list of valid options.</span>
+<span class="c">!           If not specified,</span>
+<span class="c">!           defaults according to {\tt defaultLogKindFlag}.</span>
+<span class="c">!     \item [{[mpiCommunicator]}]</span>
+<span class="c">!           MPI communicator defining the group of processes on which the</span>
+<span class="c">!           ESMF application is running.</span>
+<span class="c">!           See section \ref{vm_nesting_esmf} and \ref{vm_multi_instance_esmf}</span>
+<span class="c">!           for details.</span>
+<span class="c">!           If not specified, defaults to {\tt MPI\_COMM\_WORLD}.</span>
+<span class="c">!     \item [{[ioUnitLBound]}]</span>
+<span class="c">!           Lower bound for Fortran unit numbers used within the ESMF library.</span>
+<span class="c">!           Fortran units are primarily used for log files.  Legal unit numbers</span>
+<span class="c">!           are positive integers.  A value higher than 10 is recommended</span>
+<span class="c">!           in order to avoid the compiler-specific</span>
+<span class="c">!           reservations which are typically found on the first few units.</span>
+<span class="c">!           If not specified, defaults to {\tt ESMF\_LOG\_FORT\_UNIT\_NUMBER},</span>
+<span class="c">!           which is distributed with a value of 50.</span>
+<span class="c">!     \item [{[ioUnitUBound]}]</span>
+<span class="c">!           Upper bound for Fortran unit numbers used within the ESMF library.</span>
+<span class="c">!           Must be set to a value at least 5 units higher than {\tt ioUnitLBound}.</span>
+<span class="c">!           If not specified, defaults to {\tt ESMF\_LOG\_UPPER}, which is</span>
+<span class="c">!           distributed with a value of 99.</span>
+<span class="c">!     \item [{[defaultGlobalResourceControl]}]</span>
+<span class="c">!           Default value for argument {\tt globalResourceControl}, indicating</span>
+<span class="c">!           whether PETs of the global VM are pinned to PEs and the OpenMP</span>
+<span class="c">!           threading level is reset.</span>
+<span class="c">!           If not specified, the default is {\tt .false.}.</span>
+<span class="c">!     \item [{[globalResourceControl]}]</span>
+<span class="c">!           For {\tt .true.}, each global PET is pinned to the corresponding</span>
+<span class="c">!           PE (i.e. CPU core) in order. Further, if OpenMP support is enabled</span>
+<span class="c">!           for the ESMF installation (during build time), the</span>
+<span class="c">!           {\tt OMP\_NUM\_THREADS} is set to {\tt 1} on every PET, regardless</span>
+<span class="c">!           of the setting in the launching environment. The {\tt .true.}</span>
+<span class="c">!           setting is recommended for applications that utilize the ESMF-aware</span>
+<span class="c">!           threading and resource control features.</span>
+<span class="c">!           For {\tt .false.}, global PETs are {\em not} pinned by ESMF, and</span>
+<span class="c">!           {\tt OMP\_NUM\_THREADS} is {\em not} modified.</span>
+<span class="c">!           If not specified,</span>
+<span class="c">!           defaults according to {\tt defaultGlobalResourceControl}.</span>
+<span class="c">!     \item [{[config]}]</span>
+<span class="c">!           Returns the default {\tt ESMF\_Config} if the</span>
+<span class="c">!           {\tt configFilename} argument was provided. Otherwise the</span>
+<span class="c">!           presence of this argument triggers an error.</span>
+<span class="c">!     \item [{[hconfig]}]</span>
+<span class="c">!           Returns the default {\tt ESMF\_HConfig} if the</span>
+<span class="c">!           {\tt configFilename} argument was provided. Otherwise the</span>
+<span class="c">!           presence of this argument triggers an error.</span>
+<span class="c">!     \item [{[vm]}]</span>
+<span class="c">!           Returns the global {\tt ESMF\_VM} that was created</span>
+<span class="c">!           during initialization.</span>
+<span class="c">!     \item [{[rc]}]</span>
+<span class="c">!           Return code; equals {\tt ESMF\_SUCCESS} if there are no errors.</span>
+<span class="c">!</span>
+<span class="c">!     \end{description}</span>
+<span class="c">!EOP</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">localrc</span><span class="w">                        </span><span class="c">! local return code</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_VM</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localvm</span>
+
+<span class="w">      </span><span class="c">! assume failure until success</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+
+<span class="w">      </span><span class="c">! initialize the framework</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_FrameworkInternalInit</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="n">ESMF_MAIN_F90</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">configFilenameFromArgNum</span><span class="o">=</span><span class="n">configFilenameFromArgNum</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">configFilename</span><span class="o">=</span><span class="n">configFilename</span><span class="p">,</span><span class="w"> </span><span class="n">configKey</span><span class="o">=</span><span class="n">configKey</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">defaultDefaultCalKind</span><span class="o">=</span><span class="n">defaultDefaultCalKind</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">defaultCalKind</span><span class="o">=</span><span class="n">defaultCalKind</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">defaultDefaultLogFilename</span><span class="o">=</span><span class="n">defaultDefaultLogFilename</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">defaultLogFilename</span><span class="o">=</span><span class="n">defaultLogFilename</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">defaultLogAppendFlag</span><span class="o">=</span><span class="n">defaultLogAppendFlag</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">logAppendFlag</span><span class="o">=</span><span class="n">logAppendFlag</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">defaultLogKindFlag</span><span class="o">=</span><span class="n">defaultLogKindFlag</span><span class="p">,</span><span class="w"> </span><span class="n">logKindFlag</span><span class="o">=</span><span class="n">logKindFlag</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">mpiCommunicator</span><span class="o">=</span><span class="n">mpiCommunicator</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ioUnitLBound</span><span class="o">=</span><span class="n">ioUnitLBound</span><span class="p">,</span><span class="w"> </span><span class="n">ioUnitUBound</span><span class="o">=</span><span class="n">ioUnitUBound</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">defaultGlobalResourceControl</span><span class="o">=</span><span class="n">defaultGlobalResourceControl</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">globalResourceControl</span><span class="o">=</span><span class="n">globalResourceControl</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span><span class="w"> </span><span class="n">hconfig</span><span class="o">=</span><span class="n">hconfig</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">! on failure LogErr is not initialized -&gt; explicit print on error</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        write</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_UtilIOStderr</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;: Error initializing framework&quot;</span>
+<span class="w">        </span><span class="k">return</span>
+<span class="k">      endif</span>
+<span class="w">      </span><span class="c">! on success LogErr is assumed to be functioning</span>
+
+<span class="w">      </span><span class="c">! obtain global VM</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_VMGetGlobal</span><span class="p">(</span><span class="n">localvm</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">vm</span><span class="p">))</span><span class="w"> </span><span class="n">vm</span><span class="o">=</span><span class="n">localvm</span>
+
+<span class="w">      </span><span class="c">! block on all PETs</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_VMBarrier</span><span class="p">(</span><span class="n">localvm</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="w">      </span><span class="k">end subroutine </span><span class="n">ESMF_Initialize</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

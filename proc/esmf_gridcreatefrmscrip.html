@@ -1,0 +1,893 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_GridCreateFrmScrip &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_GridCreateFrmScrip
+      <small>Function</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.0% of total for procedures.">15 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_Grid.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_grid.f90.html'>ESMF_Grid.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/esmf_gridmod.html'>ESMF_GridMod</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_GridCreateFrmScrip</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/esmf_gridcreatefrmscrip.html#src">ESMF_GridCreateFrmScrip</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>private  function ESMF_GridCreateFrmScrip(filename, regDecomp, Indexflag, keywordEnforcer, decompflag, isSphere, polekindflag, addCornerStagger, addUserArea, rc)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-filename~25"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>filename</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-regdecomp~5"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>regDecomp</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-indexflag"></span>
+              type(<a href='../type/esmf_index_flag.html'>ESMF_Index_Flag</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Indexflag</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-keywordenforcer~523"></span>
+              type(<a href='../type/esmf_keywordenforcer.html'>ESMF_KeywordEnforcer</a>),
+            </td>
+<td></td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>keywordEnforcer</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-decompflag~5"></span>
+              type(<a href='../type/esmf_decomp_flag.html'>ESMF_Decomp_Flag</a>),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>decompflag</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-issphere~7"></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>isSphere</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-polekindflag~3"></span>
+              type(<a href='../type/esmf_polekind_flag.html'>ESMF_PoleKind_Flag</a>),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>polekindflag</strong>(2)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-addcornerstagger~3"></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>addCornerStagger</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-adduserarea~6"></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>addUserArea</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~1773"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <h3>Return Value
+        <small>
+          <span class="anchor" id="variable-esmf_gridcreatefrmscrip"></span>
+          type(<a href='../type/esmf_grid.html'>ESMF_Grid</a>)
+        </small>
+      </h3>
+      
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">  </span><span class="k">function </span><span class="n">ESMF_GridCreateFrmScrip</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">regDecomp</span><span class="p">,</span><span class="w"> </span><span class="n">indexflag</span><span class="p">,</span><span class="w"> </span><span class="n">keywordEnforcer</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">decompflag</span><span class="p">,</span><span class="w"> </span><span class="n">isSphere</span><span class="p">,</span><span class="w"> </span><span class="n">polekindflag</span><span class="p">,</span><span class="w"> </span><span class="n">addCornerStagger</span><span class="p">,</span><span class="w"> </span><span class="n">addUserArea</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+
+<span class="c">! !RETURN VALUE:</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Grid</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ESMF_GridCreateFrmScrip</span>
+<span class="c">!</span>
+<span class="c">! !ARGUMENTS:</span>
+
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w">       </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">             </span><span class="kd">::</span><span class="w"> </span><span class="n">filename</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">                </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">               </span><span class="kd">::</span><span class="w"> </span><span class="n">regDecomp</span><span class="p">(:)</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Index_Flag</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="n">Indexflag</span>
+<span class="k">type</span><span class="p">(</span><span class="n">ESMF_KeywordEnforcer</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="kd">::</span><span class="w"> </span><span class="n">keywordEnforcer</span><span class="w"> </span><span class="c">! must use keywords below</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Decomp_Flag</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">decompflag</span><span class="p">(:)</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">,</span><span class="w">                </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">isSphere</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_PoleKind_Flag</span><span class="p">),</span><span class="w">  </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">polekindflag</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">,</span><span class="w">                </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">addCornerStagger</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">,</span><span class="w">                </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">addUserArea</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">                </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">! This function creates a {\tt ESMF\_Grid} object using the grid definition from</span>
+<span class="c">! a SCRIP grid file.</span>
+<span class="c">! To specify the distribution, the user passes in an array</span>
+<span class="c">! ({\tt regDecomp}) specifying the number of DEs to divide each</span>
+<span class="c">! dimension into. The array {\tt decompflag} indicates how the division into DEs is to</span>
+<span class="c">! occur.  The default is to divide the range as evenly as possible.</span>
+<span class="c">! The grid defined in the file has to be a 2D logically rectangular</span>
+<span class="c">! grid (i.e. {\tt grid\_rank} in the file needs to be 2).</span>
+<span class="c">!</span>
+<span class="c">! This call is {\em collective} across the current VM.</span>
+<span class="c">!</span>
+<span class="c">! The arguments are:</span>
+<span class="c">! \begin{description}</span>
+<span class="c">! \item[filename]</span>
+<span class="c">!     The SCRIP Grid filename.</span>
+<span class="c">! \item[regDecomp]</span>
+<span class="c">!      A 2 element array specifying how the grid is decomposed.</span>
+<span class="c">!      Each entry is the number of decounts for that dimension.</span>
+<span class="c">! \item[{[decompflag]}]</span>
+<span class="c">!      List of decomposition flags indicating how each dimension of the</span>
+<span class="c">!      tile is to be divided between the DEs. The default setting</span>
+<span class="c">!      is {\tt ESMF\_DECOMP\_BALANCED} in all dimensions. Please see</span>
+<span class="c">!      Section~\ref{const:decompflag} for a full description of the</span>
+<span class="c">!      possible options. Note that currently the option</span>
+<span class="c">!      {\tt ESMF\_DECOMP\_CYCLIC} isn&#39;t supported in Grid creation.</span>
+<span class="c">! \item[{[isSphere]}]</span>
+<span class="c">!      If .true., create a periodic Grid. If .false., create a regional Grid. Defaults to .true.</span>
+<span class="c">! \item[{[polekindflag]}]</span>
+<span class="c">!      Two item array which specifies the type of connection which occurs at the pole. The value in polekindflag(1)</span>
+<span class="c">!      specifies the connection that occurs at the minimum end of the pole dimension. The value in polekindflag(2)</span>
+<span class="c">!      specifies the connection that occurs at the maximum end of the pole dimension. Please see</span>
+<span class="c">!      Section~\ref{const:polekind} for a full list of options. If not specified,</span>
+<span class="c">!      the default is {\tt ESMF\_POLEKIND\_MONOPOLE} for both.</span>
+<span class="c">! \item[{[addCornerStagger]}]</span>
+<span class="c">!      Uses the information in the SCRIP file to add the Corner stagger to</span>
+<span class="c">!      the Grid. If not specified, defaults to false.</span>
+<span class="c">! \item[{[addUserArea]}]</span>
+<span class="c">!      If .true., use the cell area defined in the SCRIP file.</span>
+<span class="c">! \item[{[rc]}]</span>
+<span class="c">!      Return code; equals {\tt ESMF\_SUCCESS} if there are no errors.</span>
+<span class="c">! \end{description}</span>
+<span class="c">!</span>
+<span class="c">!EOPI</span>
+
+<span class="cp">#ifdef ESMF_NETCDF</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ncid</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ncStatus</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">totalpoints</span><span class="p">,</span><span class="n">totaldims</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dims</span><span class="p">(:)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">DimId</span><span class="p">,</span><span class="w"> </span><span class="n">VarId</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w">  </span><span class="k">allocatable</span><span class="kd">::</span><span class="w"> </span><span class="n">coordX</span><span class="p">(:),</span><span class="n">coordY</span><span class="p">(:)</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w">  </span><span class="k">allocatable</span><span class="kd">::</span><span class="w"> </span><span class="n">area</span><span class="p">(:)</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w">  </span><span class="k">allocatable</span><span class="kd">::</span><span class="w"> </span><span class="n">cornerX</span><span class="p">(:),</span><span class="n">cornerY</span><span class="p">(:)</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w">  </span><span class="k">allocatable</span><span class="kd">::</span><span class="w"> </span><span class="n">cornerX2D</span><span class="p">(:,:),</span><span class="n">cornerY2D</span><span class="p">(:,:)</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Grid</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">grid</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Array</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="k">array</span>
+<span class="k">    type</span><span class="p">(</span><span class="n">ESMF_VM</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">vm</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">numDim</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">msgbuf</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_DistGrid</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">distgrid</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Decomp_Flag</span><span class="p">)</span><span class="kd">::</span><span class="w"> </span><span class="n">decompflagLocal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localrc</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">PetNo</span><span class="p">,</span><span class="w"> </span><span class="n">PetCnt</span>
+<span class="w">    </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localAddCornerStagger</span>
+<span class="w">    </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localAddUserArea</span>
+<span class="w">    </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localIsSphere</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">grid_corners</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">minind</span><span class="p">(:,:)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cornerDims</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">lbnd</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">ubnd</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">total</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">fptrLat</span><span class="p">(:,:),</span><span class="w"> </span><span class="n">fptrLon</span><span class="p">(:,:),</span><span class="w"> </span><span class="n">fptrCLon</span><span class="p">(:,:),</span><span class="w"> </span><span class="n">fptrCLat</span><span class="p">(:,:)</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">fptrArea</span><span class="p">(:,:)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">ESMF_KIND_I4</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">fptrMask</span><span class="p">(:,:)</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">recvbuf</span><span class="p">(:)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">maskbuf</span><span class="p">(:),</span><span class="w"> </span><span class="n">imask</span><span class="p">(:)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">startindex</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localRoot</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">ii</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">recv</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">centxdim</span><span class="p">,</span><span class="w"> </span><span class="n">corxdim</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">DECount</span>
+
+<span class="w">    </span><span class="c">! Initialize return code; assume failure until success is certain</span>
+<span class="w">    </span><span class="n">localrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+
+<span class="w">    </span><span class="c">! get global vm information</span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_VMGetCurrent</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">    </span><span class="c">! set up local pet info</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_VMGet</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">localPet</span><span class="o">=</span><span class="n">PetNo</span><span class="p">,</span><span class="w"> </span><span class="n">petCount</span><span class="o">=</span><span class="n">PetCnt</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">decompFlag</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">decompFlagLocal</span><span class="p">(:)</span><span class="o">=</span><span class="n">decompFlag</span><span class="p">(:)</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="k">        </span><span class="n">decompFlagLocal</span><span class="p">(:)</span><span class="o">=</span><span class="n">ESMF_DECOMP_BALANCED</span>
+<span class="w">    </span><span class="k">endif</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">addCornerStagger</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">localAddCornerStagger</span><span class="o">=</span><span class="n">addCornerStagger</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="k">        </span><span class="n">localAddCornerStagger</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">    </span><span class="k">endif</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">isSphere</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">localIsSphere</span><span class="o">=</span><span class="n">isSphere</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="k">        </span><span class="n">localIsSphere</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">    </span><span class="k">endif</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">addUserArea</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">localAddUserArea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">addUserArea</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="k">        </span><span class="n">localAddUserArea</span><span class="w"> </span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">    </span><span class="k">endif</span>
+
+<span class="w">    </span><span class="c">! Get the grid rank and dimensions from the SCRIP file on PET 0, broadcast the</span>
+<span class="w">    </span><span class="c">! data to all the PETs</span>
+<span class="w">    </span><span class="k">allocate</span><span class="p">(</span><span class="n">dims</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">PetNo</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">       call </span><span class="n">ESMF_ScripInq</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">grid_dims</span><span class="o">=</span><span class="n">dims</span><span class="p">,</span><span class="w"> </span><span class="n">grid_rank</span><span class="o">=</span><span class="n">totaldims</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                          </span><span class="n">grid_size</span><span class="o">=</span><span class="n">totalpoints</span><span class="p">,</span><span class="w"> </span><span class="n">grid_corners</span><span class="o">=</span><span class="n">grid_corners</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+
+<span class="w">       </span><span class="c">! write(*,*) &quot;totalpoints=&quot;,totalpoints</span>
+
+<span class="w">       </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">       </span><span class="c">! broadcast the values to other PETs</span>
+<span class="w">       </span><span class="n">msgbuf</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="n">totaldims</span>
+<span class="w">       </span><span class="n">msgbuf</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">=</span><span class="n">dims</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">       </span><span class="n">msgbuf</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">=</span><span class="n">dims</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">       </span><span class="n">msgbuf</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">=</span><span class="n">grid_corners</span>
+<span class="w">       </span><span class="k">call </span><span class="n">ESMF_VMBroadcast</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">msgbuf</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">       </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    else</span>
+<span class="k">      call </span><span class="n">ESMF_VMBroadcast</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">msgbuf</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">       </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">      </span><span class="n">totaldims</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">msgbuf</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">      </span><span class="n">dims</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="n">msgbuf</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">      </span><span class="n">dims</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">=</span><span class="n">msgbuf</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="w">      </span><span class="n">grid_corners</span><span class="o">=</span><span class="n">msgbuf</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="w">    </span><span class="k">endif</span>
+
+<span class="w">    </span><span class="c">! if grid_rank is not equal to 2, return error</span>
+<span class="w">    </span><span class="c">! Does SCRIP allow 3D datasets?  What will be the format??</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">totaldims</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_RANK</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- The grip has to be 2D&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span>
+<span class="k">    endif</span>
+
+<span class="w">    </span><span class="c">! if user wants corners and there aren&#39;t 4 then error</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localAddCornerStagger</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="p">(</span><span class="n">grid_corners</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">4</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_WRONG</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- The SCRIP file has grid_corners/=4, so can&#39;t add Grid corners&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span>
+<span class="k">    endif</span>
+
+<span class="cp">#if DEBUG_POLEKIND</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">polekindflag</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ESMF_GridCreateFrmScrip&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">polekindflag</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">polekindflag</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">localIsSphere</span>
+<span class="w">    </span><span class="k">endif</span>
+<span class="cp">#endif    </span>
+<span class="w">    </span><span class="c">! Create Grid based on the input distgrid</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localIsSphere</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">       </span><span class="n">grid</span><span class="o">=</span><span class="n">ESMF_GridCreate1PeriDim</span><span class="p">(</span><span class="n">minIndex</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">maxIndex</span><span class="o">=</span><span class="n">dims</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">regDecomp</span><span class="o">=</span><span class="n">regDecomp</span><span class="p">,</span><span class="w"> </span><span class="n">decompflag</span><span class="o">=</span><span class="n">decompFlagLocal</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">coordSys</span><span class="o">=</span><span class="n">ESMF_COORDSYS_SPH_DEG</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">polekindflag</span><span class="o">=</span><span class="n">polekindflag</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">gridEdgeLWidth</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">gridEdgeUWidth</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">indexflag</span><span class="o">=</span><span class="n">indexflag</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">       </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    else</span>
+<span class="k">       </span><span class="n">grid</span><span class="o">=</span><span class="n">ESMF_GridCreateNoPeriDim</span><span class="p">(</span><span class="n">minIndex</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">maxIndex</span><span class="o">=</span><span class="n">dims</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">regDecomp</span><span class="o">=</span><span class="n">regDecomp</span><span class="p">,</span><span class="w"> </span><span class="n">decompflag</span><span class="o">=</span><span class="n">decompFlagLocal</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">coordSys</span><span class="o">=</span><span class="n">ESMF_COORDSYS_SPH_DEG</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">gridEdgeLWidth</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">gridEdgeUWidth</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">indexflag</span><span class="o">=</span><span class="n">indexflag</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">       </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    endif</span>
+
+<span class="w">    </span><span class="c">! Get the exclusive area from each PET</span>
+
+<span class="w">    </span><span class="c">! Set coordinate tables</span>
+<span class="w">    </span><span class="c">! Longitude</span>
+<span class="w">    </span><span class="c">! Add coordinates</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_GridGet</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">localDECount</span><span class="o">=</span><span class="n">DECount</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    call </span><span class="n">ESMF_GridAddCoord</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CENTER</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="n">localAddCornerStagger</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        call </span><span class="n">ESMF_GridAddCoord</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CORNER</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    endif</span>
+<span class="k">    call </span><span class="n">ESMF_GridAddItem</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CENTER</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">itemflag</span><span class="o">=</span><span class="n">ESMF_GRIDITEM_MASK</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="n">localAddUserArea</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        call </span><span class="n">ESMF_GridAddItem</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CENTER</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">itemflag</span><span class="o">=</span><span class="n">ESMF_GRIDITEM_AREA</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    endif       </span>
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="n">DECount</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">      </span><span class="c">! if the grid size is small enough, read the data in from PET0 and scatter the data to other PEs</span>
+<span class="w">      </span><span class="c">! Otherwise, read in the data from the first PE in each row in deDecomp</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_GridGetCoord</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">coordDim</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CENTER</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">farrayPtr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fptrLon</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">      </span><span class="c">! need to send this information to the head PET of each row</span>
+<span class="w">      </span><span class="n">centxdim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">fptrLon</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">! Latitude</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_GridGetCoord</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">coordDim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CENTER</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">farrayPtr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fptrLat</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">      </span><span class="c">! Mask</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_GridGetItem</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CENTER</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">itemflag</span><span class="o">=</span><span class="n">ESMF_GRIDITEM_MASK</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fptrMask</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">      </span><span class="c">! Put Corners into coordinates</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localAddCornerStagger</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">          </span><span class="c">! Longitude</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_GridGetCoord</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CORNER</span><span class="p">,</span><span class="w"> </span><span class="n">coordDim</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">farrayptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fptrCLon</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">          </span><span class="c">! need to send this information to the head PET of each row</span>
+<span class="w">          </span><span class="n">corxdim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">fptrCLon</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="w">          </span><span class="c">! Latitude</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_GridGetCoord</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CORNER</span><span class="p">,</span><span class="w"> </span><span class="n">coordDim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">farrayptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fptrCLat</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">      endif</span>
+
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="n">localAddUserArea</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          call </span><span class="n">ESMF_GridGetItem</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CENTER</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">itemflag</span><span class="o">=</span><span class="n">ESMF_GRIDITEM_AREA</span><span class="p">,</span><span class="w"> </span><span class="n">farrayptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fptrArea</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">      endif</span>
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="nb">mod</span><span class="p">(</span><span class="n">PetNo</span><span class="p">,</span><span class="n">regDecomp</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="c">! read slab of data (in contiguous rows) from the first column of PETs in the regDecomp</span>
+<span class="w">        </span><span class="c">! For instance, if there are 8 PETs and regDecomp = /4,2/, then PET 0 and PET 4 will be</span>
+<span class="w">        </span><span class="c">! the reader, and each one will read in half of the input data.</span>
+
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">minind</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">PetCnt</span><span class="p">))</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_GridGet</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">distgrid</span><span class="o">=</span><span class="n">distgrid</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">        call </span><span class="n">ESMF_DistGridGet</span><span class="p">(</span><span class="n">distgrid</span><span class="p">,</span><span class="w"> </span><span class="n">minIndexPDe</span><span class="o">=</span><span class="n">minind</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">        call </span><span class="n">ESMF_GridGet</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_STAGGERLOC_CENTER</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">exclusiveLBound</span><span class="o">=</span><span class="n">lbnd</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">exclusiveUBound</span><span class="o">=</span><span class="n">ubnd</span><span class="p">,</span><span class="w"> </span><span class="n">exclusiveCount</span><span class="o">=</span><span class="n">total</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">        </span><span class="n">total</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="n">dims</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">        </span><span class="n">totalpoints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">total</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">total</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">        </span><span class="n">startindex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">minind</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">PetNo</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">total</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">minind</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">PetNo</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="w">        </span><span class="c">! Get the coordinate information from the SCRIP file, if in radians, convert to degrees</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localAddCornerStagger</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="c">! Get centers and corners</span>
+<span class="w">            </span><span class="k">allocate</span><span class="p">(</span><span class="n">coordX</span><span class="p">(</span><span class="n">totalpoints</span><span class="p">),</span><span class="w"> </span><span class="n">coordY</span><span class="p">(</span><span class="n">totalpoints</span><span class="p">))</span>
+<span class="w">            </span><span class="k">allocate</span><span class="p">(</span><span class="n">imask</span><span class="p">(</span><span class="n">totalpoints</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;Allocating imask&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                                     </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">            allocate</span><span class="p">(</span><span class="n">cornerX2D</span><span class="p">(</span><span class="n">grid_corners</span><span class="p">,</span><span class="n">totalpoints</span><span class="p">),</span><span class="w"> </span><span class="n">cornerY2D</span><span class="p">(</span><span class="n">grid_corners</span><span class="p">,</span><span class="n">totalpoints</span><span class="p">))</span>
+
+<span class="w">            </span><span class="k">call </span><span class="n">ESMF_ScripGetVar</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">grid_center_lon</span><span class="o">=</span><span class="n">coordX</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">   </span>
+<span class="w">                 </span><span class="n">grid_center_lat</span><span class="o">=</span><span class="n">coordY</span><span class="p">,</span><span class="w"> </span><span class="n">grid_corner_lon</span><span class="o">=</span><span class="n">cornerX2D</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">grid_corner_lat</span><span class="o">=</span><span class="n">cornerY2D</span><span class="p">,</span><span class="w"> </span><span class="n">grid_imask</span><span class="o">=</span><span class="n">imask</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">convertToDeg</span><span class="o">=</span><span class="p">.</span><span class="n">TRUE</span><span class="p">.,</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">startindex</span><span class="p">,</span><span class="w"> </span><span class="nb">count</span><span class="o">=</span><span class="n">totalpoints</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">            </span><span class="c">! Calc Corner Dims</span>
+<span class="w">            </span><span class="n">cornerDims</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">=</span><span class="n">total</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localIsSphere</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">               </span><span class="n">cornerDims</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="n">dims</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">            </span><span class="k">else</span>
+<span class="k">               </span><span class="n">cornerDims</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="n">dims</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+<span class="w">            </span><span class="k">endif</span>
+<span class="k">            allocate</span><span class="p">(</span><span class="n">cornerX</span><span class="p">(</span><span class="n">cornerDims</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">cornerDims</span><span class="p">(</span><span class="mi">2</span><span class="p">)),</span><span class="w"> </span><span class="n">cornerY</span><span class="p">(</span><span class="n">cornerDims</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">cornerDims</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+<span class="w">            </span><span class="k">call </span><span class="n">convert_corner_arrays_to_1D</span><span class="p">(</span><span class="n">localIsSphere</span><span class="p">,</span><span class="w"> </span><span class="n">dims</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">total</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">cornerX2D</span><span class="p">,</span><span class="n">cornerY2D</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                  </span><span class="n">cornerX</span><span class="p">,</span><span class="n">cornerY</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">            deallocate</span><span class="p">(</span><span class="n">cornerX2D</span><span class="p">,</span><span class="w"> </span><span class="n">cornerY2D</span><span class="p">)</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="c">! get just centers</span>
+<span class="w">            </span><span class="k">allocate</span><span class="p">(</span><span class="n">coordX</span><span class="p">(</span><span class="n">totalpoints</span><span class="p">),</span><span class="w"> </span><span class="n">coordY</span><span class="p">(</span><span class="n">totalpoints</span><span class="p">))</span>
+<span class="w">            </span><span class="k">allocate</span><span class="p">(</span><span class="n">imask</span><span class="p">(</span><span class="n">totalpoints</span><span class="p">),</span><span class="nb">stat</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;Allocating imask&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                                     </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">            call </span><span class="n">ESMF_ScripGetVar</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">grid_center_lon</span><span class="o">=</span><span class="n">coordX</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">   </span>
+<span class="w">                </span><span class="n">grid_center_lat</span><span class="o">=</span><span class="n">coordY</span><span class="p">,</span><span class="w"> </span><span class="n">grid_imask</span><span class="o">=</span><span class="n">imask</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">convertToDeg</span><span class="o">=</span><span class="p">.</span><span class="n">TRUE</span><span class="p">.,</span><span class="w"> </span><span class="n">start</span><span class="o">=</span><span class="n">startindex</span><span class="p">,</span><span class="w"> </span><span class="nb">count</span><span class="o">=</span><span class="n">totalpoints</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">        endif</span>
+<span class="k">        deallocate</span><span class="p">(</span><span class="n">dims</span><span class="p">,</span><span class="w"> </span><span class="n">minind</span><span class="p">)</span>
+
+<span class="w">        </span><span class="c">! pack the coordinate data and send it to the PETs in the same row (PET0 fills its</span>
+<span class="w">        </span><span class="c">! own array and send data to PET1 to PET3, PET4 will send to 5 to 7, etc...)</span>
+<span class="w">        </span><span class="c">! if there are more than 1 PET in the regdecomp(1)</span>
+<span class="w">        </span><span class="c">! Get the xdim of the local array from all other PETS in the same row</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">dims</span><span class="p">(</span><span class="n">regdecomp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="w">        </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">regDecomp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+<span class="w">            </span><span class="k">call </span><span class="n">ESMF_VMRecv</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">recv</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">PetNo</span><span class="o">+</span><span class="n">i</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">            </span><span class="n">dims</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">=</span><span class="n">recv</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">        </span><span class="k">enddo</span>
+<span class="k">        call </span><span class="n">pack_and_send_float</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">total</span><span class="p">,</span><span class="w"> </span><span class="n">regDecomp</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">PetNo</span><span class="p">,</span><span class="w"> </span><span class="n">coordX</span><span class="p">,</span><span class="w"> </span><span class="n">fptrLon</span><span class="p">,</span><span class="w"> </span><span class="n">dims</span><span class="p">)</span>
+<span class="w">        </span><span class="k">call </span><span class="n">pack_and_send_float</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">total</span><span class="p">,</span><span class="w"> </span><span class="n">regDecomp</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">PetNo</span><span class="p">,</span><span class="w"> </span><span class="n">coordY</span><span class="p">,</span><span class="w"> </span><span class="n">fptrLat</span><span class="p">,</span><span class="w"> </span><span class="n">dims</span><span class="p">)</span>
+<span class="w">        </span><span class="k">call </span><span class="n">pack_and_send_int</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">total</span><span class="p">,</span><span class="w"> </span><span class="n">regDecomp</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">PetNo</span><span class="p">,</span><span class="w"> </span><span class="n">imask</span><span class="p">,</span><span class="w"> </span><span class="n">fptrMask</span><span class="p">,</span><span class="w"> </span><span class="n">dims</span><span class="p">)</span>
+<span class="w">        </span><span class="k">deallocate</span><span class="p">(</span><span class="n">coordX</span><span class="p">,</span><span class="w"> </span><span class="n">coordY</span><span class="p">)</span>
+<span class="w">        </span><span class="k">deallocate</span><span class="p">(</span><span class="n">imask</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localAddUserArea</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            allocate</span><span class="p">(</span><span class="n">area</span><span class="p">(</span><span class="n">totalpoints</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;Allocating area&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                                   </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">            call </span><span class="n">ESMF_ScripGetVar</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">grid_area</span><span class="o">=</span><span class="n">area</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">            call </span><span class="n">pack_and_send_float</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">total</span><span class="p">,</span><span class="w"> </span><span class="n">regDecomp</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">PetNo</span><span class="p">,</span><span class="w"> </span><span class="n">area</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">fptrArea</span><span class="p">,</span><span class="w"> </span><span class="n">dims</span><span class="p">)</span>
+<span class="w">            </span><span class="k">deallocate</span><span class="p">(</span><span class="n">area</span><span class="p">)</span>
+<span class="w">        </span><span class="k">end if</span>
+
+<span class="w">        </span><span class="c">! pack corner coordinates and send</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localAddCornerStagger</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">           </span><span class="c">! collect the xdim of the corner stagger array from its member PETs</span>
+<span class="w">           </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">regdecomp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+<span class="w">             </span><span class="k">call </span><span class="n">ESMF_VMRecv</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">recv</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">PetNo</span><span class="o">+</span><span class="n">i</span><span class="p">)</span>
+<span class="w">             </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">             </span><span class="n">dims</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">=</span><span class="n">recv</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">           </span><span class="k">enddo</span>
+<span class="k">           call </span><span class="n">pack_and_send_float</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">cornerDims</span><span class="p">,</span><span class="w"> </span><span class="n">regDecomp</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">PetNo</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">cornerX</span><span class="p">,</span><span class="w"> </span><span class="n">fptrCLon</span><span class="p">,</span><span class="w"> </span><span class="n">dims</span><span class="p">)</span>
+<span class="w">           </span><span class="k">call </span><span class="n">pack_and_send_float</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">cornerDims</span><span class="p">,</span><span class="w"> </span><span class="n">regDecomp</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">PetNo</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">cornerY</span><span class="p">,</span><span class="w"> </span><span class="n">fptrCLat</span><span class="p">,</span><span class="w"> </span><span class="n">dims</span><span class="p">)</span>
+<span class="w">           </span><span class="k">deallocate</span><span class="p">(</span><span class="n">cornerX</span><span class="p">,</span><span class="w"> </span><span class="n">cornerY</span><span class="p">)</span>
+<span class="w">        </span><span class="k">endif</span>
+
+<span class="k">      else</span>
+<span class="k">        </span><span class="n">localroot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">PetNo</span><span class="o">/</span><span class="n">regDecomp</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="o">*</span><span class="n">regDecomp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_GridGet</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_STAGGERLOC_CENTER</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">exclusiveLBound</span><span class="o">=</span><span class="n">lbnd</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                  </span><span class="n">exclusiveUBound</span><span class="o">=</span><span class="n">ubnd</span><span class="p">,</span><span class="w"> </span><span class="n">exclusiveCount</span><span class="o">=</span><span class="n">total</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="n">recvbuf</span><span class="p">(</span><span class="n">total</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">total</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">maskbuf</span><span class="p">(</span><span class="n">total</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">total</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+<span class="w">        </span><span class="c">! First, send the xdim of the local array to the localroot</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_VMSend</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">total</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">localroot</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">        </span><span class="c">! Longitude coordinates</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_VMRecv</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">recvbuf</span><span class="p">,</span><span class="w"> </span><span class="n">total</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">total</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">localroot</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">        </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span>
+<span class="w">        </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="n">lbnd</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">ubnd</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">          </span><span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="n">lbnd</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">ubnd</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">             </span><span class="n">fptrLon</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">recvbuf</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">             </span><span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span>
+<span class="w">          </span><span class="k">enddo</span>
+<span class="k">        enddo</span>
+<span class="w">        </span><span class="c">! Latitude coordinates</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_VMRecv</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">recvbuf</span><span class="p">,</span><span class="w"> </span><span class="n">total</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">total</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">localroot</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">        </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span>
+<span class="w">        </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="n">lbnd</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">ubnd</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">          </span><span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="n">lbnd</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">ubnd</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">             </span><span class="n">fptrLat</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">recvbuf</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">             </span><span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span>
+<span class="w">          </span><span class="k">enddo</span>
+<span class="k">        enddo</span>
+
+<span class="w">        </span><span class="c">! Mask</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_VMRecv</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">maskbuf</span><span class="p">,</span><span class="w"> </span><span class="n">total</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">total</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">localroot</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">        </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span>
+<span class="w">        </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="n">lbnd</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">ubnd</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">          </span><span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="n">lbnd</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">ubnd</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">             </span><span class="n">fptrMask</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">maskbuf</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">             </span><span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span>
+<span class="w">          </span><span class="k">enddo</span>
+<span class="k">        enddo</span>
+<span class="k">        deallocate</span><span class="p">(</span><span class="n">maskbuf</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localAddUserArea</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          call </span><span class="n">ESMF_VMRecv</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">recvbuf</span><span class="p">,</span><span class="w"> </span><span class="n">total</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">total</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">localroot</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">          </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span>
+<span class="w">          </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="n">lbnd</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">ubnd</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">            </span><span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="n">lbnd</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">ubnd</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">               </span><span class="n">fptrArea</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">recvbuf</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">               </span><span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span>
+<span class="w">            </span><span class="k">enddo</span>
+<span class="k">          enddo</span>
+<span class="k">        endif</span>
+<span class="k">        deallocate</span><span class="p">(</span><span class="n">recvbuf</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localAddCornerStagger</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          call </span><span class="n">ESMF_GridGet</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_STAGGERLOC_CORNER</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">exclusiveLBound</span><span class="o">=</span><span class="n">lbnd</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">exclusiveUBound</span><span class="o">=</span><span class="n">ubnd</span><span class="p">,</span><span class="w"> </span><span class="n">exclusiveCount</span><span class="o">=</span><span class="n">total</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">          allocate</span><span class="p">(</span><span class="n">recvbuf</span><span class="p">(</span><span class="n">total</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">total</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+
+<span class="w">          </span><span class="c">! First, send the xdim of the local array to the localroot</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_VMSend</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">total</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">localroot</span><span class="p">)</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">          </span><span class="c">! Longitude coordinates</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_VMRecv</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">recvbuf</span><span class="p">,</span><span class="w"> </span><span class="n">total</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">total</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">localroot</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">          </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span>
+<span class="w">          </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="n">lbnd</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">ubnd</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">            </span><span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="n">lbnd</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">ubnd</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">               </span><span class="n">fptrCLon</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">recvbuf</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">               </span><span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span>
+<span class="w">            </span><span class="k">enddo</span>
+<span class="k">          enddo</span>
+<span class="w">          </span><span class="c">! Latitude coordinates</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_VMRecv</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">recvbuf</span><span class="p">,</span><span class="w"> </span><span class="n">total</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">total</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">localroot</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">          </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span>
+<span class="w">          </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="n">lbnd</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">ubnd</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">            </span><span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="n">lbnd</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">ubnd</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">               </span><span class="n">fptrCLat</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">recvbuf</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">               </span><span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span>
+<span class="w">            </span><span class="k">enddo</span>
+<span class="k">          enddo</span>
+<span class="k">          deallocate</span><span class="p">(</span><span class="n">recvbuf</span><span class="p">)</span>
+<span class="w">        </span><span class="k">endif</span>
+<span class="k">      endif</span>
+<span class="k">      deallocate</span><span class="p">(</span><span class="n">dims</span><span class="p">)</span>
+<span class="w">    </span><span class="k">endif</span><span class="w">  </span><span class="c">! if DECount &gt; 0</span>
+
+<span class="w">    </span><span class="n">ESMF_GridCreateFrmScrip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grid</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">ESMF_SUCCESS</span>
+<span class="w">    </span><span class="k">return</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_LIB_NOT_PRESENT</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- ESMF_NETCDF not defined when lib was compiled&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="cp">#endif</span>
+
+<span class="w">    </span><span class="k">return</span>
+<span class="k">end function </span><span class="n">ESMF_GridCreateFrmScrip</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

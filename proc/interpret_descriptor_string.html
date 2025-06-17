@@ -1,0 +1,737 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>interpret_descriptor_string &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>interpret_descriptor_string
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.1% of total for procedures.">176 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_TestHarnessParser.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_testharnessparser.f90.html'>ESMF_TestHarnessParser.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/esmf_testharnessparser.html'>ESMF_TestHarnessParser</a></li>
+            <li class="breadcrumb-item active" aria-current="page">interpret_descriptor_string</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/interpret_descriptor_string.html#src">interpret_descriptor_string</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>private  subroutine interpret_descriptor_string(lstring, nstring, grid_rank, grid_order, grid_type, HaloL, HaloR, StaggerLoc, dist_rank, dist_order, dist_type, localrc)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lstring~15"></span>
+              type(<a href='../type/character_array.html'>character_array</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>lstring</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nstring"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nstring</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid_rank~4"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid_rank</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid_order~2"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid_order</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid_type~2"></span>
+              type(<a href='../type/character_array.html'>character_array</a>),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid_type</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-halol"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>HaloL</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-halor"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>HaloR</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-staggerloc"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>StaggerLoc</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dist_rank~3"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dist_rank</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dist_order~2"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dist_order</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dist_type~2"></span>
+              type(<a href='../type/character_array.html'>character_array</a>),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dist_type</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-localrc~2563"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>localrc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">  </span><span class="k">subroutine </span><span class="n">interpret_descriptor_string</span><span class="p">(</span><span class="n">lstring</span><span class="p">,</span><span class="w"> </span><span class="n">nstring</span><span class="p">,</span><span class="w">                     </span><span class="p">&amp;</span>
+<span class="w">                                         </span><span class="n">grid_rank</span><span class="p">,</span><span class="w"> </span><span class="n">grid_order</span><span class="p">,</span><span class="w"> </span><span class="n">grid_type</span><span class="p">,</span><span class="w">     </span><span class="p">&amp;</span>
+<span class="w">                                         </span><span class="n">HaloL</span><span class="p">,</span><span class="w"> </span><span class="n">HaloR</span><span class="p">,</span><span class="w"> </span><span class="n">StaggerLoc</span><span class="p">,</span><span class="w">             </span><span class="p">&amp;</span>
+<span class="w">                                         </span><span class="n">dist_rank</span><span class="p">,</span><span class="w"> </span><span class="n">dist_order</span><span class="p">,</span><span class="w"> </span><span class="n">dist_type</span><span class="p">,</span><span class="w">     </span><span class="p">&amp;</span>
+<span class="w">                                         </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! This routine parses a part ( either source or destination) of a problem</span>
+<span class="w">  </span><span class="c">! descriptor string for for descriptions of the memory topology and rank,</span>
+<span class="w">  </span><span class="c">! the grid rank, order, halo and stagger, and the distribution type, rank,</span>
+<span class="w">  </span><span class="c">! and order. The routine assumes the string has beeen partitioned so that</span>
+<span class="w">  </span><span class="c">! each memory slot is stored in an element of a character array.</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+
+<span class="w">  </span><span class="c">! arguments</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">character_array</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="w">   </span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">lstring</span><span class="p">(:)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w">               </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="w">   </span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">nstring</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w">               </span><span class="k">intent</span><span class="p">(</span><span class="w">  </span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">grid_rank</span><span class="p">,</span><span class="w"> </span><span class="n">grid_order</span><span class="p">(:)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w">               </span><span class="k">intent</span><span class="p">(</span><span class="w">  </span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dist_rank</span><span class="p">,</span><span class="w"> </span><span class="n">dist_order</span><span class="p">(:)</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">character_array</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="w">  </span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">grid_type</span><span class="p">(:),</span><span class="w"> </span><span class="n">dist_type</span><span class="p">(:)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w">               </span><span class="k">intent</span><span class="p">(</span><span class="w">  </span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">HaloL</span><span class="p">(:),</span><span class="w"> </span><span class="n">HaloR</span><span class="p">(:)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w">               </span><span class="k">intent</span><span class="p">(</span><span class="w">  </span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">StaggerLoc</span><span class="p">(:)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w">               </span><span class="k">intent</span><span class="p">(</span><span class="w">  </span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localrc</span>
+
+
+<span class="w">  </span><span class="c">! local variables</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="n">THARN_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ltmp</span><span class="p">,</span><span class="w"> </span><span class="n">lstagger</span><span class="p">,</span><span class="w"> </span><span class="n">intstr</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">kstring</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="p">,</span><span class="w"> </span><span class="n">halo</span><span class="p">,</span><span class="w"> </span><span class="n">ndelim</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">iloc</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">mloc</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">hbeg</span><span class="p">,</span><span class="w"> </span><span class="n">hmid</span><span class="p">,</span><span class="w"> </span><span class="n">hend</span><span class="p">,</span><span class="w"> </span><span class="n">sbeg</span><span class="p">,</span><span class="w"> </span><span class="n">send</span><span class="p">,</span><span class="w"> </span><span class="n">slen</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">itmp</span><span class="p">,</span><span class="w"> </span><span class="n">itmp_beg</span><span class="p">,</span><span class="w"> </span><span class="n">itmp_end</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w">  </span><span class="n">sdelim</span><span class="p">(:)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w">  </span><span class="n">assoc_grid</span><span class="p">(:)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">allocRcToTest</span>
+
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! initialize return variable</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="n">localrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! work array</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="k">allocate</span><span class="p">(</span><span class="w"> </span><span class="n">assoc_grid</span><span class="p">(</span><span class="n">nstring</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot; type &quot;</span><span class="o">//</span><span class="w">                     </span><span class="p">&amp;</span>
+<span class="w">     </span><span class="s2">&quot; assoc_grid in interpret descriptor string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">localrc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">  endif</span>
+<span class="k">  </span><span class="n">assoc_grid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! Determine grid layout (rank and order)</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="n">grid_rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">  </span><span class="k">do </span><span class="n">kstring</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">nstring</span>
+<span class="w">     </span><span class="n">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">set_query</span><span class="p">(</span><span class="n">lstring</span><span class="p">(</span><span class="n">kstring</span><span class="p">)%</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;GU&#39;</span><span class="p">)</span>
+<span class="w">     </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">rank</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">     </span><span class="c">! no associated grid</span>
+<span class="w">        </span><span class="n">grid_type</span><span class="p">(</span><span class="n">kstring</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39; &#39;</span>
+<span class="w">        </span><span class="n">grid_order</span><span class="p">(</span><span class="n">kstring</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">     </span><span class="k">elseif</span><span class="p">(</span><span class="w"> </span><span class="n">rank</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">     </span><span class="c">! associated grid</span>
+<span class="w">        </span><span class="n">grid_rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grid_rank</span><span class="w"> </span><span class="o">+</span><span class="w">  </span><span class="n">rank</span>
+<span class="w">        </span><span class="k">call </span><span class="n">set_locate</span><span class="p">(</span><span class="n">lstring</span><span class="p">(</span><span class="n">kstring</span><span class="p">)%</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;GU&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">mloc</span><span class="p">)</span>
+<span class="w">        </span><span class="n">grid_type</span><span class="p">(</span><span class="n">kstring</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lstring</span><span class="p">(</span><span class="n">kstring</span><span class="p">)%</span><span class="n">string</span><span class="p">(</span><span class="n">mloc</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span><span class="n">mloc</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="w">        </span><span class="k">read</span><span class="p">(</span><span class="w"> </span><span class="n">lstring</span><span class="p">(</span><span class="n">kstring</span><span class="p">)%</span><span class="n">string</span><span class="p">(</span><span class="n">mloc</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">mloc</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">grid_order</span><span class="p">(</span><span class="n">kstring</span><span class="p">)</span>
+<span class="w">        </span><span class="c">!  keep track of associated dimensions</span>
+<span class="w">        </span><span class="n">assoc_grid</span><span class="p">(</span><span class="w"> </span><span class="n">grid_order</span><span class="p">(</span><span class="n">kstring</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="o">-</span><span class="mi">1</span>
+
+<span class="w">        </span><span class="n">halo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">set_query</span><span class="p">(</span><span class="n">lstring</span><span class="p">(</span><span class="n">kstring</span><span class="p">)%</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;H&#39;</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">halo</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="c">!-----------------------------------------------------------------------</span>
+<span class="w">        </span><span class="c">! halo is specified, now check that the syntax is correct</span>
+<span class="w">        </span><span class="c">!-----------------------------------------------------------------------</span>
+<span class="w">           </span><span class="n">halo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">set_query</span><span class="p">(</span><span class="n">lstring</span><span class="p">(</span><span class="n">kstring</span><span class="p">)%</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;{:}&#39;</span><span class="p">)</span>
+<span class="w">           </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">halo</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">              </span><span class="n">itmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">              </span><span class="k">call </span><span class="n">pattern_locate</span><span class="p">(</span><span class="n">lstring</span><span class="p">(</span><span class="n">kstring</span><span class="p">)%</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;H{&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">itmp</span><span class="p">,</span><span class="w"> </span><span class="n">iloc</span><span class="p">)</span>
+<span class="w">              </span><span class="n">hbeg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iloc</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">              </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">itmp</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                 </span><span class="c">!syntax error in halo specification</span>
+<span class="w">                 </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w">                       </span><span class="p">&amp;</span>
+<span class="w">                         </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;halo specification missing prefix&quot;</span><span class="p">,</span><span class="w">                  </span><span class="p">&amp;</span>
+<span class="w">                         </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">                 </span><span class="k">return</span>
+<span class="k">              endif</span>
+
+<span class="k">              call </span><span class="n">set_locate</span><span class="p">(</span><span class="n">lstring</span><span class="p">(</span><span class="n">kstring</span><span class="p">)%</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">itmp</span><span class="p">,</span><span class="w"> </span><span class="n">iloc</span><span class="p">)</span>
+<span class="w">              </span><span class="n">hmid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iloc</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">              </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">itmp</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                 </span><span class="c">!syntax error in halo specification</span>
+<span class="w">                 </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w">                       </span><span class="p">&amp;</span>
+<span class="w">                         </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;halo specification missing separator&quot;</span><span class="p">,</span><span class="w">               </span><span class="p">&amp;</span>
+<span class="w">                         </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">                 </span><span class="k">return</span>
+<span class="k">              endif</span>
+
+<span class="k">              call </span><span class="n">set_locate</span><span class="p">(</span><span class="n">lstring</span><span class="p">(</span><span class="n">kstring</span><span class="p">)%</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;}&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">itmp</span><span class="p">,</span><span class="w"> </span><span class="n">iloc</span><span class="p">)</span>
+<span class="w">              </span><span class="n">hend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iloc</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">              </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">itmp</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                 </span><span class="c">!syntax error in halo specification</span>
+<span class="w">                 </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w">                       </span><span class="p">&amp;</span>
+<span class="w">                         </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;halo specification missing suffix&quot;</span><span class="p">,</span><span class="w">                  </span><span class="p">&amp;</span>
+<span class="w">                         </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">                 </span><span class="k">return</span>
+<span class="k">              endif</span>
+<span class="w">              </span><span class="c">!-----------------------------------------------------------------</span>
+<span class="w">              </span><span class="c">! halo syntax is correct, now read in the halo values as characters</span>
+<span class="w">              </span><span class="c">! and convert then to integer values.</span>
+<span class="w">              </span><span class="c">!-----------------------------------------------------------------</span>
+<span class="w">              </span><span class="n">intstr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">adjustL</span><span class="p">(</span><span class="w"> </span><span class="n">lstring</span><span class="p">(</span><span class="n">kstring</span><span class="p">)%</span><span class="n">string</span><span class="p">(</span><span class="n">hmid</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="n">hbeg</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">              </span><span class="k">read</span><span class="w"> </span><span class="p">(</span><span class="n">intstr</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">HaloL</span><span class="p">(</span><span class="n">kstring</span><span class="p">)</span>
+<span class="w">              </span><span class="n">intstr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">adjustL</span><span class="p">(</span><span class="w"> </span><span class="n">lstring</span><span class="p">(</span><span class="n">kstring</span><span class="p">)%</span><span class="n">string</span><span class="p">(</span><span class="n">hend</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="n">hmid</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">              </span><span class="k">read</span><span class="w"> </span><span class="p">(</span><span class="n">intstr</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">HaloR</span><span class="p">(</span><span class="n">kstring</span><span class="p">)</span>
+<span class="w">  </span><span class="c">! drs begug</span>
+<span class="w">              </span><span class="c">! currently halo must be symmetric and non-negative</span>
+<span class="w">              </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">HaloR</span><span class="p">(</span><span class="n">kstring</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">HaloL</span><span class="p">(</span><span class="n">kstring</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w">              </span><span class="p">&amp;</span>
+<span class="w">                  </span><span class="n">HaloL</span><span class="p">(</span><span class="n">kstring</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">HaloR</span><span class="p">(</span><span class="n">kstring</span><span class="p">)</span><span class="w">  </span><span class="p">)</span><span class="w">                          </span><span class="p">&amp;</span>
+<span class="w">                  </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w">                      </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;halo specification &quot;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">lstring</span><span class="p">(</span><span class="n">kstring</span><span class="p">)%</span><span class="n">string</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="s2">&quot; is not symmetric and/or is negative &quot;</span><span class="p">,</span><span class="w">                 </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">                 </span><span class="k">return</span>
+<span class="k">           else</span>
+<span class="w">           </span><span class="c">! syntax error for halo specification</span>
+<span class="w">              </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w">                          </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;halo specification &quot;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">lstring</span><span class="p">(</span><span class="n">kstring</span><span class="p">)%</span><span class="n">string</span><span class="p">),</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">              </span><span class="k">return</span>
+<span class="k">           endif</span><span class="w">   </span><span class="c">! halo</span>
+
+<span class="w">        </span><span class="k">elseif</span><span class="p">(</span><span class="w"> </span><span class="n">halo</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="c">! no halo</span>
+<span class="w">           </span><span class="n">HaloL</span><span class="p">(</span><span class="n">kstring</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">           </span><span class="n">HaloR</span><span class="p">(</span><span class="n">kstring</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">        </span><span class="c">! syntax error for halo specification</span>
+<span class="w">           </span><span class="n">HaloL</span><span class="p">(</span><span class="n">kstring</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">           </span><span class="n">HaloR</span><span class="p">(</span><span class="n">kstring</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">           </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w">                             </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;halo specification wrong &quot;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">lstring</span><span class="p">(</span><span class="n">kstring</span><span class="p">)%</span><span class="n">string</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">           </span><span class="k">return</span>
+<span class="k">        endif</span><span class="w">    </span><span class="c">! halo</span>
+
+<span class="w">     </span><span class="k">else</span>
+<span class="w">     </span><span class="c">! error multiple grid specifications for single memory location</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w">                                </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;multiple grid specifications for single memory location &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="nb">trim</span><span class="p">(</span><span class="n">lstring</span><span class="p">(</span><span class="n">kstring</span><span class="p">)%</span><span class="n">string</span><span class="p">),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span>
+<span class="k">     endif</span>
+
+<span class="k">  enddo</span><span class="w">    </span><span class="c">!  kstring</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! fill in the sizes for the tensor dimensions</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">nstring</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">grid_rank</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">     </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nstring</span>
+<span class="w">     </span><span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="n">grid_rank</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">nstring</span>
+<span class="w">        </span><span class="k">do while</span><span class="p">(</span><span class="w"> </span><span class="n">assoc_grid</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="p">)</span>
+<span class="w">           </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="o">-</span><span class="mi">1</span>
+<span class="w">        </span><span class="k">enddo</span><span class="w">   </span><span class="c">! while</span>
+<span class="w">        </span><span class="n">grid_order</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span>
+<span class="w">     </span><span class="k">enddo</span>
+<span class="k">  endif</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! initialize stagger location</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">grid_rank</span>
+<span class="w">     </span><span class="n">staggerloc</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">  </span><span class="k">enddo</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! determine if the stagger location is specified by the problem descriptor</span>
+<span class="w">  </span><span class="c">! string. Look for trailing tag of the form &quot;@{#,#,#}&quot; following the</span>
+<span class="w">  </span><span class="c">! closing &quot;]&quot;. If it exists it will be placed in the memory_rank+1 element</span>
+<span class="w">  </span><span class="c">! of the character array.</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+
+<span class="w">  </span><span class="n">itmp_beg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pattern_query</span><span class="p">(</span><span class="n">lstring</span><span class="p">(</span><span class="n">nstring</span><span class="o">+</span><span class="mi">1</span><span class="p">)%</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;]@{&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">itmp_beg</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">     call </span><span class="n">pattern_locate</span><span class="p">(</span><span class="w"> </span><span class="n">lstring</span><span class="p">(</span><span class="n">nstring</span><span class="o">+</span><span class="mi">1</span><span class="p">)%</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;]@{&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">itmp_beg</span><span class="p">,</span><span class="w"> </span><span class="n">iloc</span><span class="p">)</span>
+<span class="w">     </span><span class="n">sbeg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iloc</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">     </span><span class="n">slen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="w"> </span><span class="n">lstring</span><span class="p">(</span><span class="n">nstring</span><span class="o">+</span><span class="mi">1</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">     </span><span class="c">! extract the stagger substring for further parsing</span>
+<span class="w">     </span><span class="n">ltmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="w"> </span><span class="nb">adjustL</span><span class="p">(</span><span class="w"> </span><span class="n">lstring</span><span class="p">(</span><span class="n">nstring</span><span class="o">+</span><span class="mi">1</span><span class="p">)%</span><span class="n">string</span><span class="p">(</span><span class="n">sbeg</span><span class="o">+</span><span class="mi">2</span><span class="p">:</span><span class="n">slen</span><span class="p">)</span><span class="w"> </span><span class="p">))</span>
+<span class="w">     </span><span class="n">itmp_end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pattern_query</span><span class="p">(</span><span class="n">ltmp</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;}&#39;</span><span class="p">)</span>
+
+<span class="w">     </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">itmp_end</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        call </span><span class="n">pattern_locate</span><span class="p">(</span><span class="w"> </span><span class="n">ltmp</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;}&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">itmp_end</span><span class="p">,</span><span class="w"> </span><span class="n">iloc</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="n">send</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iloc</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">        </span><span class="n">lstagger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="w"> </span><span class="nb">adjustL</span><span class="p">(</span><span class="w"> </span><span class="n">ltmp</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="n">send</span><span class="p">)</span><span class="w"> </span><span class="p">))</span>
+
+<span class="w">        </span><span class="c">! determine the number of entries</span>
+<span class="w">        </span><span class="n">ndelim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pattern_query</span><span class="p">(</span><span class="w"> </span><span class="n">lstagger</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">ndelim</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">ndelim</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">grid_rank</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">           </span><span class="c">! identify the separate entries, check that they are not empty,</span>
+<span class="w">           </span><span class="c">! and read the values</span>
+<span class="w">           </span><span class="k">allocate</span><span class="p">(</span><span class="w"> </span><span class="n">sdelim</span><span class="p">(</span><span class="n">ndelim</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">           </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot; integer &quot;</span><span class="o">//</span><span class="w">         </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="s2">&quot;variable sdelim in interpret descriptor string&quot;</span><span class="p">,</span><span class="w">                </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">localrc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">           endif</span>
+
+<span class="k">           call </span><span class="n">pattern_locate</span><span class="p">(</span><span class="w"> </span><span class="n">lstagger</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">ndelim</span><span class="p">,</span><span class="w"> </span><span class="n">sdelim</span><span class="p">)</span>
+
+<span class="w">           </span><span class="k">if</span><span class="p">(</span><span class="w">  </span><span class="n">sdelim</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">              </span><span class="n">intstr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">adjustL</span><span class="p">(</span><span class="w"> </span><span class="n">lstagger</span><span class="p">(</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">sdelim</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">              </span><span class="k">read</span><span class="p">(</span><span class="n">intstr</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">staggerloc</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">           </span><span class="k">else</span>
+<span class="w">              </span><span class="c">! specification empty</span>
+<span class="w">              </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w">                          </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;stagger location specification empty &quot;</span><span class="p">,</span><span class="w">                 </span><span class="p">&amp;</span>
+<span class="w">                       </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">              </span><span class="k">return</span>
+<span class="k">           endif</span>
+
+<span class="k">           do </span><span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">ndelim</span>
+<span class="w">              </span><span class="k">if</span><span class="p">(</span><span class="w">  </span><span class="n">sdelim</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">sdelim</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                 </span><span class="n">intstr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">adjustL</span><span class="p">(</span><span class="w"> </span><span class="n">lstagger</span><span class="p">(</span><span class="w"> </span><span class="n">sdelim</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">sdelim</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">                 </span><span class="k">read</span><span class="p">(</span><span class="n">intstr</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">staggerloc</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">              </span><span class="k">else</span>
+<span class="w">                 </span><span class="c">! specification empty</span>
+<span class="w">                 </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w">                       </span><span class="p">&amp;</span>
+<span class="w">                         </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;stagger location specification empty &quot;</span><span class="p">,</span><span class="w">              </span><span class="p">&amp;</span>
+<span class="w">                         </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">                 </span><span class="k">return</span>
+<span class="k">              endif</span>
+<span class="k">           enddo</span><span class="w">     </span><span class="c">! ndelim</span>
+
+<span class="w">           </span><span class="n">send</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="w"> </span><span class="nb">adjustL</span><span class="p">(</span><span class="w"> </span><span class="n">lstagger</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">           </span><span class="k">if</span><span class="p">(</span><span class="w">  </span><span class="n">send</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">sdelim</span><span class="p">(</span><span class="n">ndelim</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">              </span><span class="n">intstr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">adjustL</span><span class="p">(</span><span class="w"> </span><span class="n">lstagger</span><span class="p">(</span><span class="w"> </span><span class="n">send</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="n">sdelim</span><span class="p">(</span><span class="n">ndelim</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">              </span><span class="k">read</span><span class="p">(</span><span class="n">intstr</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">staggerloc</span><span class="p">(</span><span class="n">ndelim</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">           </span><span class="k">else</span>
+<span class="w">           </span><span class="c">! specification empty</span>
+<span class="w">              </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w">                          </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;stagger location specification empty &quot;</span><span class="p">,</span><span class="w">                 </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">              </span><span class="k">return</span>
+<span class="k">           endif</span>
+<span class="w">           </span><span class="c">! clean up workspace</span>
+<span class="w">           </span><span class="k">deallocate</span><span class="p">(</span><span class="w"> </span><span class="n">sdelim</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">else</span>
+<span class="w">        </span><span class="c">! wrong number of delimiters for grid rank</span>
+<span class="w">           </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w">                             </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;wrong number of delimiters for grid rank&quot;</span><span class="p">,</span><span class="w">                 </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">           </span><span class="k">return</span>
+<span class="k">        endif</span><span class="w">    </span><span class="c">! number of delimiters</span>
+<span class="w">     </span><span class="k">else</span>
+<span class="w">     </span><span class="c">! error missing ending delimiter</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w">                                </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;missing stagger location ending delimitor from string&quot;</span><span class="p">,</span><span class="w">       </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span>
+<span class="k">     endif</span><span class="w">     </span><span class="c">! proper ending syntax</span>
+<span class="w">  </span><span class="k">elseif</span><span class="p">(</span><span class="w"> </span><span class="n">itmp_beg</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="c">! no stagger assumption, assume cell center location</span>
+<span class="w">     </span><span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">grid_rank</span>
+<span class="w">        </span><span class="n">staggerloc</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">     </span><span class="k">enddo</span>
+<span class="k">  else</span>
+<span class="w">  </span><span class="c">! syntax error</span>
+<span class="w">     </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w">                                   </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;problem descriptor string syntax error, strings ends with &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">   </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="nb">trim</span><span class="p">(</span><span class="n">lstring</span><span class="p">(</span><span class="n">nstring</span><span class="o">+</span><span class="mi">1</span><span class="p">)%</span><span class="n">string</span><span class="p">),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">     </span><span class="k">return</span>
+<span class="k">  endif</span><span class="w">     </span><span class="c">! proper starting syntax</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! check stagger location for acceptable values</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">grid_rank</span>
+<span class="w">     </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">staggerloc</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">staggerloc</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="c">! error invalid staggerlocs</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w">                                </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;invalid stagger locations from problem descriptor string&quot;</span><span class="p">,</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span>
+<span class="k">     endif</span>
+<span class="k">  enddo</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! Determine Distribution layout (rank and order)</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="n">dist_rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">  </span><span class="k">do </span><span class="n">kstring</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">nstring</span>
+<span class="w">     </span><span class="n">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">set_query</span><span class="p">(</span><span class="n">lstring</span><span class="p">(</span><span class="n">kstring</span><span class="p">)%</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;BCA&#39;</span><span class="p">)</span>
+<span class="w">     </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">rank</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">     </span><span class="c">! no associated distribution</span>
+<span class="w">        </span><span class="n">dist_type</span><span class="p">(</span><span class="n">kstring</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39; &#39;</span>
+<span class="w">        </span><span class="n">dist_order</span><span class="p">(</span><span class="n">kstring</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">     </span><span class="k">elseif</span><span class="p">(</span><span class="w"> </span><span class="n">rank</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">     </span><span class="c">! associated grid</span>
+<span class="w">        </span><span class="n">dist_rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dist_rank</span><span class="w"> </span><span class="o">+</span><span class="w">  </span><span class="n">rank</span>
+<span class="w">        </span><span class="k">call </span><span class="n">set_locate</span><span class="p">(</span><span class="n">lstring</span><span class="p">(</span><span class="n">kstring</span><span class="p">)%</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;BCA&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">mloc</span><span class="p">)</span>
+<span class="w">        </span><span class="n">dist_type</span><span class="p">(</span><span class="n">kstring</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lstring</span><span class="p">(</span><span class="n">kstring</span><span class="p">)%</span><span class="n">string</span><span class="p">(</span><span class="n">mloc</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span><span class="n">mloc</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="w">        </span><span class="k">read</span><span class="p">(</span><span class="w"> </span><span class="n">lstring</span><span class="p">(</span><span class="n">kstring</span><span class="p">)%</span><span class="n">string</span><span class="p">(</span><span class="n">mloc</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">mloc</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">dist_order</span><span class="p">(</span><span class="n">kstring</span><span class="p">)</span>
+<span class="w">     </span><span class="k">else</span>
+<span class="w">        </span><span class="c">! error multiple distribution specifications for single memory location</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w">                                </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;multiple distribution specifications in single memory&quot;</span><span class="w"> </span><span class="o">//</span><span class="w">     </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="s2">&quot;location&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span>
+<span class="k">     endif</span>
+
+<span class="k">  enddo</span><span class="w">    </span><span class="c">!  kstring</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! clean up</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="k">deallocate</span><span class="p">(</span><span class="w"> </span><span class="n">assoc_grid</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! if I&#39;ve gotten this far without an error, then the routine has succeeded.</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="n">localrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="k">end subroutine </span><span class="n">interpret_descriptor_string</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

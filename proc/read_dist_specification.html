@@ -1,0 +1,893 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>read_dist_specification &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>read_dist_specification
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.1% of total for procedures.">277 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_TestHarnessDistMod.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_testharnessdistmod.f90.html'>ESMF_TestHarnessDistMod.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/esmf_testharnessdistmod.html'>ESMF_TestHarnessDistMod</a></li>
+            <li class="breadcrumb-item active" aria-current="page">read_dist_specification</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/read_dist_specification.html#src">read_dist_specification</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  subroutine read_dist_specification(nPEs, Dfile, DstMem, SrcMem, rc)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-npes~2"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nPEs</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dfile"></span>
+              type(<a href='../type/dist_record.html'>dist_record</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Dfile</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dstmem"></span>
+              type(<a href='../type/memory_config.html'>memory_config</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>DstMem</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srcmem"></span>
+              type(<a href='../type/memory_config.html'>memory_config</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>SrcMem</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~4133"></span>
+              integer,
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">  </span><span class="k">subroutine </span><span class="n">read_dist_specification</span><span class="p">(</span><span class="w"> </span><span class="n">nPEs</span><span class="p">,</span><span class="w"> </span><span class="n">Dfile</span><span class="p">,</span><span class="w"> </span><span class="n">DstMem</span><span class="p">,</span><span class="w"> </span><span class="n">SrcMem</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! routine to read the dist specifier files and populate the Dfile type</span>
+<span class="w">  </span><span class="c">!</span>
+<span class="w">  </span><span class="c">! each dist specifier entry contains:</span>
+<span class="w">  </span><span class="c">! (0) discriptive string</span>
+<span class="w">  </span><span class="c">! then for each dist rank</span>
+<span class="w">  </span><span class="c">! (1) a divider tag (SRC, DST, END)                      </span>
+<span class="w">  </span><span class="c">! (2) a series of size specifiers for each dimension (==, =+, =*)</span>
+<span class="w">  </span><span class="c">! (3) a termination tag (END)                      </span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! arguments</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="w">   </span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">nPEs</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">dist_record</span><span class="p">),</span><span class="w">   </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">Dfile</span><span class="w"> </span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">memory_config</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="w">   </span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">DstMem</span><span class="w">   </span><span class="c">! destination memory configuration</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">memory_config</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="w">   </span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">SrcMem</span><span class="w">   </span><span class="c">! source memory configuration</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+
+<span class="w">  </span><span class="c">! local esmf types</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Config</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localcf</span>
+
+<span class="w">  </span><span class="c">! local parameters</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localrc</span><span class="w"> </span><span class="c">! local error status</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">character_array</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w">  </span><span class="n">pattern</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! local character strings</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="n">THARN_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ltmp</span><span class="p">,</span><span class="w"> </span><span class="n">lchar</span><span class="p">,</span><span class="w"> </span><span class="n">lnumb</span><span class="p">,</span><span class="w"> </span><span class="n">ltag</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="n">THARN_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dtag</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="n">THARN_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">distribution_label</span>
+
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">character_array</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">lop</span><span class="p">(</span><span class="mi">56</span><span class="p">)</span><span class="w">  </span><span class="c">! work space dimensioned 8*7 = max number</span>
+<span class="w">                                    </span><span class="c">! of operators * maximum rank of distribution</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">character_array</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">loper</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span><span class="w">  </span><span class="c">! dimensioned 7x8 = rank of dist by # oper</span>
+
+
+<span class="w">  </span><span class="c">! local reals</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">opv</span><span class="p">(</span><span class="mi">56</span><span class="p">)</span><span class="w">  </span><span class="c">! work space dimensioned 8*7 = maximum number</span>
+<span class="w">                                 </span><span class="c">! of operators * maximum rank of distribution</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">op_val</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span><span class="w">  </span><span class="c">! dimensioned 7x8 = rank of dist by # oper</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tvalue</span>
+
+<span class="w">  </span><span class="c">! local logical</span>
+<span class="w">  </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">flag</span>
+
+<span class="w">  </span><span class="c">! local integer variables</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ntmp</span><span class="p">,</span><span class="w"> </span><span class="n">src_rank</span><span class="p">,</span><span class="w"> </span><span class="n">dst_rank</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">irow</span><span class="p">,</span><span class="w"> </span><span class="n">krow</span><span class="p">,</span><span class="w"> </span><span class="n">nrows</span><span class="p">,</span><span class="w"> </span><span class="n">idist</span><span class="p">,</span><span class="w"> </span><span class="n">ndist</span><span class="p">,</span><span class="w"> </span><span class="n">irank</span><span class="p">,</span><span class="w"> </span><span class="n">erank</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">kelements</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">counter</span><span class="p">,</span><span class="w"> </span><span class="n">sanity_counter</span><span class="p">,</span><span class="w"> </span><span class="n">out_counter</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ncolumns</span><span class="p">(:),</span><span class="w"> </span><span class="n">new_row</span><span class="p">(:)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">numOp</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="w">  </span><span class="c">! dimensioned 8 = allowable number of operators</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">allocRcToTest</span>
+
+<span class="w">  </span><span class="c">! initialize return flag</span>
+<span class="w">  </span><span class="n">localrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+<span class="w">  </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+
+<span class="w">  </span><span class="c">! matching patterns</span>
+<span class="w">  </span><span class="n">pattern</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;D1&quot;</span>
+<span class="w">  </span><span class="n">pattern</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;D2&quot;</span>
+<span class="w">  </span><span class="n">pattern</span><span class="p">(</span><span class="mi">3</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;D3&quot;</span>
+<span class="w">  </span><span class="n">pattern</span><span class="p">(</span><span class="mi">4</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;D4&quot;</span>
+<span class="w">  </span><span class="n">pattern</span><span class="p">(</span><span class="mi">5</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;D5&quot;</span>
+<span class="w">  </span><span class="n">pattern</span><span class="p">(</span><span class="mi">6</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;D6&quot;</span>
+<span class="w">  </span><span class="n">pattern</span><span class="p">(</span><span class="mi">7</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;D7&quot;</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! open the distribution file</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="n">localcf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_ConfigCreate</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;cannot create config object&quot;</span><span class="p">,</span><span class="w">           </span><span class="p">&amp;</span>
+<span class="w">                            </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">  print</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;Opening Dist specifier file  &#39;</span><span class="p">,</span><span class="nb">trim</span><span class="p">(</span><span class="w"> </span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_ConfigLoadFile</span><span class="p">(</span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="w"> </span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="w"> </span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="w"> </span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w">                                           </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;cannot load config file &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="w"> </span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="w"> </span><span class="p">),</span><span class="w">                 </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">  </span><span class="c">!----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! find the appropriate DistGrid specifier table for the SRC and DST DistRanks</span>
+<span class="w">  </span><span class="c">!----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!  create label &quot;distgrid_block_ndmd&quot; using DstMem%DistRank SrcMem%DistRank</span>
+<span class="mi">10</span><span class="w"> </span><span class="k">format</span><span class="p">(</span><span class="n">i1</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="n">i1</span><span class="p">,</span><span class="s1">&#39;d::&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">ltmp</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span><span class="w">  </span><span class="n">SrcMem</span><span class="p">%</span><span class="n">DistRank</span><span class="p">,</span><span class="n">DstMem</span><span class="p">%</span><span class="n">DistRank</span>
+<span class="w">  </span><span class="n">distribution_label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;distgrid_block_&quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">ltmp</span><span class="p">))</span>
+
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">debug_flag</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39; Dist Ranks &#39;</span><span class="p">,</span><span class="n">DstMem</span><span class="p">%</span><span class="n">DistRank</span><span class="p">,</span><span class="n">SrcMem</span><span class="p">%</span><span class="n">DistRank</span><span class="p">,</span><span class="w">      </span><span class="p">&amp;</span>
+<span class="w">                          </span><span class="nb">trim</span><span class="p">(</span><span class="n">distribution_label</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_ConfigFindLabel</span><span class="p">(</span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">distribution_label</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39; could not find distribution label&#39;</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;could not find distribution label &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="nb">trim</span><span class="p">(</span><span class="n">distribution_label</span><span class="p">),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! determine the total number of table rows, continue only if not empty</span>
+<span class="w">  </span><span class="c">! NOTE: the number of table rows &gt;= number of dist entries due to the</span>
+<span class="w">  </span><span class="c">! possibility of continued lines.</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_ConfigGetDim</span><span class="p">(</span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="n">nrows</span><span class="p">,</span><span class="w"> </span><span class="n">ntmp</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">distribution_label</span><span class="p">),</span><span class="w">       </span><span class="p">&amp;</span>
+<span class="w">                         </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w">                                           </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;cannot get descriptor table size in file &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="p">),</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">  if</span><span class="p">(</span><span class="w"> </span><span class="n">nrows</span><span class="w"> </span><span class="p">.</span><span class="n">le</span><span class="p">.</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">     call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;table &quot;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">distribution_label</span><span class="p">)</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; empty in file &quot;</span><span class="w"> </span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="p">),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">     </span><span class="k">return</span>
+<span class="k">  endif</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! extract the table column lengths of this file</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_ConfigFindLabel</span><span class="p">(</span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">distribution_label</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="w"> </span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w">                                           </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;cannot find config label &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">distribution_label</span><span class="p">),</span><span class="w">              </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">  allocate</span><span class="p">(</span><span class="w"> </span><span class="n">ncolumns</span><span class="p">(</span><span class="n">nrows</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer array ncolumns in &quot;</span><span class="o">//</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">     </span><span class="s2">&quot; read_dist_specification&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">  endif</span>
+
+<span class="k">  do </span><span class="n">krow</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">nrows</span>
+<span class="w">     </span><span class="k">call </span><span class="n">ESMF_ConfigNextLine</span><span class="p">(</span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="n">tableEnd</span><span class="o">=</span><span class="n">flag</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">     </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w">                                        </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;cannot advance to next line of table &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">                        </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="nb">trim</span><span class="p">(</span><span class="n">distribution_label</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; in file &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+
+<span class="k">      </span><span class="n">ncolumns</span><span class="p">(</span><span class="n">krow</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_ConfigGetLen</span><span class="p">(</span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">ncolumns</span><span class="p">(</span><span class="n">krow</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">lt</span><span class="p">.</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        write</span><span class="p">(</span><span class="n">lchar</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">krow</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w">                                </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;problem reading line &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustl</span><span class="p">(</span><span class="n">lchar</span><span class="p">))</span><span class="w"> </span><span class="o">//</span><span class="w">            </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="s2">&quot; of table in file &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="p">),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span>
+<span class="k">      endif</span>
+<span class="k">  enddo</span><span class="w">    </span><span class="c">! end  krow</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! determine the actual number of dist specifications in the file by counting </span>
+<span class="w">  </span><span class="c">! lines not starting with the continuation symbol &#39;&amp;&#39;. The number of actual</span>
+<span class="w">  </span><span class="c">! specifications in the table is less than or equal to &#39;nrows&#39;, the number </span>
+<span class="w">  </span><span class="c">! of rows in the table. A new grid entry in a particular row is indicated by</span>
+<span class="w">  </span><span class="c">! a non-zero value in &#39;new_row&#39;. A value of zero in the array indicates that</span>
+<span class="w">  </span><span class="c">! that that row starts with a continiued line. The non-zero value indicates </span>
+<span class="w">  </span><span class="c">! the number of the current grid being read.</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_ConfigFindLabel</span><span class="p">(</span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">distribution_label</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="w"> </span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;cannot find config label &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">             </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="nb">trim</span><span class="p">(</span><span class="n">distribution_label</span><span class="p">),</span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">  allocate</span><span class="p">(</span><span class="w"> </span><span class="n">new_row</span><span class="p">(</span><span class="n">nrows</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer array new_row &quot;</span><span class="o">//</span><span class="w">     </span><span class="p">&amp;</span>
+<span class="w">     </span><span class="s2">&quot; in read_dist_specification&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">  endif</span>
+
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! count the number of actual grids (less than or equal to number of table rows)</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="n">ndist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">  </span><span class="k">do </span><span class="n">krow</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">nrows</span>
+<span class="w">     </span><span class="k">call </span><span class="n">ESMF_ConfigNextLine</span><span class="p">(</span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="n">tableEnd</span><span class="o">=</span><span class="n">flag</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">     </span><span class="k">call </span><span class="n">ESMF_ConfigGetAttribute</span><span class="p">(</span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="n">ltmp</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">     </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">ltmp</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;&amp;&quot;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">     </span><span class="c">! continuation line</span>
+<span class="w">        </span><span class="n">new_row</span><span class="p">(</span><span class="n">krow</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">     </span><span class="k">else</span>
+<span class="k">        </span><span class="n">ndist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ndist</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="n">new_row</span><span class="p">(</span><span class="n">krow</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="n">ndist</span>
+<span class="w">     </span><span class="k">endif</span>
+<span class="k">  enddo</span><span class="w">    </span><span class="c">! end  krow</span>
+<span class="w">  </span><span class="n">Dfile</span><span class="p">%</span><span class="n">nDspecs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ndist</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! allocate storage for the dist information based on the calculated number of</span>
+<span class="w">  </span><span class="c">! separate grid entries</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="k">allocate</span><span class="p">(</span><span class="w"> </span><span class="n">Dfile</span><span class="p">%</span><span class="n">src_dist</span><span class="p">(</span><span class="n">Dfile</span><span class="p">%</span><span class="n">nDspecs</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer array src_dist &quot;</span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">     </span><span class="s2">&quot; in read_dist_specification&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">  endif</span>
+<span class="k">  allocate</span><span class="p">(</span><span class="w"> </span><span class="n">Dfile</span><span class="p">%</span><span class="n">dst_dist</span><span class="p">(</span><span class="n">Dfile</span><span class="p">%</span><span class="n">nDspecs</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer array dst_dist &quot;</span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">     </span><span class="s2">&quot; in read_dist_specification&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">  endif</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! Read the specifications from the table:</span>
+<span class="w">  </span><span class="c">! (1) start at the top of the table.</span>
+<span class="w">  </span><span class="c">! (2) read the row elements until the end of the row is reached.</span>
+<span class="w">  </span><span class="c">! (3) determine if all the elements are read; </span>
+<span class="w">  </span><span class="c">!     (a) if not advance to the next line and continue to read elements until</span>
+<span class="w">  </span><span class="c">!         the end of the line is reached - repeat (3)</span>
+<span class="w">  </span><span class="c">!     (b) if all the elements read, skip to next row and repeat (2)</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_ConfigFindLabel</span><span class="p">(</span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">distribution_label</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;cannot find config label &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">             </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="nb">trim</span><span class="p">(</span><span class="n">distribution_label</span><span class="p">),</span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! move to the next line in the table and confirm that (1) the line doesn&#39;t</span>
+<span class="w">  </span><span class="c">! start with a continuation symbol, and (2) that the line isn&#39;t empty.</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+
+<span class="w">  </span><span class="n">irow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w">      </span><span class="c">! start with first row</span>
+<span class="w">  </span><span class="n">idist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! as long as the current row is within the bounds of the table process entry</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="n">out_counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">  </span><span class="k">do while</span><span class="p">(</span><span class="n">irow</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">nrows</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">new_row</span><span class="p">(</span><span class="n">irow</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">exit</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! start at the top of the table and read new specification. check that it is</span>
+<span class="w">    </span><span class="c">! not a continuation symbol and not end of row</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">ncolumns</span><span class="p">(</span><span class="n">irow</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">       call </span><span class="n">ESMF_ConfigNextLine</span><span class="p">(</span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="n">tableEnd</span><span class="o">=</span><span class="n">flag</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">       </span><span class="n">kelements</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="c">! first element on the row</span>
+<span class="w">       </span><span class="n">idist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">idist</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="c">! index to count distributions in the table</span>
+
+<span class="w">       </span><span class="k">call </span><span class="n">read_table_string</span><span class="p">(</span><span class="n">dtag</span><span class="p">,</span><span class="w"> </span><span class="n">kelements</span><span class="p">,</span><span class="w"> </span><span class="n">irow</span><span class="p">,</span><span class="w"> </span><span class="n">nrows</span><span class="p">,</span><span class="w"> </span><span class="n">ncolumns</span><span class="p">,</span><span class="w"> </span><span class="n">new_row</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">distribution_label</span><span class="p">,</span><span class="w"> </span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span><span class="w">  </span>
+
+<span class="w">       </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w">                   </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    endif</span>
+<span class="k">    if</span><span class="p">(</span><span class="w"> </span><span class="n">debug_flag</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39; distribution  &#39;</span><span class="p">,</span><span class="n">dtag</span>
+
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! read the SRC distribution tag, first time through it should be SRC </span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="k">call </span><span class="n">read_table_string</span><span class="p">(</span><span class="n">ltag</span><span class="p">,</span><span class="w"> </span><span class="n">kelements</span><span class="p">,</span><span class="w"> </span><span class="n">irow</span><span class="p">,</span><span class="w"> </span><span class="n">nrows</span><span class="p">,</span><span class="w"> </span><span class="n">ncolumns</span><span class="p">,</span><span class="w"> </span><span class="n">new_row</span><span class="p">,</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">distribution_label</span><span class="p">,</span><span class="w"> </span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span><span class="w">  </span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    if</span><span class="p">(</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">ltag</span><span class="p">))</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="s2">&quot;SRC&quot;</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">       </span><span class="c">! wrong tag, SRC expected - return error </span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="n">lchar</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">irow</span>
+<span class="w">       </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;wrong tag, SRC expected on line &quot;</span><span class="p">&amp;</span>
+<span class="w">                </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">lchar</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; of table &quot;</span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">distribution_label</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w">   </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="s2">&quot; in file &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="p">),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">       </span><span class="k">return</span>
+<span class="k">    endif</span>
+
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! read the SRC rank, should be between 1 and 7</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="k">call </span><span class="n">read_table_integer</span><span class="p">(</span><span class="n">src_rank</span><span class="p">,</span><span class="w"> </span><span class="n">kelements</span><span class="p">,</span><span class="w"> </span><span class="n">irow</span><span class="p">,</span><span class="w"> </span><span class="n">nrows</span><span class="p">,</span><span class="w"> </span><span class="n">ncolumns</span><span class="p">,</span><span class="w">        </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">new_row</span><span class="p">,</span><span class="w"> </span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">distribution_label</span><span class="p">,</span><span class="w"> </span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span><span class="w">  </span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w">                      </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    if</span><span class="p">(</span><span class="w"> </span><span class="n">src_rank</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">src_rank</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">       </span><span class="c">! error - unacceptable rank</span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="n">lchar</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">irow</span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="n">lnumb</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">src_rank</span>
+<span class="w">       </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;unacceptable rank, should be &quot;</span><span class="w">   </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot;&gt; 1 and &lt;= 7. Rank is &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">lnumb</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot;. On line &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="nb">trim</span><span class="p">(</span><span class="n">lchar</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; of table &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">distribution_label</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w">     </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="s2">&quot; in file &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="p">),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">       </span><span class="k">return</span>
+<span class="k">    endif</span>
+
+<span class="k">    allocate</span><span class="p">(</span><span class="w"> </span><span class="n">Dfile</span><span class="p">%</span><span class="n">src_dist</span><span class="p">(</span><span class="n">idist</span><span class="p">)%</span><span class="n">dsize</span><span class="p">(</span><span class="n">SrcMem</span><span class="p">%</span><span class="n">memRank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer array dsize &quot;</span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">       </span><span class="s2">&quot; in read_dist_specification&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    endif</span>
+<span class="k">    </span><span class="n">Dfile</span><span class="p">%</span><span class="n">src_dist</span><span class="p">(</span><span class="n">idist</span><span class="p">)%</span><span class="n">drank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">src_rank</span>
+
+
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! initialize counters</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="n">sanity_counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="n">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+
+<span class="w">    </span><span class="k">do while</span><span class="p">(</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">ltag</span><span class="p">))</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="s2">&quot;DST&quot;</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">ltag</span><span class="p">))</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="s2">&quot;END&quot;</span><span class="w">  </span><span class="p">)</span>
+<span class="w">       </span><span class="c">! read distribution syntax operator </span>
+<span class="w">       </span><span class="k">call </span><span class="n">read_table_string</span><span class="p">(</span><span class="n">ltag</span><span class="p">,</span><span class="w"> </span><span class="n">kelements</span><span class="p">,</span><span class="w"> </span><span class="n">irow</span><span class="p">,</span><span class="w"> </span><span class="n">nrows</span><span class="p">,</span><span class="w"> </span><span class="n">ncolumns</span><span class="p">,</span><span class="w">          </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">new_row</span><span class="p">,</span><span class="w"> </span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">distribution_label</span><span class="p">,</span><span class="w"> </span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span><span class="w">  </span>
+
+<span class="w">       </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w">                   </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">       if</span><span class="p">(</span><span class="w"> </span><span class="n">pattern_query</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">ltag</span><span class="p">),</span><span class="w"> </span><span class="s2">&quot;==&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w">                           </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="n">pattern_query</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">ltag</span><span class="p">),</span><span class="w"> </span><span class="s2">&quot;=+&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w">                           </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="n">pattern_query</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">ltag</span><span class="p">),</span><span class="w"> </span><span class="s2">&quot;=*&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">          </span><span class="c">! valid operator so now read value</span>
+<span class="w">          </span><span class="k">call </span><span class="n">read_table_real</span><span class="p">(</span><span class="n">tvalue</span><span class="p">,</span><span class="w"> </span><span class="n">kelements</span><span class="p">,</span><span class="w"> </span><span class="n">irow</span><span class="p">,</span><span class="w"> </span><span class="n">nrows</span><span class="p">,</span><span class="w"> </span><span class="n">ncolumns</span><span class="p">,</span><span class="w">       </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">new_row</span><span class="p">,</span><span class="w"> </span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">distribution_label</span><span class="p">,</span><span class="w"> </span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span><span class="w">  </span>
+
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w">                </span><span class="p">&amp;</span>
+<span class="w">                  </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">          if</span><span class="p">(</span><span class="w"> </span><span class="n">debug_flag</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39; operator/value &#39;</span><span class="p">,</span><span class="nb">trim</span><span class="p">(</span><span class="n">ltag</span><span class="p">),</span><span class="n">tvalue</span>
+<span class="w">          </span><span class="c">! save pair of values</span>
+<span class="w">          </span><span class="n">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">counter</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">          </span><span class="n">lop</span><span class="p">(</span><span class="n">counter</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ltag</span>
+<span class="w">          </span><span class="n">opv</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tvalue</span>
+<span class="w">       </span><span class="k">endif</span>
+
+<span class="w">       </span><span class="c">! test to avoid an infinite loop - drop out if too many iterations</span>
+<span class="w">       </span><span class="n">sanity_counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sanity_counter</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">       </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">sanity_counter</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">8</span><span class="o">*</span><span class="n">src_rank</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">          </span><span class="c">! infinite loop - post error and return</span>
+<span class="w">          </span><span class="k">write</span><span class="p">(</span><span class="n">lchar</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">irow</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;SRC while loop not &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">       </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="s2">&quot;completing. Line &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">lchar</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; of table &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">       </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="nb">trim</span><span class="p">(</span><span class="n">distribution_label</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; in file &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">                  </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="nb">trim</span><span class="p">(</span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="p">),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">          </span><span class="k">return</span>
+<span class="k">       endif</span>
+<span class="k">    enddo</span><span class="w">   </span><span class="c">! while</span>
+
+<span class="w">    </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! process operator and values</span>
+<span class="w">    </span><span class="c">!     - sort operators by rank dimension</span>
+<span class="w">    </span><span class="c">!     - search for case of equivalence operator &quot;==&quot;</span>
+<span class="w">    </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="k">do </span><span class="n">irank</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">src_rank</span>
+<span class="w">       </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">       </span><span class="n">numOp</span><span class="p">(</span><span class="n">irank</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">       </span><span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">counter</span>
+<span class="w">          </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">pattern_query</span><span class="p">(</span><span class="n">lop</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">string</span><span class="p">,</span><span class="n">pattern</span><span class="p">(</span><span class="n">irank</span><span class="p">)%</span><span class="n">string</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">             </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">             </span><span class="n">loper</span><span class="p">(</span><span class="n">irank</span><span class="p">,</span><span class="n">n</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lop</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">string</span>
+<span class="w">             </span><span class="n">op_val</span><span class="p">(</span><span class="n">irank</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">opv</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">             </span><span class="n">numOp</span><span class="p">(</span><span class="n">irank</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span>
+<span class="w">             </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">debug_flag</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39; operator &#39;</span><span class="p">,</span><span class="nb">trim</span><span class="p">(</span><span class="n">loper</span><span class="p">(</span><span class="n">irank</span><span class="p">,</span><span class="n">n</span><span class="p">)%</span><span class="n">string</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                                     </span><span class="n">op_val</span><span class="p">(</span><span class="n">irank</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+<span class="w">          </span><span class="k">endif </span>
+<span class="k">       enddo</span><span class="w">   </span><span class="c">! k</span>
+<span class="w">    </span><span class="k">enddo</span><span class="w">   </span><span class="c">! irank</span>
+
+<span class="w">    </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! search for equivalence operators to know how to partition the total PE</span>
+<span class="w">    </span><span class="c">! amoung the distribution axes. The base value = (nPE)**(1/erank), where</span>
+<span class="w">    </span><span class="c">! erank is the effective rank = source rank - number of equivalences</span>
+<span class="w">    </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="n">erank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">src_rank</span>
+<span class="w">    </span><span class="k">do </span><span class="n">irank</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">src_rank</span>
+<span class="w">       </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">numOp</span><span class="p">(</span><span class="n">irank</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">numOp</span><span class="p">(</span><span class="n">irank</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          do </span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">numOp</span><span class="p">(</span><span class="n">irank</span><span class="p">)</span>
+<span class="w">             </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">pattern_query</span><span class="p">(</span><span class="n">loper</span><span class="p">(</span><span class="n">irank</span><span class="p">,</span><span class="n">n</span><span class="p">)%</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;==&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                if</span><span class="p">(</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                   </span><span class="c">! error can&#39;t have both equivalence and multiple operators</span>
+<span class="w">                   </span><span class="k">write</span><span class="p">(</span><span class="n">lchar</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">irow</span>
+<span class="w">                   </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;only single operator&quot;</span><span class="p">&amp;</span>
+<span class="w">                         </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; allowed when equivalence operator used. Line &quot;</span><span class="o">//</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                         </span><span class="nb">trim</span><span class="p">(</span><span class="n">lchar</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; of table &quot;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">distribution_label</span><span class="p">)</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                         </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; in file &quot;</span><span class="w"> </span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="p">),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">                   </span><span class="k">return</span>
+<span class="k">                endif</span>
+<span class="k">                </span><span class="n">erank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">erank</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">             </span><span class="k">endif</span>
+<span class="k">          enddo</span><span class="w">   </span><span class="c">! k</span>
+<span class="w">       </span><span class="k">else</span>
+<span class="w">          </span><span class="c">! error operator missing for rank</span>
+<span class="w">          </span><span class="k">write</span><span class="p">(</span><span class="n">lchar</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">irow</span>
+<span class="w">          </span><span class="k">write</span><span class="p">(</span><span class="n">lnumb</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">irank</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;operator missing from SRC&quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="s2">&quot; specification, rank &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">lnumb</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; Line &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">       </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">                   </span><span class="nb">trim</span><span class="p">(</span><span class="n">lchar</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; of table &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">distribution_label</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="s2">&quot; in file &quot;</span><span class="w"> </span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="p">),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">                   </span><span class="k">return</span>
+<span class="k">       endif</span>
+<span class="k">    enddo</span><span class="w">   </span><span class="c">! irank</span>
+
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! compute the distribution dimension size.</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="k">call </span><span class="n">dist_size</span><span class="p">(</span><span class="n">nPEs</span><span class="p">,</span><span class="w"> </span><span class="n">erank</span><span class="p">,</span><span class="w"> </span><span class="n">numOp</span><span class="p">,</span><span class="w"> </span><span class="n">loper</span><span class="p">,</span><span class="w"> </span><span class="n">op_val</span><span class="p">,</span><span class="w"> </span><span class="n">Dfile</span><span class="p">%</span><span class="n">src_dist</span><span class="p">(</span><span class="n">idist</span><span class="p">),</span><span class="w">   </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">SrcMem</span><span class="p">%</span><span class="n">memRank</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! DST Phase</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">debug_flag</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39; entering DST &#39;</span><span class="p">,</span><span class="w"> </span><span class="n">irow</span>
+
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! read the DST distribution tag, first time through it should be DST </span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">debug_flag</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;ltag &#39;</span><span class="p">,</span><span class="n">ltag</span>
+
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">ltag</span><span class="p">))</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="s2">&quot;DST&quot;</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">       </span><span class="c">! wrong tag, DST expected - return error </span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="n">lchar</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">irow</span>
+<span class="w">       </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;wrong tag, DST expected on line&quot;</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">lchar</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; of table &quot;</span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">distribution_label</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w">   </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="s2">&quot; in file &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="p">),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">       </span><span class="k">return</span>
+<span class="k">    endif</span>
+
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! read the DST rank, should be between 1 and 7</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="k">call </span><span class="n">read_table_integer</span><span class="p">(</span><span class="n">dst_rank</span><span class="p">,</span><span class="w"> </span><span class="n">kelements</span><span class="p">,</span><span class="w"> </span><span class="n">irow</span><span class="p">,</span><span class="w"> </span><span class="n">nrows</span><span class="p">,</span><span class="w"> </span><span class="n">ncolumns</span><span class="p">,</span><span class="w">        </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">new_row</span><span class="p">,</span><span class="w"> </span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">distribution_label</span><span class="p">,</span><span class="w"> </span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span><span class="w">  </span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">debug_flag</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39; dst_rank&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">dst_rank</span><span class="p">,</span><span class="w"> </span><span class="n">kelements</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    if</span><span class="p">(</span><span class="w"> </span><span class="n">dst_rank</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">dst_rank</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">       </span><span class="c">! error - unacceptable rank</span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="n">lchar</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">irow</span>
+<span class="w">       </span><span class="k">write</span><span class="p">(</span><span class="n">lnumb</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">dst_rank</span>
+<span class="w">       </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;unacceptable rank, should be &gt; &quot;</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot;1 and &lt;= 7. Rank is &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">lnumb</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot;. On line &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="nb">trim</span><span class="p">(</span><span class="n">lchar</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; of table &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">distribution_label</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w">     </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="s2">&quot; in file &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="p">),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">       </span><span class="k">return</span>
+<span class="k">    endif</span>
+
+<span class="k">    allocate</span><span class="p">(</span><span class="w"> </span><span class="n">Dfile</span><span class="p">%</span><span class="n">dst_dist</span><span class="p">(</span><span class="n">idist</span><span class="p">)%</span><span class="n">dsize</span><span class="p">(</span><span class="n">DstMem</span><span class="p">%</span><span class="n">memRank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer array dsize &quot;</span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">       </span><span class="s2">&quot; in read_dist_specification&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    endif</span>
+<span class="k">    </span><span class="n">Dfile</span><span class="p">%</span><span class="n">dst_dist</span><span class="p">(</span><span class="n">idist</span><span class="p">)%</span><span class="n">drank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dst_rank</span>
+
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! initialize counters</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="n">sanity_counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="n">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+
+<span class="w">    </span><span class="k">do while</span><span class="p">(</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">ltag</span><span class="p">))</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="s2">&quot;END&quot;</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">irow</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">nrows</span><span class="w"> </span><span class="p">)</span>
+<span class="w">       </span><span class="c">! read distribution syntax operator </span>
+<span class="w">       </span><span class="k">call </span><span class="n">read_table_string</span><span class="p">(</span><span class="n">ltag</span><span class="p">,</span><span class="w"> </span><span class="n">kelements</span><span class="p">,</span><span class="w"> </span><span class="n">irow</span><span class="p">,</span><span class="w"> </span><span class="n">nrows</span><span class="p">,</span><span class="w"> </span><span class="n">ncolumns</span><span class="p">,</span><span class="w">          </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">new_row</span><span class="p">,</span><span class="w"> </span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">distribution_label</span><span class="p">,</span><span class="w"> </span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span><span class="w">  </span>
+
+<span class="w">       </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">       if</span><span class="p">(</span><span class="w"> </span><span class="n">pattern_query</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">ltag</span><span class="p">),</span><span class="w"> </span><span class="s2">&quot;==&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w">                           </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="n">pattern_query</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">ltag</span><span class="p">),</span><span class="w"> </span><span class="s2">&quot;=+&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w">                           </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="n">pattern_query</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">ltag</span><span class="p">),</span><span class="w"> </span><span class="s2">&quot;=*&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">          </span><span class="c">! valid operator so now read value</span>
+<span class="w">          </span><span class="k">call </span><span class="n">read_table_real</span><span class="p">(</span><span class="n">tvalue</span><span class="p">,</span><span class="w"> </span><span class="n">kelements</span><span class="p">,</span><span class="w"> </span><span class="n">irow</span><span class="p">,</span><span class="w"> </span><span class="n">nrows</span><span class="p">,</span><span class="w"> </span><span class="n">ncolumns</span><span class="p">,</span><span class="w">       </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">new_row</span><span class="p">,</span><span class="w"> </span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">distribution_label</span><span class="p">,</span><span class="w"> </span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span><span class="w">  </span>
+
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w">                </span><span class="p">&amp;</span>
+<span class="w">                  </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">          if</span><span class="p">(</span><span class="w"> </span><span class="n">debug_flag</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39; operator/value &#39;</span><span class="p">,</span><span class="nb">trim</span><span class="p">(</span><span class="n">ltag</span><span class="p">),</span><span class="n">tvalue</span>
+<span class="w">          </span><span class="c">! save pair of values</span>
+<span class="w">          </span><span class="n">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">counter</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">          </span><span class="n">lop</span><span class="p">(</span><span class="n">counter</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ltag</span>
+<span class="w">          </span><span class="n">opv</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tvalue</span>
+<span class="w">       </span><span class="k">endif</span>
+
+<span class="w">       </span><span class="c">! test to avoid an infinite loop - drop out if too many iterations</span>
+<span class="w">       </span><span class="n">sanity_counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sanity_counter</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">       </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">sanity_counter</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">8</span><span class="o">*</span><span class="n">dst_rank</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">          </span><span class="c">! infinite loop - post error and return</span>
+<span class="w">          </span><span class="k">write</span><span class="p">(</span><span class="n">lchar</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">irow</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;DST while loop not completing&quot;</span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; Line &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">lchar</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; of table &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">               </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="nb">trim</span><span class="p">(</span><span class="n">distribution_label</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; in file &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">                  </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="nb">trim</span><span class="p">(</span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="p">),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">          </span><span class="k">return</span>
+<span class="k">       endif</span>
+<span class="k">    enddo</span><span class="w">   </span><span class="c">! while</span>
+
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! process operator and values</span>
+<span class="w">    </span><span class="c">!     - sort operators by rank dimension</span>
+<span class="w">    </span><span class="c">!     - search for case of equivalence operator &quot;==&quot;</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="k">do </span><span class="n">irank</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">dst_rank</span>
+<span class="w">       </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">       </span><span class="n">numOp</span><span class="p">(</span><span class="n">irank</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">       </span><span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">counter</span>
+<span class="w">          </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">pattern_query</span><span class="p">(</span><span class="n">lop</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">string</span><span class="p">,</span><span class="n">pattern</span><span class="p">(</span><span class="n">irank</span><span class="p">)%</span><span class="n">string</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">             </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">             </span><span class="n">loper</span><span class="p">(</span><span class="n">irank</span><span class="p">,</span><span class="n">n</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lop</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">string</span>
+<span class="w">             </span><span class="n">op_val</span><span class="p">(</span><span class="n">irank</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">opv</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">             </span><span class="n">numOp</span><span class="p">(</span><span class="n">irank</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span>
+<span class="w">             </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">debug_flag</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39; operator &#39;</span><span class="p">,</span><span class="nb">trim</span><span class="p">(</span><span class="n">loper</span><span class="p">(</span><span class="n">irank</span><span class="p">,</span><span class="n">n</span><span class="p">)%</span><span class="n">string</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                                     </span><span class="n">op_val</span><span class="p">(</span><span class="n">irank</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+<span class="w">          </span><span class="k">endif </span>
+<span class="k">       enddo</span><span class="w">   </span><span class="c">! k</span>
+<span class="w">    </span><span class="k">enddo</span><span class="w">   </span><span class="c">! irank</span>
+
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! search for equivalence operators to know how to partition the total PE</span>
+<span class="w">    </span><span class="c">! amoung the distribution axes. The base value = (nPE)**(1/erank), where</span>
+<span class="w">    </span><span class="c">! erank is the effective rank = source rank - number of equivalences</span>
+<span class="w">    </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="n">erank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dst_rank</span>
+<span class="w">    </span><span class="k">do </span><span class="n">irank</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">dst_rank</span>
+<span class="w">       </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">numOp</span><span class="p">(</span><span class="n">irank</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">numOp</span><span class="p">(</span><span class="n">irank</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          do </span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">numOp</span><span class="p">(</span><span class="n">irank</span><span class="p">)</span>
+<span class="w">             </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">pattern_query</span><span class="p">(</span><span class="n">loper</span><span class="p">(</span><span class="n">irank</span><span class="p">,</span><span class="n">n</span><span class="p">)%</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;==&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                if</span><span class="p">(</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                   </span><span class="c">! error can&#39;t have both equivalence and multiple operators</span>
+<span class="w">                   </span><span class="k">write</span><span class="p">(</span><span class="n">lchar</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">irow</span>
+<span class="w">                   </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;only single operator&quot;</span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; allowed when equivalence operator used. Line &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">      </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="nb">trim</span><span class="p">(</span><span class="n">lchar</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; of table &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">distribution_label</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="s2">&quot; in file &quot;</span><span class="w"> </span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="p">),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">                   </span><span class="k">return</span>
+<span class="k">                endif</span>
+<span class="k">                </span><span class="n">erank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">erank</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">             </span><span class="k">endif</span>
+<span class="k">          enddo</span><span class="w">   </span><span class="c">! k</span>
+<span class="w">       </span><span class="k">else</span>
+<span class="w">          </span><span class="c">! error no operator for rank</span>
+<span class="w">          </span><span class="k">write</span><span class="p">(</span><span class="n">lchar</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">irow</span>
+<span class="w">          </span><span class="k">write</span><span class="p">(</span><span class="n">lnumb</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">irank</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;operator missing from DST&quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="s2">&quot; specification, rank &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">lnumb</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; Line &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">       </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">                   </span><span class="nb">trim</span><span class="p">(</span><span class="n">lchar</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; of table &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">distribution_label</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="s2">&quot; in file &quot;</span><span class="w"> </span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="p">),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">                   </span><span class="k">return</span>
+<span class="k">       endif</span>
+<span class="k">    enddo</span><span class="w">   </span><span class="c">! irank</span>
+
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! compute the distribution dimension size.</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="k">call </span><span class="n">dist_size</span><span class="p">(</span><span class="n">nPEs</span><span class="p">,</span><span class="w"> </span><span class="n">erank</span><span class="p">,</span><span class="w"> </span><span class="n">numOp</span><span class="p">,</span><span class="w"> </span><span class="n">loper</span><span class="p">,</span><span class="w"> </span><span class="n">op_val</span><span class="p">,</span><span class="w"> </span><span class="n">Dfile</span><span class="p">%</span><span class="n">dst_dist</span><span class="p">(</span><span class="n">idist</span><span class="p">),</span><span class="w">   </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">DstMem</span><span class="p">%</span><span class="n">memRank</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! both source and destination specifications have been read, move to next</span>
+<span class="w">    </span><span class="c">! entry - check new row to make certain it is a new entry and not a</span>
+<span class="w">    </span><span class="c">! continuation.</span>
+<span class="w">    </span><span class="c">!---------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">irow</span><span class="o">+</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">nrows</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">       if</span><span class="p">(</span><span class="w"> </span><span class="n">new_row</span><span class="p">(</span><span class="n">irow</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w">  </span><span class="k">then</span><span class="w"> </span>
+<span class="w">          </span><span class="c">! if there is a next row and it doesn&#39;t have a continuation symbol</span>
+<span class="w">          </span><span class="n">irow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">irow</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">       </span><span class="k">else</span>
+<span class="w">          </span><span class="c">! error next line should be a new entry but instead a continuation</span>
+<span class="w">          </span><span class="c">! symbol was found</span>
+<span class="w">          </span><span class="k">write</span><span class="p">(</span><span class="n">lchar</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">irow</span><span class="o">+</span><span class="mi">1</span>
+<span class="w">          </span><span class="k">write</span><span class="p">(</span><span class="n">lnumb</span><span class="p">,</span><span class="s2">&quot;(i5)&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">irank</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;next line in table &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">      </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="nb">trim</span><span class="p">(</span><span class="n">distribution_label</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; should be a new entry, but &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="s2">&quot;instead a continuation symbol was found. Line &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">           </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="nb">trim</span><span class="p">(</span><span class="n">lchar</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; of table &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">distribution_label</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="s2">&quot; in file &quot;</span><span class="w"> </span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; had a continuation&quot;</span><span class="w">   </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; symbol.&quot;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">                </span><span class="k">return</span>
+<span class="k">       endif</span>
+<span class="k">    elseif</span><span class="p">(</span><span class="n">irow</span><span class="o">+</span><span class="mi">1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">nrows</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">ltag</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="s2">&quot;END&quot;</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">       </span><span class="c">! we should be done and can drop out, but there is no end tag</span>
+<span class="w">       </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;should be at end of &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">       </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="s2">&quot;table &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">distribution_label</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; but no end tag&quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="s2">&quot; found. File &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="p">)</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">                </span><span class="k">return</span>
+<span class="k">    else</span>
+<span class="w">       </span><span class="c">! we are at the end of the table so finish up.</span>
+<span class="w">       </span><span class="n">irow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">irow</span><span class="o">+</span><span class="mi">1</span>
+<span class="w">    </span><span class="k">endif</span>
+
+<span class="w">    </span><span class="c">! sanity check to catch infinite loops</span>
+<span class="w">    </span><span class="n">out_counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">out_counter</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">out_counter</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">       call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;we seem to have gotten into&quot;</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; an infinite loop reading table &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">                      </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="nb">trim</span><span class="p">(</span><span class="n">distribution_label</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; in file &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">                    </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="nb">trim</span><span class="p">(</span><span class="n">Dfile</span><span class="p">%</span><span class="n">filename</span><span class="p">),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">                </span><span class="k">return</span>
+<span class="k">    endif</span>
+<span class="k">  enddo</span><span class="w">  </span><span class="c">! while</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! clean up CF     </span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_ConfigDestroy</span><span class="p">(</span><span class="n">localcf</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;cannot destroy config object&quot;</span><span class="p">,</span><span class="w">            </span><span class="p">&amp;</span>
+<span class="w">                            </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="w">     </span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="k">end subroutine </span><span class="n">read_dist_specification</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

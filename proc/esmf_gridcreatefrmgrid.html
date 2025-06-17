@@ -1,0 +1,573 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_GridCreateFrmGrid &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_GridCreateFrmGrid
+      <small>Function</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.1% of total for procedures.">125 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_Grid.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_grid.f90.html'>ESMF_Grid.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/esmf_gridmod.html'>ESMF_GridMod</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_GridCreateFrmGrid</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/esmf_gridcreatefrmgrid.html#src">ESMF_GridCreateFrmGrid</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>private  function ESMF_GridCreateFrmGrid(grid, minIndex, maxIndex, rc)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~50"></span>
+              type(<a href='../type/esmf_grid.html'>ESMF_Grid</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-minindex~12"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>minIndex</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-maxindex~10"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>maxIndex</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~1775"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <h3>Return Value
+        <small>
+          <span class="anchor" id="variable-esmf_gridcreatefrmgrid"></span>
+          type(<a href='../type/esmf_grid.html'>ESMF_Grid</a>)
+        </small>
+      </h3>
+      
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">  </span><span class="k">function </span><span class="n">ESMF_GridCreateFrmGrid</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">minIndex</span><span class="p">,</span><span class="w"> </span><span class="n">maxIndex</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!</span>
+<span class="c">! !RETURN VALUE:</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Grid</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ESMF_GridCreateFrmGrid</span>
+<span class="c">!</span>
+<span class="c">! !ARGUMENTS:</span>
+
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Grid</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">grid</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">         </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">  </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">minIndex</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">         </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">maxIndex</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w">         </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+<span class="c">!</span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">!</span>
+<span class="c">! This function creates a new 3D {\tt ESMF\_Grid} object by adding an</span>
+<span class="c">! undistributed vertical dimension to an existing 2D {\tt ESMF\_Grid} object.</span>
+<span class="c">! A maximum and, optionally, a minimum value are provided by the user for</span>
+<span class="c">! the vertical dimension index. The coordinates from the input 2D grid are</span>
+<span class="c">! included in the final 3D grid, while values for the undistributed vertical</span>
+<span class="c">! coordinate must be set subsequently.</span>
+<span class="c">!</span>
+<span class="c">! The arguments are:</span>
+<span class="c">! \begin{description}</span>
+<span class="c">! \item[grid]</span>
+<span class="c">!     The original 2D {\tt ESMF\_Grid} object.</span>
+<span class="c">! \item[{[minIndex]}]</span>
+<span class="c">!     Minimum index value for the undistributed vertical dimension. If omitted,</span>
+<span class="c">!     defaults to 1.</span>
+<span class="c">! \item[maxIndex]</span>
+<span class="c">!     Maximum index value for the undistributed vertical dimension.</span>
+<span class="c">! \item[{[rc]}]</span>
+<span class="c">!     Return code; equals {\tt ESMF\_SUCCESS} if there are no errors.</span>
+<span class="c">! \end{description}</span>
+<span class="c">!</span>
+<span class="c">!EOPI</span>
+
+<span class="w">    </span><span class="c">! local variables</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localrc</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">connectionCount</span><span class="p">,</span><span class="w"> </span><span class="n">deCount</span><span class="p">,</span><span class="w"> </span><span class="n">dimCount</span><span class="p">,</span><span class="w"> </span><span class="n">itemCount</span><span class="p">,</span><span class="w"> </span><span class="n">tileCount</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ldimCount</span><span class="p">,</span><span class="w"> </span><span class="n">localDe</span><span class="p">,</span><span class="w"> </span><span class="n">localDeCount</span><span class="p">,</span><span class="w"> </span><span class="n">minIndx</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">item</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tileIndexA</span><span class="p">,</span><span class="w"> </span><span class="n">tileIndexB</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w">       </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">positionVector</span><span class="p">,</span><span class="w">    </span><span class="n">orientationVector</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w">       </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">newPositionVector</span><span class="p">,</span><span class="w"> </span><span class="n">newOrientationVector</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w">   </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">coordDimCount</span><span class="p">,</span><span class="w">    </span><span class="n">distgridToGridMap</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w">   </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">newcoordDimCount</span><span class="p">,</span><span class="w"> </span><span class="n">newdistgridToGridMap</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">coordDimMap</span><span class="p">,</span><span class="w">    </span><span class="n">minIndexPTile</span><span class="p">,</span><span class="w">    </span><span class="n">maxIndexPTile</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">newcoordDimMap</span><span class="p">,</span><span class="w"> </span><span class="n">newminIndexPTile</span><span class="p">,</span><span class="w"> </span><span class="n">newmaxIndexPTile</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w">     </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">fptrIn1d</span><span class="p">,</span><span class="w"> </span><span class="n">fptrOut1d</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:),</span><span class="w">   </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">fptrIn2d</span><span class="p">,</span><span class="w"> </span><span class="n">fptrOut2d</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_DistGridConnection</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">connectionList</span><span class="p">,</span><span class="w"> </span><span class="n">newconnectionList</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_DistGrid</span><span class="p">)</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">distgrid</span><span class="p">,</span><span class="w"> </span><span class="n">newdistgrid</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Grid</span><span class="p">)</span><span class="w">             </span><span class="kd">::</span><span class="w"> </span><span class="n">newgrid</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Index_Flag</span><span class="p">)</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">indexflag</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_CoordSys_Flag</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">coordSys</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">gridName</span>
+
+<span class="w">    </span><span class="c">! begin</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+
+<span class="w">    </span><span class="c">! check additional dimension bounds</span>
+<span class="w">    </span><span class="n">minIndx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">minIndex</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      </span><span class="n">minIndx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">minIndex</span>
+<span class="w">    </span><span class="k">end if</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="n">maxIndex</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">minIndx</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_RC_NOT_VALID</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;maxIndex must be &gt; minIndex&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">return</span>
+<span class="k">    end if</span>
+
+<span class="w">    </span><span class="c">! get grid parameters and associated DistGrid object</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_GridGet</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">distgrid</span><span class="o">=</span><span class="n">distgrid</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="n">gridName</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">dimCount</span><span class="o">=</span><span class="n">dimCount</span><span class="p">,</span><span class="w"> </span><span class="n">coordSys</span><span class="o">=</span><span class="n">coordSys</span><span class="p">,</span><span class="w"> </span><span class="n">indexflag</span><span class="o">=</span><span class="n">indexflag</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="n">dimCount</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_RC_NOT_VALID</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;Grid object in field MUST have 2 dimensions&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">return</span>
+<span class="k">    end if</span>
+
+<span class="w">    </span><span class="c">! get 2D distribution information from Grid&#39;s DistGrid object</span>
+<span class="w">    </span><span class="k">allocate</span><span class="p">(</span><span class="n">coordDimCount</span><span class="p">(</span><span class="n">dimCount</span><span class="p">),</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">distgridToGridMap</span><span class="p">(</span><span class="n">dimCount</span><span class="p">),</span><span class="w">     </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">coordDimMap</span><span class="p">(</span><span class="n">dimCount</span><span class="p">,</span><span class="n">dimCount</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="nb">stat</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">statusToCheck</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    call </span><span class="n">ESMF_GridGet</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">coordDimCount</span><span class="o">=</span><span class="n">coordDimCount</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">distgridToGridMap</span><span class="o">=</span><span class="n">distgridToGridMap</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">coordDimMap</span><span class="o">=</span><span class="n">coordDimMap</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">    </span><span class="c">! increment dimension count by one to build local 3D Grid</span>
+<span class="w">    </span><span class="n">ldimCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dimCount</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+
+<span class="w">    </span><span class="c">! create mapping arrays for 3D Grid by extending original ones from 2D Grid</span>
+<span class="w">    </span><span class="k">allocate</span><span class="p">(</span><span class="n">newcoordDimCount</span><span class="p">(</span><span class="n">ldimCount</span><span class="p">),</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">newdistgridToGridMap</span><span class="p">(</span><span class="n">ldimCount</span><span class="p">),</span><span class="w">     </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">newcoordDimMap</span><span class="p">(</span><span class="n">ldimCount</span><span class="p">,</span><span class="n">ldimCount</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="nb">stat</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">statusToCheck</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    </span><span class="n">newcoordDimCount</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">dimCount</span><span class="p">)</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">coordDimCount</span>
+<span class="w">    </span><span class="n">newcoordDimCount</span><span class="p">(</span><span class="n">ldimCount</span><span class="p">)</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span>
+
+<span class="w">    </span><span class="n">newdistgridToGridMap</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">dimCount</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">distgridToGridMap</span>
+<span class="w">    </span><span class="n">newdistgridToGridMap</span><span class="p">(</span><span class="n">ldimCount</span><span class="p">)</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span>
+
+<span class="w">    </span><span class="n">newcoordDimMap</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">dimCount</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">dimCount</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">coordDimMap</span>
+<span class="w">    </span><span class="n">newcoordDimMap</span><span class="p">(:,</span><span class="w"> </span><span class="n">ldimCount</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="n">newcoordDimMap</span><span class="p">(</span><span class="n">ldimCount</span><span class="p">,</span><span class="w"> </span><span class="p">:)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="o">/</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">/</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">deallocate</span><span class="p">(</span><span class="n">coordDimCount</span><span class="p">,</span><span class="w"> </span><span class="n">distgridToGridMap</span><span class="p">,</span><span class="w"> </span><span class="n">coordDimMap</span><span class="p">,</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundDeallocError</span><span class="p">(</span><span class="n">statusToCheck</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">    </span><span class="c">! in a similar fashion, extend index/tile arrays and connection settings</span>
+<span class="w">    </span><span class="c">! for DistGrid object in new 3D Grid</span>
+
+<span class="w">    </span><span class="c">! get original DistGrid information</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_DistGridGet</span><span class="p">(</span><span class="n">distgrid</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">tileCount</span><span class="o">=</span><span class="n">tileCount</span><span class="p">,</span><span class="w"> </span><span class="n">connectionCount</span><span class="o">=</span><span class="n">connectionCount</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    allocate</span><span class="p">(</span><span class="n">minIndexPTile</span><span class="p">(</span><span class="n">dimCount</span><span class="p">,</span><span class="w"> </span><span class="n">tileCount</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">maxIndexPTile</span><span class="p">(</span><span class="n">dimCount</span><span class="p">,</span><span class="w"> </span><span class="n">tileCount</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">connectionList</span><span class="p">(</span><span class="n">connectionCount</span><span class="p">),</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="nb">stat</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">statusToCheck</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">    </span><span class="c">! get original index arrays and connection list</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_DistGridGet</span><span class="p">(</span><span class="n">distgrid</span><span class="p">,</span><span class="w"> </span><span class="n">minIndexPTile</span><span class="o">=</span><span class="n">minIndexPTile</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">maxIndexPTile</span><span class="o">=</span><span class="n">maxIndexPTile</span><span class="p">,</span><span class="w"> </span><span class="n">connectionList</span><span class="o">=</span><span class="n">connectionList</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">    </span><span class="c">! create new index arrays</span>
+<span class="w">    </span><span class="k">allocate</span><span class="p">(</span><span class="n">newminIndexPTile</span><span class="p">(</span><span class="n">ldimCount</span><span class="p">,</span><span class="w"> </span><span class="n">tileCount</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">newmaxIndexPTile</span><span class="p">(</span><span class="n">ldimCount</span><span class="p">,</span><span class="w"> </span><span class="n">tileCount</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="nb">stat</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">statusToCheck</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    </span><span class="n">newminIndexPTile</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">dimCount</span><span class="p">,:)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">minIndexPTile</span>
+<span class="w">    </span><span class="n">newmaxIndexPTile</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">dimCount</span><span class="p">,:)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">maxIndexPTile</span>
+<span class="w">    </span><span class="n">newminIndexPTile</span><span class="p">(</span><span class="n">ldimCount</span><span class="p">,</span><span class="w"> </span><span class="p">:)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">minIndx</span>
+<span class="w">    </span><span class="n">newmaxIndexPTile</span><span class="p">(</span><span class="n">ldimCount</span><span class="p">,</span><span class="w"> </span><span class="p">:)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">maxIndex</span>
+
+<span class="w">    </span><span class="k">deallocate</span><span class="p">(</span><span class="n">minIndexPTile</span><span class="p">,</span><span class="w"> </span><span class="n">maxIndexPTile</span><span class="p">,</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundDeallocError</span><span class="p">(</span><span class="n">statusToCheck</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">    </span><span class="c">! extend connection list for new Grid</span>
+<span class="w">    </span><span class="k">allocate</span><span class="p">(</span><span class="n">newConnectionList</span><span class="p">(</span><span class="n">connectionCount</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">newPositionVector</span><span class="p">(</span><span class="n">ldimCount</span><span class="p">),</span><span class="w"> </span><span class="n">newOrientationVector</span><span class="p">(</span><span class="n">ldimCount</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">positionVector</span><span class="p">(</span><span class="n">dimCount</span><span class="p">),</span><span class="w"> </span><span class="n">orientationVector</span><span class="p">(</span><span class="n">dimCount</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="nb">stat</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">statusToCheck</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    do </span><span class="n">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">connectionCount</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_DistGridConnectionGet</span><span class="p">(</span><span class="n">connectionList</span><span class="p">(</span><span class="n">item</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">tileIndexA</span><span class="o">=</span><span class="n">tileIndexA</span><span class="p">,</span><span class="w"> </span><span class="n">tileIndexB</span><span class="o">=</span><span class="n">tileIndexB</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">positionVector</span><span class="o">=</span><span class="n">positionVector</span><span class="p">,</span><span class="w"> </span><span class="n">orientationVector</span><span class="o">=</span><span class="n">orientationVector</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">      </span><span class="n">newPositionVector</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">dimCount</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">positionVector</span>
+<span class="w">      </span><span class="n">newPositionVector</span><span class="p">(</span><span class="w"> </span><span class="n">ldimCount</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">      </span><span class="n">newOrientationVector</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">dimCount</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">orientationVector</span>
+<span class="w">      </span><span class="n">newOrientationVector</span><span class="p">(</span><span class="w"> </span><span class="n">ldimCount</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_DistGridConnectionSet</span><span class="p">(</span><span class="n">newConnectionList</span><span class="p">(</span><span class="n">item</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">tileIndexA</span><span class="o">=</span><span class="n">tileIndexA</span><span class="p">,</span><span class="w"> </span><span class="n">tileIndexB</span><span class="o">=</span><span class="n">tileIndexB</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">positionVector</span><span class="o">=</span><span class="n">newPositionVector</span><span class="p">,</span><span class="w"> </span><span class="n">orientationVector</span><span class="o">=</span><span class="n">newOrientationVector</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    end do</span>
+
+<span class="k">    deallocate</span><span class="p">(</span><span class="n">newPositionVector</span><span class="p">,</span><span class="w"> </span><span class="n">newOrientationVector</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">positionVector</span><span class="p">,</span><span class="w"> </span><span class="n">orientationVector</span><span class="p">,</span><span class="w"> </span><span class="n">connectionList</span><span class="p">,</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundDeallocError</span><span class="p">(</span><span class="n">statusToCheck</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">    </span><span class="c">! create 3D DistGrid object</span>
+<span class="w">    </span><span class="n">newdistgrid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_DistGridCreate</span><span class="p">(</span><span class="n">minIndexPTile</span><span class="o">=</span><span class="n">newminIndexPTile</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">maxIndexPTile</span><span class="o">=</span><span class="n">newmaxIndexPTile</span><span class="p">,</span><span class="w"> </span><span class="n">connectionList</span><span class="o">=</span><span class="n">newConnectionList</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    call </span><span class="n">ESMF_DistGridSet</span><span class="p">(</span><span class="n">distgrid</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;DG-GridFrom:&quot;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">gridName</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    deallocate</span><span class="p">(</span><span class="n">newminIndexPTile</span><span class="p">,</span><span class="w"> </span><span class="n">newmaxIndexPTile</span><span class="p">,</span><span class="w"> </span><span class="n">newconnectionList</span><span class="p">,</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundDeallocError</span><span class="p">(</span><span class="n">statusToCheck</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">    </span><span class="c">! create 3D Grid object</span>
+<span class="w">    </span><span class="n">newgrid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_GridCreate</span><span class="p">(</span><span class="n">newdistgrid</span><span class="p">,</span><span class="w"> </span><span class="n">coordDimCount</span><span class="o">=</span><span class="n">newcoordDimCount</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">coordDimMap</span><span class="o">=</span><span class="n">newcoordDimMap</span><span class="p">,</span><span class="w"> </span><span class="n">coordSys</span><span class="o">=</span><span class="n">coordSys</span><span class="p">,</span><span class="w"> </span><span class="n">indexflag</span><span class="o">=</span><span class="n">indexflag</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;GridFrom:&quot;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">gridName</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    deallocate</span><span class="p">(</span><span class="n">newcoordDimMap</span><span class="p">,</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundDeallocError</span><span class="p">(</span><span class="n">statusToCheck</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">    </span><span class="c">! get localDeCount</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_GridGet</span><span class="p">(</span><span class="n">newgrid</span><span class="p">,</span><span class="w"> </span><span class="n">localDeCount</span><span class="o">=</span><span class="n">localDeCount</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">    </span><span class="c">! add coordinates to 3D Grid</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_GridAddCoord</span><span class="p">(</span><span class="n">newgrid</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">    </span><span class="c">! load 2D coordinates</span>
+<span class="w">    </span><span class="k">do </span><span class="n">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">      </span><span class="k">select case</span><span class="w"> </span><span class="p">(</span><span class="n">newcoordDimCount</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">          </span><span class="k">do </span><span class="n">localDe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">localDeCount</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">            </span><span class="k">call </span><span class="n">ESMF_GridGetCoord</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">coordDim</span><span class="o">=</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">localDE</span><span class="o">=</span><span class="n">localDe</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">fptrOut1d</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">            call </span><span class="n">ESMF_GridGetCoord</span><span class="p">(</span><span class="n">newgrid</span><span class="p">,</span><span class="w"> </span><span class="n">coordDim</span><span class="o">=</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">localDE</span><span class="o">=</span><span class="n">localDe</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">fptrIn1d</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">            </span><span class="n">fptrIn1d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fptrOut1d</span>
+<span class="w">          </span><span class="k">end do</span>
+<span class="k">        case</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">          </span><span class="k">do </span><span class="n">localDe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">localDeCount</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">            </span><span class="k">call </span><span class="n">ESMF_GridGetCoord</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">coordDim</span><span class="o">=</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">localDE</span><span class="o">=</span><span class="n">localDe</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">fptrOut2d</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">            call </span><span class="n">ESMF_GridGetCoord</span><span class="p">(</span><span class="n">newgrid</span><span class="p">,</span><span class="w"> </span><span class="n">coordDim</span><span class="o">=</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">localDE</span><span class="o">=</span><span class="n">localDe</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">fptrIn2d</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">            </span><span class="n">fptrIn2d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fptrOut2d</span>
+<span class="w">          </span><span class="k">end do</span>
+<span class="k">        case </span><span class="n">default</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_RC_INTNRL_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;Internal error - should never get here!&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">          </span><span class="k">return</span>
+<span class="k">      end select</span>
+<span class="k">    end do</span>
+
+<span class="k">    deallocate</span><span class="p">(</span><span class="n">newcoordDimCount</span><span class="p">,</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundDeallocError</span><span class="p">(</span><span class="n">statusToCheck</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    </span><span class="n">ESMF_GridCreateFrmGrid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newgrid</span>
+
+<span class="k">end function </span><span class="n">ESMF_GridCreateFrmGrid</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

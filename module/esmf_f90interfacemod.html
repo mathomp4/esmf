@@ -1,0 +1,1497 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_F90InterfaceMod &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_F90InterfaceMod
+      <small>Module</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.2% of total for modules and submodules.">358 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_F90Interface.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_f90interface.f90.html'>ESMF_F90Interface.F90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_F90InterfaceMod</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#inters-0"
+         aria-expanded="false" aria-controls="inters-0">
+         <h4 class="card-header bg-primary text-white">Interfaces</h4>
+      </a>
+      <div id="inters-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/esmf_f90interfacemod.html#interface-esmf_interarraycreate">ESMF_InterArrayCreate</a>
+        </div>
+      </div>
+    </div>
+
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#types-0"
+         aria-expanded="false" aria-controls="types-0">
+         <h4 class="card-header bg-primary text-white">Derived Types</h4>
+      </a>
+      <div id="types-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/esmf_f90interfacemod.html#type-esmf_interarray">ESMF_InterArray</a>
+        </div>
+      </div>
+    </div>
+
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#funcs-0"
+         aria-expanded="false" aria-controls="funcs-0">
+         <h4 class="card-header bg-primary text-white">Functions</h4>
+      </a>
+      <div id="funcs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/esmf_f90interfacemod.html#proc-esmf_interarraycreateptr">ESMF_InterArrayCreatePtr</a>
+            <a class="list-group-item" href="../module/esmf_f90interfacemod.html#proc-esmf_interarraycreatetrg">ESMF_InterArrayCreateTrg</a>
+        </div>
+      </div>
+    </div>
+
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#subs-0"
+         aria-expanded="false" aria-controls="subs-0">
+         <h4 class="card-header bg-primary text-white">Subroutines</h4>
+      </a>
+      <div id="subs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/esmf_f90interfacemod.html#proc-esmf_interarraydestroy">ESMF_InterArrayDestroy</a>
+            <a class="list-group-item" href="../module/esmf_f90interfacemod.html#proc-esmf_interarrayget">ESMF_InterArrayGet</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+
+    <div class="col-md-9" id='text'>
+      
+<br>          <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='esmf_utiltypesmod.html'>ESMF_UtilTypesMod</a></li>
+                  <li class="list-inline-item"><a href='esmf_logerrmod.html'>ESMF_LogErrMod</a></li>
+              </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+      
+      <br>
+
+
+
+
+        <section>
+          <h2>Interfaces</h2>
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-esmf_interarraycreate"></span>
+      <h3>public        interface <a href='../interface/esmf_interarraycreate.html'>ESMF_InterArrayCreate</a> 
+      </h3>
+    </div>
+    <ul class="list-group">
+          <li class="list-group-item">
+                <h3>
+    private recursive function <a href='../proc/esmf_interarraycreatetrg.html'>ESMF_InterArrayCreateTrg</a>(farray1D, farray2D, farray3D, farray1DI8, farray2DI8, farray3DI8, farray1DR8, farray2DR8, farray3DR8, rc) result(InterArrayCreateTrg)  
+
+    </h3>
+    
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray1d~2"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional,</td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>farray1D</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray2d~2"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional,</td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>farray2D</strong>(:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray3d~2"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional,</td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>farray3D</strong>(:,:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray1di8~2"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+<td>intent(in),</td>
+              <td>optional,</td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>farray1DI8</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray2di8~2"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+<td>intent(in),</td>
+              <td>optional,</td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>farray2DI8</strong>(:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray3di8~2"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+<td>intent(in),</td>
+              <td>optional,</td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>farray3DI8</strong>(:,:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray1dr8~2"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+<td>intent(in),</td>
+              <td>optional,</td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>farray1DR8</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray2dr8~2"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+<td>intent(in),</td>
+              <td>optional,</td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>farray2DR8</strong>(:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray3dr8~2"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+<td>intent(in),</td>
+              <td>optional,</td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>farray3DR8</strong>(:,:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~82"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>type(<a href='../type/esmf_interarray.html'>ESMF_InterArray</a>)</small>
+    </h4>
+    
+
+          </li>
+          <li class="list-group-item">
+                <h3>
+    private recursive function <a href='../proc/esmf_interarraycreateptr.html'>ESMF_InterArrayCreatePtr</a>(farray1D, farray2D, farray3D, farray1DI8, farray2DI8, farray3DI8, farray1DR8, farray2DR8, farray3DR8, transferOwnership, rc) result(InterArrayCreatePtr)  
+
+    </h3>
+    
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray1d~3"></span>
+              integer,
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray1D</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray2d~3"></span>
+              integer,
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray2D</strong>(:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray3d~3"></span>
+              integer,
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray3D</strong>(:,:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray1di8~3"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray1DI8</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray2di8~3"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray2DI8</strong>(:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray3di8~3"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray3DI8</strong>(:,:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray1dr8~3"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray1DR8</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray2dr8~3"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray2DR8</strong>(:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray3dr8~3"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray3DR8</strong>(:,:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-transferownership"></span>
+              logical,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>transferOwnership</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~83"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>type(<a href='../type/esmf_interarray.html'>ESMF_InterArray</a>)</small>
+    </h4>
+    
+
+          </li>
+    </ul>
+  </div>
+
+        </section>
+        <br>
+
+
+        <section>
+          <h2>Derived Types</h2>
+              <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="type-esmf_interarray"></span>
+      <h3>
+        type, public, sequence &nbsp;::&nbsp;
+        <a href='../type/esmf_interarray.html'>ESMF_InterArray</a>
+        
+      </h3>
+    </div>
+    <div class="card-body">
+      
+
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray1di8"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+              <td>private,</td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray1DI8</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray2di8"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+              <td>private,</td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray2DI8</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray3di8"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+              <td>private,</td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray3DI8</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-shallowmemory"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+              <td>private,</td>
+            <td>
+              dimension(10)
+            </td>
+            <td>::</td>
+            <td><strong>shallowMemory</strong></td>
+<td> =</td>
+                <td>0</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray1d"></span>
+              integer,
+            </td>
+              <td>private,</td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray1D</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray2d"></span>
+              integer,
+            </td>
+              <td>private,</td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray2D</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray3d"></span>
+              integer,
+            </td>
+              <td>private,</td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray3D</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-owner"></span>
+              logical,
+            </td>
+              <td>private</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>owner</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray1dr8"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+              <td>private,</td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray1DR8</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray2dr8"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+              <td>private,</td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray2DR8</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray3dr8"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+              <td>private,</td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray3DR8</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+        <section>
+          <h2>Functions</h2>
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-esmf_interarraycreateptr"></span> <h3>private recursive function <a href='../proc/esmf_interarraycreateptr.html'>ESMF_InterArrayCreatePtr</a>(farray1D, farray2D, farray3D, farray1DI8, farray2DI8, farray3DI8, farray1DR8, farray2DR8, farray3DR8, transferOwnership, rc) result(InterArrayCreatePtr)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray1d~3"></span>
+              integer,
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray1D</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray2d~3"></span>
+              integer,
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray2D</strong>(:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray3d~3"></span>
+              integer,
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray3D</strong>(:,:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray1di8~3"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray1DI8</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray2di8~3"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray2DI8</strong>(:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray3di8~3"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray3DI8</strong>(:,:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray1dr8~3"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray1DR8</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray2dr8~3"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray2DR8</strong>(:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray3dr8~3"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray3DR8</strong>(:,:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-transferownership"></span>
+              logical,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>transferOwnership</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~83"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>type(<a href='../type/esmf_interarray.html'>ESMF_InterArray</a>)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-esmf_interarraycreatetrg"></span> <h3>private recursive function <a href='../proc/esmf_interarraycreatetrg.html'>ESMF_InterArrayCreateTrg</a>(farray1D, farray2D, farray3D, farray1DI8, farray2DI8, farray3DI8, farray1DR8, farray2DR8, farray3DR8, rc) result(InterArrayCreateTrg)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray1d~2"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional,</td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>farray1D</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray2d~2"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional,</td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>farray2D</strong>(:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray3d~2"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional,</td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>farray3D</strong>(:,:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray1di8~2"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+<td>intent(in),</td>
+              <td>optional,</td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>farray1DI8</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray2di8~2"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+<td>intent(in),</td>
+              <td>optional,</td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>farray2DI8</strong>(:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray3di8~2"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+<td>intent(in),</td>
+              <td>optional,</td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>farray3DI8</strong>(:,:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray1dr8~2"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+<td>intent(in),</td>
+              <td>optional,</td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>farray1DR8</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray2dr8~2"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+<td>intent(in),</td>
+              <td>optional,</td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>farray2DR8</strong>(:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray3dr8~2"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+<td>intent(in),</td>
+              <td>optional,</td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>farray3DR8</strong>(:,:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~82"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>type(<a href='../type/esmf_interarray.html'>ESMF_InterArray</a>)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+        <section>
+          <h2>Subroutines</h2>
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-esmf_interarraydestroy"></span> <h3>public recursive subroutine <a href='../proc/esmf_interarraydestroy.html'>ESMF_InterArrayDestroy</a>(array, rc)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-array~8"></span>
+              type(<a href='../type/esmf_interarray.html'>ESMF_InterArray</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>array</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~85"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-esmf_interarrayget"></span> <h3>public recursive subroutine <a href='../proc/esmf_interarrayget.html'>ESMF_InterArrayGet</a>(array, farray1D, farray2D, farray3D, farray1DI8, farray2DI8, farray3DI8, farray1DR8, farray2DR8, farray3DR8, rc)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-array~7"></span>
+              type(<a href='../type/esmf_interarray.html'>ESMF_InterArray</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>array</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray1d~4"></span>
+              integer,
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray1D</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray2d~4"></span>
+              integer,
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray2D</strong>(:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray3d~4"></span>
+              integer,
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray3D</strong>(:,:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray1di8~4"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray1DI8</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray2di8~4"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray2DI8</strong>(:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray3di8~4"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray3DI8</strong>(:,:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray1dr8~4"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray1DR8</strong>(:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray2dr8~4"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray2DR8</strong>(:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray3dr8~4"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farray3DR8</strong>(:,:,:)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~84"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+
+
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

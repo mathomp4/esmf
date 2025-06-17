@@ -1,0 +1,1429 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_FieldRegridStoreX &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_FieldRegridStoreX
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.2% of total for procedures.">429 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_FieldRegrid.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_fieldregrid.f90.html'>ESMF_FieldRegrid.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/esmf_fieldregridmod.html'>ESMF_FieldRegridMod</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_FieldRegridStoreX</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/esmf_fieldregridstorex.html#src">ESMF_FieldRegridStoreX</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>private  subroutine ESMF_FieldRegridStoreX(xgrid, srcField, dstField, keywordEnforcer, regridmethod, srcTermProcessing, pipeLineDepth, routehandle, factorList, factorIndexList, srcFracField, dstFracField, srcMergeFracField, dstMergeFracField, rc)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xgrid~4"></span>
+              type(<a href='../type/esmf_xgrid.html'>ESMF_XGrid</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xgrid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srcfield~11"></span>
+              type(<a href='../type/esmf_field.html'>ESMF_Field</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>srcField</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dstfield~17"></span>
+              type(<a href='../type/esmf_field.html'>ESMF_Field</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dstField</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-keywordenforcer~52"></span>
+              type(<a href='../type/esmf_keywordenforcer.html'>ESMF_KeywordEnforcer</a>),
+            </td>
+<td></td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>keywordEnforcer</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-regridmethod~5"></span>
+              type(<a href='../type/esmf_regridmethod_flag.html'>ESMF_RegridMethod_Flag</a>),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>regridmethod</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srctermprocessing~26"></span>
+              integer,
+            </td>
+<td>intent(inout),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>srcTermProcessing</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pipelinedepth~5"></span>
+              integer,
+            </td>
+<td>intent(inout),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>pipeLineDepth</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-routehandle~57"></span>
+              type(<a href='../type/esmf_routehandle.html'>ESMF_RouteHandle</a>),
+            </td>
+<td>intent(inout),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>routehandle</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-factorlist~25"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>factorList</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-factorindexlist~25"></span>
+              integer(kind=ESMF_KIND_I4),
+            </td>
+<td></td>
+              <td>optional,</td>            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>factorIndexList</strong>(:,:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srcfracfield~4"></span>
+              type(<a href='../type/esmf_field.html'>ESMF_Field</a>),
+            </td>
+<td>intent(inout),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>srcFracField</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dstfracfield~4"></span>
+              type(<a href='../type/esmf_field.html'>ESMF_Field</a>),
+            </td>
+<td>intent(inout),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dstFracField</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srcmergefracfield"></span>
+              type(<a href='../type/esmf_field.html'>ESMF_Field</a>),
+            </td>
+<td>intent(inout),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>srcMergeFracField</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dstmergefracfield"></span>
+              type(<a href='../type/esmf_field.html'>ESMF_Field</a>),
+            </td>
+<td>intent(inout),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dstMergeFracField</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~391"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">ESMF_FieldRegridStoreX</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span><span class="w"> </span><span class="n">srcField</span><span class="p">,</span><span class="w"> </span><span class="n">dstField</span><span class="p">,</span><span class="w"> </span><span class="n">keywordEnforcer</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="n">regridmethod</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="n">srcTermProcessing</span><span class="p">,</span><span class="w"> </span><span class="n">pipeLineDepth</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="n">routehandle</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="n">factorList</span><span class="p">,</span><span class="w"> </span><span class="n">factorIndexList</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">                    </span><span class="n">srcFracField</span><span class="p">,</span><span class="w"> </span><span class="n">dstFracField</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="n">srcMergeFracField</span><span class="p">,</span><span class="w"> </span><span class="n">dstMergeFracField</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!      </span>
+<span class="c">! !ARGUMENTS:</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_XGrid</span><span class="p">),</span><span class="w">       </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">                      </span><span class="kd">::</span><span class="w"> </span><span class="n">xgrid</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Field</span><span class="p">),</span><span class="w">       </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">                      </span><span class="kd">::</span><span class="w"> </span><span class="n">srcField</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Field</span><span class="p">),</span><span class="w">       </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">                   </span><span class="kd">::</span><span class="w"> </span><span class="n">dstField</span>
+<span class="k">type</span><span class="p">(</span><span class="n">ESMF_KeywordEnforcer</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="kd">::</span><span class="w"> </span><span class="n">keywordEnforcer</span><span class="w"> </span><span class="c">! must use keywords below</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_RegridMethod_Flag</span><span class="p">),</span><span class="w">   </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">regridmethod</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">                        </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">srcTermProcessing</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">                        </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">pipeLineDepth</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_RouteHandle</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">routehandle</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w">             </span><span class="k">pointer</span><span class="p">,</span><span class="w">       </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">factorList</span><span class="p">(:)</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ESMF_KIND_I4</span><span class="p">),</span><span class="w">          </span><span class="k">pointer</span><span class="p">,</span><span class="w">       </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">factorIndexList</span><span class="p">(:,:)</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Field</span><span class="p">),</span><span class="w">       </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">srcFracField</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Field</span><span class="p">),</span><span class="w">       </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">dstFracField</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Field</span><span class="p">),</span><span class="w">       </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">srcMergeFracField</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Field</span><span class="p">),</span><span class="w">       </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">dstMergeFracField</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">                </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w">   </span><span class="k">optional</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span>
+<span class="c">!</span>
+<span class="c">! !STATUS:</span>
+<span class="c">! \begin{itemize}</span>
+<span class="c">! \item\apiStatusCompatibleVersion{5.2.0r}</span>
+<span class="c">! \item\apiStatusModifiedSinceVersion{5.2.0r}</span>
+<span class="c">! \begin{description}</span>
+<span class="c">! \item[5.3.0] Added arguments {\tt srcFracField}, {\tt dstFracField}, {\tt srcMergeFracField}, and {\tt dstMergeFracField}.</span>
+<span class="c">! These fraction Fields allow a user to calculate correct flux regridded through {\tt ESMF\_XGrid}.</span>
+<span class="c">! \item[7.1.0r] Added argument {\tt regridmethod}. This new argument allows the user to choose the regrid method</span>
+<span class="c">!               to apply when computing the routehandle. </span>
+<span class="c">! \item[8.5.0] Added arguments {\tt srcTermProcessing} and {\tt pipelineDepth} to</span>
+<span class="c">!              provide access to the tuning parameters affecting the sparse matrix</span>
+<span class="c">!              execution. See the text for details on the impact</span>
+<span class="c">!              {\tt srcTermProcessing} can have on bit-for-bit reproducibility.</span>
+<span class="c">! \item[8.9.0] Added arguments {\tt factorList} and {\tt factorIndexList} to allow user</span>
+<span class="c">!              to retrieve regridding weights.</span>
+<span class="c">!</span>
+<span class="c">! \end{description}</span>
+<span class="c">! \end{itemize}</span>
+<span class="c">!</span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">!       \begin{sloppypar}</span>
+<span class="c">!       This method creates a RouteHandle to do conservative interpolation specifically between a</span>
+<span class="c">!       Field built on an XGrid and a Field build on one of the Grids or Meshes used to create that XGrid. </span>
+<span class="c">!       (To do more general interpolation use the {\tt ESMF\_FieldRegridStore()} method</span>
+<span class="c">!       in section~\ref{api:esmf_fieldregridstorenx}.) The RouteHandle produced by this method can then be used in the call</span>
+<span class="c">!       {\tt ESMF\_FieldRegrid()} to interpolate from the {\tt srcField} to the {\tt dstField}. </span>
+<span class="c">!       \end{sloppypar}</span>
+<span class="c">!       </span>
+<span class="c">!       The RouteHandle generated by this call is based just on the </span>
+<span class="c">!       coordinates in the Grids, XGrids, or Meshes contained in the Fields.  If those</span>
+<span class="c">!       coordinates don&#39;t change the RouteHandle can</span>
+<span class="c">!       be used repeatedly to interpolate from the source Field to the </span>
+<span class="c">!       destination Field.  This is true even if the data in the Fields </span>
+<span class="c">!       changes. The RouteHandle may also be used to interpolate between any</span>
+<span class="c">!       source and destination Field which are created </span>
+<span class="c">!       on the same Grid, XGrid, or Mesh as the original Fields.        </span>
+<span class="c">!</span>
+<span class="c">!       When it&#39;s no longer needed the RouteHandle should be destroyed by </span>
+<span class="c">!       using {\tt ESMF\_FieldRegridRelease()} to free the memory it&#39;s using. </span>
+<span class="c">!</span>
+<span class="c">!       Note, as a side effect, that this call may change the data in {\tt dstField}. If</span>
+<span class="c">!       this is undesirable, then an easy work around is to create a second temporary Field</span>
+<span class="c">!       with the same structure as {\tt dstField} and pass that in instead. </span>
+<span class="c">!</span>
+<span class="c">!     The arguments are:</span>
+<span class="c">!     \begin{description}</span>
+<span class="c">!     \item [xgrid]</span>
+<span class="c">!           Exchange Grid.</span>
+<span class="c">!     \item [srcField]</span>
+<span class="c">!           Source Field built on either {\tt xgrid} or one of the Grids or Meshes used to create {\tt xgrid}.</span>
+<span class="c">!     \item [dstField]</span>
+<span class="c">!           Destination Field built on either {\tt xgrid} or one of the Grids or Meshes used to create {\tt xgrid}. </span>
+<span class="c">!           The data in this Field may be overwritten by this call. </span>
+<span class="c">!     \item [{[regridmethod]}]</span>
+<span class="c">!           The type of interpolation. For this method only </span>
+<span class="c">!           {\tt ESMF\_REGRIDMETHOD\_CONSERVE} and {\tt ESMF\_REGRIDMETHOD\_CONSERVE\_2ND} are</span>
+<span class="c">!           supported. If not specified, defaults to {\tt ESMF\_REGRIDMETHOD\_CONSERVE}.</span>
+<span class="c">!     \item [{[srcTermProcessing]}]</span>
+<span class="c">!           The {\tt srcTermProcessing} parameter controls how many source terms,</span>
+<span class="c">!           located on the same PET and summing into the same destination element,</span>
+<span class="c">!           are summed into partial sums on the source PET before being transferred</span>
+<span class="c">!           to the destination PET. A value of 0 indicates that the entire arithmetic</span>
+<span class="c">!           is done on the destination PET; source elements are neither multiplied </span>
+<span class="c">!           by their factors nor added into partial sums before being sent off by the</span>
+<span class="c">!           source PET. A value of 1 indicates that source elements are multiplied</span>
+<span class="c">!           by their factors on the source side before being sent to the destination</span>
+<span class="c">!           PET. Larger values of {\tt srcTermProcessing} indicate the maximum number</span>
+<span class="c">!           of terms in the partial sums on the source side.</span>
+<span class="c">!</span>
+<span class="c">!     Note that partial sums may lead to bit-for-bit differences in the results.</span>
+<span class="c">!     See section \ref{RH:bfb} for an in-depth discussion of {\em all}</span>
+<span class="c">!     bit-for-bit reproducibility aspects related to route-based communication</span>
+<span class="c">!     methods.</span>
+<span class="c">!</span>
+<span class="c">!     \begin{sloppypar}</span>
+<span class="c">!     The {\tt ESMF\_FieldRegridStore()} method implements an auto-tuning scheme</span>
+<span class="c">!     for the {\tt srcTermProcessing} parameter. The intent on the </span>
+<span class="c">!     {\tt srcTermProcessing} argument is &quot;{\tt inout}&quot; in order to </span>
+<span class="c">!     support both overriding and accessing the auto-tuning parameter.</span>
+<span class="c">!     If an argument $&gt;= 0$ is specified, it is used for the </span>
+<span class="c">!     {\tt srcTermProcessing} parameter, and the auto-tuning phase is skipped.</span>
+<span class="c">!     In this case the {\tt srcTermProcessing} argument is not modified on</span>
+<span class="c">!     return. If the provided argument is $&lt; 0$, the {\tt srcTermProcessing}</span>
+<span class="c">!     parameter is determined internally using the auto-tuning scheme. In this</span>
+<span class="c">!     case the {\tt srcTermProcessing} argument is re-set to the internally</span>
+<span class="c">!     determined value on return. Auto-tuning is also used if the optional </span>
+<span class="c">!     {\tt srcTermProcessing} argument is omitted.</span>
+<span class="c">!     \end{sloppypar}</span>
+<span class="c">!     </span>
+<span class="c">!   \item [{[pipelineDepth]}]</span>
+<span class="c">!     The {\tt pipelineDepth} parameter controls how many messages a PET</span>
+<span class="c">!     may have outstanding during a sparse matrix exchange. Larger values</span>
+<span class="c">!     of {\tt pipelineDepth} typically lead to better performance. However,</span>
+<span class="c">!     on some systems too large a value may lead to performance degradation,</span>
+<span class="c">!     or runtime errors.</span>
+<span class="c">!</span>
+<span class="c">!     Note that the pipeline depth has no effect on the bit-for-bit</span>
+<span class="c">!     reproducibility of the results. However, it may affect the performance</span>
+<span class="c">!     reproducibility of the exchange.</span>
+<span class="c">!</span>
+<span class="c">!     The {\tt ESMF\_FieldRegridStore()} method implements an auto-tuning scheme</span>
+<span class="c">!     for the {\tt pipelineDepth} parameter. The intent on the </span>
+<span class="c">!     {\tt pipelineDepth} argument is &quot;{\tt inout}&quot; in order to </span>
+<span class="c">!     support both overriding and accessing the auto-tuning parameter.</span>
+<span class="c">!     If an argument $&gt;= 0$ is specified, it is used for the </span>
+<span class="c">!     {\tt pipelineDepth} parameter, and the auto-tuning phase is skipped.</span>
+<span class="c">!     In this case the {\tt pipelineDepth} argument is not modified on</span>
+<span class="c">!     return. If the provided argument is $&lt; 0$, the {\tt pipelineDepth}</span>
+<span class="c">!     parameter is determined internally using the auto-tuning scheme. In this</span>
+<span class="c">!     case the {\tt pipelineDepth} argument is re-set to the internally</span>
+<span class="c">!     determined value on return. Auto-tuning is also used if the optional </span>
+<span class="c">!     {\tt pipelineDepth} argument is omitted.</span>
+<span class="c">!     \item [{[routehandle]}]</span>
+<span class="c">!           The handle that implements the regrid and that can be used in later </span>
+<span class="c">!           {\tt ESMF\_FieldRegrid}.</span>
+<span class="c">!     \item [{[srcFracField]}] </span>
+<span class="c">!           The fraction of each source cell participating in the regridding returned from this call. </span>
+<span class="c">!           This Field needs to be created on the same Grid and location (e.g staggerloc) </span>
+<span class="c">!           as the srcField.</span>
+<span class="c">!     \item [{[dstFracField]}] </span>
+<span class="c">!           The fraction of each destination cell participating in the regridding returned from this call. </span>
+<span class="c">!           This Field needs to be created on the same Grid and location (e.g staggerloc) </span>
+<span class="c">!           as the dstField.</span>
+<span class="c">!     \item [{[srcMergeFracField]}] </span>
+<span class="c">!           The fraction of each source cell as a result of Grid merge returned from this call.</span>
+<span class="c">!           This Field needs to be created on the same Grid and location (e.g staggerloc) </span>
+<span class="c">!           as the srcField.</span>
+<span class="c">!     \item [{[dstMergeFracField]}] </span>
+<span class="c">!           The fraction of each destination cell as a result of Grid merge returned from this call.</span>
+<span class="c">!           This Field needs to be created on the same Grid and location (e.g staggerloc) </span>
+<span class="c">!           as the dstField.</span>
+<span class="c">!     \item [{[rc]}]</span>
+<span class="c">!           Return code; equals {\tt ESMF\_SUCCESS} if there are no errors.</span>
+<span class="c">!     \end{description}</span>
+<span class="c">!</span>
+<span class="c">!EOP</span>
+<span class="w">        </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">i</span>
+
+<span class="w">        </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_GeomType_Flag</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">geomtype</span><span class="p">,</span><span class="w"> </span><span class="n">srcgeomtype</span><span class="p">,</span><span class="w"> </span><span class="n">dstgeomtype</span>
+<span class="w">        </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_XGrid</span><span class="p">)</span><span class="w">     </span><span class="kd">::</span><span class="w"> </span><span class="n">srcXGrid</span><span class="p">,</span><span class="w"> </span><span class="n">dstXGrid</span><span class="w">        </span>
+<span class="w">        </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Mesh</span><span class="p">)</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="n">srcMesh</span><span class="p">,</span><span class="w"> </span><span class="n">dstMesh</span>
+<span class="w">        </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Array</span><span class="p">)</span><span class="w">     </span><span class="kd">::</span><span class="w"> </span><span class="n">srcArray</span><span class="p">,</span><span class="w"> </span><span class="n">dstArray</span>
+<span class="w">        </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">srcIdx</span><span class="p">,</span><span class="w"> </span><span class="n">dstIdx</span><span class="p">,</span><span class="w"> </span><span class="n">ngrid_a</span><span class="p">,</span><span class="w"> </span><span class="n">ngrid_b</span>
+<span class="w">        </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">sideAGC</span><span class="p">,</span><span class="w"> </span><span class="n">sideAMC</span><span class="p">,</span><span class="w"> </span><span class="n">sideBGC</span><span class="p">,</span><span class="w"> </span><span class="n">sideBMC</span>
+<span class="w">        </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_XGridSide_Flag</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">srcSide</span><span class="p">,</span><span class="w"> </span><span class="n">dstSide</span>
+<span class="w">        </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_XGridGeomBase</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">gridA</span><span class="p">(:),</span><span class="w"> </span><span class="n">gridB</span><span class="p">(:)</span>
+<span class="w">        </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Grid</span><span class="p">)</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="n">srcGrid</span>
+<span class="w">        </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Grid</span><span class="p">)</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="n">dstGrid</span>
+<span class="w">        </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_XGridSpec</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">sparseMat</span>
+<span class="w">        </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">found</span><span class="p">,</span><span class="w"> </span><span class="n">match</span>
+<span class="w">        </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Array</span><span class="p">)</span><span class="w">     </span><span class="kd">::</span><span class="w"> </span><span class="n">srcFracArray</span>
+<span class="w">        </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Array</span><span class="p">)</span><span class="w">     </span><span class="kd">::</span><span class="w"> </span><span class="n">dstFracArray</span>
+<span class="w">        </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_STAGGERLOC</span><span class="p">)</span><span class="kd">::</span><span class="w"> </span><span class="n">interpFieldStaggerloc</span><span class="p">,</span><span class="w"> </span><span class="n">fracFieldStaggerloc</span>
+<span class="w">        </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_MESHLOC</span><span class="p">)</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">interpFieldMeshloc</span><span class="p">,</span><span class="w"> </span><span class="n">fracFieldMeshloc</span>
+<span class="w">        </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_RegridMethod_Flag</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">lregridmethod</span>
+<span class="w">        </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Mesh</span><span class="p">)</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="n">xgridMesh</span><span class="p">,</span><span class="w"> </span><span class="n">sideMesh</span>
+<span class="w">        </span><span class="kt">logical</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">sideMeshDestroy</span>
+<span class="w">        </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">xgridSide</span><span class="p">,</span><span class="w"> </span><span class="n">xgridInd</span><span class="p">,</span><span class="w"> </span><span class="n">sideMeshSide</span><span class="p">,</span><span class="w"> </span><span class="n">sideMeshInd</span>
+
+<span class="w">        </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_PointList</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dstPointList</span><span class="p">,</span><span class="w"> </span><span class="n">srcPointList</span>
+<span class="w">        </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Array</span><span class="p">)</span><span class="w">     </span><span class="kd">::</span><span class="w"> </span><span class="n">statusArray</span>
+<span class="w">        </span><span class="kt">integer</span><span class="p">(</span><span class="n">ESMF_KIND_I4</span><span class="p">),</span><span class="w">       </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tmpFactorIndexList</span><span class="p">(:,:)</span>
+<span class="w">        </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w">          </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tmpFactorList</span><span class="p">(:)</span>
+
+<span class="w">        </span>
+<span class="w">        </span><span class="c">! Initialize return code; assume failure until success is certain</span>
+<span class="w">        </span><span class="n">localrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+
+<span class="w">        </span><span class="c">! Set optional method argument</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">regridmethod</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">           </span><span class="n">Lregridmethod</span><span class="o">=</span><span class="n">regridmethod</span>
+<span class="w">        </span><span class="k">else     </span>
+<span class="k">           </span><span class="n">lregridmethod</span><span class="o">=</span><span class="n">ESMF_REGRIDMETHOD_CONSERVE</span>
+<span class="w">        </span><span class="k">endif</span>
+
+<span class="w">        </span><span class="c">! Only conservative methods supported for now</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">lregridmethod</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_REGRIDMETHOD_CONSERVE</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="p">(</span><span class="n">lregridmethod</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_REGRIDMETHOD_CONSERVE_2ND</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">           call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">                </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- Only conservative regrid methods supported through XGrid&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">                </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">           </span><span class="k">return</span>
+<span class="k">        endif</span>
+
+<span class="w">        </span><span class="c">! look for the correct Grid to use</span>
+<span class="w">        </span><span class="c">! first Get necessary information from XGrid and Fields</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_XGridGet</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">sideAGridCount</span><span class="o">=</span><span class="n">sideAGC</span><span class="p">,</span><span class="w"> </span><span class="n">sideAMeshCount</span><span class="o">=</span><span class="n">sideAMC</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">sideBGridCount</span><span class="o">=</span><span class="n">sideBGC</span><span class="p">,</span><span class="w"> </span><span class="n">sideBMeshCount</span><span class="o">=</span><span class="n">sideBMC</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">        </span><span class="n">ngrid_a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sideAGC</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sideAMC</span>
+<span class="w">        </span><span class="n">ngrid_b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sideBGC</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sideBMC</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">gridA</span><span class="p">(</span><span class="n">ngrid_a</span><span class="p">),</span><span class="w"> </span><span class="n">gridB</span><span class="p">(</span><span class="n">ngrid_b</span><span class="p">))</span>
+
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_XGridGet</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span><span class="w"> </span><span class="n">gridA</span><span class="p">,</span><span class="w"> </span><span class="n">gridB</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">        call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">srcField</span><span class="p">,</span><span class="w"> </span><span class="n">geomtype</span><span class="o">=</span><span class="n">geomtype</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">        </span><span class="n">srcgeomtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">geomtype</span>
+
+<span class="w">        </span>
+<span class="w">        </span><span class="c">! locate the Grid or XGrid contained in srcField</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">geomtype</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_GEOMTYPE_GRID</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">srcField</span><span class="p">,</span><span class="w"> </span><span class="n">grid</span><span class="o">=</span><span class="n">srcGrid</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">            </span><span class="n">found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">            </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">ngrid_a</span>
+<span class="w">                </span><span class="c">!if(ESMF_GridMatch(srcGrid, gridA(i)%gbcp%grid, &amp;</span>
+<span class="w">                </span><span class="c">!     globalflag=.true.) &gt;=ESMF_GRIDMATCH_EXACT) then</span>
+<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">srcGrid</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">gridA</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">gbcp</span><span class="p">%</span><span class="n">grid</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                    </span><span class="n">srcIdx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span>
+<span class="w">                    </span><span class="n">srcSide</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_XGRIDSIDE_A</span>
+<span class="w">                    </span><span class="n">found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">                    </span><span class="k">exit</span>
+<span class="k">                endif</span>
+<span class="k">            enddo </span>
+<span class="k">            do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">ngrid_b</span>
+<span class="w">                </span><span class="c">!if(ESMF_GridMatch(srcGrid, gridB(i)%gbcp%grid, &amp;</span>
+<span class="w">                </span><span class="c">!     globalflag=.true.) &gt;=ESMF_GRIDMATCH_EXACT) then</span>
+<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">srcGrid</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">gridB</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">gbcp</span><span class="p">%</span><span class="n">grid</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                    if</span><span class="p">(</span><span class="n">found</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                      </span><span class="c">! TODO: maybe we should attach standard attibute</span>
+<span class="w">                      </span><span class="c">! to differentiate src and dst side for regridding</span>
+<span class="w">                      </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">                        </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- duplication of Grid found in XGrid&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">                      </span><span class="k">return</span>
+<span class="k">                    endif</span>
+<span class="k">                    </span><span class="n">srcIdx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span>
+<span class="w">                    </span><span class="n">srcSide</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_XGRIDSIDE_B</span>
+<span class="w">                    </span><span class="n">found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">                    </span><span class="k">exit</span>
+<span class="k">                endif</span>
+<span class="k">            enddo</span><span class="w"> </span>
+
+<span class="w">            </span><span class="c">! If found create Mesh from Grid</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">found</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">                   </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- cannot Locate src Field Grid in XGrid&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">                </span><span class="k">return</span>
+<span class="k">            endif</span>
+
+<span class="k">        else if</span><span class="p">(</span><span class="n">geomtype</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_GEOMTYPE_MESH</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">srcField</span><span class="p">,</span><span class="w"> </span><span class="n">mesh</span><span class="o">=</span><span class="n">srcMesh</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">            </span><span class="n">found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">            </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">ngrid_a</span>
+<span class="w">                </span><span class="c">!if(ESMF_MeshMatch(srcMesh, gridA(i)%gbcp%mesh)) then</span>
+<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">srcMesh</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">gridA</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">gbcp</span><span class="p">%</span><span class="n">mesh</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                    </span><span class="n">srcIdx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span>
+<span class="w">                    </span><span class="n">srcSide</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_XGRIDSIDE_A</span>
+<span class="w">                    </span><span class="n">found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">                    </span><span class="k">exit</span>
+<span class="k">                endif</span>
+<span class="k">            enddo </span>
+<span class="k">            do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">ngrid_b</span>
+<span class="w">                </span><span class="c">!if(ESMF_MeshMatch(srcMesh, gridB(i)%gbcp%mesh)) then</span>
+<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">srcMesh</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">gridB</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">gbcp</span><span class="p">%</span><span class="n">mesh</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                    if</span><span class="p">(</span><span class="n">found</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                      call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">                        </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- duplication of Mesh found in XGrid&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">                      </span><span class="k">return</span>
+<span class="k">                    endif</span>
+<span class="k">                    </span><span class="n">srcIdx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span>
+<span class="w">                    </span><span class="n">srcSide</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_XGRIDSIDE_B</span>
+<span class="w">                    </span><span class="n">found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">                    </span><span class="k">exit</span>
+<span class="k">                endif</span>
+<span class="k">            enddo </span>
+
+<span class="k">            if</span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">found</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">                   </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- cannot Locate src Field Mesh in XGrid&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">                </span><span class="k">return</span>
+<span class="k">            endif</span>
+<span class="k">                </span>
+<span class="k">        else if</span><span class="p">(</span><span class="n">geomtype</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_GEOMTYPE_XGRID</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">srcField</span><span class="p">,</span><span class="w"> </span><span class="n">xgrid</span><span class="o">=</span><span class="n">srcXGrid</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">            </span>
+<span class="k">            </span><span class="n">match</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_XGridMatch</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span><span class="w"> </span><span class="n">srcXGrid</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">            if</span><span class="p">(</span><span class="n">match</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                </span><span class="n">srcSide</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_XGRIDSIDE_BALANCED</span>
+<span class="w">                </span><span class="n">srcIdx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">            </span><span class="k">else</span>
+<span class="k">                call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                  </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- XGrid in srcField doesn&#39;t match the input XGrid&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                  </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">                </span><span class="k">return</span>
+<span class="k">            endif</span>
+<span class="k">        else</span>
+<span class="k">            call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- src Field is not built on Grid, Mesh, or XGrid&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">            </span><span class="k">return</span>
+<span class="k">        endif</span>
+
+<span class="w">        </span><span class="c">! locate the Grid or XGrid contained in dstField</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">dstField</span><span class="p">,</span><span class="w"> </span><span class="n">geomtype</span><span class="o">=</span><span class="n">geomtype</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">        </span><span class="n">dstgeomtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">geomtype</span>
+
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">geomtype</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_GEOMTYPE_GRID</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">dstField</span><span class="p">,</span><span class="w"> </span><span class="n">grid</span><span class="o">=</span><span class="n">dstGrid</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">            </span><span class="n">found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">            </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">ngrid_a</span>
+<span class="w">                </span><span class="c">!if(ESMF_GridMatch(dstGrid, gridA(i)%gbcp%grid, &amp;</span>
+<span class="w">                </span><span class="c">!   globalflag=.true.) &gt;=ESMF_GRIDMATCH_EXACT) then</span>
+<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">dstGrid</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">gridA</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">gbcp</span><span class="p">%</span><span class="n">grid</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                    </span><span class="n">dstIdx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span>
+<span class="w">                    </span><span class="n">dstSide</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_XGRIDSIDE_A</span>
+<span class="w">                    </span><span class="n">found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">                    </span><span class="k">exit</span>
+<span class="k">                endif</span>
+<span class="k">            enddo </span>
+<span class="k">            do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">ngrid_b</span>
+<span class="w">                </span><span class="c">!if(ESMF_GridMatch(dstGrid, gridB(i)%gbcp%grid, &amp;</span>
+<span class="w">                </span><span class="c">!   globalflag=.true.) &gt;=ESMF_GRIDMATCH_EXACT) then</span>
+<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">dstGrid</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">gridB</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">gbcp</span><span class="p">%</span><span class="n">grid</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                    if</span><span class="p">(</span><span class="n">found</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                      call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">                        </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- duplication of Grid found in XGrid&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">                      </span><span class="k">return</span>
+<span class="k">                    endif</span>
+<span class="k">                    </span><span class="n">dstIdx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span>
+<span class="w">                    </span><span class="n">dstSide</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_XGRIDSIDE_B</span>
+<span class="w">                    </span><span class="n">found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">                    </span><span class="k">exit</span>
+<span class="k">                endif</span>
+<span class="k">            enddo </span>
+
+<span class="k">            if</span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">found</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">                   </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- cannot Locate dst Field Grid in XGrid&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">                </span><span class="k">return</span>
+<span class="k">            endif</span>
+
+<span class="k">        else if</span><span class="p">(</span><span class="n">geomtype</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_GEOMTYPE_MESH</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">dstField</span><span class="p">,</span><span class="w"> </span><span class="n">mesh</span><span class="o">=</span><span class="n">dstMesh</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">            </span><span class="n">found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">            </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">ngrid_a</span>
+<span class="w">                </span><span class="c">!if(ESMF_MeshMatch(dstMesh, gridA(i)%gbcp%mesh)) then</span>
+<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">dstMesh</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">gridA</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">gbcp</span><span class="p">%</span><span class="n">mesh</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                    </span><span class="n">dstIdx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span>
+<span class="w">                    </span><span class="n">dstSide</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_XGRIDSIDE_A</span>
+<span class="w">                    </span><span class="n">found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">                    </span><span class="k">exit</span>
+<span class="k">                endif</span>
+<span class="k">            enddo </span>
+<span class="k">            do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">ngrid_b</span>
+<span class="w">                </span><span class="c">!if(ESMF_MeshMatch(dstMesh, gridB(i)%gbcp%mesh)) then</span>
+<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">dstMesh</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">gridB</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">gbcp</span><span class="p">%</span><span class="n">mesh</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                    if</span><span class="p">(</span><span class="n">found</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                      call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">                        </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- duplication of Mesh found in XGrid&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">                      </span><span class="k">return</span>
+<span class="k">                    endif</span>
+<span class="k">                    </span><span class="n">dstIdx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span>
+<span class="w">                    </span><span class="n">dstSide</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_XGRIDSIDE_B</span>
+<span class="w">                    </span><span class="n">found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">                    </span><span class="k">exit</span>
+<span class="k">                endif</span>
+<span class="k">            enddo </span>
+
+<span class="k">            if</span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">found</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">                   </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- cannot Locate dst Field Mesh in XGrid&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">                </span><span class="k">return</span>
+<span class="k">            endif</span>
+
+<span class="k">        else if</span><span class="p">(</span><span class="n">geomtype</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_GEOMTYPE_XGRID</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">dstField</span><span class="p">,</span><span class="w"> </span><span class="n">xgrid</span><span class="o">=</span><span class="n">dstXGrid</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">            </span><span class="n">match</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_XGridMatch</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span><span class="w"> </span><span class="n">dstXGrid</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">            if</span><span class="p">(</span><span class="n">match</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                </span><span class="n">dstSide</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_XGRIDSIDE_BALANCED</span>
+<span class="w">                </span><span class="n">dstIdx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">            </span><span class="k">else</span>
+<span class="k">                call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                  </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- XGrid in dstField doesn&#39;t match the input XGrid&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                  </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">                </span><span class="k">return</span>
+<span class="k">            endif</span>
+<span class="k">        else</span>
+<span class="k">            call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- src Field is not built on Grid or XGrid&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">            </span><span class="k">return</span>
+<span class="k">        endif</span>
+
+<span class="w">        </span><span class="c">! src and dst Fields should not be on the same side</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">srcSide</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">dstSide</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">               </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- src and dst Fields should not be on same side of the XGrid&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">            </span><span class="k">return</span>
+<span class="k">        endif</span>
+
+<span class="w">        </span><span class="c">! retrieve regridding fraction Fields on demand</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">srcFracField</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          if</span><span class="p">(</span><span class="n">srcgeomtype</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_GEOMTYPE_GRID</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">srcFracField</span><span class="p">,</span><span class="w"> </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">fracFieldStaggerloc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="k">array</span><span class="o">=</span><span class="n">srcFracArray</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">            call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">srcField</span><span class="p">,</span><span class="w"> </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">interpFieldStaggerloc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">      </span>
+<span class="w">            </span><span class="c">! Make sure the staggerlocs match</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">interpFieldStaggerloc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">fracFieldStaggerloc</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">               call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- fracField Field staggerloc must match interpField staggerloc&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">               </span><span class="k">return</span>
+<span class="k">            endif</span>
+<span class="k">          else if</span><span class="p">(</span><span class="n">srcgeomtype</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_GEOMTYPE_MESH</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">srcFracField</span><span class="p">,</span><span class="w"> </span><span class="n">meshloc</span><span class="o">=</span><span class="n">fracFieldMeshloc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="k">array</span><span class="o">=</span><span class="n">srcFracArray</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">            call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">srcField</span><span class="p">,</span><span class="w"> </span><span class="n">meshloc</span><span class="o">=</span><span class="n">interpFieldMeshloc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">      </span>
+<span class="w">            </span><span class="c">! Make sure the staggerlocs match</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">interpFieldMeshloc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">fracFieldMeshloc</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">               call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- fracField Field Meshloc must match interpField Meshloc&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">               </span><span class="k">return</span>
+<span class="k">            endif</span>
+<span class="k">          else</span>
+<span class="k">            call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- src Field has unrecognized geom type&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">return</span>
+<span class="k">          endif</span>
+
+<span class="k">          call </span><span class="n">ESMF_XGridGet</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span><span class="w"> </span><span class="n">srcSide</span><span class="p">,</span><span class="w"> </span><span class="n">srcIdx</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">dstSide</span><span class="p">,</span><span class="w"> </span><span class="n">dstIdx</span><span class="p">,</span><span class="w"> </span><span class="n">srcFracArray</span><span class="o">=</span><span class="n">srcFracArray</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">        endif</span>
+
+<span class="k">        if</span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">dstFracField</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          if</span><span class="p">(</span><span class="n">dstgeomtype</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_GEOMTYPE_GRID</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">dstFracField</span><span class="p">,</span><span class="w"> </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">fracFieldStaggerloc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="k">array</span><span class="o">=</span><span class="n">dstFracArray</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">            call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">dstField</span><span class="p">,</span><span class="w"> </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">interpFieldStaggerloc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">      </span>
+<span class="w">            </span><span class="c">! Make sure the staggerlocs match</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">interpFieldStaggerloc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">fracFieldStaggerloc</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">               call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- fracField Field staggerloc must match interpField staggerloc&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">               </span><span class="k">return</span>
+<span class="k">            endif</span>
+<span class="k">          else if</span><span class="p">(</span><span class="n">dstgeomtype</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_GEOMTYPE_MESH</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">dstFracField</span><span class="p">,</span><span class="w"> </span><span class="n">meshloc</span><span class="o">=</span><span class="n">fracFieldMeshloc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="k">array</span><span class="o">=</span><span class="n">dstFracArray</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">            call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">dstField</span><span class="p">,</span><span class="w"> </span><span class="n">meshloc</span><span class="o">=</span><span class="n">interpFieldMeshloc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">      </span>
+<span class="w">            </span><span class="c">! Make sure the staggerlocs match</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">interpFieldMeshloc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">fracFieldMeshloc</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">               call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- fracField Field Meshloc must match interpField Meshloc&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">               </span><span class="k">return</span>
+<span class="k">            endif</span>
+<span class="k">          else</span>
+<span class="k">            call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- dst Field has unrecognized geom type&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">return</span>
+<span class="k">          endif</span>
+
+<span class="k">          call </span><span class="n">ESMF_XGridGet</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span><span class="w"> </span><span class="n">srcSide</span><span class="p">,</span><span class="w"> </span><span class="n">srcIdx</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">dstSide</span><span class="p">,</span><span class="w"> </span><span class="n">dstIdx</span><span class="p">,</span><span class="w"> </span><span class="n">dstFracArray</span><span class="o">=</span><span class="n">dstFracArray</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">        endif</span>
+
+<span class="w">        </span><span class="c">! retrieve regridding fraction2 Fields on demand</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">srcMergeFracField</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          if</span><span class="p">(</span><span class="n">srcgeomtype</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_GEOMTYPE_GRID</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">srcMergeFracField</span><span class="p">,</span><span class="w"> </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">fracFieldStaggerloc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="k">array</span><span class="o">=</span><span class="n">srcFracArray</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">            call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">srcField</span><span class="p">,</span><span class="w"> </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">interpFieldStaggerloc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">      </span>
+<span class="w">            </span><span class="c">! Make sure the staggerlocs match</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">interpFieldStaggerloc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">fracFieldStaggerloc</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">               call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- fracField Field staggerloc must match interpField staggerloc&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">               </span><span class="k">return</span>
+<span class="k">            endif</span>
+<span class="k">          else if</span><span class="p">(</span><span class="n">srcgeomtype</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_GEOMTYPE_MESH</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">srcFracField</span><span class="p">,</span><span class="w"> </span><span class="n">meshloc</span><span class="o">=</span><span class="n">fracFieldMeshloc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="k">array</span><span class="o">=</span><span class="n">srcFracArray</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">            call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">srcField</span><span class="p">,</span><span class="w"> </span><span class="n">meshloc</span><span class="o">=</span><span class="n">interpFieldMeshloc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">      </span>
+<span class="w">            </span><span class="c">! Make sure the staggerlocs match</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">interpFieldMeshloc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">fracFieldMeshloc</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">               call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- fracField Field Meshloc must match interpField Meshloc&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">               </span><span class="k">return</span>
+<span class="k">            endif</span>
+<span class="k">          else</span>
+<span class="k">            call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- src Field has unrecognized geom type&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">return</span>
+<span class="k">          endif</span>
+
+<span class="k">          call </span><span class="n">ESMF_XGridGet</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span><span class="w"> </span><span class="n">srcSide</span><span class="p">,</span><span class="w"> </span><span class="n">srcIdx</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">dstSide</span><span class="p">,</span><span class="w"> </span><span class="n">dstIdx</span><span class="p">,</span><span class="w"> </span><span class="n">srcFrac2Array</span><span class="o">=</span><span class="n">srcFracArray</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">        endif</span>
+
+<span class="k">        if</span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">dstMergeFracField</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          if</span><span class="p">(</span><span class="n">dstgeomtype</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_GEOMTYPE_GRID</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">dstMergeFracField</span><span class="p">,</span><span class="w"> </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">fracFieldStaggerloc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="k">array</span><span class="o">=</span><span class="n">dstFracArray</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">            call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">dstField</span><span class="p">,</span><span class="w"> </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">interpFieldStaggerloc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">      </span>
+<span class="w">            </span><span class="c">! Make sure the staggerlocs match</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">interpFieldStaggerloc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">fracFieldStaggerloc</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">               call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- fracField Field staggerloc must match interpField staggerloc&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">               </span><span class="k">return</span>
+<span class="k">            endif</span>
+<span class="k">          else if</span><span class="p">(</span><span class="n">dstgeomtype</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_GEOMTYPE_MESH</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">dstFracField</span><span class="p">,</span><span class="w"> </span><span class="n">meshloc</span><span class="o">=</span><span class="n">fracFieldMeshloc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="k">array</span><span class="o">=</span><span class="n">dstFracArray</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">            call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">dstField</span><span class="p">,</span><span class="w"> </span><span class="n">meshloc</span><span class="o">=</span><span class="n">interpFieldMeshloc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">      </span>
+<span class="w">            </span><span class="c">! Make sure the staggerlocs match</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">interpFieldMeshloc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">fracFieldMeshloc</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">               call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- fracField Field Meshloc must match interpField Meshloc&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">               </span><span class="k">return</span>
+<span class="k">            endif</span>
+<span class="k">          else</span>
+<span class="k">            call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;- dst Field has unrecognized geom type&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">return</span>
+<span class="k">          endif</span>
+
+<span class="k">          call </span><span class="n">ESMF_XGridGet</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span><span class="w"> </span><span class="n">srcSide</span><span class="p">,</span><span class="w"> </span><span class="n">srcIdx</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">dstSide</span><span class="p">,</span><span class="w"> </span><span class="n">dstIdx</span><span class="p">,</span><span class="w"> </span><span class="n">dstFrac2Array</span><span class="o">=</span><span class="n">dstFracArray</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">        endif</span>
+
+<span class="w">        </span><span class="c">! Create routehandle based on regrid method</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lregridmethod</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_REGRIDMETHOD_CONSERVE</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+
+<span class="w">           </span><span class="c">! retrieve the correct sparseMat structure</span>
+<span class="w">           </span><span class="k">call </span><span class="n">ESMF_XGridGet</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span><span class="w"> </span><span class="n">srcSide</span><span class="p">,</span><span class="w"> </span><span class="n">srcIdx</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">dstSide</span><span class="p">,</span><span class="w"> </span><span class="n">dstIdx</span><span class="p">,</span><span class="w"> </span><span class="n">sparseMat</span><span class="o">=</span><span class="n">sparseMat</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">           </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">           </span><span class="c">! If routeHandle requested, create that</span>
+<span class="w">           </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">routeHandle</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="w">              </span><span class="c">! call FieldSMMStore           </span>
+<span class="w">              </span><span class="k">call </span><span class="n">ESMF_FieldSMMStore</span><span class="p">(</span><span class="n">srcField</span><span class="p">,</span><span class="w"> </span><span class="n">dstField</span><span class="p">,</span><span class="w"> </span><span class="n">routehandle</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">sparseMat</span><span class="p">%</span><span class="n">factorList</span><span class="p">,</span><span class="w"> </span><span class="n">sparseMat</span><span class="p">%</span><span class="n">factorIndexList</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">srcTermProcessing</span><span class="o">=</span><span class="n">srcTermProcessing</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">pipeLineDepth</span><span class="o">=</span><span class="n">pipeLineDepth</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">           endif</span>
+
+<span class="w">           </span><span class="c">! If factorList requested, copy that</span>
+<span class="w">           </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">factorList</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+
+<span class="w">              </span><span class="c">! Allocate space</span>
+<span class="w">              </span><span class="k">allocate</span><span class="p">(</span><span class="n">factorList</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">sparseMat</span><span class="p">%</span><span class="n">factorList</span><span class="p">)))</span>
+<span class="w">              </span>
+<span class="w">              </span><span class="c">! Copy</span>
+<span class="w">              </span><span class="n">factorList</span><span class="o">=</span><span class="n">sparseMat</span><span class="p">%</span><span class="n">factorList</span>
+<span class="w">           </span><span class="k">endif</span>
+
+<span class="w">           </span><span class="c">! If factorIndexList requested, copy that</span>
+<span class="w">           </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">factorIndexList</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+
+<span class="w">              </span><span class="c">! Allocate space</span>
+<span class="w">              </span><span class="k">allocate</span><span class="p">(</span><span class="n">factorIndexList</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">sparseMat</span><span class="p">%</span><span class="n">factorIndexList</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">size</span><span class="p">(</span><span class="n">sparseMat</span><span class="p">%</span><span class="n">factorIndexList</span><span class="p">,</span><span class="mi">2</span><span class="p">)))</span>
+<span class="w">              </span>
+<span class="w">              </span><span class="c">! Copy</span>
+<span class="w">              </span><span class="n">factorIndexList</span><span class="o">=</span><span class="n">sparseMat</span><span class="p">%</span><span class="n">factorIndexList</span>
+<span class="w">           </span><span class="k">endif</span>
+
+<span class="k">           </span>
+<span class="k">        else if</span><span class="w"> </span><span class="p">(</span><span class="n">lregridmethod</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_REGRIDMETHOD_CONSERVE_2ND</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+
+<span class="w">           </span><span class="c">! Get Super Mesh</span>
+<span class="w">           </span><span class="k">call </span><span class="n">ESMF_XGridGet</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span><span class="w"> </span><span class="n">mesh</span><span class="o">=</span><span class="n">xgridMesh</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">           </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">           </span><span class="c">! Set XGrid side and ind information</span>
+<span class="w">           </span><span class="n">xgridSide</span><span class="o">=</span><span class="mi">3</span>
+<span class="w">           </span><span class="n">xgridInd</span><span class="o">=</span><span class="mi">0</span><span class="w">           </span>
+<span class="w">           </span><span class="k">call </span><span class="n">c_esmc_meshsetxgridinfo</span><span class="p">(</span><span class="n">xgridMesh</span><span class="p">,</span><span class="w"> </span><span class="n">xgridSide</span><span class="p">,</span><span class="w"> </span><span class="n">xgridInd</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">           </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">           </span>
+
+
+<span class="w">           </span><span class="c">! Init side info</span>
+<span class="w">           </span><span class="n">sideMeshDestroy</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">           </span><span class="n">sideMeshSide</span><span class="o">=</span><span class="mi">0</span>
+<span class="w">           </span><span class="n">sideMeshInd</span><span class="o">=</span><span class="mi">0</span>
+<span class="w">           </span>
+<span class="w">           </span><span class="c">! Get srcMesh</span>
+<span class="w">           </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">srcSide</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_XGRIDSIDE_BALANCED</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="c">! Src is XGrid</span>
+
+<span class="w">              </span><span class="c">! SrcMesh is super mesh</span>
+<span class="w">              </span><span class="n">srcMesh</span><span class="o">=</span><span class="n">xgridMesh</span>
+
+<span class="w">           </span><span class="k">else</span><span class="w"> </span><span class="c">! src is side mesh</span>
+
+<span class="w">              </span><span class="c">! Set side info</span>
+<span class="w">              </span><span class="n">sideMeshSide</span><span class="o">=</span><span class="mi">1</span><span class="w">  </span><span class="c">! side A</span>
+<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">srcSide</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_XGRIDSIDE_B</span><span class="p">)</span><span class="w"> </span><span class="n">sideMeshSide</span><span class="o">=</span><span class="mi">2</span><span class="w"> </span><span class="c">! side B</span>
+<span class="w">              </span><span class="n">sideMeshInd</span><span class="o">=</span><span class="n">srcIdx</span>
+
+<span class="w">              </span><span class="c">! Get/create sideMesh</span>
+<span class="w">              </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">srcField</span><span class="p">,</span><span class="w"> </span><span class="n">geomtype</span><span class="o">=</span><span class="n">geomtype</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">              if</span><span class="w"> </span><span class="p">(</span><span class="n">geomtype</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_GEOMTYPE_GRID</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                 call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">srcField</span><span class="p">,</span><span class="w"> </span><span class="n">grid</span><span class="o">=</span><span class="n">srcGrid</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">                 </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">                 </span>
+<span class="w">                 </span><span class="c">! Create Mesh from Grid</span>
+<span class="w">                 </span><span class="n">sideMesh</span><span class="o">=</span><span class="n">conserve_GridToMesh</span><span class="p">(</span><span class="n">srcGrid</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="c">!maskValues, turnedOnMeshElemMask, &amp;</span>
+<span class="w">                      </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">                 </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w">                            </span>
+
+<span class="w">               </span><span class="c">! Record that we created the mesh</span>
+<span class="w">               </span><span class="n">sideMeshDestroy</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+
+<span class="w">               </span><span class="c">! srcMesh is sideMesh</span>
+<span class="w">               </span><span class="n">srcMesh</span><span class="o">=</span><span class="n">sideMesh</span>
+<span class="w">               </span>
+<span class="w">            </span><span class="k">else if</span><span class="w"> </span><span class="p">(</span><span class="n">geomtype</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_GEOMTYPE_MESH</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+
+<span class="w">               </span><span class="c">! Get side Mesh</span>
+<span class="w">               </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">srcField</span><span class="p">,</span><span class="w"> </span><span class="n">mesh</span><span class="o">=</span><span class="n">sideMesh</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">               </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">               </span>
+<span class="w">               </span><span class="c">! srcMesh is sideMesh</span>
+<span class="w">               </span><span class="n">srcMesh</span><span class="o">=</span><span class="n">sideMesh</span>
+<span class="w">               </span>
+<span class="w">            </span><span class="k">else</span>
+<span class="k">               call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;srcField is not built on Grid, or Mesh.&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">               </span><span class="k">return</span>
+<span class="k">            endif</span>
+<span class="k">         endif</span>
+<span class="w">           </span>
+<span class="w">         </span><span class="c">! Get srcArray</span>
+<span class="w">         </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">srcField</span><span class="p">,</span><span class="w"> </span><span class="k">array</span><span class="o">=</span><span class="n">srcArray</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+
+<span class="w">         </span>
+<span class="w">         </span><span class="c">! Get dstMesh</span>
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dstSide</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_XGRIDSIDE_BALANCED</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="c">! Dst is XGrid</span>
+<span class="w">            </span>
+<span class="w">            </span><span class="c">! DstMesh is super mesh</span>
+<span class="w">              </span><span class="n">dstMesh</span><span class="o">=</span><span class="n">xgridMesh</span>
+
+<span class="w">           </span><span class="k">else</span><span class="w"> </span><span class="c">! dst is side mesh</span>
+
+<span class="w">              </span><span class="c">! Set side info</span>
+<span class="w">              </span><span class="n">sideMeshSide</span><span class="o">=</span><span class="mi">1</span><span class="w">  </span><span class="c">! side A</span>
+<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dstSide</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_XGRIDSIDE_B</span><span class="p">)</span><span class="w"> </span><span class="n">sideMeshSide</span><span class="o">=</span><span class="mi">2</span><span class="w"> </span><span class="c">! side B</span>
+<span class="w">              </span><span class="n">sideMeshInd</span><span class="o">=</span><span class="n">dstIdx</span>
+
+<span class="w">              </span><span class="c">! Get/create sideMesh</span>
+<span class="w">              </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">dstField</span><span class="p">,</span><span class="w"> </span><span class="n">geomtype</span><span class="o">=</span><span class="n">geomtype</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">              if</span><span class="w"> </span><span class="p">(</span><span class="n">geomtype</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_GEOMTYPE_GRID</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                 call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">dstField</span><span class="p">,</span><span class="w"> </span><span class="n">grid</span><span class="o">=</span><span class="n">dstGrid</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">                 </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">                 </span>
+<span class="w">                 </span><span class="c">! Create Mesh from Grid</span>
+<span class="w">                 </span><span class="n">sideMesh</span><span class="o">=</span><span class="n">conserve_GridToMesh</span><span class="p">(</span><span class="n">dstGrid</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="c">!maskValues, turnedOnMeshElemMask, &amp;</span>
+<span class="w">                      </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">                 </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w">                            </span>
+
+<span class="w">               </span><span class="c">! Record that we created the mesh</span>
+<span class="w">               </span><span class="n">sideMeshDestroy</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+
+<span class="w">               </span><span class="c">! dstMesh is sideMesh</span>
+<span class="w">               </span><span class="n">dstMesh</span><span class="o">=</span><span class="n">sideMesh</span>
+<span class="w">               </span>
+<span class="w">            </span><span class="k">else if</span><span class="w"> </span><span class="p">(</span><span class="n">geomtype</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_GEOMTYPE_MESH</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+
+<span class="w">               </span><span class="c">! Get side Mesh</span>
+<span class="w">               </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">dstField</span><span class="p">,</span><span class="w"> </span><span class="n">mesh</span><span class="o">=</span><span class="n">sideMesh</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">               </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">               </span>
+<span class="w">               </span><span class="c">! dstMesh is sideMesh</span>
+<span class="w">               </span><span class="n">dstMesh</span><span class="o">=</span><span class="n">sideMesh</span>
+<span class="w">               </span>
+<span class="w">            </span><span class="k">else</span>
+<span class="k">               call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;dstField is not built on Grid, or Mesh.&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">               </span><span class="k">return</span>
+<span class="k">            endif</span>
+<span class="k">         endif</span>
+<span class="w">           </span>
+<span class="w">         </span><span class="c">! Get dstArray</span>
+<span class="w">         </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">dstField</span><span class="p">,</span><span class="w"> </span><span class="k">array</span><span class="o">=</span><span class="n">dstArray</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">         </span>
+<span class="w">         </span><span class="c">! Set side Mesh info</span>
+<span class="w">         </span><span class="k">call </span><span class="n">c_esmc_meshsetxgridinfo</span><span class="p">(</span><span class="n">sideMesh</span><span class="p">,</span><span class="w"> </span><span class="n">sideMeshSide</span><span class="p">,</span><span class="w"> </span><span class="n">sideMeshInd</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">         </span>
+<span class="w">         </span><span class="c">! Generate routehandle for 2nd order conservative</span>
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">factorList</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">factorIndexList</span><span class="p">))</span><span class="w"> </span><span class="k">then</span><span class="w">  </span><span class="c">! Do weight matrix and maybe rh</span>
+<span class="w">            </span><span class="k">call </span><span class="n">ESMF_RegridStore</span><span class="p">(</span><span class="n">srcMesh</span><span class="p">,</span><span class="w"> </span><span class="n">srcArray</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">srcPointList</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">dstMesh</span><span class="p">,</span><span class="w"> </span><span class="n">dstArray</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">dstPointList</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">regridMethod</span><span class="o">=</span><span class="n">ESMF_REGRIDMETHOD_CONSERVE_2ND</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">lineType</span><span class="o">=</span><span class="n">ESMF_LINETYPE_GREAT_CIRCLE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">normType</span><span class="o">=</span><span class="n">ESMF_NORMTYPE_DSTAREA</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">vectorRegrid</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">polemethod</span><span class="o">=</span><span class="n">ESMF_POLEMETHOD_NONE</span><span class="p">,</span><span class="w"> </span><span class="n">regridPoleNPnts</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">hasStatusArray</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.,</span><span class="w"> </span><span class="n">statusArray</span><span class="o">=</span><span class="n">statusArray</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">extrapMethod</span><span class="o">=</span><span class="n">ESMF_EXTRAPMETHOD_NONE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">extrapNumSrcPnts</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="n">extrapDistExponent</span><span class="o">=</span><span class="mf">2.0_ESMF_KIND_R8</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">extrapNumLevels</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">extrapNumInputLevels</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">unmappedaction</span><span class="o">=</span><span class="n">ESMF_UNMAPPEDACTION_IGNORE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! Otherwise, dst = sideMesh will often lead to unmapped errors</span>
+<span class="w">                 </span><span class="n">ignoreDegenerate</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">srcTermProcessing</span><span class="o">=</span><span class="n">srcTermProcessing</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">pipeLineDepth</span><span class="o">=</span><span class="n">pipeLineDepth</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">routehandle</span><span class="o">=</span><span class="n">routeHandle</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">indices</span><span class="o">=</span><span class="n">tmpFactorIndexList</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">weights</span><span class="o">=</span><span class="n">tmpFactorList</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">checkFlag</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">            </span><span class="c">! attach sparse matrix to appropriate output variable</span>
+<span class="w">           </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">factorList</span><span class="p">))</span><span class="w"> </span><span class="n">factorList</span><span class="o">=&gt;</span><span class="n">tmpFactorList</span>
+<span class="w">           </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">factorIndexList</span><span class="p">))</span><span class="w"> </span><span class="n">factorIndexList</span><span class="o">=&gt;</span><span class="n">tmpFactorIndexList</span>
+
+<span class="w">           </span><span class="c">! deallocate if not being passed out</span>
+<span class="w">           </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">factorList</span><span class="p">))</span><span class="w"> </span><span class="k">deallocate</span><span class="p">(</span><span class="n">tmpfactorList</span><span class="p">)</span>
+<span class="w">           </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">factorIndexList</span><span class="p">))</span><span class="w"> </span><span class="k">deallocate</span><span class="p">(</span><span class="n">tmpfactorIndexList</span><span class="p">)</span>
+
+<span class="w">         </span><span class="k">else</span><span class="w">  </span><span class="c">! Just do routeHandle</span>
+<span class="w">            </span><span class="k">call </span><span class="n">ESMF_RegridStore</span><span class="p">(</span><span class="n">srcMesh</span><span class="p">,</span><span class="w"> </span><span class="n">srcArray</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">srcPointList</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">dstMesh</span><span class="p">,</span><span class="w"> </span><span class="n">dstArray</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">dstPointList</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">regridMethod</span><span class="o">=</span><span class="n">ESMF_REGRIDMETHOD_CONSERVE_2ND</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">lineType</span><span class="o">=</span><span class="n">ESMF_LINETYPE_GREAT_CIRCLE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">normType</span><span class="o">=</span><span class="n">ESMF_NORMTYPE_DSTAREA</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">vectorRegrid</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">polemethod</span><span class="o">=</span><span class="n">ESMF_POLEMETHOD_NONE</span><span class="p">,</span><span class="w"> </span><span class="n">regridPoleNPnts</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">hasStatusArray</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.,</span><span class="w"> </span><span class="n">statusArray</span><span class="o">=</span><span class="n">statusArray</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">extrapMethod</span><span class="o">=</span><span class="n">ESMF_EXTRAPMETHOD_NONE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">extrapNumSrcPnts</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="n">extrapDistExponent</span><span class="o">=</span><span class="mf">2.0_ESMF_KIND_R8</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">extrapNumLevels</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">extrapNumInputLevels</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">unmappedaction</span><span class="o">=</span><span class="n">ESMF_UNMAPPEDACTION_IGNORE</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! Otherwise, dst = sideMesh will often lead to unmapped errors</span>
+<span class="w">                 </span><span class="n">ignoreDegenerate</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">srcTermProcessing</span><span class="o">=</span><span class="n">srcTermProcessing</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">pipeLineDepth</span><span class="o">=</span><span class="n">pipeLineDepth</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">routehandle</span><span class="o">=</span><span class="n">routeHandle</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">checkFlag</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">         endif</span>
+<span class="w">            </span>
+<span class="w">           </span><span class="c">! The fraction information should be the same as stored in the XGrid. However,</span>
+<span class="w">           </span><span class="c">! use the version actually calculated during 2nd order calc, so that it matches more</span>
+<span class="w">           </span><span class="c">! precisely the values used during that calculation. </span>
+<span class="w">           </span>
+<span class="w">           </span><span class="c">! If present, copy src fraction information</span>
+<span class="w">           </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">srcFracField</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">              call </span><span class="n">copyFracsIntoOutputField</span><span class="p">(</span><span class="n">srcField</span><span class="p">,</span><span class="w"> </span><span class="n">srcMesh</span><span class="p">,</span><span class="w"> </span><span class="n">srcFracField</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">                   </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">           endif</span>
+
+<span class="w">           </span><span class="c">! If present, copy dst fraction information</span>
+<span class="w">           </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">dstFracField</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">              call </span><span class="n">copyFracsIntoOutputField</span><span class="p">(</span><span class="n">dstField</span><span class="p">,</span><span class="w"> </span><span class="n">dstMesh</span><span class="p">,</span><span class="w"> </span><span class="n">dstFracField</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">                   </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">           endif</span>
+
+<span class="w">           </span>
+<span class="w">           </span><span class="c">! Reset Mesh side info so that it doesn&#39;t interfere elsewhere</span>
+<span class="w">           </span><span class="k">call </span><span class="n">c_esmc_meshsetxgridinfo</span><span class="p">(</span><span class="n">xgridMesh</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">           </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">           </span>
+<span class="k">           call </span><span class="n">c_esmc_meshsetxgridinfo</span><span class="p">(</span><span class="n">sideMesh</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">           </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w">           </span>
+<span class="w">                      </span>
+<span class="w">           </span>
+<span class="w">           </span><span class="c">! Get rid of temporary sideMesh if necessary</span>
+<span class="w">           </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sideMeshDestroy</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">              call </span><span class="n">ESMF_MeshDestroy</span><span class="p">(</span><span class="n">sideMesh</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">              </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return              </span>
+<span class="k">           endif</span>
+
+<span class="k">        else</span>
+<span class="k">           call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">                </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot; unsupported regridMethod with XGrid version of ESMF_FieldRegridStore().&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>
+<span class="w">                </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">           </span><span class="k">return           </span>
+<span class="k">        endif</span>
+
+<span class="w">        </span><span class="c">! Return success</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+
+<span class="w">    </span><span class="k">end subroutine </span><span class="n">ESMF_FieldRegridStoreX</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

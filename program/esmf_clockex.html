@@ -1,0 +1,763 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_ClockEx &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_ClockEx      <small>Program</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.1% of total for programs.">63 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_ClockEx.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_clockex.f90.html'>ESMF_ClockEx.F90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_ClockEx</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/esmf_clockex.html#variable-failmsg~225">failMsg</a>
+            <a class="list-group-item" href="../program/esmf_clockex.html#variable-testname~107">testname</a>
+            <a class="list-group-item" href="../program/esmf_clockex.html#variable-dd~10">DD</a>
+            <a class="list-group-item" href="../program/esmf_clockex.html#variable-advancecount~5">advanceCount</a>
+            <a class="list-group-item" href="../program/esmf_clockex.html#variable-h~11">H</a>
+            <a class="list-group-item" href="../program/esmf_clockex.html#variable-m~50">M</a>
+            <a class="list-group-item" href="../program/esmf_clockex.html#variable-mm~10">MM</a>
+            <a class="list-group-item" href="../program/esmf_clockex.html#variable-s~21">S</a>
+            <a class="list-group-item" href="../program/esmf_clockex.html#variable-yy~3">YY</a>
+            <a class="list-group-item" href="../program/esmf_clockex.html#variable-finalrc~105">finalrc</a>
+            <a class="list-group-item" href="../program/esmf_clockex.html#variable-rc~3830">rc</a>
+            <a class="list-group-item" href="../program/esmf_clockex.html#variable-result~227">result</a>
+            <a class="list-group-item" href="../program/esmf_clockex.html#variable-clock~539">clock</a>
+            <a class="list-group-item" href="../program/esmf_clockex.html#variable-currtime~33">currTime</a>
+            <a class="list-group-item" href="../program/esmf_clockex.html#variable-starttime~43">startTime</a>
+            <a class="list-group-item" href="../program/esmf_clockex.html#variable-stoptime~38">stopTime</a>
+            <a class="list-group-item" href="../program/esmf_clockex.html#variable-timestep~37">timeStep</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../program/esmf_clockex.html#src">ESMF_ClockEx</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='../module/esmf.html'>ESMF</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf_testmod.html'>ESMF_TestMod</a></li>
+              </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    
+
+
+    <section>
+    <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-failmsg~225"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>failMsg</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-testname~107"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>testname</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dd~10"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>DD</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-advancecount~5"></span>
+              integer(kind=ESMF_KIND_I8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>advanceCount</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-h~11"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>H</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-m~50"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>M</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mm~10"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>MM</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-s~21"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>S</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-yy~3"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>YY</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-finalrc~105"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>finalrc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~3830"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-result~227"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>result</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-clock~539"></span>
+              type(<a href='../type/esmf_clock.html'>ESMF_Clock</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>clock</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-currtime~33"></span>
+              type(<a href='../type/esmf_time.html'>ESMF_Time</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>currTime</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-starttime~43"></span>
+              type(<a href='../type/esmf_time.html'>ESMF_Time</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>startTime</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-stoptime~38"></span>
+              type(<a href='../type/esmf_time.html'>ESMF_Time</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stopTime</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-timestep~37"></span>
+              type(<a href='../type/esmf_timeinterval.html'>ESMF_TimeInterval</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>timeStep</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+    
+
+    
+
+
+    
+
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">      </span><span class="k">program </span><span class="n">ESMF_ClockEx</span>
+
+<span class="c">!------------------------------------------------------------------------------</span>
+<span class="c">!ESMF_EXAMPLE        String used by test script to count examples.</span>
+<span class="c">!==============================================================================</span>
+<span class="c">!BOC</span>
+<span class="c">! !PROGRAM: ESMF_ClockEx - Clock initialization and time-stepping</span>
+<span class="c">!</span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">!</span>
+<span class="c">! This program shows an example of how to create, initialize, advance, and</span>
+<span class="c">! examine a basic clock</span>
+<span class="c">!-----------------------------------------------------------------------------</span>
+<span class="cp">#include &quot;ESMF.h&quot;</span>
+
+<span class="w">      </span><span class="c">! ESMF Framework module</span>
+<span class="w">      </span><span class="k">use </span><span class="n">ESMF</span>
+<span class="w">      </span><span class="k">use </span><span class="n">ESMF_TestMod</span>
+<span class="w">      </span><span class="k">implicit none</span>
+
+<span class="w">      </span><span class="c">! instantiate a clock </span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Clock</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">clock</span>
+
+<span class="w">      </span><span class="c">! instantiate time_step, start and stop times</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_TimeInterval</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">timeStep</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Time</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">startTime</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Time</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">stopTime</span>
+
+<span class="w">      </span><span class="c">! local variables for Get methods</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Time</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">currTime</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ESMF_KIND_I8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">advanceCount</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">YY</span><span class="p">,</span><span class="w"> </span><span class="n">MM</span><span class="p">,</span><span class="w"> </span><span class="n">DD</span><span class="p">,</span><span class="w"> </span><span class="n">H</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="n">S</span>
+
+<span class="w">      </span><span class="c">! return code</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="c">! result code</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">finalrc</span><span class="p">,</span><span class="w"> </span><span class="k">result</span>
+<span class="k">      </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">testname</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">failMsg</span>
+
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Example failure&quot;</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">testname</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Example ESMF_ClockEx&quot;</span>
+
+
+<span class="c">! ------------------------------------------------------------------------------</span>
+<span class="c">! ------------------------------------------------------------------------------</span>
+
+<span class="w">      </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="c">! initialize ESMF framework</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_Initialize</span><span class="p">(</span><span class="n">defaultCalKind</span><span class="o">=</span><span class="n">ESMF_CALKIND_GREGORIAN</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">defaultlogfilename</span><span class="o">=</span><span class="s2">&quot;ClockEx.Log&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="n">logkindflag</span><span class="o">=</span><span class="n">ESMF_LOGKIND_MULTI</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Clock creation}</span>
+
+<span class="c">! This example shows how to create and initialize an {\tt ESMF\_Clock}.</span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="c">! initialize time interval to 2 days, 4 hours (6 timesteps in 13 days)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeIntervalSet</span><span class="p">(</span><span class="n">timeStep</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="c">! initialize start time to 4/1/2003 2:24:00 ( 1/10 of a day )</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeSet</span><span class="p">(</span><span class="n">startTime</span><span class="p">,</span><span class="w"> </span><span class="n">yy</span><span class="o">=</span><span class="mi">2003</span><span class="p">,</span><span class="w"> </span><span class="n">mm</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">dd</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="c">! initialize stop time to 4/14/2003 2:24:00 ( 1/10 of a day )</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeSet</span><span class="p">(</span><span class="n">stopTime</span><span class="p">,</span><span class="w"> </span><span class="n">yy</span><span class="o">=</span><span class="mi">2003</span><span class="p">,</span><span class="w"> </span><span class="n">mm</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">dd</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="c">! initialize the clock with the above values</span>
+<span class="w">      </span><span class="n">clock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_ClockCreate</span><span class="p">(</span><span class="n">timeStep</span><span class="p">,</span><span class="w"> </span><span class="n">startTime</span><span class="p">,</span><span class="w"> </span><span class="n">stopTime</span><span class="o">=</span><span class="n">stopTime</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                               </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Clock 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Clock advance}</span>
+
+<span class="c">! This example shows how to time-step an {\tt ESMF\_Clock}.</span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="c">! time step clock from start time to stop time</span>
+<span class="w">      </span><span class="k">do while</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="n">ESMF_ClockIsStopTime</span><span class="p">(</span><span class="n">clock</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span>
+<span class="c">!EOC</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!BOC</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_ClockPrint</span><span class="p">(</span><span class="n">clock</span><span class="p">,</span><span class="w"> </span><span class="k">options</span><span class="o">=</span><span class="s2">&quot;currTime string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!BOC</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_ClockAdvance</span><span class="p">(</span><span class="n">clock</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="k">end do</span>
+<span class="c">!EOC</span>
+
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Clock examination}</span>
+
+<span class="c">! This example shows how to examine an {\tt ESMF\_Clock}.</span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="c">! get the clock&#39;s final current time</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_ClockGet</span><span class="p">(</span><span class="n">clock</span><span class="p">,</span><span class="w"> </span><span class="n">currTime</span><span class="o">=</span><span class="n">currTime</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span>
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeGet</span><span class="p">(</span><span class="n">currTime</span><span class="p">,</span><span class="w"> </span><span class="n">yy</span><span class="o">=</span><span class="n">YY</span><span class="p">,</span><span class="w"> </span><span class="n">mm</span><span class="o">=</span><span class="n">MM</span><span class="p">,</span><span class="w"> </span><span class="n">dd</span><span class="o">=</span><span class="n">DD</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="o">=</span><span class="n">H</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="o">=</span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="o">=</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span>
+<span class="w">      </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;The clock&#39;s final current time is &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">YY</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">MM</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">DD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">H</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">S</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span>
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="c">! get the number of times the clock was advanced</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_ClockGet</span><span class="p">(</span><span class="n">clock</span><span class="p">,</span><span class="w"> </span><span class="n">advanceCount</span><span class="o">=</span><span class="n">advanceCount</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;The clock was advanced &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">advanceCount</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot; times.&quot;</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span>
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Clock reversal}</span>
+
+<span class="c">! This example shows how to time-step an {\tt ESMF\_Clock} in reverse mode.</span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_ClockSet</span><span class="p">(</span><span class="n">clock</span><span class="p">,</span><span class="w"> </span><span class="n">direction</span><span class="o">=</span><span class="n">ESMF_DIRECTION_REVERSE</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="c">! time step clock in reverse from stop time back to start time;</span>
+<span class="w">      </span><span class="c">!  note use of ESMF_ClockIsDone() rather than ESMF_ClockIsStopTime()</span>
+<span class="w">      </span><span class="k">do while</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="n">ESMF_ClockIsDone</span><span class="p">(</span><span class="n">clock</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span>
+<span class="c">!EOC</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!BOC</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_ClockPrint</span><span class="p">(</span><span class="n">clock</span><span class="p">,</span><span class="w"> </span><span class="k">options</span><span class="o">=</span><span class="s2">&quot;currTime string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!BOC</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_ClockAdvance</span><span class="p">(</span><span class="n">clock</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="k">end do</span>
+<span class="c">!EOC</span>
+
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Clock destruction}</span>
+
+<span class="c">! This example shows how to destroy an {\tt ESMF\_Clock}.</span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="c">! destroy clock</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_ClockDestroy</span><span class="p">(</span><span class="n">clock</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">! IMPORTANT: ESMF_STest() prints the PASS string and the # of processors in the log</span>
+<span class="w">      </span><span class="c">! file that the scripts grep for.</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_STest</span><span class="p">((</span><span class="n">finalrc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">testname</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="c">! finalize ESMF framework</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="p">.</span><span class="n">NE</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">finalrc</span><span class="p">.</span><span class="n">EQ</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">         print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;PASS: ESMF_ClockEx.F90&quot;</span>
+<span class="w">      </span><span class="k">else</span>
+<span class="k">         print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;FAIL: ESMF_ClockEx.F90&quot;</span>
+<span class="w">      </span><span class="k">end if</span>
+
+<span class="c">!BOC</span>
+<span class="w">      </span><span class="k">end program </span><span class="n">ESMF_ClockEx</span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

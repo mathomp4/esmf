@@ -1,0 +1,666 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_DLAQR4 &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_DLAQR4
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.1% of total for procedures.">205 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/dlaqr4.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/dlaqr4.f90.html'>dlaqr4.F90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_DLAQR4</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2> subroutine ESMF_DLAQR4(WANTT, WANTZ, N, ILO, IHI, H, LDH, WR, WI, ILOZ, IHIZ, Z, LDZ, WORK, LWORK, INFO)  
+</h2>
+    
+
+    <p>\brief \b ESMF_DLAQR4 computes the eigenvalues of a Hessenberg matrix, and optionally the matrices from the Schur decomposition.
+\htmlonly
+Download ESMF_DLAQR4 + dependencies
+<a href="http://www.netlib.org/cgi-bin/netlibfiles.tgz?format=tgz&filename=/lapack/lapack_routine/dlaqr4.f">
+[TGZ]</a>
+<a href="http://www.netlib.org/cgi-bin/netlibfiles.zip?format=zip&filename=/lapack/lapack_routine/dlaqr4.f">
+[ZIP]</a>
+<a href="http://www.netlib.org/cgi-bin/netlibfiles.txt?format=txt&filename=/lapack/lapack_routine/dlaqr4.f">
+[TXT]</a>
+\endhtmlonly
+\par Purpose:</p>
+<p>\verbatim</p>
+<p>ESMF_DLAQR4 implements one level of recursion for ESMF_DLAQR0.
+   It is a complete implementation of the small bulge multi-shift
+   QR algorithm.  It may be called by ESMF_DLAQR0 and, for large enough
+   deflation window size, it may be called by ESMF_DLAQR3.  This
+   subroutine is identical to ESMF_DLAQR0 except that it calls ESMF_DLAQR2
+   instead of ESMF_DLAQR3.</p>
+<p>ESMF_DLAQR4 computes the eigenvalues of a Hessenberg matrix H
+   and, optionally, the matrices T and Z from the Schur decomposition
+   H = Z T Z**T, where T is an upper quasi-triangular matrix (the
+   Schur form), and Z is the orthogonal matrix of Schur vectors.</p>
+<p>Optionally Z may be postmultiplied into an input orthogonal
+   matrix Q so that this routine can give the Schur factorization
+   of a matrix A which has been reduced to the Hessenberg form H
+   by the orthogonal matrix Q:  A = Q<em>H</em>Q<strong>T = (QZ)<em>T</em>(QZ)</strong>T.
+\endverbatim
+\param[in] WANTT
+\verbatim
+         WANTT is LOGICAL
+         = .TRUE. : the full Schur form T is required;
+         = .FALSE.: only eigenvalues are required.
+\endverbatim</p>
+<p>\param[in] WANTZ
+\verbatim
+         WANTZ is LOGICAL
+         = .TRUE. : the matrix of Schur vectors Z is required;
+         = .FALSE.: Schur vectors are not required.
+\endverbatim</p>
+<p>\param[in] N
+\verbatim
+         N is INTEGER
+          The order of the matrix H.  N .GE. 0.
+\endverbatim</p>
+<p>\param[in] ILO
+\verbatim
+         ILO is INTEGER
+\endverbatim</p>
+<p>\param[in] IHI
+\verbatim
+         IHI is INTEGER
+          It is assumed that H is already upper triangular in rows
+          and columns 1:ILO-1 and IHI+1:N and, if ILO.GT.1,
+          H(ILO,ILO-1) is zero. ILO and IHI are normally set by a
+          previous call to ESMF_DGEBAL, and then passed to ESMF_DGEHRD when the
+          matrix output by ESMF_DGEBAL is reduced to Hessenberg form.
+          Otherwise, ILO and IHI should be set to 1 and N,
+          respectively.  If N.GT.0, then 1.LE.ILO.LE.IHI.LE.N.
+          If N = 0, then ILO = 1 and IHI = 0.
+\endverbatim</p>
+<p>\param[in,out] H
+\verbatim
+         H is DOUBLE PRECISION array, dimension (LDH,N)
+          On entry, the upper Hessenberg matrix H.
+          On exit, if INFO = 0 and WANTT is .TRUE., then H contains
+          the upper quasi-triangular matrix T from the Schur
+          decomposition (the Schur form); 2-by-2 diagonal blocks
+          (corresponding to complex conjugate pairs of eigenvalues)
+          are returned in standard form, with H(i,i) = H(i+1,i+1)
+          and H(i+1,i)*H(i,i+1).LT.0. If INFO = 0 and WANTT is
+          .FALSE., then the contents of H are unspecified on exit.
+          (The output value of H when INFO.GT.0 is given under the
+          description of INFO below.)</p>
+<div class="codehilite"><pre><span></span><code><span class="w">      </span><span class="nv">This</span><span class="w"> </span><span class="nv">subroutine</span><span class="w"> </span><span class="nv">may</span><span class="w"> </span><span class="nv">explicitly</span><span class="w"> </span><span class="nv">set</span><span class="w"> </span><span class="nv">H</span><span class="ss">(</span><span class="nv">i</span>,<span class="nv">j</span><span class="ss">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">i</span>.<span class="nv">GT</span>.<span class="nv">j</span><span class="w"> </span><span class="nv">and</span>
+<span class="w">      </span><span class="nv">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>,<span class="w"> </span><span class="mi">2</span>,<span class="w"> </span>...<span class="w"> </span><span class="nv">ILO</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="nv">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">IHI</span><span class="o">+</span><span class="mi">1</span>,<span class="w"> </span><span class="nv">IHI</span><span class="o">+</span><span class="mi">2</span>,<span class="w"> </span>...<span class="w"> </span><span class="nv">N</span>.
+</code></pre></div>
+
+<p>\endverbatim</p>
+<p>\param[in] LDH
+\verbatim
+         LDH is INTEGER
+          The leading dimension of the array H. LDH .GE. max(1,N).
+\endverbatim</p>
+<p>\param[out] WR
+\verbatim
+         WR is DOUBLE PRECISION array, dimension (IHI)
+\endverbatim</p>
+<p>\param[out] WI
+\verbatim
+         WI is DOUBLE PRECISION array, dimension (IHI)
+          The real and imaginary parts, respectively, of the computed
+          eigenvalues of H(ILO:IHI,ILO:IHI) are stored in WR(ILO:IHI)
+          and WI(ILO:IHI). If two eigenvalues are computed as a
+          complex conjugate pair, they are stored in consecutive
+          elements of WR and WI, say the i-th and (i+1)th, with
+          WI(i) .GT. 0 and WI(i+1) .LT. 0. If WANTT is .TRUE., then
+          the eigenvalues are stored in the same order as on the
+          diagonal of the Schur form returned in H, with
+          WR(i) = H(i,i) and, if H(i:i+1,i:i+1) is a 2-by-2 diagonal
+          block, WI(i) = sqrt(-H(i+1,i)*H(i,i+1)) and
+          WI(i+1) = -WI(i).
+\endverbatim</p>
+<p>\param[in] ILOZ
+\verbatim
+         ILOZ is INTEGER
+\endverbatim</p>
+<p>\param[in] IHIZ
+\verbatim
+         IHIZ is INTEGER
+          Specify the rows of Z to which transformations must be
+          applied if WANTZ is .TRUE..
+          1 .LE. ILOZ .LE. ILO; IHI .LE. IHIZ .LE. N.
+\endverbatim</p>
+<p>\param[in,out] Z
+\verbatim
+         Z is DOUBLE PRECISION array, dimension (LDZ,IHI)
+          If WANTZ is .FALSE., then Z is not referenced.
+          If WANTZ is .TRUE., then Z(ILO:IHI,ILOZ:IHIZ) is
+          replaced by Z(ILO:IHI,ILOZ:IHIZ)*U where U is the
+          orthogonal Schur factor of H(ILO:IHI,ILO:IHI).
+          (The output value of Z when INFO.GT.0 is given under
+          the description of INFO below.)
+\endverbatim</p>
+<p>\param[in] LDZ
+\verbatim
+         LDZ is INTEGER
+          The leading dimension of the array Z.  if WANTZ is .TRUE.
+          then LDZ.GE.MAX(1,IHIZ).  Otherwize, LDZ.GE.1.
+\endverbatim</p>
+<p>\param[out] WORK
+\verbatim
+         WORK is DOUBLE PRECISION array, dimension LWORK
+          On exit, if LWORK = -1, WORK(1) returns an estimate of
+          the optimal value for LWORK.
+\endverbatim</p>
+<p>\param[in] LWORK
+\verbatim
+         LWORK is INTEGER
+          The dimension of the array WORK.  LWORK .GE. max(1,N)
+          is sufficient, but LWORK typically as large as 6*N may
+          be required for optimal performance.  A workspace query
+          to determine the optimal workspace size is recommended.</p>
+<div class="codehilite"><pre><span></span><code>      If LWORK = -1, then ESMF_DLAQR4 does a workspace query.
+      In this case, ESMF_DLAQR4 checks the input parameters and
+      estimates the optimal workspace size for the given
+      values of N, ILO and IHI.  The estimate is returned
+      in WORK(1).  No error message related to LWORK is
+      issued by ESMF_XERBLA.  Neither H nor Z are accessed.
+</code></pre></div>
+
+<p>\endverbatim</p>
+<p>\param[out] INFO
+\verbatim
+         INFO is INTEGER
+            =  0:  successful exit
+          .GT. 0:  if INFO = i, ESMF_DLAQR4 failed to compute all of
+               the eigenvalues.  Elements 1:ilo-1 and i+1:n of WR
+               and WI contain those eigenvalues which have been
+               successfully computed.  (Failures are rare.)</p>
+<div class="codehilite"><pre><span></span><code><span class="w">           </span><span class="n">If</span><span class="w"> </span><span class="n">INFO</span><span class="w"> </span><span class="p">.</span><span class="n">GT</span><span class="p">.</span><span class="w"> </span><span class="mh">0</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">WANT</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="p">.</span><span class="n">FALSE</span><span class="p">.,</span><span class="w"> </span><span class="n">then</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">exit</span><span class="p">,</span>
+<span class="w">           </span><span class="n">the</span><span class="w"> </span><span class="n">remaining</span><span class="w"> </span><span class="n">unconverged</span><span class="w"> </span><span class="n">eigenvalues</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">eigen</span><span class="o">-</span>
+<span class="w">           </span><span class="n">values</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">upper</span><span class="w"> </span><span class="n">Hessenberg</span><span class="w"> </span><span class="n">matrix</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="k">and</span>
+<span class="w">           </span><span class="n">columns</span><span class="w"> </span><span class="n">ILO</span><span class="w"> </span><span class="n">through</span><span class="w"> </span><span class="n">INFO</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">final</span><span class="p">,</span><span class="w"> </span><span class="k">output</span>
+<span class="w">           </span><span class="n">value</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">H</span><span class="p">.</span>
+
+<span class="w">           </span><span class="n">If</span><span class="w"> </span><span class="n">INFO</span><span class="w"> </span><span class="p">.</span><span class="n">GT</span><span class="p">.</span><span class="w"> </span><span class="mh">0</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">WANTT</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="p">.</span><span class="n">TRUE</span><span class="p">.,</span><span class="w"> </span><span class="n">then</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">exit</span>
+
+<span class="w">      </span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w">  </span><span class="p">(</span><span class="k">initial</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">H</span><span class="p">)</span><span class="o">*</span><span class="n">U</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">U</span><span class="o">*</span><span class="p">(</span><span class="k">final</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">H</span><span class="p">)</span>
+
+<span class="w">           </span><span class="n">where</span><span class="w"> </span><span class="n">U</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">orthogonal</span><span class="w"> </span><span class="n">matrix</span><span class="p">.</span><span class="w">  </span><span class="n">The</span><span class="w"> </span><span class="k">final</span>
+<span class="w">           </span><span class="n">value</span><span class="w"> </span><span class="n">of</span><span class="w">  </span><span class="n">H</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">upper</span><span class="w"> </span><span class="n">Hessenberg</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">triangular</span><span class="w"> </span><span class="n">in</span>
+<span class="w">           </span><span class="n">rows</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">columns</span><span class="w"> </span><span class="n">INFO</span><span class="o">+</span><span class="mh">1</span><span class="w"> </span><span class="n">through</span><span class="w"> </span><span class="n">IHI</span><span class="p">.</span>
+
+<span class="w">           </span><span class="n">If</span><span class="w"> </span><span class="n">INFO</span><span class="w"> </span><span class="p">.</span><span class="n">GT</span><span class="p">.</span><span class="w"> </span><span class="mh">0</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">WANTZ</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="p">.</span><span class="n">TRUE</span><span class="p">.,</span><span class="w"> </span><span class="n">then</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">exit</span>
+
+<span class="w">             </span><span class="p">(</span><span class="k">final</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">Z</span><span class="p">(</span><span class="nl">ILO:</span><span class="n">IHI</span><span class="p">,</span><span class="nl">ILOZ:</span><span class="n">IHIZ</span><span class="p">)</span>
+<span class="w">              </span><span class="o">=</span><span class="w">  </span><span class="p">(</span><span class="k">initial</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">Z</span><span class="p">(</span><span class="nl">ILO:</span><span class="n">IHI</span><span class="p">,</span><span class="nl">ILOZ:</span><span class="n">IHIZ</span><span class="p">)</span><span class="o">*</span><span class="n">U</span>
+
+<span class="w">           </span><span class="n">where</span><span class="w"> </span><span class="n">U</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">orthogonal</span><span class="w"> </span><span class="n">matrix</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">regard</span><span class="o">-</span>
+<span class="w">           </span><span class="n">less</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">WANTT</span><span class="p">.)</span>
+
+<span class="w">           </span><span class="n">If</span><span class="w"> </span><span class="n">INFO</span><span class="w"> </span><span class="p">.</span><span class="n">GT</span><span class="p">.</span><span class="w"> </span><span class="mh">0</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">WANTZ</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="p">.</span><span class="n">FALSE</span><span class="p">.,</span><span class="w"> </span><span class="n">then</span><span class="w"> </span><span class="n">Z</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="k">not</span>
+<span class="w">           </span><span class="n">accessed</span><span class="p">.</span>
+</code></pre></div>
+
+<p>\endverbatim
+\author Univ. of Tennessee
+\author Univ. of California Berkeley
+\author Univ. of Colorado Denver
+\author NAG Ltd.
+\date December 2016
+\ingroup doubleOTHERauxiliary
+\par Contributors:</p>
+<div class="codehilite"><pre><span></span><code>  Karen Braman and Ralph Byers, Department of Mathematics,
+  University of Kansas, USA
+</code></pre></div>
+
+<p>\par References:</p>
+<div class="codehilite"><pre><span></span><code>  K. Braman, R. Byers and R. Mathias, The Multi-Shift QR
+  Algorithm Part I: Maintaining Well Focused Shifts, and Level 3
+  Performance, SIAM Journal of Matrix Analysis, volume 23, pages
+  929--947, 2002.
+</code></pre></div>
+
+<p>\n
+      K. Braman, R. Byers and R. Mathias, The Multi-Shift QR
+      Algorithm Part II: Aggressive Early Deflation, SIAM Journal
+      of Matrix Analysis, volume 23, pages 948&ndash;973, 2002.</p>
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-wantt~4"></span>
+              logical
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>WANTT</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-wantz~6"></span>
+              logical
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>WANTZ</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n~55"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>N</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ilo~8"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ILO</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ihi~8"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IHI</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-h~6"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>H</strong>(LDH,*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ldh~4"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LDH</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-wr~7"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>WR</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-wi~7"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>WI</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iloz~3"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ILOZ</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ihiz~3"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IHIZ</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-z~16"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Z</strong>(LDZ,*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ldz~6"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LDZ</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-work~32"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>WORK</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lwork~14"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LWORK</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-info~45"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>INFO</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

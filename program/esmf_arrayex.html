@@ -1,0 +1,1327 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_ArrayEx &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_ArrayEx      <small>Program</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.3% of total for programs.">316 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_ArrayEx.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_arrayex.f90.html'>ESMF_ArrayEx.F90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_ArrayEx</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-failmsg~73">failMsg</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-testname~39">testname</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-arraytodistgridmap">arrayToDistGridMap</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-computationallbound~23">computationalLBound</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-computationallwidth~2">computationalLWidth</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-computationalubound~23">computationalUBound</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-computationaluwidth~2">computationalUWidth</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-connectionlist~11">connectionList</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-exclusivelbound~25">exclusiveLBound</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-exclusiveubound~25">exclusiveUBound</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-finalrc~28">finalrc</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-i~299">i</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-j~112">j</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-k~65">k</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-localde~17">localDe</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-localdecount~18">localDeCount</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-localdetodemap~6">localDeToDeMap</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-localpet~95">localPet</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-maxindex~53">maxIndex</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-minindex~62">minIndex</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-petcount~110">petCount</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-rc~2255">rc</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-regdecomp~34">regDecomp</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-result~75">result</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-ssilocaldecount~2">ssiLocalDeCount</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-totallbound~26">totalLBound</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-totallwidth~22">totalLWidth</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-totalubound~26">totalUBound</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-totaluwidth~22">totalUWidth</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-ssisharedmemoryenabled~4">ssiSharedMemoryEnabled</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-dummysum">dummySum</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-myfarray">myFarray</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-myfarray1d">myFarray1D</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-myfarray2d">myFarray2D</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-myfarray3d">myFarray3D</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-array~98">array</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-array1~5">array1</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-array1d~2">array1D</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-array2~9">array2</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-array2d~2">array2D</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-array3d">array3D</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-arraymigrated">arrayMigrated</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-arrayscalar">arrayScalar</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-arraytracer">arrayTracer</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-arrayspec~44">arrayspec</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-delayout~25">delayout</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-distgrid~109">distgrid</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-distgrid1d">distgrid1D</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-distgrid2d~2">distgrid2D</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-distgrid3d~2">distgrid3D</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-indexflag~38">indexflag</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-larraylist~2">larrayList</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-larraylist1">larrayList1</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-larraylist2">larrayList2</a>
+            <a class="list-group-item" href="../program/esmf_arrayex.html#variable-vm~355">vm</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='../module/esmf.html'>ESMF</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf_testmod.html'>ESMF_TestMod</a></li>
+              </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    <blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote></blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<br>
+
+    <section>
+    <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-failmsg~73"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>failMsg</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-testname~39"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>testname</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-arraytodistgridmap"></span>
+              integer,
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>arrayToDistGridMap</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-computationallbound~23"></span>
+              integer,
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>computationalLBound</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-computationallwidth~2"></span>
+              integer,
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>computationalLWidth</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-computationalubound~23"></span>
+              integer,
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>computationalUBound</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-computationaluwidth~2"></span>
+              integer,
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>computationalUWidth</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-connectionlist~11"></span>
+              integer,
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>connectionList</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-exclusivelbound~25"></span>
+              integer,
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>exclusiveLBound</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-exclusiveubound~25"></span>
+              integer,
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>exclusiveUBound</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-finalrc~28"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>finalrc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i~299"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-j~112"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>j</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-k~65"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>k</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-localde~17"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>localDe</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-localdecount~18"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>localDeCount</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-localdetodemap~6"></span>
+              integer,
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>localDeToDeMap</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-localpet~95"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>localPet</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-maxindex~53"></span>
+              integer,
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>maxIndex</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-minindex~62"></span>
+              integer,
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>minIndex</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-petcount~110"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>petCount</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~2255"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-regdecomp~34"></span>
+              integer,
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>regDecomp</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-result~75"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>result</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ssilocaldecount~2"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ssiLocalDeCount</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-totallbound~26"></span>
+              integer,
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>totalLBound</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-totallwidth~22"></span>
+              integer,
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>totalLWidth</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-totalubound~26"></span>
+              integer,
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>totalUBound</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-totaluwidth~22"></span>
+              integer,
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>totalUWidth</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ssisharedmemoryenabled~4"></span>
+              logical
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ssiSharedMemoryEnabled</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dummysum"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dummySum</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-myfarray"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>myFarray</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-myfarray1d"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>myFarray1D</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-myfarray2d"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>myFarray2D</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-myfarray3d"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>myFarray3D</strong>(:,:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-array~98"></span>
+              type(ESMF_Array)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>array</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-array1~5"></span>
+              type(ESMF_Array)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>array1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-array1d~2"></span>
+              type(ESMF_Array)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>array1D</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-array2~9"></span>
+              type(ESMF_Array)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>array2</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-array2d~2"></span>
+              type(ESMF_Array)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>array2D</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-array3d"></span>
+              type(ESMF_Array)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>array3D</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-arraymigrated"></span>
+              type(ESMF_Array)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>arrayMigrated</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-arrayscalar"></span>
+              type(ESMF_Array)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>arrayScalar</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-arraytracer"></span>
+              type(ESMF_Array)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>arrayTracer</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-arrayspec~44"></span>
+              type(<a href='../type/esmf_arrayspec.html'>ESMF_ArraySpec</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>arrayspec</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-delayout~25"></span>
+              type(<a href='../type/esmf_delayout.html'>ESMF_DELayout</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>delayout</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-distgrid~109"></span>
+              type(<a href='../type/esmf_distgrid.html'>ESMF_DistGrid</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>distgrid</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-distgrid1d"></span>
+              type(<a href='../type/esmf_distgrid.html'>ESMF_DistGrid</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>distgrid1D</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-distgrid2d~2"></span>
+              type(<a href='../type/esmf_distgrid.html'>ESMF_DistGrid</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>distgrid2D</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-distgrid3d~2"></span>
+              type(<a href='../type/esmf_distgrid.html'>ESMF_DistGrid</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>distgrid3D</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-indexflag~38"></span>
+              type(<a href='../type/esmf_index_flag.html'>ESMF_Index_Flag</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>indexflag</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-larraylist~2"></span>
+              type(ESMF_LocalArray),
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>larrayList</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-larraylist1"></span>
+              type(ESMF_LocalArray),
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>larrayList1</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-larraylist2"></span>
+              type(ESMF_LocalArray),
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>larrayList2</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vm~355"></span>
+              type(<a href='../type/esmf_vm.html'>ESMF_VM</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>vm</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+    
+
+    
+
+
+    
+
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

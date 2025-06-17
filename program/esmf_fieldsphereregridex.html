@@ -1,0 +1,1784 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_FieldSphereRegridEx &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_FieldSphereRegridEx      <small>Program</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.2% of total for programs.">176 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_FieldSphereRegridEx.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_fieldsphereregridex.f90.html'>ESMF_FieldSphereRegridEx.F90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_FieldSphereRegridEx</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-version~28">version</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-failmsg~45">failMsg</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-name~104">name</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-string~8">string</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-testname~29">testname</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-clbnd~3">clbnd</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-cubnd~3">cubnd</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-dst_nx~2">dst_nx</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-dst_ny~2">dst_ny</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-fclbnd">fclbnd</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-fcubnd">fcubnd</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-finalrc~16">finalrc</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-i1~4">i1</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-i2~3">i2</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-index">index</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-lde~7">lDE</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-larraylist">larrayList</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-localdecount~6">localDECount</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-localpet~38">localPet</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-localrc~334">localrc</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-num_arrays">num_arrays</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-petcount~43">petCount</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-petmap2d">petMap2D</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-rc~670">rc</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-result~45">result</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-spherical_grid">spherical_grid</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-src_nx">src_nx</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-src_ny">src_ny</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-correct~2">correct</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-deg2rad">DEG2RAD</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-rad2deg">RAD2DEG</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-a">a</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-coord">coord</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-ctheta">ctheta</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-d2rad">d2rad</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-dst_dx">dst_dx</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-dst_dy">dst_dy</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-farrayptr~10">farrayPtr</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-farrayptrxc~3">farrayPtrXC</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-farrayptryc~3">farrayPtrYC</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-lat~3">lat</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-lon~3">lon</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-phi">phi</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-rangle">rangle</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-src_dx">src_dx</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-src_dy">src_dy</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-stheta">stheta</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-theta">theta</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-x~2">x</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-xtmp">xtmp</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-y~2">y</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-ytmp">ytmp</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-z">z</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-ztmp">ztmp</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-dstarray~30">dstArray</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-dstarray1">dstArray1</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-srcarray~30">srcArray</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-arrayspec~18">arrayspec</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-dstfield~19">dstField</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-dstfield1">dstField1</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-srcfield~13">srcField</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-griddst">gridDst</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-gridsrc">gridSrc</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-routehandle">routeHandle</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-routehandle1">routeHandle1</a>
+            <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#variable-vm~86">vm</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../program/esmf_fieldsphereregridex.html#src">ESMF_FieldSphereRegridEx</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item">ESMF_FieldGetMod</li>
+                  <li class="list-inline-item"><a href='../module/esmf_regridmod.html'>ESMF_RegridMod</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf_testmod.html'>ESMF_TestMod</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf.html'>ESMF</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf_fieldmod.html'>ESMF_FieldMod</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf_gridutilmod.html'>ESMF_GridUtilMod</a></li>
+              </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    
+
+
+    <section>
+    <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-version~28"></span>
+              character(len=*),
+            </td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>version</strong></td>
+<td> =</td>
+                <td>&#39;$Id$&#39;</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-failmsg~45"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>failMsg</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-name~104"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>name</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-string~8"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>string</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-testname~29"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>testname</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-clbnd~3"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>clbnd</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-cubnd~3"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>cubnd</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dst_nx~2"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dst_nx</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dst_ny~2"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dst_ny</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fclbnd"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fclbnd</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fcubnd"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fcubnd</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-finalrc~16"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>finalrc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i1~4"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i2~3"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i2</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-index"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>index</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lde~7"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>lDE</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-larraylist"></span>
+              integer,
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>larrayList</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-localdecount~6"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>localDECount</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-localpet~38"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>localPet</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-localrc~334"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>localrc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-num_arrays"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>num_arrays</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-petcount~43"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>petCount</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-petmap2d"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>petMap2D</strong>(2,2,1)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~670"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-result~45"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>result</strong></td>
+<td> =</td>
+                <td>0</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-spherical_grid"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>spherical_grid</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-src_nx"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>src_nx</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-src_ny"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>src_ny</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-correct~2"></span>
+              logical
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>correct</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-deg2rad"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>DEG2RAD</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rad2deg"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>RAD2DEG</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-a"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>a</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-coord"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>coord</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ctheta"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ctheta</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-d2rad"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>d2rad</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dst_dx"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dst_dx</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dst_dy"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dst_dy</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farrayptr~10"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farrayPtr</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farrayptrxc~3"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farrayPtrXC</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farrayptryc~3"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>farrayPtrYC</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lat~3"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>lat</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lon~3"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>lon</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-phi"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>phi</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rangle"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rangle</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-src_dx"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>src_dx</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-src_dy"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>src_dy</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-stheta"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stheta</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-theta"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>theta</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-x~2"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>x</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xtmp"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xtmp</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-y~2"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>y</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ytmp"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ytmp</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-z"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>z</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ztmp"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ztmp</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dstarray~30"></span>
+              type(ESMF_Array)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dstArray</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dstarray1"></span>
+              type(ESMF_Array)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dstArray1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srcarray~30"></span>
+              type(ESMF_Array)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>srcArray</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-arrayspec~18"></span>
+              type(<a href='../type/esmf_arrayspec.html'>ESMF_ArraySpec</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>arrayspec</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dstfield~19"></span>
+              type(<a href='../type/esmf_field.html'>ESMF_Field</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dstField</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dstfield1"></span>
+              type(<a href='../type/esmf_field.html'>ESMF_Field</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dstField1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srcfield~13"></span>
+              type(<a href='../type/esmf_field.html'>ESMF_Field</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>srcField</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-griddst"></span>
+              type(<a href='../type/esmf_grid.html'>ESMF_Grid</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>gridDst</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-gridsrc"></span>
+              type(<a href='../type/esmf_grid.html'>ESMF_Grid</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>gridSrc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-routehandle"></span>
+              type(<a href='../type/esmf_routehandle.html'>ESMF_RouteHandle</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>routeHandle</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-routehandle1"></span>
+              type(<a href='../type/esmf_routehandle.html'>ESMF_RouteHandle</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>routeHandle1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vm~86"></span>
+              type(<a href='../type/esmf_vm.html'>ESMF_VM</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>vm</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+    
+
+    
+
+
+    
+
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="k">program </span><span class="n">ESMF_FieldSphereRegridEx</span>
+
+<span class="c">!==============================================================================</span>
+<span class="c">!ESMF_MULTI_PROC_EXAMPLE        String used by test script to count examples.</span>
+<span class="c">!==============================================================================</span>
+
+
+
+
+<span class="c">!------------------------------------------------------------------------------</span>
+
+<span class="cp">#include &quot;ESMF_Macros.inc&quot;</span>
+
+<span class="c">!==============================================================================</span>
+<span class="c">!BOP</span>
+<span class="c">! !PROGRAM: ESMF_FieldSphereRegridEx - Example of spherical regridding</span>
+<span class="c">!</span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">!</span>
+<span class="c">!</span>
+<span class="c">!-----------------------------------------------------------------------------</span>
+<span class="cp">#include &quot;ESMF.h&quot;</span>
+<span class="c">! !USES:</span>
+<span class="w">  </span><span class="k">use </span><span class="n">ESMF</span>
+<span class="w">  </span><span class="k">use </span><span class="n">ESMF_TestMod</span>
+<span class="w">  </span><span class="k">use </span><span class="n">ESMF_RegridMod</span>
+<span class="w">  </span><span class="k">use </span><span class="n">ESMF_FieldMod</span>
+<span class="w">  </span><span class="k">use </span><span class="n">ESMF_GridUtilMod</span>
+
+<span class="w">  </span><span class="k">use </span><span class="n">ESMF_FieldGetMod</span>
+
+<span class="w">  </span><span class="k">implicit none</span>
+
+<span class="c">!------------------------------------------------------------------------------</span>
+<span class="c">! The following line turns the CVS identifier string into a printable variable.</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="s1">&#39;$Id$&#39;</span>
+<span class="c">!------------------------------------------------------------------------------</span>
+<span class="w">    </span>
+<span class="w">  </span><span class="c">! cumulative result: count failures; no failures equals &quot;all pass&quot;</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="k">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+
+<span class="w">  </span><span class="c">! individual test result code</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">petCount</span><span class="p">,</span><span class="n">localPet</span>
+
+<span class="w">  </span><span class="c">! individual test failure message</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span>
+
+<span class="w">  </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">correct</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Grid</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">gridSrc</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Grid</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">gridDst</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Field</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">srcField</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Field</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dstField</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Field</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dstField1</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Array</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dstArray</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Array</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dstArray1</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Array</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">srcArray</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_RouteHandle</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">routeHandle</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_RouteHandle</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">routeHandle1</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_ArraySpec</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">arrayspec</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_VM</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">vm</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">farrayPtrXC</span><span class="p">(:,:)</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">farrayPtrYC</span><span class="p">(:,:)</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">farrayPtr</span><span class="p">(:,:)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">petMap2D</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">clbnd</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">cubnd</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">fclbnd</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">fcubnd</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i1</span><span class="p">,</span><span class="n">i2</span><span class="p">,</span><span class="w"> </span><span class="nb">index</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">lDE</span><span class="p">,</span><span class="w"> </span><span class="n">localDECount</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">coord</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">string</span>
+<span class="w">  </span><span class="kt">integer </span><span class="n">src_nx</span><span class="p">,</span><span class="w"> </span><span class="n">src_ny</span><span class="p">,</span><span class="w"> </span><span class="n">dst_nx</span><span class="p">,</span><span class="w"> </span><span class="n">dst_ny</span>
+<span class="w">  </span><span class="kt">integer </span><span class="n">num_arrays</span>
+
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">src_dx</span><span class="p">,</span><span class="w"> </span><span class="n">src_dy</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dst_dx</span><span class="p">,</span><span class="w"> </span><span class="n">dst_dy</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ctheta</span><span class="p">,</span><span class="w"> </span><span class="n">stheta</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">theta</span><span class="p">,</span><span class="w"> </span><span class="n">d2rad</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">DEG2RAD</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">lat</span><span class="p">,</span><span class="w"> </span><span class="n">lon</span><span class="p">,</span><span class="w"> </span><span class="n">phi</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rangle</span><span class="p">,</span><span class="w"> </span><span class="n">xtmp</span><span class="p">,</span><span class="w"> </span><span class="n">ytmp</span><span class="p">,</span><span class="w"> </span><span class="n">ztmp</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">RAD2DEG</span>
+
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">spherical_grid</span>
+
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">larrayList</span><span class="p">(:)</span>
+
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">testname</span>
+
+<span class="w">  </span><span class="c">! result code</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">finalrc</span>
+
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Example failure&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">testname</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Example ESMF_FieldSphereRegridEx&quot;</span>
+
+
+<span class="c">! ------------------------------------------------------------------------------</span>
+<span class="c">! ------------------------------------------------------------------------------</span>
+
+
+<span class="w">  </span>
+<span class="w">  </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Initialize</span><span class="p">(</span><span class="n">vm</span><span class="o">=</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">defaultlogfilename</span><span class="o">=</span><span class="s2">&quot;FieldSphereRegridEx.Log&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="n">logkindflag</span><span class="o">=</span><span class="n">ESMF_LOGKIND_MULTI</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_VMGet</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">localPet</span><span class="o">=</span><span class="n">localPet</span><span class="p">,</span><span class="w"> </span><span class="n">petCount</span><span class="o">=</span><span class="n">petCount</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_Ex</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Sphere Regrid Example&quot;</span>
+
+<span class="w">  </span><span class="c">! init success flag</span>
+<span class="w">  </span><span class="n">correct</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">  </span><span class="n">rc</span><span class="o">=</span><span class="n">ESMF_SUCCESS</span>
+
+<span class="w">  </span><span class="c">! Establish the resolution of the grids</span>
+<span class="w">  </span><span class="c">!dst_nx = 284</span>
+<span class="w">  </span><span class="n">dst_nx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">154</span>
+<span class="w">  </span><span class="n">dst_ny</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span>
+
+<span class="w">  </span><span class="n">src_nx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">75</span>
+<span class="w">  </span><span class="n">src_ny</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span>
+
+<span class="w">  </span><span class="c">! if petCount &gt;1, setup petMap</span>
+<span class="w">  </span><span class="n">gridSrc</span><span class="o">=</span><span class="n">ESMF_GridCreate1PeriDim</span><span class="p">(</span><span class="n">minIndex</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="p">),</span><span class="n">maxIndex</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="n">src_nx</span><span class="p">,</span><span class="n">src_ny</span><span class="o">/</span><span class="p">),</span><span class="n">regDecomp</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="n">petCount</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                              </span><span class="n">indexflag</span><span class="o">=</span><span class="n">ESMF_INDEX_GLOBAL</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                              </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="n">gridDst</span><span class="o">=</span><span class="n">ESMF_GridCreate1PeriDim</span><span class="p">(</span><span class="n">minIndex</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="p">),</span><span class="n">maxIndex</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="n">dst_nx</span><span class="p">,</span><span class="n">dst_ny</span><span class="o">/</span><span class="p">),</span><span class="n">regDecomp</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="n">petCount</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                              </span><span class="n">indexflag</span><span class="o">=</span><span class="n">ESMF_INDEX_GLOBAL</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                              </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Create source/destination fields</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_ArraySpecSet</span><span class="p">(</span><span class="n">arrayspec</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_TYPEKIND_R8</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">   </span><span class="n">srcField</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">gridSrc</span><span class="p">,</span><span class="w"> </span><span class="n">arrayspec</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                         </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CENTER</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;source&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">   </span><span class="n">dstField</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">gridDst</span><span class="p">,</span><span class="w"> </span><span class="n">arrayspec</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                         </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CENTER</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;dest&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">   </span><span class="n">dstField1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">gridDst</span><span class="p">,</span><span class="w"> </span><span class="n">arrayspec</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                         </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CENTER</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;dest1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Allocate coordinates</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridAddCoord</span><span class="p">(</span><span class="n">gridSrc</span><span class="p">,</span><span class="w"> </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CENTER</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridAddCoord</span><span class="p">(</span><span class="n">gridDst</span><span class="p">,</span><span class="w"> </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CENTER</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Get number of local DEs</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridGet</span><span class="p">(</span><span class="n">gridSrc</span><span class="p">,</span><span class="w"> </span><span class="n">localDECount</span><span class="o">=</span><span class="n">localDECount</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Get arrays</span>
+<span class="w">  </span><span class="c">! dstArray</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">dstField</span><span class="p">,</span><span class="w"> </span><span class="k">array</span><span class="o">=</span><span class="n">dstArray</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">dstField1</span><span class="p">,</span><span class="w"> </span><span class="k">array</span><span class="o">=</span><span class="n">dstArray1</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! srcArray</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">srcField</span><span class="p">,</span><span class="w"> </span><span class="k">array</span><span class="o">=</span><span class="n">srcArray</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+
+<span class="w">  </span><span class="c">! Write results to a mesh</span>
+<span class="w">  </span><span class="n">num_arrays</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+
+<span class="c">! Test interpolation on the sphere</span>
+<span class="c">! Set the source grid coordinates to be a standard lat lon grid</span>
+
+<span class="w">  </span><span class="n">src_dx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">36</span><span class="mf">0.</span><span class="o">/</span><span class="n">src_nx</span>
+<span class="w">  </span><span class="n">src_dy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">18</span><span class="mf">0.</span><span class="o">/</span><span class="n">src_ny</span>
+
+<span class="w">  </span><span class="n">DEG2RAD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14159265</span><span class="o">/</span><span class="mi">18</span><span class="mf">0.0</span>
+<span class="w">  </span><span class="n">RAD2DEG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span><span class="o">/</span><span class="n">DEG2RAD</span>
+
+<span class="w">  </span><span class="c">! Get memory and set coords for src</span>
+<span class="w">  </span><span class="k">do </span><span class="n">lDE</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">localDECount</span><span class="o">-</span><span class="mi">1</span>
+<span class="w"> </span>
+<span class="w">     </span><span class="c">!! get coord 1</span>
+<span class="w">     </span><span class="k">call </span><span class="n">ESMF_GridGetCoord</span><span class="p">(</span><span class="n">gridSrc</span><span class="p">,</span><span class="w"> </span><span class="n">localDE</span><span class="o">=</span><span class="n">lDE</span><span class="p">,</span><span class="w"> </span><span class="n">staggerLoc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CENTER</span><span class="p">,</span><span class="w"> </span><span class="n">coordDim</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                            </span><span class="n">computationalLBound</span><span class="o">=</span><span class="n">clbnd</span><span class="p">,</span><span class="w"> </span><span class="n">computationalUBound</span><span class="o">=</span><span class="n">cubnd</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">farrayPtrXC</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">     </span><span class="k">call </span><span class="n">ESMF_GridGetCoord</span><span class="p">(</span><span class="n">gridSrc</span><span class="p">,</span><span class="w"> </span><span class="n">localDE</span><span class="o">=</span><span class="n">lDE</span><span class="p">,</span><span class="w"> </span><span class="n">staggerLoc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CENTER</span><span class="p">,</span><span class="w"> </span><span class="n">coordDim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                            </span><span class="n">computationalLBound</span><span class="o">=</span><span class="n">clbnd</span><span class="p">,</span><span class="w"> </span><span class="n">computationalUBound</span><span class="o">=</span><span class="n">cubnd</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">farrayPtrYC</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">     </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">srcField</span><span class="p">,</span><span class="w"> </span><span class="n">lDE</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="p">,</span><span class="w"> </span><span class="n">computationalLBound</span><span class="o">=</span><span class="n">fclbnd</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                             </span><span class="n">computationalUBound</span><span class="o">=</span><span class="n">fcubnd</span><span class="p">,</span><span class="w">  </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">clbnd</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">fclbnd</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Error clbnd != fclbnd&#39;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">clbnd</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">fclbnd</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Error clbnd != fclbnd&#39;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cubnd</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">fcubnd</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Error cubnd != fcubnd&#39;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cubnd</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">fcubnd</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Error cubnd != fcubnd&#39;</span>
+
+<span class="w">     </span><span class="c">!! set coords, interpolated function</span>
+<span class="w">     </span><span class="k">do </span><span class="n">i1</span><span class="o">=</span><span class="n">clbnd</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">cubnd</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">     </span><span class="k">do </span><span class="n">i2</span><span class="o">=</span><span class="n">clbnd</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">cubnd</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">        </span><span class="n">farrayPtrXC</span><span class="p">(</span><span class="n">i1</span><span class="p">,</span><span class="n">i2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">18</span><span class="mf">0.</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="kt">REAL</span><span class="p">((</span><span class="n">i1</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">src_dx</span><span class="p">)</span>
+<span class="w">        </span><span class="n">farrayPtrYC</span><span class="p">(</span><span class="n">i1</span><span class="p">,</span><span class="n">i2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">9</span><span class="mf">0.</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="kt">REAL</span><span class="p">((</span><span class="n">i2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">src_dy</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.5</span><span class="o">*</span><span class="n">src_dy</span><span class="p">)</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">farrayPtrXC</span><span class="p">(</span><span class="n">i1</span><span class="p">,</span><span class="w"> </span><span class="n">i2</span><span class="p">)</span>
+<span class="w">        </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">farrayPtrYC</span><span class="p">(</span><span class="n">i1</span><span class="p">,</span><span class="n">i2</span><span class="p">)</span>
+<span class="w">     </span>
+<span class="w">       </span><span class="c">! Set the source to be a sinusoidal function of x,y,z</span>
+
+<span class="w">        </span><span class="n">theta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DEG2RAD</span><span class="o">*</span><span class="n">x</span>
+<span class="w">        </span><span class="n">phi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DEG2RAD</span><span class="o">*</span><span class="p">(</span><span class="mi">9</span><span class="mf">0.</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="w">        </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="w">        </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+
+<span class="w">        </span><span class="n">farrayPtr</span><span class="p">(</span><span class="n">i1</span><span class="p">,</span><span class="n">i2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="mf">3.14</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mf">3.14</span><span class="o">*</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">z</span><span class="o">*</span><span class="n">z</span><span class="p">;</span>
+
+
+<span class="w">     </span><span class="k">enddo</span>
+<span class="k">     enddo</span>
+
+<span class="k">  enddo</span><span class="w">    </span><span class="c">! lDE</span>
+
+<span class="w">  </span><span class="c">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+<span class="w">  </span><span class="c">! Destination grid</span>
+<span class="w">  </span><span class="c">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+
+<span class="w">  </span><span class="n">dst_dx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">36</span><span class="mf">0.</span><span class="o">/</span><span class="n">dst_nx</span>
+<span class="w">  </span><span class="n">dst_dy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">18</span><span class="mf">0.</span><span class="o">/</span><span class="n">dst_ny</span>
+
+<span class="w">  </span><span class="n">rangle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DEG2RAD</span><span class="o">*</span><span class="mi">2</span><span class="mf">0.</span>
+
+<span class="w">  </span><span class="c">! Get memory and set coords for dst</span>
+<span class="w">  </span><span class="k">do </span><span class="n">lDE</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">localDECount</span><span class="o">-</span><span class="mi">1</span>
+<span class="w"> </span>
+<span class="w">     </span><span class="c">!! get coord 1</span>
+<span class="w">     </span><span class="k">call </span><span class="n">ESMF_GridGetCoord</span><span class="p">(</span><span class="n">gridDst</span><span class="p">,</span><span class="w"> </span><span class="n">localDE</span><span class="o">=</span><span class="n">lDE</span><span class="p">,</span><span class="w"> </span><span class="n">staggerLoc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CENTER</span><span class="p">,</span><span class="w"> </span><span class="n">coordDim</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                            </span><span class="n">computationalLBound</span><span class="o">=</span><span class="n">clbnd</span><span class="p">,</span><span class="w"> </span><span class="n">computationalUBound</span><span class="o">=</span><span class="n">cubnd</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">farrayPtrXC</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">     </span><span class="k">call </span><span class="n">ESMF_GridGetCoord</span><span class="p">(</span><span class="n">gridDst</span><span class="p">,</span><span class="w"> </span><span class="n">localDE</span><span class="o">=</span><span class="n">lDE</span><span class="p">,</span><span class="w"> </span><span class="n">staggerLoc</span><span class="o">=</span><span class="n">ESMF_STAGGERLOC_CENTER</span><span class="p">,</span><span class="w"> </span><span class="n">coordDim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                            </span><span class="n">computationalLBound</span><span class="o">=</span><span class="n">clbnd</span><span class="p">,</span><span class="w"> </span><span class="n">computationalUBound</span><span class="o">=</span><span class="n">cubnd</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">farrayPtrYC</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">     </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">dstField</span><span class="p">,</span><span class="w"> </span><span class="n">lDE</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="p">,</span><span class="w"> </span><span class="n">computationalLBound</span><span class="o">=</span><span class="n">fclbnd</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                             </span><span class="n">computationalUBound</span><span class="o">=</span><span class="n">fcubnd</span><span class="p">,</span><span class="w">  </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">clbnd</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">fclbnd</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Error dst clbnd != fclbnd&#39;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">clbnd</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">fclbnd</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Error dst clbnd != fclbnd&#39;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cubnd</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">fcubnd</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Error dst cubnd != fcubnd&#39;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cubnd</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">fcubnd</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Error dst cubnd != fcubnd&#39;</span>
+
+<span class="w">     </span><span class="c">!! set coords, interpolated function</span>
+<span class="w">     </span><span class="k">do </span><span class="n">i1</span><span class="o">=</span><span class="n">clbnd</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">cubnd</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">     </span><span class="k">do </span><span class="n">i2</span><span class="o">=</span><span class="n">clbnd</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">cubnd</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">        </span><span class="n">lon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">18</span><span class="mf">0.</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="kt">REAL</span><span class="p">((</span><span class="n">i1</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">dst_dx</span><span class="p">)</span>
+<span class="w">        </span><span class="n">lat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">9</span><span class="mf">0.</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="kt">REAL</span><span class="p">((</span><span class="n">i2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">dst_dy</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.5</span><span class="o">*</span><span class="n">dst_dy</span><span class="p">)</span>
+
+<span class="w">        </span><span class="c">! to 3d</span>
+<span class="w">        </span><span class="n">theta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DEG2RAD</span><span class="o">*</span><span class="n">lon</span>
+<span class="w">        </span><span class="n">phi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DEG2RAD</span><span class="o">*</span><span class="p">(</span><span class="mi">9</span><span class="mf">0.</span><span class="o">-</span><span class="n">lat</span><span class="p">)</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="w">        </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="w">        </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+
+<span class="w">        </span><span class="c">! 3d rotation about x-axis</span>
+<span class="w">        </span><span class="c">! x is preserved</span>
+<span class="w">        </span><span class="n">ytmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">rangle</span><span class="p">)</span><span class="o">*</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="n">rangle</span><span class="p">)</span><span class="o">*</span><span class="n">z</span><span class="w"> </span>
+<span class="w">        </span><span class="n">ztmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="nb">sin</span><span class="p">(</span><span class="n">rangle</span><span class="p">)</span><span class="o">*</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">rangle</span><span class="p">)</span><span class="o">*</span><span class="n">z</span>
+<span class="w">        </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ytmp</span>
+<span class="w">        </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ztmp</span>
+
+<span class="w">        </span><span class="c">! now back to lat lon</span>
+<span class="w">        </span><span class="n">farrayPtrXC</span><span class="p">(</span><span class="n">i1</span><span class="p">,</span><span class="n">i2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">atan2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">RAD2DEG</span>
+<span class="w">        </span><span class="n">farrayPtrYC</span><span class="p">(</span><span class="n">i1</span><span class="p">,</span><span class="n">i2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">asin</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">*</span><span class="n">RAD2DEG</span>
+
+<span class="w">        </span><span class="n">farrayPtr</span><span class="p">(</span><span class="n">i1</span><span class="p">,</span><span class="n">i2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.</span>
+<span class="w">     </span>
+<span class="w">     </span><span class="k">enddo</span>
+<span class="k">     enddo</span>
+
+<span class="k">  enddo</span><span class="w">    </span><span class="c">! lDE</span>
+
+
+<span class="c">!BOE</span>
+<span class="c">!</span>
+<span class="c">!\subsubsection{Precompute a regridding operation between two Fields}</span>
+<span class="c">! To create the sparse matrix regrid operator we call the</span>
+<span class="c">! {\tt ESMF\_FieldSphereRegridStore()} routine.  In this example we</span>
+<span class="c">! choose the {\tt ESMF_REGRID_METHOD_BILINEAR} regridding method for</span>
+<span class="c">! our first example, and {\tt ESMF_REGRIDMETHOD_PATCH} for our</span>
+<span class="c">! second example (The underlying C++ code process both matrices</span>
+<span class="c">! simultaneously, but we do not yet have Fortran interfaces for this).</span>
+<span class="c">! This method creates two meshes, and a Rendezvous decomposition of these</span>
+<span class="c">! meshes is computed.  An octree search is performed, followed by a determination</span>
+<span class="c">! of which source cell each destination gridpoint is in.  Bilinear weights</span>
+<span class="c">! are then computed locally on each cell.  This matrix of weights is, finally,</span>
+<span class="c">! sent back to the destination grid&#39;s row decomposition and declared as a </span>
+<span class="c">! sparse matrix.  This matrix is embedded in the routeHandle object.</span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldRegridStore</span><span class="p">(</span><span class="n">srcField</span><span class="o">=</span><span class="n">srcField</span><span class="p">,</span><span class="w"> </span><span class="n">dstField</span><span class="o">=</span><span class="n">dstField</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">routeHandle</span><span class="o">=</span><span class="n">routeHandle</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">regridmethod</span><span class="o">=</span><span class="n">ESMF_REGRIDMETHOD_BILINEAR</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! The patch recovery interpolant</span>
+<span class="cp">#ifdef ESMF_LAPACK</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldRegridStore</span><span class="p">(</span><span class="n">srcField</span><span class="o">=</span><span class="n">srcField</span><span class="p">,</span><span class="w"> </span><span class="n">dstField</span><span class="o">=</span><span class="n">dstField1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">routeHandle</span><span class="o">=</span><span class="n">routeHandle1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">regridmethod</span><span class="o">=</span><span class="n">ESMF_REGRIDMETHOD_PATCH</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="cp">#endif</span>
+
+<span class="c">!BOE</span>
+<span class="c">!</span>
+<span class="c">!\subsubsection{Apply a regridding operation to a pair of Fields}</span>
+<span class="c">! The {\tt ESMF\_FieldSphereRegrid} subroutine calls {\tt ESMF\_ArraySparseMatMul}</span>
+<span class="c">! and performs a regrid from source to destination field.</span>
+<span class="c">!EOE</span>
+
+<span class="w">  </span><span class="c">! Test the regrid application</span>
+<span class="c">!BOC</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldRegrid</span><span class="p">(</span><span class="n">srcField</span><span class="p">,</span><span class="w"> </span><span class="n">dstField</span><span class="p">,</span><span class="w"> </span><span class="n">routeHandle</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="cp">#ifdef ESMF_LAPACK</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldRegrid</span><span class="p">(</span><span class="n">srcField</span><span class="p">,</span><span class="w"> </span><span class="n">dstField1</span><span class="p">,</span><span class="w"> </span><span class="n">routeHandle1</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="cp">#endif</span>
+
+<span class="c">!BOE</span>
+<span class="c">! </span>
+<span class="c">!\subsubsection{Release the stored information for a regridding operation}</span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldRegridRelease</span><span class="p">(</span><span class="n">routeHandle</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="cp">#ifdef ESMF_LAPACK</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldRegridRelease</span><span class="p">(</span><span class="n">routeHandle1</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="cp">#endif</span>
+<span class="c">!EOC</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!  ! Uncomment these calls to see some actual regrid results</span>
+<span class="c">!  spherical_grid = 1</span>
+<span class="c">!  call ESMF_MeshIO(vm, GridSrc, ESMF_STAGGERLOC_CENTER, &amp;</span>
+<span class="c">!               &quot;srcmesh&quot;, srcArray, rc=localrc, &amp;</span>
+<span class="c">!               spherical=spherical_grid)</span>
+<span class="c">!  if (localrc /= ESMF_SUCCESS) call ESMF_Finalize(endflag=ESMF_END_ABORT)</span>
+<span class="c">!  call ESMF_MeshIO(vm, Griddst, ESMF_STAGGERLOC_CENTER, &amp;</span>
+<span class="c">!               &quot;dstmesh&quot;, dstArray, dstArray1, rc=localrc, &amp;</span>
+<span class="c">!               spherical=spherical_grid)</span>
+<span class="c">!  if (localrc /= ESMF_SUCCESS) call ESMF_Finalize(endflag=ESMF_END_ABORT)</span>
+
+<span class="w">   </span><span class="c">! Free Fields</span>
+<span class="w">   </span><span class="k">call </span><span class="n">ESMF_FieldDestroy</span><span class="p">(</span><span class="n">srcField</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">   </span><span class="k">call </span><span class="n">ESMF_FieldDestroy</span><span class="p">(</span><span class="n">dstField</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">   </span><span class="k">call </span><span class="n">ESMF_FieldDestroy</span><span class="p">(</span><span class="n">dstField1</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+
+<span class="w">  </span><span class="c">! Free the grids</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridDestroy</span><span class="p">(</span><span class="n">GridSrc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridDestroy</span><span class="p">(</span><span class="n">GridDst</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+
+<span class="w">  </span><span class="c">! IMPORTANT: ESMF_STest() prints the PASS string and the # of processors in the log</span>
+<span class="w">  </span><span class="c">! file that the scripts grep for.</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_STest</span><span class="p">((</span><span class="n">finalrc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">testname</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="o">/=</span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">finalrc</span><span class="o">==</span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;PASS: ESMF_FieldSphereRegridEx.F90&quot;</span>
+<span class="w">  </span><span class="k">else </span>
+<span class="k">    print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;FAIL: ESMF_FieldSphereRegridEx.F90&quot;</span><span class="w"> </span>
+<span class="w">  </span><span class="k">endif</span>
+
+
+
+<span class="k">end program </span><span class="n">ESMF_FieldSphereRegridEx</span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

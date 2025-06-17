@@ -1,0 +1,539 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_LocStreamCreateByBkgMesh &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_LocStreamCreateByBkgMesh
+      <small>Function</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.0% of total for procedures.">91 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_LocStream.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_locstream.f90.html'>ESMF_LocStream.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/esmf_locstreammod.html'>ESMF_LocStreamMod</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_LocStreamCreateByBkgMesh</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/esmf_locstreamcreatebybkgmesh.html#src">ESMF_LocStreamCreateByBkgMesh</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>private  function ESMF_LocStreamCreateByBkgMesh(locstream, background, keywordEnforcer, unmappedaction, name, rc)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-locstream~13"></span>
+              type(<a href='../type/esmf_locstream.html'>ESMF_LocStream</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>locstream</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~2"></span>
+              type(<a href='../type/esmf_mesh.html'>ESMF_Mesh</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-keywordenforcer~138"></span>
+              type(<a href='../type/esmf_keywordenforcer.html'>ESMF_KeywordEnforcer</a>),
+            </td>
+<td></td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>keywordEnforcer</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-unmappedaction~7"></span>
+              type(<a href='../type/esmf_unmappedaction_flag.html'>ESMF_UnmappedAction_Flag</a>),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>unmappedaction</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-name~112"></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>name</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~700"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <h3>Return Value
+        <small>
+          <span class="anchor" id="variable-esmf_locstreamcreatebybkgmesh"></span>
+          type(<a href='../type/esmf_locstream.html'>ESMF_LocStream</a>)
+        </small>
+      </h3>
+      
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">      </span><span class="k">function </span><span class="n">ESMF_LocStreamCreateByBkgMesh</span><span class="p">(</span><span class="n">locstream</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">background</span><span class="p">,</span><span class="w"> </span><span class="n">keywordEnforcer</span><span class="p">,</span><span class="w"> </span><span class="n">unmappedaction</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+
+<span class="c">!</span>
+<span class="c">! !RETURN VALUE:</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_LocStream</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ESMF_LocStreamCreateByBkgMesh</span>
+
+<span class="c">!</span>
+<span class="c">! !ARGUMENTS:</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_LocStream</span><span class="p">),</span><span class="w">           </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">           </span><span class="kd">::</span><span class="w"> </span><span class="n">locstream</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Mesh</span><span class="p">),</span><span class="w">                </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">           </span><span class="kd">::</span><span class="w"> </span><span class="n">background</span>
+<span class="k">type</span><span class="p">(</span><span class="n">ESMF_KeywordEnforcer</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="kd">::</span><span class="w"> </span><span class="n">keywordEnforcer</span><span class="w"> </span><span class="c">! must use keywords below</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_UnmappedAction_Flag</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">unmappedaction</span>
+<span class="w">      </span><span class="kt">character</span><span class="w"> </span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w">              </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">name</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">                        </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+<span class="c">!</span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">!</span>
+<span class="c">!     Create an location stream from an existing one in accordance with </span>
+<span class="c">!     the distribution of the background Mesh.  The entries</span>
+<span class="c">!     in the new location stream are redistributed, so that they lie on the same PET</span>
+<span class="c">!     as the piece of Mesh which contains the coordinates of the entries. The coordinates</span>
+<span class="c">!     of the entries are the data in the keys named ESMF:Lon, ESMF:Lat, ESMF:Radius in the </span>
+<span class="c">!     case of a spherical system and ESMF:X, ESMF:Y, ESMF:Z for cartesian. To copy data in</span>
+<span class="c">!     Fields or FieldBundles built on {\tt locstream} to the new one simply use {\tt ESMF\_FieldRedist()}</span>
+<span class="c">!     or {\tt ESMF\_FieldBundleRedist()}.</span>
+<span class="c">!</span>
+<span class="c">!     The arguments are:</span>
+<span class="c">!     \begin{description}</span>
+<span class="c">!      \item[locstream]</span>
+<span class="c">!          Location stream from which the new location stream is to be created</span>
+<span class="c">!      \item[background]</span>
+<span class="c">!          Background Mesh which determines the distribution of entries in the new locatiion stream.</span>
+<span class="c">!     \item [{[unmappedaction]}]</span>
+<span class="c">!           Specifies what should happen if there are destination points that</span>
+<span class="c">!           can&#39;t be mapped to a source cell. Please see Section~\ref{const:unmappedaction} for a </span>
+<span class="c">!           list of valid options. If not specified, {\tt unmappedaction} defaults to {\tt ESMF\_UNMAPPEDACTION\_ERROR}. [NOTE: the {\tt unmappedaction=ESMF\_UNMAPPEDACTION\_IGNORE} option is currently not implemented.]</span>
+<span class="c">!      \item[{[name]}]</span>
+<span class="c">!          Name of the resulting location stream</span>
+<span class="c">!      \item[{[rc]}]</span>
+<span class="c">!          Return code; equals {\tt ESMF\_SUCCESS} if there are no errors.</span>
+<span class="c">!     \end{description}</span>
+<span class="c">!</span>
+<span class="c">!EOP</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_LocStreamType</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">oldLStypep</span><span class="p">,</span><span class="w"> </span><span class="n">newLStypep</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_UnmappedAction_Flag</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localunmappedaction</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_DistGrid</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">newDistGrid</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_TypeKind_Flag</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="n">keyTypeKind</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">keytemp</span><span class="p">,</span><span class="w"> </span><span class="n">string</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">keyCount</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">regrid_dims</span><span class="p">,</span><span class="n">idx</span><span class="p">,</span><span class="n">idx_cart</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localrc</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">pntDim</span><span class="p">,</span><span class="w"> </span><span class="n">pntCount</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">pntList</span><span class="p">(:)</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">pntList_cart</span><span class="p">(:)</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">petList</span><span class="p">(:)</span>
+<span class="w">      </span><span class="kt">character</span><span class="w"> </span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">coordKeyNames</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_CoordSys_Flag</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">coordSysLocal</span><span class="p">,</span><span class="w"> </span><span class="n">coordSys_ofBkgMesh</span>
+<span class="w">      </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">three_dims</span>
+
+<span class="w">      </span><span class="c">! Initialize return code; assume failure until success is certain</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+
+<span class="w">      </span><span class="c">! Check Variables</span>
+<span class="w">      </span><span class="n">ESMF_INIT_CHECK_DEEP</span><span class="p">(</span><span class="n">ESMF_LocStreamGetInit</span><span class="p">,</span><span class="n">locstream</span><span class="p">,</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="n">ESMF_INIT_CHECK_DEEP</span><span class="p">(</span><span class="n">ESMF_MeshGetInit</span><span class="p">,</span><span class="n">background</span><span class="p">,</span><span class="n">rc</span><span class="p">)</span>
+
+
+<span class="w">      </span><span class="c">! Set default vale for unmappedaction</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">unmappedaction</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">         </span><span class="n">localunmappedaction</span><span class="o">=</span><span class="n">unmappedaction</span>
+<span class="w">      </span><span class="k">else</span>
+<span class="k">         </span><span class="n">localunmappedaction</span><span class="o">=</span><span class="n">ESMF_UNMAPPEDACTION_ERROR</span>
+<span class="w">      </span><span class="k">endif</span>
+
+<span class="w">      </span><span class="c">! Currently ESMF_UNMAPPEDACTION_IGNORE not implemented here</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localunmappedaction</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_UNMAPPEDACTION_IGNORE</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">ESMF_RC_NOT_IMPL</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot; - ESMF_UNMAPPEDACTION_IGNORE option currently not implemented &quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">      endif</span>
+
+
+<span class="w">      </span><span class="c">! Get old locstream internal pointer</span>
+<span class="w">      </span><span class="n">oldLStypep</span><span class="o">=&gt;</span><span class="n">locstream</span><span class="p">%</span><span class="n">lstypep</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_MeshGet</span><span class="p">(</span><span class="n">background</span><span class="p">,</span><span class="w"> </span><span class="n">coordSys</span><span class="o">=</span><span class="n">coordSys_ofBkgMesh</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return     </span>
+
+<span class="k">       call </span><span class="n">ESMF_LocStreamGet</span><span class="p">(</span><span class="n">locstream</span><span class="p">,</span><span class="w"> </span><span class="n">coordSys</span><span class="o">=</span><span class="n">coordSysLocal</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return     </span>
+
+<span class="k">      if</span><span class="w"> </span><span class="p">((</span><span class="n">coordSysLocal</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_COORDSYS_CART</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="n">coordSys_ofBkgMesh</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_COORDSYS_CART</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="p">(</span><span class="n">coordSysLocal</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_COORDSYS_CART</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="n">coordSys_ofBkgMesh</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_COORDSYS_CART</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">ESMF_RC_OBJ_BAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot; - coordinate systems of LocStream and Mesh are not compatible &quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">      endif</span>
+
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="n">coordSysLocal</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_COORDSYS_CART</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        call </span><span class="n">ESMF_LocStreamGetKey</span><span class="p">(</span><span class="n">locstream</span><span class="p">,</span><span class="w"> </span><span class="n">keyName</span><span class="o">=</span><span class="s2">&quot;ESMF:Z&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                                  </span><span class="n">isPresent</span><span class="o">=</span><span class="n">three_dims</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="n">three_dims</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          </span><span class="n">coordKeyNames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ESMF:X,ESMF:Y,ESMF:Z&quot;</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="k">          </span><span class="n">coordKeyNames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ESMF:X,ESMF:Y&quot;</span>
+<span class="w">        </span><span class="k">endif</span>
+
+<span class="k">      else</span>
+<span class="k">        call </span><span class="n">ESMF_LocStreamGetKey</span><span class="p">(</span><span class="n">locstream</span><span class="p">,</span><span class="w"> </span><span class="n">keyName</span><span class="o">=</span><span class="s2">&quot;ESMF:Radius&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                                  </span><span class="n">isPresent</span><span class="o">=</span><span class="n">three_dims</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="n">three_dims</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          </span><span class="n">coordKeyNames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ESMF:Lon,ESMF:Lat,ESMF:Radius&quot;</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="k">          </span><span class="n">coordKeyNames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ESMF:Lon,ESMF:Lat&quot;</span>
+<span class="w">        </span><span class="k">endif</span>
+
+<span class="k">      endif</span>
+
+<span class="w">      </span><span class="c">! Calculate pntDim </span>
+<span class="w">       </span><span class="n">pntDim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">       </span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">coordKeyNames</span><span class="w"> </span><span class="p">)</span>
+<span class="w">       </span><span class="k">do while</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="p">)</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_StripKey</span><span class="p">(</span><span class="w"> </span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">keytemp</span><span class="w"> </span><span class="p">)</span>
+<span class="w">          </span><span class="n">pntDim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pntDim</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">       </span><span class="k">enddo</span>
+
+<span class="w">      </span><span class="c">! Calculate number of local points</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_LocStreamGetNumLocal</span><span class="p">(</span><span class="n">locstream</span><span class="p">,</span><span class="w"> </span><span class="n">localCount</span><span class="o">=</span><span class="n">pntCount</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                                     </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span><span class="w">      </span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+
+<span class="w">      </span><span class="c">! Allocate memory for points</span>
+<span class="w">      </span><span class="k">allocate</span><span class="p">(</span><span class="n">pntList</span><span class="p">(</span><span class="n">pntDim</span><span class="o">*</span><span class="n">pntCount</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;Allocating pntList&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w">   </span>
+
+<span class="w">      </span><span class="c">! Allocate memory for pets</span>
+<span class="w">      </span><span class="k">allocate</span><span class="p">(</span><span class="n">petList</span><span class="p">(</span><span class="n">pntCount</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;Allocating petList&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w">   </span>
+
+<span class="w">      </span><span class="c">! Get Points </span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_LocStreamGetPntList</span><span class="p">(</span><span class="n">locstream</span><span class="p">,</span><span class="w"> </span><span class="n">coordKeyNames</span><span class="p">,</span><span class="w"> </span><span class="n">pntDim</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">               </span><span class="n">pntCount</span><span class="p">,</span><span class="w"> </span><span class="n">pntList</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+
+<span class="k">      call </span><span class="n">c_ESMC_PointListCalcCartDim</span><span class="p">(</span><span class="n">coordSysLocal</span><span class="p">,</span><span class="w"> </span><span class="n">pntDim</span><span class="p">,</span><span class="w"> </span><span class="n">regrid_dims</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                                </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">      </span><span class="c">! Allocate memory for points in cart</span>
+<span class="w">      </span><span class="k">allocate</span><span class="p">(</span><span class="n">pntList_cart</span><span class="p">(</span><span class="n">regrid_dims</span><span class="o">*</span><span class="n">pntCount</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;Allocating pntList_cart&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return   </span>
+
+<span class="k">      do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">pntCount</span>
+<span class="w">        </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pntDim</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="n">idx_cart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">regrid_dims</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="k">call </span><span class="n">c_ESMC_PointListSph2CartCoord</span><span class="p">(</span><span class="n">coordSysLocal</span><span class="p">,</span><span class="w"> </span><span class="n">pntDim</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                   </span><span class="n">pntList</span><span class="p">(</span><span class="n">idx</span><span class="p">),</span><span class="n">pntList_cart</span><span class="p">(</span><span class="n">idx_cart</span><span class="p">),</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="k">      enddo</span>
+
+
+<span class="w">      </span><span class="c">! Find out where points lie on Mesh</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_MeshFindPnt</span><span class="p">(</span><span class="n">background</span><span class="p">,</span><span class="w"> </span><span class="n">localunmappedaction</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                                </span><span class="n">regrid_dims</span><span class="p">,</span><span class="w"> </span><span class="n">pntCount</span><span class="p">,</span><span class="w"> </span><span class="n">pntList_cart</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                                </span><span class="n">petList</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">      </span><span class="c">! Can now get rid of pntList</span>
+<span class="w">      </span><span class="k">deallocate</span><span class="p">(</span><span class="n">pntList</span><span class="p">)</span>
+<span class="w">      </span><span class="k">deallocate</span><span class="p">(</span><span class="n">pntList_cart</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">! Create a new location stream by shifting the entries between </span>
+<span class="w">      </span><span class="c">! the pets based on petList</span>
+<span class="w">      </span><span class="n">ESMF_LocStreamCreateByBkgMesh</span><span class="o">=</span><span class="n">ESMF_LocStreamCreatePetList</span><span class="p">(</span><span class="n">locstream</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                                  </span><span class="n">petList</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+<span class="w">    </span>
+<span class="w">     </span><span class="c">! Can now get rid of petList</span>
+<span class="w">      </span><span class="k">deallocate</span><span class="p">(</span><span class="n">petList</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">! return success</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+
+<span class="w">      </span><span class="k">end function </span><span class="n">ESMF_LocStreamCreateByBkgMesh</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,490 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_LogFoundNetCDFError &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_LogFoundNetCDFError
+      <small>Function</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.0% of total for procedures.">25 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_LogErr.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_logerr.f90.html'>ESMF_LogErr.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/esmf_logerrmod.html'>ESMF_LogErrMod</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_LogFoundNetCDFError</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/esmf_logfoundnetcdferror.html#src">ESMF_LogFoundNetCDFError</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  function ESMF_LogFoundNetCDFError(ncerrToCheck, keywordEnforcer, msg, line, file, method, rcToReturn, log)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ncerrtocheck"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ncerrToCheck</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-keywordenforcer~972"></span>
+              type(<a href='../type/esmf_keywordenforcer.html'>ESMF_KeywordEnforcer</a>),
+            </td>
+<td></td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>keywordEnforcer</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-msg~25"></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>msg</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-line~24"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>line</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-file~19"></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>file</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-method~19"></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>method</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rctoreturn~5"></span>
+              integer,
+            </td>
+<td>intent(inout),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rcToReturn</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-log~8"></span>
+              type(<a href='../type/esmf_log.html'>ESMF_Log</a>),
+            </td>
+<td>intent(inout),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>log</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <h3>Return Value
+        <small>
+          <span class="anchor" id="variable-esmf_logfoundnetcdferror"></span>
+          logical
+        </small>
+      </h3>
+      
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="k">function </span><span class="n">ESMF_LogFoundNetCDFError</span><span class="p">(</span><span class="n">ncerrToCheck</span><span class="p">,</span><span class="w"> </span><span class="n">keywordEnforcer</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="p">,</span><span class="w"> </span><span class="n">line</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                                  </span><span class="k">file</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="p">,</span><span class="w"> </span><span class="nb">log</span><span class="p">)</span>
+
+<span class="cp">#if defined ESMF_NETCDF</span>
+<span class="w">  </span><span class="k">use </span><span class="n">netcdf</span>
+<span class="cp">#elif defined ESMF_PNETCDF</span>
+<span class="w">  </span><span class="k">use </span><span class="n">pnetcdf</span>
+<span class="cp">#endif</span>
+
+<span class="c">!</span>
+<span class="c">! !RETURN VALUE:</span>
+<span class="w">  </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ESMF_LogFoundNetCDFError</span>
+<span class="c">!</span>
+<span class="c">! !ARGUMENTS:</span>
+<span class="c">!</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w">          </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">ncerrToCheck</span>
+<span class="k">type</span><span class="p">(</span><span class="n">ESMF_KeywordEnforcer</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="kd">::</span><span class="w"> </span><span class="n">keywordEnforcer</span><span class="w"> </span><span class="c">! must use keywords below</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">msg</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w">          </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">line</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="k">file</span>
+<span class="k">  </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">method</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w">          </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rcToReturn</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Log</span><span class="p">),</span><span class="w">   </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="nb">log</span>
+<span class="c">!</span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">!      This function returns {\tt .true.} when {\tt ncerrToCheck} indicates</span>
+<span class="c">!      an return code other than {\tt 0} (the success code from NetCDF Fortran)</span>
+<span class="c">!      or {\tt NF\_NOERR} (the success code for PNetCDF). Otherwise it returns</span>
+<span class="c">!      {\tt .false.}.</span>
+<span class="c">!      If an error is indicated, a predefined ESMF error message</span>
+<span class="c">!      will be written to the {\tt ESMF\_Log} along with a user added {\tt msg},</span>
+<span class="c">!      {\tt line}, {\tt file} and {\tt method}. The NetCDF string error</span>
+<span class="c">!      representation will also be logged.</span>
+<span class="c">!</span>
+<span class="c">!      The arguments are:</span>
+<span class="c">!      \begin{description}</span>
+<span class="c">!</span>
+<span class="c">!      \item [{[ncerrToCheck]}]</span>
+<span class="c">!            NetCDF error code to check.</span>
+<span class="c">!      \item [{[msg]}]</span>
+<span class="c">!            User-provided message string.</span>
+<span class="c">!      \item [{[line]}]</span>
+<span class="c">!            Integer source line number.  Expected to be set by using the</span>
+<span class="c">!            preprocessor {\tt \_\_LINE\_\_} macro.</span>
+<span class="c">!      \item [{[file]}]</span>
+<span class="c">!            User-provided source file name.</span>
+<span class="c">!      \item [{[method]}]</span>
+<span class="c">!            User-provided method string.</span>
+<span class="c">!      \item [{[rcToReturn]}]</span>
+<span class="c">!            If specified, when {\tt ncerrToCheck} indicates an error,</span>
+<span class="c">!            set {\tt rcToReturn} to {\tt ESMF\_RC\_NETCDF\_ERROR}. The string</span>
+<span class="c">!            representation for the error code will be retrieved from the NetCDF</span>
+<span class="c">!            Fortran library and logged alongside any user-provided message</span>
+<span class="c">!            string.</span>
+<span class="c">!            Otherwise, {\tt rcToReturn} is not modified.</span>
+<span class="c">!            This is not the return code for this function; it allows the</span>
+<span class="c">!            calling code to do an assignment of the error code at the same time</span>
+<span class="c">!            it is testing the value.</span>
+<span class="c">!      \item [{[log]}]</span>
+<span class="c">!            An optional {\tt ESMF\_Log} object that can be used instead</span>
+<span class="c">!            of the default Log.</span>
+<span class="c">!</span>
+<span class="c">!      \end{description}</span>
+<span class="c">!</span>
+<span class="c">!EOP</span>
+
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ncMsg</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localMsg</span>
+<span class="w">  </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ele</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ncerrToCheckChar</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localRc</span>
+
+<span class="cp">#ifdef ESMF_NETCDF</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ncNoError</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="cp">#endif</span>
+
+<span class="w">  </span><span class="c">! ----------------------------------------------------------------------------</span>
+
+<span class="cp">#if (defined ESMF_NETCDF || defined ESMF_PNETCDF)</span>
+<span class="w">  </span><span class="c">! Check the NetCDF status code for an error designation. Set the return value</span>
+<span class="w">  </span><span class="c">! for the found error flag.</span>
+<span class="cp">#ifdef ESMF_NETCDF</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ncerrToCheck</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="n">ncNoError</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="cp">#else</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ncerrToCheck</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="n">NF_NOERR</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="n">ESMF_LogFoundNetCDFError</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">  </span><span class="k">else</span>
+<span class="k">    </span><span class="n">ESMF_LogFoundNetCDFError</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+
+<span class="w">    </span><span class="c">! Retrieve the string error from the NetCDF library. Handle NetCDF and</span>
+<span class="w">    </span><span class="c">! PNetCDF error strings.</span>
+<span class="cp">#ifdef ESMF_NETCDF</span>
+<span class="w">    </span><span class="n">ncMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nf90_strerror</span><span class="p">(</span><span class="n">ncerrToCheck</span><span class="p">)</span>
+<span class="cp">#else</span>
+<span class="w">    </span><span class="n">ncMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nfmpi_strerror</span><span class="p">(</span><span class="n">ncerrToCheck</span><span class="p">)</span>
+<span class="cp">#endif</span>
+
+<span class="w">    </span><span class="c">! Convert the NetCDF error code from integer to string.</span>
+<span class="w">    </span><span class="k">write</span><span class="p">(</span><span class="n">ncerrToCheckChar</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;(I0)&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">ncerrToCheck</span>
+
+<span class="w">    </span><span class="c">! Pick the string to log based on the presence of a user message.</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">msg</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="w">      </span><span class="c">! The string to be logged to file if a user provided a message.</span>
+<span class="w">      </span><span class="n">localMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s1">&#39; (strerr=&#39;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">ncMsg</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s1">&#39;, ncerrToCheck=&#39;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">ncerrToCheckChar</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s1">&#39;)&#39;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">      </span><span class="c">! The default message with no user-provided message.</span>
+<span class="w">      </span><span class="n">localMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">ncMsg</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s1">&#39; (ncerrToCheck=&#39;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">ncerrToCheckChar</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s1">&#39;)&#39;</span>
+<span class="w">    </span><span class="k">endif</span>
+
+<span class="k">    </span><span class="n">localRc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NETCDF_ERROR</span>
+<span class="w">  </span><span class="k">endif</span>
+<span class="cp">#else</span>
+<span class="w">  </span><span class="c">! If NetCDF is not compiled with ESMF, set the library not present flag.</span>
+<span class="w">  </span><span class="n">ESMF_LogFoundNetCDFError</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">  </span><span class="n">localRc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_LIB_NOT_PRESENT</span>
+<span class="w">  </span><span class="n">localMsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ESMF_NETCDF or ESMF_PNETCDF not defined when lib was compiled&#39;</span>
+<span class="cp">#endif</span>
+
+<span class="w">  </span><span class="c">! ----------------------------------------------------------------------------</span>
+
+<span class="w">  </span><span class="c">! Log the error to file if an error was found.</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundNetCDFError</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    </span><span class="n">ele</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localRC</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">localMsg</span><span class="p">),</span><span class="w"> </span><span class="n">line</span><span class="o">=</span><span class="n">line</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">file</span><span class="o">=</span><span class="k">file</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span><span class="w"> </span><span class="nb">log</span><span class="o">=</span><span class="nb">log</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rcToReturn</span><span class="p">)</span>
+<span class="w">    </span><span class="c">! Update the return code if provided.</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rcToReturn</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      </span><span class="n">rcToReturn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">localRc</span>
+<span class="w">    </span><span class="k">endif</span>
+<span class="k">  endif</span>
+
+<span class="k">end function </span><span class="n">ESMF_LogFoundNetCDFError</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,617 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_DTREVC3 &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_DTREVC3
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.2% of total for procedures.">573 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/dtrevc3.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/dtrevc3.f90.html'>dtrevc3.F90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_DTREVC3</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2> subroutine ESMF_DTREVC3(SIDE, HOWMNY, SELECT, N, T, LDT, VL, LDVL, VR, LDVR, MM, M, WORK, LWORK, INFO)  
+</h2>
+    
+
+    <p>\brief \b ESMF_DTREVC3
+\htmlonly
+Download ESMF_DTREVC3 + dependencies
+<a href="http://www.netlib.org/cgi-bin/netlibfiles.tgz?format=tgz&filename=/lapack/lapack_routine/dtrevc3.f">
+[TGZ]</a>
+<a href="http://www.netlib.org/cgi-bin/netlibfiles.zip?format=zip&filename=/lapack/lapack_routine/dtrevc3.f">
+[ZIP]</a>
+<a href="http://www.netlib.org/cgi-bin/netlibfiles.txt?format=txt&filename=/lapack/lapack_routine/dtrevc3.f">
+[TXT]</a>
+\endhtmlonly
+\par Purpose:</p>
+<p>\verbatim</p>
+<p>ESMF_DTREVC3 computes some or all of the right and/or left eigenvectors of
+a real upper quasi-triangular matrix T.
+Matrices of this type are produced by the Schur factorization of
+a real general matrix:  A = Q<em>T</em>Q**T, as computed by ESMF_DHSEQR.</p>
+<p>The right eigenvector x and the left eigenvector y of T corresponding
+to an eigenvalue w are defined by:</p>
+<p>T<em>x = w</em>x,     (y<strong>H)<em>T = w</em>(y</strong>H)</p>
+<p>where y**H denotes the conjugate transpose of y.
+The eigenvalues are not input to this routine, but are read directly
+from the diagonal blocks of T.</p>
+<p>This routine returns the matrices X and/or Y of right and left
+eigenvectors of T, or the products Q<em>X and/or Q</em>Y, where Q is an
+input matrix. If Q is the orthogonal factor that reduces a matrix
+A to Schur form T, then Q<em>X and Q</em>Y are the matrices of right and
+left eigenvectors of A.</p>
+<p>This uses a Level 3 BLAS version of the back transformation.
+\endverbatim
+\param[in] SIDE
+\verbatim
+         SIDE is CHARACTER*1
+         = &lsquo;R&rsquo;:  compute right eigenvectors only;
+         = &lsquo;L&rsquo;:  compute left eigenvectors only;
+         = &lsquo;B&rsquo;:  compute both right and left eigenvectors.
+\endverbatim</p>
+<p>\param[in] HOWMNY
+\verbatim
+         HOWMNY is CHARACTER*1
+         = &lsquo;A&rsquo;:  compute all right and/or left eigenvectors;
+         = &lsquo;B&rsquo;:  compute all right and/or left eigenvectors,
+                 backtransformed by the matrices in VR and/or VL;
+         = &lsquo;S&rsquo;:  compute selected right and/or left eigenvectors,
+                 as indicated by the logical array SELECT.
+\endverbatim</p>
+<p>\param[in,out] SELECT
+\verbatim
+         SELECT is LOGICAL array, dimension (N)
+         If HOWMNY = &lsquo;S&rsquo;, SELECT specifies the eigenvectors to be
+         computed.
+         If w(j) is a real eigenvalue, the corresponding real
+         eigenvector is computed if SELECT(j) is .TRUE..
+         If w(j) and w(j+1) are the real and imaginary parts of a
+         complex eigenvalue, the corresponding complex eigenvector is
+         computed if either SELECT(j) or SELECT(j+1) is .TRUE., and
+         on exit SELECT(j) is set to .TRUE. and SELECT(j+1) is set to
+         .FALSE..
+         Not referenced if HOWMNY = &lsquo;A&rsquo; or &lsquo;B&rsquo;.
+\endverbatim</p>
+<p>\param[in] N
+\verbatim
+         N is INTEGER
+         The order of the matrix T. N &gt;= 0.
+\endverbatim</p>
+<p>\param[in] T
+\verbatim
+         T is DOUBLE PRECISION array, dimension (LDT,N)
+         The upper quasi-triangular matrix T in Schur canonical form.
+\endverbatim</p>
+<p>\param[in] LDT
+\verbatim
+         LDT is INTEGER
+         The leading dimension of the array T. LDT &gt;= max(1,N).
+\endverbatim</p>
+<p>\param[in,out] VL
+\verbatim
+         VL is DOUBLE PRECISION array, dimension (LDVL,MM)
+         On entry, if SIDE = &lsquo;L&rsquo; or &lsquo;B&rsquo; and HOWMNY = &lsquo;B&rsquo;, VL must
+         contain an N-by-N matrix Q (usually the orthogonal matrix Q
+         of Schur vectors returned by ESMF_DHSEQR).
+         On exit, if SIDE = &lsquo;L&rsquo; or &lsquo;B&rsquo;, VL contains:
+         if HOWMNY = &lsquo;A&rsquo;, the matrix Y of left eigenvectors of T;
+         if HOWMNY = &lsquo;B&rsquo;, the matrix Q*Y;
+         if HOWMNY = &lsquo;S&rsquo;, the left eigenvectors of T specified by
+                          SELECT, stored consecutively in the columns
+                          of VL, in the same order as their
+                          eigenvalues.
+         A complex eigenvector corresponding to a complex eigenvalue
+         is stored in two consecutive columns, the first holding the
+         real part, and the second the imaginary part.
+         Not referenced if SIDE = &lsquo;R&rsquo;.
+\endverbatim</p>
+<p>\param[in] LDVL
+\verbatim
+         LDVL is INTEGER
+         The leading dimension of the array VL.
+         LDVL &gt;= 1, and if SIDE = &lsquo;L&rsquo; or &lsquo;B&rsquo;, LDVL &gt;= N.
+\endverbatim</p>
+<p>\param[in,out] VR
+\verbatim
+         VR is DOUBLE PRECISION array, dimension (LDVR,MM)
+         On entry, if SIDE = &lsquo;R&rsquo; or &lsquo;B&rsquo; and HOWMNY = &lsquo;B&rsquo;, VR must
+         contain an N-by-N matrix Q (usually the orthogonal matrix Q
+         of Schur vectors returned by ESMF_DHSEQR).
+         On exit, if SIDE = &lsquo;R&rsquo; or &lsquo;B&rsquo;, VR contains:
+         if HOWMNY = &lsquo;A&rsquo;, the matrix X of right eigenvectors of T;
+         if HOWMNY = &lsquo;B&rsquo;, the matrix Q*X;
+         if HOWMNY = &lsquo;S&rsquo;, the right eigenvectors of T specified by
+                          SELECT, stored consecutively in the columns
+                          of VR, in the same order as their
+                          eigenvalues.
+         A complex eigenvector corresponding to a complex eigenvalue
+         is stored in two consecutive columns, the first holding the
+         real part and the second the imaginary part.
+         Not referenced if SIDE = &lsquo;L&rsquo;.
+\endverbatim</p>
+<p>\param[in] LDVR
+\verbatim
+         LDVR is INTEGER
+         The leading dimension of the array VR.
+         LDVR &gt;= 1, and if SIDE = &lsquo;R&rsquo; or &lsquo;B&rsquo;, LDVR &gt;= N.
+\endverbatim</p>
+<p>\param[in] MM
+\verbatim
+         MM is INTEGER
+         The number of columns in the arrays VL and/or VR. MM &gt;= M.
+\endverbatim</p>
+<p>\param[out] M
+\verbatim
+         M is INTEGER
+         The number of columns in the arrays VL and/or VR actually
+         used to store the eigenvectors.
+         If HOWMNY = &lsquo;A&rsquo; or &lsquo;B&rsquo;, M is set to N.
+         Each selected real eigenvector occupies one column and each
+         selected complex eigenvector occupies two columns.
+\endverbatim</p>
+<p>\param[out] WORK
+\verbatim
+         WORK is DOUBLE PRECISION array, dimension (MAX(1,LWORK))
+\endverbatim</p>
+<p>\param[in] LWORK
+\verbatim
+         LWORK is INTEGER
+         The dimension of array WORK. LWORK &gt;= max(1,3<em>N).
+         For optimum performance, LWORK &gt;= N + 2</em>N*NB, where NB is
+         the optimal blocksize.</p>
+<div class="codehilite"><pre><span></span><code>     If LWORK = -1, then a workspace query is assumed; the routine
+     only calculates the optimal size of the WORK array, returns
+     this value as the first entry of the WORK array, and no error
+     message related to LWORK is issued by ESMF_XERBLA.
+</code></pre></div>
+
+<p>\endverbatim</p>
+<p>\param[out] INFO
+\verbatim
+         INFO is INTEGER
+         = 0:  successful exit
+         &lt; 0:  if INFO = -i, the i-th argument had an illegal value
+\endverbatim
+\author Univ. of Tennessee
+\author Univ. of California Berkeley
+\author Univ. of Colorado Denver
+\author NAG Ltd.
+\date November 2017
+\ingroup doubleOTHERcomputational
+\par Further Details:</p>
+<p>\verbatim</p>
+<p>The algorithm used in this program is basically backward (forward)
+ substitution, with scaling to make the the code robust against
+ possible overflow.</p>
+<p>Each eigenvector is normalized so that the element of largest
+ magnitude has magnitude 1; here the magnitude of a complex number
+ (x,y) is taken to be |x| + |y|.
+\endverbatim</p>
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-side~6"></span>
+              character(len=1)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>SIDE</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-howmny"></span>
+              character(len=1)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>HOWMNY</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-select~2"></span>
+              logical
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>SELECT</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n~26"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>N</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-t~5"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>T</strong>(LDT,*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ldt~4"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LDT</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vl~2"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>VL</strong>(LDVL,*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ldvl"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LDVL</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vr"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>VR</strong>(LDVR,*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ldvr"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LDVR</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mm~6"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>MM</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-m~16"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>M</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-work~16"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>WORK</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lwork~7"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LWORK</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-info~23"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>INFO</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

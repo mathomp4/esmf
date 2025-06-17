@@ -1,0 +1,2184 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_MeshEx &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_MeshEx      <small>Program</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.3% of total for programs.">293 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_FieldMeshRegridEx.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_fieldmeshregridex.f90.html'>ESMF_FieldMeshRegridEx.F90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_MeshEx</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-version~149">version</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-failmsg~217">failMsg</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-name~1033">name</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-string~63">string</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-testname~101">testname</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-clbnd~63">clbnd</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-cubnd~63">cubnd</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-dstelemconn">dstElemConn</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-dstelemids">dstElemIds</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-dstelemtypes">dstElemTypes</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-dstnodeids">dstNodeIds</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-dstnodeowners">dstNodeOwners</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-dstnumelems">dstNumElems</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-dstnumnodes">dstNumNodes</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-dstnumquadelems">dstNumQuadElems</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-dstnumtotelems">dstNumTotElems</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-dstnumtrielems">dstNumTriElems</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-fclbnd~31">fclbnd</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-fcubnd~31">fcubnd</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-finalrc~101">finalrc</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-i~604">i</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-i1~80">i1</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-i2~73">i2</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-i3~53">i3</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-index~247">index</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-lde~52">lDE</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-larraylist~22">larrayList</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-localdecount~43">localDECount</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-localpet~290">localPet</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-localrc~2414">localrc</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-numownednodes~43">numOwnedNodes</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-petcount~326">petCount</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-rc~3715">rc</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-result~218">result</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-spatialdim~12">spatialDim</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-spherical_grid~19">spherical_grid</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-srcelemconn">srcElemConn</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-srcelemids">srcElemIds</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-srcelemtypes">srcElemTypes</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-srcnodeids">srcNodeIds</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-srcnodeowners">srcNodeOwners</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-srcnumelems">srcNumElems</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-srcnumnodes">srcNumNodes</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-srcnumquadelems">srcNumQuadElems</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-srcnumtotelems">srcNumTotElems</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-srcnumtrielems">srcNumTriElems</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-coord~38">coord</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-dstnodecoords">dstNodeCoords</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-dx~11">dx</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-dy~12">dy</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-fptr~22">fptr</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-fptr1d~6">fptr1D</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-fptr2~3">fptr2</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-fptrxc~4">fptrXC</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-fptryc~4">fptrYC</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-ownednodecoords~43">ownedNodeCoords</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-srcnodecoords">srcNodeCoords</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-x~52">x</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-y~52">y</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-arrayspec~133">arrayspec</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-dstfield~122">dstField</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-srcfield~112">srcField</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-dstmesh~34">dstMesh</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-srcmesh~32">srcMesh</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-routehandle~51">routeHandle</a>
+            <a class="list-group-item" href="../program/esmf_meshex~2.html#variable-vm~707">vm</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../program/esmf_meshex~2.html#src">ESMF_MeshEx</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item">ESMF_FieldGetMod</li>
+                  <li class="list-inline-item"><a href='../module/esmf_regridmod.html'>ESMF_RegridMod</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf_testmod.html'>ESMF_TestMod</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf.html'>ESMF</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf_meshmod.html'>ESMF_MeshMod</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf_fieldmod.html'>ESMF_FieldMod</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf_gridutilmod.html'>ESMF_GridUtilMod</a></li>
+              </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    
+
+
+    <section>
+    <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-version~149"></span>
+              character(len=*),
+            </td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>version</strong></td>
+<td> =</td>
+                <td>&#39;$Id$&#39;</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-failmsg~217"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>failMsg</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-name~1033"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>name</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-string~63"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>string</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-testname~101"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>testname</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-clbnd~63"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>clbnd</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-cubnd~63"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>cubnd</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dstelemconn"></span>
+              integer,
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>dstElemConn</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dstelemids"></span>
+              integer,
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>dstElemIds</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dstelemtypes"></span>
+              integer,
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>dstElemTypes</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dstnodeids"></span>
+              integer,
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>dstNodeIds</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dstnodeowners"></span>
+              integer,
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>dstNodeOwners</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dstnumelems"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dstNumElems</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dstnumnodes"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dstNumNodes</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dstnumquadelems"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dstNumQuadElems</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dstnumtotelems"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dstNumTotElems</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dstnumtrielems"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dstNumTriElems</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fclbnd~31"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fclbnd</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fcubnd~31"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fcubnd</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-finalrc~101"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>finalrc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i~604"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i1~80"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i2~73"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i2</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i3~53"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i3</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-index~247"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>index</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lde~52"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>lDE</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-larraylist~22"></span>
+              integer,
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>larrayList</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-localdecount~43"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>localDECount</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-localpet~290"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>localPet</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-localrc~2414"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>localrc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-numownednodes~43"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>numOwnedNodes</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-petcount~326"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>petCount</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~3715"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-result~218"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>result</strong></td>
+<td> =</td>
+                <td>0</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-spatialdim~12"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>spatialDim</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-spherical_grid~19"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>spherical_grid</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srcelemconn"></span>
+              integer,
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>srcElemConn</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srcelemids"></span>
+              integer,
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>srcElemIds</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srcelemtypes"></span>
+              integer,
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>srcElemTypes</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srcnodeids"></span>
+              integer,
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>srcNodeIds</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srcnodeowners"></span>
+              integer,
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>srcNodeOwners</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srcnumelems"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>srcNumElems</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srcnumnodes"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>srcNumNodes</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srcnumquadelems"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>srcNumQuadElems</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srcnumtotelems"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>srcNumTotElems</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srcnumtrielems"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>srcNumTriElems</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-coord~38"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>coord</strong>(2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dstnodecoords"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>dstNodeCoords</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dx~11"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dx</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dy~12"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dy</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fptr~22"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>fptr</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fptr1d~6"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>fptr1D</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fptr2~3"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>fptr2</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fptrxc~4"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>fptrXC</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fptryc~4"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>fptrYC</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ownednodecoords~43"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>ownedNodeCoords</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srcnodecoords"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>srcNodeCoords</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-x~52"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>x</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-y~52"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>y</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-arrayspec~133"></span>
+              type(<a href='../type/esmf_arrayspec.html'>ESMF_ArraySpec</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>arrayspec</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dstfield~122"></span>
+              type(<a href='../type/esmf_field.html'>ESMF_Field</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dstField</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srcfield~112"></span>
+              type(<a href='../type/esmf_field.html'>ESMF_Field</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>srcField</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dstmesh~34"></span>
+              type(<a href='../type/esmf_mesh.html'>ESMF_Mesh</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dstMesh</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-srcmesh~32"></span>
+              type(<a href='../type/esmf_mesh.html'>ESMF_Mesh</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>srcMesh</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-routehandle~51"></span>
+              type(<a href='../type/esmf_routehandle.html'>ESMF_RouteHandle</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>routeHandle</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vm~707"></span>
+              type(<a href='../type/esmf_vm.html'>ESMF_VM</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>vm</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+    
+
+    
+
+
+    
+
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="k">program </span><span class="n">ESMF_MeshEx</span>
+
+<span class="c">!==============================================================================</span>
+<span class="c">!ESMF_MULTI_PROC_EXAMPLE        String used by test script to count examples.</span>
+<span class="c">!==============================================================================</span>
+<span class="cp">#include &quot;ESMF.h&quot;</span>
+<span class="cp">#include &quot;ESMF_Macros.inc&quot;</span>
+
+<span class="c">! !USES:</span>
+<span class="w">  </span><span class="k">use </span><span class="n">ESMF</span>
+<span class="w">  </span><span class="k">use </span><span class="n">ESMF_TestMod</span><span class="w">     </span><span class="c">! test methods</span>
+<span class="w">  </span><span class="k">use </span><span class="n">ESMF_MeshMod</span>
+<span class="w">  </span><span class="k">use </span><span class="n">ESMF_RegridMod</span>
+<span class="w">  </span><span class="k">use </span><span class="n">ESMF_FieldMod</span>
+<span class="w">  </span><span class="k">use </span><span class="n">ESMF_GridUtilMod</span>
+
+<span class="w">  </span><span class="k">use </span><span class="n">ESMF_FieldGetMod</span>
+
+<span class="w">  </span><span class="k">implicit none</span>
+
+<span class="c">!------------------------------------------------------------------------------</span>
+<span class="c">! The following line turns the CVS identifier string into a printable variable.</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="s1">&#39;$Id$&#39;</span>
+<span class="c">!------------------------------------------------------------------------------</span>
+<span class="w">    </span>
+<span class="w">  </span><span class="c">! cumulative result: count failures; no failures equals &quot;all pass&quot;</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="k">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+
+<span class="w">  </span><span class="c">! individual test failure message</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_Ex</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Mesh</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dstMesh</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Mesh</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">srcMesh</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Field</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">srcField</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Field</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dstField</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_RouteHandle</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">routeHandle</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_ArraySpec</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">arrayspec</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_VM</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">vm</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">fptrXC</span><span class="p">(:,:),</span><span class="w"> </span><span class="n">fptr1D</span><span class="p">(:)</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">fptrYC</span><span class="p">(:,:)</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">fptr</span><span class="p">(:,:),</span><span class="n">fptr2</span><span class="p">(:,:)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">clbnd</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">cubnd</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">fclbnd</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">fcubnd</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i1</span><span class="p">,</span><span class="n">i2</span><span class="p">,</span><span class="n">i3</span><span class="p">,</span><span class="w"> </span><span class="nb">index</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">i</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">lDE</span><span class="p">,</span><span class="w"> </span><span class="n">localDECount</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">coord</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">string</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dx</span><span class="p">,</span><span class="n">dy</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="n">y</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">spherical_grid</span>
+
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">larrayList</span><span class="p">(:)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localPet</span><span class="p">,</span><span class="w"> </span><span class="n">petCount</span>
+
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">srcNodeIds</span><span class="p">(:),</span><span class="n">srcNodeOwners</span><span class="p">(:)</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">srcNodeCoords</span><span class="p">(:)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">srcElemIds</span><span class="p">(:),</span><span class="n">srcElemTypes</span><span class="p">(:),</span><span class="n">srcElemConn</span><span class="p">(:)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">srcNumNodes</span><span class="p">,</span><span class="w"> </span><span class="n">srcNumElems</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">srcNumQuadElems</span><span class="p">,</span><span class="n">srcNumTriElems</span><span class="p">,</span><span class="w"> </span><span class="n">srcNumTotElems</span>
+
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dstNodeIds</span><span class="p">(:),</span><span class="n">dstNodeOwners</span><span class="p">(:)</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dstNodeCoords</span><span class="p">(:)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dstElemIds</span><span class="p">(:),</span><span class="n">dstElemTypes</span><span class="p">(:),</span><span class="n">dstElemConn</span><span class="p">(:)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dstNumNodes</span><span class="p">,</span><span class="w"> </span><span class="n">dstNumElems</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dstNumQuadElems</span><span class="p">,</span><span class="n">dstNumTriElems</span><span class="p">,</span><span class="w"> </span><span class="n">dstNumTotElems</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">spatialDim</span><span class="p">,</span><span class="w"> </span><span class="n">numOwnedNodes</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ownedNodeCoords</span><span class="p">(:)</span>
+
+
+<span class="w">  </span><span class="c">! result code</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">finalrc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span>
+
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">testname</span>
+
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Example failure&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">testname</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Example ESMF_FieldMeshRegridEx&quot;</span>
+
+
+<span class="c">! ------------------------------------------------------------------------------</span>
+<span class="c">! ------------------------------------------------------------------------------</span>
+
+
+<span class="w">  </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Initialize</span><span class="p">(</span><span class="n">vm</span><span class="o">=</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">defaultlogfilename</span><span class="o">=</span><span class="s2">&quot;FieldMeshRegridEx.Log&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="n">logkindflag</span><span class="o">=</span><span class="n">ESMF_LOGKIND_MULTI</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_VMGet</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">localPet</span><span class="o">=</span><span class="n">localPet</span><span class="p">,</span><span class="w"> </span><span class="n">petCount</span><span class="o">=</span><span class="n">petCount</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+
+<span class="w">  </span><span class="c">! Only do this in serial to make Mesh creation easier</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">petCount</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="p">(</span><span class="n">petCount</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">4</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+
+<span class="w">  </span><span class="c">!!!!!!!!!!!!!!!!!! SETUP SRC MESH !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">petCount</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="c">! Set number of nodes</span>
+<span class="w">  </span><span class="n">srcNumNodes</span><span class="o">=</span><span class="mi">9</span>
+
+<span class="w">  </span><span class="c">! Allocate and fill the node id array.</span>
+<span class="w">  </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcNodeIds</span><span class="p">(</span><span class="n">srcNumNodes</span><span class="p">))</span>
+<span class="w">  </span><span class="n">srcNodeIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">  </span><span class="c">! Allocate and fill node coordinate array.</span>
+<span class="w">  </span><span class="c">! Since this is a 2D Mesh the size is 2x the</span>
+<span class="w">  </span><span class="c">! number of nodes.</span>
+<span class="w">  </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcNodeCoords</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">srcNumNodes</span><span class="p">))</span>
+<span class="w">  </span><span class="n">srcNodeCoords</span><span class="o">=</span><span class="p">(</span><span class="o">/-</span><span class="mf">0.1</span><span class="p">,</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 1</span>
+<span class="w">                </span><span class="mf">1.0</span><span class="p">,</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 2</span>
+<span class="w">                </span><span class="mf">2.1</span><span class="p">,</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 3</span>
+<span class="w">               </span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 4</span>
+<span class="w">                </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 5</span>
+<span class="w">                </span><span class="mf">2.1</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 6</span>
+<span class="w">               </span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="mf">2.1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 7</span>
+<span class="w">                </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 8</span>
+<span class="w">                </span><span class="mf">2.1</span><span class="p">,</span><span class="w"> </span><span class="mf">2.1</span><span class="w"> </span><span class="o">/</span><span class="p">)</span><span class="w"> </span><span class="c">! node id 9</span>
+
+<span class="w">  </span><span class="c">! Allocate and fill the node owner array.</span>
+<span class="w">  </span><span class="c">! Since this Mesh is all on PET 0, it&#39;s just set to all 0.</span>
+<span class="w">  </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcNodeOwners</span><span class="p">(</span><span class="n">srcNumNodes</span><span class="p">))</span>
+<span class="w">  </span><span class="n">srcNodeOwners</span><span class="o">=</span><span class="mi">0</span><span class="w"> </span><span class="c">! everything on PET 0</span>
+
+<span class="w">  </span><span class="c">! Set the number of each type of element, plus the total number.</span>
+<span class="w">  </span><span class="n">srcNumQuadElems</span><span class="o">=</span><span class="mi">3</span>
+<span class="w">  </span><span class="n">srcNumTriElems</span><span class="o">=</span><span class="mi">2</span>
+<span class="w">  </span><span class="n">srcNumTotElems</span><span class="o">=</span><span class="n">srcNumQuadElems</span><span class="o">+</span><span class="n">srcNumTriElems</span>
+
+<span class="w">  </span><span class="c">! Allocate and fill the element id array.</span>
+<span class="w">  </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcElemIds</span><span class="p">(</span><span class="n">srcNumTotElems</span><span class="p">))</span>
+<span class="w">  </span><span class="n">srcElemIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+
+<span class="w">  </span><span class="c">! Allocate and fill the element topology type array.</span>
+<span class="w">  </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcElemTypes</span><span class="p">(</span><span class="n">srcNumTotElems</span><span class="p">))</span>
+<span class="w">  </span><span class="n">srcElemTypes</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="n">ESMF_MESHELEMTYPE_QUAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! elem id 1</span>
+<span class="w">              </span><span class="n">ESMF_MESHELEMTYPE_TRI</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! elem id 2</span>
+<span class="w">              </span><span class="n">ESMF_MESHELEMTYPE_TRI</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! elem id 3</span>
+<span class="w">              </span><span class="n">ESMF_MESHELEMTYPE_QUAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! elem id 4</span>
+<span class="w">              </span><span class="n">ESMF_MESHELEMTYPE_QUAD</span><span class="o">/</span><span class="p">)</span><span class="w">  </span><span class="c">! elem id 5</span>
+
+
+<span class="w">  </span><span class="c">! Allocate and fill the element connection type array.</span>
+<span class="w">  </span><span class="c">! Note that entries in this array refer to the </span>
+<span class="w">  </span><span class="c">! positions in the srcNodeIds, etc. arrays and that</span>
+<span class="w">  </span><span class="c">! the order and number of entries for each element</span>
+<span class="w">  </span><span class="c">! reflects that given in the Mesh options </span>
+<span class="w">  </span><span class="c">! section for the corresponding entry</span>
+<span class="w">  </span><span class="c">! in the srcElemTypes array.</span>
+<span class="w">  </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcElemConn</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">srcNumQuadElems</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">srcNumTriElems</span><span class="p">))</span>
+<span class="w">  </span><span class="n">srcElemConn</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span><span class="c">! elem id 1</span>
+<span class="w">             </span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="w">   </span><span class="p">&amp;</span><span class="w">  </span><span class="c">! elem id 2</span>
+<span class="w">             </span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="w">   </span><span class="p">&amp;</span><span class="w">  </span><span class="c">! elem id 3</span>
+<span class="w">             </span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span><span class="c">! elem id 4</span>
+<span class="w">             </span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="o">/</span><span class="p">)</span><span class="w">   </span><span class="c">! elem id 5</span>
+
+<span class="w"> </span><span class="k">else if</span><span class="w"> </span><span class="p">(</span><span class="n">petCount</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">     </span><span class="c">! Setup mesh data depending on PET</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localPET</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="c">!!! This part only for PET 0</span>
+<span class="w">       </span><span class="c">! Set number of nodes</span>
+<span class="w">       </span><span class="n">srcnumNodes</span><span class="o">=</span><span class="mi">4</span>
+
+<span class="w">       </span><span class="c">! Allocate and fill the node id array.</span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcnodeIds</span><span class="p">(</span><span class="n">srcnumNodes</span><span class="p">))</span>
+<span class="w">       </span><span class="n">srcnodeIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">       </span><span class="c">! Allocate and fill node coordinate array.</span>
+<span class="w">       </span><span class="c">! Since this is a 2D Mesh the size is 2x the</span>
+<span class="w">       </span><span class="c">! number of nodes.</span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcnodeCoords</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">srcnumNodes</span><span class="p">))</span>
+<span class="w">       </span><span class="n">srcnodeCoords</span><span class="o">=</span><span class="p">(</span><span class="o">/-</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 1</span>
+<span class="w">                     </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 2</span>
+<span class="w">                    </span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="w">  </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 4</span>
+<span class="w">                     </span><span class="mf">1.0</span><span class="p">,</span><span class="w">  </span><span class="mf">1.0</span><span class="w"> </span><span class="o">/</span><span class="p">)</span><span class="w"> </span><span class="c">! node id 5</span>
+
+<span class="w">       </span><span class="c">! Allocate and fill the node owner array.</span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcnodeOwners</span><span class="p">(</span><span class="n">srcnumNodes</span><span class="p">))</span>
+<span class="w">       </span><span class="n">srcnodeOwners</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 1</span>
+<span class="w">                    </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 2</span>
+<span class="w">                    </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 4</span>
+<span class="w">                    </span><span class="mi">0</span><span class="o">/</span><span class="p">)</span><span class="w">  </span><span class="c">! node id 5</span>
+
+<span class="w">       </span><span class="c">! Set the number of each type of element, plus the total number.</span>
+<span class="w">       </span><span class="n">srcnumQuadElems</span><span class="o">=</span><span class="mi">1</span>
+<span class="w">       </span><span class="n">srcnumTriElems</span><span class="o">=</span><span class="mi">0</span>
+<span class="w">       </span><span class="n">srcnumTotElems</span><span class="o">=</span><span class="n">srcnumQuadElems</span><span class="o">+</span><span class="n">srcnumTriElems</span>
+
+<span class="w">       </span><span class="c">! Allocate and fill the element id array.</span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcelemIds</span><span class="p">(</span><span class="n">srcnumTotElems</span><span class="p">))</span>
+<span class="w">       </span><span class="n">srcelemIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">       </span><span class="c">! Allocate and fill the element topology type array.</span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcelemTypes</span><span class="p">(</span><span class="n">srcnumTotElems</span><span class="p">))</span>
+<span class="w">       </span><span class="n">srcelemTypes</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="n">ESMF_MESHELEMTYPE_QUAD</span><span class="o">/</span><span class="p">)</span><span class="w"> </span><span class="c">! elem id 1</span>
+
+<span class="w">       </span><span class="c">! Allocate and fill the element connection type array.</span>
+<span class="w">       </span><span class="c">! Note that entry are local indices</span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcelemConn</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">srcnumQuadElems</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">srcnumTriElems</span><span class="p">))</span>
+<span class="w">       </span><span class="n">srcelemConn</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="p">)</span><span class="w"> </span><span class="c">! elem id 1</span>
+
+<span class="w">     </span><span class="k">else if</span><span class="w"> </span><span class="p">(</span><span class="n">localPET</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="c">!!! This part only for PET 1</span>
+<span class="w">       </span><span class="c">! Set number of nodes</span>
+<span class="w">       </span><span class="n">srcnumNodes</span><span class="o">=</span><span class="mi">4</span>
+
+<span class="w">       </span><span class="c">! Allocate and fill the node id array.</span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcnodeIds</span><span class="p">(</span><span class="n">srcnumNodes</span><span class="p">))</span>
+<span class="w">       </span><span class="n">srcnodeIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">       </span><span class="c">! Allocate and fill node coordinate array.</span>
+<span class="w">       </span><span class="c">! Since this is a 2D Mesh the size is 2x the</span>
+<span class="w">       </span><span class="c">! number of nodes.</span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcnodeCoords</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">srcnumNodes</span><span class="p">))</span>
+<span class="w">       </span><span class="n">srcnodeCoords</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mf">1.0</span><span class="p">,</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 2</span>
+<span class="w">                    </span><span class="mf">2.1</span><span class="p">,</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 3</span>
+<span class="w">                    </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 5</span>
+<span class="w">                    </span><span class="mf">2.1</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="o">/</span><span class="p">)</span><span class="w"> </span><span class="c">! node id 6</span>
+
+<span class="w">       </span><span class="c">! Allocate and fill the node owner array.</span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcnodeOwners</span><span class="p">(</span><span class="n">srcnumNodes</span><span class="p">))</span>
+<span class="w">       </span><span class="n">srcnodeOwners</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 2</span>
+<span class="w">                    </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 3</span>
+<span class="w">                    </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 5</span>
+<span class="w">                    </span><span class="mi">1</span><span class="o">/</span><span class="p">)</span><span class="w">  </span><span class="c">! node id 6</span>
+
+<span class="w">       </span><span class="c">! Set the number of each type of element, plus the total number.</span>
+<span class="w">       </span><span class="n">srcnumQuadElems</span><span class="o">=</span><span class="mi">0</span>
+<span class="w">       </span><span class="n">srcnumTriElems</span><span class="o">=</span><span class="mi">2</span>
+<span class="w">       </span><span class="n">srcnumTotElems</span><span class="o">=</span><span class="n">srcnumQuadElems</span><span class="o">+</span><span class="n">srcnumTriElems</span>
+
+<span class="w">       </span><span class="c">! Allocate and fill the element id array.</span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcelemIds</span><span class="p">(</span><span class="n">srcnumTotElems</span><span class="p">))</span>
+<span class="w">       </span><span class="n">srcelemIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">       </span><span class="c">! Allocate and fill the element topology type array.</span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcelemTypes</span><span class="p">(</span><span class="n">srcnumTotElems</span><span class="p">))</span>
+<span class="w">       </span><span class="n">srcelemTypes</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="n">ESMF_MESHELEMTYPE_TRI</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! elem id 2</span>
+<span class="w">                   </span><span class="n">ESMF_MESHELEMTYPE_TRI</span><span class="o">/</span><span class="p">)</span><span class="w">  </span><span class="c">! elem id 3</span>
+
+<span class="w">       </span><span class="c">! Allocate and fill the element connection type array.</span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcelemConn</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">srcnumQuadElems</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">srcnumTriElems</span><span class="p">))</span>
+<span class="w">       </span><span class="n">srcelemConn</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! elem id 2</span>
+<span class="w">                  </span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="p">)</span><span class="w">  </span><span class="c">! elem id 3</span>
+
+<span class="w">    </span><span class="k">else if</span><span class="w"> </span><span class="p">(</span><span class="n">localPET</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="c">!!! This part only for PET 2</span>
+<span class="w">        </span><span class="c">! Set number of nodes</span>
+<span class="w">        </span><span class="n">srcnumNodes</span><span class="o">=</span><span class="mi">4</span>
+
+<span class="w">        </span><span class="c">! Allocate and fill the node id array.</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcnodeIds</span><span class="p">(</span><span class="n">srcnumNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">srcnodeIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">! Allocate and fill node coordinate array.</span>
+<span class="w">        </span><span class="c">! Since this is a 2D Mesh the size is 2x the</span>
+<span class="w">        </span><span class="c">! number of nodes.</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcnodeCoords</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">srcnumNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">srcnodeCoords</span><span class="o">=</span><span class="p">(</span><span class="o">/-</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 4</span>
+<span class="w">                      </span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 5</span>
+<span class="w">                     </span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">2.1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 7</span>
+<span class="w">                      </span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.1</span><span class="w"> </span><span class="o">/</span><span class="p">)</span><span class="w"> </span><span class="c">! node id 8</span>
+
+<span class="w">        </span><span class="c">! Allocate and fill the node owner array.</span>
+<span class="w">        </span><span class="c">! Since this Mesh is all on PET 0, it&#39;s just set to all 0.</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcnodeOwners</span><span class="p">(</span><span class="n">srcnumNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">srcnodeOwners</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 4</span>
+<span class="w">                     </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 5</span>
+<span class="w">                     </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 7</span>
+<span class="w">                     </span><span class="mi">2</span><span class="o">/</span><span class="p">)</span><span class="w">  </span><span class="c">! node id 8</span>
+
+<span class="w">        </span><span class="c">! Set the number of each type of element, plus the total number.</span>
+<span class="w">        </span><span class="n">srcnumQuadElems</span><span class="o">=</span><span class="mi">1</span>
+<span class="w">        </span><span class="n">srcnumTriElems</span><span class="o">=</span><span class="mi">0</span>
+<span class="w">        </span><span class="n">srcnumTotElems</span><span class="o">=</span><span class="n">srcnumQuadElems</span><span class="o">+</span><span class="n">srcnumTriElems</span>
+
+<span class="w">        </span><span class="c">! Allocate and fill the element id array.</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcelemIds</span><span class="p">(</span><span class="n">srcnumTotElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">srcelemIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">4</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">! Allocate and fill the element topology type array.</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcelemTypes</span><span class="p">(</span><span class="n">srcnumTotElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">srcelemTypes</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="n">ESMF_MESHELEMTYPE_QUAD</span><span class="o">/</span><span class="p">)</span><span class="w"> </span><span class="c">! elem id 4</span>
+
+<span class="w">        </span><span class="c">! Allocate and fill the element connection type array.</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcelemConn</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">srcnumQuadElems</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">srcnumTriElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">srcelemConn</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="p">)</span><span class="w"> </span><span class="c">! elem id 4</span>
+
+<span class="w">     </span><span class="k">else if</span><span class="w"> </span><span class="p">(</span><span class="n">localPET</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="c">!!! This part only for PET 3</span>
+<span class="w">        </span><span class="c">! Set number of nodes</span>
+<span class="w">        </span><span class="n">srcnumNodes</span><span class="o">=</span><span class="mi">4</span>
+
+<span class="w">        </span><span class="c">! Allocate and fill the node id array.</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcnodeIds</span><span class="p">(</span><span class="n">srcnumNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">srcnodeIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">! Allocate and fill node coordinate array.</span>
+<span class="w">        </span><span class="c">! Since this is a 2D Mesh the size is 2x the</span>
+<span class="w">        </span><span class="c">! number of nodes.</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcnodeCoords</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">srcnumNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">srcnodeCoords</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span><span class="c">! node id 5</span>
+<span class="w">                     </span><span class="mf">2.1</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span><span class="c">! node id 6</span>
+<span class="w">                     </span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span><span class="c">! node id 8</span>
+<span class="w">                     </span><span class="mf">2.1</span><span class="p">,</span><span class="mf">2.1</span><span class="w"> </span><span class="o">/</span><span class="p">)</span><span class="w">  </span><span class="c">! node id 9</span>
+
+<span class="w">        </span><span class="c">! Allocate and fill the node owner array.</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcnodeOwners</span><span class="p">(</span><span class="n">srcnumNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">srcnodeOwners</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 5</span>
+<span class="w">                     </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 6</span>
+<span class="w">                     </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 8</span>
+<span class="w">                     </span><span class="mi">3</span><span class="o">/</span><span class="p">)</span><span class="w">  </span><span class="c">! node id 9</span>
+<span class="w"> </span>
+<span class="w">        </span><span class="c">! Set the number of each type of element, plus the total number.</span>
+<span class="w">        </span><span class="n">srcnumQuadElems</span><span class="o">=</span><span class="mi">1</span>
+<span class="w">        </span><span class="n">srcnumTriElems</span><span class="o">=</span><span class="mi">0</span>
+<span class="w">        </span><span class="n">srcnumTotElems</span><span class="o">=</span><span class="n">srcnumQuadElems</span><span class="o">+</span><span class="n">srcnumTriElems</span>
+
+<span class="w">        </span><span class="c">! Allocate and fill the element id array.</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcelemIds</span><span class="p">(</span><span class="n">srcnumTotElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">srcelemIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">5</span><span class="o">/</span><span class="p">)</span><span class="w">  </span>
+
+<span class="w">        </span><span class="c">! Allocate and fill the element topology type array.</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcelemTypes</span><span class="p">(</span><span class="n">srcnumTotElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">srcelemTypes</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="n">ESMF_MESHELEMTYPE_QUAD</span><span class="o">/</span><span class="p">)</span><span class="w"> </span><span class="c">! elem id 5</span>
+
+<span class="w">        </span><span class="c">! Allocate and fill the element connection type array.</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">srcelemConn</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">srcnumQuadElems</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">srcnumTriElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">srcelemConn</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="p">)</span><span class="w"> </span><span class="c">! elem id 5</span>
+<span class="w">       </span><span class="k">endif</span>
+<span class="k">    endif</span>
+
+
+<span class="w">  </span><span class="c">!!!!!!!!!!!!!!!!!! SETUP DST MESH !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">petCount</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="c">! Set number of nodes</span>
+<span class="w">  </span><span class="n">dstNumNodes</span><span class="o">=</span><span class="mi">9</span>
+
+<span class="w">  </span><span class="c">! Allocate and fill the node id array.</span>
+<span class="w">  </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstNodeIds</span><span class="p">(</span><span class="n">dstNumNodes</span><span class="p">))</span>
+<span class="w">  </span><span class="n">dstNodeIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">  </span><span class="c">! Allocate and fill node coordinate array.</span>
+<span class="w">  </span><span class="c">! Since this is a 2D Mesh the size is 2x the</span>
+<span class="w">  </span><span class="c">! number of nodes.</span>
+<span class="w">  </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstNodeCoords</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">dstNumNodes</span><span class="p">))</span>
+<span class="w">  </span><span class="n">dstNodeCoords</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 1</span>
+<span class="w">               </span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 2</span>
+<span class="w">               </span><span class="mf">2.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 3</span>
+<span class="w">               </span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 4</span>
+<span class="w">               </span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 5</span>
+<span class="w">               </span><span class="mf">2.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 6</span>
+<span class="w">               </span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 7</span>
+<span class="w">               </span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 8</span>
+<span class="w">               </span><span class="mf">2.0</span><span class="p">,</span><span class="mf">2.0</span><span class="w"> </span><span class="o">/</span><span class="p">)</span><span class="w"> </span><span class="c">! node id 9</span>
+
+
+<span class="w">  </span><span class="c">! Allocate and fill the node owner array.</span>
+<span class="w">  </span><span class="c">! Since this Mesh is all on PET 0, it&#39;s just set to all 0.</span>
+<span class="w">  </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstNodeOwners</span><span class="p">(</span><span class="n">dstNumNodes</span><span class="p">))</span>
+<span class="w">  </span><span class="n">dstNodeOwners</span><span class="o">=</span><span class="mi">0</span><span class="w"> </span><span class="c">! everything on PET 0</span>
+
+<span class="w">  </span><span class="c">! Set the number of each type of element, plus the total number.</span>
+<span class="w">  </span><span class="n">dstNumQuadElems</span><span class="o">=</span><span class="mi">3</span>
+<span class="w">  </span><span class="n">dstNumTriElems</span><span class="o">=</span><span class="mi">2</span>
+<span class="w">  </span><span class="n">dstNumTotElems</span><span class="o">=</span><span class="n">dstNumQuadElems</span><span class="o">+</span><span class="n">dstNumTriElems</span>
+
+<span class="w">  </span><span class="c">! Allocate and fill the element id array.</span>
+<span class="w">  </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstElemIds</span><span class="p">(</span><span class="n">dstNumTotElems</span><span class="p">))</span>
+<span class="w">  </span><span class="n">dstElemIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+
+<span class="w">  </span><span class="c">! Allocate and fill the element topology type array.</span>
+<span class="w">  </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstElemTypes</span><span class="p">(</span><span class="n">dstNumTotElems</span><span class="p">))</span>
+<span class="w">  </span><span class="n">dstElemTypes</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="n">ESMF_MESHELEMTYPE_QUAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! elem id 1</span>
+<span class="w">              </span><span class="n">ESMF_MESHELEMTYPE_TRI</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! elem id 2</span>
+<span class="w">              </span><span class="n">ESMF_MESHELEMTYPE_TRI</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! elem id 3</span>
+<span class="w">              </span><span class="n">ESMF_MESHELEMTYPE_QUAD</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! elem id 4</span>
+<span class="w">              </span><span class="n">ESMF_MESHELEMTYPE_QUAD</span><span class="o">/</span><span class="p">)</span><span class="w">  </span><span class="c">! elem id 5</span>
+
+
+<span class="w">  </span><span class="c">! Allocate and fill the element connection type array.</span>
+<span class="w">  </span><span class="c">! Note that entries in this array refer to the </span>
+<span class="w">  </span><span class="c">! positions in the dstNodeIds, etc. arrays and that</span>
+<span class="w">  </span><span class="c">! the order and number of entries for each element</span>
+<span class="w">  </span><span class="c">! reflects that given in the Mesh options </span>
+<span class="w">  </span><span class="c">! section for the corresponding entry</span>
+<span class="w">  </span><span class="c">! in the dstElemTypes array.</span>
+<span class="w">  </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstElemConn</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">dstNumQuadElems</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">dstNumTriElems</span><span class="p">))</span>
+<span class="w">  </span><span class="n">dstElemConn</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span><span class="c">! elem id 1</span>
+<span class="w">             </span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="w">   </span><span class="p">&amp;</span><span class="w">  </span><span class="c">! elem id 2</span>
+<span class="w">             </span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="w">   </span><span class="p">&amp;</span><span class="w">  </span><span class="c">! elem id 3</span>
+<span class="w">             </span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span><span class="c">! elem id 4</span>
+<span class="w">             </span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="o">/</span><span class="p">)</span><span class="w">   </span><span class="c">! elem id 5</span>
+<span class="w"> </span><span class="k">else if</span><span class="w"> </span><span class="p">(</span><span class="n">petCount</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">     </span><span class="c">! Setup mesh data depending on PET</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localPET</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="c">!!! This part only for PET 0</span>
+<span class="w">       </span><span class="c">! Set number of nodes</span>
+<span class="w">       </span><span class="n">dstnumNodes</span><span class="o">=</span><span class="mi">4</span>
+
+<span class="w">       </span><span class="c">! Allocate and fill the node id array.</span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstnodeIds</span><span class="p">(</span><span class="n">dstnumNodes</span><span class="p">))</span>
+<span class="w">       </span><span class="n">dstnodeIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">       </span><span class="c">! Allocate and fill node coordinate array.</span>
+<span class="w">       </span><span class="c">! Since this is a 2D Mesh the size is 2x the</span>
+<span class="w">       </span><span class="c">! number of nodes.</span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstnodeCoords</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">dstnumNodes</span><span class="p">))</span>
+<span class="w">       </span><span class="n">dstnodeCoords</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 1</span>
+<span class="w">                     </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 2</span>
+<span class="w">                    </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 4</span>
+<span class="w">                     </span><span class="mf">1.0</span><span class="p">,</span><span class="w">  </span><span class="mf">1.0</span><span class="w"> </span><span class="o">/</span><span class="p">)</span><span class="w"> </span><span class="c">! node id 5</span>
+
+<span class="w">       </span><span class="c">! Allocate and fill the node owner array.</span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstnodeOwners</span><span class="p">(</span><span class="n">dstnumNodes</span><span class="p">))</span>
+<span class="w">       </span><span class="n">dstnodeOwners</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 1</span>
+<span class="w">                    </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 2</span>
+<span class="w">                    </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 4</span>
+<span class="w">                    </span><span class="mi">0</span><span class="o">/</span><span class="p">)</span><span class="w">  </span><span class="c">! node id 5</span>
+
+<span class="w">       </span><span class="c">! Set the number of each type of element, plus the total number.</span>
+<span class="w">       </span><span class="n">dstnumQuadElems</span><span class="o">=</span><span class="mi">1</span>
+<span class="w">       </span><span class="n">dstnumTriElems</span><span class="o">=</span><span class="mi">0</span>
+<span class="w">       </span><span class="n">dstnumTotElems</span><span class="o">=</span><span class="n">dstnumQuadElems</span><span class="o">+</span><span class="n">dstnumTriElems</span>
+
+<span class="w">       </span><span class="c">! Allocate and fill the element id array.</span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstelemIds</span><span class="p">(</span><span class="n">dstnumTotElems</span><span class="p">))</span>
+<span class="w">       </span><span class="n">dstelemIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">       </span><span class="c">! Allocate and fill the element topology type array.</span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstelemTypes</span><span class="p">(</span><span class="n">dstnumTotElems</span><span class="p">))</span>
+<span class="w">       </span><span class="n">dstelemTypes</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="n">ESMF_MESHELEMTYPE_QUAD</span><span class="o">/</span><span class="p">)</span><span class="w"> </span><span class="c">! elem id 1</span>
+
+<span class="w">       </span><span class="c">! Allocate and fill the element connection type array.</span>
+<span class="w">       </span><span class="c">! Note that entry are local indices</span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstelemConn</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">dstnumQuadElems</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">dstnumTriElems</span><span class="p">))</span>
+<span class="w">       </span><span class="n">dstelemConn</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="p">)</span><span class="w"> </span><span class="c">! elem id 1</span>
+
+<span class="w">     </span><span class="k">else if</span><span class="w"> </span><span class="p">(</span><span class="n">localPET</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="c">!!! This part only for PET 1</span>
+<span class="w">       </span><span class="c">! Set number of nodes</span>
+<span class="w">       </span><span class="n">dstnumNodes</span><span class="o">=</span><span class="mi">4</span>
+
+<span class="w">       </span><span class="c">! Allocate and fill the node id array.</span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstnodeIds</span><span class="p">(</span><span class="n">dstnumNodes</span><span class="p">))</span>
+<span class="w">       </span><span class="n">dstnodeIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">       </span><span class="c">! Allocate and fill node coordinate array.</span>
+<span class="w">       </span><span class="c">! Since this is a 2D Mesh the size is 2x the</span>
+<span class="w">       </span><span class="c">! number of nodes.</span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstnodeCoords</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">dstnumNodes</span><span class="p">))</span>
+<span class="w">       </span><span class="n">dstnodeCoords</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 2</span>
+<span class="w">                    </span><span class="mf">2.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 3</span>
+<span class="w">                    </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 5</span>
+<span class="w">                    </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="o">/</span><span class="p">)</span><span class="w"> </span><span class="c">! node id 6</span>
+
+<span class="w">       </span><span class="c">! Allocate and fill the node owner array.</span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstnodeOwners</span><span class="p">(</span><span class="n">dstnumNodes</span><span class="p">))</span>
+<span class="w">       </span><span class="n">dstnodeOwners</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 2</span>
+<span class="w">                    </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 3</span>
+<span class="w">                    </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 5</span>
+<span class="w">                    </span><span class="mi">1</span><span class="o">/</span><span class="p">)</span><span class="w">  </span><span class="c">! node id 6</span>
+
+<span class="w">       </span><span class="c">! Set the number of each type of element, plus the total number.</span>
+<span class="w">       </span><span class="n">dstnumQuadElems</span><span class="o">=</span><span class="mi">0</span>
+<span class="w">       </span><span class="n">dstnumTriElems</span><span class="o">=</span><span class="mi">2</span>
+<span class="w">       </span><span class="n">dstnumTotElems</span><span class="o">=</span><span class="n">dstnumQuadElems</span><span class="o">+</span><span class="n">dstnumTriElems</span>
+
+<span class="w">       </span><span class="c">! Allocate and fill the element id array.</span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstelemIds</span><span class="p">(</span><span class="n">dstnumTotElems</span><span class="p">))</span>
+<span class="w">       </span><span class="n">dstelemIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">       </span><span class="c">! Allocate and fill the element topology type array.</span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstelemTypes</span><span class="p">(</span><span class="n">dstnumTotElems</span><span class="p">))</span>
+<span class="w">       </span><span class="n">dstelemTypes</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="n">ESMF_MESHELEMTYPE_TRI</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! elem id 2</span>
+<span class="w">                   </span><span class="n">ESMF_MESHELEMTYPE_TRI</span><span class="o">/</span><span class="p">)</span><span class="w">  </span><span class="c">! elem id 3</span>
+
+<span class="w">       </span><span class="c">! Allocate and fill the element connection type array.</span>
+<span class="w">       </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstelemConn</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">dstnumQuadElems</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">dstnumTriElems</span><span class="p">))</span>
+<span class="w">       </span><span class="n">dstelemConn</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! elem id 2</span>
+<span class="w">                  </span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="p">)</span><span class="w">  </span><span class="c">! elem id 3</span>
+
+<span class="w">    </span><span class="k">else if</span><span class="w"> </span><span class="p">(</span><span class="n">localPET</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="c">!!! This part only for PET 2</span>
+<span class="w">        </span><span class="c">! Set number of nodes</span>
+<span class="w">        </span><span class="n">dstnumNodes</span><span class="o">=</span><span class="mi">4</span>
+
+<span class="w">        </span><span class="c">! Allocate and fill the node id array.</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstnodeIds</span><span class="p">(</span><span class="n">dstnumNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">dstnodeIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">! Allocate and fill node coordinate array.</span>
+<span class="w">        </span><span class="c">! Since this is a 2D Mesh the size is 2x the</span>
+<span class="w">        </span><span class="c">! number of nodes.</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstnodeCoords</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">dstnumNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">dstnodeCoords</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 4</span>
+<span class="w">                      </span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 5</span>
+<span class="w">                      </span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 7</span>
+<span class="w">                      </span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="w"> </span><span class="o">/</span><span class="p">)</span><span class="w"> </span><span class="c">! node id 8</span>
+
+<span class="w">        </span><span class="c">! Allocate and fill the node owner array.</span>
+<span class="w">        </span><span class="c">! Since this Mesh is all on PET 0, it&#39;s just set to all 0.</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstnodeOwners</span><span class="p">(</span><span class="n">dstnumNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">dstnodeOwners</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 4</span>
+<span class="w">                     </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 5</span>
+<span class="w">                     </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 7</span>
+<span class="w">                     </span><span class="mi">2</span><span class="o">/</span><span class="p">)</span><span class="w">  </span><span class="c">! node id 8</span>
+
+<span class="w">        </span><span class="c">! Set the number of each type of element, plus the total number.</span>
+<span class="w">        </span><span class="n">dstnumQuadElems</span><span class="o">=</span><span class="mi">1</span>
+<span class="w">        </span><span class="n">dstnumTriElems</span><span class="o">=</span><span class="mi">0</span>
+<span class="w">        </span><span class="n">dstnumTotElems</span><span class="o">=</span><span class="n">dstnumQuadElems</span><span class="o">+</span><span class="n">dstnumTriElems</span>
+
+<span class="w">        </span><span class="c">! Allocate and fill the element id array.</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstelemIds</span><span class="p">(</span><span class="n">dstnumTotElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">dstelemIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">4</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">! Allocate and fill the element topology type array.</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstelemTypes</span><span class="p">(</span><span class="n">dstnumTotElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">dstelemTypes</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="n">ESMF_MESHELEMTYPE_QUAD</span><span class="o">/</span><span class="p">)</span><span class="w"> </span><span class="c">! elem id 4</span>
+
+<span class="w">        </span><span class="c">! Allocate and fill the element connection type array.</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstelemConn</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">dstnumQuadElems</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">dstnumTriElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">dstelemConn</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="p">)</span><span class="w"> </span><span class="c">! elem id 4</span>
+
+<span class="w">     </span><span class="k">else if</span><span class="w"> </span><span class="p">(</span><span class="n">localPET</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="c">!!! This part only for PET 3</span>
+<span class="w">        </span><span class="c">! Set number of nodes</span>
+<span class="w">        </span><span class="n">dstnumNodes</span><span class="o">=</span><span class="mi">4</span>
+
+<span class="w">        </span><span class="c">! Allocate and fill the node id array.</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstnodeIds</span><span class="p">(</span><span class="n">dstnumNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">dstnodeIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="o">/</span><span class="p">)</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c">! Allocate and fill node coordinate array.</span>
+<span class="w">        </span><span class="c">! Since this is a 2D Mesh the size is 2x the</span>
+<span class="w">        </span><span class="c">! number of nodes.</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstnodeCoords</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">dstnumNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">dstnodeCoords</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span><span class="c">! node id 5</span>
+<span class="w">                     </span><span class="mf">2.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span><span class="c">! node id 6</span>
+<span class="w">                     </span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span><span class="c">! node id 8</span>
+<span class="w">                     </span><span class="mf">2.0</span><span class="p">,</span><span class="mf">2.0</span><span class="w"> </span><span class="o">/</span><span class="p">)</span><span class="w">  </span><span class="c">! node id 9</span>
+
+<span class="w">        </span><span class="c">! Allocate and fill the node owner array.</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstnodeOwners</span><span class="p">(</span><span class="n">dstnumNodes</span><span class="p">))</span>
+<span class="w">        </span><span class="n">dstnodeOwners</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 5</span>
+<span class="w">                     </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 6</span>
+<span class="w">                     </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! node id 8</span>
+<span class="w">                     </span><span class="mi">3</span><span class="o">/</span><span class="p">)</span><span class="w">  </span><span class="c">! node id 9</span>
+<span class="w"> </span>
+<span class="w">        </span><span class="c">! Set the number of each type of element, plus the total number.</span>
+<span class="w">        </span><span class="n">dstnumQuadElems</span><span class="o">=</span><span class="mi">1</span>
+<span class="w">        </span><span class="n">dstnumTriElems</span><span class="o">=</span><span class="mi">0</span>
+<span class="w">        </span><span class="n">dstnumTotElems</span><span class="o">=</span><span class="n">dstnumQuadElems</span><span class="o">+</span><span class="n">dstnumTriElems</span>
+
+<span class="w">        </span><span class="c">! Allocate and fill the element id array.</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstelemIds</span><span class="p">(</span><span class="n">dstnumTotElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">dstelemIds</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">5</span><span class="o">/</span><span class="p">)</span><span class="w">  </span>
+
+<span class="w">        </span><span class="c">! Allocate and fill the element topology type array.</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstelemTypes</span><span class="p">(</span><span class="n">dstnumTotElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">dstelemTypes</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="n">ESMF_MESHELEMTYPE_QUAD</span><span class="o">/</span><span class="p">)</span><span class="w"> </span><span class="c">! elem id 5</span>
+
+<span class="w">        </span><span class="c">! Allocate and fill the element connection type array.</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">dstelemConn</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">dstnumQuadElems</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">dstnumTriElems</span><span class="p">))</span>
+<span class="w">        </span><span class="n">dstelemConn</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="p">)</span><span class="w"> </span><span class="c">! elem id 5</span>
+<span class="w">       </span><span class="k">endif</span>
+<span class="k">    endif</span>
+
+
+<span class="c">!BOE</span>
+<span class="c">!\subsubsection{Field regrid example: Mesh to Mesh}</span>
+<span class="c">! This example demonstrates the regridding process between Fields created on Meshes. First</span>
+<span class="c">! the Meshes are created. This example omits the setup of the arrays describing the Mesh, but please see</span>
+<span class="c">! Section~\ref{sec:mesh:usage:meshCreation} for examples of this. After creation Fields are constructed on the Meshes, </span>
+<span class="c">! and then ESMF\_FieldRegridStore() is called to construct a RouteHandle implementing the regrid operation. Finally, ESMF\_FieldRegrid() is</span>
+<span class="c">! called with the Fields and the RouteHandle to do the interpolation between the source Field and </span>
+<span class="c">! destination Field.  Note the coordinates of the source and destination Mesh should be in degrees.</span>
+<span class="c">! </span>
+<span class="c">!EOE</span>
+
+<span class="c">!BOC</span>
+
+<span class="w">  </span><span class="c">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+<span class="w">  </span><span class="c">! Create Source Mesh</span>
+<span class="w">  </span><span class="c">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+
+<span class="w">  </span><span class="c">! Create the Mesh structure.</span>
+<span class="w">  </span><span class="c">! For brevity&#39;s sake, the code to fill the Mesh creation </span>
+<span class="w">  </span><span class="c">! arrays is omitted from this example. However, here</span>
+<span class="w">  </span><span class="c">! is a brief description of the arrays:</span>
+<span class="w">  </span><span class="c">! srcNodeIds    - the global ids for the src nodes</span>
+<span class="w">  </span><span class="c">! srcNodeCoords - the coordinates for the src nodes</span>
+<span class="w">  </span><span class="c">! srcNodeOwners - which PET owns each src node</span>
+<span class="w">  </span><span class="c">! srcElemIds    - the global ids of the src elements</span>
+<span class="w">  </span><span class="c">! srcElemTypes  - the topological shape of each src element</span>
+<span class="w">  </span><span class="c">! srcElemConn   - how to connect the nodes to form the elements</span>
+<span class="w">  </span><span class="c">!                 in the source mesh</span>
+<span class="w">  </span><span class="c">! Several examples of setting up these arrays can be seen in</span>
+<span class="w">  </span><span class="c">! the Mesh Section &quot;Mesh Creation&quot;. </span>
+<span class="w">  </span><span class="n">srcMesh</span><span class="o">=</span><span class="n">ESMF_MeshCreate</span><span class="p">(</span><span class="n">parametricDim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">spatialDim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">nodeIds</span><span class="o">=</span><span class="n">srcNodeIds</span><span class="p">,</span><span class="w"> </span><span class="n">nodeCoords</span><span class="o">=</span><span class="n">srcNodeCoords</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">nodeOwners</span><span class="o">=</span><span class="n">srcNodeOwners</span><span class="p">,</span><span class="w"> </span><span class="n">elementIds</span><span class="o">=</span><span class="n">srcElemIds</span><span class="p">,&amp;</span>
+<span class="w">         </span><span class="n">elementTypes</span><span class="o">=</span><span class="n">srcElemTypes</span><span class="p">,</span><span class="w"> </span><span class="n">elementConn</span><span class="o">=</span><span class="n">srcElemConn</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+
+
+<span class="w">  </span><span class="c">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+<span class="w">  </span><span class="c">! Create and Fill Source Field</span>
+<span class="w">  </span><span class="c">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+
+<span class="w">  </span><span class="c">! Set description of source Field</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_ArraySpecSet</span><span class="p">(</span><span class="n">arrayspec</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_TYPEKIND_R8</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Create source Field</span>
+<span class="w">  </span><span class="n">srcField</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">srcMesh</span><span class="p">,</span><span class="w"> </span><span class="n">arrayspec</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                        </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;source&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Get source Field data pointer to put data into</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">srcField</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">fptr1D</span><span class="p">,</span><span class="w">  </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Get number of local nodes to allocate space</span>
+<span class="w">  </span><span class="c">! to hold local node coordinates</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_MeshGet</span><span class="p">(</span><span class="n">srcMesh</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">numOwnedNodes</span><span class="o">=</span><span class="n">numOwnedNodes</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Allocate space to hold local node coordinates</span>
+<span class="w">  </span><span class="c">! (spatial dimension of Mesh*number of local nodes)</span>
+<span class="w">  </span><span class="k">allocate</span><span class="p">(</span><span class="n">ownedNodeCoords</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">numOwnedNodes</span><span class="p">))</span>
+
+<span class="w">  </span><span class="c">! Get local node coordinates</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_MeshGet</span><span class="p">(</span><span class="n">srcMesh</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">ownedNodeCoords</span><span class="o">=</span><span class="n">ownedNodeCoords</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Set the source Field to the function 20.0+x+y</span>
+<span class="w">  </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">numOwnedNodes</span>
+<span class="w">    </span><span class="c">! Get coordinates</span>
+<span class="w">    </span><span class="n">x</span><span class="o">=</span><span class="n">ownedNodeCoords</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="n">y</span><span class="o">=</span><span class="n">ownedNodeCoords</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! Set source function</span>
+<span class="w">   </span><span class="n">fptr1D</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="mf">0.0</span><span class="o">+</span><span class="n">x</span><span class="o">+</span><span class="n">y</span>
+<span class="w">  </span><span class="k">enddo</span>
+
+<span class="w">  </span><span class="c">! Deallocate local node coordinates</span>
+<span class="w">  </span><span class="k">deallocate</span><span class="p">(</span><span class="n">ownedNodeCoords</span><span class="p">)</span>
+
+
+<span class="w">  </span><span class="c">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+<span class="w">  </span><span class="c">! Create Destination Mesh</span>
+<span class="w">  </span><span class="c">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+
+<span class="w">  </span><span class="c">! Create the Mesh structure.</span>
+<span class="w">  </span><span class="c">! For brevity&#39;s sake, the code to fill the Mesh creation </span>
+<span class="w">  </span><span class="c">! arrays is omitted from this example. However, here</span>
+<span class="w">  </span><span class="c">! is a brief description of the arrays:</span>
+<span class="w">  </span><span class="c">! dstNodeIds    - the global ids for the dst nodes</span>
+<span class="w">  </span><span class="c">! dstNodeCoords - the coordinates for the dst nodes</span>
+<span class="w">  </span><span class="c">! dstNodeOwners - which PET owns each dst node</span>
+<span class="w">  </span><span class="c">! dstElemIds    - the global ids of the dst elements</span>
+<span class="w">  </span><span class="c">! dstElemTypes  - the topological shape of each dst element</span>
+<span class="w">  </span><span class="c">! dstElemConn   - how to connect the nodes to form the elements</span>
+<span class="w">  </span><span class="c">!                 in the destination mesh</span>
+<span class="w">  </span><span class="c">! Several examples of setting up these arrays can be seen in</span>
+<span class="w">  </span><span class="c">! the Mesh Section &quot;Mesh Creation&quot;. </span>
+<span class="w">  </span><span class="n">dstMesh</span><span class="o">=</span><span class="n">ESMF_MeshCreate</span><span class="p">(</span><span class="n">parametricDim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">spatialDim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">nodeIds</span><span class="o">=</span><span class="n">dstNodeIds</span><span class="p">,</span><span class="w"> </span><span class="n">nodeCoords</span><span class="o">=</span><span class="n">dstNodeCoords</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">nodeOwners</span><span class="o">=</span><span class="n">dstNodeOwners</span><span class="p">,</span><span class="w"> </span><span class="n">elementIds</span><span class="o">=</span><span class="n">dstElemIds</span><span class="p">,&amp;</span>
+<span class="w">         </span><span class="n">elementTypes</span><span class="o">=</span><span class="n">dstElemTypes</span><span class="p">,</span><span class="w"> </span><span class="n">elementConn</span><span class="o">=</span><span class="n">dstElemConn</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+
+<span class="w">  </span><span class="c">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+<span class="w">  </span><span class="c">! Create Destination Field</span>
+<span class="w">  </span><span class="c">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+
+<span class="w">  </span><span class="c">! Set description of source Field</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_ArraySpecSet</span><span class="p">(</span><span class="n">arrayspec</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_TYPEKIND_R8</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Create destination Field</span>
+<span class="w">  </span><span class="n">dstField</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">dstMesh</span><span class="p">,</span><span class="w"> </span><span class="n">arrayspec</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                        </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;destination&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+<span class="w">  </span><span class="c">! Do Regrid</span>
+<span class="w">  </span><span class="c">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+
+<span class="w">  </span><span class="c">! Compute RouteHandle which contains the regrid operation</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldRegridStore</span><span class="p">(</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">srcField</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">dstField</span><span class="o">=</span><span class="n">dstField</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">routeHandle</span><span class="o">=</span><span class="n">routeHandle</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">regridmethod</span><span class="o">=</span><span class="n">ESMF_REGRIDMETHOD_BILINEAR</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Perform Regrid operation moving data from srcField to dstField</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldRegrid</span><span class="p">(</span><span class="n">srcField</span><span class="p">,</span><span class="w"> </span><span class="n">dstField</span><span class="p">,</span><span class="w"> </span><span class="n">routeHandle</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+<span class="w">  </span><span class="c">! dstField now contains the interpolated data.</span>
+<span class="w">  </span><span class="c">! If the Meshes don&#39;t change, then routeHandle</span>
+<span class="w">  </span><span class="c">! may be used repeatedly to interpolate from </span>
+<span class="w">  </span><span class="c">! srcField to dstField.  </span>
+<span class="w">  </span><span class="c">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+
+<span class="w">   </span>
+<span class="w">  </span><span class="c">! User code to use the routeHandle, Fields, and</span>
+<span class="w">  </span><span class="c">! Meshes goes here before they are freed below.</span>
+
+
+<span class="w">  </span><span class="c">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+<span class="w">  </span><span class="c">! Free the objects created in the example.</span>
+<span class="w">  </span><span class="c">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+
+<span class="w">  </span><span class="c">! Free the RouteHandle</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldRegridRelease</span><span class="p">(</span><span class="n">routeHandle</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Free the Fields</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldDestroy</span><span class="p">(</span><span class="n">srcField</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldDestroy</span><span class="p">(</span><span class="n">dstField</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Free the Meshes</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_MeshDestroy</span><span class="p">(</span><span class="n">dstMesh</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_MeshDestroy</span><span class="p">(</span><span class="n">srcMesh</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w"> </span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">!EOC</span>
+
+<span class="w">   </span><span class="c">! Cleanup after example</span>
+
+<span class="w">   </span><span class="c">! deallocate node data</span>
+<span class="w">   </span><span class="k">deallocate</span><span class="p">(</span><span class="n">srcNodeIds</span><span class="p">)</span>
+<span class="w">   </span><span class="k">deallocate</span><span class="p">(</span><span class="n">srcNodeCoords</span><span class="p">)</span>
+<span class="w">   </span><span class="k">deallocate</span><span class="p">(</span><span class="n">srcNodeOwners</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! deallocate elem data</span>
+<span class="w">   </span><span class="k">deallocate</span><span class="p">(</span><span class="n">srcElemIds</span><span class="p">)</span>
+<span class="w">   </span><span class="k">deallocate</span><span class="p">(</span><span class="n">srcElemTypes</span><span class="p">)</span>
+<span class="w">   </span><span class="k">deallocate</span><span class="p">(</span><span class="n">srcElemConn</span><span class="p">)</span>
+
+
+<span class="w">   </span><span class="c">! deallocate node data</span>
+<span class="w">   </span><span class="k">deallocate</span><span class="p">(</span><span class="n">dstNodeIds</span><span class="p">)</span>
+<span class="w">   </span><span class="k">deallocate</span><span class="p">(</span><span class="n">dstNodeCoords</span><span class="p">)</span>
+<span class="w">   </span><span class="k">deallocate</span><span class="p">(</span><span class="n">dstNodeOwners</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! deallocate elem data</span>
+<span class="w">   </span><span class="k">deallocate</span><span class="p">(</span><span class="n">dstElemIds</span><span class="p">)</span>
+<span class="w">   </span><span class="k">deallocate</span><span class="p">(</span><span class="n">dstElemTypes</span><span class="p">)</span>
+<span class="w">   </span><span class="k">deallocate</span><span class="p">(</span><span class="n">dstElemConn</span><span class="p">)</span>
+
+
+<span class="w">  </span><span class="k">endif</span><span class="w"> </span><span class="c">! Only for petCount .eq. 1 </span>
+
+
+<span class="mi">10</span><span class="w">   </span><span class="k">continue</span>
+<span class="w">  </span><span class="c">! IMPORTANT: ESMF_STest() prints the PASS string and the # of processors in the log</span>
+<span class="w">  </span><span class="c">! file that the scripts grep for.</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_STest</span><span class="p">((</span><span class="n">rc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">testname</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="o">/=</span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">finalrc</span><span class="o">==</span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;PASS: ESMF_FieldMeshRegridEx.F90&quot;</span>
+<span class="w">  </span><span class="k">else</span>
+<span class="k">    print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;FAIL: ESMF_FieldMeshRegridEx.F90&quot;</span>
+<span class="w">  </span><span class="k">endif</span>
+
+
+
+<span class="k">end program </span><span class="n">ESMF_MeshEx</span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

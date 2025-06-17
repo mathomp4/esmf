@@ -1,0 +1,730 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMX_App &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMX_App      <small>Program</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.1% of total for programs.">102 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMX_App.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmx_app.f90.html'>ESMX_App.F90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMX_App</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/esmx_app.html#variable-configkey">configKey</a>
+            <a class="list-group-item" href="../program/esmx_app.html#variable-valuestring~8">valueString</a>
+            <a class="list-group-item" href="../program/esmx_app.html#variable-rc~1719">rc</a>
+            <a class="list-group-item" href="../program/esmx_app.html#variable-urc~4">urc</a>
+            <a class="list-group-item" href="../program/esmx_app.html#variable-isflag~5">isFlag</a>
+            <a class="list-group-item" href="../program/esmx_app.html#variable-logflush">logFlush</a>
+            <a class="list-group-item" href="../program/esmx_app.html#variable-clock~133">clock</a>
+            <a class="list-group-item" href="../program/esmx_app.html#variable-driver~41">driver</a>
+            <a class="list-group-item" href="../program/esmx_app.html#variable-hconfig~15">hconfig</a>
+            <a class="list-group-item" href="../program/esmx_app.html#variable-hconfignode~3">hconfigNode</a>
+            <a class="list-group-item" href="../program/esmx_app.html#variable-starttime~10">startTime</a>
+            <a class="list-group-item" href="../program/esmx_app.html#variable-stoptime~9">stopTime</a>
+            <a class="list-group-item" href="../program/esmx_app.html#variable-timestep~9">timeStep</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../program/esmx_app.html#src">ESMX_App</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='../module/esmf.html'>ESMF</a></li>
+                  <li class="list-inline-item">ESMX_Driver</li>
+                  <li class="list-inline-item"><a href='../module/nuopc.html'>NUOPC</a></li>
+              </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    
+
+
+    <section>
+    <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-configkey"></span>
+              character(len=:),
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>configKey</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-valuestring~8"></span>
+              character(len=:),
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>valueString</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~1719"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-urc~4"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>urc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-isflag~5"></span>
+              logical
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>isFlag</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-logflush"></span>
+              logical
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>logFlush</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-clock~133"></span>
+              type(<a href='../type/esmf_clock.html'>ESMF_Clock</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>clock</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-driver~41"></span>
+              type(<a href='../type/esmf_gridcomp.html'>ESMF_GridComp</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>driver</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-hconfig~15"></span>
+              type(<a href='../type/esmf_hconfig.html'>ESMF_HConfig</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>hconfig</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-hconfignode~3"></span>
+              type(<a href='../type/esmf_hconfig.html'>ESMF_HConfig</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>hconfigNode</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-starttime~10"></span>
+              type(<a href='../type/esmf_time.html'>ESMF_Time</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>startTime</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-stoptime~9"></span>
+              type(<a href='../type/esmf_time.html'>ESMF_Time</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stopTime</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-timestep~9"></span>
+              type(<a href='../type/esmf_timeinterval.html'>ESMF_TimeInterval</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>timeStep</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+    
+
+    
+
+
+    
+
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="k">program </span><span class="n">ESMX_App</span>
+
+<span class="w">  </span><span class="k">use </span><span class="n">ESMF</span>
+<span class="w">  </span><span class="k">use </span><span class="n">NUOPC</span>
+<span class="w">  </span><span class="k">use </span><span class="n">ESMX_Driver</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">driverSS</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">SetServices</span><span class="p">,</span><span class="w"> </span><span class="n">HConfigCreateFoundNode</span>
+
+<span class="w">  </span><span class="k">implicit none</span>
+
+<span class="k">  </span><span class="kt">integer</span><span class="w">                   </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">urc</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_GridComp</span><span class="p">)</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">driver</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_HConfig</span><span class="p">)</span><span class="w">        </span><span class="kd">::</span><span class="w"> </span><span class="n">hconfig</span><span class="p">,</span><span class="w"> </span><span class="n">hconfigNode</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">configKey</span><span class="p">(:)</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">valueString</span>
+<span class="w">  </span><span class="kt">logical</span><span class="w">                   </span><span class="kd">::</span><span class="w"> </span><span class="n">isFlag</span><span class="p">,</span><span class="w"> </span><span class="n">logFlush</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Time</span><span class="p">)</span><span class="w">           </span><span class="kd">::</span><span class="w"> </span><span class="n">startTime</span><span class="p">,</span><span class="w"> </span><span class="n">stopTime</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_TimeInterval</span><span class="p">)</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">timeStep</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Clock</span><span class="p">)</span><span class="w">          </span><span class="kd">::</span><span class="w"> </span><span class="n">clock</span>
+
+<span class="w">  </span><span class="c">! Initialize ESMF</span>
+<span class="w">  </span><span class="n">configKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;ESMX&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;App &quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Initialize</span><span class="p">(</span><span class="n">configFilenameFromArgNum</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! arg 1 to spec alt. config</span>
+<span class="w">    </span><span class="n">configFileName</span><span class="o">=</span><span class="s2">&quot;esmxRun.yaml&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">configKey</span><span class="o">=</span><span class="n">configKey</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">hconfig</span><span class="o">=</span><span class="n">hconfig</span><span class="p">,</span><span class="w"> </span><span class="n">defaultDefaultCalKind</span><span class="o">=</span><span class="n">ESMF_CALKIND_GREGORIAN</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Find hconfigNode that holds app level settings according to configKey</span>
+<span class="w">  </span><span class="n">hconfigNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HConfigCreateFoundNode</span><span class="p">(</span><span class="n">hconfig</span><span class="p">,</span><span class="w"> </span><span class="n">configKey</span><span class="o">=</span><span class="n">configKey</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">foundFlag</span><span class="o">=</span><span class="n">isFlag</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="n">isFlag</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_RC_ARG_INCOMP</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;Must provide settings for: &quot;</span><span class="o">//</span><span class="n">configKey</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="s2">&quot;:&quot;</span><span class="o">//</span><span class="n">configKey</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">endif</span>
+
+<span class="w">  </span><span class="c">! Validate hconfigNode against ESMX/App controlled key vocabulary</span>
+<span class="w">  </span><span class="n">isFlag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_HConfigValidateMapKeys</span><span class="p">(</span><span class="n">hconfigNode</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">vocabulary</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;defaultLogFilename             &quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! ESMF_Initialize option</span>
+<span class="w">                </span><span class="s2">&quot;logAppendFlag                  &quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! ESMF_Initialize option</span>
+<span class="w">                </span><span class="s2">&quot;logKindFlag                    &quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! ESMF_Initialize option</span>
+<span class="w">                </span><span class="s2">&quot;defaultCalKind                 &quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! ESMF_Initialize option</span>
+<span class="w">                </span><span class="s2">&quot;globalResourceControl          &quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! ESMF_Initialize option</span>
+<span class="w">                </span><span class="s2">&quot;ESMF_RUNTIME_ABORT_ACTION      &quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! ESMF_Initialize option</span>
+<span class="w">                </span><span class="s2">&quot;ESMF_RUNTIME_ABORT_LOGMSG_TYPES&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! ESMF_Initialize option</span>
+<span class="w">                </span><span class="s2">&quot;ESMF_RUNTIME_COMPLIANCECHECK   &quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! ESMF_Initialize option</span>
+<span class="w">                </span><span class="s2">&quot;ESMF_RUNTIME_GARBAGE           &quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! ESMF_Initialize option</span>
+<span class="w">                </span><span class="s2">&quot;ESMF_RUNTIME_GARBAGE_LOG       &quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! ESMF_Initialize option</span>
+<span class="w">                </span><span class="s2">&quot;ESMF_RUNTIME_PROFILE           &quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! ESMF_Initialize option</span>
+<span class="w">                </span><span class="s2">&quot;ESMF_RUNTIME_PROFILE_OUTPUT    &quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! ESMF_Initialize option</span>
+<span class="w">                </span><span class="s2">&quot;ESMF_RUNTIME_PROFILE_PETLIST   &quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! ESMF_Initialize option</span>
+<span class="w">                </span><span class="s2">&quot;ESMF_RUNTIME_PROFILE_REGRID    &quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! ESMF_Initialize option</span>
+<span class="w">                </span><span class="s2">&quot;ESMF_RUNTIME_TRACE             &quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! ESMF_Initialize option</span>
+<span class="w">                </span><span class="s2">&quot;ESMF_RUNTIME_TRACE_CLOCK       &quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! ESMF_Initialize option</span>
+<span class="w">                </span><span class="s2">&quot;ESMF_RUNTIME_TRACE_COMPONENT   &quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! ESMF_Initialize option</span>
+<span class="w">                </span><span class="s2">&quot;ESMF_RUNTIME_TRACE_FLUSH       &quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! ESMF_Initialize option</span>
+<span class="w">                </span><span class="s2">&quot;ESMF_RUNTIME_TRACE_PETLIST     &quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! ESMF_Initialize option</span>
+<span class="w">                </span><span class="s2">&quot;startTime                      &quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! ESMX_App option</span>
+<span class="w">                </span><span class="s2">&quot;stopTime                       &quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! ESMX_App option</span>
+<span class="w">                </span><span class="s2">&quot;logFlush                       &quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! ESMX_App option</span>
+<span class="w">                </span><span class="s2">&quot;fieldDictionary                &quot;</span><span class="w">  </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! ESMX_App option</span>
+<span class="w">                </span><span class="p">],</span><span class="w"> </span><span class="n">badKey</span><span class="o">=</span><span class="n">valueString</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="n">isFlag</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_RC_ARG_WRONG</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;An invalid key was found in config under ESMX/App (maybe a typo?): &quot;</span><span class="o">//</span><span class="n">valueString</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">endif</span>
+
+<span class="w">  </span><span class="c">! Set logFlush</span>
+<span class="w">  </span><span class="n">isFlag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_HConfigIsDefined</span><span class="p">(</span><span class="n">hconfigNode</span><span class="p">,</span><span class="w"> </span><span class="n">keyString</span><span class="o">=</span><span class="s2">&quot;logFlush&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isFlag</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    </span><span class="n">logFlush</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_HConfigAsLogical</span><span class="p">(</span><span class="n">hconfigNode</span><span class="p">,</span><span class="w"> </span><span class="n">keyString</span><span class="o">=</span><span class="s2">&quot;logFlush&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_LogSet</span><span class="p">(</span><span class="nb">flush</span><span class="o">=</span><span class="n">logFlush</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">endif</span>
+
+<span class="w">  </span><span class="c">! Log top banner</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_LogWrite</span><span class="p">(</span><span class="s2">&quot;=============================================&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">ESMF_LOGMSG_INFO</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_LogWrite</span><span class="p">(</span><span class="s2">&quot;ESMX (Earth System Model eXecutable) STARTING&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">ESMF_LOGMSG_INFO</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_LogWrite</span><span class="p">(</span><span class="s2">&quot;=============================================&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">ESMF_LOGMSG_INFO</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Set field dictionary</span>
+<span class="w">  </span><span class="n">isFlag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_HConfigIsDefined</span><span class="p">(</span><span class="n">hconfigNode</span><span class="p">,</span><span class="w"> </span><span class="n">keyString</span><span class="o">=</span><span class="s2">&quot;fieldDictionary&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isFlag</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    </span><span class="n">valueString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_HConfigAsString</span><span class="p">(</span><span class="n">hconfigNode</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">keyString</span><span class="o">=</span><span class="s2">&quot;fieldDictionary&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">NUOPC_FieldDictionarySetup</span><span class="p">(</span><span class="n">fileName</span><span class="o">=</span><span class="n">valueString</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;Unable to read Field Dictionary file: &quot;</span><span class="o">//</span><span class="n">valueString</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">endif</span>
+
+<span class="w">  </span><span class="c">! Create esmx driver</span>
+<span class="w">  </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_GridCompCreate</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;ESMX_Driver&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">hconfig</span><span class="o">=</span><span class="n">hconfig</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! SetServices esmx driver</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridCompSetServices</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span><span class="w"> </span><span class="n">driverSS</span><span class="p">,</span><span class="w"> </span><span class="n">userRc</span><span class="o">=</span><span class="n">urc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">urc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Set run clock</span>
+<span class="w">  </span><span class="n">valueString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_HConfigAsString</span><span class="p">(</span><span class="n">hconfigNode</span><span class="p">,</span><span class="w"> </span><span class="n">keyString</span><span class="o">=</span><span class="s2">&quot;startTime&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_TimeSet</span><span class="p">(</span><span class="n">startTime</span><span class="p">,</span><span class="w"> </span><span class="n">timeString</span><span class="o">=</span><span class="n">valueString</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="n">valueString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_HConfigAsString</span><span class="p">(</span><span class="n">hconfigNode</span><span class="p">,</span><span class="w"> </span><span class="n">keyString</span><span class="o">=</span><span class="s2">&quot;stopTime&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_TimeSet</span><span class="p">(</span><span class="n">stopTime</span><span class="p">,</span><span class="w"> </span><span class="n">timeString</span><span class="o">=</span><span class="n">valueString</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="c">! set the driver clock default timeStep = stopTime - startTime</span>
+<span class="w">  </span><span class="c">! use with runSequence @*,</span>
+<span class="w">  </span><span class="c">! or overwritten with explicit timeStep in runSequence</span>
+<span class="w">  </span><span class="n">timeStep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stopTime</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">startTime</span>
+<span class="w">  </span><span class="n">clock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_ClockCreate</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;ESMX Application Clock&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">timeStep</span><span class="o">=</span><span class="n">timeStep</span><span class="p">,</span><span class="w"> </span><span class="n">startTime</span><span class="o">=</span><span class="n">startTime</span><span class="p">,</span><span class="w"> </span><span class="n">stopTime</span><span class="o">=</span><span class="n">stopTime</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Destroy the hconfigNode</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_HConfigDestroy</span><span class="p">(</span><span class="n">hconfigNode</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Find hconfigNode that holds driver level attributes, conditionally ingest</span>
+<span class="w">  </span><span class="n">configKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;ESMX      &quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Driver    &quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;attributes&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="n">hconfigNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HConfigCreateFoundNode</span><span class="p">(</span><span class="n">hconfig</span><span class="p">,</span><span class="w"> </span><span class="n">configKey</span><span class="o">=</span><span class="n">configKey</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">foundFlag</span><span class="o">=</span><span class="n">isFlag</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isFlag</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    call </span><span class="n">NUOPC_CompAttributeIngest</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span><span class="w"> </span><span class="n">hconfigNode</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">endif</span>
+
+<span class="w">  </span><span class="c">! Destroy the hconfigNode</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_HConfigDestroy</span><span class="p">(</span><span class="n">hconfigNode</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Initialize esmx driver</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridCompInitialize</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span><span class="w"> </span><span class="n">clock</span><span class="o">=</span><span class="n">clock</span><span class="p">,</span><span class="w"> </span><span class="n">userRc</span><span class="o">=</span><span class="n">urc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">urc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Run esmx driver</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridCompRun</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span><span class="w"> </span><span class="n">clock</span><span class="o">=</span><span class="n">clock</span><span class="p">,</span><span class="w"> </span><span class="n">userRc</span><span class="o">=</span><span class="n">urc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">urc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Finalize esmx driver</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridCompFinalize</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span><span class="w"> </span><span class="n">clock</span><span class="o">=</span><span class="n">clock</span><span class="p">,</span><span class="w"> </span><span class="n">userRc</span><span class="o">=</span><span class="n">urc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">urc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Destroy the esmx driver</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridCompDestroy</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Destroy the clock</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_ClockDestroy</span><span class="p">(</span><span class="n">clock</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Log bottom banner</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_LogWrite</span><span class="p">(</span><span class="s2">&quot;=============================================&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">ESMF_LOGMSG_INFO</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_LogWrite</span><span class="p">(</span><span class="s2">&quot;ESMX (Earth System Model eXecutable) FINISHED&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">ESMF_LOGMSG_INFO</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_LogWrite</span><span class="p">(</span><span class="s2">&quot;=============================================&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">ESMF_LOGMSG_INFO</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="n">ESMF_LOGERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">line</span><span class="o">=</span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">FILENAME</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Finalize ESMF</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    write</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_UtilIOStderr</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Error Finalizing ESMF&quot;</span>
+<span class="w">  </span><span class="k">endif</span>
+
+<span class="k">end program </span><span class="n">ESMX_App</span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

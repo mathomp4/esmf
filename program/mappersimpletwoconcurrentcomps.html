@@ -1,0 +1,2069 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>MapperSimpleTwoConcurrentComps &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>MapperSimpleTwoConcurrentComps      <small>Program</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.3% of total for programs.">309 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_MapperSimpleTwoConcurrentCompsSTest.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_mappersimpletwoconcurrentcompsstest.f90.html'>ESMF_MapperSimpleTwoConcurrentCompsSTest.F90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">MapperSimpleTwoConcurrentComps</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-comp_names">comp_names</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-comp_phase_names">comp_phase_names</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-cplname~8">cplname</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-failmsg~28">failMsg</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-finalmsg~10">finalMsg</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-testname~18">testname</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-tmpstr">tmpstr</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-comp_wtimes">comp_wtimes</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-run_loop_end">run_loop_end</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-run_loop_start">run_loop_start</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-run_loop_wtime">run_loop_wtime</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-cpl_idx">CPL_IDX</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-dbg_stime">dbg_stime</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-gcomp_sidx">GCOMP_SIDX</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-num_comps">NUM_COMPS</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-num_comps_plus_cpl">NUM_COMPS_PLUS_CPL</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-num_umodels">NUM_UMODELS</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-i~59">i</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-j~25">j</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-k~11">k</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-localrc~149">localrc</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-npets~4">npets</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-npets_comps">npets_comps</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-npets_cpl">npets_cpl</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-pet_id~2">pet_id</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-petlist_cpl">petlist_cpl</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-petlist_end_comps">petlist_end_comps</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-petlist_end_cpl">petlist_end_cpl</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-petlist_start_comps">petlist_start_comps</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-petlist_start_cpl">petlist_start_cpl</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-rc~330">rc</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-result~27">result</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-testresult">testresult</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-userrc~15">userrc</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-comp_ends">comp_ends</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-comp_starts">comp_starts</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-petlist_comps">petlist_comps</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-gregoriancalendar~2">gregorianCalendar</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-clocks">clocks</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-cpl~8">cpl</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-comps">comps</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-mapper">mapper</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-cexps">cexps</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-cimps">cimps</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-dbg_time">dbg_time</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-starttime~2">startTime</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-stoptime~2">stopTime</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-timesteps">timeSteps</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-vm~52">vm</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#variable-umodel_func_ptrs">umodel_func_ptrs</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#absints-0"
+         aria-expanded="false" aria-controls="absints-0">
+         <h4 class="card-header bg-primary text-white">Abstract Interfaces</h4>
+      </a>
+      <div id="absints-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#interface-iuser_register">iuser_register</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#interface-iuser_setvm">iuser_setvm</a>
+        </div>
+      </div>
+    </div>
+
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#types-0"
+         aria-expanded="false" aria-controls="types-0">
+         <h4 class="card-header bg-primary text-white">Derived Types</h4>
+      </a>
+      <div id="types-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#type-diarray">DIArray</a>
+            <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#type-umodelfp">UModelFP</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../program/mappersimpletwoconcurrentcomps.html#src">MapperSimpleTwoConcurrentComps</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item">user_model1</li>
+                  <li class="list-inline-item"><a href='../module/esmf_testmod.html'>ESMF_TestMod</a></li>
+                  <li class="list-inline-item"><a href='http://www.mpi-forum.org/docs/mpi-3.1/mpi31-report/node410.htm'>mpi</a></li>
+                  <li class="list-inline-item"><a href='../module/user_coupler~14.html'>user_coupler</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf.html'>ESMF</a></li>
+                  <li class="list-inline-item"><a href='../module/user_model2~6.html'>user_model2</a></li>
+                  <li class="list-inline-item"><a href='../module/comp_utils~2.html'>comp_utils</a></li>
+              </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    
+
+
+    <section>
+    <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-comp_names"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>comp_names</strong>(NUM_COMPS)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-comp_phase_names"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>comp_phase_names</strong>(NUM_COMPS)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-cplname~8"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>cplname</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-failmsg~28"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>failMsg</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-finalmsg~10"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>finalMsg</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-testname~18"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>testname</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-tmpstr"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tmpstr</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-comp_wtimes"></span>
+              double precision
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>comp_wtimes</strong>(NUM_COMPS)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-run_loop_end"></span>
+              double precision
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>run_loop_end</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-run_loop_start"></span>
+              double precision
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>run_loop_start</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-run_loop_wtime"></span>
+              double precision
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>run_loop_wtime</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-cpl_idx"></span>
+              integer,
+            </td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>CPL_IDX</strong></td>
+<td> =</td>
+                <td>1</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dbg_stime"></span>
+              integer(kind=ESMF_KIND_I8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dbg_stime</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-gcomp_sidx"></span>
+              integer,
+            </td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>GCOMP_SIDX</strong></td>
+<td> =</td>
+                <td>2</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-num_comps"></span>
+              integer,
+            </td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>NUM_COMPS</strong></td>
+<td> =</td>
+                <td>8</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-num_comps_plus_cpl"></span>
+              integer,
+            </td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>NUM_COMPS_PLUS_CPL</strong></td>
+<td> =</td>
+                <td>NUM_COMPS+1</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-num_umodels"></span>
+              integer,
+            </td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>NUM_UMODELS</strong></td>
+<td> =</td>
+                <td>2</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i~59"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-j~25"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>j</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-k~11"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>k</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-localrc~149"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>localrc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-npets~4"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>npets</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-npets_comps"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>npets_comps</strong>(NUM_COMPS)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-npets_cpl"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>npets_cpl</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pet_id~2"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>pet_id</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-petlist_cpl"></span>
+              integer,
+            </td>
+            <td>
+              dimension(:), allocatable
+            </td>
+            <td>::</td>
+            <td><strong>petlist_cpl</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-petlist_end_comps"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>petlist_end_comps</strong>(NUM_COMPS)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-petlist_end_cpl"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>petlist_end_cpl</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-petlist_start_comps"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>petlist_start_comps</strong>(NUM_COMPS)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-petlist_start_cpl"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>petlist_start_cpl</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~330"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-result~27"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>result</strong></td>
+<td> =</td>
+                <td>0</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-testresult"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>testresult</strong></td>
+<td> =</td>
+                <td>0</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-userrc~15"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>userrc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-comp_ends"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>comp_ends</strong>(NUM_COMPS)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-comp_starts"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>comp_starts</strong>(NUM_COMPS)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-petlist_comps"></span>
+              type(<a href='../type/diarray.html'>DIArray</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>petlist_comps</strong>(NUM_COMPS)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-gregoriancalendar~2"></span>
+              type(<a href='../type/esmf_calendar.html'>ESMF_Calendar</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>gregorianCalendar</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-clocks"></span>
+              type(<a href='../type/esmf_clock.html'>ESMF_Clock</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>clocks</strong>(NUM_COMPS_PLUS_CPL)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-cpl~8"></span>
+              type(<a href='../type/esmf_cplcomp.html'>ESMF_CplComp</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>cpl</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-comps"></span>
+              type(<a href='../type/esmf_gridcomp.html'>ESMF_GridComp</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>comps</strong>(NUM_COMPS)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mapper"></span>
+              type(ESMF_Mapper)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>mapper</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-cexps"></span>
+              type(<a href='../type/esmf_state.html'>ESMF_State</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>cexps</strong>(NUM_COMPS)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-cimps"></span>
+              type(<a href='../type/esmf_state.html'>ESMF_State</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>cimps</strong>(NUM_COMPS)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dbg_time"></span>
+              type(<a href='../type/esmf_time.html'>ESMF_Time</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dbg_time</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-starttime~2"></span>
+              type(<a href='../type/esmf_time.html'>ESMF_Time</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>startTime</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-stoptime~2"></span>
+              type(<a href='../type/esmf_time.html'>ESMF_Time</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stopTime</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-timesteps"></span>
+              type(<a href='../type/esmf_timeinterval.html'>ESMF_TimeInterval</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>timeSteps</strong>(NUM_COMPS_PLUS_CPL)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vm~52"></span>
+              type(<a href='../type/esmf_vm.html'>ESMF_VM</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>vm</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-umodel_func_ptrs"></span>
+              type(<a href='../type/umodelfp.html'>UModelFP</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>umodel_func_ptrs</strong>(NUM_UMODELS)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+    
+    <section>
+   <h2>Abstract Interfaces</h2>
+       <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="interface-iuser_register"></span><h3>abstract interface
+        
+    </h3></div>
+    <ul class="list-group">
+      <li class="list-group-item">
+            <h3>
+     subroutine iuser_register(comp, rc)  
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-comp~86"></span>
+              type(<a href='../type/esmf_gridcomp.html'>ESMF_GridComp</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>comp</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~329"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+      </li>
+    </ul>
+  </div>
+
+       <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="interface-iuser_setvm"></span><h3>abstract interface
+        
+    </h3></div>
+    <ul class="list-group">
+      <li class="list-group-item">
+            <h3>
+     subroutine iuser_setvm(comp, rc)  
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-comp~85"></span>
+              type(<a href='../type/esmf_gridcomp.html'>ESMF_GridComp</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>comp</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~328"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+      </li>
+    </ul>
+  </div>
+
+    </section>
+   <br>
+
+    <section>
+   <h2>Derived Types</h2>
+       <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="type-diarray"></span>
+      <h3>
+        type&nbsp;::&nbsp;
+        <a href='../type/diarray.html'>DIArray</a>
+        
+      </h3>
+    </div>
+    <div class="card-body">
+      
+
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-arr"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(:), allocatable
+            </td>
+            <td>::</td>
+            <td><strong>arr</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+
+    </div>
+  </div>
+
+       <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="type-umodelfp"></span>
+      <h3>
+        type&nbsp;::&nbsp;
+        <a href='../type/umodelfp.html'>UModelFP</a>
+        
+      </h3>
+    </div>
+    <div class="card-body">
+      
+
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-puser_register"></span>
+              procedure(<a href='../interface/iuser_register.html'>iuser_register</a>),
+            </td>
+              <td>public,</td>
+            <td>
+              pointer, nopass
+            </td>
+            <td>::</td>
+            <td><strong>puser_register</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-puser_setvm"></span>
+              procedure(<a href='../interface/iuser_setvm.html'>iuser_setvm</a>),
+            </td>
+              <td>public,</td>
+            <td>
+              pointer, nopass
+            </td>
+            <td>::</td>
+            <td><strong>puser_setvm</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+
+    </div>
+  </div>
+
+    </section>
+   <br>
+    
+
+
+    
+
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">    </span><span class="k">program </span><span class="n">MapperSimpleTwoConcurrentComps</span>
+
+<span class="cp">#include &quot;ESMF_Conf.inc&quot;</span>
+<span class="cp">#include &quot;ESMF.h&quot;</span>
+<span class="cp">#define ESMF_METHOD &quot;MapperSimpleTwoConcurrentComps&quot;</span>
+
+<span class="w">    </span><span class="c">! ESMF Framework module</span>
+<span class="w">    </span><span class="k">use </span><span class="n">ESMF</span>
+<span class="w">    </span><span class="k">use </span><span class="n">ESMF_TestMod</span>
+
+<span class="w">    </span><span class="k">use </span><span class="n">user_model1</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">userm1_setvm</span><span class="p">,</span><span class="w"> </span><span class="n">userm1_register</span>
+<span class="w">    </span><span class="k">use </span><span class="n">user_model2</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">userm2_setvm</span><span class="p">,</span><span class="w"> </span><span class="n">userm2_register</span>
+<span class="w">    </span><span class="k">use </span><span class="n">user_coupler</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">usercpl_setvm</span><span class="p">,</span><span class="w"> </span><span class="n">usercpl_register</span>
+
+<span class="w">    </span><span class="k">use </span><span class="n">comp_utils</span>
+<span class="w">    </span><span class="k">use </span><span class="n">mpi</span>
+
+<span class="w">    </span><span class="k">implicit none</span>
+
+<span class="w">    </span><span class="c">! Dynamic Integer array type</span>
+<span class="w">    </span><span class="k">type </span><span class="n">DIArray</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">arr</span>
+<span class="w">    </span><span class="k">end type</span>
+
+<span class="k">    abstract interface</span>
+<span class="k">      subroutine </span><span class="n">iuser_setvm</span><span class="p">(</span><span class="n">comp</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">use </span><span class="n">ESMF</span>
+<span class="w">        </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_GridComp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">comp</span>
+<span class="w">        </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+<span class="w">      </span><span class="k">end subroutine </span><span class="n">iuser_setvm</span>
+<span class="w">      </span><span class="k">subroutine </span><span class="n">iuser_register</span><span class="p">(</span><span class="n">comp</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="w">          </span><span class="k">use </span><span class="n">ESMF</span>
+<span class="w">          </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_GridComp</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">comp</span>
+<span class="w">          </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+<span class="w">      </span><span class="k">end subroutine </span><span class="n">iuser_register</span>
+<span class="w">    </span><span class="k">end interface</span>
+
+<span class="k">    type </span><span class="n">UModelFP</span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">(</span><span class="n">iuser_setvm</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="p">,</span><span class="w"> </span><span class="k">nopass</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">puser_setvm</span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">(</span><span class="n">iuser_register</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="p">,</span><span class="w"> </span><span class="k">nopass</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">puser_register</span>
+<span class="w">    </span><span class="k">end type</span>
+
+<span class="k">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">NUM_UMODELS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">UModelFP</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">umodel_func_ptrs</span><span class="p">(</span><span class="n">NUM_UMODELS</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">! Local variables</span>
+<span class="w">    </span><span class="c">! assert(NUM_COMPS &gt; 0)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">NUM_COMPS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">NUM_COMPS_PLUS_CPL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NUM_COMPS</span><span class="o">+</span><span class="mi">1</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">pet_id</span><span class="p">,</span><span class="w"> </span><span class="n">npets</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">userrc</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">npets_comps</span><span class="p">(</span><span class="n">NUM_COMPS</span><span class="p">)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">npets_cpl</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">petlist_start_comps</span><span class="p">(</span><span class="n">NUM_COMPS</span><span class="p">)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">petlist_start_cpl</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">petlist_end_comps</span><span class="p">(</span><span class="n">NUM_COMPS</span><span class="p">)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">petlist_end_cpl</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">k</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">DIArray</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">petlist_comps</span><span class="p">(</span><span class="n">NUM_COMPS</span><span class="p">)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">petlist_cpl</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">comp_names</span><span class="p">(</span><span class="n">NUM_COMPS</span><span class="p">)</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cplname</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">comp_phase_names</span><span class="p">(</span><span class="n">NUM_COMPS</span><span class="p">)</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_VM</span><span class="p">)</span><span class="kd">::</span><span class="w"> </span><span class="n">vm</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_State</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cexps</span><span class="p">(</span><span class="n">NUM_COMPS</span><span class="p">),</span><span class="w"> </span><span class="n">cimps</span><span class="p">(</span><span class="n">NUM_COMPS</span><span class="p">)</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_GridComp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">comps</span><span class="p">(</span><span class="n">NUM_COMPS</span><span class="p">)</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">comp_starts</span><span class="p">(</span><span class="n">NUM_COMPS</span><span class="p">),</span><span class="w"> </span><span class="n">comp_ends</span><span class="p">(</span><span class="n">NUM_COMPS</span><span class="p">)</span>
+<span class="w">    </span><span class="kt">double precision</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">run_loop_start</span><span class="p">,</span><span class="w"> </span><span class="n">run_loop_end</span>
+<span class="w">    </span><span class="kt">double precision</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">run_loop_wtime</span>
+<span class="w">    </span><span class="kt">double precision</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">comp_wtimes</span><span class="p">(</span><span class="n">NUM_COMPS</span><span class="p">)</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_CplComp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cpl</span>
+
+<span class="w">    </span><span class="c">! instantiate a clock, a calendar, and timesteps</span>
+<span class="w">    </span><span class="c">!type(ESMF_Clock) :: clock_comps(1), clock_comps(2), clock_cpl</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">CPL_IDX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">GCOMP_SIDX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Clock</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">clocks</span><span class="p">(</span><span class="n">NUM_COMPS_PLUS_CPL</span><span class="p">)</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Calendar</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">gregorianCalendar</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_TimeInterval</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">timeSteps</span><span class="p">(</span><span class="n">NUM_COMPS_PLUS_CPL</span><span class="p">)</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Time</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">startTime</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Time</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">stopTime</span>
+
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Mapper</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">mapper</span>
+
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Time</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dbg_time</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">ESMF_KIND_I8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dbg_stime</span>
+
+<span class="w">    </span><span class="c">! cumulative result: count failures; no failures equals &quot;all pass&quot;</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">testresult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="k">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tmpstr</span>
+<span class="w">    </span><span class="c">! individual test name</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">testname</span>
+
+<span class="w">    </span><span class="c">! individual test failure message, and final status msg</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="n">finalMsg</span>
+
+
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+
+<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Start of System Test MapperSimpleTwoConcurrentComps.&quot;</span>
+<span class="w">    </span><span class="n">localrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+
+<span class="c">! Set the model function ptrs</span>
+<span class="w">    </span><span class="n">umodel_func_ptrs</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">puser_setvm</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">userm1_setvm</span>
+<span class="w">    </span><span class="n">umodel_func_ptrs</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">puser_register</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">userm1_register</span>
+<span class="w">    </span><span class="n">umodel_func_ptrs</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">puser_setvm</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">userm2_setvm</span>
+<span class="w">    </span><span class="n">umodel_func_ptrs</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">puser_register</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">userm2_register</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!    Create section</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ESMF_Initialize ...&quot;</span>
+<span class="w">    </span><span class="c">! Initialize framework and get back default global VM</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Initialize</span><span class="p">(</span><span class="n">vm</span><span class="o">=</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">defaultlogfilename</span><span class="o">=</span><span class="s2">&quot;ConcurrentCompSTest.Log&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                        </span><span class="n">logkindflag</span><span class="o">=</span><span class="n">ESMF_LOGKIND_MULTI</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ESMF_VMGet ...&quot;</span>
+<span class="w">    </span><span class="c">! Get number of PETs we are running with</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_VMGet</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">petCount</span><span class="o">=</span><span class="n">npets</span><span class="p">,</span><span class="w"> </span><span class="n">localPET</span><span class="o">=</span><span class="n">pet_id</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">! Check for correct number of PETs</span>
+<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">npets</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NUM_COMPS</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="s1">&#39;(A50,I6,A10)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;This system test does not run on fewer than &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">NUM_COMPS</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot; PETs&quot;</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_RC_ARG_BAD</span><span class="p">,&amp;</span>
+<span class="w">            </span><span class="n">msg</span><span class="o">=</span><span class="n">failMsg</span><span class="p">,&amp;</span>
+<span class="w">            </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">      </span><span class="k">endif</span>
+<span class="k">      print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Allocating PETs among components ...&quot;</span>
+<span class="w">      </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">NUM_COMPS</span><span class="o">-</span><span class="mi">1</span>
+<span class="w">        </span><span class="n">npets_comps</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">npets</span><span class="o">/</span><span class="n">NUM_COMPS</span>
+<span class="w">        </span><span class="n">petlist_start_comps</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span>
+<span class="w">        </span><span class="n">petlist_end_comps</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">petlist_start_comps</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">npets_comps</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">npets_comps</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="w">      </span><span class="k">end do</span>
+<span class="k">      </span><span class="n">npets_comps</span><span class="p">(</span><span class="n">NUM_COMPS</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">npets</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">NUM_COMPS</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">npets</span><span class="o">/</span><span class="n">NUM_COMPS</span><span class="p">)</span>
+<span class="w">      </span><span class="n">petlist_start_comps</span><span class="p">(</span><span class="n">NUM_COMPS</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span>
+<span class="w">      </span><span class="n">petlist_end_comps</span><span class="p">(</span><span class="n">NUM_COMPS</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">petlist_start_comps</span><span class="p">(</span><span class="n">NUM_COMPS</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="p">&amp;</span>
+<span class="w">                                      </span><span class="n">npets_comps</span><span class="p">(</span><span class="n">NUM_COMPS</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="n">npets_cpl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">npets</span>
+<span class="w">      </span><span class="n">petlist_start_cpl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">      </span><span class="n">petlist_end_cpl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">petlist_start_cpl</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">npets_cpl</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">NUM_COMPS</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="n">petlist_comps</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">arr</span><span class="p">(</span><span class="n">npets_comps</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span>
+<span class="w">      </span><span class="k">end do</span>
+<span class="k">      allocate</span><span class="p">(</span><span class="n">petlist_cpl</span><span class="p">(</span><span class="n">npets_cpl</span><span class="p">))</span>
+<span class="w">      </span><span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">NUM_COMPS</span>
+<span class="w">        </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">petlist_start_comps</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">        </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">npets_comps</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">          </span><span class="n">petlist_comps</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">arr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span>
+<span class="w">          </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="k">end do</span>
+<span class="k">      end do</span>
+<span class="k">      </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">petlist_start_cpl</span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">npets_cpl</span>
+<span class="w">        </span><span class="n">petlist_cpl</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span>
+<span class="w">        </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="k">end do</span>
+<span class="k">      </span>
+<span class="k">    print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Creating N model components...&quot;</span>
+<span class="w">    </span><span class="c">! Create the N model components and coupler</span>
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">NUM_COMPS</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">tmpstr</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;(A12,I6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;user model &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span>
+<span class="w">      </span><span class="n">comp_names</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">tmpstr</span><span class="p">)</span>
+<span class="w">      </span><span class="n">comps</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_GridCompCreate</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">comp_names</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">petList</span><span class="o">=</span><span class="n">petlist_comps</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">arr</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">      </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Created component &quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">comp_names</span><span class="p">(</span><span class="n">i</span><span class="p">)),</span><span class="w"> </span><span class="s2">&quot;rc =&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span>
+<span class="w">    </span><span class="k">end do</span>
+
+<span class="k">    </span><span class="n">cplname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;user one-way coupler&quot;</span>
+<span class="w">    </span><span class="n">cpl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_CplCompCreate</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">cplname</span><span class="p">,</span><span class="w"> </span><span class="n">petList</span><span class="o">=</span><span class="n">petlist_cpl</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Created component &quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">cplname</span><span class="p">),</span><span class="w"> </span><span class="s2">&quot;, rc =&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span>
+
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">NUM_COMPS</span>
+<span class="w">      </span><span class="k">deallocate</span><span class="p">(</span><span class="n">petlist_comps</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">arr</span><span class="p">)</span>
+<span class="w">    </span><span class="k">end do</span>
+<span class="k">    deallocate</span><span class="p">(</span><span class="n">petlist_cpl</span><span class="p">)</span>
+<span class="w">    </span><span class="c">!print *, &quot;Comp Creates finished&quot;</span>
+
+<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Creating mapper....&quot;</span>
+<span class="w">  </span><span class="c">!mapper = ESMF_MapperCreate(vm, configFile=&quot;./runseq.txt&quot;, rc=localrc)</span>
+<span class="w">  </span><span class="n">mapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_MapperCreate</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!  Register section</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+
+<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Registering components ...&quot;</span>
+<span class="w">  </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">NUM_COMPS</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_GridCompSetVM</span><span class="p">(</span><span class="n">comps</span><span class="p">(</span><span class="n">i</span><span class="p">),&amp;</span>
+<span class="w">      </span><span class="n">userRoutine</span><span class="o">=</span><span class="n">umodel_func_ptrs</span><span class="p">(</span><span class="nb">mod</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">NUM_UMODELS</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)%</span><span class="n">puser_setvm</span><span class="p">,&amp;</span>
+<span class="w">      </span><span class="n">userRc</span><span class="o">=</span><span class="n">userrc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Comp1 SetVM finished, rc= &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">userrc</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">userrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_GridCompSetServices</span><span class="p">(</span><span class="n">comps</span><span class="p">(</span><span class="n">i</span><span class="p">),&amp;</span>
+<span class="w">      </span><span class="n">userRoutine</span><span class="o">=</span><span class="n">umodel_func_ptrs</span><span class="p">(</span><span class="nb">mod</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">NUM_UMODELS</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)%</span><span class="n">puser_register</span><span class="p">,&amp;</span>
+<span class="w">      </span><span class="n">userRc</span><span class="o">=</span><span class="n">userrc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Comp1 SetServices finished, rc= &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">userrc</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">userrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">end do</span>
+
+<span class="k">  call </span><span class="n">ESMF_CplCompSetVM</span><span class="p">(</span><span class="n">cpl</span><span class="p">,</span><span class="w"> </span><span class="n">userRoutine</span><span class="o">=</span><span class="n">usercpl_setvm</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">userRc</span><span class="o">=</span><span class="n">userrc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Cpl SetVM finished, rc= &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">userrc</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">userrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_CplCompSetServices</span><span class="p">(</span><span class="n">cpl</span><span class="p">,</span><span class="w"> </span><span class="n">userRoutine</span><span class="o">=</span><span class="n">usercpl_register</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">userRc</span><span class="o">=</span><span class="n">userrc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Cpl SetServices finished, rc= &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">userrc</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">userrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Set mapper constraints</span>
+<span class="w">  </span><span class="c">!call ESMF_MapperSetConstraints(mapper, rc=localrc)</span>
+<span class="w">  </span><span class="c">!if (ESMF_LogFoundError(localrc, ESMF_ERR_PASSTHRU, &amp;</span>
+<span class="w">  </span><span class="c">!  ESMF_CONTEXT, rcToReturn=rc)) &amp;</span>
+<span class="w">  </span><span class="c">!  call ESMF_Finalize(rc=rc, endflag=ESMF_END_ABORT)</span>
+
+
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!  Create and initialize clocks for comps(1) and comps(2).</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! initialize calendar to be Gregorian type</span>
+<span class="w">    </span><span class="n">gregorianCalendar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_CalendarCreate</span><span class="p">(</span><span class="n">ESMF_CALKIND_GREGORIAN</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                                            </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Gregorian&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">! initialize time interval to 4 hours</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_TimeIntervalSet</span><span class="p">(</span><span class="n">timeSteps</span><span class="p">(</span><span class="n">CPL_IDX</span><span class="p">),</span><span class="w"> </span><span class="n">h</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">NUM_COMPS</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeIntervalSet</span><span class="p">(</span><span class="n">timeSteps</span><span class="p">(</span><span class="n">GCOMP_SIDX</span><span class="o">+</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">h</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">end do</span>
+
+<span class="w">    </span><span class="c">! initialize start time to 5/01/2003</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_TimeSet</span><span class="p">(</span><span class="n">startTime</span><span class="p">,</span><span class="w"> </span><span class="n">yy</span><span class="o">=</span><span class="mi">2003</span><span class="p">,</span><span class="w"> </span><span class="n">mm</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">dd</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="n">calendar</span><span class="o">=</span><span class="n">gregorianCalendar</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">! initialize stop time to 5/06/2003</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_TimeSet</span><span class="p">(</span><span class="n">stopTime</span><span class="p">,</span><span class="w"> </span><span class="n">yy</span><span class="o">=</span><span class="mi">2003</span><span class="p">,</span><span class="w"> </span><span class="n">mm</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">dd</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                      </span><span class="n">calendar</span><span class="o">=</span><span class="n">gregorianCalendar</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">! initialize the clock for comps(1) with the above values</span>
+<span class="w">    </span><span class="n">clocks</span><span class="p">(</span><span class="n">CPL_IDX</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_ClockCreate</span><span class="p">(</span><span class="n">timeSteps</span><span class="p">(</span><span class="n">CPL_IDX</span><span class="p">),</span><span class="w"> </span><span class="n">startTime</span><span class="p">,</span><span class="w"> </span><span class="n">stopTime</span><span class="o">=</span><span class="n">stopTime</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                             </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Cpl Clock 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">NUM_COMPS</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">tmpstr</span><span class="p">,</span><span class="s2">&quot;(A15,I6)&quot;</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Gcomp Clock&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span>
+<span class="w">      </span><span class="n">clocks</span><span class="p">(</span><span class="n">GCOMP_SIDX</span><span class="o">+</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_ClockCreate</span><span class="p">(</span><span class="n">timeSteps</span><span class="p">(</span><span class="n">GCOMP_SIDX</span><span class="o">+</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">startTime</span><span class="p">,</span><span class="w"> </span><span class="n">stopTime</span><span class="o">=</span><span class="n">stopTime</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                               </span><span class="n">name</span><span class="o">=</span><span class="n">tmpstr</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">end do</span>
+
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!  Init section</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+
+<span class="w">  </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">NUM_COMPS</span><span class="p">,</span><span class="mi">2</span>
+<span class="w">    </span><span class="k">write</span><span class="p">(</span><span class="n">tmpstr</span><span class="p">,</span><span class="s2">&quot;(A20,I6)&quot;</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;export comps&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span>
+<span class="w">    </span><span class="n">cexps</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_StateCreate</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">tmpstr</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">                             </span><span class="n">stateintent</span><span class="o">=</span><span class="n">ESMF_STATEINTENT_EXPORT</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_GridCompInitialize</span><span class="p">(</span><span class="n">comps</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">exportState</span><span class="o">=</span><span class="n">cexps</span><span class="p">(</span><span class="n">i</span><span class="p">),&amp;</span>
+<span class="w">       </span><span class="n">clock</span><span class="o">=</span><span class="n">clocks</span><span class="p">(</span><span class="n">GCOMP_SIDX</span><span class="o">+</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">       </span><span class="n">userRC</span><span class="o">=</span><span class="n">userrc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">userrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="c">!print *, &quot;Comp 1 Initialize finished, rc =&quot;, rc</span>
+
+<span class="w">    </span><span class="k">if</span><span class="p">((</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">NUM_COMPS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      write</span><span class="p">(</span><span class="n">tmpstr</span><span class="p">,</span><span class="s2">&quot;(A20,I6)&quot;</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;import comps&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+<span class="w">      </span><span class="n">cimps</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_StateCreate</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">tmpstr</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">                               </span><span class="n">stateintent</span><span class="o">=</span><span class="n">ESMF_STATEINTENT_IMPORT</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_GridCompInitialize</span><span class="p">(</span><span class="n">comps</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">importState</span><span class="o">=</span><span class="n">cimps</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),&amp;</span>
+<span class="w">         </span><span class="n">clock</span><span class="o">=</span><span class="n">clocks</span><span class="p">(</span><span class="n">GCOMP_SIDX</span><span class="o">+</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">userRC</span><span class="o">=</span><span class="n">userrc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">userrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">      </span><span class="c">!print *, &quot;Comp 2 Initialize finished, rc =&quot;, rc</span>
+<span class="w">    </span><span class="k">end if</span>
+<span class="k">  end do</span>
+
+<span class="w">    </span><span class="c">! note that the coupler&#39;s import is comps(1)&#39;s export</span>
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">NUM_COMPS</span><span class="p">,</span><span class="mi">2</span>
+<span class="w">      </span><span class="k">if</span><span class="p">((</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">NUM_COMPS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        call </span><span class="n">ESMF_CplCompInitialize</span><span class="p">(</span><span class="n">cpl</span><span class="p">,</span><span class="w"> </span><span class="n">importState</span><span class="o">=</span><span class="n">cexps</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">exportState</span><span class="o">=</span><span class="n">cimps</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">clock</span><span class="o">=</span><span class="n">clocks</span><span class="p">(</span><span class="n">CPL_IDX</span><span class="p">),</span><span class="w"> </span><span class="n">userRC</span><span class="o">=</span><span class="n">userrc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">userrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">      </span><span class="k">end if</span>
+<span class="k">    end do</span>
+<span class="w">    </span><span class="c">!print *, &quot;Coupler Initialize finished, rc =&quot;, rc</span>
+
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!     Run section</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">NUM_COMPS</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">comp_phase_names</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="s2">&quot;(A15,I6)&quot;</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;comp phase run&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span>
+<span class="w">    </span><span class="k">end do</span>
+<span class="k">    do while</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_ClockIsStopTime</span><span class="p">(</span><span class="n">clocks</span><span class="p">(</span><span class="n">CPL_IDX</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">))</span>
+
+<span class="w">      </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;PET &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pet_id</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot; starting time step...&quot;</span>
+
+<span class="w">      </span><span class="n">run_loop_start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MPI_Wtime</span><span class="p">()</span>
+<span class="w">      </span><span class="c">! Uncomment the following call to ESMF_GridCompWait() to sequentialize</span>
+<span class="w">      </span><span class="c">! comps(1) and comps(2). The following ESMF_GridCompWait() call will block</span>
+<span class="w">      </span><span class="c">! all PETs until comps(2) has returned. Consequently comps(1) will not be</span>
+<span class="w">      </span><span class="c">! run until comps(2) has returned.</span>
+<span class="w">      </span><span class="c">!call ESMF_GridCompWait(comps(2), syncflag=ESMF_SYNC_BLOCKING, rc=localrc)</span>
+<span class="w">      </span><span class="c">!print *, &quot;Comp 2 Wait returned, rc =&quot;, localrc</span>
+<span class="w">      </span><span class="c">!if (ESMF_LogFoundError(localrc, ESMF_ERR_PASSTHRU, &amp;</span>
+<span class="w">      </span><span class="c">!  ESMF_CONTEXT, rcToReturn=rc)) &amp;</span>
+<span class="w">      </span><span class="c">!  call ESMF_Finalize(rc=localrc, endflag=ESMF_END_ABORT)</span>
+
+<span class="w">      </span><span class="c">! Run the first component:</span>
+<span class="w">      </span><span class="c">! After the first time thru the loop this will be running concurrently</span>
+<span class="w">      </span><span class="c">! with the second component since comps(1) and comps(2) are defined on</span>
+<span class="w">      </span><span class="c">! exclusive sets of PETs</span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">NUM_COMPS</span><span class="p">,</span><span class="mi">2</span>
+<span class="w">        </span><span class="c">!print *, &quot;I am calling into GridCompRun(comps(1))&quot;</span>
+<span class="w">        </span><span class="n">comp_starts</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MPI_Wtime</span><span class="p">()</span>
+<span class="w">        </span><span class="c">!call ESMF_GridCompRun(comps(1), exportState=cexps(1), clock=clocks(GCOMP_SIDX), &amp;</span>
+<span class="w">        </span><span class="c">!  userRc=userrc, rc=localrc)</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_GridCompRun</span><span class="p">(</span><span class="n">comps</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">clock</span><span class="o">=</span><span class="n">clocks</span><span class="p">(</span><span class="n">GCOMP_SIDX</span><span class="o">+</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">userRc</span><span class="o">=</span><span class="n">userrc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Comp &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot; Run returned, rc =&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">userrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">        </span><span class="n">comp_ends</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MPI_Wtime</span><span class="p">()</span>
+<span class="w">      </span><span class="k">end do</span>
+
+<span class="w">      </span><span class="c">! Uncomment the following calls to ESMF_GridCompWait() to sequentialize</span>
+<span class="w">      </span><span class="c">! comps(1), comps(2) and the coupler. The following ESMF_GridCompWait() calls</span>
+<span class="w">      </span><span class="c">! will block all PETs until comps(1) and comps(2) have returned. Consequently</span>
+<span class="w">      </span><span class="c">! the coupler component will not be run until comps(1) and comps(2) have</span>
+<span class="w">      </span><span class="c">! returned.</span>
+<span class="w">      </span><span class="c">!call ESMF_GridCompWait(comps(1), syncflag=ESMF_SYNC_BLOCKING, rc=localrc)</span>
+<span class="w">      </span><span class="c">!print *, &quot;Comp 1 Wait returned, rc =&quot;, localrc</span>
+<span class="w">      </span><span class="c">!if (ESMF_LogFoundError(localrc, ESMF_ERR_PASSTHRU, &amp;</span>
+<span class="w">      </span><span class="c">!  ESMF_CONTEXT, rcToReturn=rc)) &amp;</span>
+<span class="w">      </span><span class="c">!  call ESMF_Finalize(rc=localrc, endflag=ESMF_END_ABORT)</span>
+<span class="w">      </span><span class="c">!call ESMF_GridCompWait(comps(2), syncflag=ESMF_SYNC_BLOCKING, rc=localrc)</span>
+<span class="w">      </span><span class="c">!print *, &quot;Comp 2 Wait returned, rc =&quot;, localrc</span>
+<span class="w">      </span><span class="c">!if (ESMF_LogFoundError(localrc, ESMF_ERR_PASSTHRU, &amp;</span>
+<span class="w">      </span><span class="c">!  ESMF_CONTEXT, rcToReturn=rc)) &amp;</span>
+<span class="w">      </span><span class="c">!  call ESMF_Finalize(rc=localrc, endflag=ESMF_END_ABORT)</span>
+
+<span class="w">      </span><span class="c">! Run the coupler:</span>
+<span class="w">      </span><span class="c">! The coupler will run in &quot;per-PET sequential&quot; mode because it runs on</span>
+<span class="w">      </span><span class="c">! the union of all PETs. Depending on the per-PET runtime of comps(1) and</span>
+<span class="w">      </span><span class="c">! comps(2) some PETs may start/finish executing the coupler at different</span>
+<span class="w">      </span><span class="c">! times. There is no intrinsic inter PET synchronization in calling</span>
+<span class="w">      </span><span class="c">! component methods via CompI/R/F(). However, collective communication</span>
+<span class="w">      </span><span class="c">! calls contained in the user written coupler methods will indirectly</span>
+<span class="w">      </span><span class="c">! lead to inter PET synchronization of the coupler component.</span>
+<span class="w">      </span><span class="c">!print *, &quot;I am calling into CplCompRun(cpl)&quot;</span>
+<span class="w">      </span><span class="c">!call ESMF_CplCompRun(cpl, importState=cexps(1), &amp;</span>
+<span class="w">      </span><span class="c">!  exportState=cimps(2), clock=clocks(CPL_IDX), userRc=userrc, rc=localrc)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_CplCompRun</span><span class="p">(</span><span class="n">cpl</span><span class="p">,&amp;</span>
+<span class="w">        </span><span class="n">clock</span><span class="o">=</span><span class="n">clocks</span><span class="p">(</span><span class="n">CPL_IDX</span><span class="p">),</span><span class="w"> </span><span class="n">userRc</span><span class="o">=</span><span class="n">userrc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="c">!print *, &quot;Coupler Run returned, rc =&quot;, localrc</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">userrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">! Uncomment the following call to ESMF_GridCompWait() to sequentialize</span>
+<span class="w">      </span><span class="c">! comps(1) and comps(2). The following ESMF_GridCompWait() call will block</span>
+<span class="w">      </span><span class="c">! all PETs until comps(1) has returned. Consequently comps(2) will not be</span>
+<span class="w">      </span><span class="c">! run until comps(2) has returned.</span>
+<span class="w">      </span><span class="c">!call ESMF_GridCompWait(comps(1), syncflag=ESMF_SYNC_BLOCKING, rc=localrc)</span>
+<span class="w">      </span><span class="c">!print *, &quot;Comp 1 Wait returned, rc =&quot;, localrc</span>
+<span class="w">      </span><span class="c">!if (ESMF_LogFoundError(localrc, ESMF_ERR_PASSTHRU, &amp;</span>
+<span class="w">      </span><span class="c">!  ESMF_CONTEXT, rcToReturn=rc)) &amp;</span>
+<span class="w">      </span><span class="c">!  call ESMF_Finalize(rc=localrc, endflag=ESMF_END_ABORT)</span>
+
+<span class="w">      </span><span class="c">! Run the second component:</span>
+<span class="w">      </span><span class="c">! Since comps(1) and comps(2) are defined on exclusive sets of PETs those PET</span>
+<span class="w">      </span><span class="c">! that are part of comps(1) will not block in the following call but proceed</span>
+<span class="w">      </span><span class="c">! to the next loop increment, executing comps(1) concurrently with comps(2).</span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">NUM_COMPS</span><span class="p">,</span><span class="mi">2</span>
+<span class="w">        </span><span class="c">!print *, &quot;I am calling into GridCompRun(comps(2))&quot;</span>
+<span class="w">        </span><span class="n">comp_starts</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MPI_Wtime</span><span class="p">()</span>
+<span class="w">        </span><span class="c">!call ESMF_GridCompRun(comps(2), importState=cimps(2), clock=clocks(GCOMP_SIDX+1), &amp;</span>
+<span class="w">        </span><span class="c">!  userRc=userrc, rc=localrc)</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_GridCompRun</span><span class="p">(</span><span class="n">comps</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">clock</span><span class="o">=</span><span class="n">clocks</span><span class="p">(</span><span class="n">GCOMP_SIDX</span><span class="o">+</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">userRc</span><span class="o">=</span><span class="n">userrc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Comp &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot; Run returned, rc =&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">userrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">        </span><span class="n">comp_ends</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MPI_Wtime</span><span class="p">()</span>
+<span class="w">      </span><span class="k">end do</span>
+
+<span class="k">      </span><span class="n">run_loop_end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MPI_Wtime</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">run_loop_start</span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">NUM_COMPS</span>
+<span class="w">        </span><span class="k">call </span><span class="n">MPI_Allreduce</span><span class="p">(</span><span class="n">comp_ends</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">comp_wtimes</span><span class="p">(</span><span class="n">i</span><span class="p">),&amp;</span>
+<span class="w">              </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,&amp;</span>
+<span class="w">              </span><span class="n">MPI_MAX</span><span class="p">,</span><span class="w"> </span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">end do</span>
+
+<span class="k">      call </span><span class="n">MPI_Allreduce</span><span class="p">(</span><span class="n">run_loop_end</span><span class="p">,</span><span class="w"> </span><span class="n">run_loop_wtime</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">MPI_DOUBLE_PRECISION</span><span class="p">,&amp;</span>
+<span class="w">            </span><span class="n">MPI_MAX</span><span class="p">,</span><span class="w"> </span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">NUM_COMPS</span>
+<span class="w">        </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;comps(&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;) = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">comp_wtimes</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="s2">&quot;s&quot;</span>
+<span class="w">      </span><span class="k">end do</span>
+<span class="k">      print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;run loop = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">run_loop_wtime</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;s&quot;</span>
+
+<span class="w">      </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Setting comp infos...&quot;</span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">NUM_COMPS</span>
+<span class="w">        </span><span class="c">! Contact mapper</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_MapperSetCompInfo</span><span class="p">(</span><span class="n">mapper</span><span class="p">,&amp;</span>
+<span class="w">              </span><span class="nb">len_trim</span><span class="p">(</span><span class="n">comp_names</span><span class="p">(</span><span class="n">i</span><span class="p">)),</span><span class="w"> </span><span class="n">comp_names</span><span class="p">(</span><span class="n">i</span><span class="p">),&amp;</span>
+<span class="w">              </span><span class="nb">len_trim</span><span class="p">(</span><span class="n">comp_phase_names</span><span class="p">(</span><span class="n">i</span><span class="p">)),</span><span class="w"> </span><span class="n">comp_phase_names</span><span class="p">(</span><span class="n">i</span><span class="p">),&amp;</span>
+<span class="w">              </span><span class="n">petlist_start_comps</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">petlist_end_comps</span><span class="p">(</span><span class="n">i</span><span class="p">),&amp;</span><span class="w">      </span>
+<span class="w">              </span><span class="n">comp_starts</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">comp_ends</span><span class="p">(</span><span class="n">i</span><span class="p">),&amp;</span>
+<span class="w">              </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">localrc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">      </span><span class="k">end do</span>
+<span class="k">      </span>
+<span class="k">      print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Optimizing PET layouts using mapper...&quot;</span>
+<span class="w">      </span><span class="c">! Optimize using the mapper</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_MapperOptimize</span><span class="p">(</span><span class="n">mapper</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">localrc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Retrieving optimized PET layouts from mapper...&quot;</span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">NUM_COMPS</span>
+<span class="w">        </span><span class="c">! Contact mapper</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_MapperGetCompInfo</span><span class="p">(</span><span class="n">mapper</span><span class="p">,&amp;</span>
+<span class="w">              </span><span class="nb">len_trim</span><span class="p">(</span><span class="n">comp_names</span><span class="p">(</span><span class="n">i</span><span class="p">)),</span><span class="w"> </span><span class="n">comp_names</span><span class="p">(</span><span class="n">i</span><span class="p">),&amp;</span>
+<span class="w">              </span><span class="nb">len_trim</span><span class="p">(</span><span class="n">comp_phase_names</span><span class="p">(</span><span class="n">i</span><span class="p">)),</span><span class="w"> </span><span class="n">comp_phase_names</span><span class="p">(</span><span class="n">i</span><span class="p">),&amp;</span>
+<span class="w">              </span><span class="n">startPet</span><span class="o">=</span><span class="n">petlist_start_comps</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">endPet</span><span class="o">=</span><span class="n">petlist_end_comps</span><span class="p">(</span><span class="n">i</span><span class="p">),&amp;</span><span class="w">      </span>
+<span class="w">              </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">localrc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">      </span><span class="k">end do</span>
+<span class="k">      </span>
+<span class="k">      print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Recreating components...&quot;</span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">NUM_COMPS</span>
+<span class="w">        </span><span class="c">! Recreate the components using info from mapper</span>
+<span class="w">        </span><span class="k">call </span><span class="n">user_comp_recreate</span><span class="p">(</span><span class="n">comps</span><span class="p">(</span><span class="n">i</span><span class="p">),&amp;</span>
+<span class="w">          </span><span class="n">umodel_func_ptrs</span><span class="p">(</span><span class="nb">mod</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">NUM_UMODELS</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)%</span><span class="n">puser_setvm</span><span class="p">,&amp;</span>
+<span class="w">          </span><span class="n">umodel_func_ptrs</span><span class="p">(</span><span class="nb">mod</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">NUM_UMODELS</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)%</span><span class="n">puser_register</span><span class="p">,&amp;</span>
+<span class="w">          </span><span class="n">petlist_start_comps</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">petlist_end_comps</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">mapper</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">localrc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">      </span><span class="k">end do</span>
+
+<span class="k">      do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">NUM_COMPS</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_ClockAdvance</span><span class="p">(</span><span class="n">clocks</span><span class="p">(</span><span class="n">GCOMP_SIDX</span><span class="o">+</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">        </span><span class="c">!call ESMF_ClockPrint(clock_comps(1), rc=localrc)</span>
+<span class="w">      </span><span class="k">end do</span>
+
+<span class="k">      call </span><span class="n">ESMF_ClockAdvance</span><span class="p">(</span><span class="n">clocks</span><span class="p">(</span><span class="n">CPL_IDX</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">      </span><span class="c">!call ESMF_ClockPrint(clock_cpl, rc=localrc)</span>
+
+<span class="w">      </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;... time step finished on PET &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pet_id</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;.&quot;</span>
+
+<span class="w">    </span><span class="k">enddo</span>
+
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!     Finalize section</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!     Print result</span>
+
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">NUM_COMPS</span><span class="p">,</span><span class="mi">2</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_GridCompFinalize</span><span class="p">(</span><span class="n">comps</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">exportState</span><span class="o">=</span><span class="n">cexps</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">clock</span><span class="o">=</span><span class="n">clocks</span><span class="p">(</span><span class="n">GCOMP_SIDX</span><span class="o">+</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">userRc</span><span class="o">=</span><span class="n">userrc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">userrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">      </span><span class="c">!print *, &quot;Comp 1 Finalize finished, rc =&quot;, rc</span>
+<span class="w">    </span><span class="k">end do</span>
+
+<span class="k">    do </span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">NUM_COMPS</span><span class="p">,</span><span class="mi">2</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_GridCompFinalize</span><span class="p">(</span><span class="n">comps</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">importState</span><span class="o">=</span><span class="n">cimps</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">clock</span><span class="o">=</span><span class="n">clocks</span><span class="p">(</span><span class="n">GCOMP_SIDX</span><span class="o">+</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">userRc</span><span class="o">=</span><span class="n">userrc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">userrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">      </span><span class="c">!print *, &quot;Comp 2 Finalize finished, rc =&quot;, rc</span>
+<span class="w">    </span><span class="k">end do</span>
+
+<span class="k">    call </span><span class="n">ESMF_CplCompFinalize</span><span class="p">(</span><span class="n">cpl</span><span class="p">,</span><span class="w"> </span><span class="n">importState</span><span class="o">=</span><span class="n">cexps</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">exportState</span><span class="o">=</span><span class="n">cimps</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">clock</span><span class="o">=</span><span class="n">clocks</span><span class="p">(</span><span class="n">CPL_IDX</span><span class="p">),</span><span class="w"> </span><span class="n">userRc</span><span class="o">=</span><span class="n">userrc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">userrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="c">!print *, &quot;Coupler Finalize finished, rc =&quot;, rc</span>
+
+
+<span class="w">    </span><span class="c">!print *, &quot;Comp Finalize returned&quot;</span>
+
+<span class="c">!</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!     Destroy section</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!     Clean up</span>
+
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">NUM_COMPS</span><span class="p">,</span><span class="mi">2</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_StateDestroy</span><span class="p">(</span><span class="n">cexps</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">end do</span>
+<span class="k">    do </span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">NUM_COMPS</span><span class="p">,</span><span class="mi">2</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_StateDestroy</span><span class="p">(</span><span class="n">cimps</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">end do</span>
+
+<span class="k">    do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">NUM_COMPS</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_ClockDestroy</span><span class="p">(</span><span class="n">clocks</span><span class="p">(</span><span class="n">GCOMP_SIDX</span><span class="o">+</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">end do</span>
+<span class="k">    call </span><span class="n">ESMF_ClockDestroy</span><span class="p">(</span><span class="n">clocks</span><span class="p">(</span><span class="n">CPL_IDX</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_CalendarDestroy</span><span class="p">(</span><span class="n">gregorianCalendar</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">NUM_COMPS</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_GridCompDestroy</span><span class="p">(</span><span class="n">comps</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="k">end do</span>
+<span class="k">    call </span><span class="n">ESMF_CplCompDestroy</span><span class="p">(</span><span class="n">cpl</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_MapperDestroy</span><span class="p">(</span><span class="n">mapper</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span><span class="c">!print *, &quot;All Destroy routines done&quot;</span>
+
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="c">!-------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;System Test MapperSimpleTwoConcurrentComps complete.&quot;</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">localrc</span>
+
+<span class="w">    </span><span class="c">! Normal ESMF Test output</span>
+<span class="w">    </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;System Test failure&quot;</span>
+<span class="w">    </span><span class="k">write</span><span class="p">(</span><span class="n">testname</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;System Test MapperSimpleTwoConcurrentComps: Array Concurrent Components&quot;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      write</span><span class="p">(</span><span class="n">finalMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;SUCCESS: Concurrent Component test finished correctly.&quot;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="k">        write</span><span class="p">(</span><span class="n">finalMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;System Test did not succeed.  Error code &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span>
+<span class="w">    </span><span class="k">endif</span>
+<span class="k">    write</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">    </span><span class="k">write</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">testname</span><span class="p">)</span>
+<span class="w">    </span><span class="k">write</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">finalMsg</span><span class="p">)</span>
+<span class="w">    </span><span class="k">write</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+
+
+<span class="w">    </span><span class="c">! IMPORTANT: ESMF_STest() prints the PASS string and the # of processors</span>
+<span class="w">    </span><span class="c">! into the Log file that the scripts grep for.</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_STest</span><span class="p">((</span><span class="n">rc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">testname</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="err">__</span><span class="n">FILE__</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="err">__</span><span class="n">LINE__</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">()</span>
+
+<span class="w">    </span><span class="k">end program </span><span class="n">MapperSimpleTwoConcurrentComps</span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,514 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_DSYEVD &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_DSYEVD
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.0% of total for procedures.">101 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/dsyevd.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/dsyevd.f90.html'>dsyevd.F90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_DSYEVD</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2> subroutine ESMF_DSYEVD(JOBZ, UPLO, N, A, LDA, W, WORK, LWORK, IWORK, LIWORK, INFO)  
+</h2>
+    
+
+    <p>\brief <b> ESMF_DSYEVD computes the eigenvalues and, optionally, the left and/or right eigenvectors for SY matrices</b>
+\htmlonly
+Download ESMF_DSYEVD + dependencies
+<a href="http://www.netlib.org/cgi-bin/netlibfiles.tgz?format=tgz&filename=/lapack/lapack_routine/dsyevd.f">
+[TGZ]</a>
+<a href="http://www.netlib.org/cgi-bin/netlibfiles.zip?format=zip&filename=/lapack/lapack_routine/dsyevd.f">
+[ZIP]</a>
+<a href="http://www.netlib.org/cgi-bin/netlibfiles.txt?format=txt&filename=/lapack/lapack_routine/dsyevd.f">
+[TXT]</a>
+\endhtmlonly
+\par Purpose:</p>
+<p>\verbatim</p>
+<p>ESMF_DSYEVD computes all eigenvalues and, optionally, eigenvectors of a
+real symmetric matrix A. If eigenvectors are desired, it uses a
+divide and conquer algorithm.</p>
+<p>The divide and conquer algorithm makes very mild assumptions about
+floating point arithmetic. It will work on machines with a guard
+digit in add/subtract, or on those binary machines without guard
+digits which subtract like the Cray X-MP, Cray Y-MP, Cray C-90, or
+Cray-2. It could conceivably fail on hexadecimal or decimal machines
+without guard digits, but we know of none.</p>
+<p>Because of large use of BLAS of level 3, ESMF_DSYEVD needs N*<em>2 more
+workspace than DSYEVX.
+\endverbatim
+\param[in] JOBZ
+\verbatim
+         JOBZ is CHARACTER</em>1
+         = &lsquo;N&rsquo;:  Compute eigenvalues only;
+         = &lsquo;V&rsquo;:  Compute eigenvalues and eigenvectors.
+\endverbatim</p>
+<p>\param[in] UPLO
+\verbatim
+         UPLO is CHARACTER*1
+         = &lsquo;U&rsquo;:  Upper triangle of A is stored;
+         = &lsquo;L&rsquo;:  Lower triangle of A is stored.
+\endverbatim</p>
+<p>\param[in] N
+\verbatim
+         N is INTEGER
+         The order of the matrix A.  N &gt;= 0.
+\endverbatim</p>
+<p>\param[in,out] A
+\verbatim
+         A is DOUBLE PRECISION array, dimension (LDA, N)
+         On entry, the symmetric matrix A.  If UPLO = &lsquo;U&rsquo;, the
+         leading N-by-N upper triangular part of A contains the
+         upper triangular part of the matrix A.  If UPLO = &lsquo;L&rsquo;,
+         the leading N-by-N lower triangular part of A contains
+         the lower triangular part of the matrix A.
+         On exit, if JOBZ = &lsquo;V&rsquo;, then if INFO = 0, A contains the
+         orthonormal eigenvectors of the matrix A.
+         If JOBZ = &lsquo;N&rsquo;, then on exit the lower triangle (if UPLO=&rsquo;L&rsquo;)
+         or the upper triangle (if UPLO=&rsquo;U&rsquo;) of A, including the
+         diagonal, is destroyed.
+\endverbatim</p>
+<p>\param[in] LDA
+\verbatim
+         LDA is INTEGER
+         The leading dimension of the array A.  LDA &gt;= max(1,N).
+\endverbatim</p>
+<p>\param[out] W
+\verbatim
+         W is DOUBLE PRECISION array, dimension (N)
+         If INFO = 0, the eigenvalues in ascending order.
+\endverbatim</p>
+<p>\param[out] WORK
+\verbatim
+         WORK is DOUBLE PRECISION array,
+                                        dimension (LWORK)
+         On exit, if INFO = 0, WORK(1) returns the optimal LWORK.
+\endverbatim</p>
+<p>\param[in] LWORK
+\verbatim
+         LWORK is INTEGER
+         The dimension of the array WORK.
+         If N &lt;= 1,               LWORK must be at least 1.
+         If JOBZ = &lsquo;N&rsquo; and N &gt; 1, LWORK must be at least 2<em>N+1.
+         If JOBZ = &lsquo;V&rsquo; and N &gt; 1, LWORK must be at least
+                                               1 + 6</em>N + 2<em>N</em>*2.</p>
+<div class="codehilite"><pre><span></span><code>     If LWORK = -1, then a workspace query is assumed; the routine
+     only calculates the optimal sizes of the WORK and IWORK
+     arrays, returns these values as the first entries of the WORK
+     and IWORK arrays, and no error message related to LWORK or
+     LIWORK is issued by ESMF_XERBLA.
+</code></pre></div>
+
+<p>\endverbatim</p>
+<p>\param[out] IWORK
+\verbatim
+         IWORK is INTEGER array, dimension (MAX(1,LIWORK))
+         On exit, if INFO = 0, IWORK(1) returns the optimal LIWORK.
+\endverbatim</p>
+<p>\param[in] LIWORK
+\verbatim
+         LIWORK is INTEGER
+         The dimension of the array IWORK.
+         If N &lt;= 1,                LIWORK must be at least 1.
+         If JOBZ  = &lsquo;N&rsquo; and N &gt; 1, LIWORK must be at least 1.
+         If JOBZ  = &lsquo;V&rsquo; and N &gt; 1, LIWORK must be at least 3 + 5*N.</p>
+<div class="codehilite"><pre><span></span><code>     If LIWORK = -1, then a workspace query is assumed; the
+     routine only calculates the optimal sizes of the WORK and
+     IWORK arrays, returns these values as the first entries of
+     the WORK and IWORK arrays, and no error message related to
+     LWORK or LIWORK is issued by ESMF_XERBLA.
+</code></pre></div>
+
+<p>\endverbatim</p>
+<p>\param[out] INFO
+\verbatim
+         INFO is INTEGER
+         = 0:  successful exit
+         &lt; 0:  if INFO = -i, the i-th argument had an illegal value
+         &gt; 0:  if INFO = i and JOBZ = &lsquo;N&rsquo;, then the algorithm failed
+               to converge; i off-diagonal elements of an intermediate
+               tridiagonal form did not converge to zero;
+               if INFO = i and JOBZ = &lsquo;V&rsquo;, then the algorithm failed
+               to compute an eigenvalue while working on the submatrix
+               lying in rows and columns INFO/(N+1) through
+               mod(INFO,N+1).
+\endverbatim
+\author Univ. of Tennessee
+\author Univ. of California Berkeley
+\author Univ. of Colorado Denver
+\author NAG Ltd.
+\date December 2016
+\ingroup doubleSYeigen
+\par Contributors:</p>
+<p>Jeff Rutter, Computer Science Division, University of California
+at Berkeley, USA \n
+ Modified by Francoise Tisseur, University of Tennessee \n
+ Modified description of INFO. Sven, 16 Feb 05. \n</p>
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-jobz"></span>
+              character(len=1)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>JOBZ</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-uplo~2"></span>
+              character(len=1)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>UPLO</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n~13"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>N</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-a~7"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>A</strong>(LDA,*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lda~7"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LDA</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-w~3"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>W</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-work~8"></span>
+              double precision
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>WORK</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lwork~2"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LWORK</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iwork"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>IWORK</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-liwork"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>LIWORK</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-info~9"></span>
+              integer
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>INFO</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

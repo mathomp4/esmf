@@ -1,0 +1,937 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_InfoTutorial &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_InfoTutorial      <small>Program</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.1% of total for programs.">104 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_InfoTutorialEx.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_infotutorialex.f90.html'>ESMF_InfoTutorialEx.F90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_InfoTutorial</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/esmf_infotutorial.html#variable-getch">getCh</a>
+            <a class="list-group-item" href="../program/esmf_infotutorial.html#variable-output~19">output</a>
+            <a class="list-group-item" href="../program/esmf_infotutorial.html#variable-failmsg~58">failMsg</a>
+            <a class="list-group-item" href="../program/esmf_infotutorial.html#variable-ikey~3">ikey</a>
+            <a class="list-group-item" href="../program/esmf_infotutorial.html#variable-testname~34">testname</a>
+            <a class="list-group-item" href="../program/esmf_infotutorial.html#variable-getint">getInt</a>
+            <a class="list-group-item" href="../program/esmf_infotutorial.html#variable-finalrc~21">finalrc</a>
+            <a class="list-group-item" href="../program/esmf_infotutorial.html#variable-ii~159">ii</a>
+            <a class="list-group-item" href="../program/esmf_infotutorial.html#variable-infosize">infoSize</a>
+            <a class="list-group-item" href="../program/esmf_infotutorial.html#variable-localpet~67">localPet</a>
+            <a class="list-group-item" href="../program/esmf_infotutorial.html#variable-rc~1696">rc</a>
+            <a class="list-group-item" href="../program/esmf_infotutorial.html#variable-result~60">result</a>
+            <a class="list-group-item" href="../program/esmf_infotutorial.html#variable-ispresent~360">isPresent</a>
+            <a class="list-group-item" href="../program/esmf_infotutorial.html#variable-isset~10">isSet</a>
+            <a class="list-group-item" href="../program/esmf_infotutorial.html#variable-getreal">getReal</a>
+            <a class="list-group-item" href="../program/esmf_infotutorial.html#variable-reallist">realList</a>
+            <a class="list-group-item" href="../program/esmf_infotutorial.html#variable-reallistalloc">realListAlloc</a>
+            <a class="list-group-item" href="../program/esmf_infotutorial.html#variable-info~624">info</a>
+            <a class="list-group-item" href="../program/esmf_infotutorial.html#variable-infocopy">infoCopy</a>
+            <a class="list-group-item" href="../program/esmf_infotutorial.html#variable-infofromch">infoFromCh</a>
+            <a class="list-group-item" href="../program/esmf_infotutorial.html#variable-typekind~57">typekind</a>
+            <a class="list-group-item" href="../program/esmf_infotutorial.html#variable-vm~257">vm</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../program/esmf_infotutorial.html#src">ESMF_InfoTutorial</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='../module/esmf.html'>ESMF</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf_testmod.html'>ESMF_TestMod</a></li>
+              </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    
+
+
+    <section>
+    <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-getch"></span>
+              character(len=:),
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>getCh</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-output~19"></span>
+              character(len=:),
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>output</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-failmsg~58"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>failMsg</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ikey~3"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ikey</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-testname~34"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>testname</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-getint"></span>
+              integer(kind=ESMF_KIND_I4)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>getInt</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-finalrc~21"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>finalrc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ii~159"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ii</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-infosize"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>infoSize</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-localpet~67"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>localPet</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~1696"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-result~60"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>result</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ispresent~360"></span>
+              logical
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>isPresent</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-isset~10"></span>
+              logical
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>isSet</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-getreal"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>getReal</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-reallist"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              dimension(4)
+            </td>
+            <td>::</td>
+            <td><strong>realList</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-reallistalloc"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              dimension(:), allocatable
+            </td>
+            <td>::</td>
+            <td><strong>realListAlloc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-info~624"></span>
+              type(<a href='../type/esmf_info.html'>ESMF_Info</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>info</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-infocopy"></span>
+              type(<a href='../type/esmf_info.html'>ESMF_Info</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>infoCopy</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-infofromch"></span>
+              type(<a href='../type/esmf_info.html'>ESMF_Info</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>infoFromCh</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-typekind~57"></span>
+              type(<a href='../type/esmf_typekind_flag.html'>ESMF_TypeKind_Flag</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>typekind</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vm~257"></span>
+              type(<a href='../type/esmf_vm.html'>ESMF_VM</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>vm</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+    
+
+    
+
+
+    
+
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">    </span><span class="k">program </span><span class="n">ESMF_InfoTutorial</span>
+
+<span class="c">!==============================================================================</span>
+<span class="c">!==============================================================================</span>
+
+<span class="cp">#include &quot;ESMF.h&quot;</span>
+
+<span class="w">    </span><span class="k">use </span><span class="n">ESMF</span>
+<span class="w">    </span><span class="k">use </span><span class="n">ESMF_TestMod</span>
+
+<span class="w">    </span><span class="k">implicit none</span>
+
+<span class="c">!------------------------------------------------------------------------------</span>
+
+<span class="c">!BOE</span>
+<span class="c">! Variable declarations:</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Info</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="n">infoCopy</span><span class="p">,</span><span class="w"> </span><span class="n">infoFromCh</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_TypeKind_Flag</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">typekind</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ikey</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">output</span><span class="p">,</span><span class="w"> </span><span class="n">getCh</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">realList</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">realListAlloc</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">ESMF_KIND_I4</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">getInt</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">getReal</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">infoSize</span><span class="p">,</span><span class="w"> </span><span class="n">ii</span>
+<span class="w">    </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">isPresent</span><span class="p">,</span><span class="w"> </span><span class="n">isSet</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_VM</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">vm</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">finalrc</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">localPet</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">testname</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">failMsg</span>
+
+<span class="c">!------------------------------------------------------------------------------</span>
+
+<span class="w">    </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Example ESMF_InfoTutorialEx failure&quot;</span>
+<span class="w">    </span><span class="k">write</span><span class="p">(</span><span class="n">testname</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Example ESMF_InfoTutorialEx&quot;</span>
+
+<span class="w">    </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+
+<span class="c">!------------------------------------------------------------------------------</span>
+
+<span class="c">!   ! Initialize the Framework, and get the default VM</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Initialize</span><span class="p">(</span><span class="n">vm</span><span class="o">=</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">defaultlogfilename</span><span class="o">=</span><span class="s2">&quot;InfoTutorialEx.Log&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="n">logkindflag</span><span class="o">=</span><span class="n">ESMF_LOGKIND_MULTI</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_VMGet</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">localPet</span><span class="o">=</span><span class="n">localPet</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!------------------------------------------------------------------------------</span>
+
+<span class="c">!BOE</span>
+<span class="c">! Create an \texttt{ESMF\_Info} object. This object contains an empty key-value</span>
+<span class="c">! store called a JSON object \cite{json_for_modern_cpp_object}.</span>
+<span class="c">!</span>
+<span class="c">! An \texttt{ESMF\_Info} handle may also be retrieved from an ESMF object as opposed to</span>
+<span class="c">! creating a standalone \texttt{ESMF\_Info} object. See example \ref{get_info_handle_from_esmf_object}.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_InfoCreate</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!------------------------------------------------------------------------------</span>
+
+<span class="c">!BOE</span>
+<span class="c">! Add an integer value.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_InfoSet</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;myIntegerKey&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">54</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOE</span>
+<span class="c">! Get the integer value we just set.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_InfoGet</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;myIntegerKey&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">getInt</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">getInt</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="mi">54</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!------------------------------------------------------------------------------</span>
+<span class="c">!BOE</span>
+<span class="c">! Set a list of reals.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_InfoSet</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;myListOfReals&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="o">/</span><span class="w"> </span><span class="mi">3</span><span class="mf">3.3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="mf">4.4</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="mf">9.0</span><span class="w"> </span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOE</span>
+<span class="c">! Set an index in the new list then retrieve the value.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_InfoSet</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;myListOfReals&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">123</span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="n">idx</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_InfoGet</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;myListOfReals&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">getReal</span><span class="p">,</span><span class="w"> </span><span class="n">idx</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">getReal</span><span class="o">-</span><span class="mi">123</span><span class="mf">4.0</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOE</span>
+<span class="c">! Get the values from a list.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_InfoGet</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;myListOfReals&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">realList</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">realList</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOE</span>
+<span class="c">! Allocatable lists may be used through a specific interface.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_InfoGetAlloc</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;myListOfReals&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">realListAlloc</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span>
+<span class="c">!------------------------------------------------------------------------------</span>
+
+<span class="c">!BOE</span>
+<span class="c">! The storage contents may be printed directly or dumped to a character.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_InfoPrint</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_InfoDump</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;the Info dump: &quot;</span><span class="o">//</span><span class="n">output</span>
+<span class="c">!EOC</span>
+
+<span class="c">!------------------------------------------------------------------------------</span>
+
+<span class="c">!BOE</span>
+<span class="c">! Check if a key is present.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="n">isPresent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_InfoIsPresent</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;myIntegerKey&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">isPresent</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="c">!BOE</span>
+<span class="c">! Add a null value and check if it is set (has a non-null value).</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_InfoSetNULL</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;aNullKey&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="n">isSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_InfoIsSet</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;aNullKey&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isSet</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">isSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_InfoIsSet</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;myIntegerKey&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">isSet</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="c">!BOE</span>
+<span class="c">! The force flag, when set to false, will cause an error if the key exists in the</span>
+<span class="c">! map. The force flag is set to true by default.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_InfoSet</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;myIntegerKey&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="n">force</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMC_RC_CANNOT_SET</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!EOC</span>
+
+<span class="c">!------------------------------------------------------------------------------</span>
+
+<span class="c">!BOE</span>
+<span class="c">! Nesting uses the JSON Pointer \ref{info_key_format} syntax. All key arguments</span>
+<span class="c">! in \texttt{ESMF\_Info} may use this syntax unless noted otherwise. When creating</span>
+<span class="c">! a nested object, objects are created if they do not exist. Hence, it is not necessary</span>
+<span class="c">! to create the individual nested elements for deep hierarchies.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_InfoSet</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/Universe/Galaxy/Star/Planet&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Venus&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!------------------------------------------------------------------------------</span>
+
+<span class="c">!BOE</span>
+<span class="c">! Using the get interface, it is possible to iterate over the storage contents.</span>
+<span class="c">! In the call below, we are retrieving the number of elements (key-value pairs)</span>
+<span class="c">! that exist in our root storage object. We then select the target element in root</span>
+<span class="c">! using an index and retrieve some additional metadata for the target object.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_InfoGet</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="n">infoSize</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">do </span><span class="n">ii</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">infoSize</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_InfoGet</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="n">idx</span><span class="o">=</span><span class="n">ii</span><span class="p">,</span><span class="w"> </span><span class="n">ikey</span><span class="o">=</span><span class="n">ikey</span><span class="p">,</span><span class="w"> </span><span class="n">typekind</span><span class="o">=</span><span class="n">typekind</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localPet</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ESMF_Info inquire loop: &quot;</span>
+<span class="w">        </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;       idx= &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ii</span>
+<span class="w">        </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;      ikey= &quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">ikey</span><span class="p">)</span>
+<span class="w">        </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;  typekind= &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">typekind</span>
+<span class="w">      </span><span class="k">endif</span>
+<span class="k">    enddo</span>
+<span class="c">!EOC</span>
+<span class="w">    </span>
+<span class="c">!------------------------------------------------------------------------------</span>
+
+<span class="c">!BOE</span>
+<span class="c">! Copying the \texttt{ESMF\_Info} object requires the copy to be destroyed/deallocated.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="n">infoCopy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_InfoCreate</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOE</span>
+<span class="c">! Comparison operators = and /= are implemented for \texttt{ESMF\_Info} objects.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">infoCopy</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">info</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="c">!BOE</span>
+<span class="c">! After removing a key from the copied \texttt{ESMF\_Info} object, the two objects will no</span>
+<span class="c">! longer be equal.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_InfoRemove</span><span class="p">(</span><span class="n">infoCopy</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;myIntegerKey&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">infoCopy</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">info</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="c">!BOE</span>
+<span class="c">! Destroy the copied object.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_InfoDestroy</span><span class="p">(</span><span class="n">infoCopy</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span>
+<span class="c">!------------------------------------------------------------------------------</span>
+
+<span class="c">!BOE</span>
+<span class="c">! An \texttt{ESMF\_Info} object may be created from a JSON string. Note the usage of quotes</span>
+<span class="c">! is required as below.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="n">infoFromCh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_InfoCreate</span><span class="p">(</span><span class="s1">&#39;{&quot;hello&quot;:&quot;world&quot;}&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOE</span>
+<span class="c">! The contents of an \texttt{ESMF\_Info} object may be set in another \texttt{ESMF\_Info} object.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_InfoSet</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;infoFromCh&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">infoFromCh</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_InfoDestroy</span><span class="p">(</span><span class="n">infoFromCh</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="c">!BOE</span>
+<span class="c">! An allocatable character get interface is available.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_InfoGetCharAlloc</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/infoFromCh/hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">getCh</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">getCh</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="s2">&quot;world&quot;</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">    </span>
+<span class="c">!------------------------------------------------------------------------------</span>
+
+<span class="c">!BOE</span>
+<span class="c">! Destroy the \texttt{ESMF\_Info} object.</span>
+<span class="c">!EOE</span>
+<span class="c">!BOC</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_InfoDestroy</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="c">!EOC</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="c">!------------------------------------------------------------------------------</span>
+
+<span class="w">    </span><span class="c">! IMPORTANT: ESMF_STest() prints the PASS string and the # of processors in the log</span>
+<span class="w">    </span><span class="c">! file that the scripts grep for.</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_STest</span><span class="p">((</span><span class="n">finalrc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">testname</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="n">finalrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">finalrc</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;PASS: ESMF_InfoTutorialEx.F90&quot;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="k">        print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;FAIL: ESMF_InfoTutorialEx.F90&quot;</span>
+<span class="w">    </span><span class="k">end if</span>
+
+<span class="c">!==============================================================================</span>
+<span class="c">!==============================================================================</span>
+
+<span class="w">    </span><span class="k">end program </span><span class="n">ESMF_InfoTutorial</span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

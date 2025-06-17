@@ -1,0 +1,644 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>parse_descriptor_string &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>parse_descriptor_string
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.1% of total for procedures.">192 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_TestHarnessParser.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_testharnessparser.f90.html'>ESMF_TestHarnessParser.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/esmf_testharnessparser.html'>ESMF_TestHarnessParser</a></li>
+            <li class="breadcrumb-item active" aria-current="page">parse_descriptor_string</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/parse_descriptor_string.html#src">parse_descriptor_string</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  subroutine parse_descriptor_string(nstrings, pds, rc)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nstrings~2"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nstrings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pds"></span>
+              type(<a href='../type/problem_descriptor_strings.html'>problem_descriptor_strings</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>pds</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~4046"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">  </span><span class="k">subroutine </span><span class="n">parse_descriptor_string</span><span class="p">(</span><span class="n">nstrings</span><span class="p">,</span><span class="w"> </span><span class="n">pds</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! Routine parses a problem descriptor string and extracts:</span>
+<span class="w">  </span><span class="c">!     operation - redistribution or regrid plus method</span>
+<span class="w">  </span><span class="c">!     rank of memory</span>
+<span class="w">  </span><span class="c">!     rank of distribution</span>
+<span class="w">  </span><span class="c">!     rank of grid association</span>
+<span class="w">  </span><span class="c">!     order of dist and grid</span>
+<span class="w">  </span><span class="c">!     type of dist or grid</span>
+<span class="w">  </span><span class="c">!</span>
+<span class="w">  </span><span class="c">! Upon completion, the routine returns the values to the harness record</span>
+<span class="w">  </span><span class="c">! Harness%Record(*)%string(*)%   for</span>
+<span class="w">  </span><span class="c">!</span>
+<span class="w">  </span><span class="c">!     process%string          character string of process</span>
+<span class="w">  </span><span class="c">!     process%tag             numerical tag for process</span>
+<span class="w">  </span><span class="c">!</span>
+<span class="w">  </span><span class="c">!     SrcMem%memRank          rank of source memory block</span>
+<span class="w">  </span><span class="c">!     SrcMem%GridRank         rank of source grid</span>
+<span class="w">  </span><span class="c">!     SrcMem%DistRank         rank of source distribution</span>
+<span class="w">  </span><span class="c">!     SrcMem%GridType         type of grid</span>
+<span class="w">  </span><span class="c">!     SrcMem%DistType         type of distribution</span>
+<span class="w">  </span><span class="c">!     SrcMem%GridOrder        order of grid elements with dimensions</span>
+<span class="w">  </span><span class="c">!     SrcMem%DistOrder        order of distribution elements with dimensions</span>
+<span class="w">  </span><span class="c">!     SrcMem%HaloL            Left halo size for each dimension</span>
+<span class="w">  </span><span class="c">!     SrcMem%HaloR            Right halo size for each dimension</span>
+<span class="w">  </span><span class="c">!     SrcMem%StagLoc          Stagger location for each dimension</span>
+<span class="w">  </span><span class="c">! and the equivalent DstMem records.</span>
+<span class="w">  </span><span class="c">!</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! arguments</span>
+<span class="w">   </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="w">   </span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">nstrings</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">problem_descriptor_strings</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">pds</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="w">  </span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+
+<span class="w">  </span><span class="c">! local character strings</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="n">THARN_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">lstring</span><span class="p">,</span><span class="w"> </span><span class="n">lname</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="n">THARN_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">src_string</span><span class="p">,</span><span class="w"> </span><span class="n">dst_string</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">character_array</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">lsrc</span><span class="p">(:),</span><span class="w"> </span><span class="n">ldst</span><span class="p">(:)</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">character_array</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">grid_type</span><span class="p">(:),</span><span class="w"> </span><span class="n">dist_type</span><span class="p">(:)</span>
+
+<span class="w">  </span><span class="c">! logical :: flag = .true.</span>
+
+<span class="w">  </span><span class="c">! local integer variables</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">k</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tag</span><span class="p">,</span><span class="w"> </span><span class="n">location</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dst_beg</span><span class="p">,</span><span class="w"> </span><span class="n">dst_end</span><span class="p">,</span><span class="w"> </span><span class="n">src_beg</span><span class="p">,</span><span class="w"> </span><span class="n">src_end</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">srcMulti</span><span class="p">,</span><span class="w"> </span><span class="n">dstMulti</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">srcBlock</span><span class="p">,</span><span class="n">dstBlock</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">src_mem_rank</span><span class="p">,</span><span class="w"> </span><span class="n">dst_mem_rank</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dist_rank</span><span class="p">,</span><span class="w"> </span><span class="n">grid_rank</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localrc</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">allocRcToTest</span>
+
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">grid_order</span><span class="p">(:),</span><span class="w"> </span><span class="n">dist_order</span><span class="p">(:)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">grid_HaloL</span><span class="p">(:),</span><span class="w"> </span><span class="n">grid_HaloR</span><span class="p">(:)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">grid_StagLoc</span><span class="p">(:)</span>
+
+<span class="w">  </span><span class="c">! local logical variable</span>
+<span class="w">  </span><span class="c">! logical :: endflag = .false.</span>
+
+<span class="w">  </span><span class="c">! initialize return flag</span>
+<span class="w">  </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+<span class="w">  </span><span class="n">localrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! parse the problem descriptor string</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! search for the test operation</span>
+<span class="w">  </span><span class="c">! 1. search for &quot;-&gt;&quot; or &quot;=&gt;&quot; - tip of symbol provides ending address</span>
+<span class="w">  </span><span class="c">! 2. back up until reach white space - provides begining address</span>
+<span class="w">  </span><span class="c">! 3. src_beg = 1, src_end = operation_beg-1</span>
+<span class="w">  </span><span class="c">!    dst_beg = operation_end+1, dst_end = length(trim(string))</span>
+<span class="w">  </span><span class="c">! 4. LOCATION provides a reference for later splitting the string into</span>
+<span class="w">  </span><span class="c">!    source and destination parts</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="n">lstring</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="w"> </span><span class="n">pds</span><span class="p">%</span><span class="n">pds</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">process_query</span><span class="p">(</span><span class="n">lstring</span><span class="p">,</span><span class="w"> </span><span class="n">lname</span><span class="p">,</span><span class="w"> </span><span class="n">tag</span><span class="p">,</span><span class="w"> </span><span class="n">location</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">CheckError</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">FILE__</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">,</span><span class="s2">&quot;syntax error in problem descriptor&quot;</span><span class="w"> </span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="s2">&quot; string &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">lstring</span><span class="p">)),</span><span class="w">                                </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+
+<span class="w">  </span><span class="c">! store name (string) of operation and numerical code</span>
+<span class="w">  </span><span class="n">pds</span><span class="p">%</span><span class="n">process</span><span class="p">%</span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lname</span>
+<span class="w">  </span><span class="n">pds</span><span class="p">%</span><span class="n">process</span><span class="p">%</span><span class="n">tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tag</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! separate the problem descriptor string into source and destination</span>
+<span class="w">  </span><span class="c">! chunks to ease with parsing, but first determine if the problem</span>
+<span class="w">  </span><span class="c">! descriptor string describes a multiple block memory structure</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="k">call </span><span class="n">memory_topology</span><span class="p">(</span><span class="n">lstring</span><span class="p">,</span><span class="w"> </span><span class="n">location</span><span class="p">,</span><span class="w"> </span><span class="n">srcMulti</span><span class="p">,</span><span class="w"> </span><span class="n">srcBlock</span><span class="p">,</span><span class="w">                  </span><span class="p">&amp;</span>
+<span class="w">                       </span><span class="n">dstMulti</span><span class="p">,</span><span class="w"> </span><span class="n">dstBlock</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">CheckError</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">FILE__</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">,</span><span class="s2">&quot;syntax error in problem descriptor&quot;</span><span class="w"> </span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="s2">&quot; string &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">lstring</span><span class="p">)),</span><span class="w">                                </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">  </span><span class="c">! a multiple block memory structure contains (), these are counted in</span>
+<span class="w">  </span><span class="c">! srcMulti and dstMulti</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="n">srcMulti</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">).</span><span class="nb">or</span><span class="p">.(</span><span class="n">dstMulti</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">     </span><span class="c">! TODO break into multiple single block strings</span>
+<span class="w">     </span><span class="c">! and parse each string separately</span>
+
+<span class="w">  </span><span class="k">elseif</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="n">srcMulti</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">).</span><span class="nb">and</span><span class="p">.(</span><span class="n">dstMulti</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">     </span><span class="c">! single block memory structure</span>
+<span class="w">     </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="n">srcBlock</span><span class="o">==</span><span class="mi">1</span><span class="p">).</span><span class="nb">and</span><span class="p">.(</span><span class="n">dstBlock</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">src_beg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="n">src_end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">location</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">        </span><span class="n">dst_beg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">location</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">        </span><span class="n">dst_end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">lstring</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="c">!-----------------------------------------------------------------------</span>
+<span class="w">        </span><span class="c">! separate string into source and destination strings</span>
+<span class="w">        </span><span class="c">!-----------------------------------------------------------------------</span>
+<span class="w">        </span><span class="n">src_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">adjustL</span><span class="p">(</span><span class="w"> </span><span class="n">lstring</span><span class="p">(</span><span class="n">src_beg</span><span class="p">:</span><span class="n">src_end</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="n">dst_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">adjustL</span><span class="p">(</span><span class="w"> </span><span class="n">lstring</span><span class="p">(</span><span class="n">dst_beg</span><span class="p">:</span><span class="n">dst_end</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">        </span><span class="c">!-----------------------------------------------------------------------</span>
+<span class="w">        </span><span class="c">! check that the source and destination memory ranks are not empty</span>
+<span class="w">        </span><span class="c">! and that the sizes agree</span>
+<span class="w">        </span><span class="c">!-----------------------------------------------------------------------</span>
+<span class="w">        </span><span class="n">src_mem_rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pattern_query</span><span class="p">(</span><span class="n">src_string</span><span class="p">,</span><span class="s1">&#39;;&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="n">pds</span><span class="p">%</span><span class="n">SrcMem</span><span class="p">%</span><span class="n">memRank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">src_mem_rank</span>
+<span class="w">        </span><span class="n">dst_mem_rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pattern_query</span><span class="p">(</span><span class="n">dst_string</span><span class="p">,</span><span class="s1">&#39;;&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="n">pds</span><span class="p">%</span><span class="n">DstMem</span><span class="p">%</span><span class="n">memRank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dst_mem_rank</span>
+
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="n">src_mem_rank</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">).</span><span class="nb">or</span><span class="p">.(</span><span class="n">dst_mem_rank</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">).</span><span class="nb">or</span><span class="p">.</span><span class="w">                     </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="p">(</span><span class="n">src_mem_rank</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">dst_mem_rank</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">  </span><span class="k">then</span>
+<span class="k">           </span><span class="n">localrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">           </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;rank of memory block &quot;</span><span class="w">       </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot;symbols not properly paired&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">           </span><span class="k">return</span>
+<span class="k">        endif</span>
+
+<span class="w">        </span><span class="c">! test for common mistake of using commas instead of semicolons</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">pattern_query</span><span class="p">(</span><span class="n">dst_string</span><span class="p">,</span><span class="s1">&#39;,&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">           </span><span class="n">localrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">           </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;syntax error - commas&quot;</span><span class="w">       </span><span class="p">&amp;</span>
+<span class="w">                    </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; are not valid deliminators&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">           </span><span class="k">return</span>
+<span class="k">        endif</span>
+
+<span class="w">        </span><span class="c">!-----------------------------------------------------------------------</span>
+<span class="w">        </span><span class="c">! create work space for parsing the source descriptor string</span>
+<span class="w">        </span><span class="c">!-----------------------------------------------------------------------</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="w"> </span><span class="n">lsrc</span><span class="p">(</span><span class="n">src_mem_rank</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;type &quot;</span><span class="o">//</span><span class="w">                </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; lsrc in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">grid_order</span><span class="p">(</span><span class="n">src_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer variable &quot;</span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; grid_order in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">grid_type</span><span class="p">(</span><span class="n">src_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;char variable &quot;</span><span class="o">//</span><span class="w">       </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; grid_type in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">grid_HaloL</span><span class="p">(</span><span class="n">src_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer variable &quot;</span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; grid_HaloL in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">grid_HaloR</span><span class="p">(</span><span class="n">src_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer variable &quot;</span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; grid_HaloR in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">grid_StagLoc</span><span class="p">(</span><span class="n">src_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer variable &quot;</span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; grid_StagLoc in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">dist_order</span><span class="p">(</span><span class="n">src_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer variable &quot;</span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; dist_order in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">dist_type</span><span class="p">(</span><span class="n">src_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;char variable &quot;</span><span class="o">//</span><span class="w">       </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; dist_type in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">pds</span><span class="p">%</span><span class="n">SrcMem</span><span class="p">%</span><span class="n">GridType</span><span class="p">(</span><span class="n">src_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;char variable &quot;</span><span class="o">//</span><span class="w">       </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; GridType in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">pds</span><span class="p">%</span><span class="n">SrcMem</span><span class="p">%</span><span class="n">DistType</span><span class="p">(</span><span class="n">src_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;char variable &quot;</span><span class="o">//</span><span class="w">       </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; DistType in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">pds</span><span class="p">%</span><span class="n">SrcMem</span><span class="p">%</span><span class="n">GridOrder</span><span class="p">(</span><span class="n">src_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer variable &quot;</span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; GridOrder in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">pds</span><span class="p">%</span><span class="n">SrcMem</span><span class="p">%</span><span class="n">DistOrder</span><span class="p">(</span><span class="n">src_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer variable &quot;</span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; DistOrder in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">pds</span><span class="p">%</span><span class="n">SrcMem</span><span class="p">%</span><span class="n">HaloL</span><span class="p">(</span><span class="n">src_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer variable &quot;</span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; HaloL in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">pds</span><span class="p">%</span><span class="n">SrcMem</span><span class="p">%</span><span class="n">HaloR</span><span class="p">(</span><span class="n">src_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer variable &quot;</span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; HaloR in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">pds</span><span class="p">%</span><span class="n">SrcMem</span><span class="p">%</span><span class="n">StagLoc</span><span class="p">(</span><span class="n">src_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer variable &quot;</span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; StagLoc in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+
+<span class="w">        </span><span class="c">!-----------------------------------------------------------------------</span>
+<span class="w">        </span><span class="c">! partition the source descriptor string into separate parts which</span>
+<span class="w">        </span><span class="c">! correspond to memory locations and parse the substrings for</span>
+<span class="w">        </span><span class="c">! grid and distribution descriptions.</span>
+<span class="w">        </span><span class="c">!-----------------------------------------------------------------------</span>
+<span class="w">        </span><span class="k">call </span><span class="n">memory_separate</span><span class="p">(</span><span class="w"> </span><span class="n">src_string</span><span class="p">,</span><span class="w"> </span><span class="n">src_mem_rank</span><span class="p">,</span><span class="w"> </span><span class="n">lsrc</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">CheckError</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">FILE__</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">,</span><span class="s2">&quot;syntax error in SRC portion &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="s2">&quot;of problem descriptor string - memory separate &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">           </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">lstring</span><span class="p">)),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">        call </span><span class="n">interpret_descriptor_string</span><span class="p">(</span><span class="w"> </span><span class="n">lsrc</span><span class="p">,</span><span class="w"> </span><span class="n">src_mem_rank</span><span class="p">,</span><span class="w">                  </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">grid_rank</span><span class="p">,</span><span class="w"> </span><span class="n">grid_order</span><span class="p">,</span><span class="w"> </span><span class="n">grid_type</span><span class="p">,</span><span class="w"> </span><span class="n">grid_HaloL</span><span class="p">,</span><span class="w"> </span><span class="n">grid_HaloR</span><span class="p">,</span><span class="w">     </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">grid_StagLoc</span><span class="p">,</span><span class="w"> </span><span class="n">dist_rank</span><span class="p">,</span><span class="w"> </span><span class="n">dist_order</span><span class="p">,</span><span class="w"> </span><span class="n">dist_type</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">CheckError</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">FILE__</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">,</span><span class="s2">&quot;syntax error in SRC portion &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="s2">&quot;of problem descriptor string - interpret string &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">          </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">lstring</span><span class="p">)),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">        </span><span class="n">pds</span><span class="p">%</span><span class="n">SrcMem</span><span class="p">%</span><span class="n">GridRank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grid_rank</span>
+<span class="w">        </span><span class="n">pds</span><span class="p">%</span><span class="n">SrcMem</span><span class="p">%</span><span class="n">DistRank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dist_rank</span>
+
+<span class="w">        </span><span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">pds</span><span class="p">%</span><span class="n">SrcMem</span><span class="p">%</span><span class="n">memRank</span>
+<span class="w">           </span><span class="n">pds</span><span class="p">%</span><span class="n">SrcMem</span><span class="p">%</span><span class="n">GridType</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grid_type</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">string</span>
+<span class="w">           </span><span class="n">pds</span><span class="p">%</span><span class="n">SrcMem</span><span class="p">%</span><span class="n">DistType</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dist_type</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">string</span>
+
+<span class="w">           </span><span class="n">pds</span><span class="p">%</span><span class="n">SrcMem</span><span class="p">%</span><span class="n">GridOrder</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grid_order</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">       </span><span class="c">! These are getting corrupted when tensor dimensions are specified</span>
+<span class="w">           </span><span class="n">pds</span><span class="p">%</span><span class="n">SrcMem</span><span class="p">%</span><span class="n">DistOrder</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dist_order</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">           </span><span class="n">pds</span><span class="p">%</span><span class="n">SrcMem</span><span class="p">%</span><span class="n">HaloL</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">grid_HaloL</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">           </span><span class="n">pds</span><span class="p">%</span><span class="n">SrcMem</span><span class="p">%</span><span class="n">HaloR</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">grid_HaloR</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">           </span><span class="n">pds</span><span class="p">%</span><span class="n">SrcMem</span><span class="p">%</span><span class="n">StagLoc</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">grid_StagLoc</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">        </span><span class="k">enddo</span>
+
+<span class="k">        deallocate</span><span class="p">(</span><span class="w"> </span><span class="n">lsrc</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">deallocate</span><span class="p">(</span><span class="w"> </span><span class="n">grid_order</span><span class="p">,</span><span class="w"> </span><span class="n">grid_type</span><span class="p">,</span><span class="w"> </span><span class="n">grid_HaloL</span><span class="p">,</span><span class="w"> </span><span class="n">grid_HaloR</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">deallocate</span><span class="p">(</span><span class="w"> </span><span class="n">grid_StagLoc</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">deallocate</span><span class="p">(</span><span class="w"> </span><span class="n">dist_order</span><span class="p">,</span><span class="w"> </span><span class="n">dist_type</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">        </span><span class="c">!-----------------------------------------------------------------------</span>
+<span class="w">        </span><span class="c">! create work space for parsing the destination descriptor string</span>
+<span class="w">        </span><span class="c">!-----------------------------------------------------------------------</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="w"> </span><span class="n">ldst</span><span class="p">(</span><span class="n">dst_mem_rank</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;type &quot;</span><span class="o">//</span><span class="w">                </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; ldst in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">grid_order</span><span class="p">(</span><span class="n">dst_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer variable &quot;</span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; grid_order in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">grid_type</span><span class="p">(</span><span class="n">dst_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;char variable &quot;</span><span class="o">//</span><span class="w">       </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; grid_type in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">grid_HaloL</span><span class="p">(</span><span class="n">dst_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer variable &quot;</span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; grid_HaloL in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">grid_HaloR</span><span class="p">(</span><span class="n">dst_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer variable &quot;</span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; grid_HaloR in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">grid_StagLoc</span><span class="p">(</span><span class="n">dst_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer variable &quot;</span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; grid_StagLoc in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">dist_order</span><span class="p">(</span><span class="n">dst_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer variable &quot;</span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; dist_order in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">dist_type</span><span class="p">(</span><span class="n">dst_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;char variable &quot;</span><span class="o">//</span><span class="w">       </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; dist_type in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">pds</span><span class="p">%</span><span class="n">DstMem</span><span class="p">%</span><span class="n">GridOrder</span><span class="p">(</span><span class="n">dst_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer variable &quot;</span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; GridOrder in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">pds</span><span class="p">%</span><span class="n">DstMem</span><span class="p">%</span><span class="n">DistOrder</span><span class="p">(</span><span class="n">dst_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer variable &quot;</span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; DistOrder in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">pds</span><span class="p">%</span><span class="n">DstMem</span><span class="p">%</span><span class="n">GridType</span><span class="p">(</span><span class="n">dst_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;char variable &quot;</span><span class="o">//</span><span class="w">       </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; GridType in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">pds</span><span class="p">%</span><span class="n">DstMem</span><span class="p">%</span><span class="n">DistType</span><span class="p">(</span><span class="n">dst_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;char variable &quot;</span><span class="o">//</span><span class="w">       </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; DistType in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">pds</span><span class="p">%</span><span class="n">DstMem</span><span class="p">%</span><span class="n">HaloL</span><span class="p">(</span><span class="n">dst_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer variable &quot;</span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; HaloL in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">pds</span><span class="p">%</span><span class="n">DstMem</span><span class="p">%</span><span class="n">HaloR</span><span class="p">(</span><span class="n">dst_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer variable &quot;</span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; HaloR in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+<span class="k">        allocate</span><span class="p">(</span><span class="w"> </span><span class="n">pds</span><span class="p">%</span><span class="n">DstMem</span><span class="p">%</span><span class="n">StagLoc</span><span class="p">(</span><span class="n">dst_mem_rank</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="o">=</span><span class="n">allocRcToTest</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundAllocError</span><span class="p">(</span><span class="n">allocRcToTest</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;integer variable &quot;</span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="s2">&quot; StagLoc in parse_descriptor_string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        endif</span>
+
+<span class="w">        </span><span class="c">!-----------------------------------------------------------------------</span>
+<span class="w">        </span><span class="c">! partition the destination descriptor string into separate parts</span>
+<span class="w">        </span><span class="c">! which correspond to memory locations and parse the substrings</span>
+<span class="w">        </span><span class="c">! for grid and distribution descriptions.</span>
+<span class="w">        </span><span class="c">!-----------------------------------------------------------------------</span>
+<span class="w">        </span><span class="k">call </span><span class="n">memory_separate</span><span class="p">(</span><span class="w"> </span><span class="n">dst_string</span><span class="p">,</span><span class="w"> </span><span class="n">dst_mem_rank</span><span class="p">,</span><span class="w"> </span><span class="n">ldst</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">CheckError</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">FILE__</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">,</span><span class="s2">&quot;syntax error in SRC portion &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="s2">&quot;of problem descriptor string - memory separate &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">           </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">lstring</span><span class="p">)),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">        call </span><span class="n">interpret_descriptor_string</span><span class="p">(</span><span class="w"> </span><span class="n">ldst</span><span class="p">,</span><span class="w"> </span><span class="n">dst_mem_rank</span><span class="p">,</span><span class="w">                  </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">grid_rank</span><span class="p">,</span><span class="w"> </span><span class="n">grid_order</span><span class="p">,</span><span class="w"> </span><span class="n">grid_type</span><span class="p">,</span><span class="w"> </span><span class="n">grid_HaloL</span><span class="p">,</span><span class="w"> </span><span class="n">grid_HaloR</span><span class="p">,</span><span class="w">      </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">grid_StagLoc</span><span class="p">,</span><span class="w"> </span><span class="n">dist_rank</span><span class="p">,</span><span class="w"> </span><span class="n">dist_order</span><span class="p">,</span><span class="w"> </span><span class="n">dist_type</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">CheckError</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">LINE__</span><span class="p">,</span><span class="w"> </span><span class="err">__</span><span class="n">FILE__</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span><span class="p">,</span><span class="s2">&quot;syntax error in SRC portion &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="s2">&quot;of problem descriptor string - interpret string &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">          </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustL</span><span class="p">(</span><span class="n">lstring</span><span class="p">)),</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">        </span><span class="n">pds</span><span class="p">%</span><span class="n">DstMem</span><span class="p">%</span><span class="n">GridRank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grid_rank</span>
+<span class="w">        </span><span class="n">pds</span><span class="p">%</span><span class="n">DstMem</span><span class="p">%</span><span class="n">DistRank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dist_rank</span>
+
+<span class="w">        </span><span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">pds</span><span class="p">%</span><span class="n">DstMem</span><span class="p">%</span><span class="n">memRank</span>
+<span class="w">           </span><span class="n">pds</span><span class="p">%</span><span class="n">DstMem</span><span class="p">%</span><span class="n">GridType</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">string</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">grid_type</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">string</span>
+<span class="w">           </span><span class="n">pds</span><span class="p">%</span><span class="n">DstMem</span><span class="p">%</span><span class="n">DistType</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">string</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">dist_type</span><span class="p">(</span><span class="n">k</span><span class="p">)%</span><span class="n">string</span>
+
+<span class="w">           </span><span class="n">pds</span><span class="p">%</span><span class="n">DstMem</span><span class="p">%</span><span class="n">GridOrder</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grid_order</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">           </span><span class="n">pds</span><span class="p">%</span><span class="n">DstMem</span><span class="p">%</span><span class="n">DistOrder</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dist_order</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+
+<span class="w">           </span><span class="n">pds</span><span class="p">%</span><span class="n">DstMem</span><span class="p">%</span><span class="n">HaloL</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">grid_HaloL</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">           </span><span class="n">pds</span><span class="p">%</span><span class="n">DstMem</span><span class="p">%</span><span class="n">HaloR</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">grid_HaloR</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">           </span><span class="n">pds</span><span class="p">%</span><span class="n">DstMem</span><span class="p">%</span><span class="n">StagLoc</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">grid_StagLoc</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">        </span><span class="k">enddo</span>
+
+<span class="k">        deallocate</span><span class="p">(</span><span class="w"> </span><span class="n">ldst</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">deallocate</span><span class="p">(</span><span class="w"> </span><span class="n">grid_order</span><span class="p">,</span><span class="w"> </span><span class="n">grid_type</span><span class="p">,</span><span class="w"> </span><span class="n">grid_HaloL</span><span class="p">,</span><span class="w"> </span><span class="n">grid_HaloR</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">deallocate</span><span class="p">(</span><span class="w"> </span><span class="n">grid_StagLoc</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">deallocate</span><span class="p">(</span><span class="w"> </span><span class="n">dist_order</span><span class="p">,</span><span class="w"> </span><span class="n">dist_type</span><span class="w"> </span><span class="p">)</span>
+<span class="w">     </span><span class="k">else</span><span class="w">  </span><span class="c">! error does not conform to either single block or multiblock</span>
+<span class="w">        </span><span class="n">localrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">        </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;syntax error - problem &quot;</span><span class="w">        </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; descriptor string does not conform to either &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">        </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="s2">&quot;single block syntax or to multiblock syntax&quot;</span><span class="p">,</span><span class="w">                </span><span class="p">&amp;</span>
+<span class="w">                 </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span>
+<span class="k">     endif</span>
+<span class="k">  else</span><span class="w">   </span><span class="c">! error does not conform to either single block or multiblock</span>
+<span class="w">     </span><span class="n">localrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FAILURE</span>
+<span class="w">     </span><span class="k">call </span><span class="n">ESMF_LogSetError</span><span class="p">(</span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;syntax error - problem &quot;</span><span class="w">           </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; descriptor string does not conform to either &quot;</span><span class="w"> </span><span class="o">//</span><span class="w">           </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="s2">&quot;single block syntax or to multiblock syntax&quot;</span><span class="p">,</span><span class="w">                   </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">     </span><span class="k">return</span>
+<span class="k">  endif</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! if I&#39;ve gotten this far without an error, then the routine has succeeded.</span>
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+
+<span class="w">  </span><span class="c">!-----------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="k">end subroutine </span><span class="n">parse_descriptor_string</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

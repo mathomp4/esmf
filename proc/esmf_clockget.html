@@ -1,0 +1,728 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_ClockGet &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_ClockGet
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.0% of total for procedures.">52 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_Clock.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_clock.f90.html'>ESMF_Clock.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/esmf_clockmod.html'>ESMF_ClockMod</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_ClockGet</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/esmf_clockget.html#src">ESMF_ClockGet</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  subroutine ESMF_ClockGet(clock, keywordEnforcer, timeStep, startTime, stopTime, runDuration, runTimeStepCount, refTime, currTime, prevTime, currSimTime, prevSimTime, calendar, calkindflag, timeZone, advanceCount, alarmCount, direction, repeatDuration, repeatCount, name, rc)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-clock~605"></span>
+              type(<a href='../type/esmf_clock.html'>ESMF_Clock</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>clock</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-keywordenforcer~1184"></span>
+              type(<a href='../type/esmf_keywordenforcer.html'>ESMF_KeywordEnforcer</a>),
+            </td>
+<td></td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>keywordEnforcer</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-timestep~45"></span>
+              type(<a href='../type/esmf_timeinterval.html'>ESMF_TimeInterval</a>),
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>timeStep</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-starttime~51"></span>
+              type(<a href='../type/esmf_time.html'>ESMF_Time</a>),
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>startTime</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-stoptime~43"></span>
+              type(<a href='../type/esmf_time.html'>ESMF_Time</a>),
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stopTime</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-runduration~8"></span>
+              type(<a href='../type/esmf_timeinterval.html'>ESMF_TimeInterval</a>),
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>runDuration</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-runtimestepcount~6"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>runTimeStepCount</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-reftime~9"></span>
+              type(<a href='../type/esmf_time.html'>ESMF_Time</a>),
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>refTime</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-currtime~34"></span>
+              type(<a href='../type/esmf_time.html'>ESMF_Time</a>),
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>currTime</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-prevtime"></span>
+              type(<a href='../type/esmf_time.html'>ESMF_Time</a>),
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>prevTime</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-currsimtime"></span>
+              type(<a href='../type/esmf_timeinterval.html'>ESMF_TimeInterval</a>),
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>currSimTime</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-prevsimtime"></span>
+              type(<a href='../type/esmf_timeinterval.html'>ESMF_TimeInterval</a>),
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>prevSimTime</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-calendar~9"></span>
+              type(<a href='../type/esmf_calendar.html'>ESMF_Calendar</a>),
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>calendar</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-calkindflag~9"></span>
+              type(<a href='../type/esmf_calkind_flag.html'>ESMF_CalKind_Flag</a>),
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>calkindflag</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-timezone~3"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>timeZone</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-advancecount~6"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>advanceCount</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-alarmcount"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>alarmCount</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-direction~7"></span>
+              type(<a href='../type/esmf_direction_flag.html'>ESMF_Direction_Flag</a>),
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>direction</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-repeatduration~3"></span>
+              type(<a href='../type/esmf_timeinterval.html'>ESMF_TimeInterval</a>),
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>repeatDuration</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-repeatcount"></span>
+              integer(kind=ESMF_KIND_I8),
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>repeatCount</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-name~1091"></span>
+              character(len=*),
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>name</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~4081"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">      </span><span class="k">subroutine </span><span class="n">ESMF_ClockGet</span><span class="p">(</span><span class="n">clock</span><span class="p">,</span><span class="w"> </span><span class="n">keywordEnforcer</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">timeStep</span><span class="p">,</span><span class="w"> </span><span class="n">startTime</span><span class="p">,</span><span class="w"> </span><span class="n">stopTime</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">runDuration</span><span class="p">,</span><span class="w"> </span><span class="n">runTimeStepCount</span><span class="p">,</span><span class="w"> </span><span class="n">refTime</span><span class="p">,</span><span class="w"> </span><span class="n">currTime</span><span class="p">,</span><span class="w"> </span><span class="n">prevTime</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">currSimTime</span><span class="p">,</span><span class="w"> </span><span class="n">prevSimTime</span><span class="p">,</span><span class="w"> </span><span class="n">calendar</span><span class="p">,</span><span class="w"> </span><span class="n">calkindflag</span><span class="p">,</span><span class="w"> </span><span class="n">timeZone</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">advanceCount</span><span class="p">,</span><span class="w"> </span><span class="n">alarmCount</span><span class="p">,</span><span class="w"> </span><span class="n">direction</span><span class="p">,</span><span class="w"> </span><span class="n">repeatDuration</span><span class="p">,</span><span class="w"> </span><span class="n">repeatCount</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+
+<span class="c">! !ARGUMENTS:</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Clock</span><span class="p">),</span><span class="w">        </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">clock</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_KeywordEnforcer</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="kd">::</span><span class="w"> </span><span class="n">keywordEnforcer</span><span class="w"> </span><span class="c">! must use keywords below</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_TimeInterval</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">timeStep</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Time</span><span class="p">),</span><span class="w">         </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">startTime</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Time</span><span class="p">),</span><span class="w">         </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">stopTime</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_TimeInterval</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">runDuration</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w">      </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">runTimeStepCount</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Time</span><span class="p">),</span><span class="w">         </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">refTime</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Time</span><span class="p">),</span><span class="w">         </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">currTime</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Time</span><span class="p">),</span><span class="w">         </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">prevTime</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_TimeInterval</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">currSimTime</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_TimeInterval</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">prevSimTime</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Calendar</span><span class="p">),</span><span class="w">     </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">calendar</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_CalKind_Flag</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">calkindflag</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">                 </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">timeZone</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ESMF_KIND_I8</span><span class="p">),</span><span class="w">   </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">advanceCount</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">                 </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">alarmCount</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Direction_Flag</span><span class="p">),</span><span class="w">    </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">direction</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_TimeInterval</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">repeatDuration</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ESMF_KIND_I8</span><span class="p">),</span><span class="w">   </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">repeatCount</span>
+<span class="w">      </span><span class="kt">character</span><span class="w"> </span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w">       </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">name</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">                 </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+
+<span class="c">!</span>
+<span class="c">! !STATUS:</span>
+<span class="c">! \begin{itemize}</span>
+<span class="c">! \item\apiStatusCompatibleVersion{5.2.0r}</span>
+<span class="c">! \item\apiStatusModifiedSinceVersion{5.2.0r}</span>
+<span class="c">! \begin{description}</span>
+<span class="c">! \item[8.7.0] Added arguments {\tt repeatDuration} and {\tt repeatCount}.</span>
+<span class="c">!              The argument {\tt repeatDuration} allows the user to get information</span>
+<span class="c">!              about how far the clock will advance before repeating. The argument</span>
+<span class="c">!              {\tt repeatCount} tells how many times the clock has repeated.</span>
+<span class="c">! \end{description}</span>
+<span class="c">! \end{itemize}</span>
+<span class="c">!</span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">!     Gets one or more of the properties of an {\tt ESMF\_Clock}.</span>
+<span class="c">!</span>
+<span class="c">!     The arguments are:</span>
+<span class="c">!     \begin{description}</span>
+<span class="c">!     \item[clock]</span>
+<span class="c">!          The object instance to query.</span>
+<span class="c">!     \item[{[timeStep]}]</span>
+<span class="c">!          The {\tt ESMF\_Clock}&#39;s time step interval.</span>
+<span class="c">!     \item[{[startTime]}]</span>
+<span class="c">!          The {\tt ESMF\_Clock}&#39;s starting time.</span>
+<span class="c">!     \item[{[stopTime]}]</span>
+<span class="c">!          The {\tt ESMF\_Clock}&#39;s stopping time.</span>
+<span class="c">!     \item[{[runDuration]}]</span>
+<span class="c">!          Alternative way to get {\tt ESMF\_Clock}&#39;s stopping time;</span>
+<span class="c">!             runDuration = stopTime - startTime.</span>
+<span class="c">!     \item[{[runTimeStepCount]}]</span>
+<span class="c">!          Alternative way to get {\tt ESMF\_Clock}&#39;s stopping time;</span>
+<span class="c">!             runTimeStepCount = (stopTime - startTime) / timeStep.</span>
+<span class="c">!     \item[{[refTime]}]</span>
+<span class="c">!          The {\tt ESMF\_Clock}&#39;s reference time.</span>
+<span class="c">!     \item[{[currTime]}]</span>
+<span class="c">!          The {\tt ESMF\_Clock}&#39;s current time.</span>
+<span class="c">!     \item[{[prevTime]}]</span>
+<span class="c">!          The {\tt ESMF\_Clock}&#39;s previous time.  Equals currTime at</span>
+<span class="c">!          the previous time step.</span>
+<span class="c">!     \item[{[currSimTime]}]</span>
+<span class="c">!          The current simulation time (currTime - refTime).</span>
+<span class="c">!     \item[{[prevSimTime]}]</span>
+<span class="c">!          The previous simulation time.  Equals currSimTime at</span>
+<span class="c">!          the previous time step.</span>
+<span class="c">!     \item[{[calendar]}]</span>
+<span class="c">!          The {\tt Calendar} on which all the {\tt Clock}&#39;s times are defined.</span>
+<span class="c">!     \item[{[calkindflag]}]</span>
+<span class="c">!          The {\tt CalKind\_Flag} on which all the {\tt Clock}&#39;s times are</span>
+<span class="c">!          defined.</span>
+<span class="c">!     \item[{[timeZone]}]</span>
+<span class="c">!          The timezone within which all the {\tt Clock}&#39;s times are defined.</span>
+<span class="c">!     \item[{[advanceCount]}]</span>
+<span class="c">!          \begin{sloppypar}</span>
+<span class="c">!          The number of times the {\tt ESMF\_Clock} has been advanced.</span>
+<span class="c">!          Increments in {\tt ESMF\_DIRECTION\_FORWARD} and decrements in</span>
+<span class="c">!          {\tt ESMF\_DIRECTION\_REVERSE}; see &quot;direction&quot; argument below and</span>
+<span class="c">!          in {\tt ESMF\_ClockSet()}.</span>
+<span class="c">!          \end{sloppypar}</span>
+<span class="c">!     \item[{[alarmCount]}]</span>
+<span class="c">!          The number of {\tt ESMF\_Alarm}s in the {\tt ESMF\_Clock}&#39;s</span>
+<span class="c">!          {\tt ESMF\_Alarm} list.</span>
+<span class="c">!     \item[{[direction]}]</span>
+<span class="c">!          The {\tt ESMF\_Clock}&#39;s time stepping direction.  See also</span>
+<span class="c">!          {\tt ESMF\_ClockIsReverse()}, an alternative for convenient use in</span>
+<span class="c">!          &quot;if&quot; and &quot;do while&quot; constructs.</span>
+<span class="c">!     \item[{[repeatDuration]}]</span>
+<span class="c">!          If not 0, then tells how long the clock will advance before going back to</span>
+<span class="c">!          startTime. If 0, then the clock is not a repeat clock. </span>
+<span class="c">!     \item[{[repeatCount]}]</span>
+<span class="c">!          If this clock is a repeat clock, then gives the number of times this</span>
+<span class="c">!          clock has gone back to startTime.     </span>
+<span class="c">!     \item[{[name]}]</span>
+<span class="c">!          The name of this clock.</span>
+<span class="c">!     \item[{[rc]}]</span>
+<span class="c">!          Return code; equals {\tt ESMF\_SUCCESS} if there are no errors.</span>
+<span class="c">!     \end{description}</span>
+<span class="c">!</span>
+<span class="c">!EOP</span>
+<span class="c">! !REQUIREMENTS:</span>
+<span class="c">!     TMG3.5.1 - TMG3.5.5</span>
+
+<span class="w">      </span><span class="c">! temp name for C++ to fill</span>
+<span class="w">      </span><span class="kt">character</span><span class="w"> </span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tempName</span>
+
+<span class="w">      </span><span class="c">! initialize name lengths to zero for non-existent name</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">nameLen</span><span class="p">,</span><span class="w"> </span><span class="n">tempNameLen</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localrc</span><span class="w">                        </span><span class="c">! local return code</span>
+
+<span class="w">      </span><span class="c">! Assume failure until success</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+<span class="w">      </span><span class="n">localrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_RC_NOT_IMPL</span>
+
+<span class="w">      </span><span class="n">nameLen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">      </span><span class="n">tempNameLen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+
+<span class="w">      </span><span class="c">! check input</span>
+<span class="w">      </span><span class="n">ESMF_INIT_CHECK_DEEP</span><span class="p">(</span><span class="n">ESMF_ClockGetInit</span><span class="p">,</span><span class="n">clock</span><span class="p">,</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">! get length of given name for C++ validation</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">nameLen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="w">      </span><span class="k">end if</span>
+
+<span class="w">      </span><span class="c">! invoke C to C++ entry point</span>
+<span class="w">      </span><span class="k">call </span><span class="n">c_ESMC_ClockGet</span><span class="p">(</span><span class="n">clock</span><span class="p">,</span><span class="w"> </span><span class="n">nameLen</span><span class="p">,</span><span class="w"> </span><span class="n">tempNameLen</span><span class="p">,</span><span class="w"> </span><span class="n">tempName</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                           </span><span class="n">timeStep</span><span class="p">,</span><span class="w"> </span><span class="n">startTime</span><span class="p">,</span><span class="w"> </span><span class="n">stopTime</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                           </span><span class="n">runDuration</span><span class="p">,</span><span class="w"> </span><span class="n">runTimeStepCount</span><span class="p">,</span><span class="w"> </span><span class="n">refTime</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                           </span><span class="n">currTime</span><span class="p">,</span><span class="w"> </span><span class="n">prevTime</span><span class="p">,</span><span class="w"> </span><span class="n">currSimTime</span><span class="p">,</span><span class="w"> </span><span class="n">prevSimTime</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                           </span><span class="n">calendar</span><span class="p">,</span><span class="w"> </span><span class="n">calkindflag</span><span class="p">,</span><span class="w"> </span><span class="n">timeZone</span><span class="p">,</span><span class="w"> </span><span class="n">advanceCount</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                           </span><span class="n">alarmCount</span><span class="p">,</span><span class="w"> </span><span class="n">direction</span><span class="p">,</span><span class="w"> </span><span class="n">repeatDuration</span><span class="p">,</span><span class="w"> </span><span class="n">repeatCount</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                           </span><span class="n">localrc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">localrc</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_ERR_PASSTHRU</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">ESMF_CONTEXT</span><span class="p">,</span><span class="w"> </span><span class="n">rcToReturn</span><span class="o">=</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">      </span><span class="c">! copy temp name back to given name to restore native Fortran</span>
+<span class="w">      </span><span class="c">!   storage style</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tempName</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">tempNameLen</span><span class="p">)</span>
+<span class="w">      </span><span class="k">endif</span>
+
+<span class="w">      </span><span class="c">! mark outputs as successfully initialized</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeIntervalInit</span><span class="p">(</span><span class="n">timeStep</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeInit</span><span class="p">(</span><span class="n">startTime</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeInit</span><span class="p">(</span><span class="n">stopTime</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeIntervalInit</span><span class="p">(</span><span class="n">runDuration</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeInit</span><span class="p">(</span><span class="n">refTime</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeInit</span><span class="p">(</span><span class="n">currTime</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeInit</span><span class="p">(</span><span class="n">prevTime</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeIntervalInit</span><span class="p">(</span><span class="n">currSimTime</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeIntervalInit</span><span class="p">(</span><span class="n">prevSimTime</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_CalendarSetInitCreated</span><span class="p">(</span><span class="n">calendar</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_TimeIntervalInit</span><span class="p">(</span><span class="n">repeatDuration</span><span class="p">)</span>
+<span class="w">      </span>
+<span class="w">      </span><span class="c">! Return success</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="w">      </span><span class="k">end subroutine </span><span class="n">ESMF_ClockGet</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

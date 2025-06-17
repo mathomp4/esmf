@@ -1,0 +1,485 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_LogFoundError &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_LogFoundError
+      <small>Function</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.0% of total for procedures.">60 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_LogErr.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_logerr.f90.html'>ESMF_LogErr.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/esmf_logerrmod.html'>ESMF_LogErrMod</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_LogFoundError</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/esmf_logfounderror.html#src">ESMF_LogFoundError</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public recursive function ESMF_LogFoundError(rcToCheck, keywordEnforcer, msg, line, file, method, rcToReturn, log) result(LogFoundError)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rctocheck"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rcToCheck</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-keywordenforcer~971"></span>
+              type(<a href='../type/esmf_keywordenforcer.html'>ESMF_KeywordEnforcer</a>),
+            </td>
+<td></td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>keywordEnforcer</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-msg~24"></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>msg</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-line~23"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>line</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-file~18"></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>file</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-method~18"></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>method</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rctoreturn~4"></span>
+              integer,
+            </td>
+<td>intent(inout),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rcToReturn</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-log~7"></span>
+              type(<a href='../type/esmf_log.html'>ESMF_Log</a>),
+            </td>
+<td>intent(inout),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>log</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <h3>Return Value
+        <small>
+          <span class="anchor" id="variable-logfounderror"></span>
+          logical
+        </small>
+      </h3>
+      
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">  </span><span class="k">recursive function </span><span class="n">ESMF_LogFoundError</span><span class="p">(</span><span class="n">rcToCheck</span><span class="p">,</span><span class="w">  </span><span class="n">keywordEnforcer</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">                                  </span><span class="n">msg</span><span class="p">,</span><span class="w"> </span><span class="n">line</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                                  </span><span class="n">rcToReturn</span><span class="p">,</span><span class="w"> </span><span class="nb">log</span><span class="p">)</span><span class="w"> </span><span class="k">result</span><span class="w"> </span><span class="p">(</span><span class="n">LogFoundError</span><span class="p">)</span>
+<span class="c">!</span>
+<span class="c">! !RETURN VALUE:</span>
+<span class="w">      </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">LogFoundError</span>
+<span class="c">!</span>
+<span class="c">! !ARGUMENTS:</span>
+<span class="c">!</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">          </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rcToCheck</span>
+<span class="k">type</span><span class="p">(</span><span class="n">ESMF_KeywordEnforcer</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="kd">::</span><span class="w"> </span><span class="n">keywordEnforcer</span><span class="w"> </span><span class="c">! must use keywords below</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">msg</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">          </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">line</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="k">file</span>
+<span class="k">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w">    </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">method</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">          </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rcToReturn</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Log</span><span class="p">),</span><span class="w">   </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="nb">log</span>
+
+<span class="c">!</span>
+<span class="c">! !STATUS:</span>
+<span class="c">! \begin{itemize}</span>
+<span class="c">! \item\apiStatusCompatibleVersion{5.2.0r}</span>
+<span class="c">! \end{itemize}</span>
+<span class="c">!</span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">!      This function returns {\tt .true.} when {\tt rcToCheck} indicates</span>
+<span class="c">!      an return code other than {\tt ESMF\_SUCCESS}, otherwise it returns</span>
+<span class="c">!      {\tt .false.}.</span>
+<span class="c">!      If an error is indicated, a ESMF predefined error message</span>
+<span class="c">!      will be written to the {\tt ESMF\_Log} along with a user added {\tt msg},</span>
+<span class="c">!      {\tt line}, {\tt file} and {\tt method}.</span>
+<span class="c">!</span>
+<span class="c">!      The arguments are:</span>
+<span class="c">!      \begin{description}</span>
+<span class="c">!</span>
+<span class="c">!      \item [{[rcToCheck]}]</span>
+<span class="c">!            Return code to check. Default is {\tt ESMF\_SUCCESS}.</span>
+<span class="c">!      \item [{[msg]}]</span>
+<span class="c">!            User-provided message string.</span>
+<span class="c">!      \item [{[line]}]</span>
+<span class="c">!            Integer source line number.  Expected to be set by</span>
+<span class="c">!            using the preprocessor {\tt \_\_LINE\_\_} macro.</span>
+<span class="c">!      \item [{[file]}]</span>
+<span class="c">!            User-provided source file name.</span>
+<span class="c">!      \item [{[method]}]</span>
+<span class="c">!            User-provided method string.</span>
+<span class="c">!      \item [{[rcToReturn]}]</span>
+<span class="c">!            If specified, when {\tt rcToCheck} indicates an error,</span>
+<span class="c">!            set the {\tt rcToReturn} to the value of {\tt rcToCheck}.</span>
+<span class="c">!            Otherwise, {\tt rcToReturn} is not modified.</span>
+<span class="c">!            This is not the return code for this function; it allows</span>
+<span class="c">!            the calling code to do an assignment of the error code</span>
+<span class="c">!            at the same time it is testing the value.</span>
+<span class="c">!      \item [{[log]}]</span>
+<span class="c">!            An optional {\tt ESMF\_Log} object that can be used instead</span>
+<span class="c">!            of the default Log.</span>
+<span class="c">!</span>
+<span class="c">!      \end{description}</span>
+<span class="c">!</span>
+<span class="c">!EOP</span>
+
+<span class="w">    </span><span class="kt">integer</span><span class="kd">::</span><span class="w"> </span><span class="n">rcToCheckInternal</span>
+<span class="w">    </span><span class="kt">integer</span><span class="kd">::</span><span class="w"> </span><span class="n">i</span>
+<span class="w">    </span><span class="kt">logical</span><span class="kd">::</span><span class="w"> </span><span class="n">masked</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_LogPrivate</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w">          </span><span class="kd">::</span><span class="w"> </span><span class="nb">alog</span>
+<span class="nb">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">errmsg</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">msglen</span>
+
+<span class="w">    </span><span class="c">! set default return</span>
+<span class="w">    </span><span class="n">LogFoundError</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">FALSE</span><span class="p">.</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="nb">present</span><span class="p">(</span><span class="n">rcToCheck</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      </span><span class="n">rcToCheckInternal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="k">      </span><span class="n">rcToCheckInternal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rcToCheck</span>
+<span class="w">    </span><span class="k">endif</span>
+
+<span class="k">    </span><span class="n">ESMF_INIT_CHECK_SET_SHALLOW</span><span class="p">(</span><span class="n">ESMF_LogGetInit</span><span class="p">,</span><span class="n">ESMF_LogInit</span><span class="p">,</span><span class="nb">log</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">nullify</span><span class="p">(</span><span class="nb">alog</span><span class="p">)</span><span class="w"> </span><span class="c">! ensure that the association status is well defined</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="nb">log</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="nb">log</span><span class="p">%</span><span class="n">logTableIndex</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">         </span><span class="nb">alog</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ESMF_LogTable</span><span class="p">(</span><span class="nb">log</span><span class="p">%</span><span class="n">logTableIndex</span><span class="p">)</span>
+<span class="w">      </span><span class="k">endif</span>
+<span class="k">    else</span>
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_LogDefault</span><span class="p">%</span><span class="n">logTableIndex</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="nb">alog</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ESMF_LogTable</span><span class="p">(</span><span class="n">ESMF_LogDefault</span><span class="p">%</span><span class="n">logTableIndex</span><span class="p">)</span>
+<span class="w">      </span><span class="k">end if</span>
+<span class="k">    endif</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="nb">associated</span><span class="p">(</span><span class="nb">alog</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+
+<span class="k">      </span><span class="n">ESMF_INIT_CHECK_SET_SHALLOW</span><span class="p">(</span><span class="n">ESMF_LogPrivateGetInit</span><span class="p">,</span><span class="n">ESMF_LogPrivateInit</span><span class="p">,</span><span class="nb">alog</span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">alog</span><span class="p">%</span><span class="n">traceFlag</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        call </span><span class="n">ESMF_LogWrite</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;called: &#39;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">ESMF_METHOD</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_LOGMSG_TRACE</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">          </span><span class="n">line</span><span class="o">=</span><span class="n">line</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="k">file</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span><span class="w"> </span><span class="nb">log</span><span class="o">=</span><span class="nb">log</span><span class="p">)</span>
+<span class="w">      </span><span class="k">end if</span>
+
+<span class="w">      </span><span class="c">! check the error code</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rcToCheckInternal</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">masked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">        </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nb">alog</span><span class="p">%</span><span class="n">errorMaskCount</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">alog</span><span class="p">%</span><span class="n">errorMask</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">rcToCheckInternal</span><span class="p">)</span><span class="w"> </span><span class="n">masked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">        </span><span class="k">enddo</span>
+<span class="k">        if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="n">masked</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          call </span><span class="n">ESMF_Breakpoint</span><span class="p">()</span><span class="w">  </span><span class="c">! no-op to assist debugging</span>
+<span class="w">          </span><span class="k">call </span><span class="n">ESMF_LogRc2Msg</span><span class="w"> </span><span class="p">(</span><span class="n">rcToCheckInternal</span><span class="p">,</span><span class="w"> </span><span class="n">errmsg</span><span class="p">,</span><span class="w"> </span><span class="n">msglen</span><span class="p">)</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">msg</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            </span><span class="n">errmsg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">errmsg</span><span class="p">(:</span><span class="n">msglen</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot; - &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">msg</span>
+<span class="w">            </span><span class="n">msglen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">len_trim</span><span class="w"> </span><span class="p">(</span><span class="n">errmsg</span><span class="p">)</span>
+<span class="w">          </span><span class="k">end if</span>
+<span class="k">          call </span><span class="n">ESMF_LogWrite</span><span class="p">(</span><span class="n">errmsg</span><span class="p">(:</span><span class="n">msglen</span><span class="p">),</span><span class="w"> </span><span class="n">ESMF_LOGMSG_ERROR</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">              </span><span class="n">line</span><span class="o">=</span><span class="n">line</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="k">file</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span><span class="w"> </span><span class="nb">log</span><span class="o">=</span><span class="nb">log</span><span class="p">)</span>
+<span class="w">          </span><span class="n">LogFoundError</span><span class="o">=</span><span class="p">.</span><span class="n">TRUE</span><span class="p">.</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rcToReturn</span><span class="p">))</span><span class="w"> </span><span class="n">rcToReturn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rcToCheckInternal</span>
+<span class="w">        </span><span class="k">endif</span>
+<span class="k">      endif</span>
+<span class="k">    else</span>
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="n">rcToCheckInternal</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">LogFoundError</span><span class="o">=</span><span class="p">.</span><span class="n">TRUE</span><span class="p">.</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">rcToReturn</span><span class="p">))</span><span class="w"> </span><span class="n">rcToReturn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rcToCheckInternal</span>
+<span class="w">      </span><span class="k">end if</span>
+<span class="k">    endif</span>
+
+<span class="k">end function </span><span class="n">ESMF_LogFoundError</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

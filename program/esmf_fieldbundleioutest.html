@@ -1,0 +1,1553 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_FieldBundleIOUTest &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_FieldBundleIOUTest      <small>Program</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.3% of total for programs.">291 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_FieldBundleIOUTest.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_fieldbundleioutest.f90.html'>ESMF_FieldBundleIOUTest.F90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_FieldBundleIOUTest</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-apconv~3">apConv</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-appurp~3">apPurp</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-failmsg~287">failMsg</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-name~1107">name</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-countfail~2">countfail</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-exclusivelbound~33">exclusiveLBound</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-exclusiveubound~33">exclusiveUBound</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-i~722">i</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-j~262">j</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-localpet~418">localPet</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-localrc~2724">localrc</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-petcount~460">petCount</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-rc~4276">rc</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-result~290">result</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-farray_1r">Farray_1r</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-farray_1w">Farray_1w</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-farray_2r">Farray_2r</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-farray_2w">Farray_2w</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-farray_de0_r~2">Farray_DE0_r</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-farray_de0_w~2">Farray_DE0_w</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-farray_de1_r~2">Farray_DE1_r</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-farray_de1_w~2">Farray_DE1_w</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-maxvalue~3">Maxvalue</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-diff~7">diff</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-arrayspec~237">arrayspec</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-fieldrd">fieldRd</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-fieldtst">fieldTst</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-bundlerd">bundleRd</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-bundletst">bundleTst</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-grid~282">grid</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-grid_2de~2">grid_2DE</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-sloc~20">sloc</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-vm~896">vm</a>
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#variable-attrnamevals~2">attrNameVals</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#types-0"
+         aria-expanded="false" aria-controls="types-0">
+         <h4 class="card-header bg-primary text-white">Derived Types</h4>
+      </a>
+      <div id="types-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#type-nameval_t~2">nameval_t</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../program/esmf_fieldbundleioutest.html#src">ESMF_FieldBundleIOUTest</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='../module/esmf.html'>ESMF</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf_testmod.html'>ESMF_TestMod</a></li>
+              </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    
+
+
+    <section>
+    <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-apconv~3"></span>
+              character(len=16),
+            </td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>apConv</strong></td>
+<td> =</td>
+                <td>&#39;Attribute_IO&#39;</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-appurp~3"></span>
+              character(len=16),
+            </td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>apPurp</strong></td>
+<td> =</td>
+                <td>&#39;attributes&#39;</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-failmsg~287"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>failMsg</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-name~1107"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>name</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-countfail~2"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>countfail</strong></td>
+<td> =</td>
+                <td>0</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-exclusivelbound~33"></span>
+              integer,
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>exclusiveLBound</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-exclusiveubound~33"></span>
+              integer,
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>exclusiveUBound</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i~722"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-j~262"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>j</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-localpet~418"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>localPet</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-localrc~2724"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>localrc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-petcount~460"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>petCount</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~4276"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-result~290"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>result</strong></td>
+<td> =</td>
+                <td>0</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray_1r"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer, dimension(:,:)
+            </td>
+            <td>::</td>
+            <td><strong>Farray_1r</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray_1w"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer, dimension(:,:)
+            </td>
+            <td>::</td>
+            <td><strong>Farray_1w</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray_2r"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer, dimension(:,:)
+            </td>
+            <td>::</td>
+            <td><strong>Farray_2r</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray_2w"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer, dimension(:,:)
+            </td>
+            <td>::</td>
+            <td><strong>Farray_2w</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray_de0_r~2"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>Farray_DE0_r</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray_de0_w~2"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>Farray_DE0_w</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray_de1_r~2"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>Farray_DE1_r</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-farray_de1_w~2"></span>
+              real(kind=ESMF_KIND_R8),
+            </td>
+            <td>
+              pointer
+            </td>
+            <td>::</td>
+            <td><strong>Farray_DE1_w</strong>(:,:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-maxvalue~3"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Maxvalue</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-diff~7"></span>
+              real(kind=ESMF_KIND_R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>diff</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-arrayspec~237"></span>
+              type(<a href='../type/esmf_arrayspec.html'>ESMF_ArraySpec</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>arrayspec</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fieldrd"></span>
+              type(<a href='../type/esmf_field.html'>ESMF_Field</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fieldRd</strong>(3)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fieldtst"></span>
+              type(<a href='../type/esmf_field.html'>ESMF_Field</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fieldTst</strong>(3)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-bundlerd"></span>
+              type(ESMF_FieldBundle)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>bundleRd</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-bundletst"></span>
+              type(ESMF_FieldBundle)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>bundleTst</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~282"></span>
+              type(<a href='../type/esmf_grid.html'>ESMF_Grid</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid_2de~2"></span>
+              type(<a href='../type/esmf_grid.html'>ESMF_Grid</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid_2DE</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sloc~20"></span>
+              type(<a href='../type/esmf_staggerloc.html'>ESMF_StaggerLoc</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>sloc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vm~896"></span>
+              type(<a href='../type/esmf_vm.html'>ESMF_VM</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>vm</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-attrnamevals~2"></span>
+              type(<a href='../type/nameval_t~2.html'>nameval_t</a>),
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>attrNameVals</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+    
+
+    <section>
+   <h2>Derived Types</h2>
+       <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="type-nameval_t~2"></span>
+      <h3>
+        type&nbsp;::&nbsp;
+        <a href='../type/nameval_t~2.html'>nameval_t</a>
+        
+      </h3>
+    </div>
+    <div class="card-body">
+      
+
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-name~1108"></span>
+              character(len=ESMF_MAXSTR),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>name</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-value~400"></span>
+              character(len=ESMF_MAXSTR),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>value</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+
+    </div>
+  </div>
+
+    </section>
+   <br>
+    
+
+
+    
+
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">      </span><span class="k">program </span><span class="n">ESMF_FieldBundleIOUTest</span>
+
+<span class="c">!------------------------------------------------------------------------------</span>
+<span class="c">!</span>
+<span class="cp">#include &quot;ESMF.h&quot;</span>
+
+<span class="c">!==============================================================================</span>
+<span class="c">!BOP</span>
+<span class="c">! !PROGRAM: ESMF_FieldBundleIOUTest - FieldBundle IO Unit Tests</span>
+<span class="c">!</span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">!</span>
+<span class="c">!-----------------------------------------------------------------------------</span>
+<span class="c">! !USES:</span>
+<span class="w">  </span><span class="k">use </span><span class="n">ESMF_TestMod</span><span class="w">     </span><span class="c">! test methods</span>
+<span class="w">  </span><span class="k">use </span><span class="n">ESMF</span>
+
+<span class="w">  </span><span class="k">implicit none</span>
+
+<span class="c">!------------------------------------------------------------------------------</span>
+<span class="c">!------------------------------------------------------------------------------</span>
+
+<span class="w">  </span><span class="c">! individual test failure message</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">failMsg</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">name</span>
+
+<span class="w">  </span><span class="c">! Local variables</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">petCount</span><span class="p">,</span><span class="n">localPet</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_VM</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">vm</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_ArraySpec</span><span class="p">)</span><span class="kd">::</span><span class="w"> </span><span class="n">arrayspec</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:)</span><span class="w"> </span><span class="kd">::</span><span class="w">  </span><span class="n">Farray_1w</span><span class="p">,</span><span class="w"> </span><span class="n">Farray_2w</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:)</span><span class="w"> </span><span class="kd">::</span><span class="w">  </span><span class="n">Farray_1r</span><span class="p">,</span><span class="w"> </span><span class="n">Farray_2r</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">Farray_DE0_w</span><span class="p">(:,:),</span><span class="w"> </span><span class="n">Farray_DE0_r</span><span class="p">(:,:)</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">Farray_DE1_w</span><span class="p">(:,:),</span><span class="w"> </span><span class="n">Farray_DE1_r</span><span class="p">(:,:)</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Grid</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">grid_2DE</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_StaggerLoc</span><span class="p">)</span><span class="w">                       </span><span class="kd">::</span><span class="w"> </span><span class="n">sloc</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">localrc</span>
+<span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">Maxvalue</span><span class="p">,</span><span class="w"> </span><span class="n">diff</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Field</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">fieldRd</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="n">fieldTst</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_FieldBundle</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">bundleRd</span><span class="p">,</span><span class="w"> </span><span class="n">bundleTst</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">exclusiveLBound</span><span class="p">(:),</span><span class="w"> </span><span class="n">exclusiveUBound</span><span class="p">(:)</span>
+
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="mi">16</span><span class="p">),</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">apConv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Attribute_IO&#39;</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="mi">16</span><span class="p">),</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">apPurp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;attributes&#39;</span>
+<span class="w">  </span><span class="k">type </span><span class="n">nameval_t</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">name</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="k">value</span>
+<span class="k">  end type</span>
+
+<span class="k">  type</span><span class="p">(</span><span class="n">nameval_t</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">attrNameVals</span><span class="p">(:)</span>
+
+
+<span class="w">  </span><span class="c">! cumulative result: count failures; no failures equals &quot;all pass&quot;</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="k">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">countfail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+
+<span class="w">  </span><span class="c">!---------------------------------------------------------------------</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_TestStart</span><span class="p">(</span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w">  </span><span class="c">! calls ESMF_Initialize()</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="c">!-------------------------------------------------------------------</span>
+
+<span class="w">  </span><span class="c">! Set up</span>
+<span class="w">  </span><span class="c">! *******</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_VMGetGlobal</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_VMGet</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">localPet</span><span class="o">=</span><span class="n">localPet</span><span class="p">,</span><span class="w"> </span><span class="n">petCount</span><span class="o">=</span><span class="n">petCount</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="c">! Verifying that a Grid can be created</span>
+<span class="w">  </span><span class="n">grid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_GridCreateNoPeriDim</span><span class="p">(</span><span class="n">minIndex</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">maxIndex</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">regDecomp</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">gridEdgeLWidth</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">gridEdgeUWidth</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;landgrid&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Creating a Grid to use in Field Tests&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Create dimensions attribute package on shared Grid Test&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_AttributeAdd</span><span class="w"> </span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">convention</span><span class="o">=</span><span class="n">apConv</span><span class="p">,</span><span class="w"> </span><span class="n">purpose</span><span class="o">=</span><span class="n">apPurp</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">attrList</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="w"> </span><span class="n">ESMF_ATT_GRIDDED_DIM_LABELS</span><span class="w"> </span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Set dimensions attribute package on Grid Test&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_AttributeSet</span><span class="w"> </span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">name</span><span class="o">=</span><span class="n">ESMF_ATT_GRIDDED_DIM_LABELS</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">valueList</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="w"> </span><span class="s2">&quot;x_axis&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;y_axis&quot;</span><span class="w"> </span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">convention</span><span class="o">=</span><span class="n">apConv</span><span class="p">,</span><span class="w"> </span><span class="n">purpose</span><span class="o">=</span><span class="n">apPurp</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="c">! Verifying that a Grid with 2 DEs/PET can be created</span>
+<span class="w">  </span><span class="n">grid_2DE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_GridCreateNoPeriDim</span><span class="p">(</span><span class="n">minIndex</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">maxIndex</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">regDecomp</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">gridEdgeLWidth</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">gridEdgeUWidth</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;landgrid&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Creating a 2 DE/PET Grid to use in Field Tests&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Create dimensions attribute package on 2 DE/PET Grid Test&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_AttributeAdd</span><span class="w"> </span><span class="p">(</span><span class="n">grid_2DE</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">convention</span><span class="o">=</span><span class="n">apConv</span><span class="p">,</span><span class="w"> </span><span class="n">purpose</span><span class="o">=</span><span class="n">apPurp</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">attrList</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="w"> </span><span class="n">ESMF_ATT_GRIDDED_DIM_LABELS</span><span class="w"> </span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Set dimensions attribute package on Grid Test&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_AttributeSet</span><span class="w"> </span><span class="p">(</span><span class="n">grid_2DE</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">name</span><span class="o">=</span><span class="n">ESMF_ATT_GRIDDED_DIM_LABELS</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">valueList</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="w"> </span><span class="s2">&quot;x_axis_2DE&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;y_axis_2DE&quot;</span><span class="w"> </span><span class="o">/</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">convention</span><span class="o">=</span><span class="n">apConv</span><span class="p">,</span><span class="w"> </span><span class="n">purpose</span><span class="o">=</span><span class="n">apPurp</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! Allocate array</span>
+<span class="w">  </span><span class="k">allocate</span><span class="p">(</span><span class="n">Farray_1w</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="w">  </span><span class="k">allocate</span><span class="p">(</span><span class="n">Farray_2w</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="w">  </span><span class="k">allocate</span><span class="p">(</span><span class="n">Farray_1r</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="w">  </span><span class="k">allocate</span><span class="p">(</span><span class="n">Farray_2r</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="w">  </span><span class="k">allocate</span><span class="p">(</span><span class="n">exclusiveLBound</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="w">         </span><span class="c">! dimCount=2</span>
+<span class="w">  </span><span class="k">allocate</span><span class="p">(</span><span class="n">exclusiveUBound</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="w">         </span><span class="c">! dimCount=2</span>
+
+<span class="w">  </span><span class="n">sloc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_STAGGERLOC_CENTER</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridGet</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">localDe</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">staggerloc</span><span class="o">=</span><span class="n">sloc</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">     </span><span class="n">exclusiveLBound</span><span class="o">=</span><span class="n">exclusiveLBound</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">     </span><span class="n">exclusiveUBound</span><span class="o">=</span><span class="n">exclusiveUBound</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+
+<span class="c">! Set values of fortran array</span>
+<span class="w">  </span><span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="n">exclusiveLBound</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">exclusiveUBound</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">  </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="n">exclusiveLBound</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">exclusiveUBound</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="n">Farray_1w</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="nb">dble</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">/</span><span class="mf">5.0</span><span class="p">)</span><span class="o">*</span><span class="nb">tan</span><span class="p">(</span><span class="nb">dble</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">/</span><span class="mf">5.0</span><span class="p">)</span>
+<span class="w">    </span><span class="n">Farray_2w</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="nb">dble</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">/</span><span class="mf">5.0</span><span class="p">)</span><span class="o">*</span><span class="nb">tan</span><span class="p">(</span><span class="nb">dble</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">/</span><span class="mf">5.0</span><span class="p">)</span>
+<span class="w">  </span><span class="k">enddo</span>
+<span class="k">  enddo</span>
+
+<span class="k">  </span><span class="n">Farray_1r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span>
+<span class="w">  </span><span class="n">Farray_2r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="c">! Create Field</span>
+<span class="w">  </span><span class="n">fieldTst</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">farray</span><span class="o">=</span><span class="n">Farray_1w</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">       </span><span class="n">indexflag</span><span class="o">=</span><span class="n">ESMF_INDEX_DELOCAL</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span><span class="w">  </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Create a field from grid and fortran dummy array&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Create attribute package on Field(1) Test&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">allocate</span><span class="w"> </span><span class="p">(</span><span class="n">attrNameVals</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="w">  </span><span class="n">attrNameVals</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nameval_t</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;long_name&#39;</span><span class="p">,</span><span class="w">      </span><span class="s1">&#39;Temperature CONUS&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">attrNameVals</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nameval_t</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;units&#39;</span><span class="p">,</span><span class="w">          </span><span class="s1">&#39;F&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_AttributeAdd</span><span class="w"> </span><span class="p">(</span><span class="n">fieldTst</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">convention</span><span class="o">=</span><span class="n">apConv</span><span class="p">,</span><span class="w"> </span><span class="n">purpose</span><span class="o">=</span><span class="n">apPurp</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">attrList</span><span class="o">=</span><span class="n">attrNameVals</span><span class="p">%</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Set attribute values on Field(1) Test&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">do</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="n">attrNameVals</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_AttributeSet</span><span class="w"> </span><span class="p">(</span><span class="n">fieldTst</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">attrNameVals</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">attrNameVals</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="k">value</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">convention</span><span class="o">=</span><span class="n">apConv</span><span class="p">,</span><span class="w"> </span><span class="n">purpose</span><span class="o">=</span><span class="n">apPurp</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">exit</span>
+<span class="k">  end do</span>
+<span class="k">  call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="c">! Create Field</span>
+<span class="w">  </span><span class="n">fieldTst</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">=</span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">farray</span><span class="o">=</span><span class="n">Farray_2w</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">       </span><span class="n">indexflag</span><span class="o">=</span><span class="n">ESMF_INDEX_DELOCAL</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;velocity&quot;</span><span class="p">,</span><span class="w">  </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Create a field from grid and fortran dummy array&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Create attribute package on Field(2) Test&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="n">attrNameVals</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nameval_t</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;long_name&#39;</span><span class="p">,</span><span class="w">      </span><span class="s1">&#39;Velocity CONUS&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">attrNameVals</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nameval_t</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;units&#39;</span><span class="p">,</span><span class="w">          </span><span class="s1">&#39;MPH&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_AttributeAdd</span><span class="w"> </span><span class="p">(</span><span class="n">fieldTst</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">convention</span><span class="o">=</span><span class="n">apConv</span><span class="p">,</span><span class="w"> </span><span class="n">purpose</span><span class="o">=</span><span class="n">apPurp</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">attrList</span><span class="o">=</span><span class="n">attrNameVals</span><span class="p">%</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Set attribute values on Field(2) Test&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">do</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="n">attrNameVals</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_AttributeSet</span><span class="w"> </span><span class="p">(</span><span class="n">fieldTst</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">attrNameVals</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">attrNameVals</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="k">value</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">convention</span><span class="o">=</span><span class="n">apConv</span><span class="p">,</span><span class="w"> </span><span class="n">purpose</span><span class="o">=</span><span class="n">apPurp</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">exit</span>
+<span class="k">  end do</span>
+<span class="k">  call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="c">! Create a ArraySpec</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_ArraySpecSet</span><span class="p">(</span><span class="n">arrayspec</span><span class="p">,</span><span class="w"> </span><span class="n">typekind</span><span class="o">=</span><span class="n">ESMF_TYPEKIND_R8</span><span class="p">,</span><span class="w">   </span><span class="p">&amp;</span>
+<span class="w">                         </span><span class="n">rank</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Array Spec Set &quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="c">! Create Field </span>
+<span class="w">  </span><span class="n">fieldTst</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">=</span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">grid_2DE</span><span class="p">,</span><span class="w"> </span><span class="n">arrayspec</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;temperature_2de_case&quot;</span><span class="p">,</span><span class="w">  </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Create a field from 2 DE/PET grid&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Create attribute package on Field(3) Test&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="n">attrNameVals</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nameval_t</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;long_name&#39;</span><span class="p">,</span><span class="w">      </span><span class="s1">&#39;Temperature CONUS 2DE/PET&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">attrNameVals</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nameval_t</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;units&#39;</span><span class="p">,</span><span class="w">          </span><span class="s1">&#39;F&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_AttributeAdd</span><span class="w"> </span><span class="p">(</span><span class="n">fieldTst</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">convention</span><span class="o">=</span><span class="n">apConv</span><span class="p">,</span><span class="w"> </span><span class="n">purpose</span><span class="o">=</span><span class="n">apPurp</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">attrList</span><span class="o">=</span><span class="n">attrNameVals</span><span class="p">%</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Set attribute values on Field(3) Test&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">do</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="n">attrNameVals</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_AttributeSet</span><span class="w"> </span><span class="p">(</span><span class="n">fieldTst</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">attrNameVals</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">attrNameVals</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="k">value</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">convention</span><span class="o">=</span><span class="n">apConv</span><span class="p">,</span><span class="w"> </span><span class="n">purpose</span><span class="o">=</span><span class="n">apPurp</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">exit</span>
+<span class="k">  end do</span>
+<span class="k">  call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="c">! Get Array pointer from Field</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">fieldTst</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="n">localDe</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">Farray_DE0_w</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Get and fill Farray_w from field DE 0&quot;</span>
+<span class="w">  </span><span class="n">Farray_DE0_w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1_ESMF_KIND_R8</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="c">! Get Array pointer from Field</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">fieldTst</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="n">localDe</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">Farray_DE1_w</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Get and fill Farray_w from field DE 1&quot;</span>
+<span class="w">  </span><span class="n">Farray_DE1_w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.1_ESMF_KIND_R8</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="c">! Try creating a bundle of these fields</span>
+<span class="w">  </span><span class="n">bundleTst</span><span class="o">=</span><span class="n">ESMF_FieldBundleCreate</span><span class="p">(</span><span class="n">fieldList</span><span class="o">=</span><span class="n">fieldTst</span><span class="p">,</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span><span class="w">      </span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Create a bundle from 3 fields &quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Create attribute package on FieldBundle single Test&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="n">attrNameVals</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nameval_t</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;file_name&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;single.nc&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">attrNameVals</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nameval_t</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">,</span><span class="w">      </span><span class="s1">&#39;Apr 27, 2017&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_AttributeAdd</span><span class="w"> </span><span class="p">(</span><span class="n">bundleTst</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">convention</span><span class="o">=</span><span class="n">apConv</span><span class="p">,</span><span class="w"> </span><span class="n">purpose</span><span class="o">=</span><span class="n">apPurp</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">attrList</span><span class="o">=</span><span class="n">attrNameVals</span><span class="p">%</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Set attribute values on FieldBundle single Test&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">do</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="n">attrNameVals</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_AttributeSet</span><span class="w"> </span><span class="p">(</span><span class="n">bundleTst</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">attrNameVals</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">attrNameVals</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="k">value</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">convention</span><span class="o">=</span><span class="n">apConv</span><span class="p">,</span><span class="w"> </span><span class="n">purpose</span><span class="o">=</span><span class="n">apPurp</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">exit</span>
+<span class="k">  end do</span>
+<span class="k">  call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="c">! FieldBundle Write to a single file Test</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldBundleWrite</span><span class="p">(</span><span class="n">bundleTst</span><span class="p">,</span><span class="w"> </span><span class="n">fileName</span><span class="o">=</span><span class="s2">&quot;single.nc&quot;</span><span class="p">,</span><span class="w">      </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">convention</span><span class="o">=</span><span class="n">apConv</span><span class="p">,</span><span class="w"> </span><span class="n">purpose</span><span class="o">=</span><span class="n">apPurp</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">iofmt</span><span class="o">=</span><span class="n">ESMF_IOFMT_NETCDF_64BIT_OFFSET</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">status</span><span class="o">=</span><span class="n">ESMF_FILESTATUS_REPLACE</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Writing a FieldBundle to a single file Test&quot;</span>
+<span class="cp">#if (defined ESMF_PIO &amp;&amp; ( defined ESMF_NETCDF || defined ESMF_PNETCDF))</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="o">==</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="cp">#else</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_RC_LIB_NOT_PRESENT&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="o">==</span><span class="n">ESMF_RC_LIB_NOT_PRESENT</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="cp">#endif</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="c">! FieldBundle Write to a single file Test with timeslice</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldBundleWrite</span><span class="p">(</span><span class="n">bundleTst</span><span class="p">,</span><span class="w"> </span><span class="n">fileName</span><span class="o">=</span><span class="s2">&quot;single_ts.nc&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">timeslice</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">status</span><span class="o">=</span><span class="n">ESMF_FILESTATUS_REPLACE</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Writing a FieldBundle to a single file with timeslice Test&quot;</span>
+<span class="cp">#if (defined ESMF_PIO &amp;&amp; ( defined ESMF_NETCDF || defined ESMF_PNETCDF))</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="o">==</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="cp">#else</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_RC_LIB_NOT_PRESENT&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="o">==</span><span class="n">ESMF_RC_LIB_NOT_PRESENT</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="cp">#endif</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="c">! FieldBundle Write a second timeslice to a single file Test</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldBundleWrite</span><span class="p">(</span><span class="n">bundleTst</span><span class="p">,</span><span class="w"> </span><span class="n">fileName</span><span class="o">=</span><span class="s2">&quot;single_ts.nc&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">timeslice</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">status</span><span class="o">=</span><span class="n">ESMF_FILESTATUS_OLD</span><span class="p">,</span><span class="w"> </span><span class="n">overwrite</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="c">!NOTE: For NetCDF overwrite=.true. must be set. For PNetCDF either setting</span>
+<span class="w">  </span><span class="c">!of overwrite seems to work. Must check if both result in correctly written</span>
+<span class="w">  </span><span class="c">!data.</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Writing a FieldBundle to a single file with timeslice Test&quot;</span>
+<span class="cp">#if (defined ESMF_PIO &amp;&amp; ( defined ESMF_NETCDF || defined ESMF_PNETCDF))</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="o">==</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="cp">#else</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_RC_LIB_NOT_PRESENT&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="o">==</span><span class="n">ESMF_RC_LIB_NOT_PRESENT</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="cp">#endif</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Create attribute package on FieldBundle multi Test&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="n">attrNameVals</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nameval_t</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;file_name&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;multi.nc&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">attrNameVals</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nameval_t</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">,</span><span class="w">      </span><span class="s1">&#39;Apr 27, 2017&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_AttributeAdd</span><span class="w"> </span><span class="p">(</span><span class="n">bundleTst</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">convention</span><span class="o">=</span><span class="n">apConv</span><span class="p">,</span><span class="w"> </span><span class="n">purpose</span><span class="o">=</span><span class="n">apPurp</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">attrList</span><span class="o">=</span><span class="n">attrNameVals</span><span class="p">%</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Set attribute values on FieldBundle multi Test&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">do</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="n">attrNameVals</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_AttributeSet</span><span class="w"> </span><span class="p">(</span><span class="n">bundleTst</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">attrNameVals</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">attrNameVals</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="k">value</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">        </span><span class="n">convention</span><span class="o">=</span><span class="n">apConv</span><span class="p">,</span><span class="w"> </span><span class="n">purpose</span><span class="o">=</span><span class="n">apPurp</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">exit</span>
+<span class="k">  end do</span>
+<span class="k">  call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="c">! FieldBundle Write to multiple files Test</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Writing a FieldBundle to multiple files Test&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldBundleWrite</span><span class="p">(</span><span class="n">bundleTst</span><span class="p">,</span><span class="w"> </span><span class="n">fileName</span><span class="o">=</span><span class="s2">&quot;multi.nc&quot;</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">convention</span><span class="o">=</span><span class="n">apConv</span><span class="p">,</span><span class="w"> </span><span class="n">purpose</span><span class="o">=</span><span class="n">apPurp</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">       </span><span class="n">iofmt</span><span class="o">=</span><span class="n">ESMF_IOFMT_NETCDF_64BIT_OFFSET</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">status</span><span class="o">=</span><span class="n">ESMF_FILESTATUS_REPLACE</span><span class="p">,</span><span class="w"> </span><span class="n">singleFile</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="cp">#if (defined ESMF_PIO &amp;&amp; ( defined ESMF_NETCDF || defined ESMF_PNETCDF))</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="o">==</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="cp">#else</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_RC_LIB_NOT_PRESENT&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="o">==</span><span class="n">ESMF_RC_LIB_NOT_PRESENT</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="cp">#endif</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="c">!----- Read data back and compare ---------------------------------------</span>
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="c">! Create Field</span>
+<span class="w">  </span><span class="n">fieldRd</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">farray</span><span class="o">=</span><span class="n">Farray_1r</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">       </span><span class="n">indexflag</span><span class="o">=</span><span class="n">ESMF_INDEX_DELOCAL</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span><span class="w">  </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Create a field from grid and fortran dummy array&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="c">! Create Field</span>
+<span class="w">  </span><span class="n">fieldRd</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">=</span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">farray</span><span class="o">=</span><span class="n">Farray_2r</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">       </span><span class="n">indexflag</span><span class="o">=</span><span class="n">ESMF_INDEX_DELOCAL</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;velocity&quot;</span><span class="p">,</span><span class="w">  </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Create a field from grid and fortran dummy array&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="c">! Create Field </span>
+<span class="w">  </span><span class="n">fieldRd</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">=</span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">grid_2DE</span><span class="p">,</span><span class="w"> </span><span class="n">arrayspec</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">           </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;temperature_2de_case&quot;</span><span class="p">,</span><span class="w">  </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Create a field from 2 DE/PET grid&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="c">! Try creating a bundle of these fields</span>
+<span class="w">  </span><span class="n">bundleRd</span><span class="o">=</span><span class="n">ESMF_FieldBundleCreate</span><span class="p">(</span><span class="n">fieldList</span><span class="o">=</span><span class="n">fieldRd</span><span class="p">,</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Create a bundle from 3 fields &quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="c">! FieldBundle Read from a single file Test</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldBundleRead</span><span class="p">(</span><span class="n">bundleRd</span><span class="p">,</span><span class="w"> </span><span class="n">fileName</span><span class="o">=</span><span class="s2">&quot;single.nc&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Reading a FieldBundle from a single file Test&quot;</span>
+<span class="cp">#if (defined ESMF_PIO &amp;&amp; ( defined ESMF_NETCDF || defined ESMF_PNETCDF))</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="o">==</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="cp">#else</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_RC_LIB_NOT_PRESENT&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="o">==</span><span class="n">ESMF_RC_LIB_NOT_PRESENT</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="cp">#endif</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="c">!  Compare Fortran array</span>
+<span class="w">  </span><span class="c">!  Data is type ESMF_KIND_R8</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Compare read-in data with Farray_1&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Comparison failed&quot;</span>
+<span class="w">  </span><span class="n">Maxvalue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span>
+<span class="w">  </span><span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="n">exclusiveLBound</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">exclusiveUBound</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">  </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="n">exclusiveLBound</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">exclusiveUBound</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">   </span><span class="n">diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">Farray_1r</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Farray_1w</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Maxvalue</span><span class="p">.</span><span class="n">le</span><span class="p">.</span><span class="n">diff</span><span class="p">)</span><span class="w"> </span><span class="n">Maxvalue</span><span class="o">=</span><span class="n">diff</span>
+<span class="w">  </span><span class="k">enddo</span>
+<span class="k">  enddo</span>
+<span class="cp">#if (defined ESMF_PIO &amp;&amp; ( defined ESMF_NETCDF || defined ESMF_PNETCDF))</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s2">&quot;Maximum Error  = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Maxvalue</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">Maxvalue</span><span class="w"> </span><span class="p">.</span><span class="n">lt</span><span class="p">.</span><span class="w"> </span><span class="mf">1.e-14</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="cp">#else</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Comparison did not failed as was expected&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">Maxvalue</span><span class="w"> </span><span class="p">.</span><span class="n">gt</span><span class="p">.</span><span class="w"> </span><span class="mf">1.e-14</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="cp">#endif</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="c">! FieldBundle Read from multiple files Test</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldBundleRead</span><span class="p">(</span><span class="n">bundleRd</span><span class="p">,</span><span class="w"> </span><span class="n">fileName</span><span class="o">=</span><span class="s2">&quot;multi.nc&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                           </span><span class="n">singleFile</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS or ESMF_RC_LIB_NOT_PRESENT&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Reading a FieldBundle from multiple files Test&quot;</span>
+<span class="cp">#if (defined ESMF_PIO &amp;&amp; ( defined ESMF_NETCDF || defined ESMF_PNETCDF))</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="o">==</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="cp">#else</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_RC_LIB_NOT_PRESENT&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="o">==</span><span class="n">ESMF_RC_LIB_NOT_PRESENT</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="cp">#endif</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="c">!  Compare Fortran array</span>
+<span class="w">  </span><span class="c">!  Data is type ESMF_KIND_R8</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Compare read-in data with Farray_2&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Comparison failed&quot;</span>
+<span class="w">  </span><span class="n">Maxvalue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span>
+<span class="w">  </span><span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="n">exclusiveLBound</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">exclusiveUBound</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">  </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="n">exclusiveLBound</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">exclusiveUBound</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">   </span><span class="n">diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">Farray_2r</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Farray_2w</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Maxvalue</span><span class="p">.</span><span class="n">le</span><span class="p">.</span><span class="n">diff</span><span class="p">)</span><span class="w"> </span><span class="n">Maxvalue</span><span class="o">=</span><span class="n">diff</span>
+<span class="w">  </span><span class="k">enddo</span>
+<span class="k">  enddo</span>
+<span class="cp">#if (defined ESMF_PIO &amp;&amp; ( defined ESMF_NETCDF || defined ESMF_PNETCDF))</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s2">&quot;Maximum Error  = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Maxvalue</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">Maxvalue</span><span class="w"> </span><span class="p">.</span><span class="n">lt</span><span class="p">.</span><span class="w"> </span><span class="mf">1.e-14</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="cp">#else</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Comparison did not failed as was expected&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">Maxvalue</span><span class="w"> </span><span class="p">.</span><span class="n">gt</span><span class="p">.</span><span class="w"> </span><span class="mf">1.e-14</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="cp">#endif</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="c">! Get DE 0 Array pointer from Field</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">fieldRd</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="n">localDe</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">Farray_DE0_r</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Get Farray_r from field DE 0&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="c">! DE 0 Array comparison test</span>
+<span class="cp">#if (defined ESMF_PIO &amp;&amp; ( defined ESMF_NETCDF || defined ESMF_PNETCDF))</span>
+<span class="w">  </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">merge</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="p">(</span><span class="n">Farray_DE0_r</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0.1_ESMF_KIND_R8</span><span class="p">))</span>
+<span class="cp">#else</span>
+<span class="w">  </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="cp">#endif</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;DE 0 Array comparison test&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="c">! Get DE 1 Array pointer from Field</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">fieldRd</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="n">localDe</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">Farray_DE1_r</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Get Farray_r from field DE 1&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="c">! DE 1 Array comparison test</span>
+<span class="cp">#if (defined ESMF_PIO &amp;&amp; ( defined ESMF_NETCDF || defined ESMF_PNETCDF))</span>
+<span class="w">  </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">merge</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_SUCCESS</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_FAILURE</span><span class="p">,</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="p">(</span><span class="n">Farray_DE1_r</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">1.1_ESMF_KIND_R8</span><span class="p">))</span>
+<span class="cp">#else</span>
+<span class="w">  </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="cp">#endif</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;DE 1 Array comparison test&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! cleanup </span>
+<span class="w">   </span><span class="k">deallocate</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">exclusiveLBound</span><span class="p">,</span><span class="w"> </span><span class="n">exclusiveUBound</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Grid Destroy Test&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridDestroy</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;FieldBundle Destroy Test&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldBundleDestroy</span><span class="p">(</span><span class="n">bundleTst</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldBundleDestroy</span><span class="p">(</span><span class="n">bundleRd</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Field Destroy Test&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldDestroy</span><span class="p">(</span><span class="n">fieldRd</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="n">countfail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">countfail</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldDestroy</span><span class="p">(</span><span class="n">fieldRd</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="n">countfail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">countfail</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldDestroy</span><span class="p">(</span><span class="n">fieldRd</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="n">countfail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">countfail</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldDestroy</span><span class="p">(</span><span class="n">fieldTst</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="n">countfail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">countfail</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldDestroy</span><span class="p">(</span><span class="n">fieldTst</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="n">countfail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">countfail</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldDestroy</span><span class="p">(</span><span class="n">fieldTst</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="n">countfail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">countfail</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">(</span><span class="n">countfail</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">deallocate</span><span class="p">(</span><span class="n">Farray_1w</span><span class="p">)</span>
+<span class="w">  </span><span class="k">deallocate</span><span class="p">(</span><span class="n">Farray_2w</span><span class="p">)</span>
+<span class="w">  </span><span class="k">deallocate</span><span class="p">(</span><span class="n">Farray_1r</span><span class="p">)</span>
+<span class="w">  </span><span class="k">deallocate</span><span class="p">(</span><span class="n">Farray_2r</span><span class="p">)</span>
+<span class="w">  </span><span class="k">deallocate</span><span class="p">(</span><span class="n">attrNameVals</span><span class="p">)</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Destroy globally indexed 2DE Grid&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridDestroy</span><span class="p">(</span><span class="n">grid_2DE</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+<span class="c">!------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_TestEnd</span><span class="p">(</span><span class="n">ESMF_SRCLINE</span><span class="p">)</span><span class="w"> </span><span class="c">! calls ESMF_Finalize() internally</span>
+<span class="c">!------------------------------------------------------------------------</span>
+
+
+<span class="w">  </span><span class="k">end program </span><span class="n">ESMF_FieldBundleIOUTest</span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

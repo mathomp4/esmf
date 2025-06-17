@@ -1,0 +1,446 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>createFields &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>createFields
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.1% of total for procedures.">124 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_IO_MultitileUTest.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_io_multitileutest.f90.html'>ESMF_IO_MultitileUTest.F90</a></li>
+                <li class="breadcrumb-item"><a href='../program/esmf_io_multitileutest.html'>ESMF_IO_MultitileUTest</a></li>
+            <li class="breadcrumb-item active" aria-current="page">createFields</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/createfields.html#src">createFields</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2> subroutine createFields(rc)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~3497"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">  </span><span class="k">subroutine </span><span class="n">createFields</span><span class="p">(</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="c">! Creates Fields and FieldBundles used by the tests in this module</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">decompPTile</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">decompPTileUnevenDEs</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_ArraySpec</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">arraySpec</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_ArraySpec</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">arraySpec_w_ungridded</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Array</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">array1</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_DELayout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">delayout</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">ESMF_KIND_R8</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">coordPtrX</span><span class="p">(:,:),</span><span class="w"> </span><span class="n">coordPtrY</span><span class="p">(:,:)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">u1</span><span class="p">,</span><span class="w"> </span><span class="n">u2</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span>
+<span class="w">    </span><span class="kt">real</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">multiplier</span>
+
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! Set up 6-tile grid</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+
+<span class="w">    </span><span class="c">! Decomposition for 8 PEs: Tiles 1 and 3 each have two DEs (along different</span>
+<span class="w">    </span><span class="c">! dimensions); the other tiles each have one DE.</span>
+<span class="w">    </span><span class="n">decompPTile</span><span class="p">(</span><span class="mi">1</span><span class="p">,:)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="w">    </span><span class="n">decompPTile</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="w">    </span><span class="n">grid6tile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_GridCreateCubedSphere</span><span class="p">(</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">tilesize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">regDecompPTile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">decompPTile</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">staggerLocList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">ESMF_STAGGERLOC_CENTER</span><span class="p">],</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! Create fields on the 6-tile grid and associated field bundle</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_ArraySpecSet</span><span class="p">(</span><span class="n">arraySpec</span><span class="p">,</span><span class="w"> </span><span class="n">typekind</span><span class="o">=</span><span class="n">ESMF_TYPEKIND_R8</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    call </span><span class="n">ESMF_ArraySpecSet</span><span class="p">(</span><span class="n">arraySpec_w_ungridded</span><span class="p">,</span><span class="w"> </span><span class="n">typekind</span><span class="o">=</span><span class="n">ESMF_TYPEKIND_R8</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    </span><span class="n">field1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">grid6tile</span><span class="p">,</span><span class="w"> </span><span class="n">arraySpec</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;field1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    call </span><span class="n">ESMF_FieldFill</span><span class="p">(</span><span class="n">field1</span><span class="p">,</span><span class="w"> </span><span class="n">dataFillScheme</span><span class="o">=</span><span class="s1">&#39;sincos&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">member</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">field1</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">field1Data</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    </span><span class="n">field1Read</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">grid6tile</span><span class="p">,</span><span class="w"> </span><span class="n">arraySpec</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;field1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">field1Read</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">field1ReadData</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    </span><span class="n">field2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">grid6tile</span><span class="p">,</span><span class="w"> </span><span class="n">arraySpec</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;field2&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    call </span><span class="n">ESMF_FieldFill</span><span class="p">(</span><span class="n">field2</span><span class="p">,</span><span class="w"> </span><span class="n">dataFillScheme</span><span class="o">=</span><span class="s1">&#39;sincos&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">member</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">field2</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">field2Data</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    </span><span class="n">field2Read</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">grid6tile</span><span class="p">,</span><span class="w"> </span><span class="n">arraySpec</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;field2&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">field2Read</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">field2ReadData</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    </span><span class="n">field3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">grid6tile</span><span class="p">,</span><span class="w"> </span><span class="n">arraySpec</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;field3&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    call </span><span class="n">ESMF_FieldFill</span><span class="p">(</span><span class="n">field3</span><span class="p">,</span><span class="w"> </span><span class="n">dataFillScheme</span><span class="o">=</span><span class="s1">&#39;sincos&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">member</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">field3</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">field3Data</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    </span><span class="n">field3Read</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">grid6tile</span><span class="p">,</span><span class="w"> </span><span class="n">arraySpec</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;field3&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">field3Read</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">field3ReadData</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    </span><span class="n">field4d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">grid6tile</span><span class="p">,</span><span class="w"> </span><span class="n">arraySpec_w_ungridded</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;field4d&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">ungriddedLBound</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">15</span><span class="p">],</span><span class="w"> </span><span class="n">ungriddedUBound</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">18</span><span class="p">],</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="c">! 2nd and 4th dimensions are ungridded dimensions</span>
+<span class="w">         </span><span class="n">gridToFieldMap</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">field4d</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">field4dData</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    call </span><span class="n">ESMF_GridGetCoord</span><span class="p">(</span><span class="n">grid6tile</span><span class="p">,</span><span class="w"> </span><span class="n">coordDim</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">coordPtrX</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    call </span><span class="n">ESMF_GridGetCoord</span><span class="p">(</span><span class="n">grid6tile</span><span class="p">,</span><span class="w"> </span><span class="n">coordDim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">coordPtrY</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">do </span><span class="n">u1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span>
+<span class="w">       </span><span class="k">do </span><span class="n">u2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="mi">18</span>
+<span class="w">          </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">lbound</span><span class="p">(</span><span class="n">field4dData</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="nb">ubound</span><span class="p">(</span><span class="n">field4dData</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">             </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">lbound</span><span class="p">(</span><span class="n">field4dData</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="nb">ubound</span><span class="p">(</span><span class="n">field4dData</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
+<span class="w">                </span><span class="n">multiplier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.</span><span class="o">**</span><span class="p">(</span><span class="n">u2</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span>
+<span class="w">                </span><span class="n">field4dData</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">u1</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">u2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u1</span><span class="o">*</span><span class="n">multiplier</span><span class="o">*</span><span class="p">(</span><span class="n">coordPtrX</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">coordPtrY</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">))</span>
+<span class="w">             </span><span class="k">end do</span>
+<span class="k">          end do</span>
+<span class="k">       end do</span>
+<span class="k">    end do</span>
+
+<span class="k">    </span><span class="n">field4dRead</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">grid6tile</span><span class="p">,</span><span class="w"> </span><span class="n">arraySpec_w_ungridded</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;field4d&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">ungriddedLBound</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">15</span><span class="p">],</span><span class="w"> </span><span class="n">ungriddedUBound</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">18</span><span class="p">],</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="c">! 2nd and 4th dimensions are ungridded dimensions</span>
+<span class="w">         </span><span class="n">gridToFieldMap</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">field4dRead</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">field4dReadData</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">    </span><span class="c">! Create a copy of field1 that uses the same array, so we can test writing</span>
+<span class="w">    </span><span class="c">! the same array twice from a single call.</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">field1</span><span class="p">,</span><span class="w"> </span><span class="k">array</span><span class="o">=</span><span class="n">array1</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    </span><span class="n">field1Copy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">grid6tile</span><span class="p">,</span><span class="w"> </span><span class="n">array1</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;field1Copy&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">field1Copy</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">field1CopyData</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    </span><span class="n">field1CopyRead</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">grid6tile</span><span class="p">,</span><span class="w"> </span><span class="n">arraySpec</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;field1Copy&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">field1CopyRead</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">field1CopyReadData</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    </span><span class="n">fieldBundle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldBundleCreate</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;fb&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    call </span><span class="n">ESMF_FieldBundleAdd</span><span class="p">(</span><span class="n">fieldBundle</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">field1</span><span class="p">,</span><span class="w"> </span><span class="n">field2</span><span class="p">,</span><span class="w"> </span><span class="n">field1Copy</span><span class="p">,</span><span class="w"> </span><span class="n">field4d</span><span class="p">],</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    </span><span class="n">fieldBundleRead</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldBundleCreate</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;fbRead&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    call </span><span class="n">ESMF_FieldBundleAdd</span><span class="p">(</span><span class="n">fieldBundleRead</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">field1Read</span><span class="p">,</span><span class="w"> </span><span class="n">field2Read</span><span class="p">,</span><span class="w"> </span><span class="n">field1CopyRead</span><span class="p">,</span><span class="w"> </span><span class="n">field4dRead</span><span class="p">],</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+<span class="w">    </span><span class="c">! Set up a 6-tile grid with an uneven distribution of DEs to PETs, and create fields</span>
+<span class="w">    </span><span class="c">! on this grid</span>
+<span class="w">    </span><span class="c">!------------------------------------------------------------------------</span>
+
+<span class="w">    </span><span class="c">! Decomposition for 8 PEs but 16 DEs</span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">    </span><span class="c">! The number of DEs per tile is:</span>
+<span class="w">    </span><span class="c">! Tile : 1 2 3 4 5 6</span>
+<span class="w">    </span><span class="c">! # DEs: 2 1 6 1 3 3</span>
+<span class="w">    </span><span class="c">!</span>
+<span class="w">    </span><span class="c">! The DEs are scattered in a disorganized fashion across PETs. We have the following</span>
+<span class="w">    </span><span class="c">! number of DEs on each PET:</span>
+<span class="w">    </span><span class="c">! PET #: 0 1 2 3 4 5 6 7</span>
+<span class="w">    </span><span class="c">! # DEs: 1 2 3 4 0 3 0 3</span>
+<span class="w">    </span><span class="n">decompPTileUnevenDEs</span><span class="p">(</span><span class="mi">1</span><span class="p">,:)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="w">    </span><span class="n">decompPTileUnevenDEs</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="w">    </span><span class="n">delayout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_DELayoutCreate</span><span class="p">(</span><span class="n">petMap</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="w">    </span><span class="n">grid6tileUnevenDEs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_GridCreateCubedSphere</span><span class="p">(</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">tilesize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">regDecompPTile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">decompPTileUnevenDEs</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">delayout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delayout</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">staggerLocList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">ESMF_STAGGERLOC_CENTER</span><span class="p">],</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    call </span><span class="n">ESMF_GridGet</span><span class="p">(</span><span class="n">grid6tileUnevenDEs</span><span class="p">,</span><span class="w"> </span><span class="n">localDECount</span><span class="o">=</span><span class="n">grid6tileUnevenDEsLdeCount</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">    </span><span class="n">field1UnevenDEs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">grid6tileUnevenDEs</span><span class="p">,</span><span class="w"> </span><span class="n">arraySpec</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;field1UnevenDEs&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    call </span><span class="n">ESMF_FieldFill</span><span class="p">(</span><span class="n">field1UnevenDEs</span><span class="p">,</span><span class="w"> </span><span class="n">dataFillScheme</span><span class="o">=</span><span class="s1">&#39;sincos&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">member</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="w">    </span><span class="c">! Note that we can&#39;t get farrayPtr here because we&#39;ll need to do that in a loop over DEs</span>
+
+<span class="w">    </span><span class="n">field1UnevenDEsRead</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">grid6tileUnevenDEs</span><span class="p">,</span><span class="w"> </span><span class="n">arraySpec</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;field1UnevenDEs&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="w">    </span><span class="c">! Note that we can&#39;t get farrayPtr here because we&#39;ll need to do that in a loop over DEs</span>
+
+<span class="w">    </span><span class="n">field4dUnevenDEs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">grid6tileUnevenDEs</span><span class="p">,</span><span class="w"> </span><span class="n">arraySpec_w_ungridded</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;field4dUnevenDEs&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">ungriddedLBound</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">15</span><span class="p">],</span><span class="w"> </span><span class="n">ungriddedUBound</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">18</span><span class="p">],</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="c">! 2nd and 4th dimensions are ungridded dimensions</span>
+<span class="w">         </span><span class="n">gridToFieldMap</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">    do </span><span class="n">lde</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">grid6tileUnevenDEsLdeCount</span><span class="o">-</span><span class="mi">1</span>
+<span class="w">       </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">field4dUnevenDEs</span><span class="p">,</span><span class="w"> </span><span class="n">localDe</span><span class="o">=</span><span class="n">lde</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">field4dUnevenDEsData</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">       </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">       call </span><span class="n">ESMF_GridGetCoord</span><span class="p">(</span><span class="n">grid6tileUnevenDEs</span><span class="p">,</span><span class="w"> </span><span class="n">coordDim</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">localDe</span><span class="o">=</span><span class="n">lde</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">coordPtrX</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">       </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">       call </span><span class="n">ESMF_GridGetCoord</span><span class="p">(</span><span class="n">grid6tileUnevenDEs</span><span class="p">,</span><span class="w"> </span><span class="n">coordDim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">localDe</span><span class="o">=</span><span class="n">lde</span><span class="p">,</span><span class="w"> </span><span class="n">farrayPtr</span><span class="o">=</span><span class="n">coordPtrY</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">       </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">       do </span><span class="n">u1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span>
+<span class="w">          </span><span class="k">do </span><span class="n">u2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="mi">18</span>
+<span class="w">             </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">lbound</span><span class="p">(</span><span class="n">field4dUnevenDEsData</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="nb">ubound</span><span class="p">(</span><span class="n">field4dUnevenDEsData</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">                </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">lbound</span><span class="p">(</span><span class="n">field4dUnevenDEsData</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="nb">ubound</span><span class="p">(</span><span class="n">field4dUnevenDEsData</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
+<span class="w">                   </span><span class="n">multiplier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.</span><span class="o">**</span><span class="p">(</span><span class="n">u2</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span>
+<span class="w">                   </span><span class="n">field4dUnevenDEsData</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">u1</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">u2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u1</span><span class="o">*</span><span class="n">multiplier</span><span class="o">*</span><span class="p">(</span><span class="n">coordPtrX</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">coordPtrY</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">))</span>
+<span class="w">                </span><span class="k">end do</span>
+<span class="k">             end do</span>
+<span class="k">          end do</span>
+<span class="k">       end do</span>
+<span class="k">    end do</span>
+
+<span class="k">    </span><span class="n">field4dUnevenDEsRead</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_FieldCreate</span><span class="p">(</span><span class="n">grid6tileUnevenDEs</span><span class="p">,</span><span class="w"> </span><span class="n">arraySpec_w_ungridded</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;field4dUnevenDEs&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">ungriddedLBound</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">15</span><span class="p">],</span><span class="w"> </span><span class="n">ungriddedUBound</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">18</span><span class="p">],</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="c">! 2nd and 4th dimensions are ungridded dimensions</span>
+<span class="w">         </span><span class="n">gridToFieldMap</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">         </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">  end subroutine </span><span class="n">createFields</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

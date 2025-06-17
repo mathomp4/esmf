@@ -1,0 +1,884 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="The Earth System Modeling Framework (ESMF) is a suite of software tools for developing high-performance, multi-component Earth science modeling applications.">
+    <meta name="author" content="ESMF Developers" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ESMF_StateReconcileProxyUTest &ndash; ESMF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ESMF </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../blockdata/esmf_f95ptrbdata.html">Block Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>ESMF_StateReconcileProxyUTest      <small>Program</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.1% of total for programs.">112 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/ESMF_StateReconcileProxyUTest.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_statereconcileproxyutest.f90.html'>ESMF_StateReconcileProxyUTest.F90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ESMF_StateReconcileProxyUTest</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/esmf_statereconcileproxyutest.html#variable-version~32">version</a>
+            <a class="list-group-item" href="../program/esmf_statereconcileproxyutest.html#variable-failmsg~47">failMsg</a>
+            <a class="list-group-item" href="../program/esmf_statereconcileproxyutest.html#variable-name~110">name</a>
+            <a class="list-group-item" href="../program/esmf_statereconcileproxyutest.html#variable-i~132">i</a>
+            <a class="list-group-item" href="../program/esmf_statereconcileproxyutest.html#variable-j~53">j</a>
+            <a class="list-group-item" href="../program/esmf_statereconcileproxyutest.html#variable-petcount~44">petCount</a>
+            <a class="list-group-item" href="../program/esmf_statereconcileproxyutest.html#variable-petlist~14">petList</a>
+            <a class="list-group-item" href="../program/esmf_statereconcileproxyutest.html#variable-rc~691">rc</a>
+            <a class="list-group-item" href="../program/esmf_statereconcileproxyutest.html#variable-result~47">result</a>
+            <a class="list-group-item" href="../program/esmf_statereconcileproxyutest.html#variable-array~30">array</a>
+            <a class="list-group-item" href="../program/esmf_statereconcileproxyutest.html#variable-dg1">dg1</a>
+            <a class="list-group-item" href="../program/esmf_statereconcileproxyutest.html#variable-dg2">dg2</a>
+            <a class="list-group-item" href="../program/esmf_statereconcileproxyutest.html#variable-field~65">field</a>
+            <a class="list-group-item" href="../program/esmf_statereconcileproxyutest.html#variable-fieldre">fieldRe</a>
+            <a class="list-group-item" href="../program/esmf_statereconcileproxyutest.html#variable-fb~4">fb</a>
+            <a class="list-group-item" href="../program/esmf_statereconcileproxyutest.html#variable-fbre">fbRe</a>
+            <a class="list-group-item" href="../program/esmf_statereconcileproxyutest.html#variable-g1">g1</a>
+            <a class="list-group-item" href="../program/esmf_statereconcileproxyutest.html#variable-g2">g2</a>
+            <a class="list-group-item" href="../program/esmf_statereconcileproxyutest.html#variable-subcomp">subcomp</a>
+            <a class="list-group-item" href="../program/esmf_statereconcileproxyutest.html#variable-l1">l1</a>
+            <a class="list-group-item" href="../program/esmf_statereconcileproxyutest.html#variable-l2">l2</a>
+            <a class="list-group-item" href="../program/esmf_statereconcileproxyutest.html#variable-m1">m1</a>
+            <a class="list-group-item" href="../program/esmf_statereconcileproxyutest.html#variable-m2">m2</a>
+            <a class="list-group-item" href="../program/esmf_statereconcileproxyutest.html#variable-exportstate~94">exportState</a>
+            <a class="list-group-item" href="../program/esmf_statereconcileproxyutest.html#variable-vm~87">vm</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../program/esmf_statereconcileproxyutest.html#src">ESMF_StateReconcileProxyUTest</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='../module/subcomp_mod.html'>subcomp_mod</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf.html'>ESMF</a></li>
+                  <li class="list-inline-item"><a href='../module/esmf_testmod.html'>ESMF_TestMod</a></li>
+              </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    
+
+
+    <section>
+    <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-version~32"></span>
+              character(len=*),
+            </td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>version</strong></td>
+<td> =</td>
+                <td>&#39;$Id$&#39;</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-failmsg~47"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>failMsg</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-name~110"></span>
+              character(len=ESMF_MAXSTR)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>name</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i~132"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-j~53"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>j</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-petcount~44"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>petCount</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-petlist~14"></span>
+              integer,
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>petList</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rc~691"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rc</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-result~47"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>result</strong></td>
+<td> =</td>
+                <td>0</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-array~30"></span>
+              type(ESMF_Array)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>array</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dg1"></span>
+              type(<a href='../type/esmf_distgrid.html'>ESMF_DistGrid</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dg1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dg2"></span>
+              type(<a href='../type/esmf_distgrid.html'>ESMF_DistGrid</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dg2</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-field~65"></span>
+              type(<a href='../type/esmf_field.html'>ESMF_Field</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>field</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fieldre"></span>
+              type(<a href='../type/esmf_field.html'>ESMF_Field</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fieldRe</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fb~4"></span>
+              type(ESMF_FieldBundle)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fb</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fbre"></span>
+              type(ESMF_FieldBundle)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fbRe</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-g1"></span>
+              type(<a href='../type/esmf_grid.html'>ESMF_Grid</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>g1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-g2"></span>
+              type(<a href='../type/esmf_grid.html'>ESMF_Grid</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>g2</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-subcomp"></span>
+              type(<a href='../type/esmf_gridcomp.html'>ESMF_GridComp</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>subcomp</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-l1"></span>
+              type(<a href='../type/esmf_locstream.html'>ESMF_LocStream</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>l1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-l2"></span>
+              type(<a href='../type/esmf_locstream.html'>ESMF_LocStream</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>l2</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-m1"></span>
+              type(<a href='../type/esmf_mesh.html'>ESMF_Mesh</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>m1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-m2"></span>
+              type(<a href='../type/esmf_mesh.html'>ESMF_Mesh</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>m2</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-exportstate~94"></span>
+              type(<a href='../type/esmf_state.html'>ESMF_State</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>exportState</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vm~87"></span>
+              type(<a href='../type/esmf_vm.html'>ESMF_VM</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>vm</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+    
+
+    
+
+
+    
+
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="k">program </span><span class="n">ESMF_StateReconcileProxyUTest</span>
+
+<span class="c">!------------------------------------------------------------------------------</span>
+<span class="w"> </span>
+<span class="cp">#include &quot;ESMF_Macros.inc&quot;</span>
+
+<span class="c">!==============================================================================</span>
+<span class="c">!BOP</span>
+<span class="c">! !PROGRAM: ESMF_StateReconcileProxyUTest - Unit test </span>
+<span class="c">!</span>
+<span class="c">! !DESCRIPTION:</span>
+<span class="c">!</span>
+<span class="c">! Test correct properties and behavior of proxy objects created during</span>
+<span class="c">! StateReconcile.</span>
+<span class="c">!</span>
+<span class="c">!-----------------------------------------------------------------------------</span>
+<span class="c">! !USES:</span>
+<span class="w">  </span><span class="k">use </span><span class="n">ESMF_TestMod</span><span class="w">     </span><span class="c">! test methods</span>
+<span class="w">  </span><span class="k">use </span><span class="n">ESMF</span>
+<span class="w">  </span><span class="k">use </span><span class="n">subcomp_mod</span>
+
+<span class="w">  </span><span class="k">implicit none</span>
+
+<span class="c">!------------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! The following line turns the CVS identifier string into a printable variable.</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="s1">&#39;$Id$&#39;</span>
+<span class="c">!------------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="c">! cumulative result: count failures; no failures equals &quot;all pass&quot;</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="k">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+
+<span class="w">  </span><span class="c">! individual test failure message</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">failMsg</span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="n">ESMF_MAXSTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">name</span>
+
+<span class="w">  </span><span class="c">! local variables</span>
+<span class="w">  </span><span class="kt">integer</span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span>
+<span class="w">  </span><span class="kt">integer</span><span class="kd">::</span><span class="w"> </span><span class="n">petCount</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">allocatable</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">petList</span><span class="p">(:)</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_VM</span><span class="p">)</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">vm</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_GridComp</span><span class="p">)</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">subcomp</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_State</span><span class="p">)</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="n">exportState</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Array</span><span class="p">)</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="k">array</span>
+<span class="k">  type</span><span class="p">(</span><span class="n">ESMF_DistGrid</span><span class="p">)</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">dg1</span><span class="p">,</span><span class="w"> </span><span class="n">dg2</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Field</span><span class="p">)</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">fieldRe</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Grid</span><span class="p">)</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">g1</span><span class="p">,</span><span class="w"> </span><span class="n">g2</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Mesh</span><span class="p">)</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">m1</span><span class="p">,</span><span class="w"> </span><span class="n">m2</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_LocStream</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">l1</span><span class="p">,</span><span class="w"> </span><span class="n">l2</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_FieldBundle</span><span class="p">)</span><span class="kd">::</span><span class="w"> </span><span class="n">fb</span><span class="p">,</span><span class="w"> </span><span class="n">fbRe</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_TestStart</span><span class="p">(</span><span class="n">ESMF_SRCLINE</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="c">! Create State</span>
+<span class="w">  </span><span class="n">exportState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_StateCreate</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span><span class="w">  </span>
+
+<span class="w">  </span><span class="c">! Get global VM info</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_VMGetGlobal</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_VMGet</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">petCount</span><span class="o">=</span><span class="n">petCount</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="c">! Construct reduced petList for sub component</span>
+<span class="w">  </span><span class="k">allocate</span><span class="p">(</span><span class="n">petList</span><span class="p">(</span><span class="n">petCount</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+<span class="w">  </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">  </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">petCount</span><span class="o">/</span><span class="mi">2</span>
+<span class="w">    </span><span class="n">petList</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span>
+<span class="w">    </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">  </span><span class="k">enddo</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="c">! Create sub component on reduced petList</span>
+<span class="w">  </span><span class="n">subcomp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_GridCompCreate</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;sub-component&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">petList</span><span class="o">=</span><span class="n">petList</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Sub component SetServices</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridCompSetServices</span><span class="p">(</span><span class="n">subcomp</span><span class="p">,</span><span class="w"> </span><span class="n">userRoutine</span><span class="o">=</span><span class="n">SetServices</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="c">! Sub component Initialize</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridCompInitialize</span><span class="p">(</span><span class="n">subcomp</span><span class="p">,</span><span class="w"> </span><span class="n">exportState</span><span class="o">=</span><span class="n">exportState</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="c">! Reconcile the State</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_StateReconcile</span><span class="p">(</span><span class="n">exportState</span><span class="p">,</span><span class="w"> </span><span class="n">checkflag</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Reconciling a State&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="c">! Extract the DistGrid from the two Array objects in the State</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_StateGet</span><span class="p">(</span><span class="n">exportState</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;array1&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">array</span><span class="o">=</span><span class="k">array</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_ArrayGet</span><span class="p">(</span><span class="k">array</span><span class="p">,</span><span class="w"> </span><span class="n">distgrid</span><span class="o">=</span><span class="n">dg1</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="c">!-</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_StateGet</span><span class="p">(</span><span class="n">exportState</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;array2&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">array</span><span class="o">=</span><span class="k">array</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_ArrayGet</span><span class="p">(</span><span class="k">array</span><span class="p">,</span><span class="w"> </span><span class="n">distgrid</span><span class="o">=</span><span class="n">dg2</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! NOTE: This test is disabled until DistGrid aliasing is implemented in</span>
+<span class="w">  </span><span class="c">! StateReconcile.</span>
+<span class="c">!  ! Test whether dg1 and dg2 are aliases to the same DistGrid in memory</span>
+<span class="c">!  !NEX_disabled_UTest_Multi_Proc_Only</span>
+<span class="c">!  write(name, *) &quot;Ensure dg1 and dg2 are aliases to the same DistGrid Test&quot;</span>
+<span class="c">!  write(failMsg, *) &quot;Found non-aliased DistGrid objects!&quot;</span>
+<span class="c">!  call ESMF_Test((dg1==dg2), name, failMsg, result, ESMF_SRCLINE)</span>
+
+<span class="w">  </span><span class="c">! Extract the Grid from two Field objects in the State built on same Grid</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_StateGet</span><span class="p">(</span><span class="n">exportState</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;field1G&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">field</span><span class="o">=</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">grid</span><span class="o">=</span><span class="n">g1</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="c">!-</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_StateGet</span><span class="p">(</span><span class="n">exportState</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;field2G&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">field</span><span class="o">=</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">grid</span><span class="o">=</span><span class="n">g2</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="c">! Test whether g1 and g2 are aliases to the same Grid in memory</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Ensure g1 and g2 are aliases to the same Grid (proxy) Test&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Found non-aliased Grid (proxy) objects!&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">g1</span><span class="o">==</span><span class="n">g2</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Extract the Mesh from two Field objects in the State built on same Mesh</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_StateGet</span><span class="p">(</span><span class="n">exportState</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;field1M&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">field</span><span class="o">=</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">mesh</span><span class="o">=</span><span class="n">m1</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="c">!-</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_StateGet</span><span class="p">(</span><span class="n">exportState</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;field2M&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">field</span><span class="o">=</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">mesh</span><span class="o">=</span><span class="n">m2</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="c">! Test whether m1 and m2 are aliases to the same Mesh in memory</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Ensure m1 and m2 are aliases to the same Mesh (proxy) Test&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Found non-aliased Mesh (proxy) objects!&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">m1</span><span class="o">==</span><span class="n">m2</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Extract the LocStream from two Field objects in the State built on same LocStream</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_StateGet</span><span class="p">(</span><span class="n">exportState</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;field1L&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">field</span><span class="o">=</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">locStream</span><span class="o">=</span><span class="n">l1</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="c">!-</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_StateGet</span><span class="p">(</span><span class="n">exportState</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;field2L&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">field</span><span class="o">=</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_FieldGet</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">locStream</span><span class="o">=</span><span class="n">l2</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="c">! Test whether l1 and l2 are aliases to the same LocStream in memory</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Ensure l1 and l2 are aliases to the same LocStream (proxy) Test&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Found non-aliased LocStream (proxy) objects!&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">l1</span><span class="o">==</span><span class="n">l2</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_StateGet</span><span class="p">(</span><span class="n">exportState</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;fb&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fieldbundle</span><span class="o">=</span><span class="n">fb</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Re-Reconcile the State</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_StateReconcile</span><span class="p">(</span><span class="n">exportState</span><span class="p">,</span><span class="w"> </span><span class="n">checkflag</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Re-Reconciling a State&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Did not return ESMF_SUCCESS&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">rc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="n">ESMF_SUCCESS</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_StateGet</span><span class="p">(</span><span class="n">exportState</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;field2L&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">field</span><span class="o">=</span><span class="n">fieldRe</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Test whether field and fieldRe are aliases</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Ensure Re-Reconcile Field (proxy) persistence Test&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Found non-persistent Field (proxy) objects!&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">field</span><span class="o">==</span><span class="n">fieldRe</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_StateGet</span><span class="p">(</span><span class="n">exportState</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;fb&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fieldbundle</span><span class="o">=</span><span class="n">fbRe</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Test whether fb and fbRe are aliases</span>
+<span class="w">  </span><span class="c">!NEX_UTest_Multi_Proc_Only</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Ensure Re-Reconcile FieldBundle (proxy) persistence Test&quot;</span>
+<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Found non-persistent FieldBundle (proxy) objects!&quot;</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_Test</span><span class="p">((</span><span class="n">fb</span><span class="o">==</span><span class="n">fbRe</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">failMsg</span><span class="p">,</span><span class="w"> </span><span class="k">result</span><span class="p">,</span><span class="w"> </span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Sub component Finalize</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridCompFinalize</span><span class="p">(</span><span class="n">subcomp</span><span class="p">,</span><span class="w"> </span><span class="n">exportState</span><span class="o">=</span><span class="n">exportState</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! clean-up</span>
+<span class="w">  </span><span class="k">deallocate</span><span class="p">(</span><span class="n">petList</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">! Destroy sub component</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_GridCompDestroy</span><span class="p">(</span><span class="n">subcomp</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="c">! Destroy State</span>
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_StateDestroy</span><span class="p">(</span><span class="n">exportState</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rc</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ESMF_Finalize</span><span class="p">(</span><span class="n">endflag</span><span class="o">=</span><span class="n">ESMF_END_ABORT</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c">!----------------------------------------------------------------</span>
+
+<span class="w">  </span><span class="k">call </span><span class="n">ESMF_TestEnd</span><span class="p">(</span><span class="n">ESMF_SRCLINE</span><span class="p">)</span>
+<span class="w">  </span>
+<span class="k">end program </span><span class="n">ESMF_StateReconcileProxyUTest</span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ESMF
+ was developed by ESMF Developers<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-06-17T15:18:30.449153+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>
