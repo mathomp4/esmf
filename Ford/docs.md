@@ -1,7 +1,7 @@
 ---
 src_dir: ../src
 search: true
-graph: false
+graph: true
 coloured_edges: true
 graph_maxdepth: 4
 graph_maxnodes: 32
