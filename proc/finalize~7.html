@@ -97,20 +97,20 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 0.0% of total for procedures.">18 statements</a>
+                 title=" 0.0% of total for procedures.">8 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
-              <a href="../src/ESMF_RouteHandleAdvancedUTest.F90"> Source File</a>
+              <a href="../src/ESMF_SimpleComp.F90"> Source File</a>
             </li>
         </ul>
       </div>
       <div class="col">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb justify-content-end mb-0">
-                <li class="breadcrumb-item"><a href='../sourcefile/esmf_routehandleadvancedutest.f90.html'>ESMF_RouteHandleAdvancedUTest.F90</a></li>
-                <li class="breadcrumb-item"><a href='../module/compamod.html'>compAmod</a></li>
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_simplecomp.f90.html'>ESMF_SimpleComp.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/simplecomp.html'>SimpleComp</a></li>
             <li class="breadcrumb-item active" aria-current="page">Finalize</li>
           </ol>
         </nav>
@@ -151,6 +151,12 @@
   
   
   
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/finalize~7.html#src">Finalize</a>
+      </div>
+    </div>
 
 
   </div>
@@ -158,7 +164,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private  subroutine Finalize(comp, importState, exportState, clock, rc)  
+    <h2>private  subroutine Finalize(gcomp, istate, estate, clock, rc)  
 </h2>
     
 
@@ -177,7 +183,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-comp~637"></span>
+              <span class="anchor" id="variable-gcomp~87"></span>
               type(<a href='../type/esmf_gridcomp.html'>ESMF_GridComp</a>)
             </td>
 <td></td>
@@ -185,14 +191,14 @@
               
             </td>
             <td>::</td>
-            <td><strong>comp</strong></td>
+            <td><strong>gcomp</strong></td>
             <td>
                 
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-importstate~416"></span>
+              <span class="anchor" id="variable-istate~27"></span>
               type(<a href='../type/esmf_state.html'>ESMF_State</a>)
             </td>
 <td></td>
@@ -200,14 +206,14 @@
               
             </td>
             <td>::</td>
-            <td><strong>importState</strong></td>
+            <td><strong>istate</strong></td>
             <td>
                 
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-exportstate~415"></span>
+              <span class="anchor" id="variable-estate~15"></span>
               type(<a href='../type/esmf_state.html'>ESMF_State</a>)
             </td>
 <td></td>
@@ -215,14 +221,14 @@
               
             </td>
             <td>::</td>
-            <td><strong>exportState</strong></td>
+            <td><strong>estate</strong></td>
             <td>
                 
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-clock~482"></span>
+              <span class="anchor" id="variable-clock~306"></span>
               type(<a href='../type/esmf_clock.html'>ESMF_Clock</a>)
             </td>
 <td></td>
@@ -237,7 +243,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-rc~3586"></span>
+              <span class="anchor" id="variable-rc~2410"></span>
               integer,
             </td>
 <td>intent(out)</td>
@@ -265,6 +271,23 @@
 
 
     
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">Finalize</span><span class="p">(</span><span class="n">gcomp</span><span class="p">,</span><span class="w"> </span><span class="n">istate</span><span class="p">,</span><span class="w"> </span><span class="n">estate</span><span class="p">,</span><span class="w"> </span><span class="n">clock</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_GridComp</span><span class="p">)</span><span class="kd">::</span><span class="w"> </span><span class="n">gcomp</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_State</span><span class="p">)</span><span class="kd">::</span><span class="w"> </span><span class="n">istate</span><span class="p">,</span><span class="w"> </span><span class="n">estate</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_Clock</span><span class="p">)</span><span class="kd">::</span><span class="w"> </span><span class="n">clock</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+<span class="w">      </span>
+<span class="w">      </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Inside Finalize&quot;</span>
+
+<span class="w">      </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+<span class="w">      </span>
+<span class="w">  </span><span class="k">end subroutine </span><span class="n">Finalize</span><span class="w"> </span>
+</pre></div>
+
+    </section>
+    <br>
     
     </div>
   </div>
@@ -284,7 +307,7 @@
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-06-17T15:18:30.449153+0000             </p>
+ on 2025-06-17T16:22:02.743978+0000             </p>
           </div>
         </div>
         <br>

@@ -102,15 +102,15 @@
 
             <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
-              <a href="../src/user_coupler.F90"> Source File</a>
+              <a href="../src/ESMF_AttributeUpdateReconcileUTest.F90"> Source File</a>
             </li>
         </ul>
       </div>
       <div class="col">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb justify-content-end mb-0">
-                <li class="breadcrumb-item"><a href='../sourcefile/user_coupler.f90~19.html'>user_coupler.F90</a></li>
-                <li class="breadcrumb-item"><a href='../module/user_coupler~34.html'>user_coupler</a></li>
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_attributeupdatereconcileutest.f90.html'>ESMF_AttributeUpdateReconcileUTest.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/attributeupdatereconcilemod.html'>AttributeUpdateReconcileMod</a></li>
             <li class="breadcrumb-item active" aria-current="page">usercpl_setvm</li>
           </ol>
         </nav>
@@ -151,6 +151,12 @@
   
   
   
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/usercpl_setvm~15.html#src">usercpl_setvm</a>
+      </div>
+    </div>
 
 
   </div>
@@ -177,7 +183,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-comp~451"></span>
+              <span class="anchor" id="variable-comp~335"></span>
               type(<a href='../type/esmf_cplcomp.html'>ESMF_CplComp</a>)
             </td>
 <td></td>
@@ -192,7 +198,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-rc~3062"></span>
+              <span class="anchor" id="variable-rc~2375"></span>
               integer,
             </td>
 <td>intent(out)</td>
@@ -220,6 +226,40 @@
 
 
     
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">  </span><span class="k">subroutine </span><span class="n">usercpl_setvm</span><span class="p">(</span><span class="n">comp</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_CplComp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">comp</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rc</span>
+
+<span class="cp">#ifdef ESMF_TESTWITHTHREADS</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ESMF_VM</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">vm</span>
+<span class="w">    </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">pthreadsEnabled</span>
+<span class="cp">#endif</span>
+
+<span class="w">    </span><span class="c">! Initialize return code</span>
+<span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span>
+
+<span class="cp">#ifdef ESMF_TESTWITHTHREADS</span>
+<span class="w">    </span><span class="c">! The following call will turn on ESMF-threading (single threaded)</span>
+<span class="w">    </span><span class="c">! for this component. If you are using this file as a template for</span>
+<span class="w">    </span><span class="c">! your own code development you probably don&#39;t want to include the</span>
+<span class="w">    </span><span class="c">! following call unless you are interested in exploring ESMF&#39;s</span>
+<span class="w">    </span><span class="c">! threading features.</span>
+
+<span class="w">    </span><span class="c">! First test whether ESMF-threading is supported on this machine</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_VMGetGlobal</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ESMF_VMGet</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="n">pthreadsEnabledFlag</span><span class="o">=</span><span class="n">pthreadsEnabled</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pthreadsEnabled</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      call </span><span class="n">ESMF_CplCompSetVMMinThreads</span><span class="p">(</span><span class="n">comp</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
+<span class="w">    </span><span class="k">endif</span>
+<span class="cp">#endif</span>
+
+<span class="w">  </span><span class="k">end subroutine </span><span class="n">usercpl_setvm</span>
+</pre></div>
+
+    </section>
+    <br>
     
     </div>
   </div>
@@ -239,7 +279,7 @@
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-06-17T15:18:30.449153+0000             </p>
+ on 2025-06-17T16:22:02.743978+0000             </p>
           </div>
         </div>
         <br>

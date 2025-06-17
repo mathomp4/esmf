@@ -100,7 +100,6 @@ module land_comp
     type(ESMF_Grid)       :: grid
     type(ESMF_Field)      :: field
     type(ESMF_VM)         :: vm
-    type(ESMF_State)      :: land_export
     integer               :: petCount, localPet
     
     ! Initialize return code
@@ -112,7 +111,7 @@ module land_comp
     call ESMF_VMGet(vm, petCount=petCount, localPet=localPet, rc=rc)
     if (rc/=ESMF_SUCCESS) return ! bail out
     print *, "Land Init starting, localPet =", localPet
-
+    
     ! Create the source Field and add it to the export State
     call ESMF_ArraySpecSet(arrayspec, typekind=ESMF_TYPEKIND_R8, rank=2, rc=rc)
     if (rc/=ESMF_SUCCESS) return ! bail out
@@ -126,6 +125,8 @@ module land_comp
     if (rc/=ESMF_SUCCESS) return ! bail out
     call ESMF_StateAdd(exportState, (/field/), rc=rc)
     if (rc/=ESMF_SUCCESS) return ! bail out
+
+    call ESMF_StatePrint(exportState, rc=rc)
    
     print *, "land Init returning"
 
@@ -169,7 +170,7 @@ module land_comp
     ky = 2.*pi/(eub(2)-elb(2))
     do i = elb(1), eub(1)
       do j = elb(2), eub(2)
-        farrayPtr(i,j) = 300.*cos(kx*i)*sin(ky*j)
+        farrayPtr(i,j) = cos(kx*i)*sin(ky*j)
       enddo
     enddo
  
@@ -191,7 +192,6 @@ module land_comp
     ! Local variables
     type(ESMF_Grid) :: grid
     type(ESMF_Field) :: field
-    type(ESMF_State) :: state
     
     ! Initialize return code
     rc = ESMF_SUCCESS

@@ -97,20 +97,20 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 0.1% of total for procedures.">176 statements</a>
+                 title=" 0.1% of total for procedures.">177 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
-              <a href="../src/ESMF_GridCoordUTest.F90"> Source File</a>
+              <a href="../src/ESMF_GridItemUTest.F90"> Source File</a>
             </li>
         </ul>
       </div>
       <div class="col">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb justify-content-end mb-0">
-                <li class="breadcrumb-item"><a href='../sourcefile/esmf_gridcoordutest.f90.html'>ESMF_GridCoordUTest.F90</a></li>
-                <li class="breadcrumb-item"><a href='../program/esmf_gridcoordutest.html'>ESMF_GridCoordUTest</a></li>
+                <li class="breadcrumb-item"><a href='../sourcefile/esmf_griditemutest.f90.html'>ESMF_GridItemUTest.F90</a></li>
+                <li class="breadcrumb-item"><a href='../program/esmf_griditemutest.html'>ESMF_GridItemUTest</a></li>
             <li class="breadcrumb-item active" aria-current="page">check2DP1Bnds2x2UsingSLoc</li>
           </ol>
         </nav>
@@ -164,7 +164,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2> subroutine check2DP1Bnds2x2UsingSLoc(grid, staggerloc, localPet, petCount, ielbnd0, ieubnd0, iloff0, iuoff0, ielbnd1, ieubnd1, iloff1, iuoff1, ielbnd2, ieubnd2, iloff2, iuoff2, ielbnd3, ieubnd3, iloff3, iuoff3, correct, rc)  
+    <h2> subroutine check2DP1Bnds2x2UsingSLoc(grid, staggerloc, itemflag, localPet, petCount, ielbnd0, ieubnd0, iloff0, iuoff0, ielbnd1, ieubnd1, iloff1, iuoff1, ielbnd2, ieubnd2, iloff2, iuoff2, ielbnd3, ieubnd3, iloff3, iuoff3, correct, rc)  
 </h2>
     
 
@@ -183,7 +183,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~173"></span>
+              <span class="anchor" id="variable-grid~132"></span>
               type(<a href='../type/esmf_grid.html'>ESMF_Grid</a>)
             </td>
 <td></td>
@@ -198,7 +198,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-staggerloc~75"></span>
+              <span class="anchor" id="variable-staggerloc~38"></span>
               type(<a href='../type/esmf_staggerloc.html'>ESMF_StaggerLoc</a>),
             </td>
 <td>intent(in)</td>
@@ -213,7 +213,22 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-localpet~92"></span>
+              <span class="anchor" id="variable-itemflag"></span>
+              type(<a href='../type/esmf_griditem_flag.html'>ESMF_GridItem_Flag</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>itemflag</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-localpet~74"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -228,7 +243,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-petcount~107"></span>
+              <span class="anchor" id="variable-petcount~86"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -243,7 +258,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ielbnd0~4"></span>
+              <span class="anchor" id="variable-ielbnd0"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -258,7 +273,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ieubnd0~4"></span>
+              <span class="anchor" id="variable-ieubnd0"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -273,7 +288,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-iloff0~4"></span>
+              <span class="anchor" id="variable-iloff0"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -288,7 +303,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-iuoff0~4"></span>
+              <span class="anchor" id="variable-iuoff0"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -303,7 +318,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ielbnd1~4"></span>
+              <span class="anchor" id="variable-ielbnd1"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -318,7 +333,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ieubnd1~4"></span>
+              <span class="anchor" id="variable-ieubnd1"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -333,7 +348,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-iloff1~4"></span>
+              <span class="anchor" id="variable-iloff1"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -348,7 +363,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-iuoff1~4"></span>
+              <span class="anchor" id="variable-iuoff1"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -363,7 +378,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ielbnd2~4"></span>
+              <span class="anchor" id="variable-ielbnd2"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -378,7 +393,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ieubnd2~4"></span>
+              <span class="anchor" id="variable-ieubnd2"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -393,7 +408,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-iloff2~4"></span>
+              <span class="anchor" id="variable-iloff2"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -408,7 +423,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-iuoff2~4"></span>
+              <span class="anchor" id="variable-iuoff2"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -423,7 +438,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ielbnd3~4"></span>
+              <span class="anchor" id="variable-ielbnd3"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -438,7 +453,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ieubnd3~4"></span>
+              <span class="anchor" id="variable-ieubnd3"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -453,7 +468,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-iloff3~4"></span>
+              <span class="anchor" id="variable-iloff3"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -468,7 +483,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-iuoff3~4"></span>
+              <span class="anchor" id="variable-iuoff3"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -483,7 +498,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-correct~27"></span>
+              <span class="anchor" id="variable-correct~9"></span>
               logical,
             </td>
 <td>intent(inout)</td>
@@ -498,7 +513,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-rc~2243"></span>
+              <span class="anchor" id="variable-rc~2189"></span>
               integer,
             </td>
 <td>intent(inout)</td>
@@ -515,6 +530,446 @@
   </table>
 
     <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~check2dp1bnds2x2usingsloc~~CallsGraph Pages: 1 -->
+<svg id="proccheck2dp1bnds2x2usingslocCallsGraph" width="641pt" height="169pt"
+ viewBox="0.00 0.00 641.00 168.91" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph" class="graph" transform="scale(0.71 0.71) rotate(0) translate(4 235)">
+<title>proc~~check2dp1bnds2x2usingsloc~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-235 903,-235 903,4 -4,4"/>
+<!-- proc~check2dp1bnds2x2usingsloc -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node1" class="node">
+<title>proc~check2dp1bnds2x2usingsloc</title>
+<polygon fill="none" stroke="black" points="172,-127 0,-127 0,-103 172,-103 172,-127"/>
+<text text-anchor="middle" x="86" y="-112.6" font-family="Helvetica,sans-Serif" font-size="10.50">check2DP1Bnds2x2UsingSLoc</text>
+</g>
+<!-- proc~esmf_gridgetitembounds -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node2" class="node">
+<title>proc~esmf_gridgetitembounds</title>
+<g id="a_proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node2"><a xlink:href="../proc/esmf_gridgetitembounds.html" xlink:title="ESMF_GridGetItemBounds">
+<polygon fill="#d9534f" stroke="#d9534f" points="359,-127 208,-127 208,-103 359,-103 359,-127"/>
+<text text-anchor="middle" x="283.5" y="-112.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ESMF_GridGetItemBounds</text>
+</a>
+</g>
+</g>
+<!-- proc~check2dp1bnds2x2usingsloc&#45;&gt;proc~esmf_gridgetitembounds -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_edge1" class="edge">
+<title>proc~check2dp1bnds2x2usingsloc&#45;&gt;proc~esmf_gridgetitembounds</title>
+<path fill="none" stroke="#ff0000" d="M172.18,-115C180.59,-115 189.13,-115 197.54,-115"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="197.72,-118.5 207.72,-115 197.72,-111.5 197.72,-118.5"/>
+</g>
+<!-- c_esmc_gridgetitembounds -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node3" class="node">
+<title>c_esmc_gridgetitembounds</title>
+<polygon fill="#777777" stroke="#777777" points="554,-231 395,-231 395,-207 554,-207 554,-231"/>
+<text text-anchor="middle" x="474.5" y="-216.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">c_esmc_gridgetitembounds</text>
+</g>
+<!-- proc~esmf_gridgetitembounds&#45;&gt;c_esmc_gridgetitembounds -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_edge2" class="edge">
+<title>proc~esmf_gridgetitembounds&#45;&gt;c_esmc_gridgetitembounds</title>
+<path fill="none" stroke="#ff0000" d="M297.02,-127.01C316.45,-145 355.73,-178.9 395,-198 399.11,-200 403.43,-201.83 407.85,-203.5"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="407.04,-206.92 417.63,-206.9 409.34,-200.31 407.04,-206.92"/>
+</g>
+<!-- interface~esmf_interarraycreate -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node4" class="node">
+<title>interface~esmf_interarraycreate</title>
+<g id="a_proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node4"><a xlink:href="../interface/esmf_interarraycreate.html" xlink:title="ESMF_InterArrayCreate">
+<polygon fill="#a7506f" stroke="#a7506f" points="542.5,-189 406.5,-189 406.5,-165 542.5,-165 542.5,-189"/>
+<text text-anchor="middle" x="474.5" y="-174.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ESMF_InterArrayCreate</text>
+</a>
+</g>
+</g>
+<!-- proc~esmf_gridgetitembounds&#45;&gt;interface~esmf_interarraycreate -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_edge3" class="edge">
+<title>proc~esmf_gridgetitembounds&#45;&gt;interface~esmf_interarraycreate</title>
+<path fill="none" stroke="#ff0000" d="M314.72,-127.09C336.78,-135.7 367.51,-147.24 395,-156 401.59,-158.1 408.54,-160.17 415.47,-162.13"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="414.98,-165.63 425.55,-164.94 416.86,-158.89 414.98,-165.63"/>
+</g>
+<!-- proc~esmf_gridgetinit -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node5" class="node">
+<title>proc~esmf_gridgetinit</title>
+<g id="a_proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node5"><a xlink:href="../proc/esmf_gridgetinit.html" xlink:title="ESMF_GridGetInit">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="526.5,-147 422.5,-147 422.5,-123 526.5,-123 526.5,-147"/>
+<text text-anchor="middle" x="474.5" y="-132.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ESMF_GridGetInit</text>
+</a>
+</g>
+</g>
+<!-- proc~esmf_gridgetitembounds&#45;&gt;proc~esmf_gridgetinit -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_edge4" class="edge">
+<title>proc~esmf_gridgetitembounds&#45;&gt;proc~esmf_gridgetinit</title>
+<path fill="none" stroke="#ff0000" d="M359.2,-122.9C376.71,-124.76 395.18,-126.71 412.04,-128.5"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="412,-132.01 422.31,-129.58 412.73,-125.05 412,-132.01"/>
+</g>
+<!-- proc~esmf_imerr -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node6" class="node">
+<title>proc~esmf_imerr</title>
+<g id="a_proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node6"><a xlink:href="../proc/esmf_imerr.html" xlink:title="ESMF_IMErr">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="511.5,-67 437.5,-67 437.5,-43 511.5,-43 511.5,-67"/>
+<text text-anchor="middle" x="474.5" y="-52.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ESMF_IMErr</text>
+</a>
+</g>
+</g>
+<!-- proc~esmf_gridgetitembounds&#45;&gt;proc~esmf_imerr -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_edge5" class="edge">
+<title>proc~esmf_gridgetitembounds&#45;&gt;proc~esmf_imerr</title>
+<path fill="none" stroke="#ff0000" d="M322.75,-102.86C353.05,-93.24 395.49,-79.77 427.62,-69.57"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="428.76,-72.87 437.23,-66.51 426.64,-66.2 428.76,-72.87"/>
+</g>
+<!-- proc~esmf_interarraydestroy -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node7" class="node">
+<title>proc~esmf_interarraydestroy</title>
+<g id="a_proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node7"><a xlink:href="../proc/esmf_interarraydestroy.html" xlink:title="ESMF_InterArrayDestroy">
+<polygon fill="#d9534f" stroke="#d9534f" points="545,-25 404,-25 404,-1 545,-1 545,-25"/>
+<text text-anchor="middle" x="474.5" y="-10.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ESMF_InterArrayDestroy</text>
+</a>
+</g>
+</g>
+<!-- proc~esmf_gridgetitembounds&#45;&gt;proc~esmf_interarraydestroy -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_edge6" class="edge">
+<title>proc~esmf_gridgetitembounds&#45;&gt;proc~esmf_interarraydestroy</title>
+<path fill="none" stroke="#ff0000" d="M297.73,-102.72C317.45,-85.03 356.39,-52.51 395,-34 399.31,-31.94 403.84,-30.05 408.48,-28.33"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="409.76,-31.59 418.09,-25.04 407.49,-24.97 409.76,-31.59"/>
+</g>
+<!-- proc~esmf_logfounderror -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node8" class="node">
+<title>proc~esmf_logfounderror</title>
+<g id="a_proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node8"><a xlink:href="../proc/esmf_logfounderror.html" xlink:title="ESMF_LogFoundError">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="735.5,-108 610.5,-108 610.5,-84 735.5,-84 735.5,-108"/>
+<text text-anchor="middle" x="673" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ESMF_LogFoundError</text>
+</a>
+</g>
+</g>
+<!-- proc~esmf_gridgetitembounds&#45;&gt;proc~esmf_logfounderror -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_edge7" class="edge">
+<title>proc~esmf_gridgetitembounds&#45;&gt;proc~esmf_logfounderror</title>
+<path fill="none" stroke="#ff0000" d="M359.21,-111.34C428.66,-107.93 531.43,-102.89 600,-99.53"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="600.46,-103.01 610.28,-99.03 600.12,-96.02 600.46,-103.01"/>
+</g>
+<!-- proc~esmf_interarraycreateptr -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node11" class="node">
+<title>proc~esmf_interarraycreateptr</title>
+<g id="a_proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node11"><a xlink:href="../proc/esmf_interarraycreateptr.html" xlink:title="ESMF_InterArrayCreatePtr">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="748,-211 598,-211 598,-187 748,-187 748,-211"/>
+<text text-anchor="middle" x="673" y="-196.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ESMF_InterArrayCreatePtr</text>
+</a>
+</g>
+</g>
+<!-- interface~esmf_interarraycreate&#45;&gt;proc~esmf_interarraycreateptr -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_edge8" class="edge">
+<title>interface~esmf_interarraycreate&#45;&gt;proc~esmf_interarraycreateptr</title>
+<path fill="none" stroke="#ffff00" stroke-dasharray="5,2" d="M542.57,-184.51C557.03,-186.13 572.49,-187.86 587.51,-189.54"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="587.49,-193.06 597.82,-190.69 588.27,-186.1 587.49,-193.06"/>
+</g>
+<!-- proc~esmf_interarraycreatetrg -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node12" class="node">
+<title>proc~esmf_interarraycreatetrg</title>
+<g id="a_proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node12"><a xlink:href="../proc/esmf_interarraycreatetrg.html" xlink:title="ESMF_InterArrayCreateTrg">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="748.5,-169 597.5,-169 597.5,-145 748.5,-145 748.5,-169"/>
+<text text-anchor="middle" x="673" y="-154.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ESMF_InterArrayCreateTrg</text>
+</a>
+</g>
+</g>
+<!-- interface~esmf_interarraycreate&#45;&gt;proc~esmf_interarraycreatetrg -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_edge9" class="edge">
+<title>interface~esmf_interarraycreate&#45;&gt;proc~esmf_interarraycreatetrg</title>
+<path fill="none" stroke="#ffff00" stroke-dasharray="5,2" d="M542.57,-170.17C556.94,-168.71 572.29,-167.15 587.22,-165.63"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="587.88,-169.08 597.48,-164.59 587.17,-162.12 587.88,-169.08"/>
+</g>
+<!-- proc~esmf_imerr&#45;&gt;proc~esmf_logfounderror -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_edge11" class="edge">
+<title>proc~esmf_imerr&#45;&gt;proc~esmf_logfounderror</title>
+<path fill="none" stroke="#00ffff" d="M511.54,-62.52C537.44,-67.92 573.12,-75.37 604.27,-81.87"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="603.7,-85.32 614.2,-83.94 605.13,-78.47 603.7,-85.32"/>
+</g>
+<!-- proc~esmf_initcheckdeep -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node10" class="node">
+<title>proc~esmf_initcheckdeep</title>
+<g id="a_proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node10"><a xlink:href="../proc/esmf_initcheckdeep.html" xlink:title="ESMF_InitCheckDeep">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="735,-66 611,-66 611,-42 735,-42 735,-66"/>
+<text text-anchor="middle" x="673" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ESMF_InitCheckDeep</text>
+</a>
+</g>
+</g>
+<!-- proc~esmf_imerr&#45;&gt;proc~esmf_initcheckdeep -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_edge10" class="edge">
+<title>proc~esmf_imerr&#45;&gt;proc~esmf_initcheckdeep</title>
+<path fill="none" stroke="#00ffff" d="M511.54,-54.82C536.43,-54.69 570.36,-54.52 600.61,-54.36"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="600.73,-57.86 610.71,-54.31 600.69,-50.86 600.73,-57.86"/>
+</g>
+<!-- proc~esmf_logfounddeallocerror -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node13" class="node">
+<title>proc~esmf_logfounddeallocerror</title>
+<g id="a_proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node13"><a xlink:href="../proc/esmf_logfounddeallocerror.html" xlink:title="ESMF_LogFoundDeallocError">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="756,-24 590,-24 590,0 756,0 756,-24"/>
+<text text-anchor="middle" x="673" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ESMF_LogFoundDeallocError</text>
+</a>
+</g>
+</g>
+<!-- proc~esmf_interarraydestroy&#45;&gt;proc~esmf_logfounddeallocerror -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_edge12" class="edge">
+<title>proc~esmf_interarraydestroy&#45;&gt;proc~esmf_logfounddeallocerror</title>
+<path fill="none" stroke="#0000ff" d="M545.06,-12.65C556.24,-12.59 567.97,-12.53 579.59,-12.47"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="579.78,-15.97 589.76,-12.42 579.74,-8.97 579.78,-15.97"/>
+</g>
+<!-- esmf_breakpoint -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node9" class="node">
+<title>esmf_breakpoint</title>
+<polygon fill="#777777" stroke="#777777" points="896,-150 795,-150 795,-126 896,-126 896,-150"/>
+<text text-anchor="middle" x="845.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">esmf_breakpoint</text>
+</g>
+<!-- proc~esmf_logfounderror&#45;&gt;esmf_breakpoint -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_edge13" class="edge">
+<title>proc~esmf_logfounderror&#45;&gt;esmf_breakpoint</title>
+<path fill="none" stroke="#ff00ff" d="M722.86,-108.04C742.48,-112.87 765.26,-118.48 785.77,-123.53"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="785.09,-126.97 795.63,-125.96 786.76,-120.17 785.09,-126.97"/>
+</g>
+<!-- proc~esmf_logrc2msg -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node14" class="node">
+<title>proc~esmf_logrc2msg</title>
+<g id="a_proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node14"><a xlink:href="../proc/esmf_logrc2msg.html" xlink:title="ESMF_LogRc2Msg">
+<polygon fill="#d9534f" stroke="#d9534f" points="899,-108 792,-108 792,-84 899,-84 899,-108"/>
+<text text-anchor="middle" x="845.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ESMF_LogRc2Msg</text>
+</a>
+</g>
+</g>
+<!-- proc~esmf_logfounderror&#45;&gt;proc~esmf_logrc2msg -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_edge14" class="edge">
+<title>proc~esmf_logfounderror&#45;&gt;proc~esmf_logrc2msg</title>
+<path fill="none" stroke="#ff00ff" d="M735.55,-96C750.51,-96 766.53,-96 781.55,-96"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="781.76,-99.5 791.76,-96 781.76,-92.5 781.76,-99.5"/>
+</g>
+<!-- proc~esmf_logwrite -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node15" class="node">
+<title>proc~esmf_logwrite</title>
+<g id="a_proc~~check2dp1bnds2x2usingsloc~~CallsGraph_node15"><a xlink:href="../proc/esmf_logwrite.html" xlink:title="ESMF_LogWrite">
+<polygon fill="#d9534f" stroke="#d9534f" points="892.5,-66 798.5,-66 798.5,-42 892.5,-42 892.5,-66"/>
+<text text-anchor="middle" x="845.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ESMF_LogWrite</text>
+</a>
+</g>
+</g>
+<!-- proc~esmf_logfounderror&#45;&gt;proc~esmf_logwrite -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CallsGraph_edge15" class="edge">
+<title>proc~esmf_logfounderror&#45;&gt;proc~esmf_logwrite</title>
+<path fill="none" stroke="#ff00ff" d="M722.86,-83.96C743.33,-78.92 767.25,-73.03 788.44,-67.81"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="789.4,-71.18 798.27,-65.39 787.72,-64.38 789.4,-71.18"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panproccheck2dp1bnds2x2usingslocCallsGraph = svgPanZoom('#proccheck2dp1bnds2x2usingslocCallsGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="28pt"
+ viewBox="0.00 0.00 641.00 27.51" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.86 0.86) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 741.5,-28 741.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="146,-24 88,-24 88,0 146,0 146,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
+<text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="374,-24 244,-24 244,0 374,0 374,-24"/>
+<text text-anchor="middle" x="309" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="537.5,-24 392.5,-24 392.5,0 537.5,0 537.5,-24"/>
+<text text-anchor="middle" x="465" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="614,-24 556,-24 556,0 614,0 614,-24"/>
+<text text-anchor="middle" x="585" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="737.5,-24 632.5,-24 632.5,0 737.5,0 737.5,-24"/>
+<text text-anchor="middle" x="685" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Called by</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~check2dp1bnds2x2usingsloc~~CalledByGraph Pages: 1 -->
+<svg id="proccheck2dp1bnds2x2usingslocCalledByGraph" width="337pt" height="32pt"
+ viewBox="0.00 0.00 337.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~check2dp1bnds2x2usingsloc~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>proc~~check2dp1bnds2x2usingsloc~~CalledByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 333,-28 333,4 -4,4"/>
+<!-- proc~check2dp1bnds2x2usingsloc -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CalledByGraph_node1" class="node">
+<title>proc~check2dp1bnds2x2usingsloc</title>
+<polygon fill="none" stroke="black" points="329,-24 157,-24 157,0 329,0 329,-24"/>
+<text text-anchor="middle" x="243" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">check2DP1Bnds2x2UsingSLoc</text>
+</g>
+<!-- program~esmf_griditemutest -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CalledByGraph_node2" class="node">
+<title>program~esmf_griditemutest</title>
+<g id="a_proc~~check2dp1bnds2x2usingsloc~~CalledByGraph_node2"><a xlink:href="../program/esmf_griditemutest.html" xlink:title="ESMF_GridItemUTest">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="121,-24 0,-24 0,0 121,0 121,-24"/>
+<text text-anchor="middle" x="60.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ESMF_GridItemUTest</text>
+</a>
+</g>
+</g>
+<!-- program~esmf_griditemutest&#45;&gt;proc~check2dp1bnds2x2usingsloc -->
+<g id="proc~~check2dp1bnds2x2usingsloc~~CalledByGraph_edge1" class="edge">
+<title>program~esmf_griditemutest&#45;&gt;proc~check2dp1bnds2x2usingsloc</title>
+<path fill="none" stroke="#ff0000" d="M121.1,-12C129.37,-12 138.02,-12 146.74,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="146.99,-15.5 156.99,-12 146.99,-8.5 146.99,-15.5"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CalledByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CalledByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="28pt"
+ viewBox="0.00 0.00 641.00 27.51" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.86 0.86) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 741.5,-28 741.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="146,-24 88,-24 88,0 146,0 146,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
+<text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="374,-24 244,-24 244,0 374,0 374,-24"/>
+<text text-anchor="middle" x="309" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="537.5,-24 392.5,-24 392.5,0 537.5,0 537.5,-24"/>
+<text text-anchor="middle" x="465" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="614,-24 556,-24 556,0 614,0 614,-24"/>
+<text text-anchor="middle" x="585" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="737.5,-24 632.5,-24 632.5,0 737.5,0 737.5,-24"/>
+<text text-anchor="middle" x="685" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
 
 
     
@@ -528,7 +983,7 @@
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="hl codehilite"><pre><span></span><span class="k">subroutine </span><span class="n">check2DP1Bnds2x2UsingSLoc</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">staggerloc</span><span class="p">,</span><span class="w"> </span><span class="n">localPet</span><span class="p">,</span><span class="w"> </span><span class="n">petCount</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+    <div class="hl codehilite"><pre><span></span><span class="k">subroutine </span><span class="n">check2DP1Bnds2x2UsingSLoc</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">staggerloc</span><span class="p">,</span><span class="w"> </span><span class="n">itemflag</span><span class="p">,</span><span class="w"> </span><span class="n">localPet</span><span class="p">,</span><span class="w"> </span><span class="n">petCount</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
 <span class="w">                          </span><span class="n">ielbnd0</span><span class="p">,</span><span class="n">ieubnd0</span><span class="p">,</span><span class="n">iloff0</span><span class="p">,</span><span class="n">iuoff0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
 <span class="w">                          </span><span class="n">ielbnd1</span><span class="p">,</span><span class="n">ieubnd1</span><span class="p">,</span><span class="n">iloff1</span><span class="p">,</span><span class="n">iuoff1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
 <span class="w">                          </span><span class="n">ielbnd2</span><span class="p">,</span><span class="n">ieubnd2</span><span class="p">,</span><span class="n">iloff2</span><span class="p">,</span><span class="n">iuoff2</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
@@ -537,6 +992,7 @@
 
 <span class="w">  </span><span class="k">type</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_Grid</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">grid</span>
 <span class="w">  </span><span class="k">type</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_StaggerLoc</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">staggerloc</span>
+<span class="w">  </span><span class="k">type</span><span class="w"> </span><span class="p">(</span><span class="n">ESMF_GridItem_Flag</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">itemflag</span>
 <span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">localPet</span><span class="p">,</span><span class="w"> </span><span class="n">petCount</span>
 <span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ielbnd0</span><span class="p">(:),</span><span class="n">ieubnd0</span><span class="p">(:),</span><span class="n">iloff0</span><span class="p">(:),</span><span class="n">iuoff0</span><span class="p">(:)</span>
 <span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ielbnd1</span><span class="p">(:),</span><span class="n">ieubnd1</span><span class="p">(:),</span><span class="n">iloff1</span><span class="p">(:),</span><span class="n">iuoff1</span><span class="p">(:)</span>
@@ -556,8 +1012,8 @@
 <span class="w">      </span><span class="c">! probably have to change also. </span>
 
 <span class="w">      </span><span class="c">! check DE 0</span>
-<span class="w">      </span><span class="k">call </span><span class="n">ESMF_GridGet</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">localDE</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
-<span class="w">             </span><span class="n">staggerLoc</span><span class="o">=</span><span class="n">staggerloc</span><span class="p">,</span><span class="w">                  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_GridGetItemBounds</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">localDE</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">staggerLoc</span><span class="o">=</span><span class="n">staggerloc</span><span class="p">,</span><span class="w"> </span><span class="n">itemflag</span><span class="o">=</span><span class="n">itemflag</span><span class="p">,</span><span class="w">                  </span><span class="p">&amp;</span>
 <span class="w">             </span><span class="n">exclusiveLBound</span><span class="o">=</span><span class="n">elbnd</span><span class="p">,</span><span class="w"> </span><span class="n">exclusiveUBound</span><span class="o">=</span><span class="n">eubnd</span><span class="p">,</span><span class="w"> </span><span class="n">exclusiveCount</span><span class="o">=</span><span class="n">ecnt</span><span class="p">,</span><span class="w">       </span><span class="p">&amp;</span>
 <span class="w">             </span><span class="n">computationalLBound</span><span class="o">=</span><span class="n">clbnd</span><span class="p">,</span><span class="w"> </span><span class="n">computationalUBound</span><span class="o">=</span><span class="n">cubnd</span><span class="p">,</span><span class="w"> </span><span class="n">computationalCount</span><span class="o">=</span><span class="n">ccnt</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
 <span class="w">             </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">ESMF_FAILURE</span>
@@ -583,15 +1039,15 @@
 <span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ccnt</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ieubnd0</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">ielbnd0</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="n">iloff0</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">iuoff0</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="n">correct</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
 <span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ccnt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ieubnd0</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">ielbnd0</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="n">iloff0</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">iuoff0</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="n">correct</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
 <span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ccnt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ieubnd0</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="n">ielbnd0</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="n">iloff0</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="n">iuoff0</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span><span class="w"> </span><span class="n">correct</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+
 <span class="w"> </span>
 <span class="w">      </span><span class="c">! check DE 1</span>
-<span class="w">      </span><span class="k">call </span><span class="n">ESMF_GridGet</span><span class="p">(</span><span class="n">grid2D</span><span class="p">,</span><span class="w"> </span><span class="n">localDE</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
-<span class="w">             </span><span class="n">staggerLoc</span><span class="o">=</span><span class="n">staggerloc</span><span class="p">,</span><span class="w">                  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_GridGetItemBounds</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">localDE</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">staggerLoc</span><span class="o">=</span><span class="n">staggerloc</span><span class="p">,</span><span class="w"> </span><span class="n">itemflag</span><span class="o">=</span><span class="n">itemflag</span><span class="p">,</span><span class="w">                 </span><span class="p">&amp;</span>
 <span class="w">             </span><span class="n">exclusiveLBound</span><span class="o">=</span><span class="n">elbnd</span><span class="p">,</span><span class="w"> </span><span class="n">exclusiveUBound</span><span class="o">=</span><span class="n">eubnd</span><span class="p">,</span><span class="w">  </span><span class="n">exclusiveCount</span><span class="o">=</span><span class="n">ecnt</span><span class="p">,</span><span class="w">     </span><span class="p">&amp;</span>
 <span class="w">             </span><span class="n">computationalLBound</span><span class="o">=</span><span class="n">clbnd</span><span class="p">,</span><span class="w"> </span><span class="n">computationalUBound</span><span class="o">=</span><span class="n">cubnd</span><span class="p">,</span><span class="w"> </span><span class="n">computationalCount</span><span class="o">=</span><span class="n">ccnt</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
 <span class="w">             </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">ESMF_FAILURE</span>
 <span class="c">!    write(*,*) &quot;1:&quot;,clbnd,&quot;,&quot;,cubnd, correct</span>
-
 
 <span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">elbnd</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ielbnd1</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">iloff1</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="n">correct</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
 <span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">elbnd</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ielbnd1</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">iloff1</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="n">correct</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
@@ -614,12 +1070,13 @@
 <span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ccnt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ieubnd1</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="n">ielbnd1</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="n">iloff1</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="n">iuoff1</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span><span class="w"> </span><span class="n">correct</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
 
 <span class="w">      </span><span class="c">! check DE 2</span>
-<span class="w">      </span><span class="k">call </span><span class="n">ESMF_GridGet</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">localDE</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
-<span class="w">             </span><span class="n">staggerLoc</span><span class="o">=</span><span class="n">staggerloc</span><span class="p">,</span><span class="w">                  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_GridGetItemBounds</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">localDE</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">staggerLoc</span><span class="o">=</span><span class="n">staggerloc</span><span class="p">,</span><span class="w"> </span><span class="n">itemflag</span><span class="o">=</span><span class="n">itemflag</span><span class="p">,</span><span class="w">                 </span><span class="p">&amp;</span>
 <span class="w">             </span><span class="n">exclusiveLBound</span><span class="o">=</span><span class="n">elbnd</span><span class="p">,</span><span class="w"> </span><span class="n">exclusiveUBound</span><span class="o">=</span><span class="n">eubnd</span><span class="p">,</span><span class="w"> </span><span class="n">exclusiveCount</span><span class="o">=</span><span class="n">ecnt</span><span class="p">,</span><span class="w">   </span><span class="p">&amp;</span>
 <span class="w">             </span><span class="n">computationalLBound</span><span class="o">=</span><span class="n">clbnd</span><span class="p">,</span><span class="w"> </span><span class="n">computationalUBound</span><span class="o">=</span><span class="n">cubnd</span><span class="p">,</span><span class="w"> </span><span class="n">computationalCount</span><span class="o">=</span><span class="n">ccnt</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
 <span class="w">             </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">ESMF_FAILURE</span>
 <span class="c">!   write(*,*) &quot;2:&quot;,clbnd,&quot;,&quot;,cubnd, correct</span>
+
 
 <span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">elbnd</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ielbnd2</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">iloff2</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="n">correct</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
 <span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">elbnd</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ielbnd2</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">iloff2</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="n">correct</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
@@ -642,8 +1099,8 @@
 <span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ccnt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ieubnd2</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="n">ielbnd2</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="n">iloff2</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="n">iuoff2</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span><span class="w"> </span><span class="n">correct</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
 
 <span class="w">      </span><span class="c">! check DE 3</span>
-<span class="w">      </span><span class="k">call </span><span class="n">ESMF_GridGet</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">localDE</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
-<span class="w">             </span><span class="n">staggerLoc</span><span class="o">=</span><span class="n">staggerloc</span><span class="p">,</span><span class="w">                  </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="k">call </span><span class="n">ESMF_GridGetItemBounds</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">localDE</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">staggerLoc</span><span class="o">=</span><span class="n">staggerloc</span><span class="p">,</span><span class="w"> </span><span class="n">itemflag</span><span class="o">=</span><span class="n">itemflag</span><span class="p">,</span><span class="w">                 </span><span class="p">&amp;</span>
 <span class="w">             </span><span class="n">exclusiveLBound</span><span class="o">=</span><span class="n">elbnd</span><span class="p">,</span><span class="w"> </span><span class="n">exclusiveUBound</span><span class="o">=</span><span class="n">eubnd</span><span class="p">,</span><span class="w">  </span><span class="n">exclusiveCount</span><span class="o">=</span><span class="n">ecnt</span><span class="p">,</span><span class="w">      </span><span class="p">&amp;</span>
 <span class="w">             </span><span class="n">computationalLBound</span><span class="o">=</span><span class="n">clbnd</span><span class="p">,</span><span class="w"> </span><span class="n">computationalUBound</span><span class="o">=</span><span class="n">cubnd</span><span class="p">,</span><span class="w"> </span><span class="n">computationalCount</span><span class="o">=</span><span class="n">ccnt</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
 <span class="w">             </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">ESMF_FAILURE</span>
@@ -670,14 +1127,13 @@
 <span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ccnt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ieubnd3</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="n">ielbnd3</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="n">iloff3</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="n">iuoff3</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span><span class="w"> </span><span class="n">correct</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
 
 <span class="w">  </span><span class="k">else  if</span><span class="w"> </span><span class="p">(</span><span class="n">petCount</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
-<span class="k">      call </span><span class="n">ESMF_GridGet</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">localDE</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
-<span class="w">             </span><span class="n">staggerLoc</span><span class="o">=</span><span class="n">staggerloc</span><span class="p">,</span><span class="w">                  </span><span class="p">&amp;</span>
+<span class="k">      call </span><span class="n">ESMF_GridGetItemBounds</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span><span class="w"> </span><span class="n">localDE</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">             </span><span class="n">staggerLoc</span><span class="o">=</span><span class="n">staggerloc</span><span class="p">,</span><span class="w"> </span><span class="n">itemflag</span><span class="o">=</span><span class="n">itemflag</span><span class="p">,</span><span class="w">                 </span><span class="p">&amp;</span>
 <span class="w">             </span><span class="n">exclusiveLBound</span><span class="o">=</span><span class="n">elbnd</span><span class="p">,</span><span class="w"> </span><span class="n">exclusiveUBound</span><span class="o">=</span><span class="n">eubnd</span><span class="p">,</span><span class="w">  </span><span class="n">exclusiveCount</span><span class="o">=</span><span class="n">ecnt</span><span class="p">,</span><span class="w">      </span><span class="p">&amp;</span>
 <span class="w">             </span><span class="n">computationalLBound</span><span class="o">=</span><span class="n">clbnd</span><span class="p">,</span><span class="w"> </span><span class="n">computationalUBound</span><span class="o">=</span><span class="n">cubnd</span><span class="p">,</span><span class="w"> </span><span class="n">computationalCount</span><span class="o">=</span><span class="n">ccnt</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">localrc</span><span class="p">)</span>
 <span class="w">             </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localrc</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ESMF_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="n">rc</span><span class="o">=</span><span class="n">ESMF_FAILURE</span>
 
 <span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">localPet</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
-
 <span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="n">elbnd</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ielbnd0</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">iloff0</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="n">correct</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">elbnd</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ielbnd0</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">iloff0</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="n">correct</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">elbnd</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ielbnd0</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="n">iloff0</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span><span class="w"> </span><span class="n">correct</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
@@ -698,7 +1154,6 @@
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ccnt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ieubnd0</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">ielbnd0</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="n">iloff0</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">iuoff0</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="n">correct</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ccnt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ieubnd0</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="n">ielbnd0</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="n">iloff0</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="n">iuoff0</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span><span class="w"> </span><span class="n">correct</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
 <span class="w">     </span><span class="k">else if</span><span class="w"> </span><span class="p">(</span><span class="n">localPet</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
-
 <span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="n">elbnd</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ielbnd1</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">iloff1</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="n">correct</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">elbnd</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ielbnd1</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">iloff1</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="n">correct</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">elbnd</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ielbnd1</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="n">iloff1</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span><span class="w"> </span><span class="n">correct</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
@@ -719,6 +1174,7 @@
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ccnt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ieubnd1</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">ielbnd1</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="n">iloff1</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">iuoff1</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="n">correct</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ccnt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ieubnd1</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="n">ielbnd1</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="n">iloff1</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="n">iuoff1</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span><span class="w"> </span><span class="n">correct</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
 <span class="w">     </span><span class="k">else if</span><span class="w"> </span><span class="p">(</span><span class="n">localPet</span><span class="w"> </span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+
 <span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="n">elbnd</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ielbnd2</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">iloff2</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="n">correct</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">elbnd</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ielbnd2</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">iloff2</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="n">correct</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">elbnd</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="w"> </span><span class="n">ielbnd2</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="n">iloff2</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span><span class="w"> </span><span class="n">correct</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
@@ -784,7 +1240,7 @@
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-06-17T15:18:30.449153+0000             </p>
+ on 2025-06-17T16:22:02.743978+0000             </p>
           </div>
         </div>
         <br>
