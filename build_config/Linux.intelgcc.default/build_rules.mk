@@ -100,7 +100,6 @@ else
 ESMF_F90DEFAULT         = mpif90
 endif
 ESMF_CXXCOMPILECPPFLAGS+= -DESMF_NO_SIGUSR2
-ESMF_F90LINKLIBS       += $(shell $(ESMF_DIR)/scripts/libs.openmpif90 $(ESMF_F90DEFAULT))
 ESMF_CXXDEFAULT         = mpicxx
 ESMF_CDEFAULT           = mpicc
 ESMF_MPIRUNDEFAULT      = mpirun $(ESMF_MPILAUNCHOPTIONS)
@@ -129,6 +128,13 @@ ESMF_F90COMPILER_VERSION    = ${ESMF_F90COMPILER} -V -v
 ESMF_CXXCOMPILER_VERSION    = ${ESMF_CXXCOMPILER} --version
 ESMF_CCOMPILER_VERSION      = ${ESMF_CCOMPILER} --version
 ESMF_F90MAJORVERSION        = $(shell $(ESMF_DIR)/scripts/version.intel 1 ${ESMF_F90COMPILER} -V)
+
+############################################################
+# Special optimization flags
+#
+# Prevent speculative execution of floating-point operations
+# that could trigger a hardware exception (safe for -fpe0)
+ESMF_F90OPTFLAG_O       += -fp-speculation=safe
 
 ############################################################
 # Special debug flags

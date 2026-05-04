@@ -21,17 +21,20 @@ if [ "$MPIEXEC_END_OF_PATH" = "mpiuni/mpirun" ]
 then
     PE_COUNTS=(1)
 else
-    PE_COUNTS=(1 4 6)
+    PE_COUNTS=(1 4 6 8)
 fi
 
 for NP in ${PE_COUNTS[@]}
 do
     REPORT="esmpy${VERSION}-petx${NP}.test"
-    COMMAND="${MPIEXEC} -np ${NP} python3 -m pytest -vs --json-report --json-report-summary > $REPORT 2>&1"
+    SUMMARY="esmpy${VERSION}-petx${NP}-summary.json"
+    COMMAND="${MPIEXEC} -np ${NP} python3 -m pytest -vs --json-report --json-report-summary"
+    COMMAND+=" --json-report-file ${SUMMARY} > $REPORT 2>&1"
+    echo "// esmpy ${VERSION} with PET count ${NP} summary" > ${SUMMARY}
     echo ${COMMAND}
     eval "${COMMAND}"
     find . -name "*.ESMF_LogFile" -exec cat {} >> ${REPORT} \;
-    cat .report.json >> ${REPORT}
+    cat ${SUMMARY} >> ${REPORT}
 done
 
 echo "Report is in ${REPORT}"

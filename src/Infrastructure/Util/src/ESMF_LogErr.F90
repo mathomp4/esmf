@@ -1,7 +1,7 @@
 ! $Id$
 !
 ! Earth System Modeling Framework
-! Copyright (c) 2002-2025, University Corporation for Atmospheric Research,
+! Copyright (c) 2002-2026, University Corporation for Atmospheric Research,
 ! Massachusetts Institute of Technology, Geophysical Fluid Dynamics
 ! Laboratory, University of Michigan, National Centers for Environmental
 ! Prediction, Los Alamos National Laboratory, Argonne National Laboratory,
@@ -1785,8 +1785,7 @@ end subroutine ESMF_LogGet
         ESMF_CONTEXT, rcToReturn=rc)
       return
     elseif (msgAbortCnt > 0) then
-      call ESMF_LogSet(ESMF_LogDefault, &
-        logmsgAbort=msgAbortLst(1:msgAbortCnt), rc=localrc)
+      call ESMF_LogSet(logmsgAbort=msgAbortLst(1:msgAbortCnt), rc=localrc)
       if (ESMF_LogFoundError(localrc, ESMF_ERR_PASSTHRU, &
         ESMF_CONTEXT, rcToReturn=rc)) return
     endif

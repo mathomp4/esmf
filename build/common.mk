@@ -341,57 +341,16 @@ endif
 endif
 
 ifeq ($(ESMF_ABI),default)
-# start with 64-bit default for all architectures
+# start with 64-bit default
 export ESMF_ABI = 64
-
-ifeq ($(ESMF_OS),Linux)
-# default on Linux is 32-bit
+ifeq ($(ESMF_MACHINE),ia32)
+# ia32 is 32-bit
 export ESMF_ABI = 32
-ifeq ($(ESMF_MACHINE),ia64)
-# except for IA64
-export ESMF_ABI = 64
 endif
-ifeq ($(ESMF_MACHINE),x86_64)
-# and x86_64
-export ESMF_ABI = 64
-endif
-ifeq ($(ESMF_MACHINE),ppc64)
-# and ppc64
-export ESMF_ABI = 64
-endif
-ifeq ($(ESMF_MACHINE),ppc64le)
-# and ppc64 little endian
-export ESMF_ABI = 64
-endif
-endif
-
-ifeq ($(ESMF_OS),Darwin)
-# default on Darwin is 32-bit
+ifeq ($(ESMF_MACHINE),x86)
+# x86 is 32-bit
 export ESMF_ABI = 32
-ifeq ($(ESMF_MACHINE),x86_64)
-# except x86_64
-export ESMF_ABI = 64
 endif
-ifeq ($(ESMF_MACHINE),arm64)
-# and arm64
-export ESMF_ABI = 64
-endif
-endif
-
-ifeq ($(ESMF_OS),Cygwin)
-# default on Cygwin is 32-bit
-export ESMF_ABI = 32
-ifeq ($(ESMF_MACHINE),x86_64)
-# and x86_64
-export ESMF_ABI = 64
-endif
-endif
-
-ifeq ($(ESMF_OS),MinGW)
-# default on MinGW is 64-bit
-export ESMF_ABI = 64
-endif
-
 endif
 
 # by default ABISTRING is simply ABI
@@ -2120,7 +2079,7 @@ ifeq ($(ESMF_TRACE_BUILD_SHARED),ON)
 ESMF_TRACE_LDPRELOAD := $(ESMF_LIBDIR)/libesmftrace_preload.$(ESMF_SL_SUFFIX)
 ESMF_PRELOADSCRIPT = $(ESMF_LIBDIR)/preload.sh
 
-ESMF_SL_PRELOAD_LIBLINKER = $(ESMF_CXXCOMPILER)
+ESMF_SL_PRELOAD_LIBLINKER = $(ESMF_CXXLINKER)
 ESMF_SL_PRELOAD_LIBOPTS = $(ESMF_CXXLINKOPTS)
 ESMF_SL_PRELOAD_LIBLIBS = $(ESMF_CXXLINKPATHS) $(ESMF_CXXLINKRPATHS) $(ESMF_CXXLINKLIBS)
 
@@ -2129,7 +2088,7 @@ ESMF_ENV_PRELOAD          = DYLD_INSERT_LIBRARIES
 ESMF_ENV_PRELOAD_DELIMIT  = ':'
 ifeq ($(ESMF_COMM),openmpi)
 # make sure to link in the Fortran MPI bindings
-ESMF_SL_PRELOAD_LIBLINKER = $(ESMF_F90COMPILER)
+ESMF_SL_PRELOAD_LIBLINKER = $(ESMF_F90LINKER)
 # and since we're using the F90 compiler as the linker, make sure to use link
 # options and libs appropriate for the F90 compiler instead of the C++ compiler
 ESMF_SL_PRELOAD_LIBOPTS = $(ESMF_F90LINKOPTS)

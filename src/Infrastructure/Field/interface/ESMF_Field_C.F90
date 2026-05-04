@@ -1,7 +1,7 @@
 !  $Id$
 !
 ! Earth System Modeling Framework
-! Copyright (c) 2002-2025, University Corporation for Atmospheric Research, 
+! Copyright (c) 2002-2026, University Corporation for Atmospheric Research, 
 ! Massachusetts Institute of Technology, Geophysical Fluid Dynamics 
 ! Laboratory, University of Michigan, National Centers for Environmental 
 ! Prediction, Los Alamos National Laboratory, Argonne National Laboratory, 
@@ -736,27 +736,30 @@ subroutine f_esmf_fieldcollectgarbage(field, rc)
 
     type(ESMF_Field)      :: field
     integer, intent(out)  :: rc
-  
+
+    type(ESMF_FieldType), pointer :: ftypepp
     integer :: localrc
-  
+
     ! initialize return code; assume routine not implemented
     localrc = ESMF_RC_NOT_IMPL
     rc = ESMF_RC_NOT_IMPL
-  
+
     !print *, "collecting Field garbage"
 
-    if (associated(field%ftypep)) then
+    ftypepp => field%ftypep ! LLVM workaround for deallocate() runtime error!
+
+    if (associated(ftypepp)) then
       ! destruct internal data allocations
-      call ESMF_FieldDestruct(field%ftypep, rc=localrc)
+      call ESMF_FieldDestruct(ftypepp, rc=localrc)
       if (ESMF_LogFoundError(localrc, &
         ESMF_ERR_PASSTHRU, &
         ESMF_CONTEXT, rcToReturn=rc)) return
       ! deallocate actual FieldType allocation
-      !print *, "deallocate(field%ftypep)"
-      deallocate(field%ftypep, stat=localrc)
+      deallocate(ftypepp, stat=localrc)
       if (ESMF_LogFoundDeallocError(localrc, msg="Deallocating Field", &
         ESMF_CONTEXT, rcToReturn=rc)) return
     endif
+
     nullify(field%ftypep)
 
     ! return successfully
@@ -1356,10 +1359,21 @@ subroutine f_esmf_fieldcollectgarbage(field, rc)
     endif
     
     if (filemode_local == ESMF_FILEMODE_BASIC) then
+#ifndef OLDWAY_102325
+       call ESMF_OutputSimpleWeightFile (fileName, localFactorList, localFactorIndexList, &
+            title="ESMPy Regrid Class Weight File", &
+            method=regridmethod, &
+            largeFileFlag=l_largeFileFlag, &
+            ! TODO: Support this  netcdf4FileFlag, &
+            rc=localrc)
+       if (ESMF_LogFoundError(localrc, ESMF_ERR_PASSTHRU, &
+            ESMF_CONTEXT, rcToReturn=rc)) return       
+#else       
       call ESMF_SparseMatrixWrite(localFactorList, localFactorIndexList, &
                                   fileName, rc=localrc)
       if (ESMF_LogFoundError(localrc, ESMF_ERR_PASSTHRU, &
-          ESMF_CONTEXT, rcToReturn=rc)) return
+           ESMF_CONTEXT, rcToReturn=rc)) return
+#endif      
     elseif (filemode_local == ESMF_FILEMODE_WITHAUX) then
       ! query field for geom type
       call ESMF_FieldGet(srcField, geomType=srcgt, typekind=srctk, rc=localrc)
